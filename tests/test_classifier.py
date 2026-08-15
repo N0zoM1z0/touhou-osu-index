@@ -22,6 +22,19 @@ class ClassifierTests(unittest.TestCase):
         self.assertEqual(item.confidence, "verified")
         self.assertIn("osu_source", item.evidence)
 
+    def test_touhou_sourced_cross_franchise_mashup_is_verified(self):
+        item = Entry(
+            20406,
+            artist="Nico Nico Douga",
+            title="Owens",
+            source="Touhou",
+            evidence=["discovery_query:Touhou"],
+            confidence="candidate",
+        )
+        apply_classification(item, tags="dj yoshitaka evans jubeat u.n. owen was her")
+        self.assertEqual(item.confidence, "verified")
+        self.assertIn("osu_source", item.evidence)
+
     def test_unrelated_romanized_touhou_source_stays_candidate(self):
         item = Entry(
             1,

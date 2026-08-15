@@ -33,7 +33,9 @@ override a manual inclusion or exclusion.
   original and non-Touhou music.
 - Historical collection membership is evidence for discovery, not automatic
   proof.
-- Medleys and mixed-source sets require manual review.
+- Medleys, mashups, and mixed-source sets are in scope and follow the same
+  evidence rules as other sets. The presence of non-Touhou material alone is
+  not a reason to hold or exclude a set.
 
 ## Catalog editing
 
