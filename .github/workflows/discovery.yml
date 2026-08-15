@@ -27,7 +27,7 @@ jobs:
             echo "::notice::Set OSU_CLIENT_ID and OSU_CLIENT_SECRET repository secrets to enable discovery."
             exit 0
           fi
-          python -m touhou_osu discover --write
+          python -m touhou_osu discover --write --max-changes 50
           if ! git diff --quiet -- data/catalog.json; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
@@ -44,7 +44,7 @@ jobs:
           git commit -m "data: discover Touhou beatmap candidates"
           git push --force origin "$branch"
           pr_number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          body="Automated weekly osu! API discovery. Review confidence and evidence before merging."
+          body="Automated weekly osu! API discovery, capped at 50 meaningful catalog changes. Review confidence and evidence before merging; remaining matches roll into later weeks."
           if [[ -n "$pr_number" ]]; then
             gh pr edit "$pr_number" --title "data: weekly Touhou discovery" --body "$body"
           else

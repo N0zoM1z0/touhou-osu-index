@@ -11,32 +11,7 @@ from touhou_osu.models import Entry
 
 
 class FakeOsuApi:
-    responses = {
-        "Touhou": [
-            {
-                "id": 42,
-                "artist": "ShibayanRecords",
-                "title": "Fall in the Dark",
-                "creator": "mapper",
-                "source": "",
-                "status": "ranked",
-                "tags": "touhou arrangement",
-                "beatmaps": [{"mode": "osu"}],
-            }
-        ],
-        "東方Project": [
-            {
-                "id": 42,
-                "artist": "ShibayanRecords",
-                "title": "Fall in the Dark",
-                "creator": "mapper",
-                "source": "",
-                "status": "ranked",
-                "tags": "touhou arrangement",
-                "beatmaps": [{"mode": "osu"}],
-            }
-        ],
-    }
+    responses = {}
 
     @classmethod
     def from_env(cls):
@@ -48,6 +23,17 @@ class FakeOsuApi:
 
 class DiscoveryTests(unittest.TestCase):
     def test_combines_queries_with_existing_collection_evidence_before_classification(self):
+        raw = {
+            "id": 42,
+            "artist": "ShibayanRecords",
+            "title": "Fall in the Dark",
+            "creator": "mapper",
+            "source": "",
+            "status": "ranked",
+            "tags": "touhou arrangement",
+            "beatmaps": [{"mode": "osu"}],
+        }
+        FakeOsuApi.responses = {"Touhou": [raw], "東方Project": [raw]}
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             catalog_path = root / "catalog.json"
@@ -62,6 +48,7 @@ class DiscoveryTests(unittest.TestCase):
                 catalog=catalog_path,
                 config=config_path,
                 max_pages=4,
+                max_changes=50,
                 write=True,
             )
 
@@ -80,6 +67,58 @@ class DiscoveryTests(unittest.TestCase):
                     "osucollector:1402",
                 ],
             )
+
+    def test_caps_meaningful_changes_without_date_only_churn(self):
+        def raw(beatmapset_id, *, source="Touhou Project"):
+            return {
+                "id": beatmapset_id,
+                "artist": "ZUN",
+                "title": f"Theme {beatmapset_id}",
+                "creator": "mapper",
+                "source": source,
+                "status": "ranked",
+                "tags": "touhou",
+                "beatmaps": [{"mode": "osu"}],
+            }
+
+        FakeOsuApi.responses = {"Touhou": [raw(1, source="unknown"), raw(10), raw(20), raw(30)]}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            catalog_path = root / "catalog.json"
+            config_path = root / "seeds.json"
+            Catalog(
+                [
+                    Entry(
+                        10,
+                        artist="ZUN",
+                        title="Theme 10",
+                        creator="mapper",
+                        source="Touhou Project",
+                        status="ranked",
+                        modes=["osu"],
+                        evidence=["discovery_query:Touhou", "osu_source"],
+                        confidence="verified",
+                        last_checked="2020-01-01",
+                    )
+                ]
+            ).save(catalog_path)
+            config_path.write_text(json.dumps({"discovery_queries": ["Touhou"]}), encoding="utf-8")
+            args = argparse.Namespace(
+                catalog=catalog_path,
+                config=config_path,
+                max_pages=4,
+                max_changes=2,
+                write=True,
+            )
+
+            with patch("touhou_osu.cli.OsuApi", FakeOsuApi):
+                self.assertEqual(command_discover(args), 0)
+
+            catalog = Catalog.load(catalog_path)
+            self.assertEqual(set(catalog.entries), {10, 20, 30})
+            self.assertEqual(catalog.entries[10].last_checked, "2020-01-01")
+            self.assertEqual(catalog.entries[20].confidence, "verified")
+            self.assertEqual(catalog.entries[30].confidence, "verified")
 
 
 if __name__ == "__main__":
