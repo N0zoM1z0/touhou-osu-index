@@ -1,0 +1,54 @@
+name: Monthly reconciliation
+
+on:
+  schedule:
+    - cron: "41 4 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh seed sources and osu! metadata
+        id: reconcile
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python -m touhou_osu import-seeds --write
+          if [[ -n "$OSU_CLIENT_ID" && -n "$OSU_CLIENT_SECRET" ]]; then
+            python -m touhou_osu reconcile --write
+          else
+            echo "::notice::osu! API reconciliation skipped because OAuth secrets are not configured."
+          fi
+          if ! git diff --quiet -- data/catalog.json; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Open or update reconciliation PR
+        if: steps.reconcile.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch="automation/osu-reconciliation"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add data/catalog.json
+          git commit -m "data: reconcile Touhou beatmap catalog"
+          git push --force origin "$branch"
+          pr_number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
+          body="Automated monthly seed and osu! metadata reconciliation. No media files are downloaded."
+          if [[ -n "$pr_number" ]]; then
+            gh pr edit "$pr_number" --title "data: monthly catalog reconciliation" --body "$body"
+          else
+            gh pr create --base main --head "$branch" --title "data: monthly catalog reconciliation" --body "$body"
+          fi

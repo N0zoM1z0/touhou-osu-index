@@ -1,0 +1,52 @@
+name: Weekly discovery
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Discover candidates
+        id: discover
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          if [[ -z "$OSU_CLIENT_ID" || -z "$OSU_CLIENT_SECRET" ]]; then
+            echo "::notice::Set OSU_CLIENT_ID and OSU_CLIENT_SECRET repository secrets to enable discovery."
+            exit 0
+          fi
+          python -m touhou_osu discover --write
+          if ! git diff --quiet -- data/catalog.json; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Open or update review PR
+        if: steps.discover.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch="automation/osu-discovery"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add data/catalog.json
+          git commit -m "data: discover Touhou beatmap candidates"
+          git push --force origin "$branch"
+          pr_number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
+          body="Automated weekly osu! API discovery. Review confidence and evidence before merging."
+          if [[ -n "$pr_number" ]]; then
+            gh pr edit "$pr_number" --title "data: weekly Touhou discovery" --body "$body"
+          else
+            gh pr create --base main --head "$branch" --title "data: weekly Touhou discovery" --body "$body"
+          fi

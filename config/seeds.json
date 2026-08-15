@@ -1,0 +1,72 @@
+{
+  "discovery_queries": [
+    "source=東方Project",
+    "source=Touhou Project",
+    "source=Touhou",
+    "Touhou",
+    "東方Project",
+    "東方",
+    "ZUN"
+  ],
+  "osu_collector_collections": [
+    {
+      "id": 1402,
+      "name": "CardinalWolf 2hu 0-2.99 star",
+      "confidence": "candidate"
+    },
+    {
+      "id": 1405,
+      "name": "CardinalWolf 2hu 3-4.49 star",
+      "confidence": "candidate"
+    },
+    {
+      "id": 1407,
+      "name": "CardinalWolf 2hu 4.5 star plus",
+      "confidence": "candidate"
+    },
+    {
+      "id": 6907,
+      "name": "10S Touhou",
+      "confidence": "candidate"
+    },
+    {
+      "id": 14845,
+      "name": "4-Touhou Main",
+      "confidence": "probable",
+      "touhou_kind": "original"
+    }
+  ],
+  "official_packs": [
+    {"tag": "468", "name": "Official Touhou Chart"},
+    {"tag": "T65", "name": "Touhou Music Pack"},
+    {"tag": "T106", "name": "Mappers Guild Touhou Pack"},
+    {"tag": "FQ55", "name": "Stan Touhou Music Pack"},
+    {"tag": "FQ35", "name": "UNDEAD CORPORATION Touhou pack"}
+  ],
+  "osu_collector_tournaments": [
+    {"id": 1865, "name": "Austrian Touhou Cup"},
+    {"id": 1793, "name": "5 Digit Touhou Cup 2"}
+  ],
+  "wiki_tournaments": [
+    {
+      "edition": "1st",
+      "name": "Touhou Project Mania Cup 1st",
+      "url": "https://osu.ppy.sh/wiki/en/Tournaments/TMC/1st"
+    },
+    {
+      "edition": "2nd",
+      "name": "Touhou Project Mania Cup 2nd",
+      "url": "https://osu.ppy.sh/wiki/en/Tournaments/TMC/2nd"
+    },
+    {
+      "edition": "3rd",
+      "name": "Touhou Project Mania Cup 3rd",
+      "url": "https://osu.ppy.sh/wiki/en/Tournaments/TMC/3rd"
+    },
+    {
+      "edition": "4th",
+      "name": "Touhou Project Mania Cup 4th",
+      "url": "https://osu.ppy.sh/wiki/en/Tournaments/TMC/4th"
+    }
+  ]
+}

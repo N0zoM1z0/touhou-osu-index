@@ -1,0 +1,37 @@
+name: Report a beatmapset
+description: Add, correct, verify, or exclude a Touhou beatmapset
+title: "Beatmapset: "
+labels: [catalog]
+body:
+  - type: input
+    id: id
+    attributes:
+      label: Beatmapset ID or URL
+      placeholder: https://osu.ppy.sh/beatmapsets/1151630
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: Requested change
+      options:
+        - Add a missing set
+        - Verify a candidate
+        - Correct metadata
+        - Exclude a false positive
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Touhou evidence
+      description: Link a primary source where possible and identify the original game/theme.
+    validations:
+      required: true
+  - type: checkboxes
+    id: copyright
+    attributes:
+      label: Data-only policy
+      options:
+        - label: This report contains links and metadata only, not copyrighted media files.
+          required: true

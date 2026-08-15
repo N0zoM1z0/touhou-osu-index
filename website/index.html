@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An open, reproducible index of Touhou Project music mapped in osu!">
+  <meta name="theme-color" content="#16101f">
+  <title>Touhou osu! Index</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#catalog">Skip to catalog</a>
+  <header class="hero">
+    <nav>
+      <a class="brand" href="./"><span>東</span> Touhou × osu!</a>
+      <div class="nav-links">
+        <a href="catalog.json">JSON</a>
+        <a href="catalog.csv">CSV</a>
+        <a href="https://github.com/N0zoM1z0/touhou-osu-index">GitHub</a>
+      </div>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">Open beatmapset catalog</p>
+        <h1>Gensokyo,<br><i>mapped.</i></h1>
+        <p class="intro">A provenance-first index of Touhou music across osu!,
+          osu!taiko, osu!catch, and osu!mania.</p>
+      </div>
+      <div class="seal" aria-hidden="true"><span>幻想郷</span></div>
+    </div>
+    <dl class="metrics">
+      <div><dt>{{ACCEPTED_COUNT}}</dt><dd>accepted sets</dd></div>
+      <div><dt>{{TOTAL_COUNT}}</dt><dd>sets tracked</dd></div>
+      <div><dt>4</dt><dd>game modes</dd></div>
+      <div><dt>{{LAST_BUILT}}</dt><dd>catalog build</dd></div>
+    </dl>
+  </header>
+
+  <main id="catalog">
+    <section class="controls" aria-labelledby="finder-title">
+      <div class="control-heading">
+        <p class="kicker">Explore the catalog</p>
+        <h2 id="finder-title">Find your next map</h2>
+      </div>
+      <div class="search-wrap">
+        <label for="search">Search artist, title, mapper, source, or ID</label>
+        <input id="search" type="search" placeholder="e.g. ShibayanRecords, TH08, 1151630" autocomplete="off">
+      </div>
+      <fieldset class="mode-filter">
+        <legend>Mode</legend>
+        <button type="button" class="chip active" data-mode="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-mode="osu" aria-pressed="false">osu!</button>
+        <button type="button" class="chip" data-mode="taiko" aria-pressed="false">taiko</button>
+        <button type="button" class="chip" data-mode="catch" aria-pressed="false">catch</button>
+        <button type="button" class="chip" data-mode="mania" aria-pressed="false">mania</button>
+      </fieldset>
+      <label class="candidate-toggle">
+        <input id="candidates" type="checkbox">
+        <span>Include candidates awaiting review</span>
+      </label>
+    </section>
+
+    <div class="result-bar">
+      <output id="result-count" aria-live="polite">Loading catalog…</output>
+      <span>Verified and probable shown by default</span>
+    </div>
+    <section id="results" class="cards" aria-label="Beatmapsets"></section>
+    <div id="empty" class="empty" hidden>No beatmapsets match these filters.</div>
+    <button id="more" class="more" type="button" hidden>Load more</button>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Touhou osu! Index</strong>
+      <p>IDs and public metadata only. No beatmap or media files are redistributed.</p>
+    </div>
+    <div>
+      <a href="review.json">Review queue</a>
+      <a href="https://github.com/N0zoM1z0/touhou-osu-index/blob/main/CONTRIBUTING.md">Contribute</a>
+    </div>
+  </footer>
+</body>
+</html>
