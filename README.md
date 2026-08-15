@@ -7,6 +7,8 @@
 An open, reproducible index of Touhou Project music mapped in osu!. It combines
 historical collections, official beatmap packs, Touhou-only tournament pools,
 and osu! API discovery into one deduplicated catalog keyed by **beatmapset ID**.
+Touhou-related medleys, mashups, and MADs are included when they satisfy the
+same metadata and provenance rules as other sets.
 
 **[Browse the index](https://n0zom1z0.github.io/touhou-osu-index/)** ·
 [Download JSON](https://n0zom1z0.github.io/touhou-osu-index/catalog.json) ·
