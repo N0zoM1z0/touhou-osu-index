@@ -147,6 +147,11 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
         evidence.add("osu_source")
         return Classification("verified", tuple(sorted(evidence)))
 
+    curated_queue_match = any(item.startswith("forum_queue:") for item in evidence)
+    resolved_metadata = bool(entry.artist and entry.title and not entry.title.startswith("beatmapsets/"))
+    if curated_queue_match and resolved_metadata:
+        return Classification("probable", tuple(sorted(evidence)))
+
     tags_match = contains_any(tags, TOUHOU_TAG_TOKENS)
     artist_match = normalize(entry.artist) in {normalize(item) for item in KNOWN_ARTISTS}
     curated_collection_match = any(item.startswith("osucollector:") for item in evidence)

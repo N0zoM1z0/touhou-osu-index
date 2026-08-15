@@ -1,4 +1,4 @@
-.PHONY: build check test validate clean
+.PHONY: build check test validate import-seeds audit-sources hydrate clean
 
 build:
 	python3 -m touhou_osu build
@@ -10,6 +10,15 @@ test:
 
 validate:
 	python3 -m touhou_osu validate
+
+import-seeds:
+	python3 -m touhou_osu import-seeds --write
+
+audit-sources:
+	python3 -m touhou_osu audit-sources
+
+hydrate:
+	python3 -m touhou_osu hydrate --write
 
 clean:
 	python3 -m touhou_osu clean

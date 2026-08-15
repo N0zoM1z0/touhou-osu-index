@@ -6,6 +6,7 @@ import json
 import re
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from datetime import date
 from html.parser import HTMLParser
 
@@ -14,9 +15,21 @@ from .http import get_json, get_text
 from .models import Entry, normalize_mode
 
 BEATMAPSET_RE = re.compile(r"/beatmapsets/(\d+)(?:#(osu|taiko|fruits|mania))?")
+FORUM_POST_ID_RE = re.compile(r'data-post-id="(\d+)"')
 MARKDOWN_BEATMAPSET_RE = re.compile(
     r"\[([^\n]*?)\]\(https?://osu\.ppy\.sh/beatmapsets/(\d+)(?:#(osu|taiko|fruits|mania)/\d+)?\)"
 )
+
+
+@dataclass(frozen=True)
+class SourceReport:
+    kind: str
+    name: str
+    url: str
+    beatmapsets: int
+
+    def message(self) -> str:
+        return f"{self.kind}/{self.name}: {self.beatmapsets} beatmapsets ({self.url})"
 
 
 class BeatmapLinkParser(HTMLParser):
@@ -193,13 +206,15 @@ def import_collector_collection(source: dict) -> list[Entry]:
 
 def import_collector_tournament(source: dict) -> list[Entry]:
     source_id = int(source["id"])
-    evidence = f"tournament:{source_id}"
-    payload = get_json(f"https://osucollector.com/api/tournaments/{source_id}")
+    trusted = bool(source.get("trusted", True))
+    evidence = f"tournament:{source_id}" if trusted else f"tournament_candidate:{source_id}"
+    confidence = "verified" if trusted else source.get("confidence", "candidate")
+    payload = get_json(source.get("api_url", f"https://osucollector.com/api/tournaments/{source_id}"))
     entries: dict[int, Entry] = {}
     for round_data in payload.get("rounds", []):
         for mod in round_data.get("mods", []):
             for raw in mod.get("maps", []):
-                incoming = _collector_entry(raw, evidence, "verified")
+                incoming = _collector_entry(raw, evidence, confidence)
                 if incoming is None:
                     continue
                 current = entries.get(incoming.beatmapset_id)
@@ -212,7 +227,8 @@ def import_collector_tournament(source: dict) -> list[Entry]:
 
 def import_official_pack(source: dict) -> list[Entry]:
     tag = source["tag"]
-    links = parse_beatmap_links(get_text(f"https://osu.ppy.sh/beatmaps/packs/{tag}"))
+    url = source.get("url", f"https://osu.ppy.sh/beatmaps/packs/{tag}")
+    links = parse_beatmap_links(get_text(url))
     evidence = f"official_pack:{tag}"
     return [
         Entry(
@@ -245,6 +261,70 @@ def import_wiki_tournament(source: dict) -> list[Entry]:
     ]
 
 
+def _forum_page_url(url: str, start: int | None) -> str:
+    if start is None:
+        return url
+    parsed = urllib.parse.urlsplit(url)
+    query = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
+    query["start"] = str(start)
+    return urllib.parse.urlunsplit(
+        (parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(query), parsed.fragment)
+    )
+
+
+def import_forum_queue(source: dict) -> list[Entry]:
+    """Import every beatmapset linked in a paginated osu! forum queue."""
+    slug = source["slug"]
+    evidence = f"forum_queue:{slug}"
+    entries: dict[int, Entry] = {}
+    start: int | None = None
+    seen_last_posts: set[int] = set()
+    max_pages = int(source.get("max_pages", 20))
+
+    for _ in range(max_pages):
+        text = get_text(_forum_page_url(source["url"], start))
+        for item in parse_beatmap_links(text):
+            incoming = Entry(
+                beatmapset_id=item["id"],
+                artist=item["artist"],
+                title=item["title"],
+                modes=[item["mode"]] if item["mode"] else [],
+                evidence=[evidence],
+                # A bare forum link is kept out of the public index until its
+                # beatmapset metadata can be resolved and classified.
+                confidence="candidate",
+                last_checked=date.today().isoformat(),
+            )
+            current = entries.get(incoming.beatmapset_id)
+            if current is None:
+                entries[incoming.beatmapset_id] = incoming
+            else:
+                current.modes = sorted(set(current.modes) | set(incoming.modes))
+
+        post_ids = [int(value) for value in FORUM_POST_ID_RE.findall(text)]
+        if not post_ids:
+            raise RuntimeError(f"forum queue {slug} did not contain any forum posts")
+        last_post = post_ids[-1]
+        if last_post == start or last_post in seen_last_posts:
+            return list(entries.values())
+        seen_last_posts.add(last_post)
+        start = last_post
+
+    raise RuntimeError(f"forum queue {slug} exceeded its {max_pages}-page safety limit")
+
+
+def source_url(kind: str, source: dict) -> str:
+    if source.get("url"):
+        return source["url"]
+    if kind == "osu_collector_collections":
+        return f"https://osucollector.com/collections/{source['id']}"
+    if kind == "osu_collector_tournaments":
+        return source.get("api_url", f"https://osucollector.com/api/tournaments/{source['id']}")
+    if kind == "official_packs":
+        return f"https://osu.ppy.sh/beatmaps/packs/{source['tag']}"
+    return "unknown"
+
+
 def import_source(kind: str, source: dict) -> list[Entry]:
     if kind == "osu_collector_collections":
         return import_collector_collection(source)
@@ -254,10 +334,12 @@ def import_source(kind: str, source: dict) -> list[Entry]:
         return import_official_pack(source)
     if kind == "wiki_tournaments":
         return import_wiki_tournament(source)
+    if kind == "forum_queues":
+        return import_forum_queue(source)
     raise ValueError(f"unsupported seed source type: {kind}")
 
 
-def import_all(config: dict, *, workers: int = 4) -> tuple[list[Entry], list[str]]:
+def import_all(config: dict, *, workers: int = 4) -> tuple[list[Entry], list[SourceReport]]:
     tasks = [
         (kind, source)
         for kind in (
@@ -265,17 +347,23 @@ def import_all(config: dict, *, workers: int = 4) -> tuple[list[Entry], list[str
             "osu_collector_tournaments",
             "official_packs",
             "wiki_tournaments",
+            "forum_queues",
         )
         for source in config.get(kind, [])
     ]
     entries: list[Entry] = []
-    messages: list[str] = []
+    reports: list[SourceReport] = []
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {executor.submit(import_source, kind, source): (kind, source) for kind, source in tasks}
         for future in as_completed(futures):
             kind, source = futures[future]
             label = source.get("name") or source.get("tag") or source.get("edition") or source.get("id")
             imported = future.result()
+            minimum = int(source.get("minimum_entries", 1))
+            if len(imported) < minimum:
+                raise RuntimeError(
+                    f"{kind}/{label} returned {len(imported)} beatmapsets; expected at least {minimum}"
+                )
             entries.extend(imported)
-            messages.append(f"{kind}/{label}: {len(imported)} beatmapsets")
-    return entries, sorted(messages)
+            reports.append(SourceReport(kind, str(label), source_url(kind, source), len(imported)))
+    return entries, sorted(reports, key=lambda item: (item.kind, item.name.casefold()))
