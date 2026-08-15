@@ -88,7 +88,6 @@ TOUHOU_GAME_TITLE_TOKENS = (
     "東方獣王園",
     "東方錦上京",
 )
-TOUHOU_METADATA_TOKENS = ("touhou", "東方", *TOUHOU_GAME_TITLE_TOKENS)
 TOUHOU_TAG_TOKENS = ("touhou", "東方project", "team shanghai alice", "上海アリス幻樂団")
 KNOWN_ARTISTS = {
     "zun",
@@ -150,8 +149,8 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
 
     tags_match = contains_any(tags, TOUHOU_TAG_TOKENS)
     artist_match = normalize(entry.artist) in {normalize(item) for item in KNOWN_ARTISTS}
-    metadata_match = artist_match or contains_any(f"{entry.artist} {entry.title}", TOUHOU_METADATA_TOKENS)
-    if tags_match and metadata_match:
+    curated_collection_match = any(item.startswith("osucollector:") for item in evidence)
+    if tags_match and artist_match and curated_collection_match:
         evidence.update(("mapper_tags", "known_touhou_metadata"))
         return Classification("probable", tuple(sorted(evidence)))
 

@@ -72,10 +72,27 @@ class ClassifierTests(unittest.TestCase):
         self.assertEqual(item.confidence, "candidate")
         self.assertIn("known_touhou_artist", item.evidence)
 
-    def test_tags_plus_known_artist_are_probable(self):
+    def test_tags_plus_known_artist_without_collection_stay_candidate(self):
         item = Entry(1, artist="ShibayanRecords", evidence=["discovery_query:Touhou"])
         apply_classification(item, tags="touhou zun arrangement")
+        self.assertEqual(item.confidence, "candidate")
+
+    def test_tags_plus_known_artist_and_collection_are_probable(self):
+        item = Entry(1, artist="ShibayanRecords", evidence=["osucollector:1402"])
+        apply_classification(item, tags="touhou zun arrangement")
         self.assertEqual(item.confidence, "probable")
+
+    def test_zun_composed_seihou_track_stays_candidate(self):
+        item = Entry(
+            2374876,
+            artist="ZUN",
+            title="Shoujo Shinsei ~ Pandora's Box",
+            source="秋霜玉",
+            evidence=["discovery_query:ZUN"],
+        )
+        apply_classification(item, tags="touhou zun")
+        self.assertEqual(item.confidence, "candidate")
+        self.assertNotIn("known_touhou_metadata", item.evidence)
 
 
 if __name__ == "__main__":
