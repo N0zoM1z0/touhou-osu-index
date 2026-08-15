@@ -20,7 +20,11 @@ override a manual inclusion or exclusion.
 
 ## Classification rules
 
-- A source explicitly naming Touhou/東方 or a Touhou game is verified.
+- An exact Touhou Project alias or a recognized official Touhou game title in
+  the source is verified.
+- Longer unrecognized source names containing `Touhou` or `東方` stay
+  candidates until reviewed. These words also occur in unrelated works, and
+  fan album/game names need provenance before publication.
 - Membership in an official Touhou pack or a Touhou-only tournament is
   verified.
 - A Touhou mapper tag plus matching known artist/game/theme metadata is
