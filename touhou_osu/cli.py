@@ -79,18 +79,24 @@ def command_discover(args: argparse.Namespace) -> int:
     catalog = load_catalog(args.catalog)
     config = load_config(args.config)
     api = OsuApi.from_env()
-    changed = 0
-    seen: set[int] = set()
+    discovered: dict[int, dict] = {}
+    discovery_evidence: dict[int, set[str]] = {}
     for query in config.get("discovery_queries", []):
         for raw in api.search(query, max_pages=args.max_pages):
             beatmapset_id = int(raw["id"])
-            if beatmapset_id in seen:
-                continue
-            seen.add(beatmapset_id)
-            entry = entry_from_osu(raw, evidence=[f"discovery_query:{query}"], confidence="candidate")
-            _, did_change = catalog.merge(entry)
-            changed += did_change
-    print(f"Discovery examined {len(seen)} unique beatmapsets; {changed} entries changed")
+            discovered[beatmapset_id] = raw
+            discovery_evidence.setdefault(beatmapset_id, set()).add(f"discovery_query:{query}")
+
+    changed = 0
+    for beatmapset_id in sorted(discovered):
+        current = catalog.entries.get(beatmapset_id)
+        evidence = set(discovery_evidence[beatmapset_id])
+        if current:
+            evidence.update(current.evidence)
+        entry = entry_from_osu(discovered[beatmapset_id], evidence=sorted(evidence), confidence="candidate")
+        _, did_change = catalog.merge(entry)
+        changed += did_change
+    print(f"Discovery examined {len(discovered)} unique beatmapsets; {changed} entries changed")
     if args.write:
         catalog.save(args.catalog)
         print(f"Wrote {args.catalog}")
