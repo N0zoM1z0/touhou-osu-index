@@ -27,8 +27,8 @@ override a manual inclusion or exclusion.
   fan album/game names need provenance before publication.
 - Membership in an official Touhou pack or a Touhou-only tournament is
   verified.
-- A Touhou mapper tag plus matching known artist/game/theme metadata is
-  probable.
+- A Touhou mapper tag plus a known Touhou artist and independent historical
+  Touhou collection membership is probable.
 - A known Touhou circle alone is only a candidate because circles also release
   original and non-Touhou music.
 - Historical collection membership is evidence for discovery, not automatic
