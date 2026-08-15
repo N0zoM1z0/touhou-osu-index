@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from touhou_osu.catalog import Catalog
-from touhou_osu.cli import command_discover
+from touhou_osu.cli import command_discover, command_hydrate
 from touhou_osu.models import Entry
 
 
@@ -119,6 +119,41 @@ class DiscoveryTests(unittest.TestCase):
             self.assertEqual(catalog.entries[10].last_checked, "2020-01-01")
             self.assertEqual(catalog.entries[20].confidence, "verified")
             self.assertEqual(catalog.entries[30].confidence, "verified")
+
+    def test_hydrates_incomplete_forum_source_without_oauth(self):
+        raw = {
+            "id": 42,
+            "artist": "ZUN",
+            "title": "Theme",
+            "creator": "mapper",
+            "source": "Touhou",
+            "status": "ranked",
+            "tags": "touhou",
+            "last_updated": "2026-01-01T00:00:00Z",
+            "beatmaps": [{"mode": "osu"}],
+        }
+        page = f'<script id="json-beatmapset" type="application/json">{json.dumps(raw)}</script>'
+        with tempfile.TemporaryDirectory() as directory:
+            catalog_path = Path(directory) / "catalog.json"
+            Catalog(
+                [Entry(42, evidence=["forum_queue:sd_touhou"], confidence="probable")]
+            ).save(catalog_path)
+            args = argparse.Namespace(
+                catalog=catalog_path,
+                workers=2,
+                limit=0,
+                write=True,
+                strict=True,
+            )
+
+            with patch("touhou_osu.cli.get_text", return_value=page):
+                self.assertEqual(command_hydrate(args), 0)
+
+            entry = Catalog.load(catalog_path).entries[42]
+            self.assertEqual(entry.artist, "ZUN")
+            self.assertEqual(entry.title, "Theme")
+            self.assertEqual(entry.confidence, "verified")
+            self.assertIn("osu_source", entry.evidence)
 
 
 if __name__ == "__main__":

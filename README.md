@@ -29,7 +29,7 @@ files, songs, backgrounds, or other copyrighted assets.
 | State | Meaning |
 | --- | --- |
 | `verified` | Recognized Touhou Project/game source, official Touhou pack, Touhou-only tournament, or manual verification. |
-| `probable` | Multiple independent signals agree: Touhou tags, a known artist, and curated collection membership. |
+| `probable` | Multiple independent signals agree, or a Touhou-only curated queue entry has resolved osu! metadata. |
 | `candidate` | Historical collection membership or one weaker signal; needs review. |
 | `excluded` | Manually confirmed false positive, retained to prevent rediscovery. |
 
@@ -78,7 +78,9 @@ Requires Python 3.11+ and otherwise uses only the standard library.
 ```sh
 make check          # schema validation and tests
 make build          # generate site, JSON, and CSV
-python -m touhou_osu import-seeds --write
+make audit-sources  # query every configured source without changing the catalog
+make import-seeds   # merge every configured source into the catalog
+make hydrate        # resolve incomplete public beatmapset metadata (no OAuth)
 ```
 
 Seed import currently understands:
@@ -87,10 +89,15 @@ Seed import currently understands:
   10S's collection, and `4-Touhou Main`);
 - official osu! Touhou beatmap packs;
 - osu!Collector Touhou tournament pools;
-- osu! wiki tournament pages, including Touhou Project Mania Cup 1st–4th.
+- osu! wiki tournament pages, including Touhou Project Mania Cup 1st–4th;
+- paginated public forum queues, including `sd_touhou`'s BN queue.
 
 The importer deduplicates everything by beatmapset ID and unions its evidence.
-Source definitions live in [`config/seeds.json`](config/seeds.json).
+Source definitions, canonical URLs, safety floors, and trust policy live in
+[`config/seeds.json`](config/seeds.json). Each source has a `minimum_entries`
+floor so an upstream format change or truncated response fails closed instead
+of silently deleting coverage. See [SOURCES.md](SOURCES.md) for the complete
+inventory and current source audit.
 
 ## Automated discovery
 

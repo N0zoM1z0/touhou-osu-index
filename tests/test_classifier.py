@@ -95,6 +95,27 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item, tags="touhou zun arrangement")
         self.assertEqual(item.confidence, "probable")
 
+    def test_resolved_curated_queue_entry_is_probable(self):
+        item = Entry(
+            1,
+            artist="Unknown circle",
+            title="Unknown arrangement",
+            evidence=["forum_queue:sd_touhou"],
+            confidence="candidate",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "probable")
+
+    def test_unresolved_curated_queue_entry_stays_candidate(self):
+        item = Entry(
+            1,
+            title="beatmapsets/1",
+            evidence=["forum_queue:sd_touhou"],
+            confidence="candidate",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+
     def test_zun_composed_seihou_track_stays_candidate(self):
         item = Entry(
             2374876,

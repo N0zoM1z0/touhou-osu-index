@@ -10,10 +10,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from .catalog import Catalog
+from .http import get_text
 from .models import CatalogError
 from .osu_api import MissingCredentials, OsuApi, entry_from_osu
 from .site import build, statistics
-from .sources import import_all
+from .sources import import_all, parse_beatmapset_page
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CATALOG = ROOT / "data" / "catalog.json"
@@ -61,18 +62,110 @@ def command_clean(args: argparse.Namespace) -> int:
 
 def command_import_seeds(args: argparse.Namespace) -> int:
     catalog = load_catalog(args.catalog)
-    imported, messages = import_all(load_config(args.config), workers=args.workers)
+    imported, reports = import_all(load_config(args.config), workers=args.workers)
     changed = 0
     for entry in imported:
         _, did_change = catalog.merge(entry)
         changed += did_change
-    for message in messages:
-        print(message)
+    for report in reports:
+        print(report.message())
     print(f"Merged {len(imported)} source records; {changed} catalog entries changed")
     if args.write:
         catalog.save(args.catalog)
         print(f"Wrote {args.catalog}")
     print_stats(catalog)
+    return 0
+
+
+def command_audit_sources(args: argparse.Namespace) -> int:
+    imported, reports = import_all(load_config(args.config), workers=args.workers)
+    unique = len({entry.beatmapset_id for entry in imported})
+    if args.json:
+        print(
+            json.dumps(
+                {
+                    "source_records": len(imported),
+                    "unique_beatmapsets": unique,
+                    "sources": [
+                        {
+                            "kind": report.kind,
+                            "name": report.name,
+                            "url": report.url,
+                            "beatmapsets": report.beatmapsets,
+                        }
+                        for report in reports
+                    ],
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+    else:
+        for report in reports:
+            print(report.message())
+        print(f"Sources: {len(reports)}; records={len(imported)}; unique beatmapsets={unique}")
+    return 0
+
+
+def command_hydrate(args: argparse.Namespace) -> int:
+    """Fill incomplete source records from public osu! beatmapset pages."""
+    catalog = load_catalog(args.catalog)
+    prefixes = ("forum_queue:", "tournament_candidate:")
+    pending = [
+        entry
+        for entry in catalog.entries.values()
+        if any(item.startswith(prefixes) for item in entry.evidence)
+        and (not entry.artist or not entry.title or not entry.source or entry.status == "unknown")
+    ]
+    demoted = 0
+    for entry in pending:
+        if "manual:verified" not in entry.evidence and any(
+            item.startswith("forum_queue:") for item in entry.evidence
+        ) and entry.confidence != "candidate":
+            # A queue link proves relevance, but incomplete metadata should not
+            # be published until the public beatmapset page has been resolved.
+            entry.confidence = "candidate"
+            demoted += 1
+    pending.sort(
+        key=lambda entry: (
+            not any(item.startswith("forum_queue:") for item in entry.evidence),
+            entry.beatmapset_id,
+        )
+    )
+    if args.limit:
+        pending = pending[: args.limit]
+
+    def fetch(entry):
+        raw = parse_beatmapset_page(get_text(f"https://osu.ppy.sh/beatmapsets/{entry.beatmapset_id}"))
+        incoming = entry_from_osu(raw, evidence=entry.evidence, confidence=entry.confidence)
+        incoming.touhou_kind = entry.touhou_kind
+        incoming.origin_games = entry.origin_games
+        incoming.original_themes = entry.original_themes
+        return incoming
+
+    changed = demoted
+    failures: list[str] = []
+    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+        futures = {executor.submit(fetch, entry): entry.beatmapset_id for entry in pending}
+        for future in as_completed(futures):
+            beatmapset_id = futures[future]
+            try:
+                incoming = future.result()
+            except Exception as exc:  # keep deleted or temporarily unavailable sets reviewable
+                failures.append(f"beatmapset {beatmapset_id}: {exc}")
+                continue
+            _, did_change = catalog.merge(incoming)
+            changed += did_change
+
+    for failure in sorted(failures):
+        print(f"warning: {failure}", file=sys.stderr)
+    print(f"Hydrated {len(pending) - len(failures)} beatmapsets; {changed} entries changed")
+    if args.write:
+        catalog.save(args.catalog)
+        print(f"Wrote {args.catalog}")
+    print_stats(catalog)
+    if failures and args.strict:
+        return 1
     return 0
 
 
@@ -176,6 +269,19 @@ def parser() -> argparse.ArgumentParser:
     clean = subparsers.add_parser("clean", help="remove generated output")
     clean.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     clean.set_defaults(func=command_clean)
+
+    audit = subparsers.add_parser("audit-sources", help="query every configured source and report coverage")
+    audit.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    audit.add_argument("--workers", type=int, default=4)
+    audit.add_argument("--json", action="store_true")
+    audit.set_defaults(func=command_audit_sources)
+
+    hydrate = subparsers.add_parser("hydrate", help="fill incomplete source records from public pages")
+    hydrate.add_argument("--workers", type=int, default=2)
+    hydrate.add_argument("--limit", type=int, default=0, help="maximum records; use 0 for unlimited")
+    hydrate.add_argument("--write", action="store_true")
+    hydrate.add_argument("--strict", action="store_true")
+    hydrate.set_defaults(func=command_hydrate)
 
     for name, help_text, function in (
         ("import-seeds", "import configured seed sources", command_import_seeds),

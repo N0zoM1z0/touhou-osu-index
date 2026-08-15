@@ -29,6 +29,9 @@ override a manual inclusion or exclusion.
   verified.
 - A Touhou mapper tag plus a known Touhou artist and independent historical
   Touhou collection membership is probable.
+- A link from a curated Touhou-only queue becomes probable after its public
+  osu! artist/title metadata resolves. Deleted or unresolved links stay
+  candidates.
 - A known Touhou circle alone is only a candidate because circles also release
   original and non-Touhou music.
 - Historical collection membership is evidence for discovery, not automatic
@@ -57,7 +60,23 @@ missing evidence, and unsorted data.
 
 Add declarative entries to `config/seeds.json` when the source is supported.
 New source types need a parser plus fixture-based tests. A seed must have a
-stable canonical URL and a clear curation rationale.
+stable canonical URL, a clear curation rationale, and a conservative
+`minimum_entries` floor. Mark a mixed or partially themed tournament
+`"trusted": false`; its pool starts as candidates and only independently
+verified Touhou entries enter the public index.
+
+Use the reusable source commands before committing:
+
+```sh
+make audit-sources  # live URLs, record counts, and unique beatmapsets
+make import-seeds   # merge configured sources
+make hydrate        # fill incomplete records through public osu! pages
+make check
+make build
+```
+
+`python -m touhou_osu audit-sources --json` provides machine-readable output.
+The audit and hydration commands do not require osu! OAuth credentials.
 
 Network calls do not run in the unit test suite. Save a minimal, anonymized
 fixture that exercises the response shape instead of recording credentials or

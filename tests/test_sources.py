@@ -1,6 +1,14 @@
 import unittest
+from unittest.mock import patch
 
-from touhou_osu.sources import _collector_entry, parse_beatmap_links, parse_beatmapset_page, parse_wiki_links
+from touhou_osu.sources import (
+    _collector_entry,
+    import_collector_tournament,
+    import_forum_queue,
+    parse_beatmap_links,
+    parse_beatmapset_page,
+    parse_wiki_links,
+)
 
 
 class SourceParserTests(unittest.TestCase):
@@ -34,6 +42,57 @@ class SourceParserTests(unittest.TestCase):
 
     def test_skips_unsubmitted_collector_map(self):
         self.assertIsNone(_collector_entry({"beatmapset": None}, "tournament:1", "verified"))
+
+    def test_imports_every_page_of_forum_queue(self):
+        pages = {
+            "https://osu.ppy.sh/community/forums/topics/1": """
+                <article data-post-id="10"><a href="https://osu.ppy.sh/beatmapsets/1#osu/11">Artist - one</a></article>
+                <article data-post-id="20"></article>
+            """,
+            "https://osu.ppy.sh/community/forums/topics/1?start=20": """
+                <article data-post-id="10"><a href="https://osu.ppy.sh/beatmapsets/1#osu/11">Artist - one</a></article>
+                <article data-post-id="20"></article>
+                <article data-post-id="30"><a href="https://osu.ppy.sh/beatmapsets/2#osu/22">two</a></article>
+            """,
+            "https://osu.ppy.sh/community/forums/topics/1?start=30": """
+                <article data-post-id="20"></article>
+                <article data-post-id="30"><a href="https://osu.ppy.sh/beatmapsets/2#osu/22">two</a></article>
+            """,
+        }
+        with patch("touhou_osu.sources.get_text", side_effect=pages.__getitem__):
+            entries = import_forum_queue(
+                {
+                    "slug": "sd_touhou",
+                    "url": "https://osu.ppy.sh/community/forums/topics/1",
+                }
+            )
+
+        self.assertEqual({entry.beatmapset_id for entry in entries}, {1, 2})
+        self.assertTrue(all(entry.confidence == "candidate" for entry in entries))
+        self.assertTrue(all("forum_queue:sd_touhou" in entry.evidence for entry in entries))
+
+    def test_partial_tournament_pool_stays_candidate(self):
+        payload = {
+            "rounds": [
+                {
+                    "mods": [
+                        {
+                            "maps": [
+                                {
+                                    "mode": "osu",
+                                    "beatmapset": {"id": 42, "artist": "unknown", "title": "unknown"},
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        with patch("touhou_osu.sources.get_json", return_value=payload):
+            entries = import_collector_tournament({"id": 526, "trusted": False})
+
+        self.assertEqual(entries[0].confidence, "candidate")
+        self.assertEqual(entries[0].evidence, ["tournament_candidate:526"])
 
 
 if __name__ == "__main__":
