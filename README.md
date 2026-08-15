@@ -26,7 +26,7 @@ files, songs, backgrounds, or other copyrighted assets.
 
 | State | Meaning |
 | --- | --- |
-| `verified` | Explicit Touhou source, official Touhou pack, Touhou-only tournament, or manual verification. |
+| `verified` | Recognized Touhou Project/game source, official Touhou pack, Touhou-only tournament, or manual verification. |
 | `probable` | Multiple independent signals agree, such as Touhou tags plus known Touhou metadata. |
 | `candidate` | Historical collection membership or one weaker signal; needs review. |
 | `excluded` | Manually confirmed false positive, retained to prevent rediscovery. |
