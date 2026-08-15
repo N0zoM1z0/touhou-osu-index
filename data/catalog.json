@@ -4323,8 +4323,8 @@
       "artist": "IOSYS",
       "title": "Danzai Yamaxanadu",
       "creator": "Zekira",
-      "source": "",
-      "status": "approved",
+      "source": "Touhou",
+      "status": "ranked",
       "modes": [
         "osu"
       ],
@@ -4332,6 +4332,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
         "known_touhou_artist",
         "osucollector:1402",
         "osucollector:1405",
@@ -4368,7 +4369,7 @@
       "artist": "Masayoshi Minoshima feat. StrawbellyCake",
       "title": "Bad Apple!! (German Version)",
       "creator": "Larto",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -4378,10 +4379,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-03-11T23:56:21Z"
     },
@@ -4390,7 +4393,7 @@
       "artist": "ZUN",
       "title": "The Sealed-Away Youkai ~ Lost Place",
       "creator": "Natteke desu",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -4399,12 +4402,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:14845"
       ],
-      "confidence": "probable",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-03-30T17:22:52Z"
     },
@@ -4501,7 +4506,7 @@
       "artist": "ZUN",
       "title": "U.N. Owen Was Her?",
       "creator": "Xgor",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -4510,11 +4515,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-06-20T15:08:11Z"
     },
@@ -4630,7 +4638,7 @@
       "artist": "ZUN",
       "title": "The Road of the Apotropaic God ~ Dark Road",
       "creator": "Frill",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -4639,11 +4647,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-04-29T14:40:21Z"
     },
@@ -4717,7 +4727,7 @@
       "artist": "ZUN",
       "title": "The Dark Blowhole",
       "creator": "brikel",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -4726,11 +4736,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-06-14T18:27:32Z"
     },
@@ -4888,7 +4901,7 @@
       "artist": "Masayoshi Minoshima feat. Larto & nomico",
       "title": "Awesome Apple!!",
       "creator": "Larto",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -4897,10 +4910,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-04-01T17:46:52Z"
     },
@@ -5035,7 +5050,7 @@
       "artist": "Sasha Asuka",
       "title": "Kamigami no Inori",
       "creator": "tsukamaete",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -5044,10 +5059,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-04-24T16:32:41Z"
     },
@@ -5461,20 +5478,23 @@
       "artist": "ZUN",
       "title": "Fall of Fall ~ Autumnal Waterfall",
       "creator": "dksslqj",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-07-01T05:08:07Z"
     },
@@ -5570,20 +5590,23 @@
       "artist": "ZUN",
       "title": "Necrofantasia",
       "creator": "Fight69",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-09-30T16:11:16Z"
     },
@@ -5682,7 +5705,7 @@
       "artist": "XL Project",
       "title": "Starmine",
       "creator": "Glasslake",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -5691,6 +5714,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:東方Project",
         "official_pack:468",
         "osucollector:1402",
         "osucollector:1405"
@@ -5704,7 +5729,7 @@
       "artist": "XL Project",
       "title": "Seek for Destiny",
       "creator": "Glasslake",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -5714,10 +5739,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:東方Project",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-08-04T20:53:47Z"
     },
@@ -5749,7 +5777,7 @@
       "artist": "ZUN",
       "title": "Inada Himesama Ni - Piano Solo",
       "creator": "brikel",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -5759,6 +5787,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "official_pack:T65",
         "osucollector:1402",
@@ -5773,7 +5803,7 @@
       "artist": "michiyo",
       "title": "Oriental Memory of Forgathering Dream (hatsunetsu mix)",
       "creator": "DJ Remilia",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -5782,10 +5812,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-05-27T01:22:40Z"
     },
@@ -5794,7 +5826,7 @@
       "artist": "ZUN",
       "title": "Dark Side of Fate",
       "creator": "Muya",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -5803,12 +5835,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-07-28T19:33:07Z"
     },
@@ -6206,7 +6240,7 @@
       "artist": "ZUN",
       "title": "Voyage 1969",
       "creator": "Sushi",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -6215,11 +6249,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-08-20T14:57:41Z"
     },
@@ -6270,20 +6306,23 @@
       "artist": "O-Life Japan",
       "title": "Yakujinsama no Couple Dance",
       "creator": "AngelHoney",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-08-15T14:21:41Z"
     },
@@ -6533,19 +6572,22 @@
       "artist": "Tsukasa",
       "title": "Mirage of the Rain",
       "creator": "niedzwiedz1124",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-08-10T18:03:18Z"
     },
@@ -6795,7 +6837,7 @@
       "artist": "Yellow Zebra & Den Kai Seisakusho",
       "title": "Hoshiiro Yozora",
       "creator": "Crazy Jay",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -6805,10 +6847,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-10-08T10:02:02Z"
     },
@@ -6817,7 +6861,7 @@
       "artist": "ZUN",
       "title": "Maiden's Cappricio ~ Dream Battle",
       "creator": "Fight69",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -6826,13 +6870,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-08-31T22:19:24Z"
     },
@@ -6863,7 +6909,7 @@
       "artist": "SYNC.ART'S feat. Kaori Aihara",
       "title": "Absolute Demolition",
       "creator": "Kecco",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -6872,10 +6918,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-03-13T09:06:00Z"
     },
@@ -6884,19 +6932,22 @@
       "artist": "Masayoshi Minoshima feat. nomico",
       "title": "Bad Apple!!",
       "creator": "ouranhshc",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-07-29T17:35:45Z"
     },
@@ -7013,7 +7064,7 @@
       "artist": "ZUN",
       "title": "Necrofantasia",
       "creator": "_LRJ_",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -7022,11 +7073,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-09-18T20:32:53Z"
     },
@@ -7078,7 +7131,7 @@
       "artist": "ZUN",
       "title": "Lunar Clock ~ Luna Dial",
       "creator": "Teta",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -7087,11 +7140,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-05-16T22:52:36Z"
     },
@@ -7121,7 +7176,7 @@
       "artist": "Dark PHOENiX",
       "title": "Taketori Hishou",
       "creator": "Aakiha",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -7131,12 +7186,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-06-27T10:37:48Z"
     },
@@ -7210,21 +7267,24 @@
       "artist": "ZUN",
       "title": "Year-Round Absorbed Curiosity",
       "creator": "saymun",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-10-23T01:38:08Z"
     },
@@ -7404,7 +7464,7 @@
       "artist": "S.S.H.",
       "title": "Touhou Judgment in the Sixtieth Year ~ Fate of Sixty Years",
       "creator": "Dangaard",
-      "source": "",
+      "source": "Touhou",
       "status": "approved",
       "modes": [
         "osu"
@@ -7413,10 +7473,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-12-21T20:36:29Z"
     },
@@ -7514,7 +7577,7 @@
       "artist": "Atoguru",
       "title": "To the Limit",
       "creator": "AngelHoney",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -7524,10 +7587,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-02-21T12:02:37Z"
     },
@@ -7536,19 +7601,22 @@
       "artist": "Nico Nico Douga",
       "title": "Owens",
       "creator": "AngelHoney",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-12-07T06:38:30Z"
     },
@@ -7755,7 +7823,7 @@
       "artist": "Demetori",
       "title": "Wind God Girl",
       "creator": "lkp",
-      "source": "",
+      "source": "Touhou",
       "status": "approved",
       "modes": [
         "osu",
@@ -7765,11 +7833,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "osu_source",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-01-16T06:04:55Z"
     },
@@ -8226,7 +8297,7 @@
       "artist": "TAM x KEIGO KANZAKI",
       "title": "Lullaby of Deserted Hell",
       "creator": "Shinde",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -8235,10 +8306,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-01-13T21:13:45Z"
     },
@@ -8269,7 +8342,7 @@
       "artist": "XL Project",
       "title": "THE DAMNED STALKERS",
       "creator": "hy1hy1hy",
-      "source": "",
+      "source": "touhou",
       "status": "loved",
       "modes": [
         "catch",
@@ -8279,10 +8352,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2012-04-24T10:29:12Z"
     },
@@ -8291,20 +8367,23 @@
       "artist": "ZUN",
       "title": "The Youkai Mountain ~ Mysterious Mountain",
       "creator": "Deif",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-05-02T22:27:32Z"
     },
@@ -8447,7 +8526,7 @@
       "artist": "Dark PHOENiX",
       "title": "Taketori Hishou",
       "creator": "KanbeKotori",
-      "source": "",
+      "source": "Touhou",
       "status": "approved",
       "modes": [
         "osu",
@@ -8457,10 +8536,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-02-19T14:58:53Z"
     },
@@ -8577,20 +8658,23 @@
       "artist": "ZUN",
       "title": "Great Fairy Wars ~ Fairy Wars",
       "creator": "Tenshi-nyan",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-11-06T16:47:19Z"
     },
@@ -8683,7 +8767,7 @@
       "artist": "XL Project",
       "title": "Necro Fantasia",
       "creator": "Frill",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -8692,10 +8776,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:東方Project",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-05-04T10:47:05Z"
     },
@@ -8791,20 +8878,23 @@
       "artist": "ZUN",
       "title": "Extend Ash ~ Hourai Victim",
       "creator": "Tenshi-nyan",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-02-20T18:08:50Z"
     },
@@ -8939,7 +9029,7 @@
       "artist": "Spiritsoulxx",
       "title": "Bad Apple!!",
       "creator": "Tony",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -8949,10 +9039,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-12-10T18:35:46Z"
     },
@@ -8961,7 +9053,7 @@
       "artist": "XL Project",
       "title": "Dream...",
       "creator": "impossiblexu",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -8970,10 +9062,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:東方Project",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-12-31T04:13:52Z"
     },
@@ -8982,21 +9077,24 @@
       "artist": "IOSYS",
       "title": "Marisa Tanked My Score With an Incredible Hand",
       "creator": "ouranhshc",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-01-22T17:40:23Z"
     },
@@ -9136,20 +9234,23 @@
       "artist": "Jun.A",
       "title": "The Refrain of the Lovely Great War",
       "creator": "KanbeKotori",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-02-19T16:02:22Z"
     },
@@ -9270,7 +9371,7 @@
       "artist": "U2 Akiyama",
       "title": "Mystic Oriental Love Consultation",
       "creator": "Hellzero",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -9280,12 +9381,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-12-13T17:44:43Z"
     },
@@ -9424,7 +9527,7 @@
       "artist": "ZUN",
       "title": "Hartmann's Youkai Girl",
       "creator": "Gomo Psivarh",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -9433,12 +9536,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-02-27T16:16:31Z"
     },
@@ -9577,7 +9682,7 @@
       "artist": "ZUN",
       "title": "Judgement in the Sixtieth Year ~ Fate of Sixty Years",
       "creator": "DarkDunskin",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -9587,12 +9692,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:14845"
       ],
-      "confidence": "probable",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-12-10T14:11:38Z"
     },
@@ -9708,19 +9815,24 @@
       "artist": "Nudarai",
       "title": "Nuclear Fusion",
       "creator": "Sandpig",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-02-13T12:44:17Z"
     },
@@ -9791,20 +9903,24 @@
       "artist": "IOSYS",
       "title": "Cirno's Perfect Math Class",
       "creator": "Louis Cyphre",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-02-18T21:01:03Z"
     },
@@ -9813,7 +9929,7 @@
       "artist": "SYNC.ART'S feat.Kaori",
       "title": "Absolute Demolition",
       "creator": "Saten ruiko",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -9822,11 +9938,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-03-04T23:49:28Z"
     },
@@ -10030,21 +10148,24 @@
       "artist": "IOSYS",
       "title": "The Lovely, Freezing, Tomboyish Bath, Cirno's Hot Spring",
       "creator": "Mafiamaster",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-04-19T00:21:23Z"
     },
@@ -10185,7 +10306,7 @@
       "artist": "Len",
       "title": "U.N. Owen was Her?",
       "creator": "winber1",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -10195,11 +10316,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2013-01-14T05:47:26Z"
     },
@@ -10208,7 +10331,7 @@
       "artist": "yurika",
       "title": "THE EVENING STAR",
       "creator": "y u z u k i",
-      "source": "",
+      "source": "touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -10217,12 +10340,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-03-27T12:53:28Z"
     },
