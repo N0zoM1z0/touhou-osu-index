@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CATALOG = ROOT / "data" / "catalog.json"
 DEFAULT_CONFIG = ROOT / "config" / "seeds.json"
 DEFAULT_OUTPUT = ROOT / "dist"
+DISCOVERY_CONFIDENCE_ORDER = {"verified": 0, "probable": 1, "candidate": 2, "excluded": 3}
 
 
 def load_catalog(path: Path) -> Catalog:
@@ -76,6 +77,8 @@ def command_import_seeds(args: argparse.Namespace) -> int:
 
 
 def command_discover(args: argparse.Namespace) -> int:
+    if args.max_changes < 0:
+        raise RuntimeError("--max-changes must be zero or greater")
     catalog = load_catalog(args.catalog)
     config = load_config(args.config)
     api = OsuApi.from_env()
@@ -87,16 +90,34 @@ def command_discover(args: argparse.Namespace) -> int:
             discovered[beatmapset_id] = raw
             discovery_evidence.setdefault(beatmapset_id, set()).add(f"discovery_query:{query}")
 
-    changed = 0
+    prepared = []
     for beatmapset_id in sorted(discovered):
         current = catalog.entries.get(beatmapset_id)
         evidence = set(discovery_evidence[beatmapset_id])
         if current:
             evidence.update(current.evidence)
         entry = entry_from_osu(discovered[beatmapset_id], evidence=sorted(evidence), confidence="candidate")
-        _, did_change = catalog.merge(entry)
+        checked_on = entry.last_checked
+        if current:
+            # Reconciliation owns routine freshness updates. Weekly discovery
+            # should not create a diff solely because today's date changed.
+            entry.last_checked = current.last_checked
+        prepared.append((DISCOVERY_CONFIDENCE_ORDER[entry.confidence], beatmapset_id, entry, checked_on))
+
+    changed = 0
+    processed = 0
+    for _, _, entry, checked_on in sorted(prepared):
+        if args.max_changes and changed >= args.max_changes:
+            break
+        merged, did_change = catalog.merge(entry)
+        processed += 1
+        if did_change:
+            merged.last_checked = checked_on
         changed += did_change
-    print(f"Discovery examined {len(discovered)} unique beatmapsets; {changed} entries changed")
+    limit_note = ""
+    if args.max_changes and changed >= args.max_changes and processed < len(prepared):
+        limit_note = f"; change limit {args.max_changes} reached, remainder deferred"
+    print(f"Discovery examined {len(discovered)} unique beatmapsets; {changed} entries changed{limit_note}")
     if args.write:
         catalog.save(args.catalog)
         print(f"Wrote {args.catalog}")
@@ -167,6 +188,12 @@ def parser() -> argparse.ArgumentParser:
             item.add_argument("--workers", type=int, default=4)
         else:
             item.add_argument("--max-pages", type=int, default=4)
+            item.add_argument(
+                "--max-changes",
+                type=int,
+                default=50,
+                help="maximum catalog changes per run; use 0 for unlimited",
+            )
         item.set_defaults(func=function)
 
     reconcile = subparsers.add_parser("reconcile", help="refresh every catalog entry from osu! API")
