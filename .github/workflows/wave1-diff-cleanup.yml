@@ -1,0 +1,60 @@
+name: Wave 1 Diff Cleanup
+
+on:
+  push:
+    branches: [feat/official-theme-packs-wave1]
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild minimal seed diff from main
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from touhou_osu.sources import import_official_pack
+
+          text = subprocess.check_output(
+              ["git", "show", "origin/main:config/seeds.json"],
+              text=True,
+          )
+          old1 = '    {"tag": "R29", "name": "Touhou Chart", "minimum_entries": 20},\n    {"tag": "T65", "name": "Touhou Music Pack", "minimum_entries": 20},'
+          new1 = '    {"tag": "R29", "name": "Touhou Chart", "minimum_entries": 20},\n    {"tag": "T54", "name": "Bad Apple!! Pack - Seductive Temptation", "minimum_entries": 15},\n    {"tag": "T65", "name": "Touhou Music Pack", "minimum_entries": 20},'
+          old2 = '    {"tag": "T65", "name": "Touhou Music Pack", "minimum_entries": 20},\n    {"tag": "T106", "name": "Touhou Pack", "minimum_entries": 8},'
+          new2 = '    {"tag": "T65", "name": "Touhou Music Pack", "minimum_entries": 20},\n    {"tag": "T96", "name": "The Embodiment of Scarlet Devil Pack", "minimum_entries": 15},\n    {"tag": "T106", "name": "Touhou Pack", "minimum_entries": 8},'
+          if text.count(old1) != 1 or text.count(old2) != 1:
+              raise SystemExit("expected official_packs anchors were not found exactly once")
+          text = text.replace(old1, new1).replace(old2, new2)
+          Path("config/seeds.json").write_text(text, encoding="utf-8")
+
+          sources = [
+              {"tag": "T54", "name": "Bad Apple!! Pack - Seductive Temptation", "minimum_entries": 15},
+              {"tag": "T96", "name": "The Embodiment of Scarlet Devil Pack", "minimum_entries": 15},
+          ]
+          for source in sources:
+              entries = import_official_pack(source)
+              ids = [entry.beatmapset_id for entry in entries]
+              assert len(entries) == 15, (source["tag"], len(entries))
+              assert len(ids) == len(set(ids)), source["tag"]
+              print(source["tag"], len(entries), "unique live beatmapsets")
+          PY
+          make check
+          make build
+      - name: Commit minimal diff and remove temporary workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/wave1-diff-cleanup.yml
+          git add config/seeds.json
+          git commit -m "chore: minimize theme pack seed diff"
+          git push origin HEAD:feat/official-theme-packs-wave1
