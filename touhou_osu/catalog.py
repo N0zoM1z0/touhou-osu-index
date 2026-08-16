@@ -61,6 +61,8 @@ class Catalog:
             current.confidence = "excluded"
         elif "manual:verified" in manual:
             current.confidence = "verified"
+        elif "manual:candidate" in manual:
+            current.confidence = "candidate"
         elif CONFIDENCE_RANK[incoming.confidence] > CONFIDENCE_RANK[current.confidence]:
             current.confidence = incoming.confidence
 

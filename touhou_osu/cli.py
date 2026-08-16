@@ -110,7 +110,13 @@ def command_audit_sources(args: argparse.Namespace) -> int:
 def command_hydrate(args: argparse.Namespace) -> int:
     """Fill incomplete source records from public osu! beatmapset pages."""
     catalog = load_catalog(args.catalog)
-    prefixes = ("forum_queue:", "tournament_candidate:", "tournament:google_sheet:")
+    prefixes = (
+        "forum_queue:",
+        "tournament_candidate:",
+        "tournament:google_sheet:",
+        "official_pack:",
+        "official_pack_item:",
+    )
     pending = [
         entry
         for entry in catalog.entries.values()

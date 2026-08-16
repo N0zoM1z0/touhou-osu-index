@@ -57,6 +57,13 @@ class CatalogTests(unittest.TestCase):
         merged, _ = catalog.merge(entry(evidence=["official_pack:T65"], confidence="verified"))
         self.assertEqual(merged.confidence, "excluded")
 
+    def test_manual_candidate_is_sticky(self):
+        catalog = Catalog([entry(evidence=["manual:candidate"], confidence="candidate")])
+        merged, _ = catalog.merge(entry(evidence=["tournament:google_sheet:fixture"], confidence="verified"))
+        self.assertEqual(merged.confidence, "candidate")
+        self.assertIn("manual:candidate", merged.evidence)
+        self.assertIn("tournament:google_sheet:fixture", merged.evidence)
+
     def test_evidence_is_required(self):
         with self.assertRaisesRegex(CatalogError, "evidence"):
             entry(evidence=[]).validate()

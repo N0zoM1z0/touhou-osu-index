@@ -223,11 +223,12 @@
       "original_themes": [],
       "evidence": [
         "discovery_query:Touhou",
+        "manual:excluded",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "verified",
+      "confidence": "excluded",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2008-12-04T08:58:34Z"
     },
@@ -29240,6 +29241,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "manual:candidate",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
