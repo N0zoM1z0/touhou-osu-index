@@ -26,13 +26,13 @@ jobs:
           make check
           make build
       - name: Verify exact live artist-pack allowlists
-        run: python3 tools/_wave2_verify.py live
+        run: PYTHONPATH=. python3 tools/_wave2_verify.py live
       - name: Audit every configured live source
         run: python3 -m touhou_osu audit-sources --json
       - name: Simulate complete source merge
         run: python3 -m touhou_osu import-seeds
       - name: Verify sticky exclusions after merge
-        run: python3 tools/_wave2_verify.py post-import
+        run: PYTHONPATH=. python3 tools/_wave2_verify.py post-import
       - name: Commit formal changes and remove temporary audit tooling
         run: |
           git config user.name "github-actions[bot]"
