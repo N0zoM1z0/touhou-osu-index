@@ -5,10 +5,13 @@ The catalog is built from reproducible public sources declared in
 of them, verify their safety floors, and print their current record counts and
 URLs. Use `python -m touhou_osu audit-sources --json` for automation.
 
-The latest full audit on 2026-08-15 returned **6,397 source records** from
-**27 sources**, representing **2,992 unique beatmapsets** before catalog
-classification and deduplication. Counts below are upstream snapshots, not
-promises that every record is accepted into the public index.
+The last full pre-expansion audit on 2026-08-15 returned **6,397 source
+records** from **27 sources**, representing **2,992 unique beatmapsets** before
+catalog classification and deduplication. The August 2026 coverage expansion
+adds two reproducible Google Sheet tournament pools and one candidate-first
+qualifier collection; see [`docs/source-audit-2026-08.md`](docs/source-audit-2026-08.md)
+for the evidence and exclusion decisions. Counts below are upstream snapshots,
+not promises that every record is accepted into the public index.
 
 ## Historical collections
 
@@ -19,9 +22,13 @@ promises that every record is accepted into the public index.
 | CardinalWolf 2hu 4.5 star plus (pt.3) | 1407 | 1,211 | candidate |
 | 10S Touhou | 6907 | 1,015 | candidate |
 | 4-Touhou Main | 14845 | 11 | probable/original |
+| [5 Digit Touhou Cup 1 Qualifiers](https://osu.ppy.sh/community/forums/topics/1766738) | 12493 | 11 at audit | candidate |
 
-These large snapshots are discovery evidence, not blanket verification. The
-importer uses the osu!Collector API endpoint encoded by each collection ID.
+These snapshots are discovery evidence, not blanket verification. The importer
+uses the osu!Collector API endpoint encoded by each collection ID. 5 Digit
+Touhou Cup 1 is deliberately candidate-first because its official rules permit
+non-Touhou substitutions and an `OTH` category even though the event is
+primarily Touhou-themed.
 
 ## Official osu! packs
 
@@ -37,6 +44,8 @@ Official pack membership is verified evidence. `R29` is the current canonical
 tag for the historical Touhou Chart pack.
 
 ## Tournament pools
+
+### osu!Collector tournament snapshots
 
 | Tournament source | osu!Collector ID | Records | Policy |
 | --- | ---: | ---: | --- |
@@ -63,6 +72,29 @@ those three complete pools are intentionally imported as candidates. Entries
 are promoted only when their own osu! metadata or other independent evidence
 satisfies the classifier.
 
+### Public Google Sheet tournament pools
+
+Some older or smaller Touhou-only tournaments have authoritative public sheets
+but no complete osu!Collector tournament snapshot. `google_sheet_tournaments`
+exports those sheets as XLSX and reads only explicitly configured pool tabs.
+The parser follows workbook relationships, shared strings, inline/formula text
+and hyperlink relationship targets, then deduplicates numeric beatmapset IDs.
+It does not scrape rendered Google HTML and requires no Google API key.
+
+| Tournament source | Selected worksheets | Audited unique sets | Policy |
+| --- | --- | ---: | --- |
+| [Osu! Gensokyo Cup (2025 JP)](https://osu.ppy.sh/community/forums/topics/2089185) | exact `Mappools` | 40 | verified |
+| [-Gensokyo Cup 2](https://osu.ppy.sh/community/forums/topics/1076292) | prefix `Mappool` | 148 | verified |
+
+Both official forum posts explicitly describe their complete pools as Touhou
+related/themed, so membership is trusted tournament evidence. Each source also
+has a conservative `minimum_entries` floor to fail closed if the public sheet
+is replaced, emptied, made private, or structurally changed.
+
+The 2024 Austrian Touhou Cup was re-checked during this audit and is already
+covered by osu!Collector tournament `1865`; it is not duplicated as a Google
+Sheet source.
+
 ## Community queue and API discovery
 
 The [`sd_touhou` BN queue](https://osu.ppy.sh/community/forums/topics/1881813)
@@ -72,11 +104,22 @@ as a candidate until `make hydrate` or the monthly API reconciliation resolves
 its artist/title metadata; unresolved and deleted links never enter the public
 index.
 
-Weekly osu! API discovery searches the configured source aliases, Japanese and
-English Touhou terms, Team Shanghai Alice, ZUN, and related metadata. It uses
+Weekly osu! API discovery searches generic Touhou terms plus every English and
+Japanese Touhou game-title alias already recognized by the deterministic
+classifier. This closes a recall gap where a beatmap's `source` names only a
+specific game (for example `Imperishable Night` or `東方永夜抄`) and contains no
+generic `Touhou`/`東方Project` marker.
+
+A conservative set of established Touhou circle names is also queried to find
+maps whose metadata omits Touhou/game-title terms. Circle-name hits enter as
+**candidates**; a circle match by itself is never verification. Discovery uses
 cursor pagination and limits each automated PR to 50 meaningful catalog
 changes. Search results remain candidates unless the classifier finds explicit
 Touhou source metadata or sufficient independent signals.
+
+A free-form song-title alias corpus is intentionally not added here. Song-title
+aliases need a maintained theme-to-alias provenance dataset to avoid collisions
+and false promotion; see the August 2026 source audit for the boundary.
 
 ## Reproduction and safety
 
