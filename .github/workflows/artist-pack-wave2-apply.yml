@@ -36,7 +36,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -- data/catalog.json
-          python3 tools/_wave2_apply.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path("data/catalog.json")
+          catalog = json.loads(path.read_text(encoding="utf-8"))
+          item = next(x for x in catalog["entries"] if int(x["beatmapset_id"]) == 605290)
+          if item["confidence"] != "verified" or "tournament:1432" not in item["evidence"]:
+              raise SystemExit("605290 baseline changed before final targeted correction")
+          item["evidence"] = sorted(set(item["evidence"]) | {"manual:excluded"}, key=str.casefold)
+          item["confidence"] = "excluded"
+          path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          PY
           git rm .github/workflows/artist-pack-wave2-audit.yml
           git rm .github/workflows/artist-pack-wave2-inventory.yml
           git rm .github/workflows/artist-pack-wave2-apply.yml
