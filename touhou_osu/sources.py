@@ -11,6 +11,7 @@ from datetime import date
 from html.parser import HTMLParser
 
 from .classifier import apply_classification
+from .google_sheets import fetch_google_sheet_beatmapset_ids
 from .http import get_json, get_text
 from .models import Entry, normalize_mode
 
@@ -261,6 +262,34 @@ def import_wiki_tournament(source: dict) -> list[Entry]:
     ]
 
 
+def import_google_sheet_tournament(source: dict) -> list[Entry]:
+    """Import a reproducible tournament pool from selected Google Sheet tabs."""
+    source_id = str(source["id"])
+    trusted = bool(source.get("trusted", True))
+    evidence = (
+        f"tournament:google_sheet:{source_id}"
+        if trusted
+        else f"tournament_candidate:google_sheet:{source_id}"
+    )
+    confidence = "verified" if trusted else source.get("confidence", "candidate")
+    beatmapset_ids = fetch_google_sheet_beatmapset_ids(
+        source["spreadsheet_id"],
+        sheet_names=source.get("sheet_names", ()),
+        sheet_prefixes=source.get("sheet_prefixes", ()),
+    )
+    return [
+        apply_classification(
+            Entry(
+                beatmapset_id=beatmapset_id,
+                evidence=[evidence],
+                confidence=confidence,
+                last_checked=date.today().isoformat(),
+            )
+        )
+        for beatmapset_id in beatmapset_ids
+    ]
+
+
 def _forum_page_url(url: str, start: int | None) -> str:
     if start is None:
         return url
@@ -322,6 +351,8 @@ def source_url(kind: str, source: dict) -> str:
         return source.get("api_url", f"https://osucollector.com/api/tournaments/{source['id']}")
     if kind == "official_packs":
         return f"https://osu.ppy.sh/beatmaps/packs/{source['tag']}"
+    if kind == "google_sheet_tournaments":
+        return f"https://docs.google.com/spreadsheets/d/{source['spreadsheet_id']}/edit"
     return "unknown"
 
 
@@ -334,6 +365,8 @@ def import_source(kind: str, source: dict) -> list[Entry]:
         return import_official_pack(source)
     if kind == "wiki_tournaments":
         return import_wiki_tournament(source)
+    if kind == "google_sheet_tournaments":
+        return import_google_sheet_tournament(source)
     if kind == "forum_queues":
         return import_forum_queue(source)
     raise ValueError(f"unsupported seed source type: {kind}")
@@ -347,6 +380,7 @@ def import_all(config: dict, *, workers: int = 4) -> tuple[list[Entry], list[Sou
             "osu_collector_tournaments",
             "official_packs",
             "wiki_tournaments",
+            "google_sheet_tournaments",
             "forum_queues",
         )
         for source in config.get(kind, [])
