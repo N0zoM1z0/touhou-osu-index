@@ -1,0 +1,53 @@
+name: Wave 2 Config Cleanup
+
+on:
+  push:
+    branches: [feat/artist-packs-wave2-audit]
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore compact source config without changing semantics
+        run: python3 tools/_wave2_config_cleanup.py
+      - name: Unit tests and build
+        run: |
+          make check
+          make build
+      - name: Re-audit all live sources
+        run: python3 -m touhou_osu audit-sources --json
+      - name: Re-simulate complete source merge
+        run: python3 -m touhou_osu import-seeds
+      - name: Verify withheld boundaries survive again
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          catalog = json.loads(Path("data/catalog.json").read_text(encoding="utf-8"))
+          by_id = {int(item["beatmapset_id"]): item for item in catalog["entries"]}
+          if by_id[605290]["confidence"] != "excluded" or "manual:excluded" not in by_id[605290]["evidence"]:
+              raise SystemExit("605290 exclusion did not survive the second full merge")
+          if by_id[495283]["confidence"] not in {"candidate", "excluded"}:
+              raise SystemExit("495283 crossed the Seihou boundary during the second full merge")
+          if any(e.startswith("official_pack_item:") for e in by_id[495283]["evidence"]):
+              raise SystemExit("495283 received audited pack evidence")
+          PY
+      - name: Commit only compact formal config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -- data/catalog.json
+          git rm .github/workflows/wave2-config-cleanup.yml
+          git rm tools/_wave2_config_cleanup.py
+          git add config/seeds.json
+          git commit -m "chore: minimize audited artist pack config diff"
+          git push origin HEAD:feat/artist-packs-wave2-audit
