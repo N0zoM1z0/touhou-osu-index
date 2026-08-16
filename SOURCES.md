@@ -5,13 +5,14 @@ The catalog is built from reproducible public sources declared in
 of them, verify their safety floors, and print their current record counts and
 URLs. Use `python -m touhou_osu audit-sources --json` for automation.
 
-The last full pre-expansion audit on 2026-08-15 returned **6,397 source
-records** from **27 sources**, representing **2,992 unique beatmapsets** before
-catalog classification and deduplication. The August 2026 coverage expansion
-adds two reproducible Google Sheet tournament pools and one candidate-first
-qualifier collection; see [`docs/source-audit-2026-08.md`](docs/source-audit-2026-08.md)
-for the evidence and exclusion decisions. Counts below are upstream snapshots,
-not promises that every record is accepted into the public index.
+The latest full audit on 2026-08-16 returned **6,596 source records** from
+**30 sources**, representing **3,019 unique beatmapsets** before catalog
+classification and deduplication. The August 2026 coverage expansion adds two
+reproducible Google Sheet tournament pools and one candidate-first qualifier
+collection; see [`docs/source-audit-2026-08.md`](docs/source-audit-2026-08.md)
+for the evidence, catalog intersections, and exclusion decisions. Counts below
+are upstream snapshots, not promises that every record is accepted into the
+public index.
 
 ## Historical collections
 
@@ -22,7 +23,7 @@ not promises that every record is accepted into the public index.
 | CardinalWolf 2hu 4.5 star plus (pt.3) | 1407 | 1,211 | candidate |
 | 10S Touhou | 6907 | 1,015 | candidate |
 | 4-Touhou Main | 14845 | 11 | probable/original |
-| [5 Digit Touhou Cup 1 Qualifiers](https://osu.ppy.sh/community/forums/topics/1766738) | 12493 | 11 at audit | candidate |
+| [5 Digit Touhou Cup 1 Qualifiers](https://osu.ppy.sh/community/forums/topics/1766738) | 12493 | 11 | candidate |
 
 These snapshots are discovery evidence, not blanket verification. The importer
 uses the osu!Collector API endpoint encoded by each collection ID. 5 Digit
@@ -99,7 +100,7 @@ Sheet source.
 
 The [`sd_touhou` BN queue](https://osu.ppy.sh/community/forums/topics/1881813)
 is followed across every public forum page using the last post ID as the next
-cursor. The 2026-08-15 audit found 194 unique beatmapsets. A queue link is kept
+cursor. The 2026-08-16 audit found 194 unique beatmapsets. A queue link is kept
 as a candidate until `make hydrate` or the monthly API reconciliation resolves
 its artist/title metadata; unresolved and deleted links never enter the public
 index.
