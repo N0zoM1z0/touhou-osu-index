@@ -1,0 +1,25 @@
+name: Branch Merge Verify
+
+on:
+  push:
+    branches: [feat/touhou-source-coverage-2026-08]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests and validation
+        run: make check
+      - name: Build current accepted exports
+        run: make build
+      - name: Simulate complete live seed merge
+        run: python3 -m touhou_osu import-seeds
+      - name: Re-audit all live source floors
+        run: python3 -m touhou_osu audit-sources --json
