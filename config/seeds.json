@@ -132,7 +132,9 @@
   ],
   "official_packs": [
     {"tag": "R29", "name": "Touhou Chart", "minimum_entries": 20},
+    {"tag": "T54", "name": "Bad Apple!! Pack - Seductive Temptation", "minimum_entries": 15},
     {"tag": "T65", "name": "Touhou Music Pack", "minimum_entries": 20},
+    {"tag": "T96", "name": "The Embodiment of Scarlet Devil Pack", "minimum_entries": 15},
     {"tag": "T106", "name": "Touhou Pack", "minimum_entries": 8},
     {"tag": "FQ55", "name": "Stan Touhou Music Pack", "minimum_entries": 7},
     {"tag": "FQ35", "name": "UNDEAD CORPORATION Touhou pack", "minimum_entries": 8}
