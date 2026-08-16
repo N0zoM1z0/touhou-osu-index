@@ -5,6 +5,7 @@ from touhou_osu.sources import (
     _collector_entry,
     import_collector_tournament,
     import_forum_queue,
+    import_official_pack,
     parse_beatmap_links,
     parse_beatmapset_page,
     parse_wiki_links,
@@ -93,6 +94,77 @@ class SourceParserTests(unittest.TestCase):
 
         self.assertEqual(entries[0].confidence, "candidate")
         self.assertEqual(entries[0].evidence, ["tournament_candidate:526"])
+
+
+    @patch("touhou_osu.sources.get_text")
+    def test_audited_official_pack_only_emits_verified_ids(self, mock_get_text):
+        mock_get_text.return_value = """
+        <a href="https://osu.ppy.sh/beatmapsets/101#osu/1">
+          <span class="beatmap-pack-items__artist">Touhou Artist</span>
+          <span class="beatmap-pack-items__title">Keep A</span>
+        </a>
+        <a href="https://osu.ppy.sh/beatmapsets/202#osu/2">
+          <span class="beatmap-pack-items__artist">Original Artist</span>
+          <span class="beatmap-pack-items__title">Do Not Trust</span>
+        </a>
+        <a href="https://osu.ppy.sh/beatmapsets/303#osu/3">
+          <span class="beatmap-pack-items__artist">Touhou Artist</span>
+          <span class="beatmap-pack-items__title">Keep B</span>
+        </a>
+        """
+        entries = import_official_pack(
+            {
+                "tag": "A99",
+                "verified_ids": [303, 101],
+                "minimum_source_entries": 3,
+            }
+        )
+        self.assertEqual([entry.beatmapset_id for entry in entries], [303, 101])
+        self.assertTrue(all(entry.evidence == ["official_pack_item:A99"] for entry in entries))
+        self.assertTrue(all(entry.confidence == "verified" for entry in entries))
+
+    @patch("touhou_osu.sources.get_text")
+    def test_audited_official_pack_fails_if_verified_id_disappears(self, mock_get_text):
+        mock_get_text.return_value = """
+        <a href="https://osu.ppy.sh/beatmapsets/101#osu/1">
+          <span class="beatmap-pack-items__artist">Artist</span>
+          <span class="beatmap-pack-items__title">Title</span>
+        </a>
+        <a href="https://osu.ppy.sh/beatmapsets/303#osu/3">
+          <span class="beatmap-pack-items__artist">Other Artist</span>
+          <span class="beatmap-pack-items__title">Other Title</span>
+        </a>
+        """
+        with self.assertRaisesRegex(RuntimeError, "no longer contains audited beatmapsets"):
+            import_official_pack({"tag": "A99", "verified_ids": [101, 202]})
+
+    @patch("touhou_osu.sources.get_text")
+    def test_audited_official_pack_enforces_raw_source_floor(self, mock_get_text):
+        mock_get_text.return_value = """
+        <a href="https://osu.ppy.sh/beatmapsets/101#osu/1">
+          <span class="beatmap-pack-items__artist">Artist</span>
+          <span class="beatmap-pack-items__title">Title</span>
+        </a>
+        """
+        with self.assertRaisesRegex(RuntimeError, "raw beatmapsets"):
+            import_official_pack(
+                {
+                    "tag": "A99",
+                    "verified_ids": [101],
+                    "minimum_source_entries": 2,
+                }
+            )
+
+    @patch("touhou_osu.sources.get_text")
+    def test_audited_official_pack_rejects_duplicate_verified_ids(self, mock_get_text):
+        mock_get_text.return_value = """
+        <a href="https://osu.ppy.sh/beatmapsets/101#osu/1">
+          <span class="beatmap-pack-items__artist">Artist</span>
+          <span class="beatmap-pack-items__title">Title</span>
+        </a>
+        """
+        with self.assertRaisesRegex(RuntimeError, "duplicate verified_ids"):
+            import_official_pack({"tag": "A99", "verified_ids": [101, 101]})
 
 
 if __name__ == "__main__":

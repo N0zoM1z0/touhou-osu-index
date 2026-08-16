@@ -230,7 +230,31 @@ def import_official_pack(source: dict) -> list[Entry]:
     tag = source["tag"]
     url = source.get("url", f"https://osu.ppy.sh/beatmaps/packs/{tag}")
     links = parse_beatmap_links(get_text(url))
-    evidence = f"official_pack:{tag}"
+
+    verified_ids = source.get("verified_ids")
+    if verified_ids is None:
+        evidence = f"official_pack:{tag}"
+    else:
+        verified_ids = [int(value) for value in verified_ids]
+        if len(verified_ids) != len(set(verified_ids)):
+            raise RuntimeError(f"official pack {tag} contains duplicate verified_ids")
+
+        minimum_source_entries = int(source.get("minimum_source_entries", len(verified_ids)))
+        if len(links) < minimum_source_entries:
+            raise RuntimeError(
+                f"official pack {tag} returned {len(links)} raw beatmapsets; "
+                f"expected at least {minimum_source_entries}"
+            )
+
+        by_id = {item["id"]: item for item in links}
+        missing = [beatmapset_id for beatmapset_id in verified_ids if beatmapset_id not in by_id]
+        if missing:
+            raise RuntimeError(
+                f"official pack {tag} no longer contains audited beatmapsets: {missing}"
+            )
+        links = [by_id[beatmapset_id] for beatmapset_id in verified_ids]
+        evidence = f"official_pack_item:{tag}"
+
     return [
         Entry(
             beatmapset_id=item["id"],

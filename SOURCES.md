@@ -33,16 +33,28 @@ primarily Touhou-themed.
 
 ## Official osu! packs
 
-| Pack | Canonical tag | Records |
-| --- | --- | ---: |
-| [Touhou Chart](https://osu.ppy.sh/beatmaps/packs/R29) | R29 | 21 |
-| [Touhou Music Pack](https://osu.ppy.sh/beatmaps/packs/T65) | T65 | 20 |
-| [Touhou Pack](https://osu.ppy.sh/beatmaps/packs/T106) | T106 | 8 |
-| [Stan Touhou Music Pack](https://osu.ppy.sh/beatmaps/packs/FQ55) | FQ55 | 7 |
-| [UNDEAD CORPORATION Touhou pack](https://osu.ppy.sh/beatmaps/packs/FQ35) | FQ35 | 8 |
+Whole-pack Touhou/theme packs use `official_pack:<tag>` and remain verified membership evidence. Mixed Featured Artist packs are different: they are imported only through an explicit, reviewed `verified_ids` allowlist and receive `official_pack_item:<tag>` evidence. The importer also checks the live raw pack size and fails closed if an audited ID disappears, so later upstream additions are never silently trusted.
 
-Official pack membership is verified evidence. `R29` is the current canonical
-tag for the historical Touhou Chart pack.
+| Pack | Canonical tag | Raw records | Audited verified records |
+| --- | --- | ---: | ---: |
+| [Touhou Chart](https://osu.ppy.sh/beatmaps/packs/R29) | R29 | 21 | whole pack |
+| [Bad Apple!! Pack - Seductive Temptation](https://osu.ppy.sh/beatmaps/packs/T54) | T54 | 15 | whole pack |
+| [Touhou Music Pack](https://osu.ppy.sh/beatmaps/packs/T65) | T65 | 20 | whole pack |
+| [The Embodiment of Scarlet Devil Pack](https://osu.ppy.sh/beatmaps/packs/T96) | T96 | 15 | whole pack |
+| [Touhou Pack](https://osu.ppy.sh/beatmaps/packs/T106) | T106 | 8 | whole pack |
+| [Stan Touhou Music Pack](https://osu.ppy.sh/beatmaps/packs/FQ55) | FQ55 | 7 | whole pack |
+| [UNDEAD CORPORATION Touhou pack](https://osu.ppy.sh/beatmaps/packs/FQ35) | FQ35 | 8 | whole pack |
+| [Rin Pack](https://osu.ppy.sh/beatmaps/packs/A51) | A51 | 13 | 13 |
+| [Demetori Pack](https://osu.ppy.sh/beatmaps/packs/A18) | A18 | 23 | 23 |
+| [FELT Pack](https://osu.ppy.sh/beatmaps/packs/A33) | A33 | 11 | 9 |
+| [Halozy Pack](https://osu.ppy.sh/beatmaps/packs/A32) | A32 | 11 | 10 |
+| [Yuuhei Satellite Pack](https://osu.ppy.sh/beatmaps/packs/A16) | A16 | 34 | 34 |
+| [Yuuhei Satellite & Catharsis Pack 2](https://osu.ppy.sh/beatmaps/packs/A85) | A85 | 22 | 15 |
+| [Yuuhei Satellite & Catharsis Pack 3](https://osu.ppy.sh/beatmaps/packs/A86) | A86 | 22 | 16 |
+| [Yuuhei Satellite & Catharsis Pack 4](https://osu.ppy.sh/beatmaps/packs/A87) | A87 | 22 | 20 |
+| [Silver Forest Pack](https://osu.ppy.sh/beatmaps/packs/A23) | A23 | 30 | 30 |
+
+The nine audited artist packs contain 188 memberships in total. Exactly 170 were individually verified as Touhou compositions; 18 original, Kantai Collection, or Seihou memberships are deliberately withheld. See [`docs/source-audit-2026-08-artist-packs-wave2.md`](docs/source-audit-2026-08-artist-packs-wave2.md) for the item-level decisions and provenance.
 
 ## Tournament pools
 
