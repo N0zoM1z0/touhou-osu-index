@@ -1,7 +1,8 @@
 name: Wave 3 Apply
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [feat/official-packs-wave3-scan]
 
 concurrency:
   group: wave3-apply
@@ -22,7 +23,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Apply formal third-wave source changes
-        run: PYTHONPATH=. python3 tools/_wave3_apply.py
+        run: |
+          PYTHONPATH=. python3 tools/_wave3_apply.py
+          PYTHONPATH=. python3 tools/_wave3_boundary_patch.py
       - name: Unit tests and generated exports
         run: |
           make check
@@ -81,6 +84,7 @@ jobs:
           git rm .github/workflows/wave3-apply.yml
           git rm .github/workflows/wave3-diagnose-boundary.yml
           git rm tools/_wave3_apply.py
+          git rm tools/_wave3_boundary_patch.py
           git rm tools/_wave3_verify.py
           git rm tools/_wave3_proposal_audit.py
           git add config/seeds.json touhou_osu/sources.py touhou_osu/cli.py touhou_osu/catalog.py touhou_osu/classifier.py \
