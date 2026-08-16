@@ -1,8 +1,7 @@
 name: Wave 3 Apply
 
 on:
-  push:
-    branches: [feat/official-packs-wave3-scan]
+  workflow_dispatch:
 
 concurrency:
   group: wave3-apply
@@ -54,28 +53,38 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Discard the broad generated merge and preserve only the audited
-          # manual correction discovered in this wave.
+          # Discard the broad generated merge and preserve only the two audited
+          # manual boundary decisions discovered in this wave.
           git checkout -- data/catalog.json
           python3 - <<'PY'
           import json
           from pathlib import Path
           path = Path('data/catalog.json')
           catalog = json.loads(path.read_text(encoding='utf-8'))
-          item = next(x for x in catalog['entries'] if int(x['beatmapset_id']) == 4135)
-          if item['confidence'] != 'verified' or 'osu_source' not in item['evidence']:
+          by_id = {int(x['beatmapset_id']): x for x in catalog['entries']}
+
+          false_source = by_id[4135]
+          if false_source['confidence'] != 'verified' or 'osu_source' not in false_source['evidence']:
               raise SystemExit('4135 baseline changed before final targeted correction')
-          item['evidence'] = sorted(set(item['evidence']) | {'manual:excluded'}, key=str.casefold)
-          item['confidence'] = 'excluded'
+          false_source['evidence'] = sorted(set(false_source['evidence']) | {'manual:excluded'}, key=str.casefold)
+          false_source['confidence'] = 'excluded'
+
+          seihou = by_id[495283]
+          if seihou['confidence'] != 'candidate':
+              raise SystemExit('495283 baseline changed before final sticky candidate correction')
+          seihou['evidence'] = sorted(set(seihou['evidence']) | {'manual:candidate'}, key=str.casefold)
+          seihou['confidence'] = 'candidate'
+
           path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
           PY
 
           git rm .github/workflows/wave3-apply.yml
+          git rm .github/workflows/wave3-diagnose-boundary.yml
           git rm tools/_wave3_apply.py
           git rm tools/_wave3_verify.py
           git rm tools/_wave3_proposal_audit.py
-          git add config/seeds.json touhou_osu/sources.py touhou_osu/cli.py \
-            tests/test_sources.py tests/test_hydrate_sources.py tests/test_classifier.py \
-            data/catalog.json SOURCES.md docs/source-audit-2026-08-official-packs-wave3.md
+          git add config/seeds.json touhou_osu/sources.py touhou_osu/cli.py touhou_osu/catalog.py touhou_osu/classifier.py \
+            tests/test_sources.py tests/test_hydrate_sources.py tests/test_classifier.py tests/test_catalog.py \
+            data/catalog.json SOURCES.md CONTRIBUTING.md docs/source-audit-2026-08-official-packs-wave3.md
           git commit -m "feat: add audited Featured and Spotlight pack coverage"
           git push origin HEAD:feat/official-packs-wave3-scan
