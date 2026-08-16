@@ -19,6 +19,8 @@ jobs:
           python-version: "3.12"
       - name: Apply audited source decisions
         run: python3 tools/_wave2_apply.py
+      - name: Isolate the missing-ID regression fixture
+        run: python3 tools/_wave2_fix_fixture.py
       - name: Unit tests and generated exports
         run: |
           make check
@@ -53,6 +55,7 @@ jobs:
           git rm .github/workflows/artist-pack-wave2-apply.yml
           git rm tools/_wave2_apply.py
           git rm tools/_wave2_verify.py
+          git rm tools/_wave2_fix_fixture.py
           git add config/seeds.json touhou_osu/sources.py touhou_osu/classifier.py tests/test_sources.py tests/test_classifier.py data/catalog.json SOURCES.md docs/source-audit-2026-08-artist-packs-wave2.md
           git commit -m "feat: add audited Touhou artist pack sources"
           git push origin HEAD:feat/artist-packs-wave2-audit
