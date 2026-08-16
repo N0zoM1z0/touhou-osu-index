@@ -1,0 +1,93 @@
+name: Branch Source Verify
+
+on:
+  push:
+    branches: [feat/touhou-source-coverage-2026-08]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests and catalog validation
+        run: make check
+      - name: Build accepted exports
+        run: make build
+      - name: Audit new-source catalog intersections
+        run: |
+          python3 - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.sources import import_source
+
+          config = json.loads(Path("config/seeds.json").read_text(encoding="utf-8"))
+          catalog = Catalog.load(Path("data/catalog.json"))
+          targets = [
+              ("google_sheet_tournaments", "ogc-2025-jp"),
+              ("google_sheet_tournaments", "gensokyo-cup-2"),
+              ("osu_collector_collections", "12493"),
+          ]
+
+          summaries = []
+          for kind, target_id in targets:
+              source = next(
+                  item
+                  for item in config[kind]
+                  if str(item["id"]) == target_id
+              )
+              imported = import_source(kind, source)
+              minimum = int(source.get("minimum_entries", 1))
+              if len(imported) < minimum:
+                  raise SystemExit(
+                      f"{kind}/{target_id}: {len(imported)} < minimum_entries {minimum}"
+                  )
+
+              existing = []
+              missing = []
+              confidence = Counter()
+              candidate_promotions = []
+              accepted_reinforced = []
+              for incoming in imported:
+                  current = catalog.entries.get(incoming.beatmapset_id)
+                  if current is None:
+                      missing.append(incoming.beatmapset_id)
+                      continue
+                  existing.append(incoming.beatmapset_id)
+                  confidence[current.confidence] += 1
+                  if current.confidence == "candidate" and incoming.confidence in {
+                      "probable",
+                      "verified",
+                  }:
+                      candidate_promotions.append(incoming.beatmapset_id)
+                  if current.confidence in {"probable", "verified"}:
+                      accepted_reinforced.append(incoming.beatmapset_id)
+
+              summaries.append(
+                  {
+                      "kind": kind,
+                      "id": target_id,
+                      "name": source.get("name", target_id),
+                      "imported": len(imported),
+                      "existing_in_catalog": len(existing),
+                      "missing_from_catalog": len(missing),
+                      "current_confidence": dict(sorted(confidence.items())),
+                      "candidate_to_accepted_if_merged": len(candidate_promotions),
+                      "already_accepted_reinforced": len(accepted_reinforced),
+                      "candidate_promotion_ids": candidate_promotions,
+                      "missing_ids": missing,
+                  }
+              )
+
+          print(json.dumps(summaries, ensure_ascii=False, indent=2))
+          PY
+      - name: Audit every configured live source
+        run: python3 -m touhou_osu audit-sources --json
