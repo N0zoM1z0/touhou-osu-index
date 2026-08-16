@@ -82,8 +82,14 @@ path.write_text(text.replace(marker, test + marker), encoding="utf-8")
 
 replace_once(
     Path("CONTRIBUTING.md"),
-    "Manual evidence is sticky: automated refreshes update osu! metadata but do not override a manual inclusion or exclusion.\n",
-    "Manual evidence is sticky: automated refreshes update osu! metadata but do not override `manual:verified`, `manual:excluded`, or a reviewed `manual:candidate` boundary. Use `manual:candidate` when an item is relevant enough to retain for review but repository scope intentionally prevents automatic acceptance (for example a ZUN-composed Seihou track).\n",
+    "Manual evidence is sticky: automated refreshes update osu! metadata but do not\noverride a manual inclusion or exclusion.\n",
+    "Manual evidence is sticky: automated refreshes update osu! metadata but do not\noverride `manual:verified`, `manual:excluded`, or a reviewed `manual:candidate`\nboundary. Use `manual:candidate` when an item is relevant enough to retain for\nreview but repository scope intentionally prevents automatic acceptance (for\nexample a ZUN-composed Seihou track).\n",
+)
+
+replace_once(
+    Path("CONTRIBUTING.md"),
+    "4. Add `manual:verified` or `manual:excluded` to `evidence` when making a\n   definitive judgment.\n",
+    "4. Add `manual:verified`, `manual:excluded`, or `manual:candidate` to\n   `evidence` when making a sticky reviewed judgment.\n",
 )
 
 # Record why this new state is needed in the wave audit itself.
