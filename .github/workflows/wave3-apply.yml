@@ -1,0 +1,81 @@
+name: Wave 3 Apply
+
+on:
+  push:
+    branches: [feat/official-packs-wave3-scan]
+
+concurrency:
+  group: wave3-apply
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply formal third-wave source changes
+        run: PYTHONPATH=. python3 tools/_wave3_apply.py
+      - name: Unit tests and generated exports
+        run: |
+          make check
+          make build
+      - name: Verify exact live audited batch
+        run: PYTHONPATH=. python3 tools/_wave3_verify.py live
+      - name: Audit every configured live source
+        run: |
+          python3 -m touhou_osu audit-sources --json | tee /tmp/wave3-sources.json
+          python3 - <<'PY'
+          import json
+          data = json.load(open('/tmp/wave3-sources.json', encoding='utf-8'))
+          expected = (6880, 3069, 42)
+          actual = (data['source_records'], data['unique_beatmapsets'], len(data['sources']))
+          if actual != expected:
+              raise SystemExit(f'full source audit drift: {actual} != {expected}')
+          batch = [s for s in data['sources'] if s['kind'] == 'official_pack_batches']
+          if len(batch) != 1 or batch[0]['beatmapsets'] != 84:
+              raise SystemExit(f'unexpected batch report: {batch}')
+          print('Full source audit matches expected wave3 expansion:', actual)
+          PY
+      - name: Simulate complete source merge
+        run: python3 -m touhou_osu import-seeds --write
+      - name: Verify post-merge confidence boundaries
+        run: PYTHONPATH=. python3 tools/_wave3_verify.py post-import
+      - name: Commit formal changes and remove temporary tooling
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Discard the broad generated merge and preserve only the audited
+          # manual correction discovered in this wave.
+          git checkout -- data/catalog.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/catalog.json')
+          catalog = json.loads(path.read_text(encoding='utf-8'))
+          item = next(x for x in catalog['entries'] if int(x['beatmapset_id']) == 4135)
+          if item['confidence'] != 'verified' or 'osu_source' not in item['evidence']:
+              raise SystemExit('4135 baseline changed before final targeted correction')
+          item['evidence'] = sorted(set(item['evidence']) | {'manual:excluded'}, key=str.casefold)
+          item['confidence'] = 'excluded'
+          path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+          git rm .github/workflows/wave3-apply.yml
+          git rm tools/_wave3_apply.py
+          git rm tools/_wave3_verify.py
+          git rm tools/_wave3_proposal_audit.py
+          git add config/seeds.json touhou_osu/sources.py touhou_osu/cli.py \
+            tests/test_sources.py tests/test_hydrate_sources.py tests/test_classifier.py \
+            data/catalog.json SOURCES.md docs/source-audit-2026-08-official-packs-wave3.md
+          git commit -m "feat: add audited Featured and Spotlight pack coverage"
+          git push origin HEAD:feat/official-packs-wave3-scan
