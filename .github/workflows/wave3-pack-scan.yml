@@ -4,29 +4,34 @@ on:
   push:
     branches: [feat/official-packs-wave3-scan]
 
+concurrency:
+  group: wave3-official-pack-scan
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
 jobs:
   scan:
     runs-on: ubuntu-latest
+    env:
+      OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+      OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Crawl official pack indexes and measure Touhou intersections
+      - name: Enumerate Featured Artist and modern Spotlight packs through osu! API
         run: |
           python3 - <<'PY'
-          import html
           import json
-          import re
           import time
-          import urllib.error
-          import urllib.request
+          from datetime import datetime, timezone
           from pathlib import Path
 
-          from touhou_osu.sources import parse_beatmap_links
+          from touhou_osu.classifier import KNOWN_ARTISTS, TOUHOU_TAG_TOKENS, contains_any, is_explicit_touhou_source, normalize
+          from touhou_osu.osu_api import OsuApi
 
           TARGET_ARTISTS = {
               "a-one", "adust rain", "blankfield", "down", "hamu", "innocent key",
@@ -34,120 +39,131 @@ jobs:
               "takamachi walk", "tsunamix", "undead corporation",
               "yuuhei satellite", "senya", "rin", "function phantom",
           }
-          TOUHOU_EVIDENCE_PREFIXES = (
-              "official_pack:", "official_pack_item:", "tournament:", "tmc:",
-          )
+          TARGET_ARTISTS |= {normalize(value) for value in KNOWN_ARTISTS}
 
-          def fetch(url: str) -> str:
-              req = urllib.request.Request(url, headers={"User-Agent": "touhou-osu-index-source-audit/1"})
-              delay = 1.0
-              for attempt in range(8):
-                  try:
-                      with urllib.request.urlopen(req, timeout=30) as response:
-                          return response.read().decode("utf-8", errors="replace")
-                  except urllib.error.HTTPError as exc:
-                      if exc.code not in (429, 502, 503, 504) or attempt == 7:
-                          raise
-                      time.sleep(delay)
-                      delay = min(delay * 2, 20)
-              raise RuntimeError(url)
-
-          def pack_title(text: str, tag: str) -> str:
-              match = re.search(r"<title>(.*?)</title>", text, re.I | re.S)
-              if not match:
-                  return tag
-              title = html.unescape(re.sub(r"\s+", " ", match.group(1))).strip()
-              return title.split(" · ", 1)[0].strip() or tag
-
-          def collect_tags(pack_type: str, prefix: str) -> list[str]:
-              seen = set()
-              no_new_pages = 0
-              tag_re = re.compile(r"packs(?:/|\\/)" + re.escape(prefix) + r"(\d+)")
-              for page in range(1, 80):
-                  text = fetch(f"https://osu.ppy.sh/beatmaps/packs?type={pack_type}&page={page}")
-                  tags = {prefix + number for number in tag_re.findall(text)}
-                  new = tags - seen
-                  if new:
-                      seen.update(new)
-                      no_new_pages = 0
-                  else:
-                      no_new_pages += 1
-                  if no_new_pages >= 2:
-                      break
-                  time.sleep(0.15)
-              if not seen:
-                  raise RuntimeError(f"failed to extract any {prefix} pack tags from type={pack_type}")
-              return sorted(seen, key=lambda value: int(re.search(r"\d+", value).group()))
-
+          api = OsuApi.from_env()
           catalog = json.loads(Path("data/catalog.json").read_text(encoding="utf-8"))
           by_id = {int(item["beatmapset_id"]): item for item in catalog["entries"]}
-          result = {"categories": {}, "a2": None}
 
-          a2_text = fetch("https://osu.ppy.sh/beatmaps/packs/A2")
-          a2_links = parse_beatmap_links(a2_text)
-          if len(a2_links) != 7:
-              raise RuntimeError(f"A2 changed: expected 7 entries, got {len(a2_links)}")
-          result["a2"] = {
-              "tag": "A2",
-              "title": pack_title(a2_text, "A2"),
-              "entries": [
-                  {
-                      "id": item["id"], "artist": item["artist"], "title": item["title"],
-                      "catalog_confidence": by_id.get(item["id"], {}).get("confidence", "missing"),
-                      "catalog_source": by_id.get(item["id"], {}).get("source", ""),
-                      "catalog_evidence": by_id.get(item["id"], {}).get("evidence", []),
-                  }
-                  for item in a2_links
-              ],
-          }
-          print("A2", len(a2_links), [(x["id"], x["artist"], x["title"]) for x in a2_links])
+          def list_packs(pack_type: str) -> list[dict]:
+              rows = []
+              cursor = None
+              for page in range(100):
+                  params = {"type": pack_type}
+                  if cursor:
+                      params["cursor_string"] = cursor
+                  payload = api.get("/beatmaps/packs", params)
+                  batch = payload.get("beatmap_packs", [])
+                  rows.extend(batch)
+                  cursor = payload.get("cursor_string")
+                  print(pack_type, "page", page + 1, "batch", len(batch), "total", len(rows), "cursor", bool(cursor))
+                  if not cursor:
+                      break
+                  time.sleep(1.05)
+              else:
+                  raise RuntimeError(f"{pack_type} pagination exceeded safety limit")
+              if not rows:
+                  raise RuntimeError(f"osu! API returned no {pack_type} packs")
+              return rows
 
-          for pack_type, prefix in (("featured", "F"), ("chart", "R")):
-              tags = collect_tags(pack_type, prefix)
-              print(pack_type, "pack_count", len(tags), "range", (tags[0], tags[-1]))
-              candidates = []
-              for index, tag in enumerate(tags, 1):
-                  text = fetch(f"https://osu.ppy.sh/beatmaps/packs/{tag}")
-                  links = parse_beatmap_links(text)
-                  rows = []
-                  for item in links:
-                      current = by_id.get(item["id"])
-                      artist_key = item["artist"].casefold().strip()
-                      target_artist = artist_key in TARGET_ARTISTS or any(
-                          token in artist_key for token in TARGET_ARTISTS if len(token) >= 5
-                      )
-                      touhou_evidence = False
-                      if current:
-                          evidence = current.get("evidence", [])
-                          touhou_evidence = current.get("confidence") == "verified" or any(
-                              ev == "manual:verified" or ev == "osu_source" or ev.startswith(TOUHOU_EVIDENCE_PREFIXES)
-                              for ev in evidence
-                          )
-                      if target_artist or touhou_evidence:
-                          rows.append({
-                              "id": item["id"], "artist": item["artist"], "title": item["title"],
-                              "target_artist": target_artist,
-                              "catalog_confidence": current.get("confidence", "missing") if current else "missing",
-                              "catalog_source": current.get("source", "") if current else "",
-                              "catalog_evidence": current.get("evidence", []) if current else [],
-                          })
-                  if rows:
-                      candidates.append({
-                          "tag": tag,
-                          "title": pack_title(text, tag),
-                          "raw_count": len(links),
-                          "candidate_rows": rows,
-                      })
-                  if index % 25 == 0:
-                      print(pack_type, "scanned", index, "/", len(tags), "candidate_packs", len(candidates))
-                  time.sleep(0.2)
-              result["categories"][pack_type] = {
-                  "pack_count": len(tags),
-                  "candidate_packs": candidates,
+          def pack_detail(tag: str) -> dict:
+              detail = api.get(f"/beatmaps/packs/{tag}")
+              time.sleep(1.05)
+              return detail
+
+          def iso_year(value: str) -> int:
+              if not value:
+                  return 0
+              return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc).year
+
+          def current_row(raw: dict) -> dict:
+              beatmapset_id = int(raw["id"])
+              current = by_id.get(beatmapset_id, {})
+              source = str(raw.get("source") or "")
+              tags = str(raw.get("tags") or "")
+              artist = str(raw.get("artist") or "")
+              artist_key = normalize(artist)
+              known_artist = artist_key in TARGET_ARTISTS
+              explicit_source = is_explicit_touhou_source(source)
+              touhou_tags = contains_any(tags, TOUHOU_TAG_TOKENS)
+              current_verified = current.get("confidence") == "verified"
+              current_candidate = current.get("confidence") in {"candidate", "probable"}
+              return {
+                  "id": beatmapset_id,
+                  "artist": artist,
+                  "title": raw.get("title", ""),
+                  "source": source,
+                  "tags": tags,
+                  "status": raw.get("status", "unknown"),
+                  "known_touhou_artist": known_artist,
+                  "explicit_touhou_source": explicit_source,
+                  "touhou_tags": touhou_tags,
+                  "catalog_confidence": current.get("confidence", "missing"),
+                  "catalog_evidence": current.get("evidence", []),
+                  "interesting": bool(current_verified or explicit_source or known_artist or (current_candidate and touhou_tags)),
               }
-              print(pack_type, "candidate_packs", len(candidates))
+
+          result = {"a2": {}, "featured": {}, "spotlights": {}}
+
+          a2 = pack_detail("A2")
+          a2_sets = a2.get("beatmapsets", [])
+          if len(a2_sets) != 7:
+              raise RuntimeError(f"A2 changed: expected 7 raw entries, got {len(a2_sets)}")
+          result["a2"] = {
+              "tag": a2.get("tag", "A2"),
+              "name": a2.get("name", ""),
+              "raw_count": len(a2_sets),
+              "entries": [current_row(raw) for raw in a2_sets],
+          }
+          print("A2", [(raw["id"], raw.get("artist"), raw.get("title")) for raw in a2_sets])
+
+          featured = list_packs("featured")
+          featured_candidates = []
+          for pack in featured:
+              name_key = normalize(str(pack.get("name") or ""))
+              if "touhou" in name_key or any(token in name_key for token in TARGET_ARTISTS if len(token) >= 4):
+                  detail = pack_detail(pack["tag"])
+                  rows = [current_row(raw) for raw in detail.get("beatmapsets", [])]
+                  featured_candidates.append({
+                      "tag": pack["tag"],
+                      "name": pack.get("name", ""),
+                      "date": pack.get("date", ""),
+                      "raw_count": len(rows),
+                      "entries": rows,
+                  })
+                  print("featured candidate", pack["tag"], pack.get("name"), len(rows))
+          result["featured"] = {
+              "pack_count": len(featured),
+              "candidates": featured_candidates,
+          }
+
+          charts = list_packs("chart")
+          modern = [pack for pack in charts if iso_year(str(pack.get("date") or "")) >= 2020]
+          spotlight_candidates = []
+          for index, pack in enumerate(modern, 1):
+              detail = pack_detail(pack["tag"])
+              rows = [current_row(raw) for raw in detail.get("beatmapsets", [])]
+              interesting = [row for row in rows if row["interesting"]]
+              if interesting:
+                  spotlight_candidates.append({
+                      "tag": pack["tag"],
+                      "name": pack.get("name", ""),
+                      "date": pack.get("date", ""),
+                      "raw_count": len(rows),
+                      "candidate_rows": interesting,
+                  })
+                  print("spotlight candidate", pack["tag"], pack.get("name"), len(interesting), "/", len(rows))
+              if index % 10 == 0:
+                  print("spotlights scanned", index, "/", len(modern), "candidate packs", len(spotlight_candidates))
+          result["spotlights"] = {
+              "all_chart_pack_count": len(charts),
+              "modern_pack_count": len(modern),
+              "candidate_packs": spotlight_candidates,
+          }
 
           Path("wave3-pack-scan.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print("SUMMARY featured", len(featured), "candidate packs", len(featured_candidates))
+          print("SUMMARY chart", len(charts), "modern", len(modern), "candidate packs", len(spotlight_candidates))
           PY
       - uses: actions/upload-artifact@v4
         with:
