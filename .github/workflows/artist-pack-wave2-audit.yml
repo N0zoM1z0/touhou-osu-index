@@ -24,7 +24,7 @@ jobs:
           from pathlib import Path
 
           from touhou_osu.classifier import contains_any, is_explicit_touhou_source, TOUHOU_TAG_TOKENS
-          from touhou_osu.http import get_text
+          from touhou_osu.http import HttpError, get_text
           from touhou_osu.sources import import_official_pack, parse_beatmapset_page
 
           packs = [
@@ -33,11 +33,26 @@ jobs:
               {"tag": "A33", "name": "FELT Pack", "expected": 11},
               {"tag": "A32", "name": "Halozy Pack", "expected": 11},
               {"tag": "A16", "name": "Yuuhei Satellite Pack", "expected": 34},
-              {"tag": "A85", "name": "Yuuhei Satellite & Shoujo Fractal Pack 2", "expected": 22},
-              {"tag": "A86", "name": "Yuuhei Satellite & Shoujo Fractal Pack 3", "expected": 22},
-              {"tag": "A87", "name": "Yuuhei Satellite & Shoujo Fractal Pack 4", "expected": 22},
+              {"tag": "A85", "name": "Yuuhei Satellite & Catharsis Pack 2", "expected": 22},
+              {"tag": "A86", "name": "Yuuhei Satellite & Catharsis Pack 3", "expected": 22},
+              {"tag": "A87", "name": "Yuuhei Satellite & Catharsis Pack 4", "expected": 22},
               {"tag": "A23", "name": "Silver Forest Pack", "expected": 30},
           ]
+
+          def fetch_page(beatmapset_id: int) -> dict:
+              url = f"https://osu.ppy.sh/beatmapsets/{beatmapset_id}"
+              for attempt in range(6):
+                  try:
+                      text = get_text(url)
+                      time.sleep(0.55)
+                      return parse_beatmapset_page(text)
+                  except HttpError as exc:
+                      if "HTTP 429" not in str(exc) or attempt == 5:
+                          raise
+                      delay = 4 * (attempt + 1)
+                      print(f"429 on {beatmapset_id}; sleeping {delay}s", flush=True)
+                      time.sleep(delay)
+              raise AssertionError("unreachable")
 
           catalog = json.loads(Path("data/catalog.json").read_text(encoding="utf-8"))
           by_id = {int(item["beatmapset_id"]): item for item in catalog["entries"]}
@@ -48,8 +63,8 @@ jobs:
               if len(imported) != pack["expected"]:
                   raise SystemExit(f"{pack['tag']} count changed: {len(imported)} != {pack['expected']}")
               rows = []
-              for idx, item in enumerate(imported, 1):
-                  page = parse_beatmapset_page(get_text(f"https://osu.ppy.sh/beatmapsets/{item.beatmapset_id}"))
+              for item in imported:
+                  page = fetch_page(item.beatmapset_id)
                   source = str(page.get("source") or "")
                   tags = str(page.get("tags") or "")
                   explicit_source = is_explicit_touhou_source(source)
@@ -69,26 +84,26 @@ jobs:
                       "current_confidence": current.get("confidence", "missing"),
                       "current_evidence": current.get("evidence", []),
                   })
-                  if idx % 10 == 0:
-                      time.sleep(0.2)
               bucket = Counter(
                   "explicit_source" if r["explicit_touhou_source"] else
                   "touhou_tag" if r["touhou_tag"] else
                   "ambiguous"
                   for r in rows
               )
-              print(pack["tag"], len(rows), dict(bucket))
+              print(pack["tag"], len(rows), dict(bucket), flush=True)
               output["packs"].append({**pack, "summary": dict(bucket), "entries": rows})
+              Path("wave2-artist-pack-audit.json").write_text(
+                  json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+              )
 
-          Path("wave2-artist-pack-audit.json").write_text(
-              json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-          )
           PY
       - name: Run baseline tests
         run: |
           make check
           make build
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: wave2-artist-pack-audit
           path: wave2-artist-pack-audit.json
+          if-no-files-found: error
