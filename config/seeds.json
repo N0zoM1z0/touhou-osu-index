@@ -131,13 +131,283 @@
     }
   ],
   "official_packs": [
-    {"tag": "R29", "name": "Touhou Chart", "minimum_entries": 20},
-    {"tag": "T54", "name": "Bad Apple!! Pack - Seductive Temptation", "minimum_entries": 15},
-    {"tag": "T65", "name": "Touhou Music Pack", "minimum_entries": 20},
-    {"tag": "T96", "name": "The Embodiment of Scarlet Devil Pack", "minimum_entries": 15},
-    {"tag": "T106", "name": "Touhou Pack", "minimum_entries": 8},
-    {"tag": "FQ55", "name": "Stan Touhou Music Pack", "minimum_entries": 7},
-    {"tag": "FQ35", "name": "UNDEAD CORPORATION Touhou pack", "minimum_entries": 8}
+    {
+      "tag": "R29",
+      "name": "Touhou Chart",
+      "minimum_entries": 20
+    },
+    {
+      "tag": "T54",
+      "name": "Bad Apple!! Pack - Seductive Temptation",
+      "minimum_entries": 15
+    },
+    {
+      "tag": "T65",
+      "name": "Touhou Music Pack",
+      "minimum_entries": 20
+    },
+    {
+      "tag": "T96",
+      "name": "The Embodiment of Scarlet Devil Pack",
+      "minimum_entries": 15
+    },
+    {
+      "tag": "T106",
+      "name": "Touhou Pack",
+      "minimum_entries": 8
+    },
+    {
+      "tag": "FQ55",
+      "name": "Stan Touhou Music Pack",
+      "minimum_entries": 7
+    },
+    {
+      "tag": "FQ35",
+      "name": "UNDEAD CORPORATION Touhou pack",
+      "minimum_entries": 8
+    },
+    {
+      "tag": "A51",
+      "name": "Rin Pack",
+      "verified_ids": [
+        974872,
+        985478,
+        985780,
+        991960,
+        993507,
+        996256,
+        1001360,
+        1006601,
+        1013620,
+        1014593,
+        1019506,
+        1022069,
+        1022358
+      ],
+      "minimum_source_entries": 13,
+      "minimum_entries": 13
+    },
+    {
+      "tag": "A18",
+      "name": "Demetori Pack",
+      "verified_ids": [
+        7084,
+        7158,
+        7940,
+        9641,
+        9960,
+        13204,
+        13223,
+        14309,
+        15393,
+        20125,
+        20686,
+        20949,
+        32574,
+        34484,
+        42234,
+        52401,
+        62764,
+        107565,
+        133693,
+        178777,
+        192900,
+        248162,
+        320299
+      ],
+      "minimum_source_entries": 23,
+      "minimum_entries": 23
+    },
+    {
+      "tag": "A33",
+      "name": "FELT Pack",
+      "verified_ids": [
+        44346,
+        51145,
+        105244,
+        129534,
+        161109,
+        297409,
+        327587,
+        403065,
+        407175
+      ],
+      "minimum_source_entries": 11,
+      "minimum_entries": 9
+    },
+    {
+      "tag": "A32",
+      "name": "Halozy Pack",
+      "verified_ids": [
+        25338,
+        34308,
+        39537,
+        63563,
+        64278,
+        75890,
+        114220,
+        372358,
+        408302,
+        419244
+      ],
+      "minimum_source_entries": 11,
+      "minimum_entries": 10
+    },
+    {
+      "tag": "A16",
+      "name": "Yuuhei Satellite Pack",
+      "verified_ids": [
+        20780,
+        21233,
+        24706,
+        28479,
+        38106,
+        40536,
+        42242,
+        42480,
+        44300,
+        44518,
+        47065,
+        52879,
+        58470,
+        59133,
+        60950,
+        63660,
+        66190,
+        67506,
+        68952,
+        69681,
+        70158,
+        72818,
+        80747,
+        86602,
+        91791,
+        92509,
+        95839,
+        110985,
+        122416,
+        138420,
+        145885,
+        148980,
+        150112,
+        174414
+      ],
+      "minimum_source_entries": 34,
+      "minimum_entries": 34
+    },
+    {
+      "tag": "A85",
+      "name": "Yuuhei Satellite & Catharsis Pack 2",
+      "verified_ids": [
+        82326,
+        92507,
+        119891,
+        158128,
+        174417,
+        195808,
+        218633,
+        223960,
+        234455,
+        250309,
+        252385,
+        363504,
+        377281,
+        398921,
+        420265
+      ],
+      "minimum_source_entries": 22,
+      "minimum_entries": 15
+    },
+    {
+      "tag": "A86",
+      "name": "Yuuhei Satellite & Catharsis Pack 3",
+      "verified_ids": [
+        291264,
+        370545,
+        392495,
+        428233,
+        434397,
+        440980,
+        455092,
+        467315,
+        483527,
+        657870,
+        704050,
+        734241,
+        744222,
+        778920,
+        808409,
+        858672
+      ],
+      "minimum_source_entries": 22,
+      "minimum_entries": 16
+    },
+    {
+      "tag": "A87",
+      "name": "Yuuhei Satellite & Catharsis Pack 4",
+      "verified_ids": [
+        552002,
+        747507,
+        887451,
+        935811,
+        969563,
+        982006,
+        1030134,
+        1053613,
+        1122983,
+        1271180,
+        1353531,
+        1376085,
+        1391331,
+        1461660,
+        1508174,
+        1550119,
+        1579161,
+        1822334,
+        1852871,
+        1330002
+      ],
+      "minimum_source_entries": 22,
+      "minimum_entries": 20
+    },
+    {
+      "tag": "A23",
+      "name": "Silver Forest Pack",
+      "verified_ids": [
+        1559,
+        2626,
+        6509,
+        7373,
+        8393,
+        8523,
+        9002,
+        9489,
+        9534,
+        11543,
+        11668,
+        12504,
+        12508,
+        13132,
+        13574,
+        13953,
+        14050,
+        15362,
+        17896,
+        18814,
+        20795,
+        21927,
+        22043,
+        22221,
+        23065,
+        23251,
+        23665,
+        26860,
+        27039,
+        28066
+      ],
+      "minimum_source_entries": 30,
+      "minimum_entries": 30
+    }
   ],
   "osu_collector_tournaments": [
     {
@@ -250,7 +520,9 @@
       "id": "ogc-2025-jp",
       "name": "Osu! Gensokyo Cup (2025 JP)",
       "spreadsheet_id": "1RSBgpsQgySPZLs9PY6ZarAubviObqA3WW544yErx7Cg",
-      "sheet_names": ["Mappools"],
+      "sheet_names": [
+        "Mappools"
+      ],
       "url": "https://osu.ppy.sh/community/forums/topics/2089185",
       "trusted": true,
       "minimum_entries": 35
@@ -259,7 +531,9 @@
       "id": "gensokyo-cup-2",
       "name": "-Gensokyo Cup 2",
       "spreadsheet_id": "18uHc21MYRDZgyNwvP7WBOJXJH3jbXtehQEb4OXZ913g",
-      "sheet_prefixes": ["Mappool"],
+      "sheet_prefixes": [
+        "Mappool"
+      ],
       "url": "https://osu.ppy.sh/community/forums/topics/1076292",
       "trusted": true,
       "minimum_entries": 140

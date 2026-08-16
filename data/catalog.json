@@ -31491,9 +31491,10 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "manual:excluded",
         "tournament:1432"
       ],
-      "confidence": "verified",
+      "confidence": "excluded",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
     },

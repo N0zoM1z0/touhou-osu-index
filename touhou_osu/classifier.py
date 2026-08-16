@@ -140,7 +140,10 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
     if "manual:verified" in evidence:
         return Classification("verified", tuple(sorted(evidence)))
 
-    if any(item.startswith(("official_pack:", "tournament:", "tmc:")) for item in evidence):
+    if any(
+        item.startswith(("official_pack:", "official_pack_item:", "tournament:", "tmc:"))
+        for item in evidence
+    ):
         return Classification("verified", tuple(sorted(evidence)))
 
     if is_explicit_touhou_source(entry.source):

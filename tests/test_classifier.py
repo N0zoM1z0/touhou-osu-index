@@ -79,6 +79,20 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item)
         self.assertEqual(item.confidence, "verified")
 
+    def test_audited_official_pack_item_is_verified(self):
+        item = Entry(1, evidence=["official_pack_item:A33"], confidence="candidate")
+        apply_classification(item)
+        self.assertEqual(item.confidence, "verified")
+
+    def test_manual_exclusion_beats_audited_official_pack_item(self):
+        item = Entry(
+            1,
+            evidence=["official_pack_item:A86", "manual:excluded"],
+            confidence="verified",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "excluded")
+
     def test_known_artist_alone_stays_candidate(self):
         item = Entry(1, artist="IOSYS", evidence=["discovery_query:IOSYS"], confidence="candidate")
         apply_classification(item)
