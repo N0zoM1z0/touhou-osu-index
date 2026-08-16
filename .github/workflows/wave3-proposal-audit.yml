@@ -1,0 +1,27 @@
+name: Wave 3 Proposal Audit
+
+on:
+  push:
+    branches: [feat/official-packs-wave3-scan]
+
+concurrency:
+  group: wave3-proposal-audit
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Measure proposed packs against existing live sources
+        run: PYTHONPATH=. python3 tools/_wave3_proposal_audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wave3-proposal-audit
+          path: wave3-proposal-audit.json
