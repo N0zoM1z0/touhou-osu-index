@@ -21,6 +21,7 @@ jobs:
         run: make build
       - name: Audit new-source catalog intersections
         run: |
+          mkdir -p verification
           python3 - <<'PY'
           import json
           from collections import Counter
@@ -87,7 +88,15 @@ jobs:
                   }
               )
 
-          print(json.dumps(summaries, ensure_ascii=False, indent=2))
+          payload = json.dumps(summaries, ensure_ascii=False, indent=2) + "\n"
+          Path("verification/intersections.json").write_text(payload, encoding="utf-8")
+          print(payload)
           PY
       - name: Audit every configured live source
-        run: python3 -m touhou_osu audit-sources --json
+        run: python3 -m touhou_osu audit-sources --json | tee verification/all-sources.json
+      - name: Upload verification details
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-verification
+          path: verification/*.json
+          if-no-files-found: error
