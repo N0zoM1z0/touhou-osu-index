@@ -1,11 +1,13 @@
 import unittest
 from unittest.mock import patch
 
+from touhou_osu.models import Entry
 from touhou_osu.sources import (
     _collector_entry,
     import_collector_tournament,
     import_forum_queue,
     import_official_pack,
+    import_official_pack_batch,
     parse_beatmap_links,
     parse_beatmapset_page,
     parse_wiki_links,
@@ -165,6 +167,36 @@ class SourceParserTests(unittest.TestCase):
         """
         with self.assertRaisesRegex(RuntimeError, "duplicate verified_ids"):
             import_official_pack({"tag": "A99", "verified_ids": [101, 101]})
+
+
+    @patch("touhou_osu.sources.time.sleep")
+    @patch("touhou_osu.sources.import_official_pack")
+    def test_official_pack_batch_merges_duplicate_membership_evidence(self, mock_import, mock_sleep):
+        mock_import.side_effect = [
+            [Entry(1, modes=["osu"], evidence=["official_pack_item:R1"], confidence="verified")],
+            [
+                Entry(1, modes=["taiko"], evidence=["official_pack_item:R2"], confidence="verified"),
+                Entry(2, evidence=["official_pack_item:R2"], confidence="verified"),
+            ],
+        ]
+        entries = import_official_pack_batch(
+            {
+                "packs": [
+                    {"tag": "R1", "minimum_entries": 1},
+                    {"tag": "R2", "minimum_entries": 2},
+                ],
+                "delay_seconds": 0.5,
+            }
+        )
+        by_id = {entry.beatmapset_id: entry for entry in entries}
+        self.assertEqual(set(by_id), {1, 2})
+        self.assertEqual(by_id[1].evidence, ["official_pack_item:R1", "official_pack_item:R2"])
+        self.assertEqual(by_id[1].modes, ["osu", "taiko"])
+        mock_sleep.assert_called_once_with(0.5)
+
+    def test_official_pack_batch_rejects_duplicate_tags(self):
+        with self.assertRaisesRegex(RuntimeError, "duplicate pack tags"):
+            import_official_pack_batch({"packs": [{"tag": "R1"}, {"tag": "R1"}]})
 
 
 if __name__ == "__main__":

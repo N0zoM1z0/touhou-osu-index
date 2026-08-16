@@ -93,6 +93,16 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item)
         self.assertEqual(item.confidence, "excluded")
 
+    def test_manual_exclusion_beats_explicit_touhou_source(self):
+        item = Entry(1, source="Touhou", evidence=["osu_source", "manual:excluded"], confidence="verified")
+        apply_classification(item)
+        self.assertEqual(item.confidence, "excluded")
+
+    def test_manual_candidate_beats_trusted_tournament(self):
+        item = Entry(1, evidence=["manual:candidate", "tournament:google_sheet:fixture"], confidence="verified")
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+
     def test_known_artist_alone_stays_candidate(self):
         item = Entry(1, artist="IOSYS", evidence=["discovery_query:IOSYS"], confidence="candidate")
         apply_classification(item)

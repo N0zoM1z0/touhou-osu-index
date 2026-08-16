@@ -56,6 +56,22 @@ Whole-pack Touhou/theme packs use `official_pack:<tag>` and remain verified memb
 
 The nine audited artist packs contain 188 memberships in total. Exactly 170 were individually verified as Touhou compositions; 18 original, Kantai Collection, or Seihou memberships are deliberately withheld. See [`docs/source-audit-2026-08-artist-packs-wave2.md`](docs/source-audit-2026-08-artist-packs-wave2.md) for the item-level decisions and provenance.
 
+
+### Audited official pack batches
+
+Large mixed-pack audits can be declared as `official_pack_batches`. Each nested
+pack still has its own canonical tag, raw-size floor, frozen `verified_ids`
+allowlist and `official_pack_item:<tag>` evidence, but the batch is fetched
+sequentially after the normal concurrent source pool. This keeps broad
+Spotlight coverage reproducible without making `audit-sources` depend on dozens
+of simultaneous osu! pack-page requests.
+
+The August 2026 third-wave batch covers A2 Secret Seven, FQ70 BLANKFIELD,
+FQ66 A-One, one Touhou item from FQ40 LeaF, and 38 modern Beatmap Spotlight
+packs. Across 91 audited pack memberships it emits 84 unique Touhou beatmapsets;
+47 were absent from every previously configured live source. See
+[`docs/source-audit-2026-08-official-packs-wave3.md`](docs/source-audit-2026-08-official-packs-wave3.md).
+
 ## Tournament pools
 
 ### osu!Collector tournament snapshots

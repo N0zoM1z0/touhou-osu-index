@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
@@ -269,6 +270,42 @@ def import_official_pack(source: dict) -> list[Entry]:
     ]
 
 
+
+def import_official_pack_batch(source: dict) -> list[Entry]:
+    """Import many audited official packs sequentially while preserving per-pack evidence."""
+    packs = list(source.get("packs", ()))
+    if not packs:
+        raise RuntimeError("official pack batch must contain at least one pack")
+
+    tags = [str(pack["tag"]) for pack in packs]
+    if len(tags) != len(set(tags)):
+        raise RuntimeError("official pack batch contains duplicate pack tags")
+
+    delay = float(source.get("delay_seconds", 0))
+    if delay < 0:
+        raise RuntimeError("official pack batch delay_seconds must be non-negative")
+
+    entries: dict[int, Entry] = {}
+    for index, pack in enumerate(packs):
+        imported = import_official_pack(pack)
+        minimum = int(pack.get("minimum_entries", 1))
+        if len(imported) < minimum:
+            raise RuntimeError(
+                f"official pack {pack['tag']} returned {len(imported)} audited beatmapsets; "
+                f"expected at least {minimum}"
+            )
+        for incoming in imported:
+            current = entries.get(incoming.beatmapset_id)
+            if current is None:
+                entries[incoming.beatmapset_id] = incoming
+                continue
+            current.evidence = sorted(set(current.evidence) | set(incoming.evidence))
+            current.modes = sorted(set(current.modes) | set(incoming.modes))
+        if delay and index + 1 < len(packs):
+            time.sleep(delay)
+    return list(entries.values())
+
+
 def import_wiki_tournament(source: dict) -> list[Entry]:
     evidence = f"tmc:{source['edition']}"
     links = parse_wiki_links(get_text(source["url"]))
@@ -387,6 +424,8 @@ def import_source(kind: str, source: dict) -> list[Entry]:
         return import_collector_tournament(source)
     if kind == "official_packs":
         return import_official_pack(source)
+    if kind == "official_pack_batches":
+        return import_official_pack_batch(source)
     if kind == "wiki_tournaments":
         return import_wiki_tournament(source)
     if kind == "google_sheet_tournaments":
@@ -424,4 +463,20 @@ def import_all(config: dict, *, workers: int = 4) -> tuple[list[Entry], list[Sou
                 )
             entries.extend(imported)
             reports.append(SourceReport(kind, str(label), source_url(kind, source), len(imported)))
+
+    # Audited pack batches deliberately run after the concurrent source pool.
+    # Their canonical osu! pack pages are paced sequentially to avoid turning
+    # broad Spotlight coverage into rate-limit-sensitive CI.
+    for source in config.get("official_pack_batches", []):
+        kind = "official_pack_batches"
+        label = source.get("name") or source.get("id")
+        imported = import_source(kind, source)
+        minimum = int(source.get("minimum_entries", 1))
+        if len(imported) < minimum:
+            raise RuntimeError(
+                f"{kind}/{label} returned {len(imported)} beatmapsets; expected at least {minimum}"
+            )
+        entries.extend(imported)
+        reports.append(SourceReport(kind, str(label), source_url(kind, source), len(imported)))
+
     return entries, sorted(reports, key=lambda item: (item.kind, item.name.casefold()))

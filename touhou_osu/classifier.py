@@ -139,6 +139,8 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
         return Classification("excluded", tuple(sorted(evidence)))
     if "manual:verified" in evidence:
         return Classification("verified", tuple(sorted(evidence)))
+    if "manual:candidate" in evidence:
+        return Classification("candidate", tuple(sorted(evidence)))
 
     if any(
         item.startswith(("official_pack:", "official_pack_item:", "tournament:", "tmc:"))

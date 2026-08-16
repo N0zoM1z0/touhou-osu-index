@@ -59,5 +59,44 @@ class HydrateSourceTests(unittest.TestCase):
             self.assertIn("tournament:google_sheet:fixture", hydrated.evidence)
 
 
+    def test_official_pack_item_partial_record_is_hydrated_without_demotion(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            catalog_path = Path(directory) / "catalog.json"
+            Catalog(
+                [
+                    Entry(
+                        beatmapset_id=456,
+                        artist="Pack Artist",
+                        title="Pack Title",
+                        evidence=["official_pack_item:Rfixture"],
+                        confidence="verified",
+                    )
+                ]
+            ).save(catalog_path)
+
+            raw = {
+                "id": 456,
+                "artist": "Pack Artist",
+                "title": "Pack Title",
+                "creator": "Fixture Mapper",
+                "source": "東方妖々夢 ～ Perfect Cherry Blossom",
+                "status": "ranked",
+                "beatmaps": [{"mode": "catch"}],
+                "tags": "touhou",
+                "last_updated": "2026-08-01T00:00:00Z",
+            }
+            args = argparse.Namespace(catalog=catalog_path, workers=1, limit=0, write=True, strict=True)
+            with patch("touhou_osu.cli.get_text", return_value="fixture"), patch(
+                "touhou_osu.cli.parse_beatmapset_page", return_value=raw
+            ):
+                self.assertEqual(command_hydrate(args), 0)
+
+            hydrated = Catalog.load(catalog_path).entries[456]
+            self.assertEqual(hydrated.source, "東方妖々夢 ～ Perfect Cherry Blossom")
+            self.assertEqual(hydrated.status, "ranked")
+            self.assertEqual(hydrated.confidence, "verified")
+            self.assertIn("official_pack_item:Rfixture", hydrated.evidence)
+
+
 if __name__ == "__main__":
     unittest.main()

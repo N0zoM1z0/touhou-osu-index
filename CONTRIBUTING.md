@@ -9,14 +9,17 @@ provenance. Please keep changes small and evidence-backed.
 2. Prefer primary metadata: the artist/circle's official page, album scans, or
    an official upload. Touhou wikis are useful secondary references.
 3. Set `confidence` to `verified`, `probable`, or `excluded`.
-4. Add `manual:verified` or `manual:excluded` to `evidence` when making a
-   definitive judgment.
+4. Add `manual:verified`, `manual:excluded`, or `manual:candidate` to
+   `evidence` when making a sticky reviewed judgment.
 5. Fill `touhou_kind`, `origin_games`, and `original_themes` only when supported
    by evidence. Do not guess from a character background.
 6. Run `make check` and `make build`.
 
 Manual evidence is sticky: automated refreshes update osu! metadata but do not
-override a manual inclusion or exclusion.
+override `manual:verified`, `manual:excluded`, or a reviewed `manual:candidate`
+boundary. Use `manual:candidate` when an item is relevant enough to retain for
+review but repository scope intentionally prevents automatic acceptance (for
+example a ZUN-composed Seihou track).
 
 ## Classification rules
 

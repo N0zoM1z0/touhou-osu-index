@@ -202,6 +202,444 @@
       "minimum_entries": 30
     }
   ],
+  "official_pack_batches": [
+    {
+      "id": "official-pack-wave3",
+      "name": "Audited official Touhou pack items (wave 3)",
+      "url": "https://osu.ppy.sh/beatmaps/packs",
+      "delay_seconds": 1.05,
+      "minimum_entries": 84,
+      "packs": [
+        {
+          "tag": "A2",
+          "name": "Gojou Kai - Secret Seven",
+          "verified_ids": [
+            3573,
+            3847,
+            3862,
+            3875,
+            4077,
+            4134
+          ],
+          "minimum_source_entries": 7,
+          "minimum_entries": 6
+        },
+        {
+          "tag": "FQ70",
+          "name": "BLANKFIELD high tempo mini-pack",
+          "verified_ids": [
+            1171995,
+            1175382,
+            1185325,
+            1201974
+          ],
+          "minimum_source_entries": 4,
+          "minimum_entries": 4
+        },
+        {
+          "tag": "FQ66",
+          "name": "A-One Pack",
+          "verified_ids": [
+            1474048,
+            1480185,
+            1499636,
+            1543564,
+            1633053,
+            1644488
+          ],
+          "minimum_source_entries": 6,
+          "minimum_entries": 6
+        },
+        {
+          "tag": "FQ40",
+          "name": "LeaF mini-pack",
+          "verified_ids": [
+            1128939
+          ],
+          "minimum_source_entries": 3,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R341",
+          "name": "Beatmap Spotlights: Winter 2026 (osu!catch)",
+          "verified_ids": [
+            1980463,
+            2020128
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R340",
+          "name": "Beatmap Spotlights: Winter 2026 (osu!taiko)",
+          "verified_ids": [
+            2159203
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R339",
+          "name": "Beatmap Spotlights: Winter 2026 (osu!)",
+          "verified_ids": [
+            304022,
+            462878,
+            1924253
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 3
+        },
+        {
+          "tag": "R338",
+          "name": "Beatmap Spotlights: Summer 2025 (osu!mania)",
+          "verified_ids": [
+            2288990
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R337",
+          "name": "Beatmap Spotlights: Summer 2025 (osu!catch)",
+          "verified_ids": [
+            1220848,
+            1531490,
+            2221973,
+            2281583
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 4
+        },
+        {
+          "tag": "R336",
+          "name": "Beatmap Spotlights: Summer 2025 (osu!taiko)",
+          "verified_ids": [
+            2049581
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R335",
+          "name": "Beatmap Spotlights: Summer 2025 (osu!)",
+          "verified_ids": [
+            2282492
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R334",
+          "name": "Beatmap Spotlights: Spring 2025 (osu!mania)",
+          "verified_ids": [
+            2141740
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R333",
+          "name": "Beatmap Spotlights: Spring 2025 (osu!catch)",
+          "verified_ids": [
+            2000358,
+            2019552,
+            2151953
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 3
+        },
+        {
+          "tag": "R332",
+          "name": "Beatmap Spotlights: Spring 2025 (osu!taiko)",
+          "verified_ids": [
+            1919687,
+            2220709
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R331",
+          "name": "Beatmap Spotlights: Spring 2025 (osu!)",
+          "verified_ids": [
+            1842664,
+            1942555,
+            2239541
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 3
+        },
+        {
+          "tag": "R328",
+          "name": "Beatmap Spotlights: Autumn 2023 (osu!taiko)",
+          "verified_ids": [
+            1590156
+          ],
+          "minimum_source_entries": 26,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R327",
+          "name": "Beatmap Spotlights: Autumn 2023 (osu!)",
+          "verified_ids": [
+            1381715
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R326",
+          "name": "Beatmap Spotlights: Spring 2023 (osu!mania)",
+          "verified_ids": [
+            572338
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R325",
+          "name": "Beatmap Spotlights: Spring 2023 (osu!catch)",
+          "verified_ids": [
+            253969,
+            307818,
+            1872426
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 3
+        },
+        {
+          "tag": "R324",
+          "name": "Beatmap Spotlights: Spring 2023 (osu!taiko)",
+          "verified_ids": [
+            96103
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R323",
+          "name": "Beatmap Spotlights: Spring 2023 (osu!)",
+          "verified_ids": [
+            29044,
+            41974,
+            1638844,
+            1898383
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 4
+        },
+        {
+          "tag": "R322",
+          "name": "Beatmap Spotlights: Winter 2023 (osu!mania)",
+          "verified_ids": [
+            1324800,
+            1670404
+          ],
+          "minimum_source_entries": 21,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R319",
+          "name": "Beatmap Spotlights: Winter 2023 (osu!)",
+          "verified_ids": [
+            1024028,
+            1575475
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R318",
+          "name": "Beatmap Spotlights: Summer 2022 (osu!mania)",
+          "verified_ids": [
+            166146
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R317",
+          "name": "Beatmap Spotlights: Summer 2022 (osu!catch)",
+          "verified_ids": [
+            114741,
+            1110955
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R316",
+          "name": "Beatmap Spotlights: Summer 2022 (osu!taiko)",
+          "verified_ids": [
+            1155202,
+            1630732,
+            1762719
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 3
+        },
+        {
+          "tag": "R315",
+          "name": "Beatmap Spotlights: Summer 2022 (osu!)",
+          "verified_ids": [
+            1742131,
+            1774999
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R314",
+          "name": "Beatmap Spotlights: Spring 2022 (osu!mania)",
+          "verified_ids": [
+            400078,
+            1656541
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R312",
+          "name": "Beatmap Spotlights: Spring 2022 (osu!taiko)",
+          "verified_ids": [
+            452051,
+            1506936,
+            1526077
+          ],
+          "minimum_source_entries": 26,
+          "minimum_entries": 3
+        },
+        {
+          "tag": "R311",
+          "name": "Beatmap Spotlights: Spring 2022 (osu!)",
+          "verified_ids": [
+            795140,
+            1004248,
+            1670776
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 3
+        },
+        {
+          "tag": "R309",
+          "name": "Beatmap Spotlights: Winter 2022 (osu!catch)",
+          "verified_ids": [
+            1023485,
+            1480185,
+            1644488
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 3
+        },
+        {
+          "tag": "R308",
+          "name": "Beatmap Spotlights: Winter 2022 (osu!taiko)",
+          "verified_ids": [
+            1013884,
+            1263550
+          ],
+          "minimum_source_entries": 27,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R305",
+          "name": "Beatmap Spotlights: Spring 2021 (osu!catch)",
+          "verified_ids": [
+            633255
+          ],
+          "minimum_source_entries": 20,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R304",
+          "name": "Beatmap Spotlights: Spring 2021 (osu!taiko)",
+          "verified_ids": [
+            405516
+          ],
+          "minimum_source_entries": 20,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R303",
+          "name": "Beatmap Spotlights: Spring 2021 (osu!)",
+          "verified_ids": [
+            198034,
+            1132649
+          ],
+          "minimum_source_entries": 20,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R301",
+          "name": "Beatmap Spotlights: Winter 2021 (osu!catch)",
+          "verified_ids": [
+            204927
+          ],
+          "minimum_source_entries": 20,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R300",
+          "name": "Beatmap Spotlights: Winter 2021 (osu!taiko)",
+          "verified_ids": [
+            96103,
+            812992
+          ],
+          "minimum_source_entries": 20,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R297",
+          "name": "Beatmap Spotlights: Autumn 2020 (osu!catch)",
+          "verified_ids": [
+            972764
+          ],
+          "minimum_source_entries": 19,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R296",
+          "name": "Beatmap Spotlights: Autumn 2020 (osu!taiko)",
+          "verified_ids": [
+            812992
+          ],
+          "minimum_source_entries": 20,
+          "minimum_entries": 1
+        },
+        {
+          "tag": "R293",
+          "name": "Beatmap Spotlights: Summer 2020 (osu!catch)",
+          "verified_ids": [
+            48874,
+            204927,
+            998578,
+            1023485
+          ],
+          "minimum_source_entries": 20,
+          "minimum_entries": 4
+        },
+        {
+          "tag": "R291",
+          "name": "Beatmap Spotlights: Summer 2020 (osu!)",
+          "verified_ids": [
+            37292,
+            145976
+          ],
+          "minimum_source_entries": 20,
+          "minimum_entries": 2
+        },
+        {
+          "tag": "R288",
+          "name": "Seasonal Spotlights: Winter 2020 (osu!taiko)",
+          "verified_ids": [
+            1013884
+          ],
+          "minimum_source_entries": 4,
+          "minimum_entries": 1
+        }
+      ]
+    }
+  ],
   "osu_collector_tournaments": [
     {
       "id": 466,
