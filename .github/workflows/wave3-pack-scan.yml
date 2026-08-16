@@ -36,7 +36,6 @@ jobs:
           }
           TOUHOU_EVIDENCE_PREFIXES = (
               "official_pack:", "official_pack_item:", "tournament:", "tmc:",
-              "manual:verified", "osu_source",
           )
 
           def fetch(url: str) -> str:
@@ -62,28 +61,32 @@ jobs:
 
           def collect_tags(pack_type: str, prefix: str) -> list[str]:
               seen = set()
-              empty_pages = 0
+              no_new_pages = 0
+              tag_re = re.compile(r"packs(?:/|\\/)" + re.escape(prefix) + r"(\d+)")
               for page in range(1, 80):
                   text = fetch(f"https://osu.ppy.sh/beatmaps/packs?type={pack_type}&page={page}")
-                  tags = set(re.findall(r'href="/beatmaps/packs/(' + re.escape(prefix) + r'\d+)"', text))
+                  tags = {prefix + number for number in tag_re.findall(text)}
                   new = tags - seen
-                  if not new:
-                      empty_pages += 1
-                  else:
-                      empty_pages = 0
+                  if new:
                       seen.update(new)
-                  if empty_pages >= 2:
+                      no_new_pages = 0
+                  else:
+                      no_new_pages += 1
+                  if no_new_pages >= 2:
                       break
                   time.sleep(0.15)
+              if not seen:
+                  raise RuntimeError(f"failed to extract any {prefix} pack tags from type={pack_type}")
               return sorted(seen, key=lambda value: int(re.search(r"\d+", value).group()))
 
           catalog = json.loads(Path("data/catalog.json").read_text(encoding="utf-8"))
           by_id = {int(item["beatmapset_id"]): item for item in catalog["entries"]}
-
           result = {"categories": {}, "a2": None}
 
           a2_text = fetch("https://osu.ppy.sh/beatmaps/packs/A2")
           a2_links = parse_beatmap_links(a2_text)
+          if len(a2_links) != 7:
+              raise RuntimeError(f"A2 changed: expected 7 entries, got {len(a2_links)}")
           result["a2"] = {
               "tag": "A2",
               "title": pack_title(a2_text, "A2"),
@@ -101,7 +104,7 @@ jobs:
 
           for pack_type, prefix in (("featured", "F"), ("chart", "R")):
               tags = collect_tags(pack_type, prefix)
-              print(pack_type, "pack_count", len(tags), "range", (tags[0] if tags else None, tags[-1] if tags else None))
+              print(pack_type, "pack_count", len(tags), "range", (tags[0], tags[-1]))
               candidates = []
               for index, tag in enumerate(tags, 1):
                   text = fetch(f"https://osu.ppy.sh/beatmaps/packs/{tag}")
@@ -117,7 +120,7 @@ jobs:
                       if current:
                           evidence = current.get("evidence", [])
                           touhou_evidence = current.get("confidence") == "verified" or any(
-                              ev == "manual:verified" or ev == "osu_source" or ev.startswith(TOUHOU_EVIDENCE_PREFIXES[:-2])
+                              ev == "manual:verified" or ev == "osu_source" or ev.startswith(TOUHOU_EVIDENCE_PREFIXES)
                               for ev in evidence
                           )
                       if target_artist or touhou_evidence:
@@ -135,7 +138,7 @@ jobs:
                           "raw_count": len(links),
                           "candidate_rows": rows,
                       })
-                  if index % 20 == 0:
+                  if index % 25 == 0:
                       print(pack_type, "scanned", index, "/", len(tags), "candidate_packs", len(candidates))
                   time.sleep(0.2)
               result["categories"][pack_type] = {
