@@ -1,0 +1,69 @@
+name: Artist Pack Wave 2 Inventory
+
+on:
+  push:
+    branches: [feat/artist-packs-wave2-audit]
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Inventory official pack memberships against catalog
+        run: |
+          python3 - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          from touhou_osu.classifier import is_explicit_touhou_source
+          from touhou_osu.sources import import_official_pack
+
+          packs = [
+              {"tag": "A51", "name": "Rin Pack", "expected": 13},
+              {"tag": "A18", "name": "Demetori Pack", "expected": 23},
+              {"tag": "A33", "name": "FELT Pack", "expected": 11},
+              {"tag": "A32", "name": "Halozy Pack", "expected": 11},
+              {"tag": "A16", "name": "Yuuhei Satellite Pack", "expected": 34},
+              {"tag": "A85", "name": "Yuuhei Satellite & Catharsis Pack 2", "expected": 22},
+              {"tag": "A86", "name": "Yuuhei Satellite & Catharsis Pack 3", "expected": 22},
+              {"tag": "A87", "name": "Yuuhei Satellite & Catharsis Pack 4", "expected": 22},
+              {"tag": "A23", "name": "Silver Forest Pack", "expected": 30},
+          ]
+          catalog = json.loads(Path("data/catalog.json").read_text(encoding="utf-8"))
+          by_id = {int(x["beatmapset_id"]): x for x in catalog["entries"]}
+          out = {"packs": []}
+          for p in packs:
+              entries = import_official_pack(p)
+              if len(entries) != p["expected"]:
+                  raise SystemExit(f"{p['tag']} count {len(entries)} != {p['expected']}")
+              rows = []
+              for e in entries:
+                  cur = by_id.get(e.beatmapset_id)
+                  rows.append({
+                      "beatmapset_id": e.beatmapset_id,
+                      "artist": e.artist,
+                      "title": e.title,
+                      "catalog_present": cur is not None,
+                      "catalog_source": cur.get("source", "") if cur else "",
+                      "catalog_source_explicit_touhou": is_explicit_touhou_source(cur.get("source", "")) if cur else False,
+                      "catalog_confidence": cur.get("confidence", "missing") if cur else "missing",
+                      "catalog_evidence": cur.get("evidence", []) if cur else [],
+                  })
+              summary = Counter(r["catalog_confidence"] for r in rows)
+              print(p["tag"], len(rows), dict(summary), flush=True)
+              out["packs"].append({**p, "summary": dict(summary), "entries": rows})
+          Path("wave2-artist-pack-inventory.json").write_text(
+              json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wave2-artist-pack-inventory
+          path: wave2-artist-pack-inventory.json
