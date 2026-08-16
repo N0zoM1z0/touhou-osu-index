@@ -182,8 +182,8 @@ class SourceParserTests(unittest.TestCase):
         entries = import_official_pack_batch(
             {
                 "packs": [
-                    {"tag": "R1", "minimum_entries": 1},
-                    {"tag": "R2", "minimum_entries": 2},
+                    {"tag": "R1", "verified_ids": [1], "minimum_entries": 1},
+                    {"tag": "R2", "verified_ids": [1, 2], "minimum_entries": 2},
                 ],
                 "delay_seconds": 0.5,
             }
@@ -193,6 +193,19 @@ class SourceParserTests(unittest.TestCase):
         self.assertEqual(by_id[1].evidence, ["official_pack_item:R1", "official_pack_item:R2"])
         self.assertEqual(by_id[1].modes, ["osu", "taiko"])
         mock_sleep.assert_called_once_with(0.5)
+
+    @patch("touhou_osu.sources.import_official_pack")
+    def test_official_pack_batch_requires_non_empty_verified_ids(self, mock_import):
+        invalid_batches = [
+            [{"tag": "R1"}],
+            [{"tag": "R1", "verified_ids": []}],
+            [{"tag": "R1", "verified_ids": [1]}, {"tag": "R2"}],
+        ]
+        for packs in invalid_batches:
+            with self.subTest(packs=packs):
+                with self.assertRaisesRegex(RuntimeError, "must define non-empty verified_ids"):
+                    import_official_pack_batch({"packs": packs})
+        mock_import.assert_not_called()
 
     def test_official_pack_batch_rejects_duplicate_tags(self):
         with self.assertRaisesRegex(RuntimeError, "duplicate pack tags"):

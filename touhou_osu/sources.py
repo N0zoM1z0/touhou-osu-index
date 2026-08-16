@@ -281,6 +281,13 @@ def import_official_pack_batch(source: dict) -> list[Entry]:
     if len(tags) != len(set(tags)):
         raise RuntimeError("official pack batch contains duplicate pack tags")
 
+    for pack in packs:
+        verified_ids = pack.get("verified_ids")
+        if not isinstance(verified_ids, list) or not verified_ids:
+            raise RuntimeError(
+                f"official pack batch entry {pack['tag']} must define non-empty verified_ids"
+            )
+
     delay = float(source.get("delay_seconds", 0))
     if delay < 0:
         raise RuntimeError("official pack batch delay_seconds must be non-negative")
