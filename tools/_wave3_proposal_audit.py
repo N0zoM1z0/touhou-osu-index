@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
 
-from touhou_osu.sources import import_all, import_official_pack
+import touhou_osu.sources as sources
+from touhou_osu.http import HttpError
 
 PROPOSALS = [
     {"tag": "A2", "name": "Gojou Kai - Secret Seven", "raw": 7, "ids": [3573, 3847, 3862, 3875, 4077, 4134]},
@@ -50,8 +52,31 @@ PROPOSALS = [
     {"tag": "R288", "name": "Seasonal Spotlights: Winter 2020 (osu!taiko)", "raw": 4, "ids": [1013884]},
 ]
 
+# The public pack HTML endpoint can throttle long source audits. Keep production
+# importer behavior unchanged; only this disposable branch audit retries 429/5xx.
+_original_get_text = sources.get_text
+
+
+def _retry_get_text(url: str) -> str:
+    delay = 1.0
+    for attempt in range(8):
+        try:
+            return _original_get_text(url)
+        except HttpError as exc:
+            message = str(exc)
+            retryable = any(code in message for code in ("HTTP 429", "HTTP 502", "HTTP 503", "HTTP 504"))
+            if not retryable or attempt == 7:
+                raise
+            print(f"retrying {url} after {message}; sleep={delay:.1f}s")
+            time.sleep(delay)
+            delay = min(delay * 2, 20.0)
+    raise RuntimeError(url)
+
+
+sources.get_text = _retry_get_text
+
 config = json.loads(Path("config/seeds.json").read_text(encoding="utf-8"))
-baseline_entries, baseline_reports = import_all(config, workers=4)
+baseline_entries, baseline_reports = sources.import_all(config, workers=4)
 baseline_ids = {entry.beatmapset_id for entry in baseline_entries}
 catalog = json.loads(Path("data/catalog.json").read_text(encoding="utf-8"))
 by_id = {int(item["beatmapset_id"]): item for item in catalog["entries"]}
@@ -67,7 +92,7 @@ for item in PROPOSALS:
         "minimum_source_entries": item["raw"],
         "minimum_entries": len(item["ids"]),
     }
-    entries = import_official_pack(source)
+    entries = sources.import_official_pack(source)
     ids = [entry.beatmapset_id for entry in entries]
     if ids != item["ids"]:
         raise SystemExit(f"{item['tag']} live output drift: {ids} != {item['ids']}")
@@ -82,6 +107,7 @@ for item in PROPOSALS:
         "catalog_candidate_ids": [i for i in ids if by_id.get(i, {}).get("confidence") in {"candidate", "probable"}],
         "catalog_verified_ids": [i for i in ids if by_id.get(i, {}).get("confidence") == "verified"],
     })
+    time.sleep(1.05)
 
 result = {
     "baseline_source_records": len(baseline_entries),
