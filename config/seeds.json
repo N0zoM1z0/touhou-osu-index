@@ -131,11 +131,41 @@
     }
   ],
   "official_packs": [
-    {"tag": "R29", "name": "Touhou Chart", "minimum_entries": 20},
-    {"tag": "T65", "name": "Touhou Music Pack", "minimum_entries": 20},
-    {"tag": "T106", "name": "Touhou Pack", "minimum_entries": 8},
-    {"tag": "FQ55", "name": "Stan Touhou Music Pack", "minimum_entries": 7},
-    {"tag": "FQ35", "name": "UNDEAD CORPORATION Touhou pack", "minimum_entries": 8}
+    {
+      "tag": "R29",
+      "name": "Touhou Chart",
+      "minimum_entries": 20
+    },
+    {
+      "tag": "T54",
+      "name": "Bad Apple!! Pack - Seductive Temptation",
+      "minimum_entries": 15
+    },
+    {
+      "tag": "T65",
+      "name": "Touhou Music Pack",
+      "minimum_entries": 20
+    },
+    {
+      "tag": "T96",
+      "name": "The Embodiment of Scarlet Devil Pack",
+      "minimum_entries": 15
+    },
+    {
+      "tag": "T106",
+      "name": "Touhou Pack",
+      "minimum_entries": 8
+    },
+    {
+      "tag": "FQ55",
+      "name": "Stan Touhou Music Pack",
+      "minimum_entries": 7
+    },
+    {
+      "tag": "FQ35",
+      "name": "UNDEAD CORPORATION Touhou pack",
+      "minimum_entries": 8
+    }
   ],
   "osu_collector_tournaments": [
     {
@@ -248,7 +278,9 @@
       "id": "ogc-2025-jp",
       "name": "Osu! Gensokyo Cup (2025 JP)",
       "spreadsheet_id": "1RSBgpsQgySPZLs9PY6ZarAubviObqA3WW544yErx7Cg",
-      "sheet_names": ["Mappools"],
+      "sheet_names": [
+        "Mappools"
+      ],
       "url": "https://osu.ppy.sh/community/forums/topics/2089185",
       "trusted": true,
       "minimum_entries": 35
@@ -257,7 +289,9 @@
       "id": "gensokyo-cup-2",
       "name": "-Gensokyo Cup 2",
       "spreadsheet_id": "18uHc21MYRDZgyNwvP7WBOJXJH3jbXtehQEb4OXZ913g",
-      "sheet_prefixes": ["Mappool"],
+      "sheet_prefixes": [
+        "Mappool"
+      ],
       "url": "https://osu.ppy.sh/community/forums/topics/1076292",
       "trusted": true,
       "minimum_entries": 140
