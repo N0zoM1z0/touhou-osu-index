@@ -1,0 +1,179 @@
+name: Wave 1 Theme Pack Verify
+
+on:
+  push:
+    branches: [feat/official-theme-packs-wave1]
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Add packs and measure catalog intersection
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from touhou_osu.sources import import_official_pack
+
+          config_path = Path("config/seeds.json")
+          config = json.loads(config_path.read_text(encoding="utf-8"))
+          packs = config["official_packs"]
+          additions = [
+              {"tag": "T54", "name": "Bad Apple!! Pack - Seductive Temptation", "minimum_entries": 15},
+              {"tag": "T96", "name": "The Embodiment of Scarlet Devil Pack", "minimum_entries": 15},
+          ]
+
+          existing_tags = {item["tag"] for item in packs}
+          duplicate = existing_tags & {item["tag"] for item in additions}
+          if duplicate:
+              raise SystemExit(f"pack tag already configured: {sorted(duplicate)}")
+
+          # Keep Theme packs grouped numerically without reordering unrelated pack classes.
+          t54_index = next(i for i, item in enumerate(packs) if item["tag"] == "T65")
+          packs.insert(t54_index, additions[0])
+          t96_index = next(i for i, item in enumerate(packs) if item["tag"] == "T106")
+          packs.insert(t96_index, additions[1])
+          config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+          catalog = json.loads(Path("data/catalog.json").read_text(encoding="utf-8"))
+          by_id = {int(item["beatmapset_id"]): item for item in catalog["entries"]}
+          reports = []
+          for source in additions:
+              imported = import_official_pack(source)
+              ids = [entry.beatmapset_id for entry in imported]
+              if len(ids) != len(set(ids)):
+                  raise SystemExit(f"{source['tag']} returned duplicate beatmapset IDs")
+              if len(imported) < source["minimum_entries"]:
+                  raise SystemExit(
+                      f"{source['tag']} returned {len(imported)} beatmapsets; "
+                      f"expected at least {source['minimum_entries']}"
+                  )
+
+              existing = [entry for entry in imported if entry.beatmapset_id in by_id]
+              missing = [entry for entry in imported if entry.beatmapset_id not in by_id]
+              current_counts = {}
+              for entry in existing:
+                  confidence = by_id[entry.beatmapset_id]["confidence"]
+                  current_counts[confidence] = current_counts.get(confidence, 0) + 1
+              promotions = [
+                  entry for entry in existing
+                  if by_id[entry.beatmapset_id]["confidence"] in {"candidate", "probable"}
+              ]
+              excluded = [
+                  entry for entry in existing
+                  if by_id[entry.beatmapset_id]["confidence"] == "excluded"
+              ]
+              if excluded:
+                  raise SystemExit(
+                      f"{source['tag']} intersects excluded catalog entries: "
+                      f"{[entry.beatmapset_id for entry in excluded]}"
+                  )
+
+              reports.append({
+                  "tag": source["tag"],
+                  "name": source["name"],
+                  "imported": len(imported),
+                  "existing": len(existing),
+                  "missing": len(missing),
+                  "current_confidence": current_counts,
+                  "candidate_or_probable_to_verified": len(promotions),
+                  "promotion_ids": [entry.beatmapset_id for entry in promotions],
+                  "missing_ids": [entry.beatmapset_id for entry in missing],
+                  "entries": [
+                      {
+                          "beatmapset_id": entry.beatmapset_id,
+                          "artist": entry.artist,
+                          "title": entry.title,
+                          "current_confidence": by_id.get(entry.beatmapset_id, {}).get("confidence", "missing"),
+                      }
+                      for entry in imported
+                  ],
+              })
+
+          Path("/tmp/wave1-intersection.json").write_text(
+              json.dumps(reports, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+
+          lines = [
+              "# Official Touhou theme-pack audit — 2026-08 wave 1",
+              "",
+              "This audit records the first follow-up source batch after the tournament-coverage expansion.",
+              "Only two official osu! Theme packs are added here; artist/album packs remain out of scope for this PR.",
+              "",
+              "## Trust decision",
+              "",
+              "- `T54` — **Bad Apple!! Pack - Seductive Temptation**: official osu! Theme pack centered on `Bad Apple!!`, the Touhou 4 / Lotus Land Story composition and its arrangements/parodies/mashups.",
+              "- `T96` — **The Embodiment of Scarlet Devil Pack**: official osu! Theme pack explicitly centered on Touhou 6 / The Embodiment of Scarlet Devil music and arrangements.",
+              "- Both use the repository's existing `official_pack:<tag>` evidence path, which is verified evidence under the current confidence policy.",
+              "- Both currently contain exactly 15 unique beatmapsets; `minimum_entries` is therefore pinned to 15 so a truncated or structurally changed source fails closed.",
+              "",
+              "Official source URLs:",
+              "",
+              "- https://osu.ppy.sh/beatmaps/packs/T54",
+              "- https://osu.ppy.sh/beatmaps/packs/T96",
+              "",
+              "## Measured catalog intersection",
+              "",
+              "| Pack | Imported | Existing | Missing | Candidate/probable → verified |",
+              "| --- | ---: | ---: | ---: | ---: |",
+          ]
+          for report in reports:
+              lines.append(
+                  f"| {report['tag']} | {report['imported']} | {report['existing']} | "
+                  f"{report['missing']} | {report['candidate_or_probable_to_verified']} |"
+              )
+          lines += ["", "### Exact IDs", ""]
+          for report in reports:
+              lines += [
+                  f"#### {report['tag']} — {report['name']}",
+                  "",
+                  f"- Promotion IDs: `{', '.join(map(str, report['promotion_ids'])) or 'none'}`",
+                  f"- Missing IDs: `{', '.join(map(str, report['missing_ids'])) or 'none'}`",
+                  "",
+              ]
+          lines += [
+              "## Reproduction / checks",
+              "",
+              "The verification branch imported both live osu! pack pages, checked unique beatmapset IDs and the 15-entry safety floors, rejected any overlap with canonical `excluded` entries, ran `make check` and `make build`, audited every configured live source, and simulated the complete `import-seeds` merge without writing `data/catalog.json`.",
+              "",
+              "As with the previous source-only PR, canonical catalog mutations are intentionally not hand-edited here; the new provenance is reproducible through the normal import pipeline.",
+          ]
+          Path("docs/source-audit-2026-08-theme-packs-wave1.md").write_text(
+              "\n".join(lines) + "\n",
+              encoding="utf-8",
+          )
+          print(Path("/tmp/wave1-intersection.json").read_text(encoding="utf-8"))
+          PY
+
+      - name: Unit tests and generated exports
+        run: |
+          make check
+          make build
+
+      - name: Audit every live source floor
+        run: |
+          python3 -m touhou_osu audit-sources --json | tee /tmp/all-sources.json
+
+      - name: Simulate complete live seed merge
+        run: |
+          python3 -m touhou_osu import-seeds | tee /tmp/import-seeds.txt
+
+      - name: Commit verified source-only change and remove temporary workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/wave1-theme-pack-verify.yml
+          git add config/seeds.json docs/source-audit-2026-08-theme-packs-wave1.md
+          git commit -m "feat: add official Touhou theme packs"
+          git push origin HEAD:feat/official-theme-packs-wave1
