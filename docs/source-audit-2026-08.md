@@ -33,6 +33,20 @@ This audit records the evidence behind the August 2026 source-coverage expansion
 - The preserved qualifiers collection contains 11 maps at audit time and is imported as **candidate discovery evidence only**.
 - Config safety floor: 10 records.
 
+## Live catalog intersection results
+
+A branch-only GitHub Actions verification run on 2026-08-16 re-imported all three new sources from their live upstream data and compared them against the checked-in canonical catalog before opening the PR.
+
+| Source | Imported | Already in catalog | Missing from catalog | Current candidates promoted by this source | Already accepted and reinforced |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Osu! Gensokyo Cup 2025 JP | 40 | 30 | 10 | **6** | 24 |
+| -Gensokyo Cup 2 | 148 | 133 | 15 | **63** | 70 |
+| 5 Digit Touhou Cup 1 qualifiers | 11 | 9 | 2 | **0** | 6 |
+
+The trusted tournament sources therefore add strong evidence for **69 existing candidate beatmapsets** and expose **25 beatmapsets not currently in the catalog**. The 5DTC1 qualifier source intentionally promotes none on its own.
+
+The same live run audited every configured source and returned **6,596 source records from 30 sources, representing 3,019 unique beatmapsets before catalog classification and deduplication**. All configured `minimum_entries` floors passed.
+
 ## Checked but not added as a new trusted source
 
 ### Austrian Touhou Cup 2024
@@ -61,6 +75,8 @@ The new Google Sheets importer deliberately uses only the Python standard librar
 
 This is intentionally narrower than scraping rendered Google Sheets HTML and does not require a Google API key or a new dependency.
 
+Trusted Google Sheet tournament entries may initially contain only a numeric beatmapset ID when the set was not already present in the catalog. `hydrate` therefore treats `tournament:google_sheet:` evidence as a partial-record source and resolves missing artist/title/source/status metadata through the public osu! beatmapset page while preserving the trusted tournament confidence.
+
 ## Discovery / alias expansion
 
 The classifier already recognizes the English and Japanese titles of the Touhou games from the PC-98 era through the current mainline/spin-off set. The previous discovery config, however, searched only a small generic set such as `Touhou`, `東方`, Team Shanghai Alice and ZUN.
@@ -73,14 +89,15 @@ This PR does **not** add a free-form song-title alias corpus. Song-title aliases
 
 ## Verification checklist
 
-Before opening the PR, the branch is checked with:
+Before opening the PR, the branch is checked in GitHub Actions with:
 
 ```sh
 make check
+make build
 python -m touhou_osu audit-sources --json
 ```
 
-The branch-only verification job also prints the intersection of the three newly added source records with the current catalog, including confidence buckets and mapsets that are not yet present. This makes promotion effects visible without committing guessed canonical data.
+The branch-only verification additionally imports the three new sources independently and compares them against the canonical catalog to expose confidence buckets, candidate promotions, and missing IDs. Two consecutive verification runs passed before PR creation; the second persisted the machine-readable source/intersection results as an Actions artifact for manual review.
 
 ## Trust boundary summary
 
