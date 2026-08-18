@@ -4,6 +4,10 @@
 [![Pages](https://github.com/N0zoM1z0/touhou-osu-index/actions/workflows/pages.yml/badge.svg)](https://github.com/N0zoM1z0/touhou-osu-index/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-ff66aa.svg)](LICENSE)
 
+<p align="center">
+  <img src="assets/catalog-stats.svg" alt="Touhou osu! Index catalog statistics" width="760">
+</p>
+
 An open, reproducible index of Touhou Project music mapped in osu!. It combines
 historical collections, official beatmap packs, Touhou-only tournament pools,
 and osu! API discovery into one deduplicated catalog keyed by **beatmapset ID**.

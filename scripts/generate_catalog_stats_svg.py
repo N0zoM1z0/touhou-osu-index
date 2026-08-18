@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+"""Generate the README catalog statistics card from the canonical catalog."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+CATALOG_PATH = ROOT / "data" / "catalog.json"
+OUTPUT_PATH = ROOT / "assets" / "catalog-stats.svg"
+
+
+def fmt(value: int) -> str:
+    return f"{value:,}"
+
+
+def load_stats() -> tuple[int, int]:
+    raw = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+    entries = raw.get("entries")
+    if not isinstance(entries, list):
+        raise ValueError("catalog entries must be a list")
+
+    total = len(entries)
+    verified = sum(entry.get("confidence") == "verified" for entry in entries)
+    return total, verified
+
+
+def render_svg(total: int, verified: int) -> str:
+    verified_ratio = (verified / total * 100) if total else 0
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="760" height="126" viewBox="0 0 760 126" role="img" aria-labelledby="title desc">
+  <title id="title">Touhou osu! Index catalog statistics</title>
+  <desc id="desc">{fmt(total)} total tracked beatmapsets; {fmt(verified)} verified ({verified_ratio:.1f}%).</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a1018"/>
+      <stop offset="100%" stop-color="#150c11"/>
+    </linearGradient>
+    <clipPath id="card">
+      <rect width="760" height="126" rx="14"/>
+    </clipPath>
+  </defs>
+  <style>
+    text {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }}
+    .brand-small {{ fill: #dc7b88; font-size: 10px; font-weight: 800; letter-spacing: 1.8px; }}
+    .brand {{ fill: #fff8f4; font-size: 17px; font-weight: 700; }}
+    .label {{ fill: #bcaeb2; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }}
+    .value {{ fill: #fffaf7; font-size: 34px; font-weight: 700; }}
+    .percent {{ fill: #8b2032; font-size: 12px; font-weight: 800; }}
+  </style>
+
+  <rect width="760" height="126" rx="14" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="759" height="125" rx="13.5" fill="none" stroke="#5b2934"/>
+
+  <g clip-path="url(#card)" fill="none">
+    <circle cx="732" cy="63" r="86" stroke="#e05263" stroke-width="1.4" opacity="0.11"/>
+    <circle cx="732" cy="63" r="55" stroke="#f4ddd8" stroke-width="1" opacity="0.08"/>
+    <circle cx="732" cy="63" r="28" stroke="#e05263" stroke-width="1" stroke-dasharray="3 7" opacity="0.15"/>
+    <path d="M652 23 C691 9 731 12 764 32" stroke="#e05263" stroke-width="1" opacity="0.09"/>
+    <path d="M651 103 C692 117 731 114 764 94" stroke="#e05263" stroke-width="1" opacity="0.09"/>
+  </g>
+
+  <circle cx="32" cy="63" r="14" fill="none" stroke="#e05263" stroke-width="2"/>
+  <circle cx="32" cy="63" r="4" fill="#fff8f4"/>
+  <circle cx="32" cy="45" r="2.5" fill="#e05263"/>
+  <circle cx="48" cy="70" r="2.5" fill="#e05263"/>
+  <circle cx="18" cy="75" r="2.5" fill="#e05263"/>
+
+  <text x="58" y="57" class="brand-small">TOUHOU</text>
+  <text x="58" y="78" class="brand">osu! Index</text>
+
+  <line x1="205" y1="24" x2="205" y2="102" stroke="#6a303b" opacity="0.75"/>
+
+  <text x="242" y="47" class="label">TOTAL BEATMAPSETS</text>
+  <text x="242" y="83" class="value">{fmt(total)}</text>
+
+  <line x1="452" y1="36" x2="452" y2="90" stroke="#6a303b" opacity="0.55"/>
+
+  <text x="488" y="47" class="label">VERIFIED</text>
+  <text x="488" y="83" class="value">{fmt(verified)}</text>
+  <rect x="616" y="58" width="72" height="25" rx="12.5" fill="#fff3ed"/>
+  <text x="652" y="75" class="percent" text-anchor="middle">{verified_ratio:.1f}%</text>
+
+  <rect x="0" y="0" width="760" height="3" rx="1.5" fill="#d63f52"/>
+</svg>
+'''
+
+
+def main() -> None:
+    total, verified = load_stats()
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_PATH.write_text(render_svg(total, verified), encoding="utf-8")
+    ratio = (verified / total * 100) if total else 0
+    print(f"Generated catalog stats: total={total} verified={verified} ({ratio:.1f}%)")
+
+
+if __name__ == "__main__":
+    main()
