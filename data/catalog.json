@@ -13272,22 +13272,25 @@
       "artist": "ZUN",
       "title": "Magus Night",
       "creator": "x847606653",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-10-23T06:33:37Z"
     },
     {
@@ -13892,7 +13895,7 @@
       "artist": "ZUN",
       "title": "Beware the Umbrella Left There Forever",
       "creator": "Leyko",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -13903,11 +13906,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-10-21T06:49:26Z"
     },
     {
@@ -14160,7 +14165,7 @@
       "artist": "ZUN",
       "title": "Higan Retour ~ Riverside View",
       "creator": "Black_Cherry_Ita",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -14171,12 +14176,14 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-11-19T10:34:15Z"
     },
     {
@@ -14487,7 +14494,7 @@
       "artist": "ZUN",
       "title": "Green-Eyed Jealousy",
       "creator": "Parachute",
-      "source": "",
+      "source": "東方Project",
       "status": "loved",
       "modes": [
         "osu"
@@ -14497,13 +14504,15 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2017-05-08T02:53:41Z"
     },
     {
@@ -14598,7 +14607,7 @@
       "artist": "ZUN",
       "title": "Tabula Rasa ~ Snow White Echo",
       "creator": "x847606653",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -14609,11 +14618,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-11-19T05:10:53Z"
     },
     {
@@ -14985,7 +14996,7 @@
       "artist": "ZUN",
       "title": "The Road of the Apotropaic God ~ Dark Road",
       "creator": "Leader",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -14995,11 +15006,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2013-05-05T15:58:55Z"
     },
     {
@@ -15336,7 +15349,7 @@
       "artist": "ZUN",
       "title": "Satori Maiden ~ 3rd eye",
       "creator": "Dai",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -15347,11 +15360,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2013-04-26T07:17:39Z"
     },
     {
@@ -15404,7 +15419,7 @@
       "artist": "ZUN",
       "title": "Shoutoku Legend ~ True Administrator",
       "creator": "BCI",
-      "source": "",
+      "source": "Touhou",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -15414,11 +15429,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2013-07-04T13:50:12Z"
     },
     {
@@ -18127,7 +18144,7 @@
       "artist": "ZUN",
       "title": "Touhou Eiyashou ~  Imperishable Night Compilation",
       "creator": "Innocentius",
-      "source": "",
+      "source": "Touhou",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -18137,10 +18154,12 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2013-10-24T04:44:29Z"
     },
     {
@@ -19651,7 +19670,7 @@
       "artist": "ZUN",
       "title": "Shunshun Shuugetsu ~ Mooned Insect",
       "creator": "Winek",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -19661,11 +19680,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2015-02-21T12:14:27Z"
     },
     {
@@ -22087,7 +22108,7 @@
       "artist": "ZUN",
       "title": "Bad Apple!!",
       "creator": "Leader",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -22097,13 +22118,15 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2018-07-22T15:02:03Z"
     },
     {
@@ -24852,7 +24875,7 @@
       "artist": "ZUN",
       "title": "Septette for the Dead Princess",
       "creator": "Pereira006",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu",
@@ -24863,11 +24886,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2015-09-11T11:09:41Z"
     },
     {
