@@ -25,6 +25,8 @@ jobs:
           set -euo pipefail
           git fetch origin main automation/osu-discovery --no-tags
           git checkout -B pr17-merge-audit origin/main
+          git config user.name "pr17-audit"
+          git config user.email "pr17-audit@users.noreply.github.com"
           git merge --no-commit --no-ff origin/automation/osu-discovery
           python3 - <<'PY'
           import json
