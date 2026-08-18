@@ -19,12 +19,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate GitHub test merge with latest main
+      - name: Merge PR 17 into latest main locally and validate
         shell: bash
         run: |
           set -euo pipefail
-          git fetch origin main --no-tags
-          git fetch origin +refs/pull/17/merge:refs/remotes/origin/pr17-merge --no-tags
+          git fetch origin main automation/osu-discovery --no-tags
+          git checkout -B pr17-merge-audit origin/main
+          git merge --no-commit --no-ff origin/automation/osu-discovery
           python3 - <<'PY'
           import json
           import subprocess
@@ -32,35 +33,40 @@ jobs:
           OLD_BASE = "72d09809873efc4d2685db654326bbbd27cf6168"
           PR17_HEAD = "3b3d4c625da7263ad53c8892e11ca15d63e5c60a"
 
-          def load(ref):
+          def load_ref(ref):
               raw = subprocess.check_output(["git", "show", f"{ref}:data/catalog.json"])
               return {e["beatmapset_id"]: e for e in json.loads(raw)["entries"]}
 
-          old = load(OLD_BASE)
-          pr = load(PR17_HEAD)
-          main = load("origin/main")
-          merged = load("refs/remotes/origin/pr17-merge")
+          def load_worktree():
+              with open("data/catalog.json", encoding="utf-8") as f:
+                  return {e["beatmapset_id"]: e for e in json.load(f)["entries"]}
 
           def changed(a, b):
               return sorted(i for i in set(a) | set(b) if a.get(i) != b.get(i))
 
+          old = load_ref(OLD_BASE)
+          pr = load_ref(PR17_HEAD)
+          main = load_ref("origin/main")
+          merged = load_worktree()
+
           expected_pr_ids = changed(old, pr)
-          actual_merge_ids = changed(main, merged)
           main_since_old = changed(old, main)
           overlap = sorted(set(expected_pr_ids) & set(main_since_old))
+          actual_merge_ids = changed(main, merged)
 
           assert len(expected_pr_ids) == 50, len(expected_pr_ids)
           assert not overlap, overlap
           assert actual_merge_ids == expected_pr_ids, (actual_merge_ids, expected_pr_ids)
           for i in main_since_old:
               assert merged[i] == main[i], ("main_row_not_preserved", i)
+          for i in expected_pr_ids:
+              assert merged[i] == pr[i], ("pr17_row_not_preserved", i)
 
-          print(f"LATEST_MAIN_MERGE_DIFF_IDS_OK count={len(actual_merge_ids)}")
+          print(f"LOCAL_MERGE_DIFF_IDS_OK count={len(actual_merge_ids)}")
           print(f"LATEST_MAIN_EXISTING_CHANGES_PRESERVED count={len(main_since_old)}")
+          print(f"PR17_ROWS_PRESERVED count={len(expected_pr_ids)}")
           print(f"OVERLAP={overlap}")
           PY
-          git worktree add /tmp/pr17-merge refs/remotes/origin/pr17-merge
-          cd /tmp/pr17-merge
           make check
           make build
-          git diff --check origin/main refs/remotes/origin/pr17-merge
+          git diff --check --cached
