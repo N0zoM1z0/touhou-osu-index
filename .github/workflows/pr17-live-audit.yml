@@ -1,0 +1,137 @@
+name: PR 17 live audit
+
+on:
+  pull_request:
+    branches:
+      - automation/osu-discovery
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/pr17-live-audit
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit PR 17 against old base, current main, and live osu
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main --no-tags
+          python3 - <<'PY'
+          import collections
+          import concurrent.futures
+          import json
+          import subprocess
+          import time
+
+          from touhou_osu.classifier import is_explicit_touhou_source
+          from touhou_osu.http import get_text
+          from touhou_osu.models import normalize_mode
+          from touhou_osu.sources import parse_beatmapset_page
+
+          OLD_BASE = "72d09809873efc4d2685db654326bbbd27cf6168"
+          PR17_HEAD = "3b3d4c625da7263ad53c8892e11ca15d63e5c60a"
+
+          def load_at(ref):
+              raw = subprocess.check_output(["git", "show", f"{ref}:data/catalog.json"])
+              doc = json.loads(raw)
+              return {e["beatmapset_id"]: e for e in doc["entries"]}
+
+          base = load_at(OLD_BASE)
+          pr = load_at(PR17_HEAD)
+          main = load_at("origin/main")
+
+          pr_changed = sorted(i for i in set(base) | set(pr) if base.get(i) != pr.get(i))
+          main_changed = sorted(i for i in set(base) | set(main) if base.get(i) != main.get(i))
+          overlap = sorted(set(pr_changed) & set(main_changed))
+
+          print(f"PR17_CHANGED_COUNT={len(pr_changed)}")
+          print(f"MAIN_SINCE_OLD_BASE_CHANGED_COUNT={len(main_changed)}")
+          print(f"OVERLAP_COUNT={len(overlap)}")
+          print(f"OVERLAP_IDS={overlap}")
+
+          field_counts = collections.Counter()
+          for i in pr_changed:
+              b, a = base.get(i), pr.get(i)
+              if b is None:
+                  field_counts["<new row>"] += 1
+                  print(f"NEW_ROW {i} | {a['artist']} | {a['title']} | confidence={a['confidence']} source={a['source']!r}")
+                  continue
+              keys = sorted(k for k in b if b.get(k) != a.get(k))
+              field_counts.update(keys)
+              print(f"ROW_DIFF {i} keys={keys}")
+          print("FIELD_COUNTS=" + json.dumps(dict(sorted(field_counts.items())), ensure_ascii=False))
+
+          promotions = []
+          demotions = []
+          source_changed = []
+          metadata_changed = []
+          for i in pr_changed:
+              b, a = base.get(i), pr.get(i)
+              if b is not None and b.get("confidence") == "candidate" and a.get("confidence") == "verified":
+                  promotions.append(i)
+              if b is not None and b.get("confidence") != a.get("confidence") and i not in promotions:
+                  demotions.append((i, b.get("confidence"), a.get("confidence")))
+              if b is None or b.get("source") != a.get("source"):
+                  source_changed.append(i)
+              if b is None or any(b.get(k) != a.get(k) for k in ("status", "modes", "osu_last_updated")):
+                  metadata_changed.append(i)
+
+          print(f"PROMOTION_COUNT={len(promotions)} IDS={promotions}")
+          print(f"OTHER_CONFIDENCE_CHANGES={demotions}")
+          print(f"SOURCE_CHANGED_COUNT={len(source_changed)}")
+          print(f"LIVE_METADATA_CHANGED_IDS={metadata_changed}")
+
+          live_targets = sorted(set(pr_changed))
+
+          def fetch_one(i):
+              last = None
+              for attempt in range(3):
+                  try:
+                      live = parse_beatmapset_page(get_text(f"https://osu.ppy.sh/beatmapsets/{i}"))
+                      return i, live
+                  except Exception as exc:
+                      last = exc
+                      time.sleep(1 + attempt)
+              raise RuntimeError(f"live fetch failed for {i}: {last}")
+
+          live_by_id = {}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+              for i, live in pool.map(fetch_one, live_targets):
+                  live_by_id[i] = live
+
+          for i in pr_changed:
+              a = pr[i]
+              live = live_by_id[i]
+              ident = (live.get("artist", ""), live.get("title", ""), live.get("creator", ""))
+              expected_ident = (a.get("artist", ""), a.get("title", ""), a.get("creator", ""))
+              assert ident == expected_ident, ("identity", i, ident, expected_ident)
+
+              b = base.get(i)
+              changed_keys = set(a) if b is None else {k for k in b if b.get(k) != a.get(k)}
+              if "source" in changed_keys:
+                  assert live.get("source", "") == a.get("source", ""), ("source", i, live.get("source"), a.get("source"))
+              if "status" in changed_keys:
+                  assert live.get("status", "unknown") == a.get("status"), ("status", i, live.get("status"), a.get("status"))
+              if "osu_last_updated" in changed_keys:
+                  assert live.get("last_updated") == a.get("osu_last_updated"), ("last_updated", i, live.get("last_updated"), a.get("osu_last_updated"))
+              if "modes" in changed_keys:
+                  modes = sorted({normalize_mode(x.get("mode", "")) for x in live.get("beatmaps", []) if x.get("mode")})
+                  assert modes == a.get("modes"), ("modes", i, modes, a.get("modes"))
+
+              if i in promotions:
+                  source = live.get("source", "")
+                  assert is_explicit_touhou_source(source), ("promotion_not_explicit", i, source)
+                  print(f"PROMOTION_LIVE_OK {i} | {a['artist']} | {a['title']} | {a['creator']} | source={source!r}")
+
+          print("ALL_PR17_CHANGED_ROWS_IDENTITY_OK")
+          print("ALL_CHANGED_LIVE_FIELDS_OK")
+          print("ALL_PROMOTIONS_EXPLICIT_SOURCE_OK")
+          PY
