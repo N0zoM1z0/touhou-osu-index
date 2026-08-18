@@ -7807,7 +7807,7 @@
       "artist": "Demetori",
       "title": "The Maid and the Pocket Watch of Blood",
       "creator": "brikel",
-      "source": "",
+      "source": "Touhou",
       "status": "approved",
       "modes": [
         "osu",
@@ -7817,11 +7817,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "manual:verified",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2011-01-25T16:22:37Z"
     },
     {
@@ -8245,7 +8247,7 @@
       "artist": "Demetori",
       "title": "Youkai no Yama ~ Mysterious Mountain",
       "creator": "Glass",
-      "source": "",
+      "source": "東方風神録 ～ Mountain of Faith.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -8254,11 +8256,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "manual:verified",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2017-08-29T06:15:15Z"
     },
     {
@@ -8723,7 +8727,7 @@
       "artist": "ZUN",
       "title": "The Youkai Mountain ~ Mysterious Mountain",
       "creator": "Lybydose",
-      "source": "",
+      "source": "Touhou",
       "status": "graveyard",
       "modes": [
         "osu",
@@ -8734,13 +8738,15 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-10-30T06:37:01Z"
     },
     {
@@ -10763,7 +10769,7 @@
       "artist": "ZUN",
       "title": "At the End of Spring",
       "creator": "happy30",
-      "source": "",
+      "source": "Touhou",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -10773,11 +10779,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2011-12-24T20:10:42Z"
     },
     {
@@ -11011,7 +11019,7 @@
       "artist": "ZUN",
       "title": "Night Sakura of Dead Spirits",
       "creator": "Elly-chan",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -11022,11 +11030,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2011-07-31T22:45:16Z"
     },
     {
@@ -11342,7 +11352,7 @@
       "artist": "ZUN",
       "title": "The Road of the Apotropaic God ~ Dark Road",
       "creator": "Gabi",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -11352,11 +11362,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2011-08-11T15:02:33Z"
     },
     {
@@ -11608,7 +11620,7 @@
       "artist": "IRON ATTACK!",
       "title": "Future is Undefined",
       "creator": "Kite",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -11617,12 +11629,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-01-26T17:37:42Z"
     },
     {
@@ -11630,7 +11644,7 @@
       "artist": "Demetori",
       "title": "Satori Maiden ~ Innumerable Eyes",
       "creator": "pieguy1372",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -11640,13 +11654,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-06-27T00:19:32Z"
     },
     {
@@ -11807,7 +11823,7 @@
       "artist": "ZUN",
       "title": "Locked Girl ~ The Girl's Secret Room",
       "creator": "Tenshi-nyan",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -11818,11 +11834,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2011-12-16T00:21:11Z"
     },
     {
@@ -11916,7 +11934,7 @@
       "artist": "Demetori",
       "title": "Kid's Festival ~ Innocent Treasures",
       "creator": "Neptunus",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -11925,13 +11943,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2011-08-18T10:22:43Z"
     },
     {
@@ -12033,7 +12053,7 @@
       "artist": "ZUN",
       "title": "The Grimoire of Alice",
       "creator": "DarkDunskin",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -12043,11 +12063,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-01-17T16:39:09Z"
     },
     {
@@ -12098,7 +12120,7 @@
       "artist": "Lyude",
       "title": "Solar Sect of Mystic Wisdom ~ Nuclear Fusion",
       "creator": "Saten-san",
-      "source": "",
+      "source": "Touhou",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -12107,12 +12129,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "manual:verified",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
       "osu_last_updated": "2012-04-03T21:28:19Z"
     },
     {
