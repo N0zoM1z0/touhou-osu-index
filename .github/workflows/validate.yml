@@ -45,7 +45,7 @@ jobs:
           from concurrent.futures import ThreadPoolExecutor
           from pathlib import Path
           from touhou_osu.catalog import Catalog
-          from touhou_osu.osu_api import OsuApi,entry_from_osu
+          from touhou_osu.osu_api import OsuApi
 
           base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'],text=True))
           head_raw=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
@@ -72,7 +72,6 @@ jobs:
           assert ev['manual_verified']==180,ev
           assert ev['composition_parent']==180,ev
 
-          # Parse the authoritative pre-change status-scoped enumeration.
           lines=Path('/tmp/night-status.log').read_text(encoding='utf-8-sig').splitlines()
           begins=[i for i,x in enumerate(lines) if 'NIGHT_STATUS_ENUM_BEGIN' in x]
           ends=[i for i,x in enumerate(lines) if 'NIGHT_STATUS_ENUM_END' in x]
@@ -93,7 +92,10 @@ jobs:
               return ''.join(c for c in unicodedata.normalize('NFKC',v or '').casefold() if c.isalnum())
           toks=[norm(x) for x in ['ナイト・オブ・ナイツ','Night of Nights','Night of Knights','Knight of Nights']]
           def family(title): return any(t in norm(title) for t in toks)
-          candidate_family=sorted(x for x in base.values() if x['confidence']=='candidate' and family(x.get('title','')))
+          candidate_family=sorted(
+              (x for x in base.values() if x['confidence']=='candidate' and family(x.get('title',''))),
+              key=lambda x:int(x['beatmapset_id'])
+          )
           print('candidate_title_family_count=',len(candidate_family))
           for x in candidate_family:
               print('CANDIDATE',x['beatmapset_id'],x['artist'],x['title'],x['source'],x['evidence'])
@@ -115,7 +117,6 @@ jobs:
               live_ids=list(pool.map(live,new_ids))
           assert len(live_ids)==357
 
-          # Refresh candidate-family rows for the one pre-existing boundary, if any.
           for x in candidate_family:
               raw=api.beatmapset(int(x['beatmapset_id']))
               print('CANDIDATE_LIVE',raw['id'],raw.get('artist',''),raw.get('title',''),raw.get('source',''),raw.get('tags',''))
