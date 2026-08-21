@@ -1,8 +1,7 @@
 name: Temporary PR24 three-pass review
 
 on:
-  push:
-    branches: [feat/touhou-coverage-200plus-2026-08-21]
+  pull_request:
 
 permissions:
   contents: read
@@ -41,7 +40,6 @@ jobs:
           added = sorted(set(h) - set(b))
           assert len(added) == 600, len(added)
           assert [x["beatmapset_id"] for x in head["entries"]] == sorted(h)
-
           bad = []
           evidence_counts = Counter()
           for i in added:
@@ -89,7 +87,6 @@ jobs:
           h = {int(x["beatmapset_id"]): x for x in head["entries"]}
           ids = sorted(set(h)-set(b))
           api = OsuApi.from_env(); api.token()
-
           def check(i):
               stored = h[i]
               raw = api.beatmapset(i)
@@ -101,9 +98,7 @@ jobs:
               for field in ("artist","title","creator","source","status"):
                   if str(stored.get(field,"")) != str(getattr(live,field)): problems.append(f"{field}_drift")
               if sorted(stored.get("modes",[])) != sorted(live.modes): problems.append("modes_drift")
-              # last_updated can legitimately advance; report rather than fail on it.
               return {"id":i,"problems":problems,"source":raw.get("source", ""),"stored_last_updated":stored.get("osu_last_updated"),"live_last_updated":raw.get("last_updated")}
-
           with ThreadPoolExecutor(max_workers=8) as pool:
               rows=list(pool.map(check, ids))
           bad=[r for r in rows if r.get("error") or r.get("problems")]
