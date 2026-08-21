@@ -1,0 +1,94 @@
+name: Temporary Night of Knights title-family search
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  family:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Search broad title family and later documented derivatives
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,unicodedata
+          from collections import Counter,defaultdict
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_explicit_touhou_source
+          from touhou_osu.osu_api import OsuApi,entry_from_osu
+
+          BASE=['ナイト・オブ・ナイツ','Night of Nights','Night of Knights','Knight of Nights']
+          EXTRA=[
+            ('Knight of nights (ALR REMIX)','Alstroemeria Records','arrangement-chronicle:IMAGINARY JOURNEY'),
+            ('ナイト・オブ・ナイツ (Amateras Records 2025 ReFix)','Amateras Records','arrangement-chronicle:Amateras Records Best Vol.4'),
+            ('ナイト・オブ・ナイツ (TOS Remix)','魂音泉','arrangement-chronicle:THE SELECTED WORKS OF TAMAONSEN EX'),
+          ]
+          def norm(v): return ''.join(ch for ch in unicodedata.normalize('NFKC',v or '').casefold() if ch.isalnum())
+          base_norm=[norm(x) for x in BASE]
+          extra_norm={norm(t):(t,a,s) for t,a,s in EXTRA}
+          def family_match(title):
+              t=norm(title)
+              return any(x in t for x in base_norm) or t in extra_norm
+
+          queries=list(dict.fromkeys(BASE+[x[0] for x in EXTRA]+[
+              'beatMARIO ナイト・オブ・ナイツ','beatMARIO Night of Nights','beatMARIO Night of Knights',
+              'COOL&CREATE ナイト・オブ・ナイツ','COOL&CREATE Night of Nights','Touhou Night of Nights','Touhou Night of Knights'
+          ]))
+          api=OsuApi.from_env();api.token()
+          discovered={};qhits=defaultdict(set)
+          def search(q): return q,list(api.search(q,max_pages=5))
+          with ThreadPoolExecutor(max_workers=6) as pool:
+              fs=[pool.submit(search,q) for q in queries]
+              for f in as_completed(fs):
+                  q,rows=f.result()
+                  for raw in rows:
+                      i=int(raw['id']);discovered[i]=raw;qhits[i].add(q)
+          prelim={i:r for i,r in discovered.items() if family_match(r.get('title',''))}
+
+          def refetch(item):
+              i,s=item
+              try:r=api.beatmapset(i)
+              except Exception as exc:return {'beatmapset_id':i,'error':f'{type(exc).__name__}:{exc}'}
+              assert int(r['id'])==i
+              assert r.get('artist','')==s.get('artist',''),(i,'artist')
+              assert r.get('title','')==s.get('title',''),(i,'title')
+              e=entry_from_osu(r,evidence=['audit:night-of-knights-family'],confidence='candidate')
+              return {'beatmapset_id':i,'entry':e,'raw':r}
+          with ThreadPoolExecutor(max_workers=8) as pool: rows=list(pool.map(refetch,prelim.items()))
+
+          catalog=Catalog.load(Path('data/catalog.json'));coverage=Counter();review=[];accepted=[];errors=[]
+          for row in rows:
+              i=row['beatmapset_id']
+              if 'error' in row:errors.append(row);continue
+              e=row['entry'];r=row['raw'];cur=catalog.entries.get(i)
+              if cur is None:state='absent';coverage['absent']+=1
+              elif cur.confidence in {'verified','probable'}:state=cur.confidence;coverage['already_accepted']+=1;accepted.append({'id':i,'artist':e.artist,'title':e.title});continue
+              else:state=cur.confidence;coverage[f'existing_{state}']+=1
+              exact_extra=extra_norm.get(norm(e.title))
+              review.append({
+                'beatmapset_id':i,'catalog_state':state,'artist':e.artist,'artist_unicode':r.get('artist_unicode',''),
+                'title':e.title,'title_unicode':r.get('title_unicode',''),'creator':e.creator,'source':e.source,
+                'status':e.status,'modes':e.modes,'classifier_confidence':e.confidence,
+                'explicit_touhou_source':is_explicit_touhou_source(e.source),'tags':r.get('tags',''),
+                'documented_extra':({'title':exact_extra[0],'artist_guard':exact_extra[1],'source':exact_extra[2]} if exact_extra else None),
+                'queries':sorted(qhits[i])
+              })
+          review.sort(key=lambda x:(x['catalog_state']!='absent',x['beatmapset_id']))
+          print('NIGHT_FAMILY_REPORT_BEGIN')
+          print(json.dumps({'queries':len(queries),'search_discovered_unique':len(discovered),'title_family_matches':len(prelim),
+            'coverage':dict(coverage),'accepted_count':len(accepted),'accepted':sorted(accepted,key=lambda x:x['id']),
+            'review_count':len(review),'direct_errors':errors,'review':review},ensure_ascii=False,indent=2))
+          print('NIGHT_FAMILY_REPORT_END')
+          PY
