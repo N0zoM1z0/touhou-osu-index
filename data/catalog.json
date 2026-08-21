@@ -18149,6 +18149,29 @@
       "osu_last_updated": "2013-09-04T03:18:48Z"
     },
     {
+      "beatmapset_id": 108242,
+      "artist": "xccsc feat. beatMARIO",
+      "title": "Night of Knights xccsc piano remix",
+      "creator": "deepsea",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2013-08-01T07:55:47Z"
+    },
+    {
       "beatmapset_id": 108820,
       "artist": "REDALiCE",
       "title": "Kizuato",
@@ -19981,6 +20004,29 @@
       "osu_last_updated": "2014-03-15T18:04:35Z"
     },
     {
+      "beatmapset_id": 143771,
+      "artist": "Taiko no tatsujin",
+      "title": "Night of knights",
+      "creator": "HDPR",
+      "source": "太鼓",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:official-game-night-of-knights-credit",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-01-22T09:21:27Z"
+    },
+    {
       "beatmapset_id": 143844,
       "artist": "OctagonCollaboration",
       "title": "8 Awesome Angles of YouTube",
@@ -20286,6 +20332,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2014-06-21T00:39:08Z"
+    },
+    {
+      "beatmapset_id": 154684,
+      "artist": "beatmario",
+      "title": "Night of Nights(G.N)",
+      "creator": "spalstlr321",
+      "source": "동방",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-10-14T09:27:51Z"
     },
     {
       "beatmapset_id": 155051,
@@ -21789,6 +21858,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2014-08-22T05:59:18Z"
+    },
+    {
+      "beatmapset_id": 200969,
+      "artist": "Touhou Arrange",
+      "title": "Night of Knights",
+      "creator": "[ Rei ]",
+      "source": "Sound Voltex II (Infinite Infection)",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:official-game-night-of-knights-credit",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-08-09T07:14:33Z"
     },
     {
       "beatmapset_id": 201524,
@@ -46238,6 +46330,29 @@
       "osu_last_updated": "2019-03-12T11:52:43Z"
     },
     {
+      "beatmapset_id": 938028,
+      "artist": "BeatMARIO",
+      "title": "Night of Nights (SAMString Remix) Sped up.",
+      "creator": "SAMString",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2019-03-10T11:45:09Z"
+    },
+    {
       "beatmapset_id": 938242,
       "artist": "Halozy",
       "title": "Deconstruction Star",
@@ -63040,6 +63155,29 @@
       "osu_last_updated": "2022-03-25T22:08:30Z"
     },
     {
+      "beatmapset_id": 1528497,
+      "artist": "COOL&CREATE/BeatMARIO",
+      "title": "The kid vs DjSray (Night of nights)",
+      "creator": "Bell_san",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "mixed",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-07-23T22:05:21Z"
+    },
+    {
       "beatmapset_id": 1529176,
       "artist": "COOL&CREATE",
       "title": "Night of Knights",
@@ -75467,6 +75605,29 @@
       "osu_last_updated": "2025-01-10T14:06:44Z"
     },
     {
+      "beatmapset_id": 2051058,
+      "artist": "i forgor",
+      "title": "(K)night Of (K)nights",
+      "creator": "OsuMaker5656",
+      "source": "Touhou Project / beatMARIO",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2023-08-26T12:40:08Z"
+    },
+    {
       "beatmapset_id": 2051273,
       "artist": "",
       "title": "beatmapsets/2051273#osu/4525122",
@@ -75701,6 +75862,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2023-12-02T10:05:57Z"
+    },
+    {
+      "beatmapset_id": 2056127,
+      "artist": "Koraido",
+      "title": "Night of Knights(Koraido remix)",
+      "creator": "yuruyu",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:koraido-booth-night-of-knights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2023-09-05T08:27:06Z"
     },
     {
       "beatmapset_id": 2056207,
@@ -83841,6 +84025,52 @@
       "osu_last_updated": "2025-11-13T13:42:57Z"
     },
     {
+      "beatmapset_id": 2374763,
+      "artist": "peposoft",
+      "title": "Night of Knights",
+      "creator": "Doomsdaddy",
+      "source": "Touhou Luna Nights",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:official-game-night-of-knights-credit",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-05-21T10:42:23Z"
+    },
+    {
+      "beatmapset_id": 2374830,
+      "artist": "beatMARIO",
+      "title": "Night of Knights (Mede's Frenchcore Remix 2025 Ver.)",
+      "creator": "InCrit",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-05-27T06:39:56Z"
+    },
+    {
       "beatmapset_id": 2375006,
       "artist": "Demetori",
       "title": "Pure Furies ~ Vengeance is Mine",
@@ -85658,6 +85888,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2498021,
+      "artist": "beatMARIO",
+      "title": "Night of Knights but 2nd beat and 4th beat are skipped",
+      "creator": "nuku0315",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-01-25T09:43:55Z"
     },
     {
       "beatmapset_id": 2499169,

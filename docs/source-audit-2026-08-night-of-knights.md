@@ -162,3 +162,33 @@ These 62 are arrangements/covers/edits of the beatMARIO parent, not merely indep
 </details>
 
 <!-- NIGHT_MANUAL_WAVE2_END -->
+
+<!-- NIGHT_MANUAL_WAVE3_START -->
+
+## Final conservative manual wave and withheld boundary
+
+A final fresh read-only audit of the 94 still-unresolved title-family hits produced **49 unattributed base titles, 15 cover/remix labels, 10 mashup/meme labels, and 20 other variants**. Rather than treating any of those labels or mapper tags as proof, this audit accepts only **11 additional sets** with a direct parent attribution or an independent official/artist-controlled source.
+
+Accepted evidence paths:
+
+- **7 direct-parent metadata sets**: current osu! metadata explicitly attributes the recording/edit to beatMARIO / COOL&CREATE (or, for set `2051058`, the current source literally states `Touhou Project / beatMARIO`) and the title is a controlled Night-of-Knights derivative/edit. Each was re-fetched immediately before writing and checked against an ID-specific title guard.
+- **3 official-game sets**: Bandai Namco's official Taiko song list credits `Night of Knights / Knight of Nights` as `Touhou Project Arrange / beatMARIO`; KONAMI's official SOUND VOLTEX/e-amusement list credits `ナイト・オブ・ナイツ` to `ビートまりお（COOL&CREATE）`; PLAYISM/Steam's official `Touhou Luna Nights` soundtrack notes explicitly say peposoft re-arranged beatMARIO's `ナイト・オブ・ナイツ` and lists it as Final Boss 3.
+- **1 Koraido set**: Koraido's own BOOTH storefront sells the exact work as `【東方アレンジ】ナイト・オブ・ナイツ (Koraido remix)`.
+
+Independent sources used for this final wave:
+
+- Bandai Namco official Taiko song list: https://dondafulfestival-20th.taiko-ch.net/en/music/songlist.php
+- KONAMI official SOUND VOLTEX song list: https://p.eagate.573.jp/game/eacsdvx/iii/p/common/info/sdvx_mlist_basic.html
+- PLAYISM official Touhou Luna Nights soundtrack announcement: https://playism.com/news/2019/1014/gnf_tlnost-2/
+- Steam official Touhou Luna Nights OST page / peposoft comment: https://store.steampowered.com/app/1142470/Touhou_Luna_Nights__Original_Soundtrack/
+- Koraido BOOTH search result, tagged as Touhou arrangement: https://booth.pm/ja/search/%E3%83%8A%E3%82%A4%E3%83%88%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%8A%E3%82%A4%E3%83%84?tags%5B%5D=%E6%9D%B1%E6%96%B9%E3%82%A2%E3%83%AC%E3%83%B3%E3%82%B8
+
+Accepted IDs:
+
+- `direct_parent_metadata`: `108242,154684,938028,1528497,2051058,2374830,2498021`
+- `official_game_parent`: `143771,200969,2374763`
+- `koraido_artist_store`: `2056127`
+
+After this wave, **83 title-family hits remain deliberately withheld**. Typical withheld cases include blank/unknown attribution, mapper-only Touhou tags, BMS/community-pack source labels, phone/nightcore/Black-MIDI variants without a reliable author/composition chain, and meme/mashup uploads where the Night-of-Knights ingredient is plausible but not independently sourced. Examples include `10809` (Unknown / blank source), `1240116` (score farm / source `ur mum`), and `2408535` (a deliberately silent joke file). No withheld set is promoted merely because its title resembles the target song.
+
+<!-- NIGHT_MANUAL_WAVE3_END -->
