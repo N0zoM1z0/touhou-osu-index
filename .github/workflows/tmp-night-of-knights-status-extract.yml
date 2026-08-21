@@ -1,0 +1,44 @@
+name: Temporary extract completed Night status report
+
+on:
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract compact report from completed enumeration
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run view 32477749313 --repo "$GITHUB_REPOSITORY" --log > /tmp/run.log
+          python - <<'PY'
+          import json,re
+          text=open('/tmp/run.log',encoding='utf-8-sig').read()
+          # Strip GitHub log prefixes by locating marker lines, then collect JSON text after the timestamp fields.
+          lines=text.splitlines(); collecting=False; payload=[]
+          for line in lines:
+              if 'NIGHT_STATUS_ENUM_BEGIN' in line:
+                  collecting=True; continue
+              if 'NIGHT_STATUS_ENUM_END' in line:
+                  break
+              if collecting:
+                  # gh run log lines are tab-separated metadata followed by message.
+                  payload.append(line.split('\t')[-1])
+          data=json.loads('\n'.join(payload))
+          missing=data['missing']
+          print('NIGHT_STATUS_EXTRACT_OK')
+          print('query_status_pairs=',data['query_status_pairs'])
+          print('discovered_unique=',data['discovered_unique'])
+          print('title_family_direct=',data['title_family_direct'])
+          print('states=',json.dumps(data['states'],sort_keys=True))
+          print('missing_count=',len(missing))
+          print('missing_ids=',','.join(str(x['beatmapset_id']) for x in missing))
+          for x in missing:
+              print('MISSING|{}|{}|{}|{}|{}'.format(x['beatmapset_id'],x['status'],x['artist'],x['title'],x['source']))
+          PY
