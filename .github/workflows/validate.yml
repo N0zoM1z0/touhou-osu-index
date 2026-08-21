@@ -47,8 +47,10 @@ jobs:
           print('kinds=',dict(Counter(x['touhou_kind'] for x in rows)))
           print('origin_games_nonempty=',sum(bool(x['origin_games']) for x in rows))
           print('original_themes_nonempty=',sum(bool(x['original_themes']) for x in rows))
-          print('unknown_kind_ids=',','.join(str(x['beatmapset_id']) for x in rows if x['touhou_kind']=='unknown'))
-          print('mixed_ids=',','.join(str(x['beatmapset_id']) for x in rows if x['touhou_kind']=='mixed'))
-          print('missing_origin_ids=',','.join(str(x['beatmapset_id']) for x in rows if not x['origin_games']))
-          print('missing_theme_ids=',','.join(str(x['beatmapset_id']) for x in rows if not x['original_themes']))
+          for x in rows:
+              if x['touhou_kind']=='unknown':
+                  print('UNKNOWN|{}|{}|{}|{}'.format(x['beatmapset_id'],x['artist'],x['title'],x['source']))
+          for x in rows:
+              if x['touhou_kind']=='mixed':
+                  print('MIXED|{}|{}|{}|{}'.format(x['beatmapset_id'],x['artist'],x['title'],x['source']))
           PY
