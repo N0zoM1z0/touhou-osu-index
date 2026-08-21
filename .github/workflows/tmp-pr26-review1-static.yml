@@ -1,0 +1,78 @@
+name: PR26 Review 1 - exact static catalog
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  static-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify exact main-to-head catalog change set
+        run: |
+          set -euo pipefail
+          git fetch origin main:refs/remotes/origin/main
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+
+          NEW={2626,5346,507416,2188045,2205747,2209334,2282709,2314117,2561367}
+          OLD={21098,47754,171239,183267,427407,723024,855735}
+          IDS=NEW|OLD
+          EXPLICIT={21098,47754,855735,2205747,2282709,2561367}
+          PACK={2626}
+          MANUAL={5346,507416,171239,183267,427407,723024,2188045,2209334,2314117}
+          TOKEN='audit:lunatic-princess-2026-08'
+
+          base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'],text=True))
+          head_raw=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          base={int(x['beatmapset_id']):x for x in base_raw['entries']}
+          head={int(x['beatmapset_id']):x for x in head_raw['entries']}
+          new_ids=set(head)-set(base)
+          removed=set(base)-set(head)
+          changed={i for i in base.keys() & head.keys() if base[i]!=head[i]}
+          assert len(base)==3623, len(base)
+          assert len(head)==3632, len(head)
+          assert new_ids==NEW, (sorted(new_ids),sorted(NEW))
+          assert removed==set(), sorted(removed)
+          assert changed==OLD, (sorted(changed),sorted(OLD))
+
+          # Every old candidate keeps all prior provenance and had no sticky manual boundary.
+          for i in OLD:
+              assert base[i]['confidence']=='candidate', (i,base[i]['confidence'])
+              assert 'manual:candidate' not in base[i]['evidence'], (i,base[i]['evidence'])
+              assert 'manual:excluded' not in base[i]['evidence'], (i,base[i]['evidence'])
+              assert set(base[i]['evidence']) <= set(head[i]['evidence']), (i,base[i]['evidence'],head[i]['evidence'])
+
+          for i in IDS:
+              row=head[i]
+              assert row['confidence']=='verified', (i,row['confidence'])
+              assert TOKEN in row['evidence'], (i,row['evidence'])
+              assert row['origin_games']==['東方永夜抄 ～ Imperishable Night.'], (i,row['origin_games'])
+              assert row['original_themes']==['竹取飛翔 ～ Lunatic Princess'], (i,row['original_themes'])
+              expected='original' if i==2282709 else ('mixed' if i==2314117 else 'arrangement')
+              assert row['touhou_kind']==expected, (i,row['touhou_kind'],expected)
+              assert ('manual:verified' in row['evidence'])==(i in MANUAL), (i,row['evidence'])
+              if i in EXPLICIT: assert 'osu_source' in row['evidence'], (i,row['source'],row['evidence'])
+              if i in PACK: assert 'official_pack_item:A23' in row['evidence'], (i,row['evidence'])
+
+          Catalog.load(Path('data/catalog.json')).validate()
+          changed_files=subprocess.check_output(['git','diff','--name-only','origin/main...HEAD'],text=True).splitlines()
+          assert changed_files==[
+              'data/catalog.json',
+              'docs/source-audit-2026-08-lunatic-princess-results.md',
+              'docs/source-audit-2026-08-lunatic-princess.md',
+          ], changed_files
+          print('PR26_REVIEW1_STATIC_OK')
+          print('base:',len(base),'head:',len(head),'new:',len(NEW),'upgraded:',len(OLD))
+          PY
+          git diff --check origin/main...HEAD
