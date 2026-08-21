@@ -1,0 +1,200 @@
+name: Temporary audited Moonlight data apply
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-audited-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/touhou-moonlight-festival
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate audited source mapping and add accepted catalog entries
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import textwrap
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_explicit_touhou_source
+          from touhou_osu.google_sheets import fetch_google_sheet_beatmap_ids
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.sources import import_google_sheet_tournament
+
+          SOURCE_ID = 'tmf-2025'
+          SHEET_ID = '1nqD85CClkgNIHxMU2KVGfcs2i5QphzIEupGxuiqlf04'
+          SHEET = 'Маппул'
+          FORUM = 'https://osu.ppy.sh/community/forums/topics/2029871'
+          MANUALLY_CORROBORATED = {1559, 1785, 889029, 1092488, 1876059, 2182178, 2191004}
+          CONSERVATIVE_EXCLUSIONS = {1263067, 2205921}
+
+          config_path = Path('config/seeds.json')
+          config_text = config_path.read_text(encoding='utf-8')
+          if f'"id": "{SOURCE_ID}"' in config_text:
+              print('Moonlight source already applied')
+              raise SystemExit(0)
+
+          beatmap_ids = fetch_google_sheet_beatmap_ids(SHEET_ID, sheet_names=[SHEET])
+          assert len(beatmap_ids) == 137, len(beatmap_ids)
+
+          api = OsuApi.from_env(); api.token()
+          def resolve(beatmap_id):
+              try:
+                  raw = api.get(f'/beatmaps/{beatmap_id}')
+                  return beatmap_id, int(raw['beatmapset_id']), None
+              except Exception as exc:
+                  return beatmap_id, None, f'{type(exc).__name__}:{exc}'
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              resolved = list(pool.map(resolve, beatmap_ids))
+
+          unresolved = [(b, error) for b, s, error in resolved if error]
+          assert [b for b, _ in unresolved] == [3362650], unresolved
+          pairs = [(b, s) for b, s, error in resolved if s is not None]
+          assert len(pairs) == 136
+          assert len({s for _, s in pairs}) == 136
+
+          catalog_path = Path('data/catalog.json')
+          catalog = Catalog.load(catalog_path)
+          before = len(catalog.entries)
+          assert before == 3594, before
+
+          existing_verified = []
+          existing_candidates = []
+          missing_pairs = []
+          for beatmap_id, beatmapset_id in pairs:
+              current = catalog.entries.get(beatmapset_id)
+              if current is None:
+                  missing_pairs.append((beatmap_id, beatmapset_id))
+              elif current.confidence == 'verified':
+                  existing_verified.append((beatmap_id, beatmapset_id))
+              else:
+                  existing_candidates.append((beatmap_id, beatmapset_id, current.confidence))
+          assert len(existing_verified) == 65, len(existing_verified)
+          assert len(existing_candidates) == 40, len(existing_candidates)
+          assert len(missing_pairs) == 31, len(missing_pairs)
+
+          def live_set(pair):
+              beatmap_id, beatmapset_id = pair
+              raw = api.beatmapset(beatmapset_id)
+              return beatmap_id, beatmapset_id, raw
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              missing_live = list(pool.map(live_set, missing_pairs))
+
+          accepted_missing = []
+          rejected_missing = []
+          for beatmap_id, beatmapset_id, raw in missing_live:
+              explicit = is_explicit_touhou_source(raw.get('source', ''))
+              if beatmapset_id in CONSERVATIVE_EXCLUSIONS:
+                  rejected_missing.append((beatmap_id, beatmapset_id, 'conservative_exclusion'))
+              elif explicit or beatmapset_id in MANUALLY_CORROBORATED:
+                  accepted_missing.append((beatmap_id, beatmapset_id, raw, explicit))
+              else:
+                  rejected_missing.append((beatmap_id, beatmapset_id, 'unresolved_provenance'))
+
+          assert len(accepted_missing) == 29, len(accepted_missing)
+          assert {s for _, s, _ in rejected_missing} == CONSERVATIVE_EXCLUSIONS, rejected_missing
+          weak_accepted = {s for _, s, _, explicit in accepted_missing if not explicit}
+          assert weak_accepted == MANUALLY_CORROBORATED, weak_accepted
+
+          accepted_pair_ids = {(b, s) for b, s in existing_verified}
+          accepted_pair_ids |= {(b, s) for b, s, _, _ in accepted_missing}
+          audited_beatmaps = [
+              {'beatmap_id': b, 'beatmapset_id': s}
+              for b, s in pairs
+              if (b, s) in accepted_pair_ids
+          ]
+          assert len(audited_beatmaps) == 94
+
+          source = {
+              'id': SOURCE_ID,
+              'name': 'Touhou Moonlight Festival (audited subset)',
+              'spreadsheet_id': SHEET_ID,
+              'sheet_names': [SHEET],
+              'url': FORUM,
+              'trusted': False,
+              'audited_beatmaps': audited_beatmaps,
+              'minimum_source_beatmaps': 137,
+              'minimum_entries': 94,
+          }
+
+          # Preserve the existing hand-formatted seeds file; insert one object only.
+          needle = '\n  ],\n  "forum_queues": ['
+          assert config_text.count(needle) == 1
+          block = textwrap.indent(json.dumps(source, ensure_ascii=False, indent=2), '    ')
+          config_text = config_text.replace(needle, ',\n' + block + needle, 1)
+          config_path.write_text(config_text, encoding='utf-8')
+
+          # Re-import through the actual new source implementation as an independent
+          # check that all 94 audited beatmap IDs are still present in the worksheet.
+          imported = import_google_sheet_tournament(source)
+          assert len(imported) == 94
+          imported_by_id = {entry.beatmapset_id: entry for entry in imported}
+          assert set(imported_by_id) == {item['beatmapset_id'] for item in audited_beatmaps}
+
+          # Existing 65 verified entries receive only the new provenance evidence.
+          for beatmap_id, beatmapset_id in existing_verified:
+              catalog.merge(imported_by_id[beatmapset_id])
+
+          # New 29 entries are hydrated from a fresh direct official API refetch.
+          for beatmap_id, beatmapset_id, _search_raw, _explicit in accepted_missing:
+              direct_raw = api.beatmapset(beatmapset_id)
+              incoming = entry_from_osu(
+                  direct_raw,
+                  evidence=imported_by_id[beatmapset_id].evidence,
+                  confidence='verified',
+              )
+              assert incoming.confidence == 'verified'
+              catalog.merge(incoming)
+
+          catalog.save(catalog_path)
+          assert len(catalog.entries) == 3623
+          assert 1263067 not in catalog.entries
+          assert 2205921 not in catalog.entries
+          # The 40 pre-existing candidates are intentionally not promoted by this source.
+          for _beatmap_id, beatmapset_id, confidence in existing_candidates:
+              assert catalog.entries[beatmapset_id].confidence == confidence
+              assert not any(
+                  ev.startswith(f'tournament:google_sheet:{SOURCE_ID}:')
+                  for ev in catalog.entries[beatmapset_id].evidence
+              )
+
+          print(json.dumps({
+              'source_beatmaps': len(beatmap_ids),
+              'resolved': len(pairs),
+              'unresolved': unresolved,
+              'existing_verified_in_audited_subset': len(existing_verified),
+              'existing_candidates_left_unchanged': len(existing_candidates),
+              'new_accepted': len(accepted_missing),
+              'new_explicit_source': sum(1 for *_, explicit in accepted_missing if explicit),
+              'new_manually_corroborated': sorted(weak_accepted),
+              'new_rejected': rejected_missing,
+              'audited_subset': len(audited_beatmaps),
+              'catalog_before': before,
+              'catalog_after': len(catalog.entries),
+          }, ensure_ascii=False, indent=2))
+          PY
+          python -m unittest tests.test_google_sheets
+          python -m touhou_osu.cli validate
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/seeds.json data/catalog.json
+          if git diff --cached --quiet; then
+            echo 'No audited data changes needed'
+            exit 0
+          fi
+          git commit -m "data: add audited Touhou Moonlight Festival coverage [moonlight-data]"
+          git push origin HEAD:feat/touhou-moonlight-festival
