@@ -1,0 +1,95 @@
+name: PR27 manual evidence partition review
+
+on:
+  pull_request:
+    branches: [review/pr27-audit-base-20260821]
+
+permissions:
+  contents: read
+
+jobs:
+  manual-evidence-partition:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prove all 180 manual additions are partitioned by documented evidence groups
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+
+          cat=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          entries={int(x['beatmapset_id']):x for x in cat['entries']}
+          manual={i for i,x in entries.items() if 'audit:night-of-knights-2026-08' in x['evidence'] and 'manual:verified' in x['evidence'] and i != 154426}
+          assert len(manual)==180,len(manual)
+
+          doc=Path('docs/source-audit-2026-08-night-of-knights.md').read_text(encoding='utf-8')
+          def code_ids_after(summary, occurrence=1):
+              pos=-1
+              for _ in range(occurrence): pos=doc.index(summary,pos+1)
+              tail=doc[pos:]
+              m=re.search(r'`([0-9,]+)`',tail)
+              assert m,summary
+              return {int(x) for x in m.group(1).split(',')}
+
+          groups={}
+          groups['first_party_distinctive']=code_ids_after('<details><summary>first-party exact/distinctive derivative (43)</summary>')
+          groups['exact_base']=code_ids_after('<details><summary>beatMARIO / COOL&CREATE exact base title (64)</summary>')
+
+          wave2=doc.split('<details><summary>Manual wave IDs by group</summary>',1)[1].split('</details>',1)[0]
+          for line in wave2.splitlines():
+              m=re.match(r'- `([^`]+)`: ([0-9,]+)$',line.strip())
+              if m: groups['wave2:'+m.group(1)]={int(x) for x in m.group(2).split(',')}
+
+          wave3=doc.split('Accepted IDs:',1)[1].split('After this wave',1)[0]
+          for line in wave3.splitlines():
+              m=re.match(r'- `([^`]+)`: `([0-9,]+)`$',line.strip())
+              if m: groups['wave3:'+m.group(1)]={int(x) for x in m.group(2).split(',')}
+
+          expected_sizes={
+              'first_party_distinctive':43,'exact_base':64,
+              'wave2:richaadeb_official_cover':18,'wave2:paradot_official_remix':7,
+              'wave2:coolcreate_first_party_variant':6,'wave2:chou_super_alias':2,
+              'wave2:falkkone_official_cover':1,'wave2:marasy_official_cover':2,
+              'wave2:nick_nitro_official_remix':1,'wave2:parent_attributed_base_or_edit':25,
+              'wave3:direct_parent_metadata':7,'wave3:official_game_parent':3,'wave3:koraido_artist_store':1,
+          }
+          assert set(groups)==set(expected_sizes),(set(groups),set(expected_sizes))
+          for name,size in expected_sizes.items(): assert len(groups[name])==size,(name,len(groups[name]),size)
+
+          seen=set()
+          for name,ids in groups.items():
+              overlap=seen & ids
+              assert not overlap,(name,'overlap',sorted(overlap))
+              seen |= ids
+          assert seen==manual,('missing_from_groups',sorted(manual-seen),'extra_in_groups',sorted(seen-manual))
+
+          # Strong live-metadata-independent guards for the most collision-prone manual families.
+          exact_titles={'night of nights','night of knights','knight of nights','ナイト・オブ・ナイツ'}
+          def norm(s): return ' '.join((s or '').casefold().replace('（','(').replace('）',')').split())
+          for i in groups['exact_base']:
+              x=entries[i]; a=norm(x['artist']); t=norm(x['title'])
+              assert t in exact_titles,(i,x['title'])
+              assert 'beatmario' in a or 'cool&create' in a or 'cool & create' in a,(i,x['artist'])
+          for i in groups['wave2:richaadeb_official_cover']:
+              x=entries[i]; blob=norm(x['artist']+' '+x['title'])
+              assert 'richaad' in blob and 'night' in blob,(i,x['artist'],x['title'])
+          for i in groups['wave2:paradot_official_remix']:
+              x=entries[i]; blob=norm(x['artist']+' '+x['title'])
+              assert ('para dot' in blob or 'paradot' in blob) and 'night' in blob,(i,x['artist'],x['title'])
+          for i in groups['wave2:falkkone_official_cover']:
+              assert 'falkkone' in norm(entries[i]['artist'])
+          for i in groups['wave2:marasy_official_cover']:
+              assert 'marasy' in norm(entries[i]['artist']) or 'marasy8' in norm(entries[i]['artist'])
+          for i in groups['wave2:nick_nitro_official_remix']:
+              assert 'nick nitro' in norm(entries[i]['artist'])
+          for i in groups['wave3:koraido_artist_store']:
+              assert 'koraido' in norm(entries[i]['artist']+' '+entries[i]['title'])
+
+          print('PR27_MANUAL_PARTITION_OK')
+          print('manual_ids=180 groups=',len(groups),'disjoint=yes complete=yes')
+          print('sizes=',','.join(f'{k}:{len(v)}' for k,v in groups.items()))
+          PY
