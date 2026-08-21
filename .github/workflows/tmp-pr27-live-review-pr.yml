@@ -1,0 +1,86 @@
+name: PR27 fresh live review
+
+on:
+  pull_request:
+    branches: [review/pr27-audit-base-20260821]
+
+permissions:
+  contents: read
+
+jobs:
+  fresh-live-osu-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch origin main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fresh direct-refetch of all 357 new sets plus candidate boundaries
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          from touhou_osu.http import HttpError
+          from touhou_osu.models import normalize_mode
+          from touhou_osu.osu_api import OsuApi
+
+          base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'], text=True))
+          head_raw=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          base={int(x['beatmapset_id']):x for x in base_raw['entries']}
+          head={int(x['beatmapset_id']):x for x in head_raw['entries']}
+          new_ids=sorted(set(head)-set(base))
+          removed=sorted(set(base)-set(head))
+          changed_old=sorted(i for i in set(base)&set(head) if base[i]!=head[i])
+          assert len(base)==3632 and len(head)==3989
+          assert len(new_ids)==357 and not removed and changed_old==[154426]
+
+          api=OsuApi.from_env(); api.token()
+          def check(i):
+              raw=api.beatmapset(i); cur=head[i]
+              assert int(raw['id'])==i
+              modes=sorted({normalize_mode(b.get('mode','')) for b in raw.get('beatmaps',[]) if b.get('mode')})
+              checks={
+                  'artist':raw.get('artist',''), 'title':raw.get('title',''),
+                  'creator':raw.get('creator',''), 'source':raw.get('source',''),
+                  'status':raw.get('status','unknown'), 'modes':modes,
+                  'osu_last_updated':raw.get('last_updated'),
+              }
+              for f,v in checks.items():
+                  assert v==cur[f], (i,f,v,cur[f])
+              return i
+
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              checked=list(pool.map(check,new_ids))
+          assert len(checked)==357
+
+          raw=api.beatmapset(154426); cur=head[154426]
+          modes=sorted({normalize_mode(b.get('mode','')) for b in raw.get('beatmaps',[]) if b.get('mode')})
+          assert raw.get('artist','')==cur['artist']=='beatMARIO'
+          assert raw.get('title','')==cur['title']=='Night of Knights'
+          assert raw.get('creator','')==cur['creator']
+          assert raw.get('source','')==cur['source']
+          assert raw.get('status','unknown')==cur['status']
+          assert modes==cur['modes']
+          assert raw.get('last_updated')==cur['osu_last_updated']
+          tags=(raw.get('tags') or '').casefold()
+          assert 'touhou' in tags and ('cool&create' in tags or 'cool create' in tags), tags
+
+          try:
+              api.beatmapset(1561908)
+          except HttpError as exc:
+              assert 'HTTP 404' in str(exc), str(exc)
+          else:
+              raise AssertionError('1561908 unexpectedly resolves')
+
+          print('PR27_FRESH_LIVE_REVIEW_OK')
+          print('live_refetched=357')
+          print('changed_old=[154426]')
+          print('unresolved_candidate_404=1561908')
+          PY
