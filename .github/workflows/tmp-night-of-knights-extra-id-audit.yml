@@ -1,0 +1,55 @@
+name: Temporary Night of Knights incremental ID audit
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ids:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refetch additional web IDs and resolve tournament beatmap
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_explicit_touhou_source
+          from touhou_osu.osu_api import OsuApi,entry_from_osu
+
+          IDS=[977038,1710394,2338461,2204403,2346402]
+          api=OsuApi.from_env();api.token();catalog=Catalog.load(Path('data/catalog.json'))
+          def fetch(i):
+              try:r=api.beatmapset(i)
+              except Exception as exc:return {'beatmapset_id':i,'error':f'{type(exc).__name__}:{exc}'}
+              e=entry_from_osu(r,evidence=['audit:night-of-knights-extra'],confidence='candidate')
+              cur=catalog.entries.get(i)
+              return {'beatmapset_id':i,'catalog_state':'absent' if cur is None else cur.confidence,
+                'catalog_evidence':[] if cur is None else cur.evidence,'artist':e.artist,'artist_unicode':r.get('artist_unicode',''),
+                'title':e.title,'title_unicode':r.get('title_unicode',''),'creator':e.creator,'source':e.source,
+                'status':e.status,'modes':e.modes,'classifier_confidence':e.confidence,
+                'explicit_touhou_source':is_explicit_touhou_source(e.source),'tags':r.get('tags',''),'last_updated':r.get('last_updated')}
+          with ThreadPoolExecutor(max_workers=5) as p:rows=list(p.map(fetch,IDS))
+          # Tournament post gives legacy beatmap id 786018 for a beatMARIO Night of Knights map.
+          try:
+              bm=api.get('/beatmaps/786018')
+              set_id=int((bm.get('beatmapset') or {}).get('id') or bm.get('beatmapset_id'))
+              resolved={'beatmap_id':786018,'beatmapset_id':set_id,'catalog_state':'absent' if catalog.entries.get(set_id) is None else catalog.entries[set_id].confidence,
+                        'artist':(bm.get('beatmapset') or {}).get('artist'),'title':(bm.get('beatmapset') or {}).get('title')}
+          except Exception as exc:
+              resolved={'beatmap_id':786018,'error':f'{type(exc).__name__}:{exc}'}
+          print('NIGHT_EXTRA_ID_AUDIT_BEGIN')
+          print(json.dumps({'sets':rows,'tournament_beatmap':resolved},ensure_ascii=False,indent=2))
+          print('NIGHT_EXTRA_ID_AUDIT_END')
+          PY
