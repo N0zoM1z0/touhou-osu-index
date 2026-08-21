@@ -1,0 +1,70 @@
+name: Temporary Lunatic Princess final candidate audit
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Inspect catalog evidence and live metadata
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.osu_api import OsuApi
+
+          IDS=[2626,5346,507416,2188045,2205747,2209334,2282709,2314117,2561367,21098,47754,171239,183267,427407,723024,855735]
+          EXISTING=[21098,47754,171239,183267,427407,723024,855735]
+          catalog=Catalog.load(Path('data/catalog.json'))
+          existing=[]
+          for i in EXISTING:
+              e=catalog.entries.get(i)
+              assert e is not None, i
+              existing.append({
+                  'beatmapset_id':i,
+                  'confidence':e.confidence,
+                  'artist':e.artist,
+                  'title':e.title,
+                  'source':e.source,
+                  'evidence':e.evidence,
+                  'last_checked':e.last_checked,
+                  'osu_last_updated':e.osu_last_updated,
+              })
+
+          api=OsuApi.from_env(); api.token()
+          def fetch(i):
+              raw=api.beatmapset(i)
+              assert int(raw['id'])==i
+              return {
+                  'beatmapset_id':i,
+                  'artist':raw.get('artist',''),
+                  'artist_unicode':raw.get('artist_unicode',''),
+                  'title':raw.get('title',''),
+                  'title_unicode':raw.get('title_unicode',''),
+                  'source':raw.get('source',''),
+                  'creator':raw.get('creator',''),
+                  'status':raw.get('status',''),
+                  'tags':raw.get('tags',''),
+                  'beatmaps':[{'id':b.get('id'),'mode':b.get('mode'),'version':b.get('version')} for b in raw.get('beatmaps',[])],
+              }
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              live=list(pool.map(fetch,IDS))
+
+          print('LUNATIC_FINAL_CANDIDATE_AUDIT_BEGIN')
+          print(json.dumps({'existing_catalog_entries':existing,'live':live},ensure_ascii=False,indent=2))
+          print('LUNATIC_FINAL_CANDIDATE_AUDIT_END')
+          PY
