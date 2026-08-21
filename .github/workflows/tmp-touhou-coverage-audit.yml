@@ -1,6 +1,7 @@
 name: Temporary Touhou coverage audit
 
 on:
+  pull_request:
   push:
     branches: [feat/touhou-coverage-200plus-2026-08-21]
 
