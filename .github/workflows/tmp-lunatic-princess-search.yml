@@ -1,0 +1,254 @@
+name: Temporary Lunatic Princess search audit
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  search-and-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Search source-backed arrangement corpus
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import unicodedata
+          from collections import Counter, defaultdict
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_explicit_touhou_source
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+
+          CORPUS = [('竹取飛翔 ～ Lunatic Princess', None),
+           ('竹取飛翔', None),
+           ('竹取飛翔 ～ the Lunatic Princess', 'dBu music'),
+           ('竹取飛翔 ～ lunatic princess', 'UI-70'),
+           ('竹取飛翔～lunatic princess', 'UI-70'),
+           ('竹取飛翔 ～ Lunatic Princess<Eternal Change>', 'efs'),
+           ('竹取飛翔 MIYABI Mix', 'Colorful Cube'),
+           ('竹取演舞', 'SOUND HOLIC'),
+           ('竹取飛翔 ～ Lunatic Princess(Hardstyle)', 'nmk'),
+           ('ちょっとおしゃれな竹取飛翔', 'RoundLoudness'),
+           ('Lunatic Princess', 'Alstroemeria Records'),
+           ('Lunatic Princess(alstroemeria remix)', 'Alstroemeria Records'),
+           ('Lunatic Princess feat.ayaka*', 'Alstroemeria Records'),
+           ('Moonlit Night', 'Alstroemeria Records'),
+           ('seashore on the moon', 'Alstroemeria Records'),
+           ('Deeper Than Your Eyes, Farther Than Platinum Moon', 'Alstroemeria Records'),
+           ('Help me, ERINNNNNN!!', None),
+           ('Help me,ERINNNNNN!!', None),
+           ('Help me ERINNNNNN!!', None),
+           ('Help me, ERINNNNNN!! (SPEEDCORE MIX)', 'Cis-Trance'),
+           ('Help me, ERINNNNNN!!（NU STYLE MIX）', 'Cis-Trance'),
+           ('Help me, ERINNNNNN!! -SH Style-', 'KONAMI'),
+           ('Help me, ERINNNNNN!! (TOS Remix)', '魂音泉'),
+           ('Help me, ERINNNNNN!! 森羅万象ver.', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!! 豚乙女ver.', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!（Tsukasa Hyper Rave Remix）', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!（ARMにぎにぎREMIX）', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!～翔～', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!（Eurobeat Mix）', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!! - ASAP', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!（ALR Remix）', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!（TUMENECO ver.）', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!! 少女理論観測所ver.', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!（Cranky Remix 2018）', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!（feat. ｙｔｒ）- TOS Remix', 'COOL&CREATE'),
+           ('まりおさんに贈るHelp me, ERINNNNNN!!', 'COOL&CREATE'),
+           ('Help me, ERINNNNNN!!（English ver.）', 'COOL&CREATE'),
+           ('Help me, あーりん！', 'イロドリミドリ'),
+           ('つるぺったん', 'Silver Forest'),
+           ('つるぺったん sun3 Remix', 'Silver Forest'),
+           ('つるぺったん。', 'Silver Forest'),
+           ('初音ミクでつるぺったん', 'Silver Forest'),
+           ('Lunatic Beat', 'Silver Forest'),
+           ('Lunatic EURO', 'Silver Forest'),
+           ('フィーバーフィーバー', 'Silver Forest'),
+           ('BAMBOO DANCE', 'A-One'),
+           ('悠久の守人', 'A-One'),
+           ('Psy-Phone', 'SOUND HOLIC'),
+           ('Psy-Phone(REDALiCE Remix)', 'SOUND HOLIC'),
+           ('TSUKI NO KAKERA', 'SOUND HOLIC'),
+           ('blue moon Jazz～蒼月～', 'SOUND HOLIC'),
+           ('Lunatic Concerto～The Battle of Eternity～', 'SOUND HOLIC'),
+           ('逆襲のプリンセス', 'SOUND HOLIC'),
+           ('Soaring princess', 'EastNewSound'),
+           ('きゅんきゅんたまらんいなばたん。', 'EastNewSound'),
+           ('stillness～死が二人を分かつまで～', 'EastNewSound'),
+           ('lunareclpse', 'EastNewSound'),
+           ('card format', 'EastNewSound'),
+           ('split second', 'EastNewSound'),
+           ('Sign', 'FELT'),
+           ('SINK', 'FELT'),
+           ('Under cloud', 'FELT'),
+           ('Take to LIH is you', 'Halozy'),
+           ('T.R.Y Revolution', 'Halozy'),
+           ('It is so beautiful', 'Halozy'),
+           ('Kill DJ', 'Halozy'),
+           ('sola', 'nmk'),
+           ('無限のInnocence', 'Amateras Records'),
+           ('曖昧Never Ending', 'Amateras Records'),
+           ('Crazy Diamond', 'Amateras Records'),
+           ('Entrance to Moon', 'Amateras Records'),
+           ('囲い無き世は一期の月影', '豚乙女'),
+           ('ふわ☆きら', '豚乙女'),
+           ('狂人日記', '豚乙女'),
+           ('Grate Escapers', '凋叶棕'),
+           ('devastator', '凋叶棕'),
+           ('永遠なるサウンドスケープ', '凋叶棕'),
+           ('until do us part', '凋叶棕'),
+           ('永夜 「Imperishable Challengers」', '凋叶棕'),
+           ('そして遙に至る', '凋叶棕'),
+           ('永遠と瞬息の放浪者', 'Yonder Voice'),
+           ('月まで何マイル', 'Liz Triangle'),
+           ('KilLove Fireproof!', '暁Records'),
+           ('HOW DOES IF FEEL TO BE ALIVE?', "CROW'SCLAW"),
+           ('触れられない物語', '魂音泉'),
+           ('触れられない物語(Over the "MOON" Remix)', '魂音泉'),
+           ('深読みレゾナンス', '幽閉サテライト'),
+           ('千華繚乱', '幽閉サテライト'),
+           ('満月の下で踊る', '蒼天の雪'),
+           ('行列のできるえーりん診療所', 'IOSYS'),
+           ('きっともうはたらかない', 'IOSYS'),
+           ('2Dive into Shadow', "LiLA'c Records"),
+           ('Dreaming Moon', 'DiGiTAL WiNG'),
+           ('Moonlit refrain', 'CielArc'),
+           ('Moon Paradise', 'ダシマキレコード'),
+           ('Flying Night', 'Under Reverse'),
+           ('Immortal Luna', 'White Wonderful Records'),
+           ('夢乃鳥症候群', 'SuganoMusic'),
+           ('MOON PHASE', 'IRON ATTACK!'),
+           ('Night after night', 'IRON ATTACK!'),
+           ("What's Your Deep Wish?", 'C-CLAYS'),
+           ('TLiNKLE', '<echo>PROJECT'),
+           ('月夜物語', 'K2E†Cradle')]
+
+          GENERIC = {
+              'Lunatic Princess','Moonlit Night','Sign','SINK','Under cloud','sola','Crazy Diamond',
+              'Entrance to Moon','devastator','Dreaming Moon','Moonlit refrain','Moon Paradise','Flying Night',
+              'Immortal Luna','MOON PHASE','Night after night','TLiNKLE','月夜物語'
+          }
+
+          def norm(value):
+              value = unicodedata.normalize('NFKC', value or '').casefold()
+              return ''.join(ch for ch in value if ch.isalnum())
+
+          def title_relation(actual, expected):
+              a, e = norm(actual), norm(expected)
+              if not a or not e:
+                  return False
+              if a == e:
+                  return True
+              if e == norm('竹取飛翔') and a.startswith(e):
+                  return True
+              if e.startswith(norm('Help me, ERINNNNNN!!')) and norm('Help me, ERINNNNNN!!') in a:
+                  return True
+              return len(e) >= 12 and (e in a or a in e)
+
+          def artist_match(actual, guard):
+              if not guard:
+                  return True
+              a, g = norm(actual), norm(guard)
+              return bool(a and g and (a in g or g in a))
+
+          api = OsuApi.from_env(); api.token()
+          queries=[]
+          seen_queries=set()
+          for title, guard in CORPUS:
+              query = f'{guard} {title}' if title in GENERIC and guard else title
+              if query not in seen_queries:
+                  seen_queries.add(query); queries.append(query)
+
+          discovered={}
+          query_hits=defaultdict(set)
+          for query in queries:
+              for raw in api.search(query, max_pages=3):
+                  i=int(raw['id']); discovered[i]=raw; query_hits[i].add(query)
+
+          # Restrict expensive direct refetching to search results whose current search metadata
+          # has a title relation to at least one documented corpus row.
+          preliminary={}
+          for i, raw in discovered.items():
+              matches=[]
+              for title, guard in CORPUS:
+                  if title_relation(raw.get('title',''), title):
+                      matches.append((title,guard,artist_match(raw.get('artist',''),guard)))
+              if matches:
+                  preliminary[i]=matches
+
+          def direct(i):
+              raw=api.beatmapset(i)
+              entry=entry_from_osu(raw,evidence=['audit:lunatic-princess'],confidence='candidate')
+              matches=[]
+              for title, guard in CORPUS:
+                  if title_relation(entry.title,title):
+                      matches.append({
+                          'title':title,
+                          'guard':guard,
+                          'artist_match':artist_match(entry.artist,guard),
+                      })
+              return i, raw, entry, matches
+
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              direct_rows=list(pool.map(direct, sorted(preliminary)))
+
+          catalog=Catalog.load(Path('data/catalog.json'))
+          candidates=[]
+          coverage=Counter()
+          for i, raw, entry, matches in direct_rows:
+              if not matches:
+                  continue
+              current=catalog.entries.get(i)
+              state='absent' if current is None else current.confidence
+              if current is None:
+                  coverage['absent'] += 1
+              elif current.confidence in {'verified','probable'}:
+                  coverage['already_accepted'] += 1
+              else:
+                  coverage[f'existing_{current.confidence}'] += 1
+              if current is not None and current.confidence in {'verified','probable'}:
+                  continue
+              strong=any(m['guard'] is None or m['artist_match'] for m in matches)
+              candidates.append({
+                  'beatmapset_id':i,
+                  'catalog_state':state,
+                  'artist':entry.artist,
+                  'title':entry.title,
+                  'creator':entry.creator,
+                  'source':entry.source,
+                  'status':entry.status,
+                  'modes':entry.modes,
+                  'classifier_confidence':entry.confidence,
+                  'explicit_touhou_source':is_explicit_touhou_source(entry.source),
+                  'strong_title_artist_match':strong,
+                  'matches':matches,
+                  'queries':sorted(query_hits[i]),
+              })
+
+          candidates.sort(key=lambda x:(not x['strong_title_artist_match'], x['beatmapset_id']))
+          print('LUNATIC_SEARCH_REPORT_BEGIN')
+          print(json.dumps({
+              'corpus_tuples':len(CORPUS),
+              'unique_search_queries':len(queries),
+              'search_discovered_unique':len(discovered),
+              'title_related_after_search':len(preliminary),
+              'title_related_after_direct_refetch':len(direct_rows),
+              'coverage':dict(coverage),
+              'review_candidate_count':len(candidates),
+              'strong_candidate_count':sum(1 for x in candidates if x['strong_title_artist_match']),
+              'candidates':candidates,
+          },ensure_ascii=False,indent=2))
+          print('LUNATIC_SEARCH_REPORT_END')
+          PY
