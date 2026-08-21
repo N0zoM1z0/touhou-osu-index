@@ -1,0 +1,117 @@
+name: Temporary Moonlight Festival source audit
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit forum provenance, spreadsheet structure, and live missing IDs
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import re
+          from collections import Counter
+          from concurrent.futures import ThreadPoolExecutor
+          from io import BytesIO
+          from pathlib import Path
+          from xml.etree import ElementTree as ET
+          from zipfile import ZipFile
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_explicit_touhou_source
+          from touhou_osu.google_sheets import (
+              _DOCUMENT_REL_NS,
+              _SPREADSHEET_NS,
+              _normalize_archive_path,
+              _relationship_targets,
+              _shared_strings,
+              _worksheet_texts,
+              google_sheet_export_url,
+          )
+          from touhou_osu.http import get_text, request
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+
+          FORUM = "https://osu.ppy.sh/community/forums/topics/2029871"
+          SHEET_ID = "1nqD85CClkgNIHxMU2KVGfcs2i5QphzIEupGxuiqlf04"
+          BEATMAPSET_RE = re.compile(r"https?://osu\.ppy\.sh/(?:beatmapsets|s)/(\d+)", re.I)
+
+          forum = get_text(FORUM)
+          required_phrases = ["Touhou Project", "тематическим набором карт", "Spreadsheet"]
+          missing_phrases = [p for p in required_phrases if p not in forum]
+          assert not missing_phrases, f"forum provenance phrases missing: {missing_phrases}"
+
+          payload = request(google_sheet_export_url(SHEET_ID), headers={"Accept":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})
+          with ZipFile(BytesIO(payload)) as archive:
+              workbook_path = "xl/workbook.xml"
+              workbook = ET.fromstring(archive.read(workbook_path))
+              rels = _relationship_targets(archive.read("xl/_rels/workbook.xml.rels"))
+              shared = _shared_strings(archive)
+              sheets=[]
+              all_ids=set()
+              for sheet in workbook.findall(f".//{{{_SPREADSHEET_NS}}}sheet"):
+                  name=sheet.attrib.get("name","")
+                  rid=sheet.attrib.get(f"{{{_DOCUMENT_REL_NS}}}id","")
+                  target=rels.get(rid,"")
+                  if not target: continue
+                  path=_normalize_archive_path(workbook_path,target)
+                  texts=_worksheet_texts(archive,path,shared)
+                  ids=[]; seen=set()
+                  for text in texts:
+                      for m in BEATMAPSET_RE.finditer(text):
+                          i=int(m.group(1))
+                          if i not in seen:
+                              seen.add(i); ids.append(i)
+                  all_ids.update(ids)
+                  sheets.append({"name":name,"beatmapset_count":len(ids),"ids":ids})
+
+          catalog=Catalog.load(Path("data/catalog.json"))
+          existing=set(catalog.entries)
+          union=sorted(all_ids)
+          missing=sorted(all_ids-existing)
+          api=OsuApi.from_env(); api.token()
+          def live(i):
+              raw=api.beatmapset(i)
+              entry=entry_from_osu(raw,evidence=["audit:moonlight"],confidence="candidate")
+              return {
+                  "id":i,
+                  "artist":entry.artist,
+                  "title":entry.title,
+                  "creator":entry.creator,
+                  "source":entry.source,
+                  "status":entry.status,
+                  "modes":entry.modes,
+                  "classifier_confidence":entry.confidence,
+                  "explicit_touhou_source":is_explicit_touhou_source(entry.source),
+              }
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              live_missing=list(pool.map(live,missing))
+
+          print("MOONLIGHT_AUDIT_BEGIN")
+          print(json.dumps({
+              "forum":FORUM,
+              "spreadsheet_id":SHEET_ID,
+              "forum_provenance_ok":True,
+              "catalog_entries":len(existing),
+              "sheets":sheets,
+              "sheet_union_unique_ids":len(union),
+              "already_in_catalog":len(set(union)&existing),
+              "missing_from_catalog":len(missing),
+              "missing_ids":missing,
+              "live_missing":live_missing,
+              "live_missing_confidence_counts":dict(Counter(x["classifier_confidence"] for x in live_missing)),
+          }, ensure_ascii=False, indent=2))
+          print("MOONLIGHT_AUDIT_END")
+          PY
