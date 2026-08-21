@@ -57,7 +57,6 @@ jobs:
           assert removed==set(), sorted(removed)
           assert changed_old==EXISTING, (sorted(changed_old),sorted(EXISTING))
 
-          # No manual sticky was present in the seven old candidates before this PR.
           for i in EXISTING:
               assert 'manual:candidate' not in base[i]['evidence'], (i,base[i]['evidence'])
               assert 'manual:excluded' not in base[i]['evidence'], (i,base[i]['evidence'])
@@ -81,7 +80,6 @@ jobs:
               if i in PACK:
                   assert 'official_pack_item:A23' in row['evidence'], (i,row['evidence'])
 
-          # Direct-refetch every reviewed set and compare the metadata persisted by the PR.
           api=OsuApi.from_env(); api.token()
           def fetch(i):
               return i,api.beatmapset(i)
@@ -105,7 +103,6 @@ jobs:
                       metadata_mismatches.append((i,key,row[key],value))
           assert not metadata_mismatches, metadata_mismatches
 
-          # Freshly recheck the configured audited Silver Forest A23 pack membership.
           seeds=json.loads(Path('config/seeds.json').read_text(encoding='utf-8'))
           a23=[x for x in seeds['official_packs'] if x.get('tag')=='A23']
           assert len(a23)==1
@@ -115,13 +112,10 @@ jobs:
           assert 2626 in imported_ids
           assert all(e.confidence=='verified' for e in imported)
 
-          # Preserve both corpus waves in permanent docs after temporary CI is removed.
           first=Path('docs/source-audit-2026-08-lunatic-princess.md').read_text(encoding='utf-8')
           second=Path('docs/source-audit-2026-08-lunatic-princess-results.md').read_text(encoding='utf-8')
           first_rows=re.findall(r'^\| `.+?` \| `.+?` \|$',first,flags=re.M)
           second_rows=re.findall(r'^\| `.+?` \| `.+?` \|$',second,flags=re.M)
-          # The first doc has exactly the 103 corpus rows. The results doc's first table has 88 rows;
-          # later decision tables have numeric first columns and therefore do not match this regex.
           assert len(first_rows)==103, len(first_rows)
           assert len(second_rows)==88, len(second_rows)
           assert '**5,070**' in second and '**26**' in second and '**16**' in second and '**5,044**' in second
@@ -139,9 +133,8 @@ jobs:
           print('a23_live_members:',len(imported))
           print('corpus_tuples:',len(first_rows)+len(second_rows))
           PY
-          python -m unittest discover -s tests -v
-          python -m touhou_osu.cli validate --catalog data/catalog.json
+          make check
           rm -rf /tmp/touhou-build-final
-          python -m touhou_osu.cli --catalog data/catalog.json build --output /tmp/touhou-build-final
+          python -m touhou_osu --catalog data/catalog.json build --output /tmp/touhou-build-final
           test -f /tmp/touhou-build-final/index.html
           git diff --check origin/main...HEAD
