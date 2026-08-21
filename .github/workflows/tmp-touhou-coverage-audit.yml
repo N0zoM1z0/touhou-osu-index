@@ -1,20 +1,18 @@
 name: Temporary Touhou coverage apply
 
 on:
-  push:
-    branches: [feat/touhou-coverage-200plus-2026-08-21]
+  pull_request:
 
 permissions:
   contents: write
 
 jobs:
   apply-verified-batch:
-    if: ${{ !contains(github.event.head_commit.message, '[coverage-batch]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
+          ref: feat/touhou-coverage-200plus-2026-08-21
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -23,6 +21,11 @@ jobs:
           OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
           OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
         run: |
+          set -euo pipefail
+          if git log -1 --pretty=%B | grep -Fq '[coverage-batch]'; then
+            echo 'coverage batch already applied; no-op'
+            exit 0
+          fi
           python - <<'PY'
           import json
           import time
@@ -64,8 +67,6 @@ jobs:
           if len(verified) < TARGET:
               raise SystemExit(f"only {len(verified)} verified missing beatmapsets; need {TARGET}")
 
-          # Round-robin across normalized osu! source strings so the batch is broad
-          # instead of being dominated by one game/source label or one ID era.
           buckets = defaultdict(list)
           for entry in verified:
               buckets[normalize(entry.source)].append(entry)
@@ -145,4 +146,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/catalog.json
           git commit -m "data: add 300 verified Touhou beatmapsets [coverage-batch]"
-          git push origin HEAD:${{ github.ref_name }}
+          git push origin HEAD:feat/touhou-coverage-200plus-2026-08-21
