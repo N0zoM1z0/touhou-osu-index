@@ -66,13 +66,13 @@ jobs:
 
           Catalog.load(Path('data/catalog.json')).validate()
           changed_files=subprocess.check_output(['git','diff','--name-only','origin/main...HEAD'],text=True).splitlines()
-          assert changed_files==[
-              '.github/workflows/tmp-pr26-review1-static.yml',
+          semantic=[p for p in changed_files if not p.startswith('.github/workflows/tmp-pr26-review')]
+          assert semantic==[
               'data/catalog.json',
               'docs/source-audit-2026-08-lunatic-princess-results.md',
               'docs/source-audit-2026-08-lunatic-princess.md',
-          ], changed_files
+          ], (changed_files,semantic)
           print('PR26_REVIEW1_STATIC_OK')
-          print('base:',len(base),'head:',len(head),'new:',len(NEW),'upgraded:',len(OLD))
+          print('base:',len(base),'head:',len(head),'new:',len(NEW),'upgraded:',len(OLD),'semantic_files:',len(semantic))
           PY
           git diff --check origin/main...HEAD
