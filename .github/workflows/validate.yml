@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   test:
@@ -18,3 +19,116 @@ jobs:
           python-version: "3.12"
       - run: make check
       - run: make build
+
+  audit-night-of-knights:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact catalog and live metadata audit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          gh run view 32477749313 --repo "$GITHUB_REPOSITORY" --log > /tmp/night-status.log
+          python - <<'PY'
+          import json,re,subprocess,unicodedata
+          from collections import Counter
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.osu_api import OsuApi,entry_from_osu
+
+          base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'],text=True))
+          head_raw=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          base={int(x['beatmapset_id']):x for x in base_raw['entries']}
+          head={int(x['beatmapset_id']):x for x in head_raw['entries']}
+          new_ids=sorted(set(head)-set(base))
+          removed=sorted(set(base)-set(head))
+          changed_old=sorted(i for i in set(base)&set(head) if base[i]!=head[i])
+          assert len(base)==3632,(len(base),'base')
+          assert len(head)==3989,(len(head),'head')
+          assert len(new_ids)==357,len(new_ids)
+          assert not removed,removed
+          assert not changed_old,changed_old[:20]
+
+          new=[head[i] for i in new_ids]
+          assert all(x['confidence']=='verified' for x in new)
+          assert all('manual:candidate' not in x['evidence'] and 'manual:excluded' not in x['evidence'] for x in new)
+          ev=Counter()
+          for x in new:
+              if 'manual:verified' in x['evidence']: ev['manual_verified']+=1
+              if 'osu_source' in x['evidence'] and 'manual:verified' not in x['evidence']: ev['automatic_osu_source']+=1
+              if 'composition:cool-create:night-of-knights' in x['evidence']: ev['composition_parent']+=1
+          assert ev['automatic_osu_source']==177,ev
+          assert ev['manual_verified']==180,ev
+          assert ev['composition_parent']==180,ev
+
+          # Parse the authoritative pre-change status-scoped enumeration.
+          lines=Path('/tmp/night-status.log').read_text(encoding='utf-8-sig').splitlines()
+          begins=[i for i,x in enumerate(lines) if 'NIGHT_STATUS_ENUM_BEGIN' in x]
+          ends=[i for i,x in enumerate(lines) if 'NIGHT_STATUS_ENUM_END' in x]
+          assert begins and ends
+          b=begins[-1]; e=next(i for i in ends if i>b)
+          payload=[]
+          for line in lines[b+1:e]:
+              payload.append(re.sub(r'^.*?\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z\s*','',line))
+          text='\n'.join(payload).strip(); report=json.loads(text[text.find('{'):text.rfind('}')+1])
+          initial_missing={int(x['beatmapset_id']) for x in report['missing']}
+          assert len(initial_missing)==440,len(initial_missing)
+          assert set(new_ids)<=initial_missing
+          withheld=sorted(initial_missing-set(new_ids))
+          assert len(withheld)==83,len(withheld)
+          assert all(i not in head for i in withheld)
+
+          def norm(v):
+              return ''.join(c for c in unicodedata.normalize('NFKC',v or '').casefold() if c.isalnum())
+          toks=[norm(x) for x in ['ナイト・オブ・ナイツ','Night of Nights','Night of Knights','Knight of Nights']]
+          def family(title): return any(t in norm(title) for t in toks)
+          candidate_family=sorted(x for x in base.values() if x['confidence']=='candidate' and family(x.get('title','')))
+          print('candidate_title_family_count=',len(candidate_family))
+          for x in candidate_family:
+              print('CANDIDATE',x['beatmapset_id'],x['artist'],x['title'],x['source'],x['evidence'])
+
+          api=OsuApi.from_env();api.token()
+          def live(i):
+              raw=api.beatmapset(i)
+              assert int(raw['id'])==i
+              cur=head[i]
+              modes=sorted({b.get('mode') for b in raw.get('beatmaps',[]) if b.get('mode')})
+              assert raw.get('artist','')==cur['artist'],(i,'artist')
+              assert raw.get('title','')==cur['title'],(i,'title')
+              assert raw.get('creator','')==cur['creator'],(i,'creator')
+              assert raw.get('source','')==cur['source'],(i,'source',raw.get('source'),cur['source'])
+              assert raw.get('status','unknown')==cur['status'],(i,'status')
+              assert modes==cur['modes'],(i,'modes',modes,cur['modes'])
+              return i
+          with ThreadPoolExecutor(max_workers=10) as pool:
+              live_ids=list(pool.map(live,new_ids))
+          assert len(live_ids)==357
+
+          # Refresh candidate-family rows for the one pre-existing boundary, if any.
+          for x in candidate_family:
+              raw=api.beatmapset(int(x['beatmapset_id']))
+              print('CANDIDATE_LIVE',raw['id'],raw.get('artist',''),raw.get('title',''),raw.get('source',''),raw.get('tags',''))
+
+          Catalog.load(Path('data/catalog.json')).validate()
+          print('NIGHT_FINAL_AUDIT_OK')
+          print('base_catalog=',len(base))
+          print('head_catalog=',len(head))
+          print('new_verified=',len(new_ids))
+          print('automatic_osu_source=',ev['automatic_osu_source'])
+          print('manual_verified=',ev['manual_verified'])
+          print('withheld=',len(withheld))
+          print('candidate_title_family=',len(candidate_family))
+          PY
+          make check
+          make build
