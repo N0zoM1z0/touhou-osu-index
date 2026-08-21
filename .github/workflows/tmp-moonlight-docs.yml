@@ -1,4 +1,5 @@
 name: Temporary Moonlight source inventory patch
+# Temporary push-only helper; removed before review.
 
 on:
   push:
