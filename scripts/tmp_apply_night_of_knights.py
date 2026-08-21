@@ -1,37 +1,12 @@
 from __future__ import annotations
 
-import json
-import re
-import sys
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from touhou_osu.catalog import Catalog
-from touhou_osu.classifier import apply_classification, is_explicit_touhou_source
+from touhou_osu.classifier import apply_classification
 from touhou_osu.osu_api import OsuApi, entry_from_osu
-
-STATUS_LOG = Path(sys.argv[1])
-
-
-def load_status_report(path: Path) -> dict:
-    lines = path.read_text(encoding="utf-8-sig").splitlines()
-    begins = [i for i, line in enumerate(lines) if "NIGHT_STATUS_ENUM_BEGIN" in line]
-    ends = [i for i, line in enumerate(lines) if "NIGHT_STATUS_ENUM_END" in line]
-    assert begins and ends
-    begin = begins[-1]
-    end = next(i for i in ends if i > begin)
-    payload = []
-    for line in lines[begin + 1 : end]:
-        payload.append(
-            re.sub(
-                r"^.*?\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z\s*",
-                "",
-                line,
-            )
-        )
-    text = "\n".join(payload).strip()
-    return json.loads(text[text.find("{") : text.rfind("}") + 1])
 
 
 def norm(value: str) -> str:
@@ -42,123 +17,189 @@ def norm(value: str) -> str:
     )
 
 
-BASE = [norm(x) for x in ["ナイト・オブ・ナイツ", "Night of Nights", "Night of Knights", "Knight of Nights"]]
-TOKENS = [
-    "thousandknives",
-    "elementasremix",
-    "豚乙女ver",
-    "alrremix",
-    "crankyremix",
-    "tosremix",
-    "緋想天mix",
-    "少女理論観測所ver",
-    "tpzoverheatremix",
-    "狐夢想style",
-    "iqの低いナイツ",
-    "かめりあ",
-    "onceuponanight",
-    "kors kremix",
-    "usaoremix",
-    "amaterasrecordsremix",
-    "armremix",
-    "redaliceremix",
-    "maronbounce",
-    "higedriverremix",
-    "xiremix",
-    "mrmremix",
-    "crankyvstpazolite",
-    "ryu remix",
-    "gamesize",
-    "超ナイトオブナイツ",
-    "chounightofknights",
-    "choknightofknights",
-    "cosmobsp398",
-    "マサラダremix",
-    "chromaremix",
-    "32kidosancore",
-    "原口オブリミックス",
-    "南ノ南ahwowremix",
-    "namigrooveremix",
-    "八王子premix",
-    "sawtowneremix",
-    "reナイトオブナイツ",
-]
-NTOK = [norm(x) for x in TOKENS]
-KNOWN_REMIXERS = [
+BASE = [
     norm(x)
     for x in [
-        "Cranky",
-        "t+pazolite",
-        "Camellia",
-        "かめりあ",
-        "kors k",
-        "USAO",
-        "REDALiCE",
-        "MARON",
-        "Hige Driver",
-        "xi",
-        "Morimori Atsushi",
-        "モリモリあつし",
-        "Ryu",
-        "Amateras Records",
-        "Chroma",
-        "黒魔",
-        "八王子P",
-        "cosMo",
-        "SAWTOWNE",
-        "marasy",
-        "まらしぃ",
-        "A-One",
-        "IOSYS",
-        "SOUND HOLIC",
-        "Masayoshi Minoshima",
+        "ナイト・オブ・ナイツ",
+        "Night of Nights",
+        "Night of Knights",
+        "Knight of Nights",
     ]
 ]
 
 
-def base_exact(title: str) -> bool:
-    return norm(title) in BASE
-
-
-def parent_artist(artist: str) -> bool:
-    value = norm(artist)
-    return "beatmario" in value or "coolcreate" in value or value == "ビートまりお"
-
-
-def official_exactish(artist: str, title: str) -> bool:
+def base_family(title: str) -> bool:
     title_n = norm(title)
-    artist_n = norm(artist)
-    if not any(token and token in title_n for token in NTOK):
-        return False
-    return parent_artist(artist) or any(token and token in artist_n for token in KNOWN_REMIXERS)
+    return any(token in title_n for token in BASE)
 
 
-def bucket(artist: str, title: str, source: str) -> str | None:
-    if is_explicit_touhou_source(source):
-        return "explicit_source"
-    if official_exactish(artist, title):
-        return "official_exactish"
-    if base_exact(title) and parent_artist(artist):
-        return "base_parent_exact"
-    return None
+def combined(raw: dict) -> str:
+    return norm(
+        " ".join(
+            [
+                raw.get("artist", ""),
+                raw.get("title", ""),
+                raw.get("source", ""),
+            ]
+        )
+    )
 
 
-report = load_status_report(STATUS_LOG)
-rows = report["missing"]
-selected = {
-    int(row["beatmapset_id"]): bucket(row["artist"], row["title"], row.get("source", ""))
-    for row in rows
+GROUPS: dict[str, list[int]] = {
+    "richaadeb_official_cover": [
+        980644,
+        1069719,
+        1091120,
+        1124709,
+        1185570,
+        1206509,
+        1237255,
+        1242798,
+        1248702,
+        1387796,
+        1440648,
+        1474280,
+        1491917,
+        1637957,
+        2156156,
+        2346402,
+        2540421,
+        2553057,
+    ],
+    "paradot_official_remix": [
+        2116110,
+        2136000,
+        2148515,
+        2269337,
+        2351463,
+        2359033,
+        2360975,
+    ],
+    "coolcreate_first_party_variant": [
+        1128048,
+        1556967,
+        2086454,
+        2138418,
+        2567202,
+        2581537,
+    ],
+    "chou_super_alias": [2377256, 2406327],
+    "falkkone_official_cover": [1314079],
+    "marasy_official_cover": [1316202, 2514864],
+    "nick_nitro_official_remix": [1326567],
+    "parent_attributed_base_or_edit": [
+        157478,
+        355683,
+        360703,
+        398092,
+        436838,
+        496056,
+        514686,
+        529863,
+        599360,
+        801144,
+        887683,
+        1064108,
+        1110991,
+        1257327,
+        1264459,
+        1365207,
+        1393896,
+        1434008,
+        1501621,
+        1626057,
+        2187567,
+        2255745,
+        2336636,
+        2414814,
+        2523604,
+    ],
 }
-selected = {beatmapset_id: kind for beatmapset_id, kind in selected.items() if kind}
-assert len(selected) == 284, {
-    kind: list(selected.values()).count(kind) for kind in set(selected.values())
+
+ID_TO_GROUP = {
+    beatmapset_id: group
+    for group, beatmapset_ids in GROUPS.items()
+    for beatmapset_id in beatmapset_ids
+}
+assert len(ID_TO_GROUP) == 62
+
+FIRST_PARTY_REQUIRED = {
+    1128048: ("crankyremix",),
+    1556967: ("amaterasrecordsremix",),
+    2086454: ("camellia", "remix"),
+    2138418: ("xi", "remix"),
+    2567202: ("hachiojipremix",),
+    2581537: ("gamever",),
+}
+
+
+def validate_group(beatmapset_id: int, group: str, raw: dict) -> None:
+    title = raw.get("title", "")
+    artist = raw.get("artist", "")
+    all_n = combined(raw)
+    assert base_family(title), (beatmapset_id, group, "title-family-drift", artist, title)
+
+    if group == "richaadeb_official_cover":
+        assert "richaad" in norm(artist + " " + title), (beatmapset_id, group, artist, title)
+    elif group == "paradot_official_remix":
+        assert "paradot" in norm(artist + " " + title), (beatmapset_id, group, artist, title)
+    elif group == "coolcreate_first_party_variant":
+        title_artist = norm(artist + " " + title)
+        assert all(token in title_artist for token in FIRST_PARTY_REQUIRED[beatmapset_id]), (
+            beatmapset_id,
+            group,
+            artist,
+            title,
+        )
+    elif group == "chou_super_alias":
+        assert "supernightofnights" in norm(title), (beatmapset_id, group, artist, title)
+        assert "beatmario" in all_n or "coolcreate" in all_n, (
+            beatmapset_id,
+            group,
+            artist,
+            title,
+        )
+    elif group == "falkkone_official_cover":
+        assert "falkkone" in norm(artist), (beatmapset_id, group, artist, title)
+    elif group == "marasy_official_cover":
+        artist_n = norm(artist)
+        assert "marasy" in artist_n or "まらしぃ" in artist_n, (
+            beatmapset_id,
+            group,
+            artist,
+            title,
+        )
+    elif group == "nick_nitro_official_remix":
+        assert "nicknitro" in norm(artist), (beatmapset_id, group, artist, title)
+    elif group == "parent_attributed_base_or_edit":
+        assert "beatmario" in all_n or "coolcreate" in all_n, (
+            beatmapset_id,
+            group,
+            artist,
+            title,
+            raw.get("source", ""),
+        )
+    else:
+        raise AssertionError((beatmapset_id, "unknown-group", group))
+
+
+EVIDENCE_BY_GROUP = {
+    "richaadeb_official_cover": "corroboration:richaadeb-official-night-of-nights-cover",
+    "paradot_official_remix": "corroboration:para-dot-official-night-of-knights-remix",
+    "coolcreate_first_party_variant": "corroboration:cool-create-all-night-of-knights",
+    "chou_super_alias": "corroboration:cool-create-chou-night-of-knights",
+    "falkkone_official_cover": "corroboration:falkkone-official-night-of-nights-cover",
+    "marasy_official_cover": "corroboration:marasy-official-night-of-knights-cover",
+    "nick_nitro_official_remix": "corroboration:nick-nitro-official-night-of-nights-remix",
+    "parent_attributed_base_or_edit": "corroboration:cool-create-night-of-knights-parent",
 }
 
 catalog_path = Path("data/catalog.json")
 catalog = Catalog.load(catalog_path)
-pending = [beatmapset_id for beatmapset_id in sorted(selected) if beatmapset_id not in catalog.entries]
+pending = [beatmapset_id for beatmapset_id in sorted(ID_TO_GROUP) if beatmapset_id not in catalog.entries]
+assert len(pending) in {0, 62}, (len(pending), pending)
 if not pending:
-    print("NIGHT_APPLY_ALREADY_COMPLETE")
+    print("NIGHT_MANUAL_WAVE2_ALREADY_COMPLETE")
     raise SystemExit(0)
 
 api = OsuApi.from_env()
@@ -168,86 +209,80 @@ api.token()
 def fetch(beatmapset_id: int) -> tuple[int, str, dict]:
     raw = api.beatmapset(beatmapset_id)
     assert int(raw["id"]) == beatmapset_id
-    fresh_bucket = bucket(raw.get("artist", ""), raw.get("title", ""), raw.get("source", ""))
-    if fresh_bucket is None:
-        raise AssertionError(
-            (
-                beatmapset_id,
-                "no-longer-qualified",
-                raw.get("artist"),
-                raw.get("title"),
-                raw.get("source"),
-            )
-        )
-    return beatmapset_id, fresh_bucket, raw
+    group = ID_TO_GROUP[beatmapset_id]
+    validate_group(beatmapset_id, group, raw)
+    return beatmapset_id, group, raw
 
 
 with ThreadPoolExecutor(max_workers=8) as pool:
     fetched = list(pool.map(fetch, pending))
 
-counts = {"explicit_source": 0, "official_exactish": 0, "base_parent_exact": 0}
-ids_by = {key: [] for key in counts}
-for beatmapset_id, kind, raw in fetched:
+counts = {group: 0 for group in GROUPS}
+ids_by = {group: [] for group in GROUPS}
+for beatmapset_id, group, raw in fetched:
     incoming = entry_from_osu(
         raw,
-        evidence=["audit:night-of-knights-2026-08"],
+        evidence=[
+            "audit:night-of-knights-2026-08",
+            "manual:verified",
+            "composition:cool-create:night-of-knights",
+            EVIDENCE_BY_GROUP[group],
+        ],
         confidence="candidate",
     )
-    if kind != "explicit_source":
-        incoming.evidence.extend(["manual:verified", "composition:cool-create:night-of-knights"])
-        incoming.touhou_kind = "arrangement"
-        incoming = apply_classification(incoming, tags=raw.get("tags", ""))
+    incoming.touhou_kind = "arrangement"
+    incoming = apply_classification(incoming, tags=raw.get("tags", ""))
     assert incoming.confidence == "verified", (
         beatmapset_id,
-        kind,
+        group,
         incoming.confidence,
         incoming.source,
     )
     _, changed = catalog.merge(incoming)
     assert changed, (beatmapset_id, "expected-new-entry")
-    counts[kind] += 1
-    ids_by[kind].append(beatmapset_id)
+    counts[group] += 1
+    ids_by[group].append(beatmapset_id)
 
-assert sum(counts.values()) == len(fetched)
+assert sum(counts.values()) == 62
 catalog.save(catalog_path)
 
 doc_path = Path("docs/source-audit-2026-08-night-of-knights.md")
 doc = doc_path.read_text(encoding="utf-8")
-start = "<!-- NIGHT_IMPLEMENTATION_START -->"
-end = "<!-- NIGHT_IMPLEMENTATION_END -->"
+start = "<!-- NIGHT_MANUAL_WAVE2_START -->"
+end = "<!-- NIGHT_MANUAL_WAVE2_END -->"
 block = f'''{start}
 
-## Status-scoped exhaustive title-family pass
+## Manual composition-chain wave
 
-The default osu! beatmapset search ranking hides a large amount of old graveyard material, so the audit also enumerated six explicit status buckets (`graveyard`, `ranked`, `loved`, `qualified`, `pending`, `wip`) for seven controlled title queries. The completed pass covered **42 query/status pairs**, saw **7,159 distinct search results**, and direct-refetched **448 title-family matches**. At the pre-change catalog boundary those were **440 absent**, **1 existing candidate**, and **7 already verified**.
+After the automatic/fail-closed 284-set wave, the remaining 156 title-family hits were reviewed by composition chain rather than by keyword. A second **62-set** wave is accepted with sticky `manual:verified` evidence. Every accepted set was direct-refetched again immediately before writing and had to pass a group-specific artist/title guard on the fresh response.
 
-The 440 absent sets were then split by fail-closed evidence rules. This first implementation wave accepts **284 newly verified beatmapsets** only:
+Primary / artist-controlled corroboration used for this wave:
 
-- **{counts['explicit_source']}** have a fresh current osu! `source` that independently satisfies the repository's exact Touhou/game-source classifier. These do not receive a manual override.
-- **{counts['official_exactish']}** match a distinctive remix/variant from COOL&CREATE's first-party 2018/2019/2025 `オールナイト・オブ・ナイツ` corpus and an appropriate parent/remixer artist guard. These receive sticky `manual:verified` evidence tied to this audit.
-- **{counts['base_parent_exact']}** use an exact controlled base title (`ナイト・オブ・ナイツ` / `Night of Nights` / `Night of Knights` / `Knight of Nights`) with beatMARIO or COOL&CREATE as artist. These receive sticky `manual:verified` evidence backed by the primary COOL&CREATE provenance above.
+- COOL&CREATE 2018 all-`ナイト・オブ・ナイツ` release: https://cool-create.cc/cd/cccd50/
+- COOL&CREATE 2019 `ルナティック` release: https://cool-create.cc/cd/cccd59/
+- COOL&CREATE 2025 `プロジェクト` release: https://cool-create.cc/cd/cccd75/
+- RichaadEB Official Artist Channel, `NIGHT OF NIGHTS (Flowering Night) || Metal Cover`: https://www.youtube.com/watch?v=ugqjcXjpCts
+- Para Dot. official channel, `Night of Knights（Para Dot. Remix）`: https://www.youtube.com/watch?v=Qju7jPjXPNE
+- FalKKonE Official Artist Channel, `Touhou - Night of Nights [Intense Symphonic Metal Cover]`: https://www.youtube.com/watch?v=bQI9xedYQQE
+- marasy8 Official Artist Channel, `「ナイト・オブ・ナイツ」を弾き直してみたんですが...`: https://www.youtube.com/watch?v=OyUJnV2R-5g
+- Nick Nitro verified channel, `Touhou - Night Of Nights [Ver. 3] [NITRO Remix]`: https://www.youtube.com/watch?v=2N2s0f5fRsc
 
-Every one of the {len(fetched)} applied sets was re-fetched directly from `/api/v2/beatmapsets/{{id}}` immediately before writing and had to satisfy the same rule again on fresh metadata. Search snapshots alone were never accepted.
+Accepted groups:
 
-The remaining **156 absent title-family hits are deliberately held for manual composition-chain review**. That bucket contains genuine-looking covers and mashups (for example RichaadEB and Para Dot variants) mixed with weakly attributed uploads, memes, BMS/game-source labels, and obvious token collisions. They are not promoted merely to maximize count.
+- RichaadEB official metal-cover family: **{counts['richaadeb_official_cover']}**
+- Para Dot. explicit remix-of-remix family: **{counts['paradot_official_remix']}**
+- COOL&CREATE first-party named variants missed by the strict first pass: **{counts['coolcreate_first_party_variant']}**
+- English `Super Night of Nights` alias of `超ナイト・オブ・ナイツ`: **{counts['chou_super_alias']}**
+- FalKKonE official cover: **{counts['falkkone_official_cover']}**
+- marasy official piano-cover family: **{counts['marasy_official_cover']}**
+- Nick Nitro official remix: **{counts['nick_nitro_official_remix']}**
+- Base/edit uploads whose fresh osu! metadata itself directly attributes the recording to beatMARIO / COOL&CREATE: **{counts['parent_attributed_base_or_edit']}**
 
-Applied IDs by rule (for reproducibility):
+These 62 are arrangements/covers/edits of the beatMARIO parent, not merely independent arrangements of `フラワリングナイト`. The other **94** unresolved title-family hits remain held for additional review; no confidence is inferred from title tokens alone.
 
-<details><summary>explicit current Touhou/game source ({counts['explicit_source']})</summary>
+<details><summary>Manual wave IDs by group</summary>
 
-`{','.join(map(str, ids_by['explicit_source']))}`
-
-</details>
-
-<details><summary>first-party exact/distinctive derivative ({counts['official_exactish']})</summary>
-
-`{','.join(map(str, ids_by['official_exactish']))}`
-
-</details>
-
-<details><summary>beatMARIO / COOL&CREATE exact base title ({counts['base_parent_exact']})</summary>
-
-`{','.join(map(str, ids_by['base_parent_exact']))}`
+{chr(10).join(f'- `{group}`: '+','.join(map(str, ids_by[group])) for group in GROUPS)}
 
 </details>
 
@@ -258,4 +293,4 @@ else:
     doc = doc.rstrip() + "\n\n" + block + "\n"
 doc_path.write_text(doc, encoding="utf-8")
 
-print("NIGHT_APPLY_OK", len(fetched), counts)
+print("NIGHT_MANUAL_WAVE2_OK", len(fetched), counts)
