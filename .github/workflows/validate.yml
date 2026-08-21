@@ -45,6 +45,7 @@ jobs:
           from concurrent.futures import ThreadPoolExecutor
           from pathlib import Path
           from touhou_osu.catalog import Catalog
+          from touhou_osu.models import normalize_mode
           from touhou_osu.osu_api import OsuApi
 
           base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'],text=True))
@@ -105,7 +106,7 @@ jobs:
               raw=api.beatmapset(i)
               assert int(raw['id'])==i
               cur=head[i]
-              modes=sorted({b.get('mode') for b in raw.get('beatmaps',[]) if b.get('mode')})
+              modes=sorted({normalize_mode(b.get('mode')) for b in raw.get('beatmaps',[]) if b.get('mode')})
               assert raw.get('artist','')==cur['artist'],(i,'artist')
               assert raw.get('title','')==cur['title'],(i,'title')
               assert raw.get('creator','')==cur['creator'],(i,'creator')
