@@ -19,38 +19,27 @@ jobs:
       - run: make check
       - run: make build
 
-  audit-night-structured-fields:
+  audit-night-suspicious-kinds:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Audit structured metadata on new Night entries
+      - name: Direct-refetch suspicious mixed candidates
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
         run: |
           set -euo pipefail
-          git fetch origin main
           python - <<'PY'
-          import json,subprocess
-          from collections import Counter
-          from pathlib import Path
-          base=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'],text=True))['entries']
-          head=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))['entries']
-          b={int(x['beatmapset_id']):x for x in base};h={int(x['beatmapset_id']):x for x in head}
-          ids=sorted(set(h)-set(b));assert len(ids)==357,len(ids)
-          rows=[h[i] for i in ids]
-          print('NIGHT_STRUCTURED_AUDIT')
-          print('new=',len(rows))
-          print('kinds=',dict(Counter(x['touhou_kind'] for x in rows)))
-          print('origin_games_nonempty=',sum(bool(x['origin_games']) for x in rows))
-          print('original_themes_nonempty=',sum(bool(x['original_themes']) for x in rows))
-          for x in rows:
-              if x['touhou_kind']=='unknown':
-                  print('UNKNOWN|{}|{}|{}|{}'.format(x['beatmapset_id'],x['artist'],x['title'],x['source']))
-          for x in rows:
-              if x['touhou_kind']=='mixed':
-                  print('MIXED|{}|{}|{}|{}'.format(x['beatmapset_id'],x['artist'],x['title'],x['source']))
+          from touhou_osu.osu_api import OsuApi
+          IDS=[337187,1598539,1675793,1976379,2274999,2534273]
+          api=OsuApi.from_env();api.token()
+          for i in IDS:
+              r=api.beatmapset(i);assert int(r['id'])==i
+              diffs=' / '.join(sorted({b.get('version','') for b in r.get('beatmaps',[]) if b.get('version')}))
+              print('SUSPICIOUS|{}|{}|{}|source={}|tags={}|diffs={}'.format(i,r.get('artist',''),r.get('title',''),r.get('source',''),r.get('tags',''),diffs))
           PY
