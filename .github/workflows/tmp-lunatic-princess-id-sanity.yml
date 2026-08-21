@@ -22,6 +22,7 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           import json
+          from itertools import islice
           from touhou_osu.osu_api import OsuApi
 
           QUERIES = [
@@ -34,7 +35,7 @@ jobs:
           api = OsuApi.from_env(); api.token()
           report=[]
           for query in QUERIES:
-              rows=api.search(query,max_pages=1)[:5]
+              rows=list(islice(api.search(query,max_pages=1),5))
               qrows=[]
               for raw in rows:
                   beatmapset_id=int(raw['id'])
