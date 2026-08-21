@@ -152,7 +152,13 @@ def validate_group(beatmapset_id: int, group: str, raw: dict) -> None:
             title,
         )
     elif group == "chou_super_alias":
-        assert "supernightofnights" in norm(title), (beatmapset_id, group, artist, title)
+        title_n = norm(title)
+        assert "supernightofnights" in title_n or "supernightofknights" in title_n, (
+            beatmapset_id,
+            group,
+            artist,
+            title,
+        )
         assert "beatmario" in all_n or "coolcreate" in all_n, (
             beatmapset_id,
             group,
@@ -272,7 +278,7 @@ Accepted groups:
 - RichaadEB official metal-cover family: **{counts['richaadeb_official_cover']}**
 - Para Dot. explicit remix-of-remix family: **{counts['paradot_official_remix']}**
 - COOL&CREATE first-party named variants missed by the strict first pass: **{counts['coolcreate_first_party_variant']}**
-- English `Super Night of Nights` alias of `超ナイト・オブ・ナイツ`: **{counts['chou_super_alias']}**
+- English `Super Night of Nights` / `Super Night of Knights` alias of `超ナイト・オブ・ナイツ`: **{counts['chou_super_alias']}**
 - FalKKonE official cover: **{counts['falkkone_official_cover']}**
 - marasy official piano-cover family: **{counts['marasy_official_cover']}**
 - Nick Nitro official remix: **{counts['nick_nitro_official_remix']}**
