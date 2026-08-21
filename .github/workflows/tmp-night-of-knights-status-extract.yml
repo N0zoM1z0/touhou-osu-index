@@ -20,21 +20,15 @@ jobs:
           python - <<'PY'
           import json,re
           lines=open('/tmp/run.log',encoding='utf-8-sig').read().splitlines()
-          collecting=False; payload=[]
-          for line in lines:
-              if 'NIGHT_STATUS_ENUM_BEGIN' in line:
-                  collecting=True; continue
-              if 'NIGHT_STATUS_ENUM_END' in line:
-                  break
-              if collecting:
-                  # gh prefixes each line with job / step / ISO timestamp. Strip through the timestamp.
-                  msg=re.sub(r'^.*?\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z\s*','',line)
-                  payload.append(msg)
-          raw='\n'.join(payload).strip()
-          start=raw.find('{'); end=raw.rfind('}')
-          assert start>=0 and end>=start, raw[:500]
-          data=json.loads(raw[start:end+1])
-          missing=data['missing']
+          begins=[i for i,x in enumerate(lines) if 'NIGHT_STATUS_ENUM_BEGIN' in x]
+          ends=[i for i,x in enumerate(lines) if 'NIGHT_STATUS_ENUM_END' in x]
+          assert begins and ends,(len(begins),len(ends))
+          b=begins[-1]; e=next(i for i in ends if i>b)
+          payload=[]
+          for line in lines[b+1:e]:
+              payload.append(re.sub(r'^.*?\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z\s*','',line))
+          raw='\n'.join(payload).strip(); start=raw.find('{'); end=raw.rfind('}')
+          data=json.loads(raw[start:end+1]); missing=data['missing']
           print('NIGHT_STATUS_EXTRACT_OK')
           print('query_status_pairs=',data['query_status_pairs'])
           print('discovered_unique=',data['discovered_unique'])
