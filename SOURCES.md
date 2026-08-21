@@ -10,9 +10,12 @@ The latest full audit on 2026-08-16 returned **6,596 source records** from
 classification and deduplication. The August 2026 coverage expansion adds two
 reproducible Google Sheet tournament pools and one candidate-first qualifier
 collection; see [`docs/source-audit-2026-08.md`](docs/source-audit-2026-08.md)
-for the evidence, catalog intersections, and exclusion decisions. Counts below
-are upstream snapshots, not promises that every record is accepted into the
-public index.
+for the evidence, catalog intersections, and exclusion decisions. Touhou
+Moonlight Festival was added later on 2026-08-21 as a deliberately narrower
+94-item audited subset; its item-level decisions are documented in
+[`docs/source-audit-2026-08-moonlight-festival.md`](docs/source-audit-2026-08-moonlight-festival.md).
+Counts below are upstream snapshots, not promises that every record is accepted
+into the public index.
 
 ## Historical collections
 
@@ -107,18 +110,31 @@ Some older or smaller Touhou-only tournaments have authoritative public sheets
 but no complete osu!Collector tournament snapshot. `google_sheet_tournaments`
 exports those sheets as XLSX and reads only explicitly configured pool tabs.
 The parser follows workbook relationships, shared strings, inline/formula text
-and hyperlink relationship targets, then deduplicates numeric beatmapset IDs.
-It does not scrape rendered Google HTML and requires no Google API key.
+and hyperlink relationship targets. Modern `/beatmapsets/<id>` and `/s/<id>`
+links are parsed as beatmapset IDs; legacy `/b/<id>` and `/beatmaps/<id>` links
+are parsed separately as beatmap IDs and are never confused with set IDs. It
+does not scrape rendered Google HTML and requires no Google API key.
 
 | Tournament source | Selected worksheets | Audited unique sets | Policy |
 | --- | --- | ---: | --- |
 | [Osu! Gensokyo Cup (2025 JP)](https://osu.ppy.sh/community/forums/topics/2089185) | exact `Mappools` | 40 | verified |
 | [-Gensokyo Cup 2](https://osu.ppy.sh/community/forums/topics/1076292) | prefix `Mappool` | 148 | verified |
+| [Touhou Moonlight Festival](https://osu.ppy.sh/community/forums/topics/2029871) | exact `Маппул` | 94 | audited subset / verified |
 
-Both official forum posts explicitly describe their complete pools as Touhou
-related/themed, so membership is trusted tournament evidence. Each source also
-has a conservative `minimum_entries` floor to fail closed if the public sheet
-is replaced, emptied, made private, or structurally changed.
+The first two official forum posts explicitly describe their complete pools as
+Touhou related/themed, so membership is trusted tournament evidence. Each
+source also has a conservative `minimum_entries` floor to fail closed if the
+public sheet is replaced, emptied, made private, or structurally changed.
+
+Touhou Moonlight Festival uses legacy `/b/<beatmap_id>` links and is handled
+more conservatively. Its source remains `trusted: false`; an explicit
+`audited_beatmaps` allowlist freezes 94 reviewed beatmap → beatmapset mappings
+and rechecks that every audited beatmap is still present in the exact `Маппул`
+tab. The 2026-08-21 source contained 137 beatmap links: 136 resolved through
+the official osu! API, 65 were already verified, 40 existing candidates were
+left untouched, 29 new sets passed item-level review, two resolved sets were
+withheld, and one difficulty remained API-unresolvable. See the dedicated
+[Moonlight Festival audit](docs/source-audit-2026-08-moonlight-festival.md).
 
 The 2024 Austrian Touhou Cup was re-checked during this audit and is already
 covered by osu!Collector tournament `1865`; it is not duplicated as a Google
