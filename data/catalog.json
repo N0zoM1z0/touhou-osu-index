@@ -42,6 +42,31 @@
       "osu_last_updated": "2008-10-20T05:23:41Z"
     },
     {
+      "beatmapset_id": 2626,
+      "artist": "Silver Forest",
+      "title": "Tsurupettan",
+      "creator": "Hitoshirenu Shourai",
+      "source": "",
+      "status": "approved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "official_pack_item:A23"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2008-08-26T00:10:51Z"
+    },
+    {
       "beatmapset_id": 3367,
       "artist": "NicoNicoDouga",
       "title": "Cirno de Gozaimasu!",
@@ -521,6 +546,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-17",
       "osu_last_updated": "2009-03-04T14:12:07Z"
+    },
+    {
+      "beatmapset_id": 5346,
+      "artist": "COOL&CREATE",
+      "title": "Help me, ERINNNNNN!!",
+      "creator": "Doomsday93",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2009-03-01T18:17:04Z"
     },
     {
       "beatmapset_id": 5445,
@@ -8157,20 +8207,27 @@
       "artist": "SYNC.ART'S feat. Sakaue Nachi",
       "title": "Taketori Hishou",
       "creator": "S i R i R u",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
       "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
       "osu_last_updated": "2010-10-13T18:38:14Z"
     },
     {
@@ -13889,21 +13946,27 @@
       "artist": "Masayoshi Minoshima",
       "title": "Flight of the Bamboo Cutter",
       "creator": "a3272509123",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
       "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
       "osu_last_updated": "2013-07-08T00:23:49Z"
     },
     {
@@ -20386,20 +20449,26 @@
       "artist": "nmk",
       "title": "sola",
       "creator": "TKS",
-      "source": "",
+      "source": "BMS",
       "status": "ranked",
       "modes": [
         "taiko"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
       "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
       "osu_last_updated": "2014-09-05T16:16:39Z"
     },
     {
@@ -20903,10 +20972,16 @@
       "modes": [
         "osu"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
       "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified",
         "mapper_tags",
         "osucollector:1402",
         "osucollector:1405",
@@ -20914,8 +20989,8 @@
         "osucollector:6907",
         "tournament_candidate:526"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
       "osu_last_updated": "2014-09-20T03:23:53Z"
     },
     {
@@ -28262,22 +28337,28 @@
       "artist": "nmk",
       "title": "sola",
       "creator": "Yales",
-      "source": "",
+      "source": "BMS",
       "status": "ranked",
       "modes": [
         "osu"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
       "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
       "osu_last_updated": "2018-02-22T20:58:12Z"
     },
     {
@@ -31104,6 +31185,31 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2017-10-03T21:15:26Z"
+    },
+    {
+      "beatmapset_id": 507416,
+      "artist": "SOUND HOLIC feat. Nana Takahashi",
+      "title": "Help me, ERINNNNNN!! - SH Style -",
+      "creator": "Reuju-",
+      "source": "SOUND VOLTEX III GRAVITY WARS",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2023-01-12T01:10:50Z"
     },
     {
       "beatmapset_id": 507946,
@@ -37127,22 +37233,28 @@
       "artist": "nmk",
       "title": "sola",
       "creator": "Morinaga",
-      "source": "",
+      "source": "BMS",
       "status": "ranked",
       "modes": [
         "osu"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
       "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
       "osu_last_updated": "2018-03-16T04:43:24Z"
     },
     {
@@ -41283,22 +41395,28 @@
       "artist": "GET IN THE RING",
       "title": "Moonscraper",
       "creator": "-Arche",
-      "source": "",
+      "source": "東方永夜抄　～ Imperishable Night.",
       "status": "ranked",
       "modes": [
         "osu"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
       "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
       "osu_last_updated": "2019-01-05T13:10:43Z"
     },
     {
@@ -72493,6 +72611,31 @@
       "osu_last_updated": "2024-11-14T06:27:11Z"
     },
     {
+      "beatmapset_id": 2188045,
+      "artist": "beatMARIO x MARON x VIRTUAL SINGER",
+      "title": "Help me, ERINNNNNN!! (Game Ver.)",
+      "creator": "Mirsaaa",
+      "source": "プロジェクトセカイ カラフルステージ！ feat. 初音ミク",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-02-04T12:40:00Z"
+    },
+    {
       "beatmapset_id": 2188075,
       "artist": "Xyris",
       "title": "Dystopian Exodus of the Magical Girls",
@@ -72840,6 +72983,56 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2205747,
+      "artist": "beatMARIO",
+      "title": "Help me, ERINNNNNN!!",
+      "creator": "Annabel",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-07-17T20:50:47Z"
+    },
+    {
+      "beatmapset_id": 2209334,
+      "artist": "beatMARIO x MARON x VIRTUAL SINGER",
+      "title": "Help me, ERINNNNNN!! (Game Ver.)",
+      "creator": "kanpakyin",
+      "source": "プロジェクトセカイ カラフルステージ！ feat. 初音ミク",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-07-04T14:28:11Z"
     },
     {
       "beatmapset_id": 2212169,
@@ -73882,6 +74075,31 @@
       "osu_last_updated": "2025-03-15T19:50:37Z"
     },
     {
+      "beatmapset_id": 2282709,
+      "artist": "ZUN",
+      "title": "Taketori Hishou ~ Lunatic Princess",
+      "creator": "Delette",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-05-28T07:37:11Z"
+    },
+    {
       "beatmapset_id": 2283057,
       "artist": "Demetori",
       "title": "Higan Kikou ~ View of The River Styx",
@@ -74636,6 +74854,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-03-14T19:29:46Z"
+    },
+    {
+      "beatmapset_id": 2314117,
+      "artist": "beatMARIO x MARON x VIRTUAL SINGER",
+      "title": "Help me, ERINNNNNN!! (Shimotsuki Rei Mashup Ver.)",
+      "creator": "iRedi",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "mixed",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-02-16T15:37:38Z"
     },
     {
       "beatmapset_id": 2314529,
@@ -78790,6 +79033,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2026-07-15T05:05:44Z"
+    },
+    {
+      "beatmapset_id": 2561367,
+      "artist": "A-One feat. Shihori",
+      "title": "Bamboo Dance",
+      "creator": "Sypervenya",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-07-24T08:13:40Z"
     },
     {
       "beatmapset_id": 2563025,
