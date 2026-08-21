@@ -18,3 +18,37 @@ jobs:
           python-version: "3.12"
       - run: make check
       - run: make build
+
+  audit-night-structured-fields:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit structured metadata on new Night entries
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          python - <<'PY'
+          import json,subprocess
+          from collections import Counter
+          from pathlib import Path
+          base=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'],text=True))['entries']
+          head=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))['entries']
+          b={int(x['beatmapset_id']):x for x in base};h={int(x['beatmapset_id']):x for x in head}
+          ids=sorted(set(h)-set(b));assert len(ids)==357,len(ids)
+          rows=[h[i] for i in ids]
+          print('NIGHT_STRUCTURED_AUDIT')
+          print('new=',len(rows))
+          print('kinds=',dict(Counter(x['touhou_kind'] for x in rows)))
+          print('origin_games_nonempty=',sum(bool(x['origin_games']) for x in rows))
+          print('original_themes_nonempty=',sum(bool(x['original_themes']) for x in rows))
+          print('unknown_kind_ids=',','.join(str(x['beatmapset_id']) for x in rows if x['touhou_kind']=='unknown'))
+          print('mixed_ids=',','.join(str(x['beatmapset_id']) for x in rows if x['touhou_kind']=='mixed'))
+          print('missing_origin_ids=',','.join(str(x['beatmapset_id']) for x in rows if not x['origin_games']))
+          print('missing_theme_ids=',','.join(str(x['beatmapset_id']) for x in rows if not x['original_themes']))
+          PY
