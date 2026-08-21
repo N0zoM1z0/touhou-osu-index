@@ -1,0 +1,52 @@
+name: Temporary Moonlight implementation
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-source-support:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/touhou-moonlight-festival
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Add audited legacy-beatmap tournament support
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('touhou_osu/sources.py')
+          text = path.read_text(encoding='utf-8')
+          if 'audited_beatmaps = source.get("audited_beatmaps")' in text:
+              print('Moonlight source support already applied')
+              raise SystemExit(0)
+
+          old_import = 'from .google_sheets import fetch_google_sheet_beatmapset_ids\n'
+          new_import = '''from .google_sheets import (\n    fetch_google_sheet_beatmap_ids,\n    fetch_google_sheet_beatmapset_ids,\n)\n'''
+          assert old_import in text
+          text = text.replace(old_import, new_import, 1)
+
+          old = '''def import_google_sheet_tournament(source: dict) -> list[Entry]:\n    """Import a reproducible tournament pool from selected Google Sheet tabs."""\n    source_id = str(source["id"])\n    trusted = bool(source.get("trusted", True))\n    evidence = (\n        f"tournament:google_sheet:{source_id}"\n        if trusted\n        else f"tournament_candidate:google_sheet:{source_id}"\n    )\n    confidence = "verified" if trusted else source.get("confidence", "candidate")\n    beatmapset_ids = fetch_google_sheet_beatmapset_ids(\n        source["spreadsheet_id"],\n        sheet_names=source.get("sheet_names", ()),\n        sheet_prefixes=source.get("sheet_prefixes", ()),\n    )\n    return [\n        apply_classification(\n            Entry(\n                beatmapset_id=beatmapset_id,\n                evidence=[evidence],\n                confidence=confidence,\n                last_checked=date.today().isoformat(),\n            )\n        )\n        for beatmapset_id in beatmapset_ids\n    ]\n'''
+          new = '''def import_google_sheet_tournament(source: dict) -> list[Entry]:\n    """Import a reproducible tournament pool from selected Google Sheet tabs.\n\n    ``audited_beatmaps`` is an opt-in path for sheets that contain legacy\n    ``/b/<beatmap_id>`` links.  The configured beatmap-to-beatmapset mapping is\n    reviewed once, while every import rechecks that each audited beatmap still\n    exists in the selected worksheet.  This avoids ever confusing a beatmap ID\n    with a beatmapset ID and lets partially trusted pools publish only an\n    explicitly audited subset.\n    """\n    source_id = str(source["id"])\n    sheet_names = source.get("sheet_names", ())\n    sheet_prefixes = source.get("sheet_prefixes", ())\n    audited_beatmaps = source.get("audited_beatmaps")\n\n    if audited_beatmaps is not None:\n        if not isinstance(audited_beatmaps, list) or not audited_beatmaps:\n            raise RuntimeError(\n                f"Google Sheet tournament {source_id} must define non-empty audited_beatmaps"\n            )\n\n        source_beatmap_ids = fetch_google_sheet_beatmap_ids(\n            source["spreadsheet_id"],\n            sheet_names=sheet_names,\n            sheet_prefixes=sheet_prefixes,\n        )\n        minimum_source_beatmaps = int(\n            source.get("minimum_source_beatmaps", len(audited_beatmaps))\n        )\n        if len(source_beatmap_ids) < minimum_source_beatmaps:\n            raise RuntimeError(\n                f"Google Sheet tournament {source_id} returned "\n                f"{len(source_beatmap_ids)} source beatmaps; expected at least "\n                f"{minimum_source_beatmaps}"\n            )\n\n        source_ids = set(source_beatmap_ids)\n        seen_beatmaps: set[int] = set()\n        beatmapset_ids: list[int] = []\n        seen_beatmapsets: set[int] = set()\n        missing_beatmaps: list[int] = []\n        for item in audited_beatmaps:\n            if not isinstance(item, dict):\n                raise RuntimeError(\n                    f"Google Sheet tournament {source_id} has a malformed audited mapping"\n                )\n            beatmap_id = int(item["beatmap_id"])\n            beatmapset_id = int(item["beatmapset_id"])\n            if beatmap_id <= 0 or beatmapset_id <= 0:\n                raise RuntimeError(\n                    f"Google Sheet tournament {source_id} has non-positive audited IDs"\n                )\n            if beatmap_id in seen_beatmaps:\n                raise RuntimeError(\n                    f"Google Sheet tournament {source_id} contains duplicate audited "\n                    f"beatmap_id {beatmap_id}"\n                )\n            seen_beatmaps.add(beatmap_id)\n            if beatmap_id not in source_ids:\n                missing_beatmaps.append(beatmap_id)\n            if beatmapset_id not in seen_beatmapsets:\n                seen_beatmapsets.add(beatmapset_id)\n                beatmapset_ids.append(beatmapset_id)\n\n        if missing_beatmaps:\n            raise RuntimeError(\n                f"Google Sheet tournament {source_id} no longer contains audited "\n                f"beatmaps: {missing_beatmaps}"\n            )\n\n        evidence = f"tournament:google_sheet:{source_id}:audited"\n        return [\n            apply_classification(\n                Entry(\n                    beatmapset_id=beatmapset_id,\n                    evidence=[evidence],\n                    confidence="verified",\n                    last_checked=date.today().isoformat(),\n                )\n            )\n            for beatmapset_id in beatmapset_ids\n        ]\n\n    trusted = bool(source.get("trusted", True))\n    evidence = (\n        f"tournament:google_sheet:{source_id}"\n        if trusted\n        else f"tournament_candidate:google_sheet:{source_id}"\n    )\n    confidence = "verified" if trusted else source.get("confidence", "candidate")\n    beatmapset_ids = fetch_google_sheet_beatmapset_ids(\n        source["spreadsheet_id"],\n        sheet_names=sheet_names,\n        sheet_prefixes=sheet_prefixes,\n    )\n    return [\n        apply_classification(\n            Entry(\n                beatmapset_id=beatmapset_id,\n                evidence=[evidence],\n                confidence=confidence,\n                last_checked=date.today().isoformat(),\n            )\n        )\n        for beatmapset_id in beatmapset_ids\n    ]\n'''
+          assert old in text, 'expected import_google_sheet_tournament block not found'
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+          python -m unittest tests.test_google_sheets
+          git diff --check
+          if git diff --quiet; then
+            echo 'No source patch needed'
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add touhou_osu/sources.py
+          git commit -m "feat: support audited legacy beatmap tournament sheets [moonlight-code]"
+          git push origin HEAD:feat/touhou-moonlight-festival
