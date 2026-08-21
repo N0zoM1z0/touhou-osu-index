@@ -1,0 +1,132 @@
+name: Temporary Night of Knights systematic search
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Search first-party derivative corpus
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,re,unicodedata
+          from collections import Counter,defaultdict
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_explicit_touhou_source
+          from touhou_osu.osu_api import OsuApi,entry_from_osu
+
+          DOC=Path('docs/source-audit-2026-08-night-of-knights.md').read_text(encoding='utf-8')
+          corpus=[]
+          for line in DOC.splitlines():
+              m=re.match(r'^\| `(.+?)` \| `(.+?)` \| (2018|2019|2025) \|$',line)
+              if m: corpus.append(m.groups())
+          assert len(corpus)==41,len(corpus)
+
+          def norm(v): return ''.join(ch for ch in unicodedata.normalize('NFKC',v or '').casefold() if ch.isalnum())
+          JP='ナイト・オブ・ナイツ'
+          EN=['Night of Nights','Night of Knights','Knight of Nights']
+          BASE={norm(JP),*(norm(x) for x in EN)}
+          def aliases(title):
+              values={title}
+              if JP in title:
+                  for e in EN: values.add(title.replace(JP,e))
+              return values
+          alias_rows=[]
+          for title,guard,wave in corpus:
+              for a in aliases(title): alias_rows.append((a,title,guard,wave))
+
+          # Search every source-backed title alias. Base aliases are also artist-qualified
+          # because bare "night" search is extremely noisy.
+          queries=[];seenq=set()
+          for alias,title,guard,wave in alias_rows:
+              q=alias
+              if norm(title)==norm(JP):
+                  if alias==JP: q='beatMARIO ナイト・オブ・ナイツ'
+                  else: q=f'beatMARIO {alias}'
+              if q not in seenq: seenq.add(q);queries.append(q)
+          for q in ['COOL&CREATE ナイト・オブ・ナイツ','COOL&CREATE Night of Nights','COOL&CREATE Night of Knights','beatMARIO Night of Nights','beatMARIO Night of Knights','beatMARIO Knight of Nights']:
+              if q not in seenq: seenq.add(q);queries.append(q)
+
+          def base_artist_ok(artist):
+              a=norm(artist)
+              return any(x in a for x in [norm('beatMARIO'),norm('COOL&CREATE')])
+          def source_matches(artist,title):
+              t=norm(title);a=norm(artist);matches=[]
+              for alias,canonical,guard,wave in alias_rows:
+                  if t==norm(alias):
+                      # The unsuffixed base title is collision-prone and must remain beatMARIO/C&C.
+                      if norm(canonical)==norm(JP) and not base_artist_ok(artist): continue
+                      # NIGHT OF FLOWER is not a title-family string, so keep its documented artist guard.
+                      if canonical.startswith('NIGHT OF FLOWER') and norm('SOUND HOLIC') not in a: continue
+                      matches.append({'canonical':canonical,'alias':alias,'guard':guard,'wave':wave,'kind':'exact'})
+              # Controlled edits of the base recording (Cut/Game/Short versions) are allowed only
+              # when the credited artist is beatMARIO/COOL&CREATE.
+              if base_artist_ok(artist) and any(t.startswith(b) for b in BASE):
+                  matches.append({'canonical':JP,'alias':title,'guard':'beatMARIO/COOL&CREATE','wave':'base-family','kind':'controlled-base-family'})
+              return matches
+
+          api=OsuApi.from_env();api.token()
+          discovered={};qhits=defaultdict(set)
+          def run(q): return q,list(api.search(q,max_pages=2))
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              fs=[pool.submit(run,q) for q in queries]
+              for f in as_completed(fs):
+                  q,rows=f.result()
+                  for raw in rows:
+                      i=int(raw['id']);discovered[i]=raw;qhits[i].add(q)
+          preliminary={i:raw for i,raw in discovered.items() if source_matches(raw.get('artist',''),raw.get('title',''))}
+
+          def direct(item):
+              i,search_raw=item
+              try: raw=api.beatmapset(i)
+              except Exception as exc: return {'beatmapset_id':i,'error':f'{type(exc).__name__}:{exc}'}
+              assert int(raw['id'])==i
+              assert raw.get('artist','')==search_raw.get('artist',''),(i,'artist',search_raw.get('artist'),raw.get('artist'))
+              assert raw.get('title','')==search_raw.get('title',''),(i,'title',search_raw.get('title'),raw.get('title'))
+              e=entry_from_osu(raw,evidence=['audit:night-of-knights-search'],confidence='candidate')
+              return {'beatmapset_id':i,'entry':e,'raw':raw,'matches':source_matches(e.artist,e.title)}
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              direct_rows=list(pool.map(direct,preliminary.items()))
+
+          catalog=Catalog.load(Path('data/catalog.json'))
+          coverage=Counter();review=[];accepted=[];errors=[]
+          for row in direct_rows:
+              i=row['beatmapset_id']
+              if 'error' in row: errors.append(row);continue
+              e=row['entry'];raw=row['raw'];matches=row['matches']
+              if not matches: continue
+              cur=catalog.entries.get(i)
+              if cur is None: state='absent';coverage['absent']+=1
+              elif cur.confidence in {'verified','probable'}: state=cur.confidence;coverage['already_accepted']+=1;accepted.append(i);continue
+              else: state=cur.confidence;coverage[f'existing_{state}']+=1
+              review.append({
+                  'beatmapset_id':i,'catalog_state':state,'artist':e.artist,'artist_unicode':raw.get('artist_unicode',''),
+                  'title':e.title,'title_unicode':raw.get('title_unicode',''),'creator':e.creator,'source':e.source,
+                  'status':e.status,'modes':e.modes,'classifier_confidence':e.confidence,
+                  'explicit_touhou_source':is_explicit_touhou_source(e.source),'tags':raw.get('tags',''),
+                  'matches':matches,'queries':sorted(qhits[i])
+              })
+          review.sort(key=lambda x:(x['catalog_state']!='absent',x['beatmapset_id']))
+          print('NIGHT_OF_KNIGHTS_SEARCH_BEGIN')
+          print(json.dumps({
+              'corpus_works':len(corpus),'alias_rows':len(alias_rows),'queries':len(queries),
+              'search_discovered_unique':len(discovered),'source_matched':len(preliminary),
+              'coverage':dict(coverage),'already_accepted_source_matches':len(accepted),
+              'review_count':len(review),'direct_errors':errors,'review':review,
+          },ensure_ascii=False,indent=2))
+          print('NIGHT_OF_KNIGHTS_SEARCH_END')
+          PY
