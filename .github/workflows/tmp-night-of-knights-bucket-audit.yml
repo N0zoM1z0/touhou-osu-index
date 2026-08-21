@@ -1,0 +1,91 @@
+name: Temporary Night of Knights bucket audit
+
+on:
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  bucket:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Bucket completed status corpus without requerying osu!
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run view 32477749313 --repo "$GITHUB_REPOSITORY" --log > /tmp/status.log
+          python - <<'PY'
+          import json,re,unicodedata
+          from collections import Counter
+          from pathlib import Path
+          from touhou_osu.classifier import is_explicit_touhou_source
+
+          lines=Path('/tmp/status.log').read_text(encoding='utf-8-sig').splitlines()
+          begins=[i for i,x in enumerate(lines) if 'NIGHT_STATUS_ENUM_BEGIN' in x]
+          ends=[i for i,x in enumerate(lines) if 'NIGHT_STATUS_ENUM_END' in x]
+          assert begins and ends
+          b=begins[-1]; e=next(i for i in ends if i>b)
+          payload=[]
+          for line in lines[b+1:e]:
+              payload.append(re.sub(r'^.*?\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z\s*','',line))
+          raw='\n'.join(payload).strip(); data=json.loads(raw[raw.find('{'):raw.rfind('}')+1])
+          rows=data['missing']
+
+          def norm(v):
+              return ''.join(ch for ch in unicodedata.normalize('NFKC',v or '').casefold() if ch.isalnum())
+          BASE=[norm(x) for x in ['ナイト・オブ・ナイツ','Night of Nights','Night of Knights','Knight of Nights']]
+          def base_exact(title): return norm(title) in BASE
+          def parent_artist(artist):
+              a=norm(artist)
+              return 'beatmario' in a or 'coolcreate' in a or a in {'ビートまりお'}
+
+          # Exact derivative names from the first-party COOL&CREATE corpus.  We intentionally
+          # use distinctive remix/variant tokens instead of accepting arbitrary title suffixes.
+          TOKENS=[
+            'thousandknives','elementasremix','豚乙女ver','alrremix','crankyremix','tosremix',
+            '緋想天mix','少女理論観測所ver','tpzoverheatremix','狐夢想style','iqの低いナイツ',
+            'かめりあ','onceuponanight','kors kremix','usaoremix','amaterasrecordsremix','armremix',
+            'redaliceremix','maronbounce','higedriverremix','xiremix','mrmremix','crankyvstpazolite',
+            'ryu remix','gamesize','超ナイトオブナイツ','chounightofknights','choknightofknights',
+            'cosmobsp398','マサラダremix','chromaremix','32kidosancore','原口オブリミックス',
+            '南ノ南ahwowremix','namigrooveremix','八王子premix','sawtowneremix','reナイトオブナイツ'
+          ]
+          NTOK=[norm(x) for x in TOKENS]
+          KNOWN_REMIXERS=[norm(x) for x in [
+            'Cranky','t+pazolite','Camellia','かめりあ','kors k','USAO','REDALiCE','MARON','Hige Driver',
+            'xi','Morimori Atsushi','モリモリあつし','Ryu','Amateras Records','Chroma','黒魔','八王子P',
+            'cosMo','SAWTOWNE','marasy','まらしぃ','A-One','IOSYS','SOUND HOLIC','Masayoshi Minoshima'
+          ]]
+          def official_exactish(row):
+              t=norm(row['title']); a=norm(row['artist'])
+              if not any(tok and tok in t for tok in NTOK): return False
+              return parent_artist(row['artist']) or any(x and x in a for x in KNOWN_REMIXERS)
+
+          buckets={'explicit_source':[],'official_exactish':[],'base_parent_exact':[],'manual_review':[]}
+          for r in rows:
+              if is_explicit_touhou_source(r.get('source','')):
+                  k='explicit_source'
+              elif official_exactish(r):
+                  k='official_exactish'
+              elif base_exact(r['title']) and parent_artist(r['artist']):
+                  k='base_parent_exact'
+              else:
+                  k='manual_review'
+              buckets[k].append(r)
+          print('NIGHT_BUCKET_AUDIT_BEGIN')
+          print('total_missing=',len(rows))
+          for k,v in buckets.items():
+              print(k,'=',len(v))
+              print(k+'_ids=',','.join(str(x['beatmapset_id']) for x in v))
+          print('manual_review_rows:')
+          for r in buckets['manual_review']:
+              print('REVIEW|{}|{}|{}|{}|{}'.format(r['beatmapset_id'],r['status'],r['artist'],r['title'],r.get('source','')))
+          print('NIGHT_BUCKET_AUDIT_END')
+          PY
