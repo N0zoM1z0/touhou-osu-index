@@ -12,7 +12,10 @@ from datetime import date
 from html.parser import HTMLParser
 
 from .classifier import apply_classification
-from .google_sheets import fetch_google_sheet_beatmapset_ids
+from .google_sheets import (
+    fetch_google_sheet_beatmap_ids,
+    fetch_google_sheet_beatmapset_ids,
+)
 from .http import get_json, get_text
 from .models import Entry, normalize_mode
 
@@ -331,8 +334,88 @@ def import_wiki_tournament(source: dict) -> list[Entry]:
 
 
 def import_google_sheet_tournament(source: dict) -> list[Entry]:
-    """Import a reproducible tournament pool from selected Google Sheet tabs."""
+    """Import a reproducible tournament pool from selected Google Sheet tabs.
+
+    ``audited_beatmaps`` is an opt-in path for sheets that contain legacy
+    ``/b/<beatmap_id>`` links.  The configured beatmap-to-beatmapset mapping is
+    reviewed once, while every import rechecks that each audited beatmap still
+    exists in the selected worksheet.  This avoids ever confusing a beatmap ID
+    with a beatmapset ID and lets partially trusted pools publish only an
+    explicitly audited subset.
+    """
     source_id = str(source["id"])
+    sheet_names = source.get("sheet_names", ())
+    sheet_prefixes = source.get("sheet_prefixes", ())
+    audited_beatmaps = source.get("audited_beatmaps")
+
+    if audited_beatmaps is not None:
+        if not isinstance(audited_beatmaps, list) or not audited_beatmaps:
+            raise RuntimeError(
+                f"Google Sheet tournament {source_id} must define non-empty audited_beatmaps"
+            )
+
+        source_beatmap_ids = fetch_google_sheet_beatmap_ids(
+            source["spreadsheet_id"],
+            sheet_names=sheet_names,
+            sheet_prefixes=sheet_prefixes,
+        )
+        minimum_source_beatmaps = int(
+            source.get("minimum_source_beatmaps", len(audited_beatmaps))
+        )
+        if len(source_beatmap_ids) < minimum_source_beatmaps:
+            raise RuntimeError(
+                f"Google Sheet tournament {source_id} returned "
+                f"{len(source_beatmap_ids)} source beatmaps; expected at least "
+                f"{minimum_source_beatmaps}"
+            )
+
+        source_ids = set(source_beatmap_ids)
+        seen_beatmaps: set[int] = set()
+        beatmapset_ids: list[int] = []
+        seen_beatmapsets: set[int] = set()
+        missing_beatmaps: list[int] = []
+        for item in audited_beatmaps:
+            if not isinstance(item, dict):
+                raise RuntimeError(
+                    f"Google Sheet tournament {source_id} has a malformed audited mapping"
+                )
+            beatmap_id = int(item["beatmap_id"])
+            beatmapset_id = int(item["beatmapset_id"])
+            if beatmap_id <= 0 or beatmapset_id <= 0:
+                raise RuntimeError(
+                    f"Google Sheet tournament {source_id} has non-positive audited IDs"
+                )
+            if beatmap_id in seen_beatmaps:
+                raise RuntimeError(
+                    f"Google Sheet tournament {source_id} contains duplicate audited "
+                    f"beatmap_id {beatmap_id}"
+                )
+            seen_beatmaps.add(beatmap_id)
+            if beatmap_id not in source_ids:
+                missing_beatmaps.append(beatmap_id)
+            if beatmapset_id not in seen_beatmapsets:
+                seen_beatmapsets.add(beatmapset_id)
+                beatmapset_ids.append(beatmapset_id)
+
+        if missing_beatmaps:
+            raise RuntimeError(
+                f"Google Sheet tournament {source_id} no longer contains audited "
+                f"beatmaps: {missing_beatmaps}"
+            )
+
+        evidence = f"tournament:google_sheet:{source_id}:audited"
+        return [
+            apply_classification(
+                Entry(
+                    beatmapset_id=beatmapset_id,
+                    evidence=[evidence],
+                    confidence="verified",
+                    last_checked=date.today().isoformat(),
+                )
+            )
+            for beatmapset_id in beatmapset_ids
+        ]
+
     trusted = bool(source.get("trusted", True))
     evidence = (
         f"tournament:google_sheet:{source_id}"
@@ -342,8 +425,8 @@ def import_google_sheet_tournament(source: dict) -> list[Entry]:
     confidence = "verified" if trusted else source.get("confidence", "candidate")
     beatmapset_ids = fetch_google_sheet_beatmapset_ids(
         source["spreadsheet_id"],
-        sheet_names=source.get("sheet_names", ()),
-        sheet_prefixes=source.get("sheet_prefixes", ()),
+        sheet_names=sheet_names,
+        sheet_prefixes=sheet_prefixes,
     )
     return [
         apply_classification(
