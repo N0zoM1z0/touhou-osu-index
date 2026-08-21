@@ -14,104 +14,103 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Audit forum provenance, spreadsheet structure, and live missing IDs
+      - name: Resolve exact mappool beatmap IDs to beatmapsets
         env:
           OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
           OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
         run: |
           set -euo pipefail
           python - <<'PY'
-          import json
-          import re
+          import json, re
           from collections import Counter
           from concurrent.futures import ThreadPoolExecutor
-          from io import BytesIO
           from pathlib import Path
-          from xml.etree import ElementTree as ET
-          from zipfile import ZipFile
 
           from touhou_osu.catalog import Catalog
           from touhou_osu.classifier import is_explicit_touhou_source
-          from touhou_osu.google_sheets import (
-              _DOCUMENT_REL_NS,
-              _SPREADSHEET_NS,
-              _normalize_archive_path,
-              _relationship_targets,
-              _shared_strings,
-              _worksheet_texts,
-              google_sheet_export_url,
-          )
+          from touhou_osu.google_sheets import fetch_google_sheet_beatmapset_ids, google_sheet_export_url
           from touhou_osu.http import get_text, request
           from touhou_osu.osu_api import OsuApi, entry_from_osu
 
           FORUM = "https://osu.ppy.sh/community/forums/topics/2029871"
           SHEET_ID = "1nqD85CClkgNIHxMU2KVGfcs2i5QphzIEupGxuiqlf04"
-          BEATMAPSET_RE = re.compile(r"https?://osu\.ppy\.sh/(?:beatmapsets|s)/(\d+)", re.I)
+          SHEET = "Маппул"
+          BEATMAP_RE = re.compile(rb"https?://osu\.ppy\.sh/b/(\d+)", re.I)
 
           forum = get_text(FORUM)
-          required_phrases = ["Touhou Project", "тематическим набором карт", "Spreadsheet"]
-          missing_phrases = [p for p in required_phrases if p not in forum]
-          assert not missing_phrases, f"forum provenance phrases missing: {missing_phrases}"
+          for phrase in ("Touhou Project", "тематическим набором карт", "Spreadsheet"):
+              assert phrase in forum, f"forum provenance phrase missing: {phrase}"
 
+          # First prove the existing beatmapset-only parser intentionally finds nothing here.
+          assert fetch_google_sheet_beatmapset_ids(SHEET_ID, sheet_names=[SHEET]) == []
+
+          # The public XLSX stores the actual pool as legacy /b/<beatmap_id> hyperlinks.
           payload = request(google_sheet_export_url(SHEET_ID), headers={"Accept":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})
-          with ZipFile(BytesIO(payload)) as archive:
-              workbook_path = "xl/workbook.xml"
-              workbook = ET.fromstring(archive.read(workbook_path))
-              rels = _relationship_targets(archive.read("xl/_rels/workbook.xml.rels"))
-              shared = _shared_strings(archive)
-              sheets=[]
-              all_ids=set()
-              for sheet in workbook.findall(f".//{{{_SPREADSHEET_NS}}}sheet"):
-                  name=sheet.attrib.get("name","")
-                  rid=sheet.attrib.get(f"{{{_DOCUMENT_REL_NS}}}id","")
-                  target=rels.get(rid,"")
-                  if not target: continue
-                  path=_normalize_archive_path(workbook_path,target)
-                  texts=_worksheet_texts(archive,path,shared)
-                  ids=[]; seen=set()
-                  for text in texts:
-                      for m in BEATMAPSET_RE.finditer(text):
-                          i=int(m.group(1))
-                          if i not in seen:
-                              seen.add(i); ids.append(i)
-                  all_ids.update(ids)
-                  sheets.append({"name":name,"beatmapset_count":len(ids),"ids":ids})
+          beatmap_ids=[]; seen=set()
+          for m in BEATMAP_RE.finditer(payload):
+              i=int(m.group(1))
+              if i not in seen:
+                  seen.add(i); beatmap_ids.append(i)
+          assert beatmap_ids, "no /b/ beatmap IDs found in spreadsheet export"
 
-          catalog=Catalog.load(Path("data/catalog.json"))
-          existing=set(catalog.entries)
-          union=sorted(all_ids)
-          missing=sorted(all_ids-existing)
           api=OsuApi.from_env(); api.token()
-          def live(i):
-              raw=api.beatmapset(i)
-              entry=entry_from_osu(raw,evidence=["audit:moonlight"],confidence="candidate")
-              return {
-                  "id":i,
-                  "artist":entry.artist,
-                  "title":entry.title,
-                  "creator":entry.creator,
-                  "source":entry.source,
-                  "status":entry.status,
-                  "modes":entry.modes,
-                  "classifier_confidence":entry.confidence,
-                  "explicit_touhou_source":is_explicit_touhou_source(entry.source),
-              }
+          def resolve(beatmap_id):
+              raw=api.get(f"/beatmaps/{beatmap_id}")
+              assert int(raw["id"]) == beatmap_id
+              return beatmap_id, int(raw["beatmapset_id"])
           with ThreadPoolExecutor(max_workers=8) as pool:
-              live_missing=list(pool.map(live,missing))
+              pairs=list(pool.map(resolve, beatmap_ids))
 
-          print("MOONLIGHT_AUDIT_BEGIN")
+          # XLSX may contain links outside the mappool tab, so independently obtain the
+          # exact target sheet XML relationship hyperlinks and resolve only those /b/ IDs.
+          from io import BytesIO
+          from xml.etree import ElementTree as ET
+          from zipfile import ZipFile
+          from touhou_osu.google_sheets import _DOCUMENT_REL_NS,_SPREADSHEET_NS,_normalize_archive_path,_relationship_targets,_shared_strings,_worksheet_texts
+          exact_ids=[]; exact_seen=set()
+          with ZipFile(BytesIO(payload)) as archive:
+              workbook_path="xl/workbook.xml"
+              workbook=ET.fromstring(archive.read(workbook_path))
+              rels=_relationship_targets(archive.read("xl/_rels/workbook.xml.rels"))
+              shared=_shared_strings(archive)
+              for sheet in workbook.findall(f".//{{{_SPREADSHEET_NS}}}sheet"):
+                  if sheet.attrib.get("name") != SHEET: continue
+                  rid=sheet.attrib.get(f"{{{_DOCUMENT_REL_NS}}}id","")
+                  path=_normalize_archive_path(workbook_path,rels[rid])
+                  for text in _worksheet_texts(archive,path,shared):
+                      for m in re.finditer(r"https?://osu\.ppy\.sh/b/(\d+)", text, re.I):
+                          i=int(m.group(1))
+                          if i not in exact_seen: exact_seen.add(i); exact_ids.append(i)
+          assert exact_ids
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              exact_pairs=list(pool.map(resolve, exact_ids))
+
+          mapping=dict(exact_pairs)
+          beatmapset_ids=sorted(set(mapping.values()))
+          catalog=Catalog.load(Path("data/catalog.json")); existing=set(catalog.entries)
+          missing=sorted(set(beatmapset_ids)-existing)
+
+          def live_set(i):
+              raw=api.beatmapset(i)
+              entry=entry_from_osu(raw,evidence=["tournament:google_sheet:tmf-2025"],confidence="verified")
+              return {"beatmapset_id":i,"artist":entry.artist,"title":entry.title,"creator":entry.creator,"source":entry.source,"status":entry.status,"modes":entry.modes,"classifier_confidence":entry.confidence,"explicit_touhou_source":is_explicit_touhou_source(entry.source)}
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              live_missing=list(pool.map(live_set,missing))
+
+          duplicate_difficulties=len(exact_pairs)-len(beatmapset_ids)
+          print("MOONLIGHT_RESOLVE_BEGIN")
           print(json.dumps({
-              "forum":FORUM,
-              "spreadsheet_id":SHEET_ID,
               "forum_provenance_ok":True,
-              "catalog_entries":len(existing),
-              "sheets":sheets,
-              "sheet_union_unique_ids":len(union),
-              "already_in_catalog":len(set(union)&existing),
+              "sheet":SHEET,
+              "exact_mappool_beatmap_ids":len(exact_ids),
+              "unique_beatmapsets":len(beatmapset_ids),
+              "duplicate_difficulties_same_set":duplicate_difficulties,
+              "already_in_catalog":len(set(beatmapset_ids)&existing),
               "missing_from_catalog":len(missing),
-              "missing_ids":missing,
+              "missing_beatmapset_ids":missing,
+              "beatmap_to_set":[{"beatmap_id":b,"beatmapset_id":s} for b,s in exact_pairs],
               "live_missing":live_missing,
-              "live_missing_confidence_counts":dict(Counter(x["classifier_confidence"] for x in live_missing)),
+              "missing_explicit_source_counts":dict(Counter(str(x["explicit_touhou_source"]) for x in live_missing)),
           }, ensure_ascii=False, indent=2))
-          print("MOONLIGHT_AUDIT_END")
+          print("MOONLIGHT_RESOLVE_END")
           PY
