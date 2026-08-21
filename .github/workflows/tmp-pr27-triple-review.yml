@@ -1,0 +1,226 @@
+name: PR27 isolated triple review
+
+on:
+  push:
+    branches: [review/pr27-triple-audit-20260821]
+
+permissions:
+  contents: read
+
+jobs:
+  static-catalog-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch origin main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Recompute semantic catalog diff from scratch
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from collections import Counter
+          from touhou_osu.catalog import Catalog
+
+          MIXED={337187,1528497,1598539,1675793,1976379,2274999,2534273}
+          GAMES={
+              '東方紅魔郷 ～ the Embodiment of Scarlet Devil.',
+              '東方花映塚 ～ Phantasmagoria of Flower View.',
+          }
+          THEMES={'フラワリングナイト','月時計 ～ ルナ・ダイアル'}
+          ADDED_154={
+              'audit:night-of-knights-2026-08',
+              'manual:verified',
+              'composition:cool-create:night-of-knights',
+              'corroboration:cool-create:base-track',
+          }
+          PRESERVED=('artist','title','creator','source','status','modes','osu_last_updated','last_checked')
+
+          base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'], text=True))
+          head_raw=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          base={int(x['beatmapset_id']):x for x in base_raw['entries']}
+          head={int(x['beatmapset_id']):x for x in head_raw['entries']}
+          new_ids=sorted(set(head)-set(base))
+          removed=sorted(set(base)-set(head))
+          changed_old=sorted(i for i in set(base)&set(head) if base[i] != head[i])
+
+          assert len(base)==3632, len(base)
+          assert len(head)==3989, len(head)
+          assert len(new_ids)==357, len(new_ids)
+          assert removed==[], removed
+          assert changed_old==[154426], changed_old
+
+          auto=manual=composition=0
+          for i in new_ids:
+              x=head[i]
+              assert x['confidence']=='verified', (i,x['confidence'])
+              assert 'audit:night-of-knights-2026-08' in x['evidence'], (i,x['evidence'])
+              assert 'manual:candidate' not in x['evidence'] and 'manual:excluded' not in x['evidence'], i
+              assert set(x['origin_games'])==GAMES, (i,x['origin_games'])
+              assert set(x['original_themes'])==THEMES, (i,x['original_themes'])
+              assert x['touhou_kind']==('mixed' if i in MIXED else 'arrangement'), (i,x['touhou_kind'])
+              if 'manual:verified' in x['evidence']:
+                  manual += 1
+              if 'osu_source' in x['evidence'] and 'manual:verified' not in x['evidence']:
+                  auto += 1
+              if 'composition:cool-create:night-of-knights' in x['evidence']:
+                  composition += 1
+          assert (auto,manual,composition)==(177,180,180), (auto,manual,composition)
+          assert {i for i in new_ids if head[i]['touhou_kind']=='mixed'}==MIXED
+
+          b=base[154426]; h=head[154426]
+          assert b['confidence']=='candidate' and h['confidence']=='verified'
+          assert set(h['evidence'])==set(b['evidence'])|ADDED_154, (b['evidence'],h['evidence'])
+          assert h['touhou_kind']=='arrangement'
+          assert set(h['origin_games'])==GAMES and set(h['original_themes'])==THEMES
+          for f in PRESERVED:
+              assert h[f]==b[f], (154426,f,b[f],h[f])
+          assert head[1561908]==base[1561908]
+
+          Catalog.load(Path('data/catalog.json')).validate()
+          print('REVIEW1_STATIC_OK')
+          print('base=',len(base),'head=',len(head),'new=',len(new_ids),'changed_old=',changed_old)
+          print('automatic=',auto,'manual=',manual,'mixed=',len(MIXED),'removed=',len(removed))
+          PY
+
+  fresh-live-osu-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch origin main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fresh direct-refetch of every new set and candidate boundaries
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          from touhou_osu.http import HttpError
+          from touhou_osu.models import normalize_mode
+          from touhou_osu.osu_api import OsuApi
+
+          base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'], text=True))
+          head_raw=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          base={int(x['beatmapset_id']):x for x in base_raw['entries']}
+          head={int(x['beatmapset_id']):x for x in head_raw['entries']}
+          new_ids=sorted(set(head)-set(base))
+          assert len(new_ids)==357
+
+          api=OsuApi.from_env(); api.token()
+          def check(i):
+              raw=api.beatmapset(i)
+              cur=head[i]
+              assert int(raw['id'])==i
+              modes=sorted({normalize_mode(b.get('mode','')) for b in raw.get('beatmaps',[]) if b.get('mode')})
+              pairs={
+                  'artist': raw.get('artist',''),
+                  'title': raw.get('title',''),
+                  'creator': raw.get('creator',''),
+                  'source': raw.get('source',''),
+                  'status': raw.get('status','unknown'),
+                  'modes': modes,
+                  'osu_last_updated': raw.get('last_updated'),
+              }
+              for field,value in pairs.items():
+                  assert value==cur[field], (i,field,value,cur[field])
+              return i
+
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              checked=list(pool.map(check,new_ids))
+          assert len(checked)==357
+
+          raw=api.beatmapset(154426)
+          cur=head[154426]
+          assert int(raw['id'])==154426
+          modes=sorted({normalize_mode(b.get('mode','')) for b in raw.get('beatmaps',[]) if b.get('mode')})
+          assert raw.get('artist','')==cur['artist']==base[154426]['artist']=='beatMARIO'
+          assert raw.get('title','')==cur['title']==base[154426]['title']=='Night of Knights'
+          assert raw.get('creator','')==cur['creator']
+          assert raw.get('source','')==cur['source']
+          assert raw.get('status','unknown')==cur['status']
+          assert modes==cur['modes']
+          assert raw.get('last_updated')==cur['osu_last_updated']
+          tags=(raw.get('tags') or '').casefold()
+          assert 'touhou' in tags and ('cool&create' in tags or 'cool create' in tags), tags
+
+          try:
+              api.beatmapset(1561908)
+          except HttpError as exc:
+              assert 'HTTP 404' in str(exc), str(exc)
+          else:
+              raise AssertionError('1561908 unexpectedly resolves; boundary needs re-review')
+
+          print('REVIEW2_LIVE_OK')
+          print('live_refetched=',len(checked),'candidate_upgraded_live=154426','unresolved_404=1561908')
+          PY
+
+  reproducibility-and-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch origin main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify exact target-head hygiene and permanent audit structure
+        run: |
+          set -euo pipefail
+          TARGET=bebb37e63d2559a910a5ea2cce66932939162261
+          test "$(git diff --name-only origin/main...$TARGET | sort)" = $'data/catalog.json\ndocs/source-audit-2026-08-night-of-knights.md'
+          git diff --quiet "$TARGET" -- data/catalog.json docs/source-audit-2026-08-night-of-knights.md
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          doc=Path('docs/source-audit-2026-08-night-of-knights.md').read_text(encoding='utf-8')
+          assert 'First-party derivative corpus (41 works)' in doc
+          section=doc.split('## First-party derivative corpus (41 works)',1)[1].split('## Search / filtering policy',1)[0]
+          rows=[line for line in section.splitlines() if line.startswith('| `')]
+          assert len(rows)==41, len(rows)
+          required=[
+              'https://cool-create.cc/cd/cccd50/',
+              'https://cool-create.cc/cd/cccd59/',
+              'https://cool-create.cc/cd/cccd75/',
+              'https://www.youtube.com/watch?v=ugqjcXjpCts',
+              'https://www.youtube.com/watch?v=Qju7jPjXPNE',
+              'https://www.youtube.com/watch?v=bQI9xedYQQE',
+              'https://www.youtube.com/watch?v=OyUJnV2R-5g',
+              'https://www.youtube.com/watch?v=2N2s0f5fRsc',
+              'https://dondafulfestival-20th.taiko-ch.net/en/music/songlist.php',
+              'https://p.eagate.573.jp/game/eacsdvx/iii/p/common/info/sdvx_mlist_basic.html',
+              'https://playism.com/news/2019/1014/gnf_tlnost-2/',
+          ]
+          assert all(x in doc for x in required)
+          for phrase in [
+              '**42 query/status pairs**',
+              '**7,159 distinct search results**',
+              '**448 title-family matches**',
+              '**440 absent**',
+              '**284 newly verified beatmapsets**',
+              '**62-set**',
+              '**11 additional sets**',
+              '**83 title-family hits remain deliberately withheld**',
+              '`154426`', '`1561908`', 'HTTP 404',
+          ]:
+              assert phrase in doc, phrase
+          assert 'Search-query membership is never verification.' in doc
+          assert 'does **not** treat every independent arrangement' in doc
+          print('REVIEW3_DOC_HYGIENE_OK')
+          print('first_party_rows=',len(rows),'required_primary_sources=',len(required))
+          PY
+      - name: Standard repository checks
+        run: |
+          make check
+          make build
