@@ -46,8 +46,6 @@ jobs:
           forum = get_text(FORUM)
           for phrase in ("Touhou Project", "тематическим набором карт", "Spreadsheet"):
               assert phrase in forum, f"forum provenance phrase missing: {phrase}"
-
-          # Existing parser is intentionally beatmapset-only; this source uses old /b/ links.
           assert fetch_google_sheet_beatmapset_ids(SHEET_ID, sheet_names=[SHEET]) == []
           payload = request(google_sheet_export_url(SHEET_ID), headers={"Accept":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})
 
@@ -59,31 +57,34 @@ jobs:
               shared=_shared_strings(archive)
               selected=0
               for sheet in workbook.findall(f".//{{{_SPREADSHEET_NS}}}sheet"):
-                  if sheet.attrib.get("name") != SHEET:
-                      continue
+                  if sheet.attrib.get("name") != SHEET: continue
                   selected += 1
                   rid=sheet.attrib.get(f"{{{_DOCUMENT_REL_NS}}}id","")
                   path=_normalize_archive_path(workbook_path,rels[rid])
                   for text in _worksheet_texts(archive,path,shared):
                       for m in re.finditer(r"https?://osu\.ppy\.sh/b/(\d+)", text, re.I):
                           i=int(m.group(1))
-                          if i not in exact_seen:
-                              exact_seen.add(i); exact_ids.append(i)
+                          if i not in exact_seen: exact_seen.add(i); exact_ids.append(i)
               assert selected == 1, f"expected exactly one {SHEET!r} worksheet, found {selected}"
           assert exact_ids, "selected mappool worksheet contains no /b/ hyperlinks"
 
           api=OsuApi.from_env(); api.token()
           def resolve(beatmap_id):
-              raw=api.get(f"/beatmaps/{beatmap_id}")
-              assert int(raw["id"]) == beatmap_id
-              return beatmap_id, int(raw["beatmapset_id"])
+              try:
+                  raw=api.get(f"/beatmaps/{beatmap_id}")
+                  if int(raw.get("id",-1)) != beatmap_id:
+                      return {"beatmap_id":beatmap_id,"error":"id_mismatch"}
+                  return {"beatmap_id":beatmap_id,"beatmapset_id":int(raw["beatmapset_id"])}
+              except Exception as exc:
+                  return {"beatmap_id":beatmap_id,"error":f"{type(exc).__name__}:{exc}"}
           with ThreadPoolExecutor(max_workers=8) as pool:
-              exact_pairs=list(pool.map(resolve, exact_ids))
-
+              resolved=list(pool.map(resolve, exact_ids))
+          unresolved=[x for x in resolved if "error" in x]
+          exact_pairs=[(x["beatmap_id"],x["beatmapset_id"]) for x in resolved if "beatmapset_id" in x]
           beatmapset_ids=sorted({s for _,s in exact_pairs})
+
           catalog=Catalog.load(Path("data/catalog.json")); existing=set(catalog.entries)
           missing=sorted(set(beatmapset_ids)-existing)
-
           def live_set(i):
               raw=api.beatmapset(i)
               entry=entry_from_osu(raw,evidence=["tournament:google_sheet:tmf-2025"],confidence="verified")
@@ -96,7 +97,9 @@ jobs:
               "forum_provenance_ok":True,
               "sheet":SHEET,
               "exact_mappool_beatmap_ids":len(exact_ids),
-              "unique_beatmapsets":len(beatmapset_ids),
+              "resolved_beatmap_ids":len(exact_pairs),
+              "unresolved_beatmap_ids":unresolved,
+              "unique_resolved_beatmapsets":len(beatmapset_ids),
               "duplicate_difficulties_same_set":len(exact_pairs)-len(beatmapset_ids),
               "already_in_catalog":len(set(beatmapset_ids)&existing),
               "missing_from_catalog":len(missing),
