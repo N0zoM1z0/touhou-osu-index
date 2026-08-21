@@ -1,0 +1,160 @@
+name: Temporary Moonlight final audit
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  final-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit exact diff, static mappings, live API metadata, and exclusions
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import subprocess
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.cli import load_config
+          from touhou_osu.google_sheets import fetch_google_sheet_beatmap_ids
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.sources import import_google_sheet_tournament
+
+          BASE = 'b031e2d6539731b4d048d2296012ccd924ee43cf'
+          SOURCE_ID = 'tmf-2025'
+          EVIDENCE = f'tournament:google_sheet:{SOURCE_ID}:audited'
+          EXCLUDED_SETS = {1263067, 2205921}
+          UNRESOLVED_BEATMAP = 3362650
+          MANUAL_SAFE = {1559, 1785, 889029, 1092488, 1876059, 2182178, 2191004}
+
+          base_raw = json.loads(subprocess.check_output(['git','show',f'{BASE}:data/catalog.json'], text=True))
+          head_raw = json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          b = {int(x['beatmapset_id']): x for x in base_raw['entries']}
+          h = {int(x['beatmapset_id']): x for x in head_raw['entries']}
+          assert len(b) == 3594
+          assert len(h) == 3623
+          new_ids = sorted(set(h) - set(b))
+          changed_old = sorted(i for i in b if b[i] != h[i])
+          assert len(new_ids) == 29, len(new_ids)
+          assert len(changed_old) == 65, len(changed_old)
+
+          # Existing rows may receive only the single new provenance token; all
+          # substantive metadata/confidence must remain byte-for-JSON-field identical.
+          for i in changed_old:
+              before = dict(b[i]); after = dict(h[i])
+              before_evidence = set(before.pop('evidence'))
+              after_evidence = set(after.pop('evidence'))
+              assert after_evidence - before_evidence == {EVIDENCE}, (i, before_evidence, after_evidence)
+              assert before_evidence <= after_evidence
+              # The source merge can only refresh last_checked to the same audit date.
+              before_checked = before.pop('last_checked', None)
+              after_checked = after.pop('last_checked', None)
+              assert before == after, (i, before, after)
+              assert after_checked >= before_checked
+              assert h[i]['confidence'] == 'verified'
+
+          for i in new_ids:
+              assert h[i]['confidence'] == 'verified', (i, h[i]['confidence'])
+              assert EVIDENCE in h[i]['evidence']
+              assert h[i]['artist'] and h[i]['title'] and h[i]['creator']
+          assert MANUAL_SAFE <= set(new_ids), sorted(MANUAL_SAFE - set(new_ids))
+          assert not (EXCLUDED_SETS & set(h))
+
+          config = load_config(Path('config/seeds.json'))
+          matches = [s for s in config.get('google_sheet_tournaments', []) if str(s.get('id')) == SOURCE_ID]
+          assert len(matches) == 1
+          source = matches[0]
+          assert source['trusted'] is False
+          assert source['sheet_names'] == ['Маппул']
+          assert source['minimum_source_beatmaps'] == 137
+          assert source['minimum_entries'] == 94
+          mappings = source['audited_beatmaps']
+          assert len(mappings) == 94
+          assert len({int(x['beatmap_id']) for x in mappings}) == 94
+          assert len({int(x['beatmapset_id']) for x in mappings}) == 94
+          assert UNRESOLVED_BEATMAP not in {int(x['beatmap_id']) for x in mappings}
+          assert not (EXCLUDED_SETS & {int(x['beatmapset_id']) for x in mappings})
+
+          sheet_ids = fetch_google_sheet_beatmap_ids(
+              source['spreadsheet_id'],
+              sheet_names=source.get('sheet_names', ()),
+              sheet_prefixes=source.get('sheet_prefixes', ()),
+          )
+          assert len(sheet_ids) == 137
+          assert {int(x['beatmap_id']) for x in mappings} <= set(sheet_ids)
+          imported = import_google_sheet_tournament(source)
+          assert len(imported) == 94
+          assert {e.beatmapset_id for e in imported} == {int(x['beatmapset_id']) for x in mappings}
+          assert all(e.confidence == 'verified' and EVIDENCE in e.evidence for e in imported)
+
+          api = OsuApi.from_env(); api.token()
+          def verify_mapping(item):
+              beatmap_id = int(item['beatmap_id']); expected = int(item['beatmapset_id'])
+              raw = api.get(f'/beatmaps/{beatmap_id}')
+              return beatmap_id, expected, int(raw['beatmapset_id'])
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              resolved = list(pool.map(verify_mapping, mappings))
+          mismatches = [row for row in resolved if row[1] != row[2]]
+          assert not mismatches, mismatches
+
+          def verify_new(i):
+              raw = api.beatmapset(i)
+              live = entry_from_osu(raw, evidence=h[i]['evidence'], confidence='verified')
+              problems = []
+              for field in ('artist','title','creator','source','status'):
+                  if str(h[i].get(field,'')) != str(getattr(live, field)):
+                      problems.append(field)
+              if sorted(h[i].get('modes', [])) != sorted(live.modes):
+                  problems.append('modes')
+              if live.confidence != 'verified':
+                  problems.append(f'confidence:{live.confidence}')
+              return i, problems
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              new_checks = list(pool.map(verify_new, new_ids))
+          bad_new = [row for row in new_checks if row[1]]
+          assert not bad_new, bad_new
+
+          try:
+              api.get(f'/beatmaps/{UNRESOLVED_BEATMAP}')
+          except Exception:
+              pass
+          else:
+              raise AssertionError('previously unresolved beatmap 3362650 unexpectedly resolved; re-audit needed')
+
+          # Confirm all 40 prior non-verified Moonlight members stayed exactly unchanged.
+          audited_sets = {int(x['beatmapset_id']) for x in mappings}
+          candidate_changed = [i for i in changed_old if i not in audited_sets]
+          assert not candidate_changed, candidate_changed
+
+          Catalog.load(Path('data/catalog.json')).validate()
+          print('MOONLIGHT_FINAL_AUDIT_OK')
+          print(json.dumps({
+              'base_catalog': len(b),
+              'head_catalog': len(h),
+              'new_verified': len(new_ids),
+              'existing_verified_provenance_updates': len(changed_old),
+              'audited_mappings': len(mappings),
+              'live_sheet_beatmaps': len(sheet_ids),
+              'mapping_mismatches': len(mismatches),
+              'new_metadata_mismatches': len(bad_new),
+              'excluded_sets_absent': sorted(EXCLUDED_SETS),
+              'unresolved_beatmap_absent': UNRESOLVED_BEATMAP,
+          }, indent=2))
+          PY
+          python -m unittest discover -s tests
+          python -m touhou_osu.cli validate
+          git diff --check b031e2d6539731b4d048d2296012ccd924ee43cf..HEAD
