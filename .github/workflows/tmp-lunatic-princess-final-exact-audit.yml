@@ -1,0 +1,147 @@
+name: Temporary Lunatic Princess final exact audit
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact base-to-head, live metadata, pack and corpus audit
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          git fetch origin main:refs/remotes/origin/main
+          python - <<'PY'
+          import json
+          import re
+          import subprocess
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.models import normalize_mode
+          from touhou_osu.osu_api import OsuApi
+          from touhou_osu.sources import import_official_pack
+
+          NEW={2626,5346,507416,2188045,2205747,2209334,2282709,2314117,2561367}
+          EXISTING={21098,47754,171239,183267,427407,723024,855735}
+          IDS=NEW|EXISTING
+          EXPLICIT={21098,47754,855735,2205747,2282709,2561367}
+          PACK={2626}
+          MANUAL={5346,507416,171239,183267,427407,723024,2188045,2209334,2314117}
+          TOKEN='audit:lunatic-princess-2026-08'
+          assert len(NEW)==9 and len(EXISTING)==7 and len(IDS)==16 and len(MANUAL)==9
+
+          base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'],text=True))
+          head_raw=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          base={int(x['beatmapset_id']):x for x in base_raw['entries']}
+          head={int(x['beatmapset_id']):x for x in head_raw['entries']}
+          new_ids=set(head)-set(base)
+          removed=set(base)-set(head)
+          changed_old={i for i in base.keys() & head.keys() if base[i]!=head[i]}
+          assert len(base)==3623, len(base)
+          assert len(head)==3632, len(head)
+          assert new_ids==NEW, (sorted(new_ids),sorted(NEW))
+          assert removed==set(), sorted(removed)
+          assert changed_old==EXISTING, (sorted(changed_old),sorted(EXISTING))
+
+          # No manual sticky was present in the seven old candidates before this PR.
+          for i in EXISTING:
+              assert 'manual:candidate' not in base[i]['evidence'], (i,base[i]['evidence'])
+              assert 'manual:excluded' not in base[i]['evidence'], (i,base[i]['evidence'])
+              old_e=set(base[i]['evidence']); new_e=set(head[i]['evidence'])
+              assert old_e <= new_e, (i,old_e-new_e)
+
+          for i in IDS:
+              row=head[i]
+              assert row['confidence']=='verified', (i,row['confidence'])
+              assert TOKEN in row['evidence'], (i,row['evidence'])
+              assert row['origin_games']==['東方永夜抄 ～ Imperishable Night.'], (i,row['origin_games'])
+              assert row['original_themes']==['竹取飛翔 ～ Lunatic Princess'], (i,row['original_themes'])
+              expected_kind='original' if i==2282709 else ('mixed' if i==2314117 else 'arrangement')
+              assert row['touhou_kind']==expected_kind, (i,row['touhou_kind'],expected_kind)
+              if i in MANUAL:
+                  assert 'manual:verified' in row['evidence'], (i,row['evidence'])
+              else:
+                  assert 'manual:verified' not in row['evidence'], (i,row['evidence'])
+              if i in EXPLICIT:
+                  assert 'osu_source' in row['evidence'], (i,row['source'],row['evidence'])
+              if i in PACK:
+                  assert 'official_pack_item:A23' in row['evidence'], (i,row['evidence'])
+
+          # Direct-refetch every reviewed set and compare the metadata persisted by the PR.
+          api=OsuApi.from_env(); api.token()
+          def fetch(i):
+              return i,api.beatmapset(i)
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              live=list(pool.map(fetch,sorted(IDS)))
+          metadata_mismatches=[]
+          for i,raw in live:
+              row=head[i]
+              modes=sorted({normalize_mode(b.get('mode','')) for b in raw.get('beatmaps',[]) if b.get('mode')})
+              checks={
+                  'artist':raw.get('artist',''),
+                  'title':raw.get('title',''),
+                  'creator':raw.get('creator',''),
+                  'source':raw.get('source',''),
+                  'status':raw.get('status','unknown'),
+                  'modes':modes,
+                  'osu_last_updated':raw.get('last_updated'),
+              }
+              for key,value in checks.items():
+                  if row[key]!=value:
+                      metadata_mismatches.append((i,key,row[key],value))
+          assert not metadata_mismatches, metadata_mismatches
+
+          # Freshly recheck the configured audited Silver Forest A23 pack membership.
+          seeds=json.loads(Path('config/seeds.json').read_text(encoding='utf-8'))
+          a23=[x for x in seeds['official_packs'] if x.get('tag')=='A23']
+          assert len(a23)==1
+          imported=import_official_pack(a23[0])
+          imported_ids={e.beatmapset_id for e in imported}
+          assert len(imported)==30, len(imported)
+          assert 2626 in imported_ids
+          assert all(e.confidence=='verified' for e in imported)
+
+          # Preserve both corpus waves in permanent docs after temporary CI is removed.
+          first=Path('docs/source-audit-2026-08-lunatic-princess.md').read_text(encoding='utf-8')
+          second=Path('docs/source-audit-2026-08-lunatic-princess-results.md').read_text(encoding='utf-8')
+          first_rows=re.findall(r'^\| `.+?` \| `.+?` \|$',first,flags=re.M)
+          second_rows=re.findall(r'^\| `.+?` \| `.+?` \|$',second,flags=re.M)
+          # The first doc has exactly the 103 corpus rows. The results doc's first table has 88 rows;
+          # later decision tables have numeric first columns and therefore do not match this regex.
+          assert len(first_rows)==103, len(first_rows)
+          assert len(second_rows)==88, len(second_rows)
+          assert '**5,070**' in second and '**26**' in second and '**16**' in second and '**5,044**' in second
+
+          Catalog.load(Path('data/catalog.json')).validate()
+          print('LUNATIC_FINAL_EXACT_AUDIT_OK')
+          print('base_catalog:',len(base))
+          print('head_catalog:',len(head))
+          print('new_verified:',len(NEW),sorted(NEW))
+          print('candidate_upgrades:',len(EXISTING),sorted(EXISTING))
+          print('manual_verified:',len(MANUAL),sorted(MANUAL))
+          print('explicit_osu_source:',len(EXPLICIT),sorted(EXPLICIT))
+          print('official_pack:',len(PACK),sorted(PACK))
+          print('live_metadata_mismatches:',len(metadata_mismatches))
+          print('a23_live_members:',len(imported))
+          print('corpus_tuples:',len(first_rows)+len(second_rows))
+          PY
+          python -m unittest discover -s tests -v
+          python -m touhou_osu.cli validate --catalog data/catalog.json
+          rm -rf /tmp/touhou-build-final
+          python -m touhou_osu.cli --catalog data/catalog.json build --output /tmp/touhou-build-final
+          test -f /tmp/touhou-build-final/index.html
+          git diff --check origin/main...HEAD
