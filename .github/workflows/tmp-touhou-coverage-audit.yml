@@ -72,3 +72,74 @@ jobs:
           print(json.dumps(payload, ensure_ascii=False, indent=2))
           print("TOUHOU_COVERAGE_AUDIT_END")
           PY
+
+  discovery-backlog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit full configured osu API discovery backlog
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.cli import load_config
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+
+          api = OsuApi.from_env()
+          catalog = Catalog.load(Path("data/catalog.json"))
+          config = load_config(Path("config/seeds.json"))
+          existing = set(catalog.entries)
+          raws = {}
+          evidence = {}
+
+          for query in config.get("discovery_queries", []):
+              for raw in api.search(query, max_pages=4):
+                  beatmapset_id = int(raw["id"])
+                  raws[beatmapset_id] = raw
+                  evidence.setdefault(beatmapset_id, set()).add(f"discovery_query:{query}")
+
+          missing = []
+          for beatmapset_id in sorted(set(raws) - existing):
+              entry = entry_from_osu(
+                  raws[beatmapset_id],
+                  evidence=sorted(evidence[beatmapset_id]),
+                  confidence="candidate",
+              )
+              missing.append(entry)
+
+          counts = Counter(entry.confidence for entry in missing)
+          accepted = [entry for entry in missing if entry.confidence in {"verified", "probable"}]
+          payload = {
+              "configured_queries": len(config.get("discovery_queries", [])),
+              "discovered_unique": len(raws),
+              "missing_from_catalog": len(missing),
+              "missing_confidence_counts": dict(sorted(counts.items())),
+              "accepted_missing_count": len(accepted),
+              "accepted_missing": [
+                  {
+                      "beatmapset_id": entry.beatmapset_id,
+                      "artist": entry.artist,
+                      "title": entry.title,
+                      "creator": entry.creator,
+                      "source": entry.source,
+                      "status": entry.status,
+                      "modes": entry.modes,
+                      "confidence": entry.confidence,
+                      "evidence": entry.evidence,
+                  }
+                  for entry in accepted
+              ],
+              "candidate_missing_ids": [entry.beatmapset_id for entry in missing if entry.confidence == "candidate"],
+          }
+          print("DISCOVERY_BACKLOG_AUDIT_BEGIN")
+          print(json.dumps(payload, ensure_ascii=False, indent=2))
+          print("DISCOVERY_BACKLOG_AUDIT_END")
+          PY
