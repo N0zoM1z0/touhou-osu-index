@@ -79,3 +79,41 @@ The three releases give **41 first-party source-backed works**. Touhou Arrangeme
 6. For acceptance, require either explicit current osu! Touhou/game metadata or an exact match to one of the 41 COOL&CREATE-backed derivative works. Mapper tags/search tokens alone are not enough.
 7. Mixed/mashup maps are in scope only when the metadata identifies a `ナイト・オブ・ナイツ` component; they must be recorded as `mixed`, not as a pure arrangement.
 8. Independent `フラワリングナイト` / `月時計` arrangements that do not establish the `ナイト・オブ・ナイツ` derivative chain are false positives for this audit, even though they can still be Touhou maps generally.
+
+<!-- NIGHT_IMPLEMENTATION_START -->
+
+## Status-scoped exhaustive title-family pass
+
+The default osu! beatmapset search ranking hides a large amount of old graveyard material, so the audit also enumerated six explicit status buckets (`graveyard`, `ranked`, `loved`, `qualified`, `pending`, `wip`) for seven controlled title queries. The completed pass covered **42 query/status pairs**, saw **7,159 distinct search results**, and direct-refetched **448 title-family matches**. At the pre-change catalog boundary those were **440 absent**, **1 existing candidate**, and **7 already verified**.
+
+The 440 absent sets were then split by fail-closed evidence rules. This first implementation wave accepts **284 newly verified beatmapsets** only:
+
+- **177** have a fresh current osu! `source` that independently satisfies the repository's exact Touhou/game-source classifier. These do not receive a manual override.
+- **43** match a distinctive remix/variant from COOL&CREATE's first-party 2018/2019/2025 `オールナイト・オブ・ナイツ` corpus and an appropriate parent/remixer artist guard. These receive sticky `manual:verified` evidence tied to this audit.
+- **64** use an exact controlled base title (`ナイト・オブ・ナイツ` / `Night of Nights` / `Night of Knights` / `Knight of Nights`) with beatMARIO or COOL&CREATE as artist. These receive sticky `manual:verified` evidence backed by the primary COOL&CREATE provenance above.
+
+Every one of the 284 applied sets was re-fetched directly from `/api/v2/beatmapsets/{id}` immediately before writing and had to satisfy the same rule again on fresh metadata. Search snapshots alone were never accepted.
+
+The remaining **156 absent title-family hits are deliberately held for manual composition-chain review**. That bucket contains genuine-looking covers and mashups (for example RichaadEB and Para Dot variants) mixed with weakly attributed uploads, memes, BMS/game-source labels, and obvious token collisions. They are not promoted merely to maximize count.
+
+Applied IDs by rule (for reproducibility):
+
+<details><summary>explicit current Touhou/game source (177)</summary>
+
+`37257,57518,57940,60370,97417,114598,115745,116122,125758,167410,211628,221628,291206,299856,307879,312383,328600,337187,363986,389079,402810,454941,482520,527151,530702,539668,557175,625538,684262,692761,699557,709980,731548,754651,758045,758576,809749,830511,853077,858271,858973,866597,874177,899422,963939,977038,1003715,1021100,1049924,1054689,1069858,1093282,1102556,1108026,1122026,1157334,1186860,1211476,1212694,1221759,1227876,1232773,1241561,1249526,1254473,1262578,1284117,1289966,1328655,1331754,1367924,1368189,1370239,1438884,1441393,1457579,1472426,1481760,1497761,1506883,1511035,1520822,1522953,1529176,1547092,1551560,1576749,1580419,1590013,1598539,1598827,1620270,1622411,1648342,1653364,1656250,1675793,1686918,1700116,1710394,1710981,1712740,1728468,1729823,1730953,1745188,1746363,1788000,1813411,1813486,1838960,1867382,1872857,1885142,1893333,1898552,1911345,1913530,1915969,1918896,1925429,1928690,1929301,1964364,1974745,1976379,1996092,2048957,2051633,2061596,2074686,2080903,2114693,2141245,2154094,2183730,2193728,2199170,2207448,2215575,2223639,2245909,2257821,2264599,2274999,2276093,2281142,2285352,2289826,2327538,2350651,2353410,2360955,2366473,2367400,2368620,2377400,2379827,2410887,2412845,2416620,2421483,2425144,2436662,2459936,2475212,2482656,2499169,2524653,2527034,2527773,2528392,2530780,2534273,2539015,2574148,2585229`
+
+</details>
+
+<details><summary>first-party exact/distinctive derivative (43)</summary>
+
+`839952,1094232,1100306,1106591,1131977,1136401,1138210,1165827,1179357,1201245,1268928,1286813,1395991,1422967,1445098,1483117,1500771,1517308,1537455,1573148,1629560,1934308,2024944,2099280,2105255,2132118,2207543,2220530,2250270,2280202,2304869,2368168,2372075,2372315,2384222,2386138,2411873,2417340,2436915,2451965,2484594,2504543,2536935`
+
+</details>
+
+<details><summary>beatMARIO / COOL&CREATE exact base title (64)</summary>
+
+`17699,37000,48583,59171,81600,200963,249750,311375,318609,410600,469832,470825,473075,507027,513505,532064,549801,630826,666155,703432,715635,735346,739005,741146,777139,807222,847065,849736,893773,911765,940548,942575,1117936,1140363,1142527,1199251,1217525,1301334,1509861,1639401,1656076,1665319,1717482,1753646,1793680,1805186,1836363,1901788,1951973,1986981,1989400,1992542,2029085,2051514,2088758,2188945,2204403,2250942,2338461,2406965,2412872,2512768,2532207,2550415`
+
+</details>
+
+<!-- NIGHT_IMPLEMENTATION_END -->
