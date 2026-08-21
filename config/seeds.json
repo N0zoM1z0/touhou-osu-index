@@ -764,6 +764,396 @@
       "url": "https://osu.ppy.sh/community/forums/topics/1076292",
       "trusted": true,
       "minimum_entries": 140
+    },
+    {
+      "id": "tmf-2025",
+      "name": "Touhou Moonlight Festival (audited subset)",
+      "spreadsheet_id": "1nqD85CClkgNIHxMU2KVGfcs2i5QphzIEupGxuiqlf04",
+      "sheet_names": [
+        "Маппул"
+      ],
+      "url": "https://osu.ppy.sh/community/forums/topics/2029871",
+      "trusted": false,
+      "audited_beatmaps": [
+        {
+          "beatmap_id": 3874618,
+          "beatmapset_id": 1881398
+        },
+        {
+          "beatmap_id": 1748667,
+          "beatmapset_id": 834834
+        },
+        {
+          "beatmap_id": 2336398,
+          "beatmapset_id": 1118597
+        },
+        {
+          "beatmap_id": 3407694,
+          "beatmapset_id": 1668647
+        },
+        {
+          "beatmap_id": 2422377,
+          "beatmapset_id": 1153893
+        },
+        {
+          "beatmap_id": 942356,
+          "beatmapset_id": 437683
+        },
+        {
+          "beatmap_id": 31428,
+          "beatmapset_id": 7238
+        },
+        {
+          "beatmap_id": 2843789,
+          "beatmapset_id": 1332617
+        },
+        {
+          "beatmap_id": 4652942,
+          "beatmapset_id": 2198692
+        },
+        {
+          "beatmap_id": 50354,
+          "beatmapset_id": 13654
+        },
+        {
+          "beatmap_id": 3099250,
+          "beatmapset_id": 1513750
+        },
+        {
+          "beatmap_id": 4024925,
+          "beatmapset_id": 1945457
+        },
+        {
+          "beatmap_id": 3764317,
+          "beatmapset_id": 1799071
+        },
+        {
+          "beatmap_id": 3423826,
+          "beatmapset_id": 1670776
+        },
+        {
+          "beatmap_id": 1858228,
+          "beatmapset_id": 889029
+        },
+        {
+          "beatmap_id": 2336291,
+          "beatmapset_id": 1118538
+        },
+        {
+          "beatmap_id": 4475184,
+          "beatmapset_id": 2112194
+        },
+        {
+          "beatmap_id": 4481120,
+          "beatmapset_id": 2037900
+        },
+        {
+          "beatmap_id": 3860776,
+          "beatmapset_id": 1876059
+        },
+        {
+          "beatmap_id": 2467429,
+          "beatmapset_id": 1183572
+        },
+        {
+          "beatmap_id": 2650194,
+          "beatmapset_id": 1161525
+        },
+        {
+          "beatmap_id": 4634278,
+          "beatmapset_id": 2191004
+        },
+        {
+          "beatmap_id": 4615268,
+          "beatmapset_id": 2183932
+        },
+        {
+          "beatmap_id": 4366467,
+          "beatmapset_id": 2084590
+        },
+        {
+          "beatmap_id": 1921396,
+          "beatmapset_id": 920017
+        },
+        {
+          "beatmap_id": 4131316,
+          "beatmapset_id": 1988714
+        },
+        {
+          "beatmap_id": 1787964,
+          "beatmapset_id": 855751
+        },
+        {
+          "beatmap_id": 5048494,
+          "beatmapset_id": 2347215
+        },
+        {
+          "beatmap_id": 412288,
+          "beatmapset_id": 100348
+        },
+        {
+          "beatmap_id": 4693296,
+          "beatmapset_id": 2215054
+        },
+        {
+          "beatmap_id": 3871587,
+          "beatmapset_id": 1880545
+        },
+        {
+          "beatmap_id": 4299097,
+          "beatmapset_id": 1931793
+        },
+        {
+          "beatmap_id": 4462417,
+          "beatmapset_id": 2048017
+        },
+        {
+          "beatmap_id": 4864379,
+          "beatmapset_id": 2281524
+        },
+        {
+          "beatmap_id": 4249998,
+          "beatmapset_id": 2037678
+        },
+        {
+          "beatmap_id": 4176366,
+          "beatmapset_id": 1685595
+        },
+        {
+          "beatmap_id": 4304137,
+          "beatmapset_id": 2059306
+        },
+        {
+          "beatmap_id": 3435049,
+          "beatmapset_id": 1621473
+        },
+        {
+          "beatmap_id": 2283680,
+          "beatmapset_id": 1092488
+        },
+        {
+          "beatmap_id": 4954852,
+          "beatmapset_id": 2315202
+        },
+        {
+          "beatmap_id": 1124454,
+          "beatmapset_id": 530432
+        },
+        {
+          "beatmap_id": 1669804,
+          "beatmapset_id": 597899
+        },
+        {
+          "beatmap_id": 86324,
+          "beatmapset_id": 22276
+        },
+        {
+          "beatmap_id": 19969,
+          "beatmapset_id": 1559
+        },
+        {
+          "beatmap_id": 4186354,
+          "beatmapset_id": 2011767
+        },
+        {
+          "beatmap_id": 58063,
+          "beatmapset_id": 15920
+        },
+        {
+          "beatmap_id": 3846744,
+          "beatmapset_id": 1638844
+        },
+        {
+          "beatmap_id": 4210971,
+          "beatmapset_id": 2021984
+        },
+        {
+          "beatmap_id": 1093704,
+          "beatmapset_id": 514980
+        },
+        {
+          "beatmap_id": 991229,
+          "beatmapset_id": 462878
+        },
+        {
+          "beatmap_id": 2258925,
+          "beatmapset_id": 1067418
+        },
+        {
+          "beatmap_id": 4257342,
+          "beatmapset_id": 2040705
+        },
+        {
+          "beatmap_id": 2098486,
+          "beatmapset_id": 1002554
+        },
+        {
+          "beatmap_id": 3180049,
+          "beatmapset_id": 1556672
+        },
+        {
+          "beatmap_id": 266778,
+          "beatmapset_id": 100444
+        },
+        {
+          "beatmap_id": 4191546,
+          "beatmapset_id": 1989122
+        },
+        {
+          "beatmap_id": 2025904,
+          "beatmapset_id": 968147
+        },
+        {
+          "beatmap_id": 4373947,
+          "beatmapset_id": 2087326
+        },
+        {
+          "beatmap_id": 3045890,
+          "beatmapset_id": 1485352
+        },
+        {
+          "beatmap_id": 2045016,
+          "beatmapset_id": 975881
+        },
+        {
+          "beatmap_id": 37166,
+          "beatmapset_id": 8442
+        },
+        {
+          "beatmap_id": 4646415,
+          "beatmapset_id": 2084159
+        },
+        {
+          "beatmap_id": 2309567,
+          "beatmapset_id": 1083844
+        },
+        {
+          "beatmap_id": 4831731,
+          "beatmapset_id": 2261278
+        },
+        {
+          "beatmap_id": 330223,
+          "beatmapset_id": 131070
+        },
+        {
+          "beatmap_id": 4350695,
+          "beatmapset_id": 1583787
+        },
+        {
+          "beatmap_id": 3428879,
+          "beatmapset_id": 1678329
+        },
+        {
+          "beatmap_id": 3120772,
+          "beatmapset_id": 1524066
+        },
+        {
+          "beatmap_id": 1476932,
+          "beatmapset_id": 697230
+        },
+        {
+          "beatmap_id": 21010,
+          "beatmapset_id": 1785
+        },
+        {
+          "beatmap_id": 2610417,
+          "beatmapset_id": 1256111
+        },
+        {
+          "beatmap_id": 4472888,
+          "beatmapset_id": 2127697
+        },
+        {
+          "beatmap_id": 316018,
+          "beatmapset_id": 123839
+        },
+        {
+          "beatmap_id": 3849200,
+          "beatmapset_id": 1664347
+        },
+        {
+          "beatmap_id": 3449357,
+          "beatmapset_id": 1686490
+        },
+        {
+          "beatmap_id": 1115112,
+          "beatmapset_id": 525444
+        },
+        {
+          "beatmap_id": 4630339,
+          "beatmapset_id": 2189223
+        },
+        {
+          "beatmap_id": 1413933,
+          "beatmapset_id": 627338
+        },
+        {
+          "beatmap_id": 4381661,
+          "beatmapset_id": 2088927
+        },
+        {
+          "beatmap_id": 4098711,
+          "beatmapset_id": 1974908
+        },
+        {
+          "beatmap_id": 229634,
+          "beatmapset_id": 82348
+        },
+        {
+          "beatmap_id": 4782956,
+          "beatmapset_id": 2249236
+        },
+        {
+          "beatmap_id": 4408322,
+          "beatmapset_id": 2101371
+        },
+        {
+          "beatmap_id": 306018,
+          "beatmapset_id": 111611
+        },
+        {
+          "beatmap_id": 4003309,
+          "beatmapset_id": 1936770
+        },
+        {
+          "beatmap_id": 4610649,
+          "beatmapset_id": 2182178
+        },
+        {
+          "beatmap_id": 87171,
+          "beatmapset_id": 25739
+        },
+        {
+          "beatmap_id": 3817522,
+          "beatmapset_id": 1857465
+        },
+        {
+          "beatmap_id": 3064148,
+          "beatmapset_id": 1267252
+        },
+        {
+          "beatmap_id": 4330909,
+          "beatmapset_id": 2065860
+        },
+        {
+          "beatmap_id": 3394210,
+          "beatmapset_id": 1662676
+        },
+        {
+          "beatmap_id": 2268576,
+          "beatmapset_id": 1084161
+        },
+        {
+          "beatmap_id": 2346961,
+          "beatmapset_id": 1116611
+        },
+        {
+          "beatmap_id": 46486,
+          "beatmapset_id": 12344
+        }
+      ],
+      "minimum_source_beatmaps": 137,
+      "minimum_entries": 94
     }
   ],
   "forum_queues": [
