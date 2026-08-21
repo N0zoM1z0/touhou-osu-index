@@ -46,7 +46,6 @@ jobs:
           assert removed==set(), sorted(removed)
           assert changed==OLD, (sorted(changed),sorted(OLD))
 
-          # Every old candidate keeps all prior provenance and had no sticky manual boundary.
           for i in OLD:
               assert base[i]['confidence']=='candidate', (i,base[i]['confidence'])
               assert 'manual:candidate' not in base[i]['evidence'], (i,base[i]['evidence'])
@@ -68,6 +67,7 @@ jobs:
           Catalog.load(Path('data/catalog.json')).validate()
           changed_files=subprocess.check_output(['git','diff','--name-only','origin/main...HEAD'],text=True).splitlines()
           assert changed_files==[
+              '.github/workflows/tmp-pr26-review1-static.yml',
               'data/catalog.json',
               'docs/source-audit-2026-08-lunatic-princess-results.md',
               'docs/source-audit-2026-08-lunatic-princess.md',
