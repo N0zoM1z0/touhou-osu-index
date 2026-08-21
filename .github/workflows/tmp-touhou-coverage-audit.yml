@@ -28,8 +28,8 @@ jobs:
           fi
           python - <<'PY'
           import json
-          import time
           from collections import Counter, defaultdict, deque
+          from concurrent.futures import ThreadPoolExecutor
           from pathlib import Path
 
           from touhou_osu.catalog import Catalog
@@ -55,13 +55,13 @@ jobs:
 
           missing = []
           for beatmapset_id in sorted(set(raws) - existing):
-              entry = entry_from_osu(
-                  raws[beatmapset_id],
-                  evidence=sorted(evidence[beatmapset_id]),
-                  confidence="candidate",
+              missing.append(
+                  entry_from_osu(
+                      raws[beatmapset_id],
+                      evidence=sorted(evidence[beatmapset_id]),
+                      confidence="candidate",
+                  )
               )
-              missing.append(entry)
-
           confidence_counts = Counter(entry.confidence for entry in missing)
           verified = [entry for entry in missing if entry.confidence == "verified"]
           if len(verified) < TARGET:
@@ -82,33 +82,47 @@ jobs:
               if not progressed:
                   break
 
-          selected = []
-          rejected_after_refetch = []
-          for candidate in ordered:
-              direct_raw = api.beatmapset(candidate.beatmapset_id)
-              if int(direct_raw.get("id", -1)) != candidate.beatmapset_id:
-                  rejected_after_refetch.append({"beatmapset_id": candidate.beatmapset_id, "reason": "id_mismatch"})
-                  continue
-              direct = entry_from_osu(
-                  direct_raw,
-                  evidence=sorted(evidence[candidate.beatmapset_id]),
-                  confidence="candidate",
-              )
-              if direct.confidence != "verified":
-                  rejected_after_refetch.append(
-                      {
+          api.token()
+          def direct_verify(candidate):
+              try:
+                  direct_raw = api.beatmapset(candidate.beatmapset_id)
+                  if int(direct_raw.get("id", -1)) != candidate.beatmapset_id:
+                      return None, {"beatmapset_id": candidate.beatmapset_id, "reason": "id_mismatch"}
+                  direct = entry_from_osu(
+                      direct_raw,
+                      evidence=sorted(evidence[candidate.beatmapset_id]),
+                      confidence="candidate",
+                  )
+                  if direct.confidence != "verified":
+                      return None, {
                           "beatmapset_id": candidate.beatmapset_id,
                           "reason": "not_verified_after_direct_refetch",
                           "source": direct.source,
                           "confidence": direct.confidence,
                       }
-                  )
-                  continue
-              catalog.merge(direct)
-              selected.append(direct)
+                  return direct, None
+              except Exception as exc:
+                  return None, {
+                      "beatmapset_id": candidate.beatmapset_id,
+                      "reason": f"direct_refetch_error:{type(exc).__name__}",
+                  }
+
+          selected = []
+          rejected_after_refetch = []
+          for offset in range(0, len(ordered), 120):
+              batch = ordered[offset:offset + 120]
+              with ThreadPoolExecutor(max_workers=8) as pool:
+                  results = list(pool.map(direct_verify, batch))
+              for direct, rejection in results:
+                  if rejection:
+                      rejected_after_refetch.append(rejection)
+                      continue
+                  catalog.merge(direct)
+                  selected.append(direct)
+                  if len(selected) >= TARGET:
+                      break
               if len(selected) >= TARGET:
                   break
-              time.sleep(0.03)
 
           if len(selected) != TARGET:
               raise SystemExit(f"only {len(selected)} survived direct refetch; need {TARGET}")
