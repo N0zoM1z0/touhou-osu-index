@@ -19,7 +19,7 @@ jobs:
       - run: make check
       - run: make build
 
-  # One-shot, ID-specific candidate boundary writeback; removed after success.
+  # Temporary one-shot candidate boundary; trusted base workflow now owns execution.
   apply-night-candidate-boundary:
     needs: test
     runs-on: ubuntu-latest
