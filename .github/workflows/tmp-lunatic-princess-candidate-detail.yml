@@ -27,7 +27,10 @@ jobs:
           IDS=[9920,22399,23914,33654,35129,39478,46406,62397,825705,876583,2410754,2411291,2428444]
           api=OsuApi.from_env(); api.token()
           def fetch(i):
-              raw=api.beatmapset(i)
+              try:
+                  raw=api.beatmapset(i)
+              except Exception as exc:
+                  return {'beatmapset_id':i,'error':f'{type(exc).__name__}:{exc}'}
               return {
                   'beatmapset_id':i,
                   'artist':raw.get('artist'),
