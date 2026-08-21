@@ -1,0 +1,73 @@
+name: Temporary Touhou coverage audit
+
+on:
+  push:
+    branches: [feat/touhou-coverage-200plus-2026-08-21]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit candidate Touhou collections against canonical catalog
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from collections import Counter
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.sources import import_collector_collection
+
+          sources = [
+              {"id": 14846, "name": "4-Touhou Remix", "confidence": "candidate"},
+              {"id": 3570, "name": "Touhou 3*", "confidence": "candidate"},
+              {"id": 541, "name": "Touhou Osu Mania", "confidence": "candidate"},
+              {"id": 2520, "name": "touhou", "confidence": "candidate"},
+              {"id": 4499, "name": "touhou dt", "confidence": "candidate"},
+              {"id": 1234, "name": "ZUN Collection Pack #1 (osu!std)", "confidence": "candidate"},
+          ]
+
+          catalog = Catalog.load(Path("data/catalog.json"))
+          existing_ids = set(catalog.entries)
+          union_ids = set()
+          union_missing = set()
+          report = []
+
+          for source in sources:
+              entries = import_collector_collection(source)
+              ids = {entry.beatmapset_id for entry in entries}
+              missing = ids - existing_ids
+              new_to_batch = ids - union_ids
+              new_missing_to_batch = missing - union_missing
+              confidences = Counter(entry.confidence for entry in entries)
+              report.append({
+                  "id": source["id"],
+                  "name": source["name"],
+                  "imported_unique_beatmapsets": len(ids),
+                  "already_in_catalog": len(ids & existing_ids),
+                  "missing_from_catalog": len(missing),
+                  "new_unique_vs_prior_audited_sources": len(new_to_batch),
+                  "new_missing_vs_prior_audited_sources": len(new_missing_to_batch),
+                  "confidence_counts": dict(sorted(confidences.items())),
+                  "missing_ids": sorted(missing),
+              })
+              union_ids |= ids
+              union_missing |= missing
+
+          payload = {
+              "catalog_entries": len(existing_ids),
+              "sources": report,
+              "union_source_beatmapsets": len(union_ids),
+              "union_missing_from_catalog": len(union_missing),
+              "union_missing_ids": sorted(union_missing),
+          }
+          print("TOUHOU_COVERAGE_AUDIT_BEGIN")
+          print(json.dumps(payload, ensure_ascii=False, indent=2))
+          print("TOUHOU_COVERAGE_AUDIT_END")
+          PY
