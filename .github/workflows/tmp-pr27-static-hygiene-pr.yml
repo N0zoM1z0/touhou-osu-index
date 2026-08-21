@@ -1,0 +1,90 @@
+name: PR27 static and hygiene review
+
+on:
+  pull_request:
+    branches: [review/pr27-audit-base-20260821]
+
+permissions:
+  contents: read
+
+jobs:
+  static-catalog-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch origin main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Recompute exact semantic diff from current main
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          MIXED={337187,1528497,1598539,1675793,1976379,2274999,2534273}
+          GAMES={'東方紅魔郷 ～ the Embodiment of Scarlet Devil.','東方花映塚 ～ Phantasmagoria of Flower View.'}
+          THEMES={'フラワリングナイト','月時計 ～ ルナ・ダイアル'}
+          ADDED={'audit:night-of-knights-2026-08','manual:verified','composition:cool-create:night-of-knights','corroboration:cool-create:base-track'}
+          KEEP=('artist','title','creator','source','status','modes','osu_last_updated','last_checked')
+          base_raw=json.loads(subprocess.check_output(['git','show','origin/main:data/catalog.json'],text=True))
+          head_raw=json.loads(Path('data/catalog.json').read_text(encoding='utf-8'))
+          base={int(x['beatmapset_id']):x for x in base_raw['entries']}; head={int(x['beatmapset_id']):x for x in head_raw['entries']}
+          new=sorted(set(head)-set(base)); removed=sorted(set(base)-set(head)); old=sorted(i for i in set(base)&set(head) if base[i]!=head[i])
+          assert (len(base),len(head),len(new),removed,old)==(3632,3989,357,[],[154426]),(len(base),len(head),len(new),removed,old)
+          auto=manual=comp=0
+          for i in new:
+              x=head[i]
+              assert x['confidence']=='verified' and 'audit:night-of-knights-2026-08' in x['evidence']
+              assert 'manual:candidate' not in x['evidence'] and 'manual:excluded' not in x['evidence']
+              assert set(x['origin_games'])==GAMES and set(x['original_themes'])==THEMES
+              assert x['touhou_kind']==('mixed' if i in MIXED else 'arrangement')
+              manual += 'manual:verified' in x['evidence']
+              auto += 'osu_source' in x['evidence'] and 'manual:verified' not in x['evidence']
+              comp += 'composition:cool-create:night-of-knights' in x['evidence']
+          assert (auto,manual,comp)==(177,180,180),(auto,manual,comp)
+          b=base[154426]; h=head[154426]
+          assert b['confidence']=='candidate' and h['confidence']=='verified'
+          assert set(h['evidence'])==set(b['evidence'])|ADDED
+          assert h['touhou_kind']=='arrangement' and set(h['origin_games'])==GAMES and set(h['original_themes'])==THEMES
+          for f in KEEP: assert h[f]==b[f],(f,h[f],b[f])
+          assert head[1561908]==base[1561908]
+          Catalog.load(Path('data/catalog.json')).validate()
+          print('PR27_REVIEW1_STATIC_OK')
+          print('base=3632 head=3989 new_verified=357 removed=0 changed_old=[154426] automatic=177 manual=180 mixed=7')
+          PY
+
+  audit-doc-and-reproducibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch origin main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check exact PR27 target tree and audit document
+        run: |
+          set -euo pipefail
+          TARGET=bebb37e63d2559a910a5ea2cce66932939162261
+          test "$(git diff --name-only origin/main...$TARGET | sort)" = $'data/catalog.json\ndocs/source-audit-2026-08-night-of-knights.md'
+          git diff --quiet "$TARGET" -- data/catalog.json docs/source-audit-2026-08-night-of-knights.md
+          python - <<'PY'
+          from pathlib import Path
+          doc=Path('docs/source-audit-2026-08-night-of-knights.md').read_text(encoding='utf-8')
+          s=doc.split('## First-party derivative corpus (41 works)',1)[1].split('## Search / filtering policy',1)[0]
+          rows=[x for x in s.splitlines() if x.startswith('| `')]
+          assert len(rows)==41,len(rows)
+          required=['https://cool-create.cc/cd/cccd50/','https://cool-create.cc/cd/cccd59/','https://cool-create.cc/cd/cccd75/','https://www.youtube.com/watch?v=ugqjcXjpCts','https://www.youtube.com/watch?v=Qju7jPjXPNE','https://www.youtube.com/watch?v=bQI9xedYQQE','https://www.youtube.com/watch?v=OyUJnV2R-5g','https://www.youtube.com/watch?v=2N2s0f5fRsc','https://dondafulfestival-20th.taiko-ch.net/en/music/songlist.php','https://p.eagate.573.jp/game/eacsdvx/iii/p/common/info/sdvx_mlist_basic.html','https://playism.com/news/2019/1014/gnf_tlnost-2/']
+          assert all(x in doc for x in required)
+          for x in ['**42 query/status pairs**','**7,159 distinct search results**','**448 title-family matches**','**440 absent**','**284 newly verified beatmapsets**','**62-set**','**11 additional sets**','**83 title-family hits remain deliberately withheld**','Search-query membership is never verification.','does **not** treat every independent arrangement','`154426`','`1561908`','HTTP 404']:
+              assert x in doc,x
+          print('PR27_REVIEW3_DOC_OK first_party_rows=41 required_source_links=11')
+          PY
+      - name: Standard repository checks
+        run: |
+          make check
+          make build
