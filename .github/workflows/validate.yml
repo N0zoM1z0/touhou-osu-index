@@ -6,7 +6,8 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  actions: read
+  contents: write
 
 jobs:
   test:
@@ -18,3 +19,36 @@ jobs:
           python-version: "3.12"
       - run: make check
       - run: make build
+
+  apply-night-of-knights:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply direct-refetched Night of Knights wave
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          gh run view 32477749313 --repo "$GITHUB_REPOSITORY" --log > /tmp/status.log
+          python scripts/tmp_apply_night_of_knights.py /tmp/status.log
+          make check
+          make build
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog.json docs/source-audit-2026-08-night-of-knights.md
+          git commit -m "data: add verified Night of Knights derivative wave"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
