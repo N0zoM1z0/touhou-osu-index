@@ -19,6 +19,7 @@ jobs:
       - run: make check
       - run: make build
 
+  # One-shot, ID-specific candidate boundary writeback; removed after success.
   apply-night-candidate-boundary:
     needs: test
     runs-on: ubuntu-latest
@@ -59,7 +60,6 @@ jobs:
           tags=(raw.get('tags') or '').casefold()
           assert 'touhou' in tags and ('cool&create' in tags or 'cool create' in tags),tags
 
-          # The second historical candidate is deliberately not promoted while the live set is unresolved.
           try:
               api.beatmapset(1561908)
           except HttpError as exc:
