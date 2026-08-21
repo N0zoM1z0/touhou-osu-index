@@ -1,0 +1,74 @@
+name: Temporary Night of Knights compact status enumeration
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  compact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compact status-scoped enumeration
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import unicodedata
+          from collections import Counter
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.osu_api import OsuApi,entry_from_osu
+
+          QUERIES=['ナイト・オブ・ナイツ','Night of Knights','Night of Nights','Knight of Nights','Chou Night of Knights','Super Night of Nights','超ナイト・オブ・ナイツ']
+          STATUSES=['graveyard','ranked','loved','qualified','pending','wip']
+          def norm(v): return ''.join(c for c in unicodedata.normalize('NFKC',v or '').casefold() if c.isalnum())
+          TOKENS=[norm(x) for x in ['ナイト・オブ・ナイツ','Night of Knights','Night of Nights','Knight of Nights']]
+          def family(title):
+              t=norm(title)
+              return any(x in t for x in TOKENS)
+          api=OsuApi.from_env();api.token(); catalog=Catalog.load(Path('data/catalog.json'))
+          def search(qs):
+              q,status=qs;cursor=None;out=[]
+              for _ in range(20):
+                  params={'q':q,'s':status}
+                  if cursor: params['cursor_string']=cursor
+                  payload=api.get('/beatmapsets/search',params)
+                  out.extend(payload.get('beatmapsets',[]))
+                  cursor=payload.get('cursor_string')
+                  if not cursor: break
+              return out
+          discovered={}
+          with ThreadPoolExecutor(max_workers=6) as p:
+              fs=[p.submit(search,(q,s)) for s in STATUSES for q in QUERIES]
+              for f in as_completed(fs):
+                  for r in f.result(): discovered[int(r['id'])]=r
+          prelim={i:r for i,r in discovered.items() if family(r.get('title',''))}
+          def direct(item):
+              i,s=item
+              r=api.beatmapset(i)
+              assert int(r['id'])==i
+              e=entry_from_osu(r,evidence=['audit:night-status-compact'],confidence='candidate')
+              cur=catalog.entries.get(i)
+              return i,('absent' if cur is None else cur.confidence),e.artist,e.title,e.source,e.status
+          with ThreadPoolExecutor(max_workers=10) as p: rows=list(p.map(direct,prelim.items()))
+          counts=Counter(x[1] for x in rows)
+          missing=sorted(x for x in rows if x[1]=='absent')
+          print('NIGHT_STATUS_COMPACT_OK')
+          print('query_status_pairs=',len(QUERIES)*len(STATUSES))
+          print('search_discovered_unique=',len(discovered))
+          print('title_family_direct=',len(rows))
+          print('states=',dict(sorted(counts.items())))
+          print('missing_count=',len(missing))
+          print('missing_ids=',','.join(str(x[0]) for x in missing))
+          for i,state,artist,title,source,status in missing:
+              print(f'MISSING|{i}|{status}|{artist}|{title}|{source}')
+          PY
