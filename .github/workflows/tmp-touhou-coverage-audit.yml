@@ -1,110 +1,54 @@
-name: Temporary Touhou coverage audit
+name: Temporary Touhou coverage apply
 
 on:
-  pull_request:
   push:
     branches: [feat/touhou-coverage-200plus-2026-08-21]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  audit:
+  apply-verified-batch:
+    if: ${{ !contains(github.event.head_commit.message, '[coverage-batch]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Audit candidate Touhou collections against canonical catalog
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          from collections import Counter
-          from touhou_osu.catalog import Catalog
-          from touhou_osu.sources import import_collector_collection
-
-          sources = [
-              {"id": 14846, "name": "4-Touhou Remix", "confidence": "candidate"},
-              {"id": 3570, "name": "Touhou 3*", "confidence": "candidate"},
-              {"id": 541, "name": "Touhou Osu Mania", "confidence": "candidate"},
-              {"id": 2520, "name": "touhou", "confidence": "candidate"},
-              {"id": 4499, "name": "touhou dt", "confidence": "candidate"},
-              {"id": 1234, "name": "ZUN Collection Pack #1 (osu!std)", "confidence": "candidate"},
-          ]
-
-          catalog = Catalog.load(Path("data/catalog.json"))
-          existing_ids = set(catalog.entries)
-          union_ids = set()
-          union_missing = set()
-          report = []
-
-          for source in sources:
-              entries = import_collector_collection(source)
-              ids = {entry.beatmapset_id for entry in entries}
-              missing = ids - existing_ids
-              new_to_batch = ids - union_ids
-              new_missing_to_batch = missing - union_missing
-              confidences = Counter(entry.confidence for entry in entries)
-              report.append({
-                  "id": source["id"],
-                  "name": source["name"],
-                  "imported_unique_beatmapsets": len(ids),
-                  "already_in_catalog": len(ids & existing_ids),
-                  "missing_from_catalog": len(missing),
-                  "new_unique_vs_prior_audited_sources": len(new_to_batch),
-                  "new_missing_vs_prior_audited_sources": len(new_missing_to_batch),
-                  "confidence_counts": dict(sorted(confidences.items())),
-                  "missing_ids": sorted(missing),
-              })
-              union_ids |= ids
-              union_missing |= missing
-
-          payload = {
-              "catalog_entries": len(existing_ids),
-              "sources": report,
-              "union_source_beatmapsets": len(union_ids),
-              "union_missing_from_catalog": len(union_missing),
-              "union_missing_ids": sorted(union_missing),
-          }
-          print("TOUHOU_COVERAGE_AUDIT_BEGIN")
-          print(json.dumps(payload, ensure_ascii=False, indent=2))
-          print("TOUHOU_COVERAGE_AUDIT_END")
-          PY
-
-  discovery-backlog:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Audit full configured osu API discovery backlog
+      - name: Re-discover, direct-refetch, and add 300 verified missing beatmapsets
         env:
           OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
           OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
         run: |
           python - <<'PY'
           import json
-          from collections import Counter
+          import time
+          from collections import Counter, defaultdict, deque
           from pathlib import Path
+
           from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import normalize
           from touhou_osu.cli import load_config
           from touhou_osu.osu_api import OsuApi, entry_from_osu
 
-          api = OsuApi.from_env()
-          catalog = Catalog.load(Path("data/catalog.json"))
-          config = load_config(Path("config/seeds.json"))
+          TARGET = 300
+          path = Path("data/catalog.json")
+          catalog = Catalog.load(path)
+          before_count = len(catalog.entries)
           existing = set(catalog.entries)
-          raws = {}
-          evidence = {}
+          config = load_config(Path("config/seeds.json"))
+          api = OsuApi.from_env()
 
+          raws = {}
+          evidence = defaultdict(set)
           for query in config.get("discovery_queries", []):
               for raw in api.search(query, max_pages=4):
                   beatmapset_id = int(raw["id"])
                   raws[beatmapset_id] = raw
-                  evidence.setdefault(beatmapset_id, set()).add(f"discovery_query:{query}")
+                  evidence[beatmapset_id].add(f"discovery_query:{query}")
 
           missing = []
           for beatmapset_id in sorted(set(raws) - existing):
@@ -115,31 +59,90 @@ jobs:
               )
               missing.append(entry)
 
-          counts = Counter(entry.confidence for entry in missing)
-          accepted = [entry for entry in missing if entry.confidence in {"verified", "probable"}]
-          payload = {
+          confidence_counts = Counter(entry.confidence for entry in missing)
+          verified = [entry for entry in missing if entry.confidence == "verified"]
+          if len(verified) < TARGET:
+              raise SystemExit(f"only {len(verified)} verified missing beatmapsets; need {TARGET}")
+
+          # Round-robin across normalized osu! source strings so the batch is broad
+          # instead of being dominated by one game/source label or one ID era.
+          buckets = defaultdict(list)
+          for entry in verified:
+              buckets[normalize(entry.source)].append(entry)
+          queues = {key: deque(sorted(value, key=lambda item: item.beatmapset_id)) for key, value in buckets.items()}
+          ordered = []
+          keys = sorted(queues)
+          while True:
+              progressed = False
+              for key in keys:
+                  if queues[key]:
+                      ordered.append(queues[key].popleft())
+                      progressed = True
+              if not progressed:
+                  break
+
+          selected = []
+          rejected_after_refetch = []
+          for candidate in ordered:
+              direct_raw = api.beatmapset(candidate.beatmapset_id)
+              if int(direct_raw.get("id", -1)) != candidate.beatmapset_id:
+                  rejected_after_refetch.append({"beatmapset_id": candidate.beatmapset_id, "reason": "id_mismatch"})
+                  continue
+              direct = entry_from_osu(
+                  direct_raw,
+                  evidence=sorted(evidence[candidate.beatmapset_id]),
+                  confidence="candidate",
+              )
+              if direct.confidence != "verified":
+                  rejected_after_refetch.append(
+                      {
+                          "beatmapset_id": candidate.beatmapset_id,
+                          "reason": "not_verified_after_direct_refetch",
+                          "source": direct.source,
+                          "confidence": direct.confidence,
+                      }
+                  )
+                  continue
+              catalog.merge(direct)
+              selected.append(direct)
+              if len(selected) >= TARGET:
+                  break
+              time.sleep(0.03)
+
+          if len(selected) != TARGET:
+              raise SystemExit(f"only {len(selected)} survived direct refetch; need {TARGET}")
+
+          catalog.save(path)
+          source_counts = Counter(normalize(entry.source) for entry in selected)
+          status_counts = Counter(entry.status for entry in selected)
+          mode_counts = Counter(mode for entry in selected for mode in entry.modes)
+          query_hit_counts = Counter(len(evidence[entry.beatmapset_id]) for entry in selected)
+          report = {
+              "catalog_before": before_count,
+              "catalog_after": len(catalog.entries),
               "configured_queries": len(config.get("discovery_queries", [])),
-              "discovered_unique": len(raws),
+              "search_unique": len(raws),
               "missing_from_catalog": len(missing),
-              "missing_confidence_counts": dict(sorted(counts.items())),
-              "accepted_missing_count": len(accepted),
-              "accepted_missing": [
-                  {
-                      "beatmapset_id": entry.beatmapset_id,
-                      "artist": entry.artist,
-                      "title": entry.title,
-                      "creator": entry.creator,
-                      "source": entry.source,
-                      "status": entry.status,
-                      "modes": entry.modes,
-                      "confidence": entry.confidence,
-                      "evidence": entry.evidence,
-                  }
-                  for entry in accepted
-              ],
-              "candidate_missing_ids": [entry.beatmapset_id for entry in missing if entry.confidence == "candidate"],
+              "missing_confidence_counts": dict(sorted(confidence_counts.items())),
+              "verified_backlog_before_batch": len(verified),
+              "target": TARGET,
+              "selected_after_direct_refetch": len(selected),
+              "rejected_after_direct_refetch": rejected_after_refetch,
+              "unique_normalized_sources_in_batch": len(source_counts),
+              "top_source_counts": source_counts.most_common(20),
+              "status_counts": dict(sorted(status_counts.items())),
+              "mode_counts": dict(sorted(mode_counts.items())),
+              "discovery_query_hit_count_distribution": dict(sorted(query_hit_counts.items())),
+              "selected_ids": [entry.beatmapset_id for entry in selected],
           }
-          print("DISCOVERY_BACKLOG_AUDIT_BEGIN")
-          print(json.dumps(payload, ensure_ascii=False, indent=2))
-          print("DISCOVERY_BACKLOG_AUDIT_END")
+          print("VERIFIED_BATCH_REPORT_BEGIN")
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          print("VERIFIED_BATCH_REPORT_END")
           PY
+          python -m touhou_osu.cli validate
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog.json
+          git commit -m "data: add 300 verified Touhou beatmapsets [coverage-batch]"
+          git push origin HEAD:${{ github.ref_name }}
