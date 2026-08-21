@@ -192,3 +192,28 @@ Accepted IDs:
 After this wave, **83 title-family hits remain deliberately withheld**. Typical withheld cases include blank/unknown attribution, mapper-only Touhou tags, BMS/community-pack source labels, phone/nightcore/Black-MIDI variants without a reliable author/composition chain, and meme/mashup uploads where the Night-of-Knights ingredient is plausible but not independently sourced. Examples include `10809` (Unknown / blank source), `1240116` (score farm / source `ur mum`), and `2408535` (a deliberately silent joke file). No withheld set is promoted merely because its title resembles the target song.
 
 <!-- NIGHT_MANUAL_WAVE3_END -->
+
+<!-- NIGHT_EXISTING_CANDIDATE_START -->
+
+## Existing candidate boundary
+
+A separate scan of the pre-change catalog found two historical `candidate` entries with controlled Night-of-Knights titles that were not both represented in the 440 absent-set pool:
+
+- `154426` — `beatMARIO - Night of Knights`. The set still resolves through the official osu! API; current artist/title remain exact, and current mapper tags include both `cool&create` and `touhou`. Combined with COOL&CREATE's first-party provenance for the parent track, this entry is upgraded to `verified` with sticky `manual:verified` evidence.
+- `1561908` — historical metadata `USAO - Night of Nights (USAO Remix)`. COOL&CREATE's 2019 first-party album independently confirms that exact derivative exists, but the current osu! API returns HTTP 404 for the beatmapset. Under the conservative unresolved-link boundary, this catalog entry remains `candidate` and receives no manual override.
+
+The separate non-family first-party recall pass searched `ナイト・オブ・ニーツ` / `Night of NEETs`, `ナイト・オブ・IQの低いナイツ` / `Night of Low IQ Nights`, and `NIGHT OF FLOWER -幻想郷最速伝説-` / `NIGHT OF FLOWER` across `graveyard`, `ranked`, `loved`, `qualified`, `pending`, and `wip`: **36 query/status pairs, zero guarded title+artist direct matches, and zero API query errors**. Therefore no extra beatmapsets are added from that recall pass.
+
+<!-- NIGHT_EXISTING_CANDIDATE_END -->
+
+<!-- NIGHT_STRUCTURED_PROVENANCE_START -->
+
+## Structured provenance normalization
+
+COOL&CREATE's first-party provenance identifies the parent `ナイト・オブ・ナイツ` as an arrangement of both `フラワリングナイト` (東方花映塚) and `月時計 ～ ルナ・ダイアル` (東方紅魔郷). The final catalog pass therefore records both canonical games and both original themes on all **357 newly added derivative sets** and on the reviewed existing set `154426`.
+
+The title/metadata review identifies **7 mixed-source derivatives** rather than pure arrangements: `337187,1528497,1598539,1675793,1976379,2274999,2534273`. These include the previously identified `The kid vs DjSray` mashup plus live-metadata-confirmed McDonald's/Happy Set, Gachi, Otomad collaboration, Super Mario 64, Lucky Star, and S3RL/Bass Slut variants. Those seven use `touhou_kind: mixed`; the remaining 350 new sets and `154426` use `touhou_kind: arrangement`.
+
+No confidence decision is changed by this normalization; it only fills structured provenance already supported by the same first-party composition chain.
+
+<!-- NIGHT_STRUCTURED_PROVENANCE_END -->
