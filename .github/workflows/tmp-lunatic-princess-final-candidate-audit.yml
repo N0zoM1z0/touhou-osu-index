@@ -4,67 +4,190 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   candidates:
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Inspect catalog evidence and live metadata
+      - name: Apply individually reviewed catalog decisions
         env:
           OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
           OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
         run: |
           set -euo pipefail
           python - <<'PY'
-          import json
           from pathlib import Path
-          from concurrent.futures import ThreadPoolExecutor
           from touhou_osu.catalog import Catalog
-          from touhou_osu.osu_api import OsuApi
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
 
-          IDS=[2626,5346,507416,2188045,2205747,2209334,2282709,2314117,2561367,21098,47754,171239,183267,427407,723024,855735]
-          EXISTING=[21098,47754,171239,183267,427407,723024,855735]
-          catalog=Catalog.load(Path('data/catalog.json'))
-          existing=[]
+          catalog_path=Path('data/catalog.json')
+          doc_path=Path('docs/source-audit-2026-08-lunatic-princess.md')
+          catalog=Catalog.load(catalog_path)
+
+          EXPLICIT={21098,47754,855735,2205747,2282709,2561367}
+          MANUAL={2626,5346,507416,2188045,2209334,2314117,171239,183267,427407,723024}
+          IDS=sorted(EXPLICIT|MANUAL)
+          NEW={2626,5346,507416,2188045,2205747,2209334,2282709,2314117,2561367}
+          EXISTING={21098,47754,171239,183267,427407,723024,855735}
+          TOKEN='audit:lunatic-princess-2026-08'
+          assert len(IDS)==16 and len(NEW)==9 and len(EXISTING)==7
+
+          existing_before=set(catalog.entries)
+          # Idempotency guard for the workflow run triggered by its own push.
+          if all(i in catalog.entries and TOKEN in catalog.entries[i].evidence for i in IDS):
+              print('LUNATIC_PRINCESS_ALREADY_APPLIED')
+              raise SystemExit(0)
+
+          assert NEW.isdisjoint(existing_before), sorted(NEW & existing_before)
+          assert EXISTING <= existing_before, sorted(EXISTING-existing_before)
           for i in EXISTING:
-              e=catalog.entries.get(i)
-              assert e is not None, i
-              existing.append({
-                  'beatmapset_id':i,
-                  'confidence':e.confidence,
-                  'artist':e.artist,
-                  'title':e.title,
-                  'source':e.source,
-                  'evidence':e.evidence,
-                  'last_checked':e.last_checked,
-                  'osu_last_updated':e.osu_last_updated,
-              })
+              assert not any(x in {'manual:candidate','manual:excluded'} for x in catalog.entries[i].evidence), (i,catalog.entries[i].evidence)
 
           api=OsuApi.from_env(); api.token()
-          def fetch(i):
+          changed=[]
+          for i in IDS:
               raw=api.beatmapset(i)
               assert int(raw['id'])==i
-              return {
-                  'beatmapset_id':i,
-                  'artist':raw.get('artist',''),
-                  'artist_unicode':raw.get('artist_unicode',''),
-                  'title':raw.get('title',''),
-                  'title_unicode':raw.get('title_unicode',''),
-                  'source':raw.get('source',''),
-                  'creator':raw.get('creator',''),
-                  'status':raw.get('status',''),
-                  'tags':raw.get('tags',''),
-                  'beatmaps':[{'id':b.get('id'),'mode':b.get('mode'),'version':b.get('version')} for b in raw.get('beatmaps',[])],
-              }
-          with ThreadPoolExecutor(max_workers=8) as pool:
-              live=list(pool.map(fetch,IDS))
+              evidence=[TOKEN]
+              if i in MANUAL:
+                  evidence.append('manual:verified')
+              entry=entry_from_osu(raw,evidence=evidence,confidence='candidate')
+              entry.origin_games=['東方永夜抄 ～ Imperishable Night.']
+              entry.original_themes=['竹取飛翔 ～ Lunatic Princess']
+              entry.touhou_kind='original' if i==2282709 else ('mixed' if i==2314117 else 'arrangement')
+              merged,did_change=catalog.merge(entry)
+              assert merged.confidence=='verified', (i,merged.confidence,merged.evidence)
+              assert TOKEN in merged.evidence
+              if i in MANUAL:
+                  assert 'manual:verified' in merged.evidence
+              else:
+                  assert 'manual:verified' not in merged.evidence
+                  assert 'osu_source' in merged.evidence, (i,merged.source,merged.evidence)
+              assert merged.origin_games==['東方永夜抄 ～ Imperishable Night.']
+              assert merged.original_themes==['竹取飛翔 ～ Lunatic Princess']
+              assert merged.touhou_kind==('original' if i==2282709 else ('mixed' if i==2314117 else 'arrangement'))
+              if did_change:
+                  changed.append(i)
 
-          print('LUNATIC_FINAL_CANDIDATE_AUDIT_BEGIN')
-          print(json.dumps({'existing_catalog_entries':existing,'live':live},ensure_ascii=False,indent=2))
-          print('LUNATIC_FINAL_CANDIDATE_AUDIT_END')
+          assert set(catalog.entries)-existing_before==NEW
+          assert existing_before-set(catalog.entries)==set()
+          assert set(changed)==set(IDS), changed
+          catalog.save(catalog_path)
+
+          text=doc_path.read_text(encoding='utf-8')
+          wave2_marker='## Second-wave corpus: non-obvious arrangement titles (88)'
+          if wave2_marker not in text:
+              wave2=[
+                ('夜が動く','IOSYS'),('Eternal moon','Silver Forest'),('すごいえーりん・その1','COOL&CREATE'),('すごいえーりん・その2','COOL&CREATE'),
+                ('あなたがここにいなくても','OTAKU-ELITE Recordings'),('千年幻想郷 ～ 竹取飛翔','Forest306'),('蓬莱の家庭教師','街角麻婆豆'),('Hazy Moon','Echoes Construction'),
+                ('摂氏零℃がワタシの体温',"Pizuya's Cell"),('Furniture Store','surreacheese'),('邦楽合奏の為の「竹取飛翔 ～ Lunatic Princess」','外柿山'),
+                ('EXTRA - Through the Looking glass ～ モウヒトリノ姫君','WAVE'),('月見草','WAVEDRIVE'),('俺的、サニーサイド ～某キャラ萌え的サウンド～','CTBR'),
+                ('ニセモノノオツキサマ','Black Onyx'),('No return','CODE-49'),('Help me,ERINNNNN!! 締切 ver','COOL&CREATE'),('Resurrection','Croak Not Rue'),
+                ('永夜 抄太(39)','FullMooN.13'),('極東アウトブレイク対策本部','Iemitsu.'),('タイクツ','Aria Rhythm'),('Happiness of pretense','FOX RAVEL×KINZOK ON'),
+                ('Dream Fragment','FOX RAVEL×KINZOK ON'),('Take to Re:PS','Sound CYCLONE'),('竹取飛翔 ～ Help me, ERINNNNNN!!','TAMUSIC'),('quiet night','もぱた。'),
+                ('La princesa lunática','CXR Record'),('笑体不明','DiGiTAL WiNG'),('Bamboo Princess','Login Records'),('Order To Thumbs Up','Rolling Contact'),
+                ('竹取飛翔 ～ Lunatic Princess (Ryu☆Remix)','Ryu☆'),('月夜のレインドロップ',"Sister's Spread-i"),('Road to the sky',"Sister's Spread-i"),
+                ('ライト、ムーンライト',"Sister's Spread-i"),('永月饗宴','THE SERGEANT'),('Secret Traveler','Adust Rain'),('Better bow than break','Baguettes Ensemble'),
+                ('竹取ふらいとッ☆ to: Luna /from: our Tokyo','Iemitsu.'),('竹取TOKYO物語～Shibuya Street Princess','Iemitsu.'),('rotater','LOVEマシーン'),
+                ('Lunatic Jump!','Shingo Dj'),('夢花火','Sun Flower Field'),('Flowing Destiny','魂音泉×Kissing the Mirror'),('Fullmoon Tonight','3S Cubic'),
+                ('永遠亭','AQUA STYLE'),('Kill Myself','Bluetrain×GO-ZEN'),('YES！最高Princess☆','Innocent Key'),('The Moon sees us','LIMBO-54'),
+                ('Hypnotic Waltz','M3tamix Records'),('Paladin','Music Advance'),('蒼天月下','R/K Project'),('Guilty Princess 2011 rearrange mix','Studio “Syrup Comfiture”'),
+                ('其れは砌の物語','TAMUSIC'),('誘いの月輪','Tutti Sound'),('永遠亭組曲','Tutti Sound'),('Lunatic Princess -2011 Club Mix-','laughing out loud'),
+                ('HARU NO KUDANZAKA','minimum electric design'),('Moonscraper','GET IN THE RING'),('HOPE','SNUG SPACE'),('竹取飛翔-Vocal-',"SYNC.ART'S"),
+                ('慰めの永遠亭','ShibayanRecords'),('Day before going down','Spoo and Nick'),('daystar in the dark','ZYTOKINE'),('かぐやひめ','音召缶'),
+                ('Moonlight','緋月ノ雫'),('永遠亭イントロ','かぷりこーん'),('ボス撃破','かぷりこーん'),('Guilty Princess','AniPix'),
+                ('Hard work Princess','ジェリコの法則'),('竹取飛翔(drum step Remix)','D.I.C.S.'),('Colleen from the moon','Casket'),('竹通ル日昇','Azure Line'),
+                ('RECOLLECT MOON(Special Inst. Version)','博麗神社社務所'),('ナヨタケノークライ','荒御霊'),('FeTiO3','荒御霊'),('闇月夜','=NeutraL='),
+                ('Mysterium Vinyl','非可逆リズム'),('天涯蠱毒','GET IN THE RING×東方事変'),('Re:story','Freedom Phantasm'),('Lunatic Dance','Lunatic Gate'),
+                ('竹取飛翔 -Lunatic Princess-(Ebon Remix)','Lunatic Gate'),('永','紺碧Studio'),('TAG FORCE','ガネメ'),('久遠の郷 ～ Farewell, Dear Moon','笹川家'),
+                ('Never Die','ハコビバ'),('不滅の罪人','東方深晴霞'),('本当','雲あがり'),('かごめ','雲あがり')
+              ]
+              assert len(wave2)==88
+              rows='\n'.join(f'| `{title}` | `{artist}` |' for title,artist in wave2)
+              text += f'''\n\n{wave2_marker}\n\nThese 88 rows are the second reviewed search wave, selected from the same source-backed arrangement universe specifically because their titles often do **not** visibly contain `Lunatic Princess` / `竹取飛翔`. Generic names were queried with an artist/circle guard. Together with the first-wave 103 tuples above, this yields the **191-tuple** corrected corpus.\n\n| Title | Artist/circle guard |\n| --- | --- |\n{rows}\n'''
+
+          final_marker='## Final osu! search and individual review results'
+          if final_marker not in text:
+              text += '''
+
+## Final osu! search and individual review results
+
+The corrected search was run only after a separate osu! API identity sanity check proved that a search result's numeric `id`, artist, and title round-trip exactly through `/api/v2/beatmapsets/{id}`. An earlier diagnostic report with inconsistent IDs was discarded wholesale; none of those candidate numbers were reused.
+
+- Source-backed corpus: **191** unique title/artist tuples (103 first-wave + 88 second-wave).
+- Search queries: **194**, including controlled aliases `Taketori Hishou`, `Flight of the Bamboo Cutter`, `Help me, ERINNNNNN!!`, and artist-guarded `Tsurupettan`.
+- Unique osu! search hits: **5,070**.
+- Exact source-backed title/artist or controlled-family matches after filtering: **26**.
+- Already accepted in the catalog: **10**.
+- Individually reviewed: **16** (9 absent + 7 existing candidates).
+- Accepted after direct refetch and composition review: **16**.
+- Direct-refetch errors / search-to-direct identity mismatches among source matches: **0**.
+
+The other **5,044** search hits were not treated as candidates. Generic collisions were rejected before review by exact title/artist guards. For example, `nmk sola` search results can include an unrelated `Ono Hideyuki - sola`, while a `GET IN THE RING Moonscraper` search can include unrelated token matches. Search membership is discovery evidence only.
+
+### Newly added beatmapsets (9)
+
+| Beatmapset | osu! metadata at audit | Decision basis |
+| ---: | --- | --- |
+| 2626 | Silver Forest — `Tsurupettan` | Manual composition verification. Silver Forest `つるぺったん` is documented as based on `竹取飛翔 ～ Lunatic Princess`; live osu! tags also say Touhou. |
+| 5346 | COOL&CREATE — `Help me, ERINNNNNN!!` | Official Touhou Danmaku Kagura page explicitly identifies the song as an arrangement of `竹取飛翔 ～ Lunatic Princess`. |
+| 507416 | SOUND HOLIC feat. Nana Takahashi — `Help me, ERINNNNNN!! - SH Style -` | SOUND HOLIC's official store lists the track with `竹取飛翔 ～ Lunatic Princess`; live osu! tags independently name the same original. |
+| 2188045 | beatMARIO x MARON x VIRTUAL SINGER — `Help me, ERINNNNNN!! (Game Ver.)` | SEGA's Project SEKAI release credits `Help me, ERINNNNNN!!` to lyricist beatMARIO, composer ZUN, arrangement beatMARIO × Maron; live osu! tags explicitly name `竹取飛翔 ～ Lunatic Princess`. |
+| 2205747 | beatMARIO — `Help me, ERINNNNNN!!` | Current osu! source is `東方永夜抄 ～ Imperishable Night.` and the title is the independently verified Help-me family. |
+| 2209334 | beatMARIO x MARON x VIRTUAL SINGER — `Help me, ERINNNNNN!! (Game Ver.)` | Same official Project SEKAI composition/arrangement credit as 2188045; live osu! tags explicitly name the original. |
+| 2282709 | ZUN — `Taketori Hishou ~ Lunatic Princess` / `竹取飛翔 ～ Lunatic Princess` | Original ZUN theme; current osu! source is `東方永夜抄 ～ Imperishable Night.`. |
+| 2314117 | beatMARIO x MARON x VIRTUAL SINGER — `Help me, ERINNNNNN!! (霜月レイ Mashup Ver.)` | Accepted as `mixed`, not as a pure arrangement. Live title identifies the Help-me work and live tags explicitly identify `竹取飛翔 ～ Lunatic Princess`; the underlying Help-me composition is independently verified. |
+| 2561367 | A-One feat. Shihori — `Bamboo Dance` | Current osu! source is `東方永夜抄 ～ Imperishable Night.`; A-One's official store independently lists `Bamboo Dance` with original `竹取飛翔 ～ Lunatic Princess`. |
+
+### Existing candidates upgraded to verified (7)
+
+None of these seven entries carried `manual:candidate` or `manual:excluded`, so there was no sticky manual boundary to override.
+
+| Beatmapset | Work | Verification |
+| ---: | --- | --- |
+| 21098 | SYNC.ART'S feat. Sakaue Nachi — `Taketori Hishou` | Live osu! source is `Touhou`; tags include Kaguya / Lunatic Princess. |
+| 47754 | Masayoshi Minoshima — `Flight of the Bamboo Cutter` | Live osu! source is `Touhou`; Unicode title is `竹取飛翔` and tags include `Lunatic Princess`. |
+| 171239 | nmk — `sola` | nmk's official DTXFiles page explicitly lists `sola` with original `竹取飛翔 ～ Lunatic Princess`; live osu! tags repeat the same original. |
+| 183267 | nmk — `sola` | Same primary-source verification; live osu! tags explicitly list `竹取飛翔 ～ Lunatic Princess`. |
+| 427407 | nmk — `sola` | Same nmk primary-source verification and explicit live osu! tags. |
+| 723024 | nmk — `sola` | Same nmk primary-source verification and explicit live osu! tags. |
+| 855735 | GET IN THE RING — `Moonscraper` | Live osu! source is `東方永夜抄 ～ Imperishable Night.` and tags explicitly name the original; Arrangement Chronicle independently maps `Moonscraper` to it. |
+
+### Composition sources used for manual decisions
+
+- Official Touhou Danmaku Kagura — `Help me, ERINNNNNN!!`: https://danmaku.jp/archive/music/m032/
+- SEGA / Project SEKAI release — Help-me credits: https://prtimes.jp/main/html/rd/p/000005794.000005397.html
+- SOUND HOLIC official store — `Help me, ERINNNNNN!! - SH Style -`: https://booth.pm/ja/items/3232835
+- A-One official store — `Bamboo Dance`: https://booth.pm/ko/items/3169220
+- DTXFiles.nmk official page — `sola`: https://miomiohosina.wixsite.com/dtxf-nmk/nmk-toho-best
+- Silver Forest discography corroboration — `つるぺったん`: https://w.atwiki.jp/toho/pages/6944.html
+- Touhou Arrangement Chronicle original-theme index / `Moonscraper`: https://touhou.arrangement-chronicle.com/original_song/%E6%9D%B1%E6%96%B9%E6%B0%B8%E5%A4%9C%E6%8A%84/%E7%AB%B9%E5%8F%96%E9%A3%9B%E7%BF%94%E3%80%80%EF%BD%9E%20Lunatic%20Princess
+
+### Catalog semantics
+
+All 16 reviewed entries are annotated with `origin_games = ["東方永夜抄 ～ Imperishable Night."]` and `original_themes = ["竹取飛翔 ～ Lunatic Princess"]`. The ZUN original (2282709) is `touhou_kind: original`; the Shimotsuki Rei mashup (2314117) is `touhou_kind: mixed`; the other fourteen are `touhou_kind: arrangement`.
+
+`manual:verified` is used only for the ten entries whose current osu! `source` is blank/non-Touhou and therefore require the documented composition-level manual decision. The six entries with a current exact Touhou/game source are verified by normal classifier rules and do not receive a manual override.
+'''
+          doc_path.write_text(text,encoding='utf-8')
           PY
+          python -m touhou_osu.cli validate --catalog data/catalog.json
+          git diff --check
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/catalog.json docs/source-audit-2026-08-lunatic-princess.md
+          if git diff --cached --quiet; then
+            echo "No reviewed data changes to commit"
+            exit 0
+          fi
+          git commit -m "data: add reviewed Lunatic Princess coverage"
+          git push origin HEAD:${{ github.head_ref }}
