@@ -117,3 +117,48 @@ Applied IDs by rule (for reproducibility):
 </details>
 
 <!-- NIGHT_IMPLEMENTATION_END -->
+
+<!-- NIGHT_MANUAL_WAVE2_START -->
+
+## Manual composition-chain wave
+
+After the automatic/fail-closed 284-set wave, the remaining 156 title-family hits were reviewed by composition chain rather than by keyword. A second **62-set** wave is accepted with sticky `manual:verified` evidence. Every accepted set was direct-refetched again immediately before writing and had to pass a group-specific artist/title guard on the fresh response.
+
+Primary / artist-controlled corroboration used for this wave:
+
+- COOL&CREATE 2018 all-`ナイト・オブ・ナイツ` release: https://cool-create.cc/cd/cccd50/
+- COOL&CREATE 2019 `ルナティック` release: https://cool-create.cc/cd/cccd59/
+- COOL&CREATE 2025 `プロジェクト` release: https://cool-create.cc/cd/cccd75/
+- RichaadEB Official Artist Channel, `NIGHT OF NIGHTS (Flowering Night) || Metal Cover`: https://www.youtube.com/watch?v=ugqjcXjpCts
+- Para Dot. official channel, `Night of Knights（Para Dot. Remix）`: https://www.youtube.com/watch?v=Qju7jPjXPNE
+- FalKKonE Official Artist Channel, `Touhou - Night of Nights [Intense Symphonic Metal Cover]`: https://www.youtube.com/watch?v=bQI9xedYQQE
+- marasy8 Official Artist Channel, `「ナイト・オブ・ナイツ」を弾き直してみたんですが...`: https://www.youtube.com/watch?v=OyUJnV2R-5g
+- Nick Nitro verified channel, `Touhou - Night Of Nights [Ver. 3] [NITRO Remix]`: https://www.youtube.com/watch?v=2N2s0f5fRsc
+
+Accepted groups:
+
+- RichaadEB official metal-cover family: **18**
+- Para Dot. explicit remix-of-remix family: **7**
+- COOL&CREATE first-party named variants missed by the strict first pass: **6**
+- English `Super Night of Nights` / `Super Night of Knights` alias of `超ナイト・オブ・ナイツ`: **2**
+- FalKKonE official cover: **1**
+- marasy official piano-cover family: **2**
+- Nick Nitro official remix: **1**
+- Base/edit uploads whose fresh osu! metadata itself directly attributes the recording to beatMARIO / COOL&CREATE: **25**
+
+These 62 are arrangements/covers/edits of the beatMARIO parent, not merely independent arrangements of `フラワリングナイト`. The other **94** unresolved title-family hits remain held for additional review; no confidence is inferred from title tokens alone.
+
+<details><summary>Manual wave IDs by group</summary>
+
+- `richaadeb_official_cover`: 980644,1069719,1091120,1124709,1185570,1206509,1237255,1242798,1248702,1387796,1440648,1474280,1491917,1637957,2156156,2346402,2540421,2553057
+- `paradot_official_remix`: 2116110,2136000,2148515,2269337,2351463,2359033,2360975
+- `coolcreate_first_party_variant`: 1128048,1556967,2086454,2138418,2567202,2581537
+- `chou_super_alias`: 2377256,2406327
+- `falkkone_official_cover`: 1314079
+- `marasy_official_cover`: 1316202,2514864
+- `nick_nitro_official_remix`: 1326567
+- `parent_attributed_base_or_edit`: 157478,355683,360703,398092,436838,496056,514686,529863,599360,801144,887683,1064108,1110991,1257327,1264459,1365207,1393896,1434008,1501621,1626057,2187567,2255745,2336636,2414814,2523604
+
+</details>
+
+<!-- NIGHT_MANUAL_WAVE2_END -->

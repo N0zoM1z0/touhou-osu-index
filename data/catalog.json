@@ -20332,6 +20332,29 @@
       "osu_last_updated": "2014-03-13T00:47:26Z"
     },
     {
+      "beatmapset_id": 157478,
+      "artist": "CreateBeat Mario",
+      "title": "Night of Nights (Flowering nights remix)  By COOL and CREATE/BeatMARIO",
+      "creator": "Kira-Sensei",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-03-15T04:44:16Z"
+    },
+    {
       "beatmapset_id": 158023,
       "artist": "UNDEAD CORPORATION",
       "title": "Everything will freeze",
@@ -26698,6 +26721,29 @@
       "osu_last_updated": "2015-09-22T12:54:42Z"
     },
     {
+      "beatmapset_id": 355683,
+      "artist": "cool & create",
+      "title": "night of knights/night of nights",
+      "creator": "ZKoiN",
+      "source": "sound voltex",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2015-09-13T11:21:17Z"
+    },
+    {
       "beatmapset_id": 356973,
       "artist": "BUTAOTOME",
       "title": "Towa no Maigo",
@@ -26830,6 +26876,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2016-07-25T15:05:54Z"
+    },
+    {
+      "beatmapset_id": 360703,
+      "artist": "COOL&CREATE",
+      "title": "Night of Knights/Knight of Nights",
+      "creator": "albertjoke",
+      "source": "My head",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2015-09-29T14:02:31Z"
     },
     {
       "beatmapset_id": 361936,
@@ -28116,6 +28185,29 @@
       "osu_last_updated": "2018-10-26T23:15:35Z"
     },
     {
+      "beatmapset_id": 398092,
+      "artist": "beatMARIO",
+      "title": "Night of Knights (Nico ver.)",
+      "creator": "TyrantsEye2014",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-05-07T13:21:53Z"
+    },
+    {
       "beatmapset_id": 398921,
       "artist": "senya",
       "title": "Hitomi ni Kakusareta Omoi",
@@ -29372,6 +29464,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2016-10-30T23:17:54Z"
+    },
+    {
+      "beatmapset_id": 436838,
+      "artist": "COOL&CREATE/BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "Ojily",
+      "source": "Touhou, Flowering Nights, Izayoi Sakuya's theme.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2016-04-06T19:16:19Z"
     },
     {
       "beatmapset_id": 436974,
@@ -31580,6 +31695,29 @@
       "osu_last_updated": "2017-08-13T18:37:19Z"
     },
     {
+      "beatmapset_id": 496056,
+      "artist": "Night of Nights (Flowering nights remix)",
+      "title": "Night of Nights",
+      "creator": "UiNakatsugawa",
+      "source": "Night of Nights (Flowering nights remix) By COOL&CREATE/BeatMARIO",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2016-08-15T05:27:48Z"
+    },
+    {
       "beatmapset_id": 496199,
       "artist": "Kurokotei",
       "title": "Scattered Faith",
@@ -32196,6 +32334,29 @@
       "osu_last_updated": "2017-11-21T20:33:44Z"
     },
     {
+      "beatmapset_id": 514686,
+      "artist": "COOL&CREATE/BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "justthebrttrk",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2016-10-03T04:13:15Z"
+    },
+    {
       "beatmapset_id": 514965,
       "artist": "A-One feat. Aki",
       "title": "Darkish",
@@ -32604,6 +32765,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2017-04-18T16:02:19Z"
+    },
+    {
+      "beatmapset_id": 529863,
+      "artist": "COOL&CREATE",
+      "title": "Night of Knights / Knight of Nights",
+      "creator": "NyaHaidora",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2016-11-05T17:40:05Z"
     },
     {
       "beatmapset_id": 530432,
@@ -34441,6 +34625,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2017-07-24T04:33:30Z"
+    },
+    {
+      "beatmapset_id": 599360,
+      "artist": "COOL&CREATE/BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "Sarahkuai",
+      "source": "Touhou, Flowering Nights, Izayoi Sakuya's theme.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2017-07-02T12:24:16Z"
     },
     {
       "beatmapset_id": 600443,
@@ -41166,6 +41373,29 @@
       "osu_last_updated": "2018-09-27T05:42:57Z"
     },
     {
+      "beatmapset_id": 801144,
+      "artist": "beatMARIO/COOL&CREATE",
+      "title": "Night of Nights Touhou",
+      "creator": "Ultima12",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-06-20T05:47:46Z"
+    },
+    {
       "beatmapset_id": 801435,
       "artist": "ZUN",
       "title": "Kagayaku Hari no Kobitozoku ~ Little Princess",
@@ -43966,6 +44196,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-03-16T03:03:53Z"
+    },
+    {
+      "beatmapset_id": 887683,
+      "artist": "COOL&CREATE / BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix) {COOP ONLINE}",
+      "creator": "Z3ckZ",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-12-02T01:43:08Z"
     },
     {
       "beatmapset_id": 888200,
@@ -47391,6 +47644,29 @@
       "osu_last_updated": "2019-07-09T10:12:57Z"
     },
     {
+      "beatmapset_id": 980644,
+      "artist": "RichaadEB",
+      "title": "Night of Nights-Metal Cover",
+      "creator": "affe",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-12-29T01:08:12Z"
+    },
+    {
       "beatmapset_id": 980713,
       "artist": "IOSYS",
       "title": "Miracle Hinacle",
@@ -50533,6 +50809,29 @@
       "osu_last_updated": "2020-02-04T02:11:02Z"
     },
     {
+      "beatmapset_id": 1064108,
+      "artist": "DevilThePotato",
+      "title": "Night of Nights (Flowering nights remix) By COOL&CREATE/BeatMARIO",
+      "creator": "DevilThePotato",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2019-11-10T23:40:28Z"
+    },
+    {
       "beatmapset_id": 1064743,
       "artist": "Adust Rain",
       "title": "TRAUMATIC SYNDROME -Lenboxx Remix-",
@@ -50747,6 +51046,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-09-04T03:50:43Z"
+    },
+    {
+      "beatmapset_id": 1069719,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (Metal)",
+      "creator": "StevenTSB",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2019-11-24T12:25:31Z"
     },
     {
       "beatmapset_id": 1069858,
@@ -51466,6 +51788,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2020-04-29T10:54:53Z"
+    },
+    {
+      "beatmapset_id": 1091120,
+      "artist": "RichaadEB",
+      "title": "Night Of Nights (RichaadEB Cover)",
+      "creator": "RioT1133",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-01-08T20:54:29Z"
     },
     {
       "beatmapset_id": 1091216,
@@ -52258,6 +52603,29 @@
       "osu_last_updated": "2022-06-16T23:13:56Z"
     },
     {
+      "beatmapset_id": 1110991,
+      "artist": "ZUN",
+      "title": "Night of Nights (Flowering nights remix) By COOL&CREATE/BeatMARIO",
+      "creator": "Flandre-Chan",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-02-16T22:54:15Z"
+    },
+    {
       "beatmapset_id": 1112025,
       "artist": "senya",
       "title": "Kegarenaki Euphoria (Cut Ver.)",
@@ -52669,6 +53037,29 @@
       "osu_last_updated": "2020-05-30T16:51:27Z"
     },
     {
+      "beatmapset_id": 1124709,
+      "artist": "RichaadEB",
+      "title": "Night of Knights-Metal Cover",
+      "creator": "PikaDev",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-03-18T12:36:17Z"
+    },
+    {
       "beatmapset_id": 1125030,
       "artist": "Kokuchou feat. Chata",
       "title": "Lucid Dream",
@@ -52815,6 +53206,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1128048,
+      "artist": "Feline Groove",
+      "title": "Night of Knights (Cranky Remix)",
+      "creator": "HyperMelon",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-all-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-01-09T00:26:49Z"
     },
     {
       "beatmapset_id": 1129644,
@@ -54551,6 +54965,29 @@
       "osu_last_updated": "2020-08-02T22:52:13Z"
     },
     {
+      "beatmapset_id": 1185570,
+      "artist": "RichaadEB",
+      "title": "NIGHT OF KNIGHTS (Flowering Night) || Metal Cover",
+      "creator": "How2Bully",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-06-08T23:14:14Z"
+    },
+    {
       "beatmapset_id": 1186860,
       "artist": "COOL&CREATE",
       "title": "Knight of Nights",
@@ -54970,6 +55407,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-10-28T04:59:26Z"
+    },
+    {
+      "beatmapset_id": 1206509,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (Metal Cover)",
+      "creator": "riunosk",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-07-04T05:14:48Z"
     },
     {
       "beatmapset_id": 1207279,
@@ -55739,6 +56199,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1237255,
+      "artist": "ZUN / COOL&CREATE / BEATMARIO & Richaadeb",
+      "title": "Night of Nights (Flowering nights remix) | Metal Cover",
+      "creator": "clout",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2023-04-11T15:44:51Z"
+    },
+    {
       "beatmapset_id": 1237505,
       "artist": "Kurokotei",
       "title": "Galaxy Collapse",
@@ -55895,6 +56378,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1242798,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (Metal Cover)",
+      "creator": "fallouts-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-08-31T16:34:23Z"
+    },
+    {
       "beatmapset_id": 1243225,
       "artist": "Rin",
       "title": "Mythic set ~ Heart-Stirring Urban Legends (UnluckyCroco) [Tales of the Occult]",
@@ -56045,6 +56551,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-11-01T13:14:59Z"
+    },
+    {
+      "beatmapset_id": 1248702,
+      "artist": "RichaadEB",
+      "title": "NIGHT OF NIGHTS Metal Cover",
+      "creator": "Scarlet rawr",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-08-31T19:31:12Z"
     },
     {
       "beatmapset_id": 1249198,
@@ -56380,6 +56909,29 @@
       "osu_last_updated": "2024-07-18T23:02:00Z"
     },
     {
+      "beatmapset_id": 1257327,
+      "artist": "BeatMARIO (Cool&Create)",
+      "title": "Night of Nights (TV - Size)",
+      "creator": "TheRealSami",
+      "source": "R! T! S! (Album)",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-09-13T14:34:25Z"
+    },
+    {
       "beatmapset_id": 1257525,
       "artist": "Laur",
       "title": "Nostalgic Blood of the Strife",
@@ -56640,6 +57192,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2021-06-30T02:15:10Z"
+    },
+    {
+      "beatmapset_id": 1264459,
+      "artist": "COOL&CREATE/BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "hope dreemuur",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-09-23T22:14:11Z"
     },
     {
       "beatmapset_id": 1264931,
@@ -58446,6 +59021,52 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1314079,
+      "artist": "FalKKonE",
+      "title": "Night of Nights",
+      "creator": "Liseen",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:falkkone-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-12-04T10:27:51Z"
+    },
+    {
+      "beatmapset_id": 1316202,
+      "artist": "marasy8",
+      "title": "night of knights",
+      "creator": "sorairokarasu",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:marasy-official-night-of-knights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-12-05T12:44:33Z"
+    },
+    {
       "beatmapset_id": 1316298,
       "artist": "ShibayanRecords feat. 3L",
       "title": "Maigo no Echo",
@@ -58730,6 +59351,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-09-27T13:51:12Z"
+    },
+    {
+      "beatmapset_id": 1326567,
+      "artist": "Nick Nitro",
+      "title": "Touhou - \"Night Of Nights [Flowering Night]\" NITRO Remix",
+      "creator": "Rankyu Roshiro",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:nick-nitro-official-night-of-nights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-12-18T21:48:40Z"
     },
     {
       "beatmapset_id": 1328655,
@@ -59502,6 +60146,29 @@
       "osu_last_updated": "2021-06-06T11:48:30Z"
     },
     {
+      "beatmapset_id": 1365207,
+      "artist": "COOL&CREATE-BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "HubertTWE",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-02-03T17:53:23Z"
+    },
+    {
       "beatmapset_id": 1366426,
       "artist": "Camellia",
       "title": "CLOUDY WITH INTERMITTENT RAIN (Cut Ver.) (Salty Mermaid) [Flowing Skies]",
@@ -59868,6 +60535,29 @@
       "osu_last_updated": "2021-06-12T10:52:59Z"
     },
     {
+      "beatmapset_id": 1387796,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (Cut Ver.)",
+      "creator": "Big Bad Wolf",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2023-11-02T10:03:54Z"
+    },
+    {
       "beatmapset_id": 1388539,
       "artist": "Morimori Atsushi",
       "title": "Txxs or get the fxxk out!!",
@@ -59973,6 +60663,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1393896,
+      "artist": "COOL&CREATE-BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "HubertTWE",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-03-06T09:52:38Z"
     },
     {
       "beatmapset_id": 1393936,
@@ -60517,6 +61230,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1434008,
+      "artist": "beatMARIO",
+      "title": "Night of Nights (Flowering nights remix)  By COOL&CREATE/BeatMARIO",
+      "creator": "Notpx-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2022-05-19T14:51:16Z"
+    },
+    {
       "beatmapset_id": 1434343,
       "artist": "Demetori",
       "title": "Higan no dorei \\~ One Conclusion (Tidek) [Old Rain]",
@@ -60643,6 +61379,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1440648,
+      "artist": "RichaadEB",
+      "title": "NIGHT OF KNIGHTS (Flowering Night) || Metal Cover by RichaadEB",
+      "creator": "cypulax",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-04-29T10:15:48Z"
     },
     {
       "beatmapset_id": 1441393,
@@ -61164,6 +61923,29 @@
       "osu_last_updated": "2021-12-17T16:08:50Z"
     },
     {
+      "beatmapset_id": 1474280,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (Metal Cover)",
+      "creator": "Yellowtuber",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-05-26T18:08:20Z"
+    },
+    {
       "beatmapset_id": 1474955,
       "artist": "Morimori Atsushi",
       "title": "Toono Gensou Monogatari (MRM REMIX)",
@@ -61467,6 +62249,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1491917,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (Flowering Night) Metal Cover",
+      "creator": "rarechickenn",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-06-14T11:46:13Z"
+    },
+    {
       "beatmapset_id": 1492550,
       "artist": "onoken",
       "title": "ZADAMGA",
@@ -61698,6 +62503,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1501621,
+      "artist": "BeatMario",
+      "title": "Night  of Nights (Flowering Nights)",
+      "creator": "Randomguy123",
+      "source": "Touhou Project, BeatMario",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-07-31T18:04:52Z"
     },
     {
       "beatmapset_id": 1502676,
@@ -62745,6 +63573,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2021-08-22T04:56:03Z"
+    },
+    {
+      "beatmapset_id": 1556967,
+      "artist": "tsukiyama sae/matsu",
+      "title": "Night of Knights (Amateras Records Remix)",
+      "creator": "Kemiko",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-all-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-08-23T11:44:09Z"
     },
     {
       "beatmapset_id": 1557049,
@@ -64082,6 +64933,29 @@
       "osu_last_updated": "2025-11-26T19:44:16Z"
     },
     {
+      "beatmapset_id": 1626057,
+      "artist": "COOL&CREATE/BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "SCAREDwastaken",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-11-13T18:41:14Z"
+    },
+    {
       "beatmapset_id": 1626172,
       "artist": "LeaF",
       "title": "Calamity Fortune (extended ver.)",
@@ -64336,6 +65210,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1637957,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (metal cover)",
+      "creator": "Kerbalcat",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-12-29T04:37:38Z"
     },
     {
       "beatmapset_id": 1638844,
@@ -75341,6 +76238,29 @@
       "osu_last_updated": "2024-03-16T00:08:59Z"
     },
     {
+      "beatmapset_id": 2086454,
+      "artist": "beatMARIO (COOL&CREATE)",
+      "title": "Night of Nights (Camellia's \"Upon Night\" Remix)",
+      "creator": "My Angel Marisa",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-all-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2023-11-12T13:50:53Z"
+    },
+    {
       "beatmapset_id": 2087326,
       "artist": "REDALiCE",
       "title": "taboo tears you up",
@@ -75980,6 +76900,29 @@
       "osu_last_updated": "2024-05-30T23:08:42Z"
     },
     {
+      "beatmapset_id": 2116110,
+      "artist": "beatMARIO",
+      "title": "Night of Nights (Para Dot. Remix)",
+      "creator": "Cookie_Tree",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:para-dot-official-night-of-knights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-09-05T06:18:30Z"
+    },
+    {
       "beatmapset_id": 2118287,
       "artist": "Akiyama Uni feat. JUN",
       "title": "Chitei ni Saku Bara",
@@ -76378,6 +77321,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2136000,
+      "artist": "paradot",
+      "title": "{touhou Full Flavor / Remix} night of nights",
+      "creator": "akimax G",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:para-dot-official-night-of-knights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-10-16T01:15:15Z"
+    },
+    {
       "beatmapset_id": 2136607,
       "artist": "TK from Ling tosite sigure",
       "title": "melt (with suis from Yorushika)",
@@ -76396,6 +77362,29 @@
       "confidence": "probable",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2024-06-04T15:08:13Z"
+    },
+    {
+      "beatmapset_id": 2138418,
+      "artist": "Xi",
+      "title": "Night of Nights Remix",
+      "creator": "Apache_Gaming",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-all-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-02-19T22:19:14Z"
     },
     {
       "beatmapset_id": 2138559,
@@ -76780,6 +77769,29 @@
       "osu_last_updated": "2024-09-08T12:27:16Z"
     },
     {
+      "beatmapset_id": 2148515,
+      "artist": "Paradot",
+      "title": "Night of Knights (Paradot Remix)",
+      "creator": "CNKowloon",
+      "source": "Youtube",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:para-dot-official-night-of-knights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-05-19T13:47:47Z"
+    },
+    {
       "beatmapset_id": 2149438,
       "artist": "ShinRa-Bansho",
       "title": "lunatic love baby you",
@@ -76952,6 +77964,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2024-12-07T15:09:33Z"
+    },
+    {
+      "beatmapset_id": 2156156,
+      "artist": "ZUN",
+      "title": "Night of Nights (RichaadEB)",
+      "creator": "Robonion42",
+      "source": "The TouHou Project",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-03-28T19:52:16Z"
     },
     {
       "beatmapset_id": 2161238,
@@ -77267,6 +78302,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-11-14T06:27:11Z"
+    },
+    {
+      "beatmapset_id": 2187567,
+      "artist": "COOL&CREATE // Beat Mario",
+      "title": "Night of Nights (Flowering Nights Remix)",
+      "creator": "SSJayCee",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-05-27T08:17:05Z"
     },
     {
       "beatmapset_id": 2188045,
@@ -78509,6 +79567,29 @@
       "osu_last_updated": "2026-06-07T23:24:14Z"
     },
     {
+      "beatmapset_id": 2255745,
+      "artist": "Beat Mario",
+      "title": "Night of Knights / Knight of Nights",
+      "creator": "ngxEnrico",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-01-22T17:53:45Z"
+    },
+    {
       "beatmapset_id": 2256311,
       "artist": "senya",
       "title": "Kasoku Suru Koi wa Dare mo Tomerarenai",
@@ -78714,6 +79795,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2024-10-23T22:25:26Z"
+    },
+    {
+      "beatmapset_id": 2269337,
+      "artist": "Para Dot.",
+      "title": "Night of Knights (Touhou Full Flavor Remix)",
+      "creator": "asanagi_yukina",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:para-dot-official-night-of-knights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-10-23T13:00:12Z"
     },
     {
       "beatmapset_id": 2271653,
@@ -81039,6 +82143,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2336636,
+      "artist": "COOL&CREATE",
+      "title": "Night of Nights (Flowering nights remix)  By COOL&CREATE/beatMARIO",
+      "creator": "monachoqlo",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-03-09T18:08:59Z"
+    },
+    {
       "beatmapset_id": 2337108,
       "artist": "SmileDemon",
       "title": "Doomtempo ([GB]Azukisan) [DoomLotus 150bpm edit]",
@@ -81796,6 +82923,29 @@
       "osu_last_updated": "2026-01-02T22:37:58Z"
     },
     {
+      "beatmapset_id": 2346402,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (Metal Cover)",
+      "creator": "Kaidy666",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-05T13:25:39Z"
+    },
+    {
       "beatmapset_id": 2347215,
       "artist": "REDALiCE & aran",
       "title": "Sweet Requiem",
@@ -82241,6 +83391,29 @@
       "osu_last_updated": "2025-10-10T16:09:41Z"
     },
     {
+      "beatmapset_id": 2351463,
+      "artist": "Touhou",
+      "title": "Night Of Knights (Paradot Remix)",
+      "creator": "Amber_LOL",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:para-dot-official-night-of-knights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-01-12T09:55:24Z"
+    },
+    {
       "beatmapset_id": 2352527,
       "artist": "Akiyama Uni",
       "title": "Touhou Hisouten (Game Ver.)",
@@ -82366,6 +83539,29 @@
       "osu_last_updated": "2026-01-13T23:00:54Z"
     },
     {
+      "beatmapset_id": 2359033,
+      "artist": "beatMARIO, Para Dot.",
+      "title": "Night of Knights (Para Dot. Remix)",
+      "creator": "Eyesuu",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:para-dot-official-night-of-knights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-24T02:46:52Z"
+    },
+    {
       "beatmapset_id": 2360955,
       "artist": "beatMARIO",
       "title": "Night of Knights",
@@ -82385,6 +83581,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-04-26T05:14:37Z"
+    },
+    {
+      "beatmapset_id": 2360975,
+      "artist": "Para Dot.",
+      "title": "Night of Knights (Para Dot. Remix)",
+      "creator": "My Angel Namo",
+      "source": "東方Full Flavor",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:para-dot-official-night-of-knights-remix",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-26T06:08:23Z"
     },
     {
       "beatmapset_id": 2361582,
@@ -82706,6 +83925,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2377256,
+      "artist": "BeatMario x Maron",
+      "title": "Super Night of Knights",
+      "creator": "oipon3625",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-chou-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-05-26T03:56:26Z"
     },
     {
       "beatmapset_id": 2377400,
@@ -83240,6 +84482,29 @@
       "osu_last_updated": "2026-01-25T10:46:06Z"
     },
     {
+      "beatmapset_id": 2406327,
+      "artist": "Beat Mario / COOL&CREATE",
+      "title": "Super Night of Nights",
+      "creator": "Sinowa",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-chou-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-07-20T09:54:21Z"
+    },
+    {
       "beatmapset_id": 2406965,
       "artist": "beatMARIO",
       "title": "Night of Knights",
@@ -83479,6 +84744,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-11-11T01:33:51Z"
+    },
+    {
+      "beatmapset_id": 2414814,
+      "artist": "Touhou",
+      "title": "Night of Nights (Flowering nights remix)  By COOL&CREATE/beatMARIO",
+      "creator": "Jana_Joker",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-08-05T20:02:38Z"
     },
     {
       "beatmapset_id": 2415151,
@@ -84622,6 +85910,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2514864,
+      "artist": "Marasy",
+      "title": "Night of knights",
+      "creator": "bigBS",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:marasy-official-night-of-knights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-02-27T16:08:01Z"
+    },
+    {
       "beatmapset_id": 2516983,
       "artist": "Snowman",
       "title": "Braggartcrow's dance",
@@ -84700,6 +86011,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2523604,
+      "artist": "beatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "Kepler77",
+      "source": "youtube",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-03-16T16:06:26Z"
     },
     {
       "beatmapset_id": 2523916,
@@ -85009,6 +86343,29 @@
       "osu_last_updated": "2026-04-14T15:53:26Z"
     },
     {
+      "beatmapset_id": 2540421,
+      "artist": "RichaadEB",
+      "title": "Night of Nights",
+      "creator": "-Nino Nakano",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-17T17:12:48Z"
+    },
+    {
       "beatmapset_id": 2546023,
       "artist": "Demetori",
       "title": "Paradise ~ Deep Mountain",
@@ -85072,6 +86429,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2026-05-07T22:58:01Z"
+    },
+    {
+      "beatmapset_id": 2553057,
+      "artist": "Richaadeb",
+      "title": "Night of Nights",
+      "creator": "bocchibara",
+      "source": "",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-08-07T07:23:52Z"
     },
     {
       "beatmapset_id": 2554426,
@@ -85142,6 +86522,29 @@
       "osu_last_updated": "2026-07-31T21:51:31Z"
     },
     {
+      "beatmapset_id": 2567202,
+      "artist": "beatMARIO",
+      "title": "Night of Nights (Hachioji P Remix)",
+      "creator": "FetWasHere",
+      "source": "【東方REMIX】",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-all-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-06-09T15:23:18Z"
+    },
+    {
       "beatmapset_id": 2567710,
       "artist": "senya",
       "title": "Kafka Naru Gunjou e",
@@ -85202,6 +86605,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2026-06-28T06:33:16Z"
+    },
+    {
+      "beatmapset_id": 2581537,
+      "artist": "beatMARIO",
+      "title": "Night of Knights (Game Ver.)",
+      "creator": "silly femboy",
+      "source": "太鼓の達人 レッドVer.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-all-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-07-06T14:35:46Z"
     },
     {
       "beatmapset_id": 2585229,
