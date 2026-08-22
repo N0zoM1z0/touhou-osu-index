@@ -1284,20 +1284,27 @@
       "artist": "Gojou Kai",
       "title": "Border of Life",
       "creator": "IceBeam",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "mixed",
+      "origin_games": [
+        "東方妖々夢 ～ Perfect Cherry Blossom."
+      ],
+      "original_themes": [
+        "ボーダーオブライフ",
+        "幽雅に咲かせ、墨染の桜 ～ Border of Life"
+      ],
       "evidence": [
+        "audit:border-of-life-2026-08",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-08-22",
       "osu_last_updated": "2011-05-24T19:14:16Z"
     },
     {
