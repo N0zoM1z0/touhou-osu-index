@@ -15,6 +15,12 @@ provenance. Please keep changes small and evidence-backed.
    by evidence. Do not guess from a character background.
 6. Run `make check` and `make build`.
 
+For composition-centered completeness passes, follow
+[`docs/systematic-theme-audit-workflow.md`](docs/systematic-theme-audit-workflow.md).
+Theme/title search results are discovery evidence only: lock the composition
+boundary first, direct-refetch retained beatmapsets, and document false-positive
+or unresolved boundaries alongside accepted IDs.
+
 Manual evidence is sticky: automated refreshes update osu! metadata but do not
 override `manual:verified`, `manual:excluded`, or a reviewed `manual:candidate`
 boundary. Use `manual:candidate` when an item is relevant enough to retain for

@@ -846,23 +846,28 @@
     {
       "beatmapset_id": 1235944,
       "artist": "Rin",
-      "title": "Ayakashi set 12 Another ~ Border of Life (LaoXiao-) [Jack of Life]",
+      "title": "Ayakashi set 12 Another ~ Border of Life",
       "creator": "LaoXiao-",
       "source": "",
       "status": "graveyard",
       "modes": [
         "mania"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方妖々夢 ～ Perfect Cherry Blossom."
+      ],
+      "original_themes": [
+        "ボーダーオブライフ"
+      ],
       "evidence": [
+        "audit:border-of-life-2026-08",
         "tmc:1st",
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-08-22",
+      "osu_last_updated": "2020-08-14T13:48:08Z"
     },
     {
       "beatmapset_id": 1236758,
@@ -1277,6 +1282,33 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2021-05-28T14:58:14Z"
+    },
+    {
+      "beatmapset_id": 1248505,
+      "artist": "GET IN THE RING",
+      "title": "Phosphor",
+      "creator": "Zelq",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "mixed",
+      "origin_games": [
+        "東方妖々夢 ～ Perfect Cherry Blossom.",
+        "東方神霊廟 ～ Ten Desires."
+      ],
+      "original_themes": [
+        "ゴーストリード",
+        "ボーダーオブライフ"
+      ],
+      "evidence": [
+        "audit:border-of-life-2026-08",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-22",
+      "osu_last_updated": "2020-09-08T23:28:17Z"
     },
     {
       "beatmapset_id": 1248686,

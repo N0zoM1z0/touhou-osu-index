@@ -1203,17 +1203,23 @@
       "modes": [
         "taiko"
       ],
-      "touhou_kind": "unknown",
-      "origin_games": [],
-      "original_themes": [],
+      "touhou_kind": "mixed",
+      "origin_games": [
+        "東方妖々夢 ～ Perfect Cherry Blossom."
+      ],
+      "original_themes": [
+        "ネクロファンタジア",
+        "ボーダーオブライフ"
+      ],
       "evidence": [
+        "audit:border-of-life-2026-08",
         "discovery_query:IOSYS",
         "discovery_query:source=Perfect Cherry Blossom",
         "discovery_query:source=東方妖々夢",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-08-22",
       "osu_last_updated": "2018-08-26T20:20:06Z"
     },
     {

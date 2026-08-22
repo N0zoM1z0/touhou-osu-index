@@ -902,6 +902,31 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2443688,
+      "artist": "ZUN",
+      "title": "Border of Life",
+      "creator": "Hivie",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方妖々夢 ～ Perfect Cherry Blossom."
+      ],
+      "original_themes": [
+        "ボーダーオブライフ"
+      ],
+      "evidence": [
+        "audit:border-of-life-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-22",
+      "osu_last_updated": "2025-10-29T14:29:26Z"
+    },
+    {
       "beatmapset_id": 2444992,
       "artist": "FELT",
       "title": "Sounding Beat & pulse",
