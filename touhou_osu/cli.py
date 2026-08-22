@@ -17,7 +17,7 @@ from .site import build, statistics
 from .sources import import_all, parse_beatmapset_page
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CATALOG = ROOT / "data" / "catalog.json"
+DEFAULT_CATALOG = ROOT / "data" / "catalog"
 DEFAULT_CONFIG = ROOT / "config" / "seeds.json"
 DEFAULT_OUTPUT = ROOT / "dist"
 DISCOVERY_CONFIDENCE_ORDER = {"verified": 0, "probable": 1, "candidate": 2, "excluded": 3}
@@ -48,6 +48,13 @@ def command_build(args: argparse.Namespace) -> int:
     catalog = Catalog.load(args.catalog)
     stats = build(catalog, args.output)
     print(f"Built {stats['accepted']} accepted beatmapsets to {args.output}")
+    return 0
+
+
+def command_assemble(args: argparse.Namespace) -> int:
+    catalog = Catalog.load(args.catalog)
+    catalog.save_aggregate(args.output)
+    print(f"Assembled {len(catalog.entries)} beatmapsets to {args.output}")
     return 0
 
 
@@ -271,6 +278,10 @@ def parser() -> argparse.ArgumentParser:
     build_parser = subparsers.add_parser("build", help="generate site and exports")
     build_parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     build_parser.set_defaults(func=command_build)
+
+    assemble = subparsers.add_parser("assemble", help="combine canonical shards into one JSON file")
+    assemble.add_argument("--output", type=Path, default=DEFAULT_OUTPUT / "catalog-full.json")
+    assemble.set_defaults(func=command_assemble)
 
     clean = subparsers.add_parser("clean", help="remove generated output")
     clean.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)

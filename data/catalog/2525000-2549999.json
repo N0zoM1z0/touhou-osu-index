@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 2525813,
+      "artist": "Masayoshi Minoshima",
+      "title": "Bad Apple!! feat. nomico",
+      "creator": "-Enma-",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Alstroemeria Records",
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-20T09:20:43Z"
+    },
+    {
+      "beatmapset_id": 2526938,
+      "artist": "A-One feat. Hanatan",
+      "title": "Break the Hierarchie",
+      "creator": "Cafe_deCoral",
+      "source": "東方輝針城　～ Double Dealing Character.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:A-One",
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:source=東方輝針城",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-05-12T13:01:02Z"
+    },
+    {
+      "beatmapset_id": 2527034,
+      "artist": "beatMARIO",
+      "title": "Night of Knights (Camellia's \"Once Upon A Night\" Remix)",
+      "creator": "nik",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-03-22T19:59:05Z"
+    },
+    {
+      "beatmapset_id": 2527773,
+      "artist": "COOL&CREATE",
+      "title": "Cho-Night of Knights",
+      "creator": "_Mutsumi",
+      "source": "東方PROJECT",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-06-09T12:23:36Z"
+    },
+    {
+      "beatmapset_id": 2528392,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "Pennek",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-05-24T23:02:55Z"
+    },
+    {
+      "beatmapset_id": 2530780,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "Deppyforce",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-03T18:16:33Z"
+    },
+    {
+      "beatmapset_id": 2532070,
+      "artist": "-45",
+      "title": "Crimsonic dimension",
+      "creator": "222222222222222",
+      "source": "東方怪綺談　～ Mystic Square",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "discovery_query:source=東方怪綺談",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-11T18:24:07Z"
+    },
+    {
+      "beatmapset_id": 2532207,
+      "artist": "COOL&CREATE",
+      "title": "Night of Knights",
+      "creator": "furkan45",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "known_touhou_artist",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-01T13:53:46Z"
+    },
+    {
+      "beatmapset_id": 2534273,
+      "artist": "beatMARIO x S3RL",
+      "title": "Night of Knights X Bass Slut",
+      "creator": "eightteen",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "mixed",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-05T12:02:34Z"
+    },
+    {
+      "beatmapset_id": 2536810,
+      "artist": "Minstrel",
+      "title": "Yotogibanashi no Kamikakushi",
+      "creator": "WILLPWR",
+      "source": "東方萃夢想　～ Immaterial and Missing Power.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-06-09T17:52:04Z"
+    },
+    {
+      "beatmapset_id": 2536935,
+      "artist": "beatMARIO x MARON",
+      "title": "Chou Night of Knights",
+      "creator": "02cx",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-10T21:49:31Z"
+    },
+    {
+      "beatmapset_id": 2539015,
+      "artist": "beatMARIO ;  COOL&CREATE",
+      "title": "Chou Knight of Knights",
+      "creator": "-Paddy-",
+      "source": "東方花映塚 ～ Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-14T15:53:26Z"
+    },
+    {
+      "beatmapset_id": 2540421,
+      "artist": "RichaadEB",
+      "title": "Night of Nights",
+      "creator": "-Nino Nakano",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-04-17T17:12:48Z"
+    },
+    {
+      "beatmapset_id": 2546023,
+      "artist": "Demetori",
+      "title": "Paradise ~ Deep Mountain",
+      "creator": "Wez",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2026-08-12T07:52:04Z"
+    },
+    {
+      "beatmapset_id": 2546025,
+      "artist": "ShinRa-Bansho",
+      "title": "lunatic love baby you",
+      "creator": "nnull-",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2026-06-06T17:01:50Z"
+    }
+  ]
+}

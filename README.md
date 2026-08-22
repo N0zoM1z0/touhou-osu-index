@@ -16,6 +16,7 @@ same metadata and provenance rules as other sets.
 
 **[Browse the index](https://n0zom1z0.github.io/touhou-osu-index/)** ·
 [Download JSON](https://n0zom1z0.github.io/touhou-osu-index/catalog.json) ·
+[Download full JSON](https://n0zom1z0.github.io/touhou-osu-index/catalog-full.json) ·
 [Download CSV](https://n0zom1z0.github.io/touhou-osu-index/catalog.csv)
 
 ## Why this exists
@@ -43,7 +44,13 @@ machine-readable source catalog.
 
 ## Data
 
-`data/catalog.json` is the canonical source. Each record looks like:
+`data/catalog/` is the canonical source. Records are stored in stable numeric
+ID-range shards such as `1150000-1174999.json`; each range spans 25,000 possible
+beatmapset IDs and is capped at 500 actual records. This keeps reviews and
+manual edits small without moving unrelated records when a new ID is added.
+The sharding is repository-internal: builds still publish combined JSON files,
+so downstream consumers do not need to understand shard names.
+Each record looks like:
 
 ```json
 {
@@ -67,6 +74,7 @@ machine-readable source catalog.
 Generated artifacts are written to `dist/`:
 
 - `catalog.json` — accepted (`verified` + `probable`) records for consumers.
+- `catalog-full.json` — all canonical records assembled from the shards.
 - `catalog.csv` — spreadsheet-friendly accepted records.
 - `review.json` — candidates and explicit exclusions.
 - `index.html` — searchable, filterable static site.
@@ -82,6 +90,7 @@ Requires Python 3.11+ and otherwise uses only the standard library.
 ```sh
 make check          # schema validation and tests
 make build          # generate site, JSON, and CSV
+make assemble       # combine all shards into dist/catalog-full.json
 make audit-sources  # query every configured source without changing the catalog
 make import-seeds   # merge every configured source into the catalog
 make hydrate        # resolve incomplete public beatmapset metadata (no OAuth)

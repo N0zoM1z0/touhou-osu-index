@@ -28,7 +28,7 @@ jobs:
             exit 0
           fi
           python -m touhou_osu discover --write --max-changes 50
-          if ! git diff --quiet -- data/catalog.json; then
+          if [[ -n "$(git status --porcelain --untracked-files=all -- data/catalog)" ]]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Open or update review PR
@@ -40,7 +40,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$branch"
-          git add data/catalog.json
+          git add -A data/catalog
           git commit -m "data: discover Touhou beatmap candidates"
           git push --force origin "$branch"
           pr_number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')

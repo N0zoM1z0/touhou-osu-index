@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 2151146,
+      "artist": "Vaundy",
+      "title": "CHAINSAW BLOOD (TV Size)",
+      "creator": "Asahina Oleshev",
+      "source": "チェンソーマン",
+      "status": "graveyard",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou"
+      ],
+      "confidence": "probable",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-04-01T05:51:30Z"
+    },
+    {
+      "beatmapset_id": 2151149,
+      "artist": "Shinra-Bansho",
+      "title": "Gansaku",
+      "creator": "NirtroR",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "known_touhou_artist"
+      ],
+      "confidence": "probable",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-03-19T14:45:54Z"
+    },
+    {
+      "beatmapset_id": 2151390,
+      "artist": "ZUN",
+      "title": "Kagayaku Hari no Kobitozoku ~ Little Princess",
+      "creator": "Luscent",
+      "source": "東方輝針城　～ Double Dealing Character.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:source=東方輝針城",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-08-06T09:05:19Z"
+    },
+    {
+      "beatmapset_id": 2152855,
+      "artist": "",
+      "title": "beatmapsets/2152855#osu/4536199",
+      "creator": "",
+      "source": "",
+      "status": "unknown",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2154094,
+      "artist": "Para Dot",
+      "title": "Knight of Nights (Para Dot Remix)",
+      "creator": "tabac",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-03-29T11:50:11Z"
+    },
+    {
+      "beatmapset_id": 2155400,
+      "artist": "Takamachi Walk",
+      "title": "Forget Me",
+      "creator": "My Angel Satori",
+      "source": "東方虹龍洞　～ Unconnected Marketeers.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unconnected Marketeers",
+        "discovery_query:source=東方虹龍洞",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-08-01T10:16:27Z"
+    },
+    {
+      "beatmapset_id": 2155822,
+      "artist": "Amane (Rolling Contact)",
+      "title": "Technical Master",
+      "creator": "Suicune3",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-12-07T15:09:33Z"
+    },
+    {
+      "beatmapset_id": 2156156,
+      "artist": "ZUN",
+      "title": "Night of Nights (RichaadEB)",
+      "creator": "Robonion42",
+      "source": "The TouHou Project",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-03-28T19:52:16Z"
+    },
+    {
+      "beatmapset_id": 2161238,
+      "artist": "AU",
+      "title": "U.Nknown Goose",
+      "creator": "Kiarah",
+      "source": "東方Project",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-12-05T17:03:42Z"
+    },
+    {
+      "beatmapset_id": 2162313,
+      "artist": "World End Symphonia",
+      "title": "Heliophobia",
+      "creator": "Jelljel",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-09-08T17:09:15Z"
+    },
+    {
+      "beatmapset_id": 2164215,
+      "artist": "",
+      "title": "beatmapsets/2164215#osu/4564743",
+      "creator": "",
+      "source": "",
+      "status": "unknown",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2165606,
+      "artist": "Eru",
+      "title": "Pure Furies ~ Whereabouts of the Heart",
+      "creator": "sjoy",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-07-18T15:44:22Z"
+    },
+    {
+      "beatmapset_id": 2171371,
+      "artist": "Demetori",
+      "title": "Higan Kikou ~ View of The River Styx",
+      "creator": "dicecream",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2025-03-18T20:57:15Z"
+    },
+    {
+      "beatmapset_id": 2172367,
+      "artist": "FELT",
+      "title": "Last Wind",
+      "creator": "jykca",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:1793"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    }
+  ]
+}

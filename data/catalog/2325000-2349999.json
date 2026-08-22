@@ -1,0 +1,2008 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 2325579,
+      "artist": "Demetori",
+      "title": "Seijouki no Pierrot ~ The MadPiero Laughs",
+      "creator": "gazimal",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-04T06:38:41Z"
+    },
+    {
+      "beatmapset_id": 2325598,
+      "artist": "ShinRa-Bansho",
+      "title": "Vodka niwa Tonic (Cut Ver.) (AelSan, [Crz]Reimu) [Alcoholism (w/ Reimu)]",
+      "creator": "AelSan",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2325599,
+      "artist": "Chiyoko",
+      "title": "Alice's Mad Tea Party (ERA trooperr) [Trickster's Spell 1.25x]",
+      "creator": "trooperr",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2325600,
+      "artist": "A-One feat. Shihori",
+      "title": "Magic Girl !! (elexire) [yup]",
+      "creator": "elexire",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2325603,
+      "artist": "BUTAOTOME",
+      "title": "Towa no Maigo (fvrex) [Gastronomic Alchemy]",
+      "creator": "fvrex",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2325613,
+      "artist": "Akatsuki Records",
+      "title": "Adieu, to this Lively Graveyard (Castella) [Zombie]",
+      "creator": "Castella",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2325616,
+      "artist": "JAKAZiD & nora2r",
+      "title": "Heian no Alien (Night Striker Mix) (PORTTAYER) [Speed Up X]",
+      "creator": "PORTTAYER",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2325617,
+      "artist": "Shibayan feat. yana",
+      "title": "Oznei Haman wa Mou Iranai (Cut Ver.) ([GB]Reisen) [YuEast & Micleak's Gulp2]",
+      "creator": "",
+      "source": "",
+      "status": "unknown",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2325618,
+      "artist": "An",
+      "title": "artcore JINJA ([GB]Reisen) [coordination JINJA]",
+      "creator": "[GB]Reisen",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2326028,
+      "artist": "IOSYS",
+      "title": "Chantikku San-Yousei no Itazura Daisensou (YuEast 2018) [Ya! / 1.10]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2326029,
+      "artist": "Halozy",
+      "title": "Paranoid Lost (Cut Ver.) (YuEast 2018) [I'm lost in the starry autumn sky.]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2327538,
+      "artist": "beatMARIO",
+      "title": "Night of Knights(PianoRemixVer)",
+      "creator": "Light-Amo_NF",
+      "source": "東方Project",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-13T17:12:37Z"
+    },
+    {
+      "beatmapset_id": 2329538,
+      "artist": "FELT",
+      "title": "New World (Kiraz) [Reborn 1.13x (220bpm)]",
+      "creator": "Kiraz",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329573,
+      "artist": "Morimori Atsushi",
+      "title": "Toono Gensou Monogatari (MRM REMIX) (V1do-) [Illusional]",
+      "creator": "V1do-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329582,
+      "artist": "Tokyo Active NEETs",
+      "title": "Akahoshi Mizeraburu \\~ Hai yi Hen (Game Ver.) (AelSan) [Master 1.1x (176bpm)]",
+      "creator": "AelSan",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329583,
+      "artist": "Tomohiko Togashi feat. Kano",
+      "title": "Kimi to Iu Tokuiten (Cut Ver.) (Blue\\_Potion) [Singular 1.05x]",
+      "creator": "Blue_Potion",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329584,
+      "artist": "Floating Cloud",
+      "title": "Road to the moon (Castella) [Happy End]",
+      "creator": "Castella",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329588,
+      "artist": "Yuma Mizonokuchi feat. Ai Ohsera",
+      "title": "Princess Lily (Xinhong1003) [Blooming]",
+      "creator": "Xinhong1003",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329589,
+      "artist": "DJ suslik",
+      "title": "Made In China (Blue\\_Potion, YuEast 2018) [Save Your Soul (w/ YuEast 2018) 1.0x]",
+      "creator": "Blue_Potion",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329595,
+      "artist": "Para Dot.",
+      "title": "Hyper banquet (gzdongsheng) [514nm]",
+      "creator": "gzdongsheng",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329599,
+      "artist": "Akatsuki Records",
+      "title": "Rock 'n' Rock 'n' Beat (ImperialTrinity) [Bang! Bang!]",
+      "creator": "ImperialTrinity",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2329601,
+      "artist": "Foreground Eclipse",
+      "title": "You May Not Want To Hear This But (Ycloki) [I am here screaming, yelling and crying.]",
+      "creator": "Ycloki",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333219,
+      "artist": "Shinigiwa Satellite feat. Meramipop",
+      "title": "Omoikane Injection",
+      "creator": "Watanabe Akari",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2025-06-30T03:01:41Z"
+    },
+    {
+      "beatmapset_id": 2333365,
+      "artist": "FELT",
+      "title": "Summer Fever (Cut Ver.) (epic man 2) [2hu diff name goes here]",
+      "creator": "epic man 2",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333448,
+      "artist": "Nuruhachi",
+      "title": "Doll Judgment -Glittering Magic- (Xu seventeen) [Kinju Eishou]",
+      "creator": "Xu seventeen",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333455,
+      "artist": "nachi",
+      "title": "Tsuioku Summer Night (ELEMENTAS Remix) (Alptraum) [none [1.05x Rate]]",
+      "creator": "Alptraum",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333460,
+      "artist": "Houshou Marine",
+      "title": "Hoihoi\\_Gensou Holoism (Cut Ver.) (Koyori Chan, YuEast 2018) [Lunatic]",
+      "creator": "Koyori Chan",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333465,
+      "artist": "K2 SOUND",
+      "title": "Fairy stage (ExNeko, YuEast 2018) [LN]",
+      "creator": "ExNeko",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333476,
+      "artist": "Diao ye zong feat. Meramipop",
+      "title": "Shinkirou (YuEast 2018) [Hana.]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333478,
+      "artist": "ShinRa-Bansho",
+      "title": "Sanyousei SAY YA!!! (Cut Ver.) (YuEast 2018) [Say! Ya! / 1.05]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333480,
+      "artist": "Spacelectro feat. Momokami",
+      "title": "DANCING FOX!!! (Cut Ver.) (YuEast 2018) [dancing fish!!!]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333482,
+      "artist": "Ganeme",
+      "title": "See you again... (Blue\\_Potion) [Immersion 1.0x]",
+      "creator": "Blue_Potion",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333486,
+      "artist": "xi-on",
+      "title": "The Concealed Four Seasons (Castella) [Chromatic Sound]",
+      "creator": "Castella",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333495,
+      "artist": "cYsmix",
+      "title": "Abandoned Shrine Party ([Crz]FolAH1217) [Midnight gaming +]",
+      "creator": "[Crz]FolAH1217",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333496,
+      "artist": "Para Dot.",
+      "title": "Kage-Tech (Usagi\\_) [Werewolf]",
+      "creator": "",
+      "source": "",
+      "status": "unknown",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333498,
+      "artist": "para Dot.",
+      "title": "Colored garden (Ycloki) [Obscured Eden 1.05x (158bpm) OD8]",
+      "creator": "Ycloki",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333528,
+      "artist": "LeaF",
+      "title": "Calamity Fortune (extended cut ver.) ([GB]Oceanus) [Collapse(Cut) x1.15]",
+      "creator": "[GB]Oceanus",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2333538,
+      "artist": "Sally",
+      "title": "Ennb\\~Abyss Flames (RiceSS) [ennb style (thmc ver.)]",
+      "creator": "RiceSS",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2336636,
+      "artist": "COOL&CREATE",
+      "title": "Night of Nights (Flowering nights remix)  By COOL&CREATE/beatMARIO",
+      "creator": "monachoqlo",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-03-09T18:08:59Z"
+    },
+    {
+      "beatmapset_id": 2337108,
+      "artist": "SmileDemon",
+      "title": "Doomtempo ([GB]Azukisan) [DoomLotus 150bpm edit]",
+      "creator": "[GB]Azukisan",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337109,
+      "artist": "Amane",
+      "title": "Neuro Circuit (PORTTAYER) [Crazy Bass Dancers]",
+      "creator": "PORTTAYER",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337111,
+      "artist": "Asomosphere",
+      "title": "Cross Commander Circuit (PORTTAYER) [Triangle Chase (edit) 1.05x]",
+      "creator": "PORTTAYER",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337121,
+      "artist": "S.S.H.",
+      "title": "Genshi no Yoru \\~ Ghostly Eyes ([GB]Reisen, Xu seventeen) [Ei Yoru no Mukui. // co. Xu seventeen 1.05x]",
+      "creator": "[GB]Reisen",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337122,
+      "artist": "BUTAOTOME",
+      "title": "Mesen ([GB]Reisen) [roslaunch ittsui\\_no\\_kamikemono touhou.launch]",
+      "creator": "[GB]Reisen",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337199,
+      "artist": "Sawawa",
+      "title": "Taketori Hishou \\~Lunatic Princess (MyZterioN-) [nisemono 1.05x]",
+      "creator": "MyZterioN-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337247,
+      "artist": "Diao ye zong",
+      "title": "Seiren 'Uruwashi no Ventra' (Cut ver.) (Hylotl) [UFO Romance!?]",
+      "creator": "Hylotl",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337323,
+      "artist": "dBu",
+      "title": "Majotachi no Butoukai \\~ Magus (Castella) [Nightmare]",
+      "creator": "Castella",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337373,
+      "artist": "Spacelectro feat. setsunann",
+      "title": "Luv the world [DJ Raisei Remix] (Cut Ver.) (gzdongsheng) [Phantom]",
+      "creator": "gzdongsheng",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337391,
+      "artist": "Shinigiwa Satellite",
+      "title": "Taishoku Reality ([GB]Kita-) [Lost]",
+      "creator": "[GB]Kita-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337396,
+      "artist": "ALiCE'S EMOTiON",
+      "title": "Ghostly Parapara Ship (Hardcore Edit) (V1do-) [Let's enjoy the Parapara Night! (Cut ver.)]",
+      "creator": "V1do-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337397,
+      "artist": "HAGISOPH",
+      "title": "Beyond the Millennium (Blue\\_Potion, V1do-) [Lunatic Eternity (w/ Blue\\_Potion)]",
+      "creator": "V1do-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337459,
+      "artist": "Xenon",
+      "title": "63HiiraossHuikgoeH53 (cut ver.) (ScoliosisET) [Gensokyo Daydream 1.05x (189bpm)]",
+      "creator": "ScoliosisET",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2337473,
+      "artist": "Uten-Kekkoh",
+      "title": "SYOUZYOSAKUSOUTYU (Nicknem\\_) [Egoist (THMC edit)]",
+      "creator": "Nicknem_",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2338337,
+      "artist": "Masayoshi Minoshima",
+      "title": "Bad Apple!! (feat. Nomico)",
+      "creator": "Yellow_Pixel",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2025-03-22T13:23:59Z"
+    },
+    {
+      "beatmapset_id": 2338461,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "Retro_173",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-03-13T14:45:51Z"
+    },
+    {
+      "beatmapset_id": 2340182,
+      "artist": "Kobaryo",
+      "title": "Destructive Little Sister ([GB]Reisen) [CS' Catastrophic]",
+      "creator": "",
+      "source": "",
+      "status": "unknown",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340183,
+      "artist": "TAMAONSEN",
+      "title": "Tairin no Soul ([GB]Reisen) [Timing no Soul]",
+      "creator": "[GB]Reisen",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340193,
+      "artist": "Litchee",
+      "title": "Fleur De Neige (ImperialTrinity) [Nacreous Iridescence 1.05x]",
+      "creator": "ImperialTrinity",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340196,
+      "artist": "Takamachi Walk",
+      "title": "A Desire to Disappear (ImperialTrinity) [Forget Me Not (cut)]",
+      "creator": "ImperialTrinity",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340227,
+      "artist": "MONO",
+      "title": "Fantasmagoria ([GB]Oceanus) [Phangasm 1.05x (163bpm)]",
+      "creator": "[GB]Oceanus",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340241,
+      "artist": "DJKurara",
+      "title": "Crazy Aliens ([GS]hina) [Chimera (Edit)]",
+      "creator": "[GS]hina",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340242,
+      "artist": "NormalM",
+      "title": "Karakasa Scramble (Saemitsu) [Tsukumogami]",
+      "creator": "Saemitsu",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340245,
+      "artist": "EastNewSound feat. Chata",
+      "title": "Sound of Carnation ([GS]hina) [Echo (THMC4 Edit)]",
+      "creator": "[GS]hina",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340381,
+      "artist": "NJK Record",
+      "title": "Search for the butterfly (Alptraum) [edit 1.15x (184bpm) OD8]",
+      "creator": "Alptraum",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340470,
+      "artist": "Demetori",
+      "title": "Native Faith \\~ Memory of a Free Festival (Castella) [Phantasm (cut)]",
+      "creator": "Castella",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340498,
+      "artist": "Kurokotei",
+      "title": "Scattered Faith (cherrychou, [GB]Reisen, Ycloki, YuEast 2018, AelSan, [GS]hina, Alptraum, ERA trooperr) [#2025 Most Unbelievable TB#]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340499,
+      "artist": "Halozy",
+      "title": "Don't let you down (YuEast 2018) [drive up! (cut)]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340507,
+      "artist": "miso-nicomi records",
+      "title": "Heavenly Net Breaking World (KimMui) [0.95x]",
+      "creator": "KimMui",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340523,
+      "artist": "chocofan",
+      "title": "Flandol (YuEast 2018, 0DZ0) [Rising Flan!]",
+      "creator": "0DZ0",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340544,
+      "artist": "P\\*Light feat. mow\\*2",
+      "title": "Homeneko Sensation (Long Ver.) (Xu seventeen) [Super Nyeeco(216bpm)]",
+      "creator": "Xu seventeen",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2340562,
+      "artist": "ZUN",
+      "title": "Voyage 1969 (Ycloki) [Oneiric Odyssey (edit)]",
+      "creator": "Ycloki",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2342547,
+      "artist": "Hannari",
+      "title": "Shen Bu Jian Di De Shi Yu",
+      "creator": "Doomsdaddy",
+      "source": "东方夜雀食堂",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "mapper_tags"
+      ],
+      "confidence": "probable",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2025-03-23T22:20:38Z"
+    },
+    {
+      "beatmapset_id": 2342737,
+      "artist": "beatMARIO",
+      "title": "Saishuu Kichiku Imouto Flandre-S (Camellia Remix) (-mint-) [Calamity at the Scarlet Mansion]",
+      "creator": "",
+      "source": "",
+      "status": "unknown",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2343633,
+      "artist": "Alstroemeria Records",
+      "title": "Bad Apple!! feat. nomico (REBIRTHED Original Vocal)",
+      "creator": "FAMoss",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Alstroemeria Records",
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-06-10T11:41:07Z"
+    },
+    {
+      "beatmapset_id": 2345936,
+      "artist": "Rolling Contact",
+      "title": "Snow, White, Echo",
+      "creator": "-Miya",
+      "source": "東方夢時空　～ Pantasmagria of Dim.Dream",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-01-02T22:37:58Z"
+    },
+    {
+      "beatmapset_id": 2346402,
+      "artist": "RichaadEB",
+      "title": "Night of Nights (Metal Cover)",
+      "creator": "Kaidy666",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:richaadeb-official-night-of-nights-cover",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-05T13:25:39Z"
+    },
+    {
+      "beatmapset_id": 2347215,
+      "artist": "REDALiCE & aran",
+      "title": "Sweet Requiem",
+      "creator": "Wavewy",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:google_sheet:tmf-2025:audited"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-03-30T18:31:43Z"
+    },
+    {
+      "beatmapset_id": 2347645,
+      "artist": "BUTAOTOME",
+      "title": "Imanarabe (ScoliosisET) [Satort 1.05x (184bpm) OD8]",
+      "creator": "ScoliosisET",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347671,
+      "artist": "Kommisar",
+      "title": "Native Faith (Chiptune ver.) ([GB]Reisen, Yuiesta) [LN YOUNGER]",
+      "creator": "[GB]Reisen",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347686,
+      "artist": "Meramipop feat. Studio \"Syrup Comfiture\"",
+      "title": "Zillion Lights (Yuiesta) [Stellar]",
+      "creator": "Yuiesta",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347687,
+      "artist": "IOSYS",
+      "title": "RE\\:Usatei (Yuiesta) [Usa / 1.05]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347688,
+      "artist": "katagiri",
+      "title": "Buta Musou (Yuiesta) [THMC Musou / 1.1]",
+      "creator": "YuEast 2018",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347692,
+      "artist": "FELT",
+      "title": "Lies in Reality (Yuiesta, Micleak) [Look straight at everything you see.]",
+      "creator": "Micleak",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347694,
+      "artist": "Xenoglossy",
+      "title": "Suigetsu Kyouka Koubou Issen ([GS]hina) [Mirage 1.2x (276bpm)]",
+      "creator": "[GS]hina",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347700,
+      "artist": "pocotan",
+      "title": "ClownTanz (Cut Ver.) (AutotelicBrown) [ClownJacks 1.05x (168bpm)]",
+      "creator": "AutotelicBrown",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347709,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Bloodthirsty Nightmare Lullaby (epic man 2) [Phantom Of The Opera]",
+      "creator": "epic man 2",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347713,
+      "artist": "IOSYS",
+      "title": "Bow Down, You Ignorant Fools! - The Princess' Insane All Night Hourai Live - (0DZ0) [Kaguya-sama]",
+      "creator": "0DZ0",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347719,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Unprivileged Access (Cut Ver.) (V1do-) [Withering...]",
+      "creator": "V1do-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347730,
+      "artist": "Rolling Contact",
+      "title": "Falling Fireworks ([Crz]FolAH1217) [.BURST]",
+      "creator": "[Crz]FolAH1217",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347752,
+      "artist": "sugosugiii & THE BEAT WIZARD",
+      "title": "Between Collapse and Rebuild\\: A Scarlet Tale of Chaos and Hope (ImperialTrinity, gzdongsheng, Koyori Chan, AelSan, V1do-, [GS]hina, Alptraum) [Interweaving Phantasm]",
+      "creator": "V1do-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347811,
+      "artist": "Laur",
+      "title": "Absolute Queen ([Crz]Crysarlene) [Absolute Maker (Extended Ver.)]",
+      "creator": "[Crz]Crysarlene",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347862,
+      "artist": "Unlucky Morpheus",
+      "title": "Danzai wa Amaneku Ningen no Moto ni (Ska) [1.1]",
+      "creator": "Ska",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347963,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Flowering Night Fever (Miaurichesu, Yuiesta) [PSYCHOBREAK]",
+      "creator": "Miaurichesu",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:4th",
+        "tournament:1661"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2347988,
+      "artist": "ShinRa-Bansho",
+      "title": "lunatic love baby you",
+      "creator": "Asagi",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-07T14:28:55Z"
+    }
+  ]
+}

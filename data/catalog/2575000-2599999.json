@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 2581537,
+      "artist": "beatMARIO",
+      "title": "Night of Knights (Game Ver.)",
+      "creator": "silly femboy",
+      "source": "太鼓の達人 レッドVer.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-all-night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-07-06T14:35:46Z"
+    },
+    {
+      "beatmapset_id": 2585229,
+      "artist": "beatMARIO",
+      "title": "Makkuro Night of Knights",
+      "creator": "f_ronte",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "pending",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-08-14T14:46:22Z"
+    },
+    {
+      "beatmapset_id": 2586486,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Chirei \"Gensoukyou Engi Fuujirareshi Youkai-tachi no Page\"",
+      "creator": "Wispy",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2026-07-16T09:06:02Z"
+    }
+  ]
+}

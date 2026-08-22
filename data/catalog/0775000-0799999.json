@@ -1,0 +1,781 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 776165,
+      "artist": "Demetori",
+      "title": "Kourou ~ Eastern Dream",
+      "creator": "ASPIRIN",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-09-29T06:28:31Z"
+    },
+    {
+      "beatmapset_id": 777139,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "BoshyMan741",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-05-06T23:38:27Z"
+    },
+    {
+      "beatmapset_id": 777322,
+      "artist": "Chata",
+      "title": "min",
+      "creator": "Net0",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-08-21T13:55:10Z"
+    },
+    {
+      "beatmapset_id": 777789,
+      "artist": "Halozy",
+      "title": "Aqua Trytone / Kanshou no Matenrou",
+      "creator": "celerih",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-07-22T06:46:50Z"
+    },
+    {
+      "beatmapset_id": 778002,
+      "artist": "FELT",
+      "title": "Lies in Reality",
+      "creator": "Crissa",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-06-11T20:36:37Z"
+    },
+    {
+      "beatmapset_id": 778920,
+      "artist": "Yuuhei Satellite",
+      "title": "Otogibanashi no Karakuri wa,",
+      "creator": "sodarose",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2019-02-26T10:04:50Z"
+    },
+    {
+      "beatmapset_id": 780588,
+      "artist": "ZYTOKINE",
+      "title": "Missing Opus feat. cold kiss - t+pazolite Remix",
+      "creator": "eiri-",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-05-24T23:56:36Z"
+    },
+    {
+      "beatmapset_id": 780992,
+      "artist": "Halozy",
+      "title": "K.O.K.O.R.O",
+      "creator": "Nepuri",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2019-04-21T19:42:22Z"
+    },
+    {
+      "beatmapset_id": 782018,
+      "artist": "Senpi",
+      "title": "Touhou Last Boss Rush!! (Cut Ver.)",
+      "creator": "Deramok",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2020-12-06T15:24:14Z"
+    },
+    {
+      "beatmapset_id": 782106,
+      "artist": "SOUND HOLIC",
+      "title": "HOLY WORLD",
+      "creator": "Yoshimaro",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-06-12T03:56:55Z"
+    },
+    {
+      "beatmapset_id": 783213,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Embraced by the Flame",
+      "creator": "PoNo",
+      "source": "東方地霊殿 ～ Subterranean Animism.",
+      "status": "loved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1793",
+        "tournament_candidate:731"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-01-01T22:17:37Z"
+    },
+    {
+      "beatmapset_id": 783585,
+      "artist": "Yonder Voice",
+      "title": "Sougetsu no Zangeshi ~ Universal Nemesis",
+      "creator": "moonlightleaf",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-06-28T08:39:57Z"
+    },
+    {
+      "beatmapset_id": 783658,
+      "artist": "Demetori",
+      "title": "Seijouki no Pierrot ~ The MadPiero Laughs",
+      "creator": "Keada",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-12-01T06:12:18Z"
+    },
+    {
+      "beatmapset_id": 783713,
+      "artist": "Akatsuki Records",
+      "title": "Songs Compilation",
+      "creator": "Gottagof4st",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-10-19T12:57:46Z"
+    },
+    {
+      "beatmapset_id": 784476,
+      "artist": "zetoban",
+      "title": "Romantic Children",
+      "creator": "BarkingMadDog",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:1432"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 785589,
+      "artist": "Liz Triangle",
+      "title": "Messiah",
+      "creator": "Realazy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-05-29T18:26:01Z"
+    },
+    {
+      "beatmapset_id": 785837,
+      "artist": "Minase Mashiro",
+      "title": "runaway (Halozy Mix)",
+      "creator": "Ascendance",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-06-29T03:14:17Z"
+    },
+    {
+      "beatmapset_id": 785871,
+      "artist": "Alstroemeria Records",
+      "title": "ARROW RAIN",
+      "creator": "atian540",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Adust Rain",
+        "discovery_query:Alstroemeria Records",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2020-07-14T18:46:59Z"
+    },
+    {
+      "beatmapset_id": 786140,
+      "artist": "Demetori",
+      "title": "Tenkuu no Hana no Miyako ~ Bridge of The Lotus",
+      "creator": "tokiko",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-08-12T13:46:28Z"
+    },
+    {
+      "beatmapset_id": 787665,
+      "artist": "Meramipop",
+      "title": "Paranoid Girl",
+      "creator": "Hailie",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-07-27T20:02:32Z"
+    },
+    {
+      "beatmapset_id": 787919,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Kishin 'Seigi no Mikata'",
+      "creator": "Hey lululu",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-11-03T04:41:03Z"
+    },
+    {
+      "beatmapset_id": 790310,
+      "artist": "Ayakura Mei",
+      "title": "Close to you (and me)",
+      "creator": "fanzhen0019",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-06-28T22:20:09Z"
+    },
+    {
+      "beatmapset_id": 790573,
+      "artist": "Demetori",
+      "title": "Furuki Yuanxian ~ Death Echo",
+      "creator": "gaston_2199",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2023-06-27T20:15:08Z"
+    },
+    {
+      "beatmapset_id": 790734,
+      "artist": "ESQUARIA",
+      "title": "Loreleied - RUON Remix -",
+      "creator": "Lasse",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-06-09T10:55:24Z"
+    },
+    {
+      "beatmapset_id": 792997,
+      "artist": "Nanoka",
+      "title": "Tsukimade Todoke, Fushi no Kemuri",
+      "creator": "ktgster",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-02-04T03:06:39Z"
+    },
+    {
+      "beatmapset_id": 793438,
+      "artist": "Liz Triangle",
+      "title": "Messiah",
+      "creator": "eiri-",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1432"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-07-04T19:52:40Z"
+    },
+    {
+      "beatmapset_id": 795140,
+      "artist": "Shibayan feat. 3L",
+      "title": "Getsurei 11.3 no Candle Magic",
+      "creator": "RLC",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-03-21T02:30:00Z"
+    },
+    {
+      "beatmapset_id": 795396,
+      "artist": "Diabolic Phantasma",
+      "title": "Invasion of Amorphous Trepidation",
+      "creator": "Daiyousei",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 796330,
+      "artist": "Demetori",
+      "title": "Pure Furies ~ Vengeance is Mine",
+      "creator": "jonathanlfj",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-12-29T00:48:36Z"
+    },
+    {
+      "beatmapset_id": 796544,
+      "artist": "Liz Triangle",
+      "title": "Who Killed U.N.Owen",
+      "creator": "Zinreu",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-08-03T11:22:17Z"
+    },
+    {
+      "beatmapset_id": 798509,
+      "artist": "Ciel",
+      "title": "If you're my destiny, end this fated determination.",
+      "creator": "Kalibe",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-06-25T10:55:50Z"
+    },
+    {
+      "beatmapset_id": 798842,
+      "artist": "LiLA'c Records",
+      "title": "Jue",
+      "creator": "eiri-",
+      "source": "東方心綺楼　～ Hopeless Masquerade.",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:828",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-11-09T00:13:41Z"
+    },
+    {
+      "beatmapset_id": 799276,
+      "artist": "IOSYS",
+      "title": "Poinsettia",
+      "creator": "eiri-",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2018-08-02T22:15:07Z"
+    },
+    {
+      "beatmapset_id": 799746,
+      "artist": "Akatsuki Records",
+      "title": "Kamisama Stories -INNOCENT-",
+      "creator": "Hailie",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-09-20T16:15:52Z"
+    },
+    {
+      "beatmapset_id": 799898,
+      "artist": "BLANKFIELD",
+      "title": "Flags on the Moon",
+      "creator": "Mun",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2019-03-23T19:07:52Z"
+    }
+  ]
+}

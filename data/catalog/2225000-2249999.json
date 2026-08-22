@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 2225109,
+      "artist": "senya",
+      "title": "Koakuma Ringo (EUROBEAT Remix)",
+      "creator": "Okoayu",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-24T18:31:43Z"
+    },
+    {
+      "beatmapset_id": 2225614,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Uzu",
+      "creator": "Camo",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:2163"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2226658,
+      "artist": "U2",
+      "title": "Saigetsu (Koko & Satsuki ga Tenkomori's Sagyou Bougai Remix)",
+      "creator": "Spectator",
+      "source": "東方萃夢想　～ Immaterial and Missing Power.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-08-22T15:48:37Z"
+    },
+    {
+      "beatmapset_id": 2227573,
+      "artist": "Kurokotei",
+      "title": "Galaxy Collapse",
+      "creator": "Coeminals",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2025-08-23T20:30:41Z"
+    },
+    {
+      "beatmapset_id": 2229728,
+      "artist": "RD-Sounds feat. Meramipop / nayuta",
+      "title": "Shiten",
+      "creator": "Genjuro",
+      "source": "東方天空璋　～ Hidden Star in Four Seasons.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "discovery_query:source=東方天空璋",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-08-15T13:35:55Z"
+    },
+    {
+      "beatmapset_id": 2234458,
+      "artist": "3L",
+      "title": "Sympathy take me to darkness",
+      "creator": "Trust",
+      "source": "東方封魔録　～ the Story of Eastern Wonderland",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方封魔録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-05-20T23:49:23Z"
+    },
+    {
+      "beatmapset_id": 2237670,
+      "artist": "FELT",
+      "title": "New World (Cut Ver.)",
+      "creator": "espii",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-11-27T12:26:19Z"
+    },
+    {
+      "beatmapset_id": 2238312,
+      "artist": "Akatsuki Records",
+      "title": "KARMANATIONS",
+      "creator": "papapa213",
+      "source": "東方夢時空　～ Pantasmagria of Dim.Dream",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Alstroemeria Records",
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-04-19T06:57:51Z"
+    },
+    {
+      "beatmapset_id": 2239541,
+      "artist": "TAMAONSEN",
+      "title": "Gensou Kappa Koushinkyoku feat. ytr",
+      "creator": "Suicune3",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "tournament:1793"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-09-20T22:26:57Z"
+    },
+    {
+      "beatmapset_id": 2241601,
+      "artist": "A-One feat. Kanipan.",
+      "title": "Endless, Sleepless Night",
+      "creator": "Clodsire",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-10-16T20:11:37Z"
+    },
+    {
+      "beatmapset_id": 2243304,
+      "artist": "Diao Ye Zong .feat 3L",
+      "title": "Hon no Tabibito",
+      "creator": "Ureimu",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-11-07T01:54:32Z"
+    },
+    {
+      "beatmapset_id": 2243445,
+      "artist": "Mano feat. -aoi-",
+      "title": "relative relation (it's all about)",
+      "creator": "Raupain",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-11-28T05:58:01Z"
+    },
+    {
+      "beatmapset_id": 2245015,
+      "artist": "Toa",
+      "title": "Mune No Naka De Darekaga",
+      "creator": "Otosaka-Yu",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2025-03-02T04:44:08Z"
+    },
+    {
+      "beatmapset_id": 2245909,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "Serterd",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-09-08T12:59:34Z"
+    },
+    {
+      "beatmapset_id": 2246160,
+      "artist": "Rolling Contact (Amane)",
+      "title": "Crimson Bride",
+      "creator": "knife_lee",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-10-06T12:40:30Z"
+    },
+    {
+      "beatmapset_id": 2248838,
+      "artist": "ShibayanRecords",
+      "title": "Trouble Kuroneko Manyuuki",
+      "creator": "Suicune3",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:2163"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2249236,
+      "artist": "SOUND HOLIC",
+      "title": "Border of Life",
+      "creator": "Sanch-KK",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:2163",
+        "tournament:google_sheet:tmf-2025:audited"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": null
+    }
+  ]
+}

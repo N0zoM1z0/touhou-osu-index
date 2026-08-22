@@ -73,6 +73,10 @@ def build(catalog: Catalog, output: Path) -> dict:
         json.dumps({"schema_version": 1, "entries": accepted}, ensure_ascii=False, separators=(",", ":")) + "\n",
         encoding="utf-8",
     )
+    (output / "catalog-full.json").write_text(
+        json.dumps(catalog.to_dict(), ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+    )
     (output / "review.json").write_text(
         json.dumps({"schema_version": 1, "entries": review}, ensure_ascii=False, separators=(",", ":")) + "\n",
         encoding="utf-8",

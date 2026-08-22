@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 250309,
+      "artist": "senya",
+      "title": "Omoi ga Rekishi ni Kawaru Toki",
+      "creator": "Satellite",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-02-12T06:39:56Z"
+    },
+    {
+      "beatmapset_id": 251365,
+      "artist": "Halozy",
+      "title": "Kanshou no Matenrou",
+      "creator": "Feerum",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:Touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2015-05-02T15:02:42Z"
+    },
+    {
+      "beatmapset_id": 251437,
+      "artist": "Halozy",
+      "title": "Genryuu Kaiko",
+      "creator": "Mira-san",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-06-27T06:38:54Z"
+    },
+    {
+      "beatmapset_id": 251561,
+      "artist": "Various",
+      "title": "Changing speed Beatmaps",
+      "creator": "Remilia_CO",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-12-31T20:01:43Z"
+    },
+    {
+      "beatmapset_id": 252385,
+      "artist": "senya",
+      "title": "Yukitoke Realism",
+      "creator": "wring",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-06-21T17:48:11Z"
+    },
+    {
+      "beatmapset_id": 253501,
+      "artist": "ZUN",
+      "title": "Bad Apple!!",
+      "creator": "Leader",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
+      "osu_last_updated": "2018-07-22T15:02:03Z"
+    },
+    {
+      "beatmapset_id": 253969,
+      "artist": "Halozy",
+      "title": "Genryuu Kaiko",
+      "creator": "CLSW",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2015-02-17T10:34:19Z"
+    },
+    {
+      "beatmapset_id": 254589,
+      "artist": "senya",
+      "title": "Tsuki ni Murakumo Hana ni Kaze",
+      "creator": "17VA",
+      "source": "東方Project",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Shinigiwa Satellite",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2016-12-07T15:37:01Z"
+    },
+    {
+      "beatmapset_id": 257165,
+      "artist": "Amane",
+      "title": "TWEEKER",
+      "creator": "TicClick",
+      "source": "東方文花帖　～ Shoot the Bullet.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:526",
+        "tournament_candidate:731"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-09-10T13:23:14Z"
+    },
+    {
+      "beatmapset_id": 257739,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Setsugetsu Ouka no Kuni",
+      "creator": "Krimek",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-03-01T07:07:20Z"
+    },
+    {
+      "beatmapset_id": 258121,
+      "artist": "Yooh",
+      "title": "Shanghai Kouchakan ~ Chinese Tea Orchid Remix",
+      "creator": "SanadaYukimura",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-09-13T05:46:02Z"
+    },
+    {
+      "beatmapset_id": 263191,
+      "artist": "JerryTerry",
+      "title": "U.N. Owen Was Yee?",
+      "creator": "Zak",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-05-14T03:53:59Z"
+    },
+    {
+      "beatmapset_id": 263417,
+      "artist": "IOSYS ft. Bonde da Stronda",
+      "title": "Stronda's Perfect Maromba Class",
+      "creator": "ALust",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-01-17T22:24:46Z"
+    },
+    {
+      "beatmapset_id": 264977,
+      "artist": "COOL&CREATE",
+      "title": "Saishoukichiku Imouto Flandre S",
+      "creator": "UnLock-",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-03-04T14:56:06Z"
+    },
+    {
+      "beatmapset_id": 267041,
+      "artist": "Kobaryo",
+      "title": "3rd Eye In Breast",
+      "creator": "akuma123",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2022-04-26T17:31:34Z"
+    },
+    {
+      "beatmapset_id": 269497,
+      "artist": "NH22",
+      "title": "Corrosion",
+      "creator": "ek332bsv",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-01-24T16:47:27Z"
+    },
+    {
+      "beatmapset_id": 270457,
+      "artist": "ALiCE'S EMOTiON",
+      "title": "Evening Steps",
+      "creator": "TicClick",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:828",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-03-02T17:48:42Z"
+    },
+    {
+      "beatmapset_id": 270529,
+      "artist": "NAGISA",
+      "title": "God Bless You!!",
+      "creator": "kakuru",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-06-05T16:44:29Z"
+    },
+    {
+      "beatmapset_id": 274223,
+      "artist": "Undead Corporation",
+      "title": "Murasa",
+      "creator": "Venzire",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-10-26T01:34:04Z"
+    }
+  ]
+}

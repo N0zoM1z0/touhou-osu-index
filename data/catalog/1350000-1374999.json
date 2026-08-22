@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 1350080,
+      "artist": "LeaF",
+      "title": "Calamity Fortune (extended ver.)",
+      "creator": "skolodojko",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2022-08-14T21:23:05Z"
+    },
+    {
+      "beatmapset_id": 1351589,
+      "artist": "uma vs. Morimori Atsushi",
+      "title": "Kibou no Hoshi wa Seishou ni Noboru (uma vs. Morimori Atsushi Remix)",
+      "creator": "Konpaku Sariel",
+      "source": "東方天空璋　～ Hidden Star in Four Seasons.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "discovery_query:source=東方天空璋",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-06-30T02:46:15Z"
+    },
+    {
+      "beatmapset_id": 1352039,
+      "artist": "8686m",
+      "title": "Korekara",
+      "creator": "Gibune",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-06-09T03:47:06Z"
+    },
+    {
+      "beatmapset_id": 1353531,
+      "artist": "senya",
+      "title": "Theta de Tsukisashite",
+      "creator": "Serafeim",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-03-14T18:10:06Z"
+    },
+    {
+      "beatmapset_id": 1356104,
+      "artist": "ShinRa-Bansho",
+      "title": "Sanyousei SAY YA!!!",
+      "creator": "Yukari_Sama",
+      "source": "妖精大戦争　～ 東方三月精",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=妖精大戦争",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-09-10T05:57:46Z"
+    },
+    {
+      "beatmapset_id": 1357813,
+      "artist": "Akatsuki Records feat. ayaponzu*",
+      "title": "Daikirai Scarlet",
+      "creator": "moonlightleaf",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2023-06-13T05:34:33Z"
+    },
+    {
+      "beatmapset_id": 1359291,
+      "artist": "Shibayan feat. Ichimatsu Tsubaki",
+      "title": "Wo Qin Ai Kui Lei",
+      "creator": "UberFazz",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1361691,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "the music I hate",
+      "creator": "Irin",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-04-07T04:44:39Z"
+    },
+    {
+      "beatmapset_id": 1363149,
+      "artist": "Ohara Yuiko",
+      "title": "Tabibito no Uta (TV Size)",
+      "creator": "Kibbleru",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1364267,
+      "artist": "ALiCE'S EMOTION",
+      "title": "Selfish (Tsukasa Remix)",
+      "creator": "Mixagji",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:828"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-06-06T11:48:30Z"
+    },
+    {
+      "beatmapset_id": 1365207,
+      "artist": "COOL&CREATE-BeatMARIO",
+      "title": "Night of Nights (Flowering nights remix)",
+      "creator": "HubertTWE",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-02-03T17:53:23Z"
+    },
+    {
+      "beatmapset_id": 1366426,
+      "artist": "Camellia",
+      "title": "CLOUDY WITH INTERMITTENT RAIN (Cut Ver.) (Salty Mermaid) [Flowing Skies]",
+      "creator": "Salty Mermaid",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:2nd",
+        "tournament:467"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1366894,
+      "artist": "Yu-Peng Chen @HOYO-MiX",
+      "title": "Nimble as Lightning",
+      "creator": "lit120",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-04-09T19:43:54Z"
+    },
+    {
+      "beatmapset_id": 1366975,
+      "artist": "TAMAONSEN",
+      "title": "Gensou Kappa Koushinkyoku feat. ytr",
+      "creator": "paz08",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2022-03-25T19:53:58Z"
+    },
+    {
+      "beatmapset_id": 1367924,
+      "artist": "beatMARIO",
+      "title": "Night of Knights (USAO Remix)",
+      "creator": "somebody_33",
+      "source": "東方Project",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-02-09T00:03:22Z"
+    },
+    {
+      "beatmapset_id": 1368017,
+      "artist": "ZUN",
+      "title": "Tsukidokei ~ Luna Dial",
+      "creator": "ConsumerOfBean",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:828"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1368189,
+      "artist": "beatMARIO",
+      "title": "Night of Knights (Hige Driver Remix)",
+      "creator": "Stellaris",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-09-08T18:10:24Z"
+    },
+    {
+      "beatmapset_id": 1368836,
+      "artist": "BLANKFIELD",
+      "title": "Witching Dream",
+      "creator": "xidorn",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-02-07T18:00:30Z"
+    },
+    {
+      "beatmapset_id": 1370239,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "Twighlightk",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-02-10T09:53:33Z"
+    },
+    {
+      "beatmapset_id": 1374578,
+      "artist": "Rin",
+      "title": "Moriya set 04 ReEdit ~ Unmei no Dark Side",
+      "creator": "Halfslashed",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:1865",
+        "tournament:2163",
+        "tournament_candidate:731"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2023-08-11T17:17:21Z"
+    }
+  ]
+}

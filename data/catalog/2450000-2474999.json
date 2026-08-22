@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 2451965,
+      "artist": "COOL&CREATE",
+      "title": "Chou Night of Knights",
+      "creator": "derkywerp",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "known_touhou_artist",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-10-20T00:46:01Z"
+    },
+    {
+      "beatmapset_id": 2452339,
+      "artist": "Akiyama Uni",
+      "title": "Saigetsu",
+      "creator": "Plugin",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:2163"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2453161,
+      "artist": "ShinRa-Bansho x Chocofan",
+      "title": "Touhou Ieru Kana",
+      "creator": "Ekrem Imamoglu",
+      "source": "東方Project",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2026-07-08T21:30:50Z"
+    },
+    {
+      "beatmapset_id": 2453911,
+      "artist": "Demetori",
+      "title": "Intro / Kuuchuu ni Shizumu Kishinjou ~ Counter-Clock World",
+      "creator": "tacoyaki5",
+      "source": "東方輝針城　～ Double Dealing Character.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2026-01-26T13:46:39Z"
+    },
+    {
+      "beatmapset_id": 2454530,
+      "artist": "Demetori",
+      "title": "Youyou Bakko ~ Who done it!!!",
+      "creator": "gay girl",
+      "source": "",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:2163"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2456336,
+      "artist": "Senpi",
+      "title": "Touhou Last Boss Rush!! (Cut Ver.)",
+      "creator": "Suicune3",
+      "source": "東方Project",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2026-08-02T00:46:39Z"
+    },
+    {
+      "beatmapset_id": 2459936,
+      "artist": "AoiXia",
+      "title": "Night of Knights (AoiXia remix)",
+      "creator": "TW_cookies",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-11-06T12:20:10Z"
+    },
+    {
+      "beatmapset_id": 2461093,
+      "artist": "Shibayan feat. 3L",
+      "title": "MyonMyonMyonMyonMyonMyon!",
+      "creator": "SUISEI69",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2026-03-21T15:47:10Z"
+    },
+    {
+      "beatmapset_id": 2470449,
+      "artist": "ShinRa-Bansho",
+      "title": "Ano Hi no Yume no Alice",
+      "creator": "Aspheria",
+      "source": "東方Project",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2025-11-28T12:18:08Z"
+    }
+  ]
+}

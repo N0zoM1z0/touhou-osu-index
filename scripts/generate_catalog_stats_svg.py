@@ -3,12 +3,17 @@
 
 from __future__ import annotations
 
-import json
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CATALOG_PATH = ROOT / "data" / "catalog.json"
+sys.path.insert(0, str(ROOT))
+
+from touhou_osu.catalog import Catalog
+
+
+CATALOG_PATH = ROOT / "data" / "catalog"
 OUTPUT_PATH = ROOT / "assets" / "catalog-stats.svg"
 
 
@@ -17,13 +22,9 @@ def fmt(value: int) -> str:
 
 
 def load_stats() -> tuple[int, int]:
-    raw = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
-    entries = raw.get("entries")
-    if not isinstance(entries, list):
-        raise ValueError("catalog entries must be a list")
-
-    total = len(entries)
-    verified = sum(entry.get("confidence") == "verified" for entry in entries)
+    catalog = Catalog.load(CATALOG_PATH)
+    total = len(catalog.entries)
+    verified = sum(entry.confidence == "verified" for entry in catalog.entries.values())
     return total, verified
 
 

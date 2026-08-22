@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 1404277,
+      "artist": "Morimori Atsushi",
+      "title": "Toono Gensou Monogatari (MRM REMIX)",
+      "creator": "-Syncro",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1793"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1408216,
+      "artist": "narco & capo",
+      "title": "Fragments",
+      "creator": "Ambrew",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "catch",
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "tournament_candidate:731"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-11-19T23:32:42Z"
+    },
+    {
+      "beatmapset_id": 1409056,
+      "artist": "Kohmi Hirose",
+      "title": "Promise (Kamikaze) [GET DOWN]",
+      "creator": "Kamikaze",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:2nd",
+        "tournament:467"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1410566,
+      "artist": "ShinRa-Bansho",
+      "title": "Pink Kurage to, Sotto, Kiss o Shita.",
+      "creator": "Yukari_Sama",
+      "source": "東方鬼形獣　～ Wily Beast and Weakest Creature.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2022-05-06T13:04:23Z"
+    },
+    {
+      "beatmapset_id": 1411711,
+      "artist": "Suwawa Records",
+      "title": "Lunatic Re:DriVe",
+      "creator": "Doomsdaddy",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:1793",
+        "tournament_candidate:731"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-03-25T15:32:07Z"
+    },
+    {
+      "beatmapset_id": 1414107,
+      "artist": "Unlucky Morpheus",
+      "title": "FAITH",
+      "creator": "MakiDonalds",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1415108,
+      "artist": "REDALiCE",
+      "title": "Kizuato (Xingyue) [ANEGL]",
+      "creator": "Xingyue",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:2nd",
+        "tournament:467"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1415911,
+      "artist": "TatshMusicCircle",
+      "title": "Yoiyami no Tsuki ni Dakarete feat. Ayane",
+      "creator": "Raijodo",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-04-22T17:55:39Z"
+    },
+    {
+      "beatmapset_id": 1415963,
+      "artist": "mocchie",
+      "title": "Nyan Nyan Drive (D: (Penguinosity) [mrow >:3 ~ 1.25]",
+      "creator": "Penguinosity",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tmc:3rd",
+        "tournament:748"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1417304,
+      "artist": "Rin",
+      "title": "Eientewi set 17 ~ Eastern Youkai Beauty",
+      "creator": "_Chroma",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "tournament_candidate:731"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-03-30T10:18:10Z"
+    },
+    {
+      "beatmapset_id": 1420652,
+      "artist": "Yooh",
+      "title": "Shanghai Kouchakan ~ Chinese Tea Orchid Remix (Extended ver.) (Cut Ver.)",
+      "creator": "Nytrocide_",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1422967,
+      "artist": "Beatmario/Cranky",
+      "title": "Knight of Knights(Cranky Remix)",
+      "creator": "syuuga101",
+      "source": "Youtube",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "manual:verified",
+        "mapper_tags"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2021-04-05T02:15:53Z"
+    },
+    {
+      "beatmapset_id": 1423999,
+      "artist": "U2",
+      "title": "Saigetsu (Koko & Satsuki ga Tenkomori's Sagyou Bougai Remix) (Sped Up Ver.)",
+      "creator": "alden",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2022-12-09T06:20:31Z"
+    }
+  ]
+}
