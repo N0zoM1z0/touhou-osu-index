@@ -45,9 +45,11 @@ example a ZUN-composed Seihou track).
 
 ## Catalog editing
 
-`data/catalog/` contains the canonical catalog. To find a record's shard, round
-its numeric `beatmapset_id` down to the nearest 25,000; ID `1151630`, for
-example, belongs in `1150000-1174999.json`. Records inside each shard must be
+`data/catalog/` contains the canonical catalog. Start by rounding a numeric
+`beatmapset_id` down to the nearest 100,000; ID `1151630`, for example, belongs
+in the `1100000-1199999` base range. A populated base range may be recursively
+split into smaller filename ranges to keep every file at 500 records or fewer;
+choose the child range containing the ID. Records inside each shard must be
 sorted by numeric ID. Evidence, modes, origin games, and themes must be unique
 and sorted. Dates use ISO 8601. Do not add volatile star ratings, local file
 paths, download mirrors, or asset URLs.

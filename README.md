@@ -45,9 +45,10 @@ machine-readable source catalog.
 ## Data
 
 `data/catalog/` is the canonical source. Records are stored in stable numeric
-ID-range shards such as `1150000-1174999.json`; each range spans 25,000 possible
-beatmapset IDs and is capped at 500 actual records. This keeps reviews and
-manual edits small without moving unrelated records when a new ID is added.
+ID-range shards such as `1100000-1199999.json`. A base range spans 100,000
+possible beatmapset IDs and automatically splits in half when it would exceed
+500 actual records. This keeps reviews and manual edits small without moving
+unrelated ranges when a new ID is added.
 The sharding is repository-internal: builds still publish combined JSON files,
 so downstream consumers do not need to understand shard names.
 Each record looks like:

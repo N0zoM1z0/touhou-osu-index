@@ -1,0 +1,4113 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 100348,
+      "artist": "Halozy",
+      "title": "Sentimental Skyscraper",
+      "creator": "Hollow Wings",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:828",
+        "tournament:google_sheet:tmf-2025:audited"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-05-20T18:04:01Z"
+    },
+    {
+      "beatmapset_id": 100444,
+      "artist": "ZUN",
+      "title": "The Venerable Ancient Battlefield ~ Suwa Foughten Field",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "tournament:1793",
+        "tournament:google_sheet:tmf-2025:audited"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2013-08-10T08:22:00Z"
+    },
+    {
+      "beatmapset_id": 100870,
+      "artist": "sumijun",
+      "title": "monosugoi live de chirno ga sokohakatonaku monosugoi uta (instrumental) x1.18",
+      "creator": "bes_joker",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-07-13T11:59:22Z"
+    },
+    {
+      "beatmapset_id": 100931,
+      "artist": "EastNewSound",
+      "title": "Sadistic Paranoia",
+      "creator": "TicClick",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:6907",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-04-01T11:53:15Z"
+    },
+    {
+      "beatmapset_id": 100997,
+      "artist": "Dark PHOENiX",
+      "title": "The Dark Side of Fate",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-03-21T06:39:06Z"
+    },
+    {
+      "beatmapset_id": 101317,
+      "artist": "Hiratake ft. Mei Ayakura",
+      "title": "root_A / evenescence",
+      "creator": "happy30",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-05-02T18:06:35Z"
+    },
+    {
+      "beatmapset_id": 102412,
+      "artist": "ZUN",
+      "title": "A Drunkard's Lemuria (Retro Ver.)",
+      "creator": "Itachi_Uchiha",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "official_pack:T65",
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-08-23T23:50:04Z"
+    },
+    {
+      "beatmapset_id": 104641,
+      "artist": "Various Artists",
+      "title": "osu! Demetori Compilation",
+      "creator": "Alan Chibi-kun",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-15T21:06:17Z"
+    },
+    {
+      "beatmapset_id": 104867,
+      "artist": "t+pazolite feat. Rizna",
+      "title": "Boom Boom Taoismic",
+      "creator": "Okoratu",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-07-24T17:41:44Z"
+    },
+    {
+      "beatmapset_id": 105244,
+      "artist": "FELT",
+      "title": "Runway Drive",
+      "creator": "Frostmourne",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-21T07:03:23Z"
+    },
+    {
+      "beatmapset_id": 105296,
+      "artist": "REDALiCE ft. Ayumi Nomiya",
+      "title": "Crime Wave",
+      "creator": "DELiS",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-08-06T14:56:29Z"
+    },
+    {
+      "beatmapset_id": 105381,
+      "artist": "Meramipop",
+      "title": "she's purity",
+      "creator": "[CSGA]Ar3sgice",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-14T11:49:40Z"
+    },
+    {
+      "beatmapset_id": 106212,
+      "artist": "LeaF",
+      "title": "MEPHISTO",
+      "creator": "Alumetorz",
+      "source": "BMS",
+      "status": "ranked",
+      "modes": [
+        "catch",
+        "mania",
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "tournament_candidate:526"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-11-07T16:22:24Z"
+    },
+    {
+      "beatmapset_id": 106318,
+      "artist": "mocchie",
+      "title": "Nyan Nyan Drive (D:",
+      "creator": "caren_sk",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-04-06T13:00:00Z"
+    },
+    {
+      "beatmapset_id": 107346,
+      "artist": "FELT",
+      "title": "Feel The Flow",
+      "creator": "ReySHeL",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-10-24T01:18:28Z"
+    },
+    {
+      "beatmapset_id": 107565,
+      "artist": "Demetori",
+      "title": "Crimson Belvedere ~ Eastern Dream",
+      "creator": "jonathanlfj",
+      "source": "",
+      "status": "approved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-09-04T03:18:48Z"
+    },
+    {
+      "beatmapset_id": 108242,
+      "artist": "xccsc feat. beatMARIO",
+      "title": "Night of Knights xccsc piano remix",
+      "creator": "deepsea",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2013-08-01T07:55:47Z"
+    },
+    {
+      "beatmapset_id": 108820,
+      "artist": "REDALiCE",
+      "title": "Kizuato",
+      "creator": "Natsu",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-02-03T03:38:56Z"
+    },
+    {
+      "beatmapset_id": 108881,
+      "artist": "senya",
+      "title": "Tsuki ni Murakumo Hana ni Kaze (PV ver.)",
+      "creator": "YuyuKo sama",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-02-04T14:17:02Z"
+    },
+    {
+      "beatmapset_id": 109283,
+      "artist": "Vesuvia Project",
+      "title": "Night Hunter",
+      "creator": "Niva",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-09-21T02:20:07Z"
+    },
+    {
+      "beatmapset_id": 110869,
+      "artist": "Tatsh",
+      "title": "Raikou -3rd Desire-",
+      "creator": "Jenny",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-15T15:25:26Z"
+    },
+    {
+      "beatmapset_id": 110985,
+      "artist": "senya",
+      "title": "Youyoumu no Gotoku",
+      "creator": "Satellite",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-09-22T02:17:51Z"
+    },
+    {
+      "beatmapset_id": 111402,
+      "artist": "beatMARIO",
+      "title": "Judgment Days",
+      "creator": "terametis",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-08T09:38:05Z"
+    },
+    {
+      "beatmapset_id": 111611,
+      "artist": "ZUN",
+      "title": "Kobito of the Shining Needle ~ Little Princess",
+      "creator": "sjoy",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1432",
+        "tournament:google_sheet:tmf-2025:audited",
+        "tournament_candidate:526",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2013-11-02T08:24:36Z"
+    },
+    {
+      "beatmapset_id": 112417,
+      "artist": "Rokugen Alice",
+      "title": "SKY HIGH",
+      "creator": "Tsukuyomi",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-10-04T15:00:16Z"
+    },
+    {
+      "beatmapset_id": 112452,
+      "artist": "Kimi no Bijutsukan",
+      "title": "Gensokyo Millenium ~ History of the Moon",
+      "creator": "pieguy1372",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-11-29T01:37:28Z"
+    },
+    {
+      "beatmapset_id": 112654,
+      "artist": "Tsukasa ft. 3L",
+      "title": "Space Accelerator",
+      "creator": "11t",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-10-13T08:19:38Z"
+    },
+    {
+      "beatmapset_id": 112941,
+      "artist": "Halozy",
+      "title": "Secret Sister Complex",
+      "creator": "moonlightleaf",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:828"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-09T05:29:25Z"
+    },
+    {
+      "beatmapset_id": 113458,
+      "artist": "ttbt",
+      "title": "Makkuro Flandre S Shuuseiban",
+      "creator": "moonlightleaf",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-08-26T12:22:35Z"
+    },
+    {
+      "beatmapset_id": 113601,
+      "artist": "ZYTOKINE",
+      "title": "uni_Verse",
+      "creator": "caren_sk",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-08-31T03:32:42Z"
+    },
+    {
+      "beatmapset_id": 114065,
+      "artist": "Chata & nayuta",
+      "title": "Yuune Zekka, Ryouran no Sai",
+      "creator": "sjoy",
+      "source": "",
+      "status": "approved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-09-25T14:19:15Z"
+    },
+    {
+      "beatmapset_id": 114220,
+      "artist": "Halozy",
+      "title": "K.O.K.O.R.O",
+      "creator": "__Ag",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-06-02T15:32:44Z"
+    },
+    {
+      "beatmapset_id": 114598,
+      "artist": "Hanataba",
+      "title": "Night of Knights",
+      "creator": "oWingz",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2013-09-02T06:51:29Z"
+    },
+    {
+      "beatmapset_id": 114741,
+      "artist": "LeaF",
+      "title": "Calamity Fortune",
+      "creator": "Krah",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-02-03T14:36:50Z"
+    },
+    {
+      "beatmapset_id": 114987,
+      "artist": "An",
+      "title": "artcore JINJA",
+      "creator": "Flower",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-09-11T11:52:46Z"
+    },
+    {
+      "beatmapset_id": 115001,
+      "artist": "Kraster",
+      "title": "Shuumatsu no Sugoshikata",
+      "creator": "Saten",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-07-04T15:22:28Z"
+    },
+    {
+      "beatmapset_id": 115745,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "YukaNii",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2013-09-09T01:08:35Z"
+    },
+    {
+      "beatmapset_id": 116122,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "Kuo Kyoka",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2013-10-12T05:14:31Z"
+    },
+    {
+      "beatmapset_id": 116133,
+      "artist": "REDALiCE",
+      "title": "Kizuato",
+      "creator": "Reikosaka",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-15T14:35:50Z"
+    },
+    {
+      "beatmapset_id": 116310,
+      "artist": "Chata",
+      "title": "enn ~fuchi~",
+      "creator": "Smoothie",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-09T14:54:22Z"
+    },
+    {
+      "beatmapset_id": 116669,
+      "artist": "Eru",
+      "title": "Heian no Alien",
+      "creator": "Vass_Bass",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:6907",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-10-27T18:48:18Z"
+    },
+    {
+      "beatmapset_id": 118566,
+      "artist": "Ham",
+      "title": "Tantan Awa",
+      "creator": "Loneight",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-11-18T05:45:47Z"
+    },
+    {
+      "beatmapset_id": 119087,
+      "artist": "ZUN",
+      "title": "Touhou Eiyashou ~  Imperishable Night Compilation",
+      "creator": "Innocentius",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "osucollector:1407"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
+      "osu_last_updated": "2013-10-24T04:44:29Z"
+    },
+    {
+      "beatmapset_id": 119474,
+      "artist": "Innocent Key",
+      "title": "Touhou roudouryoku",
+      "creator": "caren_sk",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-10-02T16:11:37Z"
+    },
+    {
+      "beatmapset_id": 119739,
+      "artist": "Rin",
+      "title": "Spring of Dreams",
+      "creator": "jyc-Binggan",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "tournament_candidate:526",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-04-02T03:38:04Z"
+    },
+    {
+      "beatmapset_id": 119779,
+      "artist": "Akiyama Uni",
+      "title": "Chi no Iro wa Kiiro",
+      "creator": "Hollow Wings",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-27T08:51:13Z"
+    },
+    {
+      "beatmapset_id": 119891,
+      "artist": "senya",
+      "title": "Songs Compilation",
+      "creator": "Satellite",
+      "source": "",
+      "status": "approved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-02-01T18:54:31Z"
+    },
+    {
+      "beatmapset_id": 120071,
+      "artist": "IOSYS",
+      "title": "Cirno's Perfect Math Class",
+      "creator": "Mao",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-03-05T18:44:48Z"
+    },
+    {
+      "beatmapset_id": 120094,
+      "artist": "ZUN",
+      "title": "Onbashira no Hakaba ~ Grave of Being",
+      "creator": "Totoro le Pacha",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-11-24T08:25:22Z"
+    },
+    {
+      "beatmapset_id": 120255,
+      "artist": "Matsumoto Sara",
+      "title": "Ito Hakanaki Hikari no Gotoku",
+      "creator": "Mixagji",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-29T15:48:22Z"
+    },
+    {
+      "beatmapset_id": 120600,
+      "artist": "Draw the Emotional",
+      "title": "Naked Feeling",
+      "creator": "lightr",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-10-05T12:55:49Z"
+    },
+    {
+      "beatmapset_id": 120926,
+      "artist": "Nico Nico Douga",
+      "title": "Owens",
+      "creator": "Keleron",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-11-06T21:36:32Z"
+    },
+    {
+      "beatmapset_id": 121064,
+      "artist": "Amane",
+      "title": "Purity Red",
+      "creator": "TicClick",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "official_pack:T65",
+        "osucollector:1402",
+        "osucollector:1405",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-21T06:08:12Z"
+    },
+    {
+      "beatmapset_id": 121635,
+      "artist": "Dark PHOENiX",
+      "title": "The Primal Scene of Japan the Girl Saw",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1432"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-06-05T15:47:24Z"
+    },
+    {
+      "beatmapset_id": 122349,
+      "artist": "FELT",
+      "title": "Hail Storm",
+      "creator": "Kite",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-04-07T14:34:53Z"
+    },
+    {
+      "beatmapset_id": 122390,
+      "artist": "Shibayan feat. 3L",
+      "title": "Getsurei 11.3 no Candle Magic",
+      "creator": "11t",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2019-01-07T07:00:00Z"
+    },
+    {
+      "beatmapset_id": 122416,
+      "artist": "senya",
+      "title": "Bondage Anemonation",
+      "creator": "Satellite",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-11T01:45:46Z"
+    },
+    {
+      "beatmapset_id": 122757,
+      "artist": "Comp",
+      "title": "Gensou no Satellite",
+      "creator": "Nwolf",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-22T17:47:22Z"
+    },
+    {
+      "beatmapset_id": 123839,
+      "artist": "Akiyama Uni",
+      "title": "The Grimoire of Alice",
+      "creator": "Hollow Wings",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:828",
+        "tournament:google_sheet:tmf-2025:audited",
+        "tournament_candidate:526",
+        "tournament_candidate:731"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-09-21T11:01:49Z"
+    },
+    {
+      "beatmapset_id": 123871,
+      "artist": "Dark PHOENiX",
+      "title": "Last Remote - Type gamma",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-13T03:49:51Z"
+    },
+    {
+      "beatmapset_id": 124556,
+      "artist": "Runole",
+      "title": "The OTOMAD Remix",
+      "creator": "popner",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2022-10-18T15:56:31Z"
+    },
+    {
+      "beatmapset_id": 125758,
+      "artist": "COOL&CREATE",
+      "title": "Night of Nights",
+      "creator": "Faust",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2013-11-01T20:14:07Z"
+    },
+    {
+      "beatmapset_id": 126132,
+      "artist": "IOSYS",
+      "title": "Cirno's Perfect Math Class",
+      "creator": "YunoFanatic",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-11-19T05:58:01Z"
+    },
+    {
+      "beatmapset_id": 126354,
+      "artist": "Dark PHOENiX",
+      "title": "Hiroari Shoots a Strange Bird",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-02-08T10:12:29Z"
+    },
+    {
+      "beatmapset_id": 127712,
+      "artist": "Primastella",
+      "title": "Koigokoro",
+      "creator": "Luerxa",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-24T11:10:32Z"
+    },
+    {
+      "beatmapset_id": 128128,
+      "artist": "38BEETS",
+      "title": "Dear rest",
+      "creator": "KokoroStudiox3",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "forum_queue:sd_touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-03-08T21:35:09Z"
+    },
+    {
+      "beatmapset_id": 128432,
+      "artist": "Aki",
+      "title": "Wanna Be My Dream",
+      "creator": "Lortus",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-02-07T20:13:41Z"
+    },
+    {
+      "beatmapset_id": 128958,
+      "artist": "EastNewSound",
+      "title": "Hana wa Gensou no Hate ni",
+      "creator": "Project Railgun",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-20T20:43:22Z"
+    },
+    {
+      "beatmapset_id": 129202,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Bloodthirsty Nightmare Lullaby",
+      "creator": "sjoy",
+      "source": "",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2024-04-24T01:26:51Z"
+    },
+    {
+      "beatmapset_id": 129534,
+      "artist": "FELT",
+      "title": "Sky Gate",
+      "creator": "Frostmourne",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-31T16:08:25Z"
+    },
+    {
+      "beatmapset_id": 129618,
+      "artist": "senya",
+      "title": "Though the Scent Lingers, the Flower Scattered",
+      "creator": "PyaKura",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-06T15:36:30Z"
+    },
+    {
+      "beatmapset_id": 130092,
+      "artist": "Nanahira",
+      "title": "Monosugoi Ikioide Keine ga Monosugoi Uta",
+      "creator": "kamisamaaa",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-17T19:32:02Z"
+    },
+    {
+      "beatmapset_id": 130227,
+      "artist": "Foreground Eclipse",
+      "title": "Calm Eyes Fixed On Me, Screaming",
+      "creator": "Alternative",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-02-14T02:06:56Z"
+    },
+    {
+      "beatmapset_id": 130425,
+      "artist": "Amane",
+      "title": "Eternal Fullmoon",
+      "creator": "Desperate-kun",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-02-18T18:40:50Z"
+    },
+    {
+      "beatmapset_id": 130624,
+      "artist": "UNDEAD CORPORATION",
+      "title": "The silent world",
+      "creator": "Lortus",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:1432"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 131070,
+      "artist": "IOSYS",
+      "title": "Fragrance Of Oriental Sunflower",
+      "creator": "Suwako KeroKero",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament:google_sheet:tmf-2025:audited"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-07-03T00:25:45Z"
+    },
+    {
+      "beatmapset_id": 131354,
+      "artist": "Hachimitsu-Lemon",
+      "title": "Last Remote~Blaze Mix",
+      "creator": "Meramin",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "tournament_candidate:829"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 131628,
+      "artist": "LeaF",
+      "title": "Arianrhod",
+      "creator": "GoldenWolf",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-02T08:44:49Z"
+    },
+    {
+      "beatmapset_id": 132824,
+      "artist": "Masayoshi Minoshima",
+      "title": "Bad Apple!! (REDALiCE Remix)",
+      "creator": "Evening",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "mania",
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2017-01-28T14:06:54Z"
+    },
+    {
+      "beatmapset_id": 133532,
+      "artist": "t+pazolite",
+      "title": "Unlimited Spark!",
+      "creator": "Lapis",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2013-12-17T01:40:36Z"
+    },
+    {
+      "beatmapset_id": 133693,
+      "artist": "Demetori",
+      "title": "Kanjou no Matenrou ~ World's End",
+      "creator": "GoldenWolf",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-07-15T03:35:48Z"
+    },
+    {
+      "beatmapset_id": 134012,
+      "artist": "Minstrel",
+      "title": "Heian Alien",
+      "creator": "Mu_",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-10-16T15:50:02Z"
+    },
+    {
+      "beatmapset_id": 134608,
+      "artist": "Foreground Eclipse",
+      "title": "You Can't Explain Anything Without The Word 'Destruction'",
+      "creator": "Ekoro",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-03-22T15:36:56Z"
+    },
+    {
+      "beatmapset_id": 134714,
+      "artist": "Xenoglossy",
+      "title": "RECALL A TRAUMATIC EXPERIENCE (2012ver.)",
+      "creator": "tabasa",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-01T12:15:57Z"
+    },
+    {
+      "beatmapset_id": 135778,
+      "artist": "ALiCE'S EMOTiON",
+      "title": "Be Back ON!",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-21T17:20:15Z"
+    },
+    {
+      "beatmapset_id": 138420,
+      "artist": "senya",
+      "title": "Nihil Kagura",
+      "creator": "Delis",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-16T06:27:11Z"
+    },
+    {
+      "beatmapset_id": 138798,
+      "artist": "ALiCE'S EMOTiON",
+      "title": "hagetsu",
+      "creator": "kakuru",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-09-18T15:48:11Z"
+    },
+    {
+      "beatmapset_id": 138886,
+      "artist": "Golden City Factory",
+      "title": "Stirring an Autumn Moon ~ Mooned Insect",
+      "creator": "_Gezo_",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-01-06T18:35:04Z"
+    },
+    {
+      "beatmapset_id": 139677,
+      "artist": "Demetori",
+      "title": "Hoshi no Utsuwa ~ Casket of Star",
+      "creator": "happy30",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2017-03-18T17:15:30Z"
+    },
+    {
+      "beatmapset_id": 140115,
+      "artist": "Nanahira",
+      "title": "Monosugoi Ikioide Keine ga Monosugoi Uta",
+      "creator": "Oracle",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-31T16:43:45Z"
+    },
+    {
+      "beatmapset_id": 140577,
+      "artist": "cYsmix feat. emii",
+      "title": "Tear Rain",
+      "creator": "Jenny",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-06T10:18:56Z"
+    },
+    {
+      "beatmapset_id": 140618,
+      "artist": "cYsmix feat. Emmy",
+      "title": "Tear Rain",
+      "creator": "Reiji-RJ",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-21T15:24:56Z"
+    },
+    {
+      "beatmapset_id": 140662,
+      "artist": "cYsmix feat. Emmy",
+      "title": "Tear Rain",
+      "creator": "jonathanlfj",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-02-11T23:04:04Z"
+    },
+    {
+      "beatmapset_id": 140735,
+      "artist": "cYsmix feat. Emmy",
+      "title": "Tear Rain",
+      "creator": "Niva",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2018-09-24T18:35:49Z"
+    },
+    {
+      "beatmapset_id": 140805,
+      "artist": "cYsmix feat. Emmy",
+      "title": "Tear Rain",
+      "creator": "grumd",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-09T20:48:43Z"
+    },
+    {
+      "beatmapset_id": 140944,
+      "artist": "Demetori",
+      "title": "Higan Kikou ~ View of The River Styx",
+      "creator": "RLC",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-03-18T18:00:33Z"
+    },
+    {
+      "beatmapset_id": 141190,
+      "artist": "Vivienne",
+      "title": "Lies in Reality",
+      "creator": "AkiTG",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-09T15:39:19Z"
+    },
+    {
+      "beatmapset_id": 141879,
+      "artist": "Demetori",
+      "title": "Jehovah's YaHVeH",
+      "creator": "Jemmmmy",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-18T09:48:30Z"
+    },
+    {
+      "beatmapset_id": 143316,
+      "artist": "TatshMusicCircle",
+      "title": "Raikou -3rd Desire-",
+      "creator": "Kite",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1405",
+        "osucollector:6907",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-12-13T13:20:55Z"
+    },
+    {
+      "beatmapset_id": 143584,
+      "artist": "Demetori",
+      "title": "Youkai Domination ~  Who done it ! ! !",
+      "creator": "GoldenWolf",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-03-01T01:02:19Z"
+    },
+    {
+      "beatmapset_id": 143723,
+      "artist": "Chata",
+      "title": "Wan",
+      "creator": "Vhy",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-03-15T18:04:35Z"
+    },
+    {
+      "beatmapset_id": 143771,
+      "artist": "Taiko no tatsujin",
+      "title": "Night of knights",
+      "creator": "HDPR",
+      "source": "太鼓",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:official-game-night-of-knights-credit",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-01-22T09:21:27Z"
+    },
+    {
+      "beatmapset_id": 143844,
+      "artist": "OctagonCollaboration",
+      "title": "8 Awesome Angles of YouTube",
+      "creator": "Leader",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-01-04T20:24:11Z"
+    },
+    {
+      "beatmapset_id": 144421,
+      "artist": "FELT",
+      "title": "Runway Drive",
+      "creator": "kxRete",
+      "source": "touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-01-29T10:53:09Z"
+    },
+    {
+      "beatmapset_id": 145885,
+      "artist": "senya",
+      "title": "Yozakura ni Kimi o Kakushite",
+      "creator": "BeatofIke",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-09T05:50:44Z"
+    },
+    {
+      "beatmapset_id": 145976,
+      "artist": "Meramipop",
+      "title": "Rakujitsu Romance",
+      "creator": "Loneight",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-12-24T10:21:32Z"
+    },
+    {
+      "beatmapset_id": 145990,
+      "artist": "mocchie",
+      "title": "Majotachi no Disco",
+      "creator": "elege",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-12-16T09:55:54Z"
+    },
+    {
+      "beatmapset_id": 146626,
+      "artist": "Draw the Emotional",
+      "title": "Morning glow",
+      "creator": "UnitedWeSin",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-10-09T09:43:37Z"
+    },
+    {
+      "beatmapset_id": 146805,
+      "artist": "Foreground Eclipse",
+      "title": "I Bet You'll Forget That Even If You Noticed That",
+      "creator": "rEdo",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-04-22T15:57:24Z"
+    },
+    {
+      "beatmapset_id": 148980,
+      "artist": "senya",
+      "title": "Yozakura ni Kimi o Kakushite",
+      "creator": "Cherry Blossom",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-06-25T23:05:52Z"
+    },
+    {
+      "beatmapset_id": 150112,
+      "artist": "senya",
+      "title": "Little Ringo",
+      "creator": "LunarSakuya",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-12T18:09:11Z"
+    },
+    {
+      "beatmapset_id": 151940,
+      "artist": "Foreground Eclipse",
+      "title": "Wandering, Never Wandering (There Exists A Shade)",
+      "creator": "Lilywhite-",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2020-03-05T04:38:30Z"
+    },
+    {
+      "beatmapset_id": 152365,
+      "artist": "Autobahn",
+      "title": "Aki no Kaze",
+      "creator": "Leorda",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "tournament_candidate:731",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-09T05:38:38Z"
+    },
+    {
+      "beatmapset_id": 153887,
+      "artist": "Akiyama Uni",
+      "title": "Odoru Mizushibuki",
+      "creator": "Hollow Wings",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-12-07T19:07:48Z"
+    },
+    {
+      "beatmapset_id": 154426,
+      "artist": "beatMARIO",
+      "title": "Night of Knights",
+      "creator": "[HatsukiYura]",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create:base-track",
+        "manual:verified",
+        "osucollector:1407"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-03-02T15:43:00Z"
+    },
+    {
+      "beatmapset_id": 154559,
+      "artist": "ZUN (arr. sun3)",
+      "title": "Higan Retour -idling mix-",
+      "creator": "Kiiwa",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-06-21T00:39:08Z"
+    },
+    {
+      "beatmapset_id": 154684,
+      "artist": "beatmario",
+      "title": "Night of Nights(G.N)",
+      "creator": "spalstlr321",
+      "source": "동방",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:osu-metadata-direct-parent-attribution",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-10-14T09:27:51Z"
+    },
+    {
+      "beatmapset_id": 155051,
+      "artist": "ZUN",
+      "title": "Shunshun Shuugetsu ~ Mooned Insect",
+      "creator": "Winek",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-18",
+      "osu_last_updated": "2015-02-21T12:14:27Z"
+    },
+    {
+      "beatmapset_id": 157054,
+      "artist": "AILE&Tatsh",
+      "title": "JACKs",
+      "creator": "EvilElvis",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-03-13T00:47:26Z"
+    },
+    {
+      "beatmapset_id": 157478,
+      "artist": "CreateBeat Mario",
+      "title": "Night of Nights (Flowering nights remix)  By COOL and CREATE/BeatMARIO",
+      "creator": "Kira-Sensei",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "composition:cool-create:night-of-knights",
+        "corroboration:cool-create-night-of-knights-parent",
+        "manual:verified"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-03-15T04:44:16Z"
+    },
+    {
+      "beatmapset_id": 158023,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Everything will freeze",
+      "creator": "Ekoro",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1793",
+        "tournament:828"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-03-17T22:31:07Z"
+    },
+    {
+      "beatmapset_id": 158128,
+      "artist": "senya",
+      "title": "Tsuki ni Murakumo Hana ni Kaze (PV ver.)",
+      "creator": "Vhy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "catch",
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-12-18T02:52:00Z"
+    },
+    {
+      "beatmapset_id": 158546,
+      "artist": "IOSYS",
+      "title": "Miracle-Hinacle",
+      "creator": "Rare",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-07-25T13:46:05Z"
+    },
+    {
+      "beatmapset_id": 158744,
+      "artist": "lily-an",
+      "title": "The Starry true",
+      "creator": "Delis",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-13T16:28:19Z"
+    },
+    {
+      "beatmapset_id": 159202,
+      "artist": "Liz Triangle",
+      "title": "Messiah",
+      "creator": "Heatherfield",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2021-07-18T01:06:23Z"
+    },
+    {
+      "beatmapset_id": 160916,
+      "artist": "Demetori",
+      "title": "Higan Retour ~ View of The River Styx",
+      "creator": "Love",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-08-17T18:14:00Z"
+    },
+    {
+      "beatmapset_id": 161109,
+      "artist": "FELT",
+      "title": "Closed Wings",
+      "creator": "Sylith",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-06T01:32:09Z"
+    },
+    {
+      "beatmapset_id": 161887,
+      "artist": "SYNC.ART'S",
+      "title": "Road to Departure",
+      "creator": "sjoy",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-26T14:59:49Z"
+    },
+    {
+      "beatmapset_id": 162053,
+      "artist": "Jerico",
+      "title": "Do you believe a Dullahan?",
+      "creator": "EvilElvis",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-04-04T20:25:45Z"
+    },
+    {
+      "beatmapset_id": 165018,
+      "artist": "Demetori",
+      "title": "Songs Compilation",
+      "creator": "jonathanlfj",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-27T03:52:10Z"
+    },
+    {
+      "beatmapset_id": 165924,
+      "artist": "Senpi-",
+      "title": "Touhou EX Boss Rush!! +a Kouhen",
+      "creator": "RuberusuScarlet",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-08-26T16:38:42Z"
+    },
+    {
+      "beatmapset_id": 166146,
+      "artist": "NAGI",
+      "title": "inside",
+      "creator": "ArcherLove",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-19T10:09:07Z"
+    },
+    {
+      "beatmapset_id": 166339,
+      "artist": "Liz Triangle",
+      "title": "Shizuka",
+      "creator": "Irie Miyuki",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "tournament_candidate:731"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-10-08T00:38:02Z"
+    },
+    {
+      "beatmapset_id": 167410,
+      "artist": "Hanataba",
+      "title": "Night of Knights",
+      "creator": "Borokuzu",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+        "東方花映塚 ～ Phantasmagoria of Flower View."
+      ],
+      "original_themes": [
+        "フラワリングナイト",
+        "月時計 ～ ルナ・ダイアル"
+      ],
+      "evidence": [
+        "audit:night-of-knights-2026-08",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2019-11-30T17:43:13Z"
+    },
+    {
+      "beatmapset_id": 167775,
+      "artist": "Sharlo",
+      "title": "Eitsukiyo",
+      "creator": "sjoy",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:UNDEAD CORPORATION",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2024-03-15T04:47:44Z"
+    },
+    {
+      "beatmapset_id": 168099,
+      "artist": "Demetori",
+      "title": "Youkai no Yama ~ Mysterious Mountain",
+      "creator": "Akali",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-06-04T17:00:40Z"
+    },
+    {
+      "beatmapset_id": 169013,
+      "artist": "Akiyama Uni",
+      "title": "Ningyou Saiban",
+      "creator": "Hollow Wings",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-02-07T08:26:47Z"
+    },
+    {
+      "beatmapset_id": 170913,
+      "artist": "Dark PHOENiX",
+      "title": "Green-Eyed Jealousy",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-06-19T07:40:23Z"
+    },
+    {
+      "beatmapset_id": 171090,
+      "artist": "myon",
+      "title": "G Free ~ Final Dream",
+      "creator": "PROGUY",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-07-06T08:39:58Z"
+    },
+    {
+      "beatmapset_id": 171161,
+      "artist": "FELT",
+      "title": "Feel The Flow",
+      "creator": "Delis",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2025-05-07T11:02:44Z"
+    },
+    {
+      "beatmapset_id": 171239,
+      "artist": "nmk",
+      "title": "sola",
+      "creator": "TKS",
+      "source": "BMS",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified",
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-09-05T16:16:39Z"
+    },
+    {
+      "beatmapset_id": 172627,
+      "artist": "SOUND HOLIC",
+      "title": "CANDY POWDER",
+      "creator": "KokoroStudiox3",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-10-03T04:21:05Z"
+    },
+    {
+      "beatmapset_id": 172883,
+      "artist": "AQUA STYLE",
+      "title": "Touhou Youyoumu ~ Ancient Temple",
+      "creator": "hoshisorakiseki",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-29T15:16:00Z"
+    },
+    {
+      "beatmapset_id": 173650,
+      "artist": "OctagonCollaboration",
+      "title": "8 Sides of Nico Nico Douga",
+      "creator": "Charles445",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-07-09T03:47:35Z"
+    },
+    {
+      "beatmapset_id": 174414,
+      "artist": "senya",
+      "title": "Higanbana ~Kurenai~",
+      "creator": "Satellite",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-24T13:17:37Z"
+    },
+    {
+      "beatmapset_id": 174417,
+      "artist": "senya",
+      "title": "Saihate no Kotoba",
+      "creator": "Satellite",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2016-03-17T03:41:42Z"
+    },
+    {
+      "beatmapset_id": 175399,
+      "artist": "BLANKFIELD",
+      "title": "Before He Dies",
+      "creator": "Ekoro",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-22T16:54:00Z"
+    },
+    {
+      "beatmapset_id": 175671,
+      "artist": "Sakaue Nachi",
+      "title": "Crazy Hot",
+      "creator": "Sakaue Nachi",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-10-05T08:52:23Z"
+    },
+    {
+      "beatmapset_id": 176972,
+      "artist": "Sawano Hiroyuki",
+      "title": "Blowin'",
+      "creator": "ArcherLove",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-06-20T11:03:47Z"
+    },
+    {
+      "beatmapset_id": 177429,
+      "artist": "Foreground Eclipse",
+      "title": "Last Liar Standing",
+      "creator": "rEdo",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osu_source",
+        "tournament_candidate:829"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-07-23T18:32:46Z"
+    },
+    {
+      "beatmapset_id": 177890,
+      "artist": "UNDEAD CORPORATION",
+      "title": "The Empress",
+      "creator": "Ekoro",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-11-11T13:45:28Z"
+    },
+    {
+      "beatmapset_id": 178018,
+      "artist": "Senpi-",
+      "title": "The First Part of Touhou EX Boss Rush!!",
+      "creator": "RuberusuScarlet",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-07-06T09:55:51Z"
+    },
+    {
+      "beatmapset_id": 178027,
+      "artist": "Halozy",
+      "title": "Starry Presto",
+      "creator": "Entozer",
+      "source": "東方",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-06-22T03:27:34Z"
+    },
+    {
+      "beatmapset_id": 178669,
+      "artist": "t+pazolite ft. RIZNA",
+      "title": "Interlude - teatime",
+      "creator": "Kyubey",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "official_pack:T65",
+        "osucollector:1402"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-05-26T10:53:20Z"
+    },
+    {
+      "beatmapset_id": 178777,
+      "artist": "Demetori",
+      "title": "Higan Kikou ~ View of The River Styx",
+      "creator": "GoldenWolf",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-04-16T21:41:04Z"
+    },
+    {
+      "beatmapset_id": 178968,
+      "artist": "3L",
+      "title": "Endless night",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-05-24T04:05:36Z"
+    },
+    {
+      "beatmapset_id": 179691,
+      "artist": "An",
+      "title": "Necro Fantasia -An remix-",
+      "creator": "captin1",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "tournament:1432"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 179699,
+      "artist": "Halozy",
+      "title": "Kanshou no Matenrou",
+      "creator": "captin1",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1432"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-11T21:28:00Z"
+    },
+    {
+      "beatmapset_id": 180138,
+      "artist": "Halozy",
+      "title": "Genryuu Kaiko",
+      "creator": "Hollow Wings",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-04-04T17:46:42Z"
+    },
+    {
+      "beatmapset_id": 182364,
+      "artist": "Halozy",
+      "title": "Paranoid Lost",
+      "creator": "sjoy",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-12-08T04:54:32Z"
+    },
+    {
+      "beatmapset_id": 182633,
+      "artist": "Shibayan feat. 3L",
+      "title": "Love",
+      "creator": "truonant",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-28T19:58:09Z"
+    },
+    {
+      "beatmapset_id": 182720,
+      "artist": "Silver Forest",
+      "title": "Prayer",
+      "creator": "Mako Sakata",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-10-06T08:03:40Z"
+    },
+    {
+      "beatmapset_id": 182749,
+      "artist": "Meramipop",
+      "title": "SEE YOU AGAIN!",
+      "creator": "Laurier",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2026-05-30T14:04:53Z"
+    },
+    {
+      "beatmapset_id": 182845,
+      "artist": "Misawa Aki",
+      "title": "Nostalgia",
+      "creator": "Lach",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-11-13T22:23:47Z"
+    },
+    {
+      "beatmapset_id": 183267,
+      "artist": "nmk",
+      "title": "sola",
+      "creator": "sjoy",
+      "source": "BMS",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "竹取飛翔 ～ Lunatic Princess"
+      ],
+      "evidence": [
+        "audit:lunatic-princess-2026-08",
+        "manual:verified",
+        "mapper_tags",
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2014-09-20T03:23:53Z"
+    },
+    {
+      "beatmapset_id": 183623,
+      "artist": "=NeutraL=",
+      "title": "Saotome no Yuugi soshite Ryuugi",
+      "creator": "PEPOTTI",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-01-23T04:35:24Z"
+    },
+    {
+      "beatmapset_id": 184498,
+      "artist": "Yooh",
+      "title": "Shanghai Kouchakan ~ Chinese Tea Orchid Remix",
+      "creator": "Gamu",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-08-26T19:16:14Z"
+    },
+    {
+      "beatmapset_id": 185250,
+      "artist": "ALiCE'S EMOTiON",
+      "title": "Dark Flight Dreamer",
+      "creator": "Sakaue Nachi",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1865",
+        "tournament:2163"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-10-12T13:26:38Z"
+    },
+    {
+      "beatmapset_id": 186159,
+      "artist": "senya",
+      "title": "Utakata, Ai no Mahoroba",
+      "creator": "Kyousuke-",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-05-05T03:13:51Z"
+    },
+    {
+      "beatmapset_id": 187417,
+      "artist": "Minamotoya feat. 3L",
+      "title": "Hagetsu",
+      "creator": "Asphyxia",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-07-18T20:51:25Z"
+    },
+    {
+      "beatmapset_id": 189057,
+      "artist": "3L",
+      "title": "Songs Compilation",
+      "creator": "10nya",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-04-21T04:59:09Z"
+    },
+    {
+      "beatmapset_id": 189480,
+      "artist": "FELT",
+      "title": "Hail Storm (MZC A BraneWalker House Remix)",
+      "creator": "Kinshara",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-05-02T18:37:47Z"
+    },
+    {
+      "beatmapset_id": 190847,
+      "artist": "FELT",
+      "title": "a wonderful moon",
+      "creator": "Naitoshi",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-12-31T09:04:27Z"
+    },
+    {
+      "beatmapset_id": 191164,
+      "artist": "3L",
+      "title": "Endless night",
+      "creator": "Fiea",
+      "source": "東方夢時空　～ Pantasmagria of Dim.Dream",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2019-04-07T06:47:47Z"
+    },
+    {
+      "beatmapset_id": 192391,
+      "artist": "nanahira",
+      "title": "Monosugoi Mawashichau Kagiyama-san ga Monosugoi Uta",
+      "creator": "kakuru",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-10-11T16:22:27Z"
+    },
+    {
+      "beatmapset_id": 192583,
+      "artist": "UNDEAD CORPORATION",
+      "title": "For a Fading Person",
+      "creator": "Talent Shredder",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "known_touhou_artist",
+        "osucollector:1407"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-03-06T21:38:12Z"
+    },
+    {
+      "beatmapset_id": 192896,
+      "artist": "Demetori",
+      "title": "Plastic Mind ~ Alice in Underground",
+      "creator": "GoldenWolf",
+      "source": "東方怪綺談　～ Mystic Square",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "discovery_query:source=東方怪綺談",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2017-01-10T18:03:50Z"
+    },
+    {
+      "beatmapset_id": 192900,
+      "artist": "Demetori",
+      "title": "Rigid Paradise ~ Dawn of the Dead",
+      "creator": "GoldenWolf",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1407",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-08-10T03:58:21Z"
+    },
+    {
+      "beatmapset_id": 195390,
+      "artist": "Yooh",
+      "title": "Shanghai Kouchakan ~ Chinese Tea Orchid Remix",
+      "creator": "RuberusuScarlet",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-02-12T11:45:09Z"
+    },
+    {
+      "beatmapset_id": 195808,
+      "artist": "senya",
+      "title": "Nagori Tori",
+      "creator": "Momovely",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:6907"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-11-05T05:23:01Z"
+    },
+    {
+      "beatmapset_id": 195888,
+      "artist": "Floating Cloud",
+      "title": "Makuai ~Amefuru Mori~",
+      "creator": "Ekoro",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "official_pack:T65",
+        "osucollector:1402"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-02-05T21:32:22Z"
+    },
+    {
+      "beatmapset_id": 198034,
+      "artist": "3L",
+      "title": "Amoritachite Kami To Miyu",
+      "creator": "TicClick",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-03-12T07:34:06Z"
+    },
+    {
+      "beatmapset_id": 198600,
+      "artist": "An",
+      "title": "artcore JINJA",
+      "creator": "SKSalt",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1405"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2015-08-25T18:31:27Z"
+    },
+    {
+      "beatmapset_id": 198700,
+      "artist": "Comp",
+      "title": "Touchuu Aika",
+      "creator": "Mao",
+      "source": "Touhou",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "osucollector:1402",
+        "osucollector:1405",
+        "osucollector:1407",
+        "osucollector:6907",
+        "tournament:1432",
+        "tournament_candidate:526"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-15",
+      "osu_last_updated": "2014-09-21T19:12:45Z"
+    },
+    {
+      "beatmapset_id": 199838,
+      "artist": "Yonder Voice",
+      "title": "Last Train",
+      "creator": "Hakurei Yoru",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-08-21",
+      "osu_last_updated": "2023-09-11T06:21:40Z"
+    }
+  ]
+}

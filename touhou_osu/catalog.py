@@ -11,7 +11,7 @@ from .models import CatalogError, Entry
 
 SCHEMA_VERSION = 1
 CONFIDENCE_RANK = {"excluded": -1, "candidate": 0, "probable": 1, "verified": 2}
-SHARD_ID_SPAN = 25_000
+BASE_SHARD_ID_SPAN = 100_000
 SHARD_ENTRY_LIMIT = 500
 SHARD_NAME_RE = re.compile(r"^(\d{7})-(\d{7})\.json$")
 
@@ -56,13 +56,17 @@ class Catalog:
         if not paths:
             raise CatalogError(f"catalog shard directory is empty: {directory}")
         records: list[dict] = []
+        previous_upper = -1
         for path in paths:
             match = SHARD_NAME_RE.fullmatch(path.name)
             if match is None:
                 raise CatalogError(f"unexpected catalog shard filename: {path.name}")
             lower, upper = map(int, match.groups())
-            if lower % SHARD_ID_SPAN or upper != lower + SHARD_ID_SPAN - 1:
+            if not cls._is_valid_shard_range(lower, upper):
                 raise CatalogError(f"invalid catalog shard range: {path.name}")
+            if lower <= previous_upper:
+                raise CatalogError(f"overlapping catalog shard range: {path.name}")
+            previous_upper = upper
             shard_records = cls._records_from_payload(
                 json.loads(path.read_text(encoding="utf-8")), path
             )
@@ -148,28 +152,62 @@ class Catalog:
 
     @staticmethod
     def shard_name(beatmapset_id: int) -> str:
-        lower = beatmapset_id // SHARD_ID_SPAN * SHARD_ID_SPAN
-        upper = lower + SHARD_ID_SPAN - 1
+        lower = beatmapset_id // BASE_SHARD_ID_SPAN * BASE_SHARD_ID_SPAN
+        upper = lower + BASE_SHARD_ID_SPAN - 1
         return f"{lower:07d}-{upper:07d}.json"
+
+    @staticmethod
+    def _is_valid_shard_range(lower: int, upper: int) -> bool:
+        if lower < 0 or upper < lower:
+            return False
+        base_lower = lower // BASE_SHARD_ID_SPAN * BASE_SHARD_ID_SPAN
+        candidate_lower = base_lower
+        candidate_upper = base_lower + BASE_SHARD_ID_SPAN - 1
+        while (candidate_lower, candidate_upper) != (lower, upper):
+            if candidate_lower == candidate_upper:
+                return False
+            midpoint = (candidate_lower + candidate_upper) // 2
+            if upper <= midpoint:
+                candidate_upper = midpoint
+            elif lower > midpoint:
+                candidate_lower = midpoint + 1
+            else:
+                return False
+        return True
+
+    @classmethod
+    def _partition_shard(
+        cls,
+        lower: int,
+        upper: int,
+        records: list[dict],
+        shards: dict[str, list[dict]],
+    ) -> None:
+        if len(records) <= SHARD_ENTRY_LIMIT:
+            shards[f"{lower:07d}-{upper:07d}.json"] = records
+            return
+        midpoint = (lower + upper) // 2
+        left = [record for record in records if record["beatmapset_id"] <= midpoint]
+        right = [record for record in records if record["beatmapset_id"] > midpoint]
+        if left:
+            cls._partition_shard(lower, midpoint, left, shards)
+        if right:
+            cls._partition_shard(midpoint + 1, upper, right, shards)
 
     def save_shards(self, directory: Path) -> None:
         self.validate()
         directory.mkdir(parents=True, exist_ok=True)
-        shards: dict[str, list[dict]] = {}
+        base_shards: dict[str, list[dict]] = {}
         for beatmapset_id in sorted(self.entries):
             name = self.shard_name(beatmapset_id)
-            shards.setdefault(name, []).append(self.entries[beatmapset_id].to_dict())
+            base_shards.setdefault(name, []).append(self.entries[beatmapset_id].to_dict())
 
-        oversized = {
-            name: len(records)
-            for name, records in shards.items()
-            if len(records) > SHARD_ENTRY_LIMIT
-        }
-        if oversized:
-            details = ", ".join(f"{name}={count}" for name, count in sorted(oversized.items()))
-            raise CatalogError(
-                f"catalog shards exceed the {SHARD_ENTRY_LIMIT}-entry limit: {details}"
-            )
+        shards: dict[str, list[dict]] = {}
+        for name, records in base_shards.items():
+            match = SHARD_NAME_RE.fullmatch(name)
+            assert match is not None
+            lower, upper = map(int, match.groups())
+            self._partition_shard(lower, upper, records, shards)
 
         for name, records in shards.items():
             path = directory / name
