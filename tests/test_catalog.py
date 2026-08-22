@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from touhou_osu.catalog import Catalog
+from touhou_osu.catalog import Catalog, SHARD_ENTRY_LIMIT
 from touhou_osu.models import CatalogError, Entry
 
 
@@ -40,6 +40,89 @@ class CatalogTests(unittest.TestCase):
             path = Path(directory) / "catalog.json"
             path.write_text(json.dumps(payload))
             with self.assertRaisesRegex(CatalogError, "sorted"):
+                Catalog.load(path)
+
+    def test_sharded_round_trip_uses_stable_id_ranges(self):
+        catalog = Catalog([entry(1), entry(24_999), entry(25_000), entry(2_501_234)])
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "catalog"
+            catalog.save(path)
+
+            self.assertEqual(
+                sorted(item.name for item in path.glob("*.json")),
+                ["0000000-0099999.json", "2500000-2599999.json"],
+            )
+            self.assertEqual(set(Catalog.load(path).entries), {1, 24_999, 25_000, 2_501_234})
+
+    def test_load_rejects_id_in_wrong_shard(self):
+        payload = {"schema_version": 1, "entries": [entry(25_000).to_dict()]}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "catalog"
+            path.mkdir()
+            (path / "0000000-0024999.json").write_text(json.dumps(payload))
+            with self.assertRaisesRegex(CatalogError, "outside its range"):
+                Catalog.load(path)
+
+    def test_load_rejects_empty_shard_directory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "catalog"
+            path.mkdir()
+            with self.assertRaisesRegex(CatalogError, "empty"):
+                Catalog.load(path)
+
+    def test_load_rejects_duplicate_id_in_shard(self):
+        duplicate = {
+            "schema_version": 1,
+            "entries": [entry(1).to_dict(), entry(1).to_dict()],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "catalog"
+            path.mkdir()
+            (path / "0000000-0024999.json").write_text(json.dumps(duplicate))
+            with self.assertRaisesRegex(CatalogError, "duplicate beatmapset_id"):
+                Catalog.load(path)
+
+    def test_save_adaptively_splits_oversized_base_range(self):
+        catalog = Catalog(entry(value) for value in range(1, SHARD_ENTRY_LIMIT + 2))
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "catalog"
+            catalog.save(path)
+            counts = [
+                len(json.loads(shard.read_text())["entries"])
+                for shard in path.glob("*.json")
+            ]
+            self.assertGreater(len(counts), 1)
+            self.assertLessEqual(max(counts), SHARD_ENTRY_LIMIT)
+            self.assertEqual(len(Catalog.load(path).entries), SHARD_ENTRY_LIMIT + 1)
+
+    def test_load_rejects_manually_oversized_shard(self):
+        payload = {
+            "schema_version": 1,
+            "entries": [entry(value).to_dict() for value in range(1, SHARD_ENTRY_LIMIT + 2)],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "catalog"
+            path.mkdir()
+            (path / "0000000-0099999.json").write_text(json.dumps(payload))
+            with self.assertRaisesRegex(CatalogError, "limit"):
+                Catalog.load(path)
+
+    def test_save_removes_obsolete_shard(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "catalog"
+            Catalog([entry(1), entry(100_000)]).save(path)
+            Catalog([entry(1)]).save(path)
+            self.assertFalse((path / "0100000-0199999.json").exists())
+
+    def test_load_rejects_overlapping_parent_and_child_ranges(self):
+        parent = {"schema_version": 1, "entries": [entry(75_000).to_dict()]}
+        child = {"schema_version": 1, "entries": [entry(1).to_dict()]}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "catalog"
+            path.mkdir()
+            (path / "0000000-0024999.json").write_text(json.dumps(child))
+            (path / "0000000-0099999.json").write_text(json.dumps(parent))
+            with self.assertRaisesRegex(CatalogError, "overlapping"):
                 Catalog.load(path)
 
     def test_merge_unions_evidence_and_modes(self):

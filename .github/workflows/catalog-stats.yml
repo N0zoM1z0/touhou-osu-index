@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "data/catalog.json"
+      - "data/catalog/**"
+      - "touhou_osu/catalog.py"
       - "scripts/generate_catalog_stats_svg.py"
   workflow_dispatch:
 

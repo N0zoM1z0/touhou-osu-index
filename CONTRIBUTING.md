@@ -45,10 +45,14 @@ example a ZUN-composed Seihou track).
 
 ## Catalog editing
 
-`data/catalog.json` must remain sorted by numeric `beatmapset_id`. Evidence,
-modes, origin games, and themes must be unique and sorted. Dates use ISO 8601.
-Do not add volatile star ratings, local file paths, download mirrors, or asset
-URLs.
+`data/catalog/` contains the canonical catalog. Start by rounding a numeric
+`beatmapset_id` down to the nearest 100,000; ID `1151630`, for example, belongs
+in the `1100000-1199999` base range. A populated base range may be recursively
+split into smaller filename ranges to keep every file at 500 records or fewer;
+choose the child range containing the ID. Records inside each shard must be
+sorted by numeric ID. Evidence, modes, origin games, and themes must be unique
+and sorted. Dates use ISO 8601. Do not add volatile star ratings, local file
+paths, download mirrors, or asset URLs.
 
 Run:
 
@@ -56,8 +60,10 @@ Run:
 make check
 ```
 
-The validator rejects duplicate IDs, unknown enum values, malformed dates,
-missing evidence, and unsorted data.
+The validator rejects misplaced or duplicate IDs across shards, oversized
+shards, unknown enum values, malformed dates, missing evidence, and unsorted
+data. Run `make assemble` when you need a single complete JSON file; generated
+aggregates belong in `dist/`, not in the canonical `data/` directory.
 
 ## Adding a discovery source
 

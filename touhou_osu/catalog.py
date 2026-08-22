@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Iterable
 
@@ -10,6 +11,9 @@ from .models import CatalogError, Entry
 
 SCHEMA_VERSION = 1
 CONFIDENCE_RANK = {"excluded": -1, "candidate": 0, "probable": 1, "verified": 2}
+BASE_SHARD_ID_SPAN = 100_000
+SHARD_ENTRY_LIMIT = 500
+SHARD_NAME_RE = re.compile(r"^(\d{7})-(\d{7})\.json$")
 
 
 class Catalog:
@@ -22,15 +26,66 @@ class Catalog:
 
     @classmethod
     def load(cls, path: Path) -> "Catalog":
+        if path.is_dir():
+            return cls._load_shards(path)
+        return cls._load_file(path)
+
+    @classmethod
+    def _load_file(cls, path: Path) -> "Catalog":
         raw = json.loads(path.read_text(encoding="utf-8"))
+        records = cls._records_from_payload(raw, path)
+        return cls(Entry.from_dict(record) for record in records)
+
+    @staticmethod
+    def _records_from_payload(raw: dict, path: Path) -> list[dict]:
         if raw.get("schema_version") != SCHEMA_VERSION:
-            raise CatalogError(f"unsupported schema_version: {raw.get('schema_version')!r}")
+            raise CatalogError(
+                f"unsupported schema_version in {path}: {raw.get('schema_version')!r}"
+            )
         records = raw.get("entries")
         if not isinstance(records, list):
-            raise CatalogError("catalog entries must be a list")
+            raise CatalogError(f"catalog entries in {path} must be a list")
         ids = [record.get("beatmapset_id") for record in records]
         if ids != sorted(ids):
-            raise CatalogError("catalog entries must be sorted by numeric beatmapset_id")
+            raise CatalogError(f"catalog entries in {path} must be sorted by numeric beatmapset_id")
+        return records
+
+    @classmethod
+    def _load_shards(cls, directory: Path) -> "Catalog":
+        paths = sorted(directory.glob("*.json"))
+        if not paths:
+            raise CatalogError(f"catalog shard directory is empty: {directory}")
+        records: list[dict] = []
+        previous_upper = -1
+        for path in paths:
+            match = SHARD_NAME_RE.fullmatch(path.name)
+            if match is None:
+                raise CatalogError(f"unexpected catalog shard filename: {path.name}")
+            lower, upper = map(int, match.groups())
+            if not cls._is_valid_shard_range(lower, upper):
+                raise CatalogError(f"invalid catalog shard range: {path.name}")
+            if lower <= previous_upper:
+                raise CatalogError(f"overlapping catalog shard range: {path.name}")
+            previous_upper = upper
+            shard_records = cls._records_from_payload(
+                json.loads(path.read_text(encoding="utf-8")), path
+            )
+            if len(shard_records) > SHARD_ENTRY_LIMIT:
+                raise CatalogError(
+                    f"catalog shard {path.name} has {len(shard_records)} entries; "
+                    f"limit is {SHARD_ENTRY_LIMIT}"
+                )
+            misplaced = [
+                record.get("beatmapset_id")
+                for record in shard_records
+                if not isinstance(record.get("beatmapset_id"), int)
+                or not lower <= record["beatmapset_id"] <= upper
+            ]
+            if misplaced:
+                raise CatalogError(
+                    f"catalog shard {path.name} contains IDs outside its range: {misplaced[:5]}"
+                )
+            records.extend(shard_records)
         return cls(Entry.from_dict(record) for record in records)
 
     def merge(self, incoming: Entry) -> tuple[Entry, bool]:
@@ -85,6 +140,86 @@ class Catalog:
         }
 
     def save(self, path: Path) -> None:
+        if path.is_dir() or path.suffix != ".json":
+            self.save_shards(path)
+        else:
+            self.save_aggregate(path)
+
+    def save_aggregate(self, path: Path) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         text = json.dumps(self.to_dict(), ensure_ascii=False, indent=2) + "\n"
         path.write_text(text, encoding="utf-8")
+
+    @staticmethod
+    def shard_name(beatmapset_id: int) -> str:
+        lower = beatmapset_id // BASE_SHARD_ID_SPAN * BASE_SHARD_ID_SPAN
+        upper = lower + BASE_SHARD_ID_SPAN - 1
+        return f"{lower:07d}-{upper:07d}.json"
+
+    @staticmethod
+    def _is_valid_shard_range(lower: int, upper: int) -> bool:
+        if lower < 0 or upper < lower:
+            return False
+        base_lower = lower // BASE_SHARD_ID_SPAN * BASE_SHARD_ID_SPAN
+        candidate_lower = base_lower
+        candidate_upper = base_lower + BASE_SHARD_ID_SPAN - 1
+        while (candidate_lower, candidate_upper) != (lower, upper):
+            if candidate_lower == candidate_upper:
+                return False
+            midpoint = (candidate_lower + candidate_upper) // 2
+            if upper <= midpoint:
+                candidate_upper = midpoint
+            elif lower > midpoint:
+                candidate_lower = midpoint + 1
+            else:
+                return False
+        return True
+
+    @classmethod
+    def _partition_shard(
+        cls,
+        lower: int,
+        upper: int,
+        records: list[dict],
+        shards: dict[str, list[dict]],
+    ) -> None:
+        if len(records) <= SHARD_ENTRY_LIMIT:
+            shards[f"{lower:07d}-{upper:07d}.json"] = records
+            return
+        midpoint = (lower + upper) // 2
+        left = [record for record in records if record["beatmapset_id"] <= midpoint]
+        right = [record for record in records if record["beatmapset_id"] > midpoint]
+        if left:
+            cls._partition_shard(lower, midpoint, left, shards)
+        if right:
+            cls._partition_shard(midpoint + 1, upper, right, shards)
+
+    def save_shards(self, directory: Path) -> None:
+        self.validate()
+        directory.mkdir(parents=True, exist_ok=True)
+        base_shards: dict[str, list[dict]] = {}
+        for beatmapset_id in sorted(self.entries):
+            name = self.shard_name(beatmapset_id)
+            base_shards.setdefault(name, []).append(self.entries[beatmapset_id].to_dict())
+
+        shards: dict[str, list[dict]] = {}
+        for name, records in base_shards.items():
+            match = SHARD_NAME_RE.fullmatch(name)
+            assert match is not None
+            lower, upper = map(int, match.groups())
+            self._partition_shard(lower, upper, records, shards)
+
+        for name, records in shards.items():
+            path = directory / name
+            text = json.dumps(
+                {"schema_version": SCHEMA_VERSION, "entries": records},
+                ensure_ascii=False,
+                indent=2,
+            ) + "\n"
+            if not path.exists() or path.read_text(encoding="utf-8") != text:
+                path.write_text(text, encoding="utf-8")
+
+        expected = set(shards)
+        for path in directory.glob("*.json"):
+            if SHARD_NAME_RE.fullmatch(path.name) and path.name not in expected:
+                path.unlink()

@@ -21,8 +21,10 @@ class SiteTests(unittest.TestCase):
             output = Path(directory)
             stats = build(catalog, output)
             accepted = json.loads((output / "catalog.json").read_text())["entries"]
+            complete = json.loads((output / "catalog-full.json").read_text())["entries"]
             review = json.loads((output / "review.json").read_text())["entries"]
             self.assertEqual([item["beatmapset_id"] for item in accepted], [1])
+            self.assertEqual([item["beatmapset_id"] for item in complete], [1, 2, 3])
             self.assertEqual([item["beatmapset_id"] for item in review], [2, 3])
             self.assertEqual(stats["total"], 3)
             self.assertTrue((output / "assets" / "app.js").exists())
