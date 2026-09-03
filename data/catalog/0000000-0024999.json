@@ -15,10 +15,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
         "tournament:google_sheet:tmf-2025:audited"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2008-08-22T00:50:57Z"
     },
     {
@@ -60,10 +61,11 @@
       ],
       "evidence": [
         "audit:lunatic-princess-2026-08",
+        "discovery_query:Touhou",
         "official_pack_item:A23"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2008-08-26T00:10:51Z"
     },
     {
@@ -572,10 +574,12 @@
       ],
       "evidence": [
         "audit:lunatic-princess-2026-08",
+        "discovery_query:COOL&CREATE",
+        "discovery_query:Touhou",
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2009-03-01T18:17:04Z"
     },
     {
@@ -6160,7 +6164,7 @@
       "artist": "IOSYS",
       "title": "Midnight Lightning Bolt",
       "creator": "pieguy1372",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -6169,13 +6173,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-12-26T11:52:56Z"
     },
     {
@@ -6206,7 +6212,7 @@
       "artist": "IOSYS",
       "title": "Accept Bloody Fate",
       "creator": "tieff",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -6215,12 +6221,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-06-06T10:54:12Z"
     },
     {
@@ -6578,7 +6588,7 @@
       "artist": "COOL&CREATE",
       "title": "The Song of a Broken Youkai That Loves People",
       "creator": "Mafiamaster",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -6587,12 +6597,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:COOL&CREATE",
         "known_touhou_artist",
         "official_pack:T65",
         "osucollector:1402"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-06-26T17:57:17Z"
     },
     {
@@ -6753,7 +6764,7 @@
       "artist": "IOSYS feat. 3L",
       "title": "Miracle-Hinacle",
       "creator": "_lolipop",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -6763,11 +6774,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:IOSYS",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-01-28T02:37:33Z"
     },
     {
@@ -6798,7 +6813,7 @@
       "artist": "Yellow Zebra",
       "title": "Orange Diz",
       "creator": "Frill",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -6807,11 +6822,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Diao ye zong",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-10-06T06:29:51Z"
     },
     {
@@ -6921,13 +6940,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Adust Rain",
         "discovery_query:Touhou",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-08-10T18:03:18Z"
     },
     {
@@ -7050,7 +7070,7 @@
       "artist": "IOSYS",
       "title": "Homicide Moon",
       "creator": "Natteke",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -7059,6 +7079,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "known_touhou_artist",
         "official_pack:468",
         "official_pack:R29",
@@ -7067,7 +7088,7 @@
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-08-28T17:43:33Z"
     },
     {
@@ -7347,7 +7368,7 @@
       "artist": "IOSYS",
       "title": "Poinsettia",
       "creator": "Aakiha",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -7356,13 +7377,17 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-08-18T16:14:33Z"
     },
     {
@@ -7481,7 +7506,7 @@
       "artist": "Mai Kotoge",
       "title": "Halo Glare",
       "creator": "scarlethana",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -7491,11 +7516,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:C-CLAYS",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-03-04T17:34:35Z"
     },
     {
@@ -7615,7 +7644,7 @@
       "artist": "IOSYS",
       "title": "Hatate's Bakkoi Murder Case",
       "creator": "Mafiamaster",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -7625,13 +7654,17 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-09-07T21:24:29Z"
     },
     {
@@ -7666,7 +7699,7 @@
       "artist": "IOSYS",
       "title": "Bad Apple & Good Orange",
       "creator": "TKiller",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -7676,12 +7709,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-10-16T22:38:28Z"
     },
     {
@@ -7752,7 +7787,7 @@
       "artist": "COOL&CREATE",
       "title": "Autumn Feelings",
       "creator": "Reiji-RJ",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -7761,11 +7796,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:COOL&CREATE",
         "known_touhou_artist",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-02-20T12:09:27Z"
     },
     {
@@ -7846,6 +7885,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Diao ye zong",
         "discovery_query:Touhou",
         "discovery_query:ZUN",
         "osu_source",
@@ -7853,7 +7893,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-12-21T20:36:29Z"
     },
     {
@@ -7914,6 +7954,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
@@ -7921,7 +7962,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-10-25T14:32:50Z"
     },
     {
@@ -7962,6 +8003,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:C-CLAYS",
         "discovery_query:Touhou",
         "osu_source",
         "osucollector:1402",
@@ -7969,7 +8011,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-02-21T12:02:37Z"
     },
     {
@@ -8122,6 +8164,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Alstroemeria Records",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
@@ -8129,7 +8172,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-12-05T05:55:00Z"
     },
     {
@@ -8365,7 +8408,7 @@
       "artist": "Ayakura Mei + mican*",
       "title": "Saigetsu",
       "creator": "James",
-      "source": "",
+      "source": "Touhou",
       "status": "approved",
       "modes": [
         "osu"
@@ -8374,11 +8417,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Alstroemeria Records",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1405",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-12-08T18:36:01Z"
     },
     {
@@ -8428,7 +8475,7 @@
       "artist": "senya",
       "title": "Though the Scent Lingers, the Flower Scattered",
       "creator": "shabao_pig",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -8437,11 +8484,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2010-11-15T20:16:02Z"
     },
     {
@@ -8501,13 +8550,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
         "manual:verified",
         "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2017-08-29T06:15:15Z"
     },
     {
@@ -8626,7 +8677,7 @@
       "artist": "Cirwo",
       "title": "Welcome to my Fuckin' Flower Garden!!",
       "creator": "nollarg",
-      "source": "",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
       "status": "loved",
       "modes": [
         "osu"
@@ -8635,10 +8686,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2023-07-15T12:21:12Z"
     },
     {
@@ -9354,7 +9409,7 @@
       "artist": "Yellow Zebra",
       "title": "Blind New",
       "creator": "S i R i R u",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -9363,11 +9418,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Diao ye zong",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-05-25T20:27:32Z"
     },
     {
@@ -9538,6 +9597,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "discovery_query:Touhou",
         "known_touhou_artist",
         "osu_source",
@@ -9546,7 +9606,7 @@
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-01-22T17:40:23Z"
     },
     {
@@ -9712,7 +9772,7 @@
       "artist": "IOSYS",
       "title": "Chanteikku Sanyousei no Itazura Daisensou",
       "creator": "Kochiya Sanae",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -9722,13 +9782,17 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-03-15T14:37:18Z"
     },
     {
