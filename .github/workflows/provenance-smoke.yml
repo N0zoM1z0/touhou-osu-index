@@ -1,0 +1,48 @@
+name: External provenance smoke
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "29 5 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check known external relations
+        run: |
+          python - <<'PY'
+          from touhou_osu.models import Entry
+          from touhou_osu.provenance import audit_entries
+
+          probes = [
+              Entry(399965, artist="shio", title="Qronostasis -GABBA vs. Speedcore mix-", source="Touhou"),
+              Entry(2322699, artist="minimum electric design", title="miscalc", source="Touhou"),
+          ]
+          results = audit_entries(probes, workers=2)
+          for result in results:
+              print(result.to_dict())
+              if not result.supports:
+                  print(
+                      f"::warning::Known provenance probe {result.beatmapset_id} "
+                      "did not return a positive relation. Inspect provider availability/API drift."
+                  )
+              if result.contradictions:
+                  print(
+                      f"::warning::Known provenance probe {result.beatmapset_id} "
+                      "returned a contradiction. External provenance is advisory; inspect manually."
+                  )
+              for error in result.errors:
+                  print(
+                      f"::notice::Provider warning for provenance probe "
+                      f"{result.beatmapset_id}: {error}"
+                  )
+          PY

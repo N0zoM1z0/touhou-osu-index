@@ -16,10 +16,9 @@ EXACT_TOUHOU_SOURCES = (
     "東方プロジェクト",
 )
 
-# Source metadata is strong enough for automatic verification only when it
-# names a known Touhou game.  In particular, do not treat arbitrary strings
-# containing the words "Touhou" or "東方" as proof: titles such as
-# "Hakkenden: Touhou Hakken Ibun" are unrelated to Touhou Project.
+# A concrete game title is substantially stronger than a generic "Touhou"
+# label. Generic labels are useful discovery signals, but are not sufficient
+# composition provenance on their own.
 TOUHOU_GAME_TITLE_TOKENS = (
     "highly responsive to prayers",
     "story of eastern wonderland",
@@ -120,11 +119,31 @@ def contains_any(value: str, tokens: tuple[str, ...] | set[str]) -> bool:
     return any(normalize(token) in normalized for token in tokens)
 
 
-def is_explicit_touhou_source(value: str) -> bool:
-    normalized = normalize(value).strip(" .,:：;_-~～")
-    if normalized in {normalize(source) for source in EXACT_TOUHOU_SOURCES}:
-        return True
+def normalized_source(value: str) -> str:
+    return normalize(value).strip(" .,:：;_-~～")
+
+
+def is_generic_touhou_source(value: str) -> bool:
+    normalized = normalized_source(value)
+    return normalized in {normalize(source) for source in EXACT_TOUHOU_SOURCES}
+
+
+def is_touhou_game_source(value: str) -> bool:
+    normalized = normalized_source(value)
+    if not normalized or is_generic_touhou_source(normalized):
+        return False
     return contains_any(normalized, TOUHOU_GAME_TITLE_TOKENS)
+
+
+def is_explicit_touhou_source(value: str) -> bool:
+    """Return whether source metadata explicitly signals Touhou relevance.
+
+    This broad predicate intentionally includes generic labels for discovery and
+    audit purposes. Classification distinguishes generic labels from concrete
+    game titles and only auto-verifies the latter.
+    """
+
+    return is_generic_touhou_source(value) or is_touhou_game_source(value)
 
 
 @dataclass(frozen=True)
@@ -148,9 +167,16 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
     ):
         return Classification("verified", tuple(sorted(evidence)))
 
-    if is_explicit_touhou_source(entry.source):
+    if is_touhou_game_source(entry.source):
         evidence.add("osu_source")
         return Classification("verified", tuple(sorted(evidence)))
+
+    # Keep the existing evidence vocabulary for compatibility and to avoid a
+    # one-time catalog backfill that would consume the weekly meaningful-change
+    # cap. The current source value itself determines whether this signal is
+    # generic or game-specific.
+    if is_generic_touhou_source(entry.source):
+        evidence.add("osu_source")
 
     curated_queue_match = any(item.startswith("forum_queue:") for item in evidence)
     resolved_metadata = bool(entry.artist and entry.title and not entry.title.startswith("beatmapsets/"))
