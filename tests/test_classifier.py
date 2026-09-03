@@ -5,10 +5,10 @@ from touhou_osu.models import Entry
 
 
 class ClassifierTests(unittest.TestCase):
-    def test_explicit_source_is_verified(self):
+    def test_generic_touhou_source_stays_candidate(self):
         item = Entry(1, source="東方Project", evidence=["discovery_query:東方"], confidence="candidate")
         apply_classification(item)
-        self.assertEqual(item.confidence, "verified")
+        self.assertEqual(item.confidence, "candidate")
         self.assertIn("osu_source", item.evidence)
 
     def test_known_game_source_is_verified(self):
@@ -22,7 +22,7 @@ class ClassifierTests(unittest.TestCase):
         self.assertEqual(item.confidence, "verified")
         self.assertIn("osu_source", item.evidence)
 
-    def test_touhou_sourced_cross_franchise_mashup_is_verified(self):
+    def test_generic_touhou_cross_franchise_mashup_stays_candidate(self):
         item = Entry(
             20406,
             artist="Nico Nico Douga",
@@ -32,8 +32,21 @@ class ClassifierTests(unittest.TestCase):
             confidence="candidate",
         )
         apply_classification(item, tags="dj yoshitaka evans jubeat u.n. owen was her")
-        self.assertEqual(item.confidence, "verified")
+        self.assertEqual(item.confidence, "candidate")
         self.assertIn("osu_source", item.evidence)
+
+    def test_generic_source_needs_other_signals_for_probable(self):
+        item = Entry(
+            1,
+            artist="ShibayanRecords",
+            source="Touhou",
+            evidence=["osucollector:1402", "discovery_query:Touhou"],
+            confidence="candidate",
+        )
+        apply_classification(item, tags="touhou zun arrangement")
+        self.assertEqual(item.confidence, "probable")
+        self.assertIn("osu_source", item.evidence)
+        self.assertIn("known_touhou_metadata", item.evidence)
 
     def test_unrelated_romanized_touhou_source_stays_candidate(self):
         item = Entry(
@@ -93,7 +106,7 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item)
         self.assertEqual(item.confidence, "excluded")
 
-    def test_manual_exclusion_beats_explicit_touhou_source(self):
+    def test_manual_exclusion_beats_generic_touhou_source(self):
         item = Entry(1, source="Touhou", evidence=["osu_source", "manual:excluded"], confidence="verified")
         apply_classification(item)
         self.assertEqual(item.confidence, "excluded")
@@ -101,6 +114,17 @@ class ClassifierTests(unittest.TestCase):
     def test_manual_candidate_beats_trusted_tournament(self):
         item = Entry(1, evidence=["manual:candidate", "tournament:google_sheet:fixture"], confidence="verified")
         apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+
+    def test_manual_candidate_beats_generic_source_and_tags(self):
+        item = Entry(
+            1,
+            artist="IOSYS",
+            source="Touhou",
+            evidence=["manual:candidate", "osucollector:1402"],
+            confidence="verified",
+        )
+        apply_classification(item, tags="touhou zun team shanghai alice")
         self.assertEqual(item.confidence, "candidate")
 
     def test_known_artist_alone_stays_candidate(self):

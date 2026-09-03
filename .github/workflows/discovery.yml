@@ -27,10 +27,94 @@ jobs:
             echo "::notice::Set OSU_CLIENT_ID and OSU_CLIENT_SECRET repository secrets to enable discovery."
             exit 0
           fi
+          rm -rf "$RUNNER_TEMP/discovery-base"
+          mkdir -p "$RUNNER_TEMP/discovery-base"
+          git archive HEAD data/catalog | tar -x -C "$RUNNER_TEMP/discovery-base"
           python -m touhou_osu discover --write --max-changes 50
           if [[ -n "$(git status --porcelain --untracked-files=all -- data/catalog)" ]]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
+            python -m touhou_osu.provenance \
+              --catalog data/catalog \
+              --base-catalog "$RUNNER_TEMP/discovery-base/data/catalog" \
+              --scope changed \
+              --workers 4 \
+              --output "$RUNNER_TEMP/provenance.json"
           fi
+      - name: Summarize external provenance
+        if: steps.discover.outputs.changed == 'true'
+        env:
+          REPORT: ${{ runner.temp }}/provenance.json
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          payload = json.loads(Path(os.environ["REPORT"]).read_text(encoding="utf-8"))
+          summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
+          lines = [
+              "## External composition provenance",
+              "",
+              "Advisory cross-check only: THBWiki/TouhouDB hits do not automatically promote or exclude catalog rows.",
+              "",
+              f"- checked changed rows: **{payload['checked']}**",
+              f"- positive external relations: **{payload['supported']}**",
+              f"- red flags: **{payload['red_flags']}**",
+              f"- ambiguous: **{payload['ambiguous']}**",
+              f"- provider errors: **{payload['provider_errors']}**",
+              f"- unsafe generic-source auto-promotions: **{len(payload['policy_violations'])}**",
+          ]
+          interesting = [
+              row for row in payload["results"]
+              if row["verdict"] != "unknown" or row["errors"]
+          ]
+          if interesting:
+              lines += ["", "### Review hints", ""]
+              for row in interesting[:30]:
+                  lines.append(
+                      f"- `{row['beatmapset_id']}` — {row['artist']} - {row['title']} — "
+                      f"**{row['verdict']}**"
+                  )
+                  for hit in row["hits"][:4]:
+                      originals = ", ".join(hit["originals"])
+                      detail = originals or hit["detail"] or hit["relation"]
+                      lines.append(f"  - {hit['provider']}: {hit['relation']} — {detail}")
+                  for error in row["errors"]:
+                      lines.append(f"  - provider warning: {error}")
+          summary.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          for row in payload["results"]:
+              if row["verdict"] in {"red_flag", "ambiguous"}:
+                  print(
+                      f"::warning::External provenance review needed for beatmapset "
+                      f"{row['beatmapset_id']}: {row['verdict']}"
+                  )
+              for error in row["errors"]:
+                  print(f"::notice::External provider unavailable/ambiguous for {row['beatmapset_id']}: {error}")
+          PY
+      - name: Upload provenance report
+        if: steps.discover.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-provenance-report
+          path: ${{ runner.temp }}/provenance.json
+          retention-days: 30
+      - name: Enforce generic-source verification policy
+        if: steps.discover.outputs.changed == 'true'
+        env:
+          REPORT: ${{ runner.temp }}/provenance.json
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+
+          payload = json.loads(Path(os.environ["REPORT"]).read_text(encoding="utf-8"))
+          violations = payload["policy_violations"]
+          if violations:
+              print(
+                  "::error::Unsafe generic-source auto-verification: "
+                  + ", ".join(str(item) for item in violations)
+              )
+              sys.exit(1)
+          PY
       - name: Open or update review PR
         if: steps.discover.outputs.changed == 'true'
         env:
@@ -44,7 +128,7 @@ jobs:
           git commit -m "data: discover Touhou beatmap candidates"
           git push --force origin "$branch"
           pr_number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          body="Automated weekly osu! API discovery, capped at 50 meaningful catalog changes. Review confidence and evidence before merging; remaining matches roll into later weeks."
+          body="Automated weekly osu! API discovery, capped at 50 meaningful catalog changes. Generic Touhou source labels are not sufficient for automatic verification. The generating workflow also runs advisory THBWiki/TouhouDB composition-provenance checks and uploads a JSON report; review red flags and positive hints before merging."
           if [[ -n "$pr_number" ]]; then
             gh pr edit "$pr_number" --title "data: weekly Touhou discovery" --body "$body"
           else
