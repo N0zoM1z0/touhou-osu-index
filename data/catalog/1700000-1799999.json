@@ -177,6 +177,30 @@
       "osu_last_updated": "2025-05-29T08:09:49Z"
     },
     {
+      "beatmapset_id": 1704340,
+      "artist": "A-One feat. Shihori",
+      "title": "Magic Girl !!",
+      "creator": "Chromoxx",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:A-One",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-03-18T14:18:53Z"
+    },
+    {
       "beatmapset_id": 1705564,
       "artist": "SOUND HOLIC",
       "title": "Apollo 13 (-Deepdive-) [Last Word [\\_underjoy]]",
@@ -568,6 +592,55 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1715998,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Without the end",
+      "creator": "bigh",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:UNDEAD CORPORATION",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-03-23T17:42:59Z"
+    },
+    {
+      "beatmapset_id": 1716009,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Under the scarlet sky pt,1 inst",
+      "creator": "GIGACHAD",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:UNDEAD CORPORATION",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-03-23T23:47:06Z"
     },
     {
       "beatmapset_id": 1716100,
@@ -1336,6 +1409,30 @@
       "osu_last_updated": "2023-05-09T18:24:58Z"
     },
     {
+      "beatmapset_id": 1752523,
+      "artist": "LiLA'c Records",
+      "title": "Maze of Vapor (Brutal Core mix)",
+      "creator": "-Kemsyt",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Alstroemeria Records",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-11-30T19:46:22Z"
+    },
+    {
       "beatmapset_id": 1753646,
       "artist": "beatMARIO",
       "title": "Night of Nights",
@@ -1540,6 +1637,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1763702,
+      "artist": "Unlucky Morpheus",
+      "title": "DRAGON FORCE",
+      "creator": "Maeda",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-07-06T15:58:23Z"
+    },
+    {
       "beatmapset_id": 1765192,
       "artist": "Down",
       "title": "Duo Cup",
@@ -1558,6 +1678,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1765375,
+      "artist": "Foreground Eclipse",
+      "title": "Last Liar Standing",
+      "creator": "Sanch-KK",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2025-05-19T23:51:20Z"
     },
     {
       "beatmapset_id": 1767068,
@@ -1860,6 +2003,31 @@
       "osu_last_updated": "2022-08-12T18:49:10Z"
     },
     {
+      "beatmapset_id": 1780135,
+      "artist": "UNDEAD CORPORATION",
+      "title": "The Empress",
+      "creator": "Daycore",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-02-03T20:16:39Z"
+    },
+    {
       "beatmapset_id": 1780259,
       "artist": "Akatsuki Records",
       "title": "HANIPAGANDA",
@@ -1963,6 +2131,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1784332,
+      "artist": "REEYA",
+      "title": "Fortuna",
+      "creator": "Eyenine",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-06-27T02:28:20Z"
     },
     {
       "beatmapset_id": 1785945,

@@ -2,6 +2,30 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 1601650,
+      "artist": "EastNewSound",
+      "title": "Soleil",
+      "creator": "__Ag",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-07-29T04:01:32Z"
+    },
+    {
       "beatmapset_id": 1603754,
       "artist": "Shibayan feat. nachi",
       "title": "Fuwafuwa Doremy",
@@ -362,6 +386,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-07-06T14:56:14Z"
+    },
+    {
+      "beatmapset_id": 1618365,
+      "artist": "SEPHID feat. darkxixin",
+      "title": "Fu Xiang Di Xin De Luo Ri Liu Hao ~ Little Raven",
+      "creator": "Jemzuu",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-09-01T12:01:52Z"
     },
     {
       "beatmapset_id": 1618758,
@@ -799,6 +846,32 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1635625,
+      "artist": "SOUND HOLIC",
+      "title": "PRESERVED VAMPIRE",
+      "creator": "Natsu",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "external_provenance:official-circle",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2026-05-27T19:07:10Z"
+    },
+    {
       "beatmapset_id": 1636363,
       "artist": "FELT",
       "title": "Sky Gate",
@@ -964,6 +1037,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1641141,
+      "artist": "Demetori",
+      "title": "Naki Oujo no Tame no Septette ~ Ascending Into Naught",
+      "creator": "Sanch-KK",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2026-07-06T14:48:25Z"
+    },
+    {
       "beatmapset_id": 1641533,
       "artist": "Down",
       "title": "Luscent",
@@ -1088,6 +1185,32 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-01-25T16:10:08Z"
+    },
+    {
+      "beatmapset_id": 1644488,
+      "artist": "A-One feat. Shihori",
+      "title": "Magic Girl !!",
+      "creator": "Greaper",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:A-One",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "external_provenance:official-pack+thbwiki",
+        "official_pack_item:FQ66",
+        "official_pack_item:R309"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2021-12-16T22:52:20Z"
     },
     {
       "beatmapset_id": 1644658,
@@ -1245,6 +1368,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2021-12-11T14:41:36Z"
+    },
+    {
+      "beatmapset_id": 1649093,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Without the end",
+      "creator": "soirT",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-06-17T13:27:44Z"
     },
     {
       "beatmapset_id": 1650227,

@@ -343,6 +343,55 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2006619,
+      "artist": "Shibayan feat. Mei Ayakura",
+      "title": "R.I.N.",
+      "creator": "228",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-09-15T22:06:10Z"
+    },
+    {
+      "beatmapset_id": 2006943,
+      "artist": "Yonder Voice",
+      "title": "Sougetsu no Zangeshi ~ Universal Nemesis",
+      "creator": "Jayblue",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-10-09T10:24:30Z"
+    },
+    {
       "beatmapset_id": 2006946,
       "artist": "Akatsuki Records",
       "title": "HANIPAGANDA (YuEast 2018) [HAHAHA]",
@@ -799,6 +848,31 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2012401,
+      "artist": "Hanatan",
+      "title": "Paranoia",
+      "creator": "Xzzj",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-09-09T05:23:54Z"
+    },
+    {
       "beatmapset_id": 2012534,
       "artist": "Demetori",
       "title": "Faith is for the Transient People ~ Jehovah's YaHVeH (Alptraum) [SANAEchor 1.1x (242bpm)]",
@@ -953,6 +1027,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2014469,
+      "artist": "Down",
+      "title": "nanoya",
+      "creator": "nanoya",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-07-11T18:28:05Z"
+    },
+    {
       "beatmapset_id": 2014755,
       "artist": "Sakaue Nachi",
       "title": "Crazy Hot ([GB]Reisen) [Nixo's Work in progress (170bpm)]",
@@ -1035,6 +1132,30 @@
       "osu_last_updated": "2024-09-11T16:42:27Z"
     },
     {
+      "beatmapset_id": 2018806,
+      "artist": "Down",
+      "title": "Lince Cosmico",
+      "creator": "Pisapou",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-11-18T14:19:45Z"
+    },
+    {
       "beatmapset_id": 2019552,
       "artist": "Chata",
       "title": "Wan",
@@ -1104,6 +1225,30 @@
       "osu_last_updated": "2025-04-25T12:54:52Z"
     },
     {
+      "beatmapset_id": 2020167,
+      "artist": "Poplica* feat. Mei Ayakura",
+      "title": "Puzzle Maker (Cut Ver.)",
+      "creator": "Nekoharu",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2025-08-13T10:17:42Z"
+    },
+    {
       "beatmapset_id": 2020285,
       "artist": "AUTUMN+GHOST feat. Akira Complex",
       "title": "PURE FURY",
@@ -1168,6 +1313,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2022219,
+      "artist": "Dark PHOENiX",
+      "title": "Yuuga ni Sakase, Sumizome no Sakura",
+      "creator": "Muziyami",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-02-08T15:42:57Z"
     },
     {
       "beatmapset_id": 2023038,
@@ -1540,6 +1708,53 @@
       "osu_last_updated": "2023-08-02T15:21:49Z"
     },
     {
+      "beatmapset_id": 2030543,
+      "artist": "happy30",
+      "title": "What I feel for you",
+      "creator": "Zekk",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-08-03T18:43:04Z"
+    },
+    {
+      "beatmapset_id": 2030733,
+      "artist": "Frost Fragment",
+      "title": "Ha no Gotoku",
+      "creator": "Syph",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-02-14T07:34:22Z"
+    },
+    {
       "beatmapset_id": 2031364,
       "artist": "Masayoshi Minoshima",
       "title": "Scolded By The Princess feat. Aki Misawa",
@@ -1579,6 +1794,76 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2033193,
+      "artist": "Down",
+      "title": "nanoya",
+      "creator": "Hivie",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-08-18T19:32:48Z"
+    },
+    {
+      "beatmapset_id": 2034075,
+      "artist": "Kikuo",
+      "title": "Oboreru Uchuu Neko",
+      "creator": "Alchyr",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-11-28T23:01:49Z"
+    },
+    {
+      "beatmapset_id": 2035737,
+      "artist": "ShinRa-Bansho",
+      "title": "Itazura Sensation",
+      "creator": "Xzzj",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-11-23T14:12:27Z"
     },
     {
       "beatmapset_id": 2037678,
@@ -1646,6 +1931,29 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2023-09-02T17:34:01Z"
+    },
+    {
+      "beatmapset_id": 2039084,
+      "artist": "Silver Forest",
+      "title": "Sora ni Mae, Sumizome no Sakura (Cut Ver.)",
+      "creator": "-Ady",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-07T18:04:01Z"
     },
     {
       "beatmapset_id": 2039585,
@@ -1755,6 +2063,33 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-11-06T08:14:08Z"
+    },
+    {
+      "beatmapset_id": 2042736,
+      "artist": "ROSIVO feat. Sakaue Nachi",
+      "title": "Eternal Dream",
+      "creator": "TormentVoid",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Alstroemeria Records",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:Syrufit",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-08-24T14:26:24Z"
     },
     {
       "beatmapset_id": 2043284,
@@ -2059,6 +2394,31 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2023-08-21T15:03:02Z"
+    },
+    {
+      "beatmapset_id": 2048946,
+      "artist": "HAGISOPH",
+      "title": "Beyond the Millennium",
+      "creator": "Karliah",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-03-24T15:21:22Z"
     },
     {
       "beatmapset_id": 2048957,
@@ -2579,6 +2939,55 @@
       "osu_last_updated": "2024-09-10T02:28:23Z"
     },
     {
+      "beatmapset_id": 2056468,
+      "artist": "Shoujo Fractal",
+      "title": "Samayoi no Mei",
+      "creator": "PixelGlory",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2025-03-03T01:00:43Z"
+    },
+    {
+      "beatmapset_id": 2056650,
+      "artist": "ShinRa-Bansho",
+      "title": "Mugen Shitto Gekijou \"666\"",
+      "creator": "[TCD] Murasss",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-01-04T04:49:09Z"
+    },
+    {
       "beatmapset_id": 2057639,
       "artist": "Halozy",
       "title": "Suna no Hoshi (Blue Twinkle Trance Remix / Version 2.0)",
@@ -2622,6 +3031,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2060837,
+      "artist": "Para Dot.",
+      "title": "Hyper banquet",
+      "creator": "Annabel",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-06-25T23:56:31Z"
     },
     {
       "beatmapset_id": 2061596,
@@ -2719,6 +3152,30 @@
       "osu_last_updated": "2024-09-17T12:04:20Z"
     },
     {
+      "beatmapset_id": 2064066,
+      "artist": "8686m",
+      "title": "TAKE TOO, TAKE TWO",
+      "creator": "Disguise",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-03-04T17:26:48Z"
+    },
+    {
       "beatmapset_id": 2064233,
       "artist": "Demetori",
       "title": "Natsukashiki Touhou no Chi ~ Sic World",
@@ -2745,6 +3202,29 @@
       "osu_last_updated": "2023-12-30T03:52:32Z"
     },
     {
+      "beatmapset_id": 2065149,
+      "artist": "BUTAOTOME",
+      "title": "Kasanaru Kage",
+      "creator": "nanoya",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-10-07T21:33:03Z"
+    },
+    {
       "beatmapset_id": 2065860,
       "artist": "Aoi Xia",
       "title": "Lost Blue",
@@ -2764,6 +3244,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2066130,
+      "artist": "TatshMusicCircle",
+      "title": "Yoiyami no Tsuki ni Dakarete feat. Ayane",
+      "creator": "zekk",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-10-25T17:30:40Z"
     },
     {
       "beatmapset_id": 2066206,
@@ -2962,6 +3466,30 @@
       "osu_last_updated": "2024-04-29T09:59:32Z"
     },
     {
+      "beatmapset_id": 2071645,
+      "artist": "katikatiyama",
+      "title": "Koi no Uta",
+      "creator": "Jayblue",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2026-02-05T17:19:38Z"
+    },
+    {
       "beatmapset_id": 2072347,
       "artist": "Unlucky Morpheus",
       "title": "FAITH",
@@ -2983,6 +3511,55 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2024-01-20T14:13:27Z"
+    },
+    {
+      "beatmapset_id": 2072440,
+      "artist": "ALiCE'S EMOTiON feat. 3L",
+      "title": "Sakura Hana Getsusou",
+      "creator": "Xzzj",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-01-30T19:58:22Z"
+    },
+    {
+      "beatmapset_id": 2072915,
+      "artist": "DiGiTAL WiNG",
+      "title": "Paranoia (DiGiTAL WiNG 2018 LIVE MIX)",
+      "creator": "228",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-10-22T11:48:56Z"
     },
     {
       "beatmapset_id": 2073247,
@@ -3236,6 +3813,30 @@
       "osu_last_updated": "2025-07-10T14:49:59Z"
     },
     {
+      "beatmapset_id": 2080690,
+      "artist": "zts",
+      "title": "iconoclasm",
+      "creator": "Ratarok",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-09T21:03:10Z"
+    },
+    {
       "beatmapset_id": 2080874,
       "artist": "IOSYS",
       "title": "Saint Marisa no Okurimono",
@@ -3285,6 +3886,53 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-02-10T12:20:06Z"
+    },
+    {
+      "beatmapset_id": 2080925,
+      "artist": "556t",
+      "title": "change",
+      "creator": "fllecc",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-02-26T20:28:27Z"
+    },
+    {
+      "beatmapset_id": 2082657,
+      "artist": "Unlucky Morpheus",
+      "title": "Sono Tamashii ni Yasuragi o ~ Dignity of Spirit",
+      "creator": "gaston_2199",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-11-10T23:40:23Z"
     },
     {
       "beatmapset_id": 2084159,
@@ -3433,6 +4081,55 @@
       "osu_last_updated": "2023-11-12T13:50:53Z"
     },
     {
+      "beatmapset_id": 2086554,
+      "artist": "ShinRa-Bansho",
+      "title": "Fluorite",
+      "creator": "Matsuyuki Ame",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-03-15T04:52:09Z"
+    },
+    {
+      "beatmapset_id": 2086616,
+      "artist": "Zutlo",
+      "title": "Cirno Car",
+      "creator": "cirnoulja boy",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-01-13T21:30:49Z"
+    },
+    {
       "beatmapset_id": 2087326,
       "artist": "REDALiCE",
       "title": "taboo tears you up",
@@ -3475,6 +4172,30 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2023-12-08T16:48:17Z"
+    },
+    {
+      "beatmapset_id": 2088280,
+      "artist": "Kraster",
+      "title": "Space Rainbow*",
+      "creator": "Luscent",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Adust Rain",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-13T16:25:10Z"
     },
     {
       "beatmapset_id": 2088431,
@@ -3593,6 +4314,30 @@
       "osu_last_updated": "2024-06-01T21:09:38Z"
     },
     {
+      "beatmapset_id": 2089306,
+      "artist": "BUTAOTOME",
+      "title": "Utakata",
+      "creator": "Ratarok",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-18T22:52:01Z"
+    },
+    {
       "beatmapset_id": 2091456,
       "artist": "Akatsuki Records",
       "title": "S.A.R.I.E.L.",
@@ -3614,6 +4359,32 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-12-13T14:09:03Z"
+    },
+    {
+      "beatmapset_id": 2092851,
+      "artist": "Unlucky Morpheus x UNDEAD CORPORATION",
+      "title": "Miracles Inst ver",
+      "creator": "M4xWasHere",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-02-29T12:11:38Z"
     },
     {
       "beatmapset_id": 2093561,

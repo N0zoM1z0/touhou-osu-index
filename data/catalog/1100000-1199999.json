@@ -1191,6 +1191,29 @@
       "osu_last_updated": "2021-01-09T00:26:49Z"
     },
     {
+      "beatmapset_id": 1128939,
+      "artist": "LeaF",
+      "title": "Arianrhod",
+      "creator": "Genjuro",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "official_pack_item:FQ40"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2020-03-26T16:02:16Z"
+    },
+    {
       "beatmapset_id": 1129644,
       "artist": "Diao Ye Zong feat. Meramipop",
       "title": "Take no Hana",

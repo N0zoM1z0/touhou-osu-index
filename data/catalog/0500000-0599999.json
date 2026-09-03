@@ -1744,6 +1744,29 @@
       "osu_last_updated": "2017-02-04T06:26:57Z"
     },
     {
+      "beatmapset_id": 556969,
+      "artist": "C.H.S",
+      "title": "Interlude - teatime",
+      "creator": "Ascendance",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2017-01-22T13:11:13Z"
+    },
+    {
       "beatmapset_id": 557175,
       "artist": "beatMARIO/COOL&CREATE",
       "title": "Night of Knights",
@@ -2367,6 +2390,29 @@
       "osu_last_updated": "2017-02-27T02:26:51Z"
     },
     {
+      "beatmapset_id": 579359,
+      "artist": "C.H.S",
+      "title": "Interlude - teatime",
+      "creator": "Gabe",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2017-04-25T03:50:56Z"
+    },
+    {
       "beatmapset_id": 579781,
       "artist": "senya",
       "title": "Mahou ga Umareta Hi",
@@ -2512,6 +2558,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2017-04-21T15:01:59Z"
+    },
+    {
+      "beatmapset_id": 582888,
+      "artist": "Camellia",
+      "title": "Lunatic Rough Party!! (Long Ver.)",
+      "creator": "Fantazy",
+      "source": "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+      "status": "loved",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-04-08T01:49:35Z"
     },
     {
       "beatmapset_id": 585154,

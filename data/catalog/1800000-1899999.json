@@ -202,6 +202,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1811874,
+      "artist": "Kanpyohgo",
+      "title": "Reichi no Taiyou Shinkou -Nuclear Fusion- Hardcore.edt",
+      "creator": "JBHyperion",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-10-21T18:24:28Z"
+    },
+    {
       "beatmapset_id": 1813411,
       "artist": "beatMARIO",
       "title": "Night of knights (Cranky Remix)",
@@ -361,6 +385,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-09-09T05:33:34Z"
+    },
+    {
+      "beatmapset_id": 1817787,
+      "artist": "SOUND HOLIC feat. Nana Takahashi",
+      "title": "Chinmoku ~Cercueil no Shoujo~",
+      "creator": "Schopfer",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-09-23T14:45:10Z"
     },
     {
       "beatmapset_id": 1817922,
@@ -662,6 +710,31 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1832066,
+      "artist": "Kanpyohgo",
+      "title": "Shoujo Satori -3rd.eye- Trance.edt",
+      "creator": "Annabel",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-11-07T06:02:42Z"
+    },
+    {
       "beatmapset_id": 1833640,
       "artist": "BUTAOTOME",
       "title": "In the Black",
@@ -815,6 +888,31 @@
       "osu_last_updated": "2022-11-26T14:57:08Z"
     },
     {
+      "beatmapset_id": 1837942,
+      "artist": "A-One",
+      "title": "Bloody Knife",
+      "creator": "Akonine",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:A-One",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-10-07T13:02:49Z"
+    },
+    {
       "beatmapset_id": 1837962,
       "artist": "Down",
       "title": "Halfslashed",
@@ -881,6 +979,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-10-25T11:48:29Z"
+    },
+    {
+      "beatmapset_id": 1840481,
+      "artist": "A-One",
+      "title": "Wanna Be My Dream",
+      "creator": "Chromoxx",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:A-One",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-09-11T05:55:52Z"
     },
     {
       "beatmapset_id": 1840749,
@@ -1168,6 +1291,30 @@
       "osu_last_updated": "2025-07-28T11:35:19Z"
     },
     {
+      "beatmapset_id": 1852057,
+      "artist": "Innocent Key",
+      "title": "Toho-Assisted-Speedrun!!!",
+      "creator": "FAMoss",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-11-20T09:07:11Z"
+    },
+    {
       "beatmapset_id": 1852062,
       "artist": "Sunasya Asuka",
       "title": "Yozakura Kaidou (To2) [Blossom Night]",
@@ -1279,6 +1426,30 @@
       "osu_last_updated": "2025-10-19T17:04:59Z"
     },
     {
+      "beatmapset_id": 1857047,
+      "artist": "LEMiao feat. YooSanHyakurei",
+      "title": "Setsugen Tir na nOg",
+      "creator": "wiken",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-05-04T23:51:25Z"
+    },
+    {
       "beatmapset_id": 1857465,
       "artist": "Conagusuri",
       "title": "Hina Choco Dark Matter",
@@ -1359,6 +1530,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1861782,
+      "artist": "Chata",
+      "title": "Gusha",
+      "creator": "Raijodo",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-11-08T19:05:48Z"
     },
     {
       "beatmapset_id": 1862313,
@@ -1805,6 +1999,30 @@
       "osu_last_updated": "2023-09-09T00:42:38Z"
     },
     {
+      "beatmapset_id": 1878008,
+      "artist": "Tatsh feat. Oda Yu",
+      "title": "Heartfelt Universe",
+      "creator": "ayel",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-05-23T17:35:21Z"
+    },
+    {
       "beatmapset_id": 1878367,
       "artist": "Batory",
       "title": "Touhou Koumakyou Zenkyoku Arrange Medley",
@@ -2184,6 +2402,31 @@
       "osu_last_updated": "2023-02-05T10:27:47Z"
     },
     {
+      "beatmapset_id": 1892797,
+      "artist": "Demetori",
+      "title": "Kourou ~ Eastern Dream",
+      "creator": "big snag",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-08-19T03:57:26Z"
+    },
+    {
       "beatmapset_id": 1893333,
       "artist": "BeatMARIO",
       "title": "Night of Knights (USAO Remix)",
@@ -2274,6 +2517,31 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2023-09-24T03:42:35Z"
+    },
+    {
+      "beatmapset_id": 1896626,
+      "artist": "Discord Registers",
+      "title": "Kiri Kakaru Meiya ~Foggy Night~",
+      "creator": "M4xWasHere",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2026-03-10T09:54:21Z"
     },
     {
       "beatmapset_id": 1898039,
