@@ -1496,6 +1496,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1762719,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Embraced by the Flame",
+      "creator": "KawaiiBass",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:UNDEAD CORPORATION",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-05-26T12:20:34Z"
+    },
+    {
       "beatmapset_id": 1763125,
       "artist": "Diabolic Phantasma",
       "title": "Liberation",
@@ -1661,6 +1685,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1772154,
+      "artist": "ShinRa-Bansho",
+      "title": "Mugen Shitto Gekijou \"666\"",
+      "creator": "gaston_2199",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-10-24T21:09:54Z"
     },
     {
       "beatmapset_id": 1774462,

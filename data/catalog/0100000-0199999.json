@@ -3367,6 +3367,30 @@
       "osu_last_updated": "2015-11-11T13:45:28Z"
     },
     {
+      "beatmapset_id": 177908,
+      "artist": "Mohican Sandbag",
+      "title": "U.N.Owen is dead",
+      "creator": "OnosakiHito",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2015-03-11T13:48:52Z"
+    },
+    {
       "beatmapset_id": 178018,
       "artist": "Senpi-",
       "title": "The First Part of Touhou EX Boss Rush!!",

@@ -1012,6 +1012,31 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1849213,
+      "artist": "ZUN",
+      "title": "Hartmann no Youkai Shoujo",
+      "creator": "Kukkai",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2026-05-20T13:17:08Z"
+    },
+    {
       "beatmapset_id": 1849728,
       "artist": "Demetori",
       "title": "Furuki Yuanxian ~ Death Echo",
@@ -1032,6 +1057,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-01-03T01:45:18Z"
+    },
+    {
+      "beatmapset_id": 1849967,
+      "artist": "IOSYS feat. 3L",
+      "title": "Gyouretsu no Dekiru Eirin Shinryoujo (Cut Ver.)",
+      "creator": "Bloxi",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:IOSYS",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-10-06T16:46:29Z"
     },
     {
       "beatmapset_id": 1850841,
@@ -1206,6 +1255,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1856797,
+      "artist": "Minorti & HAGISOPH",
+      "title": "Cruciv",
+      "creator": "Mattay",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2025-10-19T17:04:59Z"
+    },
+    {
       "beatmapset_id": 1857465,
       "artist": "Conagusuri",
       "title": "Hina Choco Dark Matter",
@@ -1286,6 +1359,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1862313,
+      "artist": "ShinRa-Bansho",
+      "title": "Zenryoku Happy Life",
+      "creator": "-Maruko-",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-07-09T04:41:01Z"
     },
     {
       "beatmapset_id": 1863675,
@@ -1616,6 +1713,32 @@
       "osu_last_updated": "2022-10-25T10:06:57Z"
     },
     {
+      "beatmapset_id": 1873233,
+      "artist": "ShinRa-Bansho x Yuuhei Satellite & Shoujo Fractal",
+      "title": "Genso Connect",
+      "creator": "Xzzj",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-01-14T05:55:05Z"
+    },
+    {
       "beatmapset_id": 1874741,
       "artist": "senya",
       "title": "Nihil Kagura",
@@ -1680,6 +1803,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-09-09T00:42:38Z"
+    },
+    {
+      "beatmapset_id": 1878367,
+      "artist": "Batory",
+      "title": "Touhou Koumakyou Zenkyoku Arrange Medley",
+      "creator": "yassu-",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-01-05T20:46:17Z"
     },
     {
       "beatmapset_id": 1878634,
@@ -1965,6 +2113,31 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1889476,
+      "artist": "Marisa",
+      "title": "Stop Posting About The Precious Thing",
+      "creator": "Faputa",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:IOSYS",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-11-27T04:21:00Z"
+    },
+    {
       "beatmapset_id": 1890591,
       "artist": "Chata",
       "title": "Sora to Heikou ni Sou Kyokusen",
@@ -2077,6 +2250,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2024-12-15T03:58:19Z"
+    },
+    {
+      "beatmapset_id": 1894970,
+      "artist": "Unlucky Morpheus x UNDEAD CORPORATION",
+      "title": "Jealousy Inst ver",
+      "creator": "GudMeem",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:UNDEAD CORPORATION",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-09-24T03:42:35Z"
     },
     {
       "beatmapset_id": 1898039,

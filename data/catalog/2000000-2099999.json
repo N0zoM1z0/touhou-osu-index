@@ -683,6 +683,30 @@
       "osu_last_updated": "2023-07-10T21:07:24Z"
     },
     {
+      "beatmapset_id": 2011128,
+      "artist": "RD-Sounds feat. Meramipop",
+      "title": "enemy of the society",
+      "creator": "Ideal",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-08-10T17:57:51Z"
+    },
+    {
       "beatmapset_id": 2011367,
       "artist": "Demetori",
       "title": "Strawberry Crisis!!",
@@ -701,6 +725,57 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2011555,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Flowering Night Fever",
+      "creator": "Deif",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-07-03T21:46:28Z"
+    },
+    {
+      "beatmapset_id": 2011565,
+      "artist": "A-One feat. ayaponzu*",
+      "title": "Justice Monster",
+      "creator": "F D Flourite",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:A-One",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2025-05-02T16:12:28Z"
     },
     {
       "beatmapset_id": 2011767,
@@ -743,6 +818,55 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2013277,
+      "artist": "ZUN",
+      "title": "Shiryou no Yozakura",
+      "creator": "nanoya",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-07-07T17:19:18Z"
+    },
+    {
+      "beatmapset_id": 2013928,
+      "artist": "Down",
+      "title": "Duo Cup",
+      "creator": "nanoya",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-11-15T15:05:38Z"
     },
     {
       "beatmapset_id": 2014288,
@@ -954,6 +1078,32 @@
       "osu_last_updated": "2024-12-20T13:33:14Z"
     },
     {
+      "beatmapset_id": 2020128,
+      "artist": "Demetori",
+      "title": "Gensou, Yume no Owari",
+      "creator": "Daihmuddah",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:C-CLAYS",
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2025-04-25T12:54:52Z"
+    },
+    {
       "beatmapset_id": 2020285,
       "artist": "AUTUMN+GHOST feat. Akira Complex",
       "title": "PURE FURY",
@@ -1041,6 +1191,103 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2023965,
+      "artist": "--RAYvateinn--",
+      "title": "Touhou Medley P - vol.5",
+      "creator": "Wither",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-08-30T14:36:41Z"
+    },
+    {
+      "beatmapset_id": 2023974,
+      "artist": "senya",
+      "title": "Tsuki ni Murakumo Hana ni Kaze",
+      "creator": "nanoya",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-03-16T23:18:21Z"
+    },
+    {
+      "beatmapset_id": 2024061,
+      "artist": "8686m",
+      "title": "I Love You From Greenwich",
+      "creator": "Gibune",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-07-21T01:10:50Z"
+    },
+    {
+      "beatmapset_id": 2024106,
+      "artist": "Yellow Zebra",
+      "title": "Saisei ~Bird can sing~",
+      "creator": "BeautifulKisa",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-04-25T19:08:09Z"
+    },
+    {
       "beatmapset_id": 2024278,
       "artist": "Akiyama Uni",
       "title": "The Grimoire of Alice",
@@ -1087,6 +1334,55 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-07-11T23:24:13Z"
+    },
+    {
+      "beatmapset_id": 2025539,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Saifu 'Kamiasobi no Uta'",
+      "creator": "chen_sawthis01",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-08-27T03:25:40Z"
+    },
+    {
+      "beatmapset_id": 2025551,
+      "artist": "Adust Rain",
+      "title": "Eleven Stud",
+      "creator": "[LS]Yunxmi",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Adust Rain",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-11-29T12:25:52Z"
     },
     {
       "beatmapset_id": 2027407,
@@ -1328,6 +1624,55 @@
       "osu_last_updated": "2025-03-20T20:09:40Z"
     },
     {
+      "beatmapset_id": 2037983,
+      "artist": "A-One feat. Rute",
+      "title": "Spider's Blood",
+      "creator": "Hugged",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:A-One",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-09-02T17:34:01Z"
+    },
+    {
+      "beatmapset_id": 2039585,
+      "artist": "senya",
+      "title": "Saihate no Kotoba",
+      "creator": "Satellite",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2025-07-28T11:31:44Z"
+    },
+    {
       "beatmapset_id": 2039737,
       "artist": "nominomu",
       "title": "solar sect of nm2 ~ nuclear notelock",
@@ -1560,6 +1905,30 @@
       "osu_last_updated": "2024-09-03T00:29:45Z"
     },
     {
+      "beatmapset_id": 2046139,
+      "artist": "Halozy",
+      "title": "S.A.T.O.R.A.R.E",
+      "creator": "Camo",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Halozy",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-11-26T21:55:57Z"
+    },
+    {
       "beatmapset_id": 2046568,
       "artist": "Adust Rain",
       "title": "Nevxxxxerland",
@@ -1601,6 +1970,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-07-21T20:12:52Z"
+    },
+    {
+      "beatmapset_id": 2047786,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Sono Tadashiki Kotoba no Moto ni",
+      "creator": "doulph",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-10-04T10:06:46Z"
     },
     {
       "beatmapset_id": 2048017,
@@ -1712,6 +2106,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2049284,
+      "artist": "Alstroemeria Records + Studio \"Syrup Comfiture\"",
+      "title": "Against, Perfect Cherry Blossom.",
+      "creator": "-Koppe-",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Alstroemeria Records",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "discovery_query:Syrufit",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-05-10T11:29:57Z"
     },
     {
       "beatmapset_id": 2049581,
@@ -1834,6 +2253,55 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-09-01T18:01:08Z"
+    },
+    {
+      "beatmapset_id": 2051546,
+      "artist": "ALiCE'S EMOTiON",
+      "title": "Cold Rain",
+      "creator": "SenSenko",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Adust Rain",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-10-17T16:02:37Z"
+    },
+    {
+      "beatmapset_id": 2051619,
+      "artist": "Sasara Yuuna",
+      "title": "Fushigi Monogatari",
+      "creator": "Halfslashed",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-04T00:50:42Z"
     },
     {
       "beatmapset_id": 2051633,
@@ -1971,6 +2439,29 @@
       "osu_last_updated": "2023-08-28T11:35:46Z"
     },
     {
+      "beatmapset_id": 2052920,
+      "artist": "BLANKFIELD",
+      "title": "Falling Falls",
+      "creator": "radar",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-08-30T00:29:31Z"
+    },
+    {
       "beatmapset_id": 2053246,
       "artist": "cYsmix",
       "title": "Tear Rain feat. Emmy (Cut Ver.)",
@@ -2011,6 +2502,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2023-12-02T10:05:57Z"
+    },
+    {
+      "beatmapset_id": 2055714,
+      "artist": "Houshou Marine with Holoism Fantasy",
+      "title": "Hoihoi*Gensou Holoism",
+      "creator": "Secre",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:COOL&CREATE",
+        "discovery_query:IOSYS",
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-11-13T13:42:11Z"
     },
     {
       "beatmapset_id": 2056127,
@@ -2061,6 +2577,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2024-09-10T02:28:23Z"
+    },
+    {
+      "beatmapset_id": 2057639,
+      "artist": "Halozy",
+      "title": "Suna no Hoshi (Blue Twinkle Trance Remix / Version 2.0)",
+      "creator": "by-ad",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Halozy",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-12-01T14:56:43Z"
     },
     {
       "beatmapset_id": 2059306,
@@ -2154,6 +2694,57 @@
       "osu_last_updated": "2024-12-22T05:44:30Z"
     },
     {
+      "beatmapset_id": 2063410,
+      "artist": "Halozy",
+      "title": "Masshiro na Yuki",
+      "creator": "Yuumeikyou",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Halozy",
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-09-17T12:04:20Z"
+    },
+    {
+      "beatmapset_id": 2064233,
+      "artist": "Demetori",
+      "title": "Natsukashiki Touhou no Chi ~ Sic World",
+      "creator": "M4xWasHere",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-30T03:52:32Z"
+    },
+    {
       "beatmapset_id": 2065860,
       "artist": "Aoi Xia",
       "title": "Lost Blue",
@@ -2194,6 +2785,54 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2024-04-29T15:01:40Z"
+    },
+    {
+      "beatmapset_id": 2066221,
+      "artist": "last little while",
+      "title": "again",
+      "creator": "AnnouncerF",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-11-04T21:17:12Z"
+    },
+    {
+      "beatmapset_id": 2066498,
+      "artist": "IOSYS",
+      "title": "Miracle Hinacle",
+      "creator": "Djulus",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:IOSYS",
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-23T16:13:42Z"
     },
     {
       "beatmapset_id": 2067431,
@@ -2258,6 +2897,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2069637,
+      "artist": "EastNewSound feat. Chata & nayuta",
+      "title": "Yuune Zekka, Ryouran no Sai",
+      "creator": "PandaHero",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-10-20T20:02:34Z"
+    },
+    {
       "beatmapset_id": 2070206,
       "artist": "Akatsuki Records",
       "title": "Black Mirror on the Wall",
@@ -2300,6 +2962,29 @@
       "osu_last_updated": "2024-04-29T09:59:32Z"
     },
     {
+      "beatmapset_id": 2072347,
+      "artist": "Unlucky Morpheus",
+      "title": "FAITH",
+      "creator": "Erowdi",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-01-20T14:13:27Z"
+    },
+    {
       "beatmapset_id": 2073247,
       "artist": "ShinRa-Bansho",
       "title": "Charisma Rengoku Tenshin",
@@ -2321,6 +3006,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-10-18T19:52:19Z"
+    },
+    {
+      "beatmapset_id": 2074627,
+      "artist": "A-One feat. Shihori",
+      "title": "Magic Girl !!",
+      "creator": "lit120",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:A-One",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-02-12T21:16:42Z"
     },
     {
       "beatmapset_id": 2074686,
@@ -2388,6 +3098,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2076628,
+      "artist": "Shoujo Fractal",
+      "title": "Samayoi no Mei ~Amatsu~",
+      "creator": "-Yua",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-01-26T11:12:19Z"
     },
     {
       "beatmapset_id": 2076663,
@@ -2502,6 +3236,30 @@
       "osu_last_updated": "2025-07-10T14:49:59Z"
     },
     {
+      "beatmapset_id": 2080874,
+      "artist": "IOSYS",
+      "title": "Saint Marisa no Okurimono",
+      "creator": "danissima",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:IOSYS",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-11-29T22:25:28Z"
+    },
+    {
       "beatmapset_id": 2080903,
       "artist": "beatMARIO",
       "title": "Night Of Knights",
@@ -2573,6 +3331,31 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2084799,
+      "artist": "A-One feat. Aki",
+      "title": "Wanna Be My Dream",
+      "creator": "Amefystol",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:A-One",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2026-06-21T16:33:22Z"
+    },
+    {
       "beatmapset_id": 2084917,
       "artist": "senya",
       "title": "Kanjou Chemistry (Drum 'n' Bass Remix)",
@@ -2593,6 +3376,32 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-03-16T00:08:59Z"
+    },
+    {
+      "beatmapset_id": 2086046,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Mudai \"Soratobu Miko to Futsuu no Mahoutsukai no Itsumo no Mainichi\"",
+      "creator": "dahkjdas",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-19T13:01:24Z"
     },
     {
       "beatmapset_id": 2086454,
@@ -2642,6 +3451,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-09-28T04:05:26Z"
+    },
+    {
+      "beatmapset_id": 2087883,
+      "artist": "8686m",
+      "title": "SPINACH AND SAMON CREAM PASTA",
+      "creator": "Disguise",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-12-08T16:48:17Z"
     },
     {
       "beatmapset_id": 2088431,
@@ -2736,6 +3569,30 @@
       "osu_last_updated": "2024-01-07T15:58:44Z"
     },
     {
+      "beatmapset_id": 2089093,
+      "artist": "IOSYS",
+      "title": "Marisa wa Taihen na Mono o Nusunde Ikimashita",
+      "creator": "Molybdenum",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:IOSYS",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-06-01T21:09:38Z"
+    },
+    {
       "beatmapset_id": 2091456,
       "artist": "Akatsuki Records",
       "title": "S.A.R.I.E.L.",
@@ -2800,6 +3657,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2095104,
+      "artist": "Adust Rain",
+      "title": "Imperfect Cherry Blossom",
+      "creator": "Erowdi",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Adust Rain",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-12-19T14:23:06Z"
+    },
+    {
       "beatmapset_id": 2097827,
       "artist": "Akiyama Uni",
       "title": "Kanjou no Matenrou ~ Cosmic Mind",
@@ -2818,6 +3699,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2097924,
+      "artist": "camel ytpmv",
+      "title": "CAMELLO MULTIVERSE",
+      "creator": "Ognjen3800",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:IOSYS",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-03-24T00:59:27Z"
     },
     {
       "beatmapset_id": 2098437,
@@ -2839,6 +3744,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-10-04T18:52:58Z"
+    },
+    {
+      "beatmapset_id": 2098448,
+      "artist": "Aizawa feat. Nakae Mitsuki",
+      "title": "Flutter Girl",
+      "creator": "Deif",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-01-11T15:55:38Z"
     },
     {
       "beatmapset_id": 2098718,

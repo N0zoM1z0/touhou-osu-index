@@ -664,6 +664,30 @@
       "osu_last_updated": "2017-08-16T16:10:39Z"
     },
     {
+      "beatmapset_id": 625519,
+      "artist": "senya",
+      "title": "Zankyou wa Nariyamazu",
+      "creator": "Absolute Zero",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2019-05-31T18:12:47Z"
+    },
+    {
       "beatmapset_id": 625538,
       "artist": "beatMARIO/COOL&CREATE",
       "title": "Night of Nights",
