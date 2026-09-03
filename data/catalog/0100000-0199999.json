@@ -6,7 +6,7 @@
       "artist": "Halozy",
       "title": "Sentimental Skyscraper",
       "creator": "Hollow Wings",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -15,6 +15,9 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Touhou",
+        "discovery_query:Touhou",
         "known_touhou_artist",
         "osucollector:1407",
         "osucollector:6907",
@@ -22,7 +25,7 @@
         "tournament:google_sheet:tmf-2025:audited"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2014-05-20T18:04:01Z"
     },
     {
@@ -30,7 +33,7 @@
       "artist": "ZUN",
       "title": "The Venerable Ancient Battlefield ~ Suwa Foughten Field",
       "creator": "sjoy",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -39,6 +42,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "osucollector:1402",
         "osucollector:1405",
@@ -47,7 +52,7 @@
         "tournament:google_sheet:tmf-2025:audited"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2013-08-10T08:22:00Z"
     },
     {
@@ -143,7 +148,7 @@
       "artist": "ZUN",
       "title": "A Drunkard's Lemuria (Retro Ver.)",
       "creator": "Itachi_Uchiha",
-      "source": "",
+      "source": "黄昏酒場～Uwabami Breakers～",
       "status": "ranked",
       "modes": [
         "osu"
@@ -152,13 +157,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "official_pack:T65",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2013-08-23T23:50:04Z"
     },
     {
@@ -186,7 +192,7 @@
       "artist": "t+pazolite feat. Rizna",
       "title": "Boom Boom Taoismic",
       "creator": "Okoratu",
-      "source": "",
+      "source": "東方神霊廟　～ Ten Desires.",
       "status": "ranked",
       "modes": [
         "osu",
@@ -196,13 +202,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2021-07-24T17:41:44Z"
     },
     {
@@ -530,6 +539,9 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "osucollector:1402",
         "osucollector:1405",
@@ -541,7 +553,7 @@
         "tournament_candidate:829"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2013-11-02T08:24:36Z"
     },
     {
@@ -614,7 +626,7 @@
       "artist": "Halozy",
       "title": "Secret Sister Complex",
       "creator": "moonlightleaf",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -623,13 +635,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Touhou",
         "known_touhou_artist",
         "osucollector:1407",
         "osucollector:6907",
         "tournament:828"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2014-08-09T05:29:25Z"
     },
     {
@@ -923,6 +937,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
@@ -930,7 +946,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2016-10-27T18:48:18Z"
     },
     {
@@ -1193,13 +1209,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
         "official_pack:T65",
         "osucollector:1402",
         "osucollector:1405",
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2014-08-21T06:08:12Z"
     },
     {
@@ -1207,7 +1224,7 @@
       "artist": "Dark PHOENiX",
       "title": "The Primal Scene of Japan the Girl Saw",
       "creator": "sjoy",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1216,6 +1233,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
+        "discovery_query:ZUN",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -1223,7 +1242,7 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2014-06-05T15:47:24Z"
     },
     {
@@ -1252,7 +1271,7 @@
       "artist": "Shibayan feat. 3L",
       "title": "Getsurei 11.3 no Candle Magic",
       "creator": "11t",
-      "source": "",
+      "source": "東方紅魔郷　～　the Embodiment of Scarlet Devil.",
       "status": "loved",
       "modes": [
         "osu",
@@ -1262,11 +1281,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ShibayanRecords",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2019-01-07T07:00:00Z"
     },
     {
@@ -1324,6 +1346,9 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
+        "discovery_query:source=Touhou Hisoutensoku",
+        "discovery_query:Team Shanghai Alice",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -1334,7 +1359,7 @@
         "tournament_candidate:731"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2014-09-21T11:01:49Z"
     },
     {
@@ -1544,8 +1569,8 @@
       "artist": "UNDEAD CORPORATION",
       "title": "Bloodthirsty Nightmare Lullaby",
       "creator": "sjoy",
-      "source": "",
-      "status": "pending",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
       "modes": [
         "osu"
       ],
@@ -1553,13 +1578,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:UNDEAD CORPORATION",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": "2024-04-24T01:26:51Z"
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-04-28T16:07:51Z"
     },
     {
       "beatmapset_id": 129534,
@@ -2078,7 +2106,7 @@
       "artist": "cYsmix feat. Emmy",
       "title": "Tear Rain",
       "creator": "Niva",
-      "source": "",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2087,11 +2115,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Adust Rain",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2018-09-24T18:35:49Z"
     },
     {
@@ -2120,7 +2150,7 @@
       "artist": "Demetori",
       "title": "Higan Kikou ~ View of The River Styx",
       "creator": "RLC",
-      "source": "",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2129,11 +2159,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2021-03-18T18:00:33Z"
     },
     {
@@ -2190,13 +2224,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
         "osu_source",
         "osucollector:1405",
         "osucollector:6907",
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2021-12-13T13:20:55Z"
     },
     {
@@ -2631,6 +2667,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -2638,7 +2676,7 @@
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2015-02-21T12:14:27Z"
     },
     {
@@ -2695,7 +2733,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "Everything will freeze",
       "creator": "Ekoro",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2704,6 +2742,9 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:東方Project",
         "known_touhou_artist",
         "osucollector:1402",
         "osucollector:1405",
@@ -2713,7 +2754,7 @@
         "tournament:828"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2015-03-17T22:31:07Z"
     },
     {
@@ -2787,7 +2828,7 @@
       "artist": "Liz Triangle",
       "title": "Messiah",
       "creator": "Heatherfield",
-      "source": "",
+      "source": "東方地霊殿　～ Subterranean Animism.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2796,11 +2837,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2021-07-18T01:06:23Z"
     },
     {
@@ -3437,7 +3480,7 @@
       "artist": "t+pazolite ft. RIZNA",
       "title": "Interlude - teatime",
       "creator": "Kyubey",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3446,11 +3489,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
         "official_pack:T65",
         "osucollector:1402"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2014-05-26T10:53:20Z"
     },
     {
@@ -3500,8 +3544,8 @@
       "artist": "An",
       "title": "Necro Fantasia -An remix-",
       "creator": "captin1",
-      "source": "",
-      "status": "graveyard",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "ranked",
       "modes": [
         "osu"
       ],
@@ -3509,14 +3553,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-03-04T01:31:19Z"
     },
     {
       "beatmapset_id": 179699,
