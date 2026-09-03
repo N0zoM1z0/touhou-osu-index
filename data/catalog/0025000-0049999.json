@@ -2378,6 +2378,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "manual:verified",
         "osu_source",
         "osucollector:1402",
@@ -2386,7 +2387,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-08-18T10:22:43Z"
     },
     {
@@ -2440,7 +2441,7 @@
       "artist": "AU",
       "title": "Infinite of Nuclear Fusion",
       "creator": "OnosakiHito",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -2450,6 +2451,9 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:Touhou",
+        "discovery_query:東方Project",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -2457,7 +2461,7 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2013-10-19T17:44:49Z"
     },
     {
@@ -2491,12 +2495,14 @@
       "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -2504,7 +2510,7 @@
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-01-17T16:39:09Z"
     },
     {
@@ -2897,7 +2903,7 @@
       "artist": "Shihori",
       "title": "Bamboo Dance",
       "creator": "Frostmourne",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2906,13 +2912,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
         "official_pack:T106",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-03-02T16:39:44Z"
     },
     {
@@ -3228,7 +3235,7 @@
       "artist": "IOSYS",
       "title": "Kitto Mou Hatarakanai",
       "creator": "mochi",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3237,13 +3244,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "known_touhou_artist",
         "official_pack:T65",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-01-03T16:15:06Z"
     },
     {
@@ -3543,13 +3551,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Subterranean Animism",
         "osu_source",
         "osucollector:1407",
         "osucollector:6907",
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2020-12-16T11:55:54Z"
     },
     {
@@ -3772,6 +3781,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -3780,7 +3790,7 @@
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-10-23T06:33:37Z"
     },
     {
@@ -4452,6 +4462,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -4459,7 +4471,7 @@
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-10-21T06:49:26Z"
     }
   ]
