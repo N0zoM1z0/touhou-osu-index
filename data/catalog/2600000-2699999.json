@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "beatmapset_id": 2608197,
+      "artist": "t+pazolite",
+      "title": "Luv*Lab*Poison 22ate!",
+      "creator": "Furryswan",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2026-08-24T14:14:26Z"
+    }
+  ]
+}

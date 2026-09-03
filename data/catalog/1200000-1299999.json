@@ -1101,6 +1101,29 @@
       "osu_last_updated": "2020-12-08T13:49:20Z"
     },
     {
+      "beatmapset_id": 1241481,
+      "artist": "D.watt (OTAKU-ELITE Recordings)",
+      "title": "Opium and Purple haze",
+      "creator": "Cynplytholowazy",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-06-27T11:58:46Z"
+    },
+    {
       "beatmapset_id": 1241561,
       "artist": "BeatMARIO",
       "title": "Night of Knights (Camellia's \"Once Upon A Night\" Remix)",
@@ -2720,6 +2743,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-12-02T19:35:26Z"
+    },
+    {
+      "beatmapset_id": 1277845,
+      "artist": "senya",
+      "title": "Tsuki ni Murakumo Hana Ni Kaze (PV ver.)",
+      "creator": "Benita",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2020-11-26T19:45:04Z"
     },
     {
       "beatmapset_id": 1278431,

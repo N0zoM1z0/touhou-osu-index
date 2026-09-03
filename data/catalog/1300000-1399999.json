@@ -804,6 +804,30 @@
       "osu_last_updated": "2022-09-27T13:51:12Z"
     },
     {
+      "beatmapset_id": 1324962,
+      "artist": "ShinRa-Bansho",
+      "title": "Itazura Sensation",
+      "creator": "Spectator",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-01-21T12:55:58Z"
+    },
+    {
       "beatmapset_id": 1326567,
       "artist": "Nick Nitro",
       "title": "Touhou - \"Night Of Nights [Flowering Night]\" NITRO Remix",
@@ -1423,6 +1447,32 @@
       "osu_last_updated": "2021-01-17T02:56:52Z"
     },
     {
+      "beatmapset_id": 1349838,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Embraced by the Flame",
+      "creator": "Punnies",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-04-29T19:58:20Z"
+    },
+    {
       "beatmapset_id": 1350080,
       "artist": "LeaF",
       "title": "Calamity Fortune (extended ver.)",
@@ -1831,6 +1881,30 @@
       "osu_last_updated": "2021-09-08T18:10:24Z"
     },
     {
+      "beatmapset_id": 1368759,
+      "artist": "Halozy feat. Nanahira",
+      "title": "Monosugoi Space Shuttle de Koishi ga Monosugoi Uta",
+      "creator": "Mak Kau Hijau",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Halozy",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-04-24T13:15:11Z"
+    },
+    {
       "beatmapset_id": 1368836,
       "artist": "BLANKFIELD",
       "title": "Witching Dream",
@@ -1876,6 +1950,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2021-02-10T09:53:33Z"
+    },
+    {
+      "beatmapset_id": 1374425,
+      "artist": "KISIDA KYODAN & THE AKEBOSI ROCKETS",
+      "title": "night birds (Cut Ver.)",
+      "creator": "Verti",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2021-07-27T20:52:35Z"
     },
     {
       "beatmapset_id": 1374578,
@@ -2401,6 +2498,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-04-15T15:29:18Z"
+    },
+    {
+      "beatmapset_id": 1397832,
+      "artist": "Yonder Voice",
+      "title": "No grave",
+      "creator": "Faputa",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-07-09T00:34:50Z"
     },
     {
       "beatmapset_id": 1397860,

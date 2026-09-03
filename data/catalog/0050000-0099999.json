@@ -1822,6 +1822,29 @@
       "osu_last_updated": "2012-12-27T20:46:15Z"
     },
     {
+      "beatmapset_id": 69173,
+      "artist": "Liz Triangle",
+      "title": "Koisuru <3 Recipe",
+      "creator": "Holoaz",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-05-26T02:12:08Z"
+    },
+    {
       "beatmapset_id": 69681,
       "artist": "senya",
       "title": "Utakata, Ai no Mahoroba",

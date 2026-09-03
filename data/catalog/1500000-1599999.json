@@ -1148,6 +1148,32 @@
       "osu_last_updated": "2021-09-15T23:31:48Z"
     },
     {
+      "beatmapset_id": 1550437,
+      "artist": "tsunamix_underground",
+      "title": "Period. ~ Seishin no Kousoku to Jiyuu o Tsukamu Jouka",
+      "creator": "Horiiizon",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:C-CLAYS",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:上海アリス幻樂団",
+        "external_provenance:arrangement-chronicle",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2021-09-25T04:36:51Z"
+    },
+    {
       "beatmapset_id": 1550606,
       "artist": "SOUND HOLIC",
       "title": "Swing and Jive !",
@@ -1587,6 +1613,29 @@
       "osu_last_updated": "2021-09-11T22:44:36Z"
     },
     {
+      "beatmapset_id": 1573417,
+      "artist": "R3 Music Box",
+      "title": "Last Remote",
+      "creator": "thx for carry",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2021-10-18T12:01:09Z"
+    },
+    {
       "beatmapset_id": 1573459,
       "artist": "Team Shanghai Alice (Remixed by Est)",
       "title": "SAKURA",
@@ -1696,6 +1745,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1576656,
+      "artist": "Shibayan feat. 3L",
+      "title": "LOVE (signum/ii remix)",
+      "creator": "winber1",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:ShibayanRecords",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-04-28T15:43:40Z"
+    },
+    {
       "beatmapset_id": 1576749,
       "artist": "beatMARIO",
       "title": "Night of Knights (Cranky Remix)",
@@ -1762,6 +1835,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-11-09T15:00:21Z"
+    },
+    {
+      "beatmapset_id": 1579075,
+      "artist": "SOUND HOLIC feat. YURiCa",
+      "title": "Septuor de ecarlate",
+      "creator": "-Kemsyt",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-03-15T15:04:02Z"
     },
     {
       "beatmapset_id": 1579161,
@@ -1876,6 +1972,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1588466,
+      "artist": "Diao Ye Zong feat. Ranko",
+      "title": "Tomo ni Aruku Sono Kokoro",
+      "creator": "paz08",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:wave2-reviewed-2026-09",
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2021-11-01T20:20:48Z"
     },
     {
       "beatmapset_id": 1589006,
