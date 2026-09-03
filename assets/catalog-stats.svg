@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="126" viewBox="0 0 760 126" role="img" aria-labelledby="title desc">
   <title id="title">Touhou osu! Index catalog statistics</title>
-  <desc id="desc">4,438 total tracked beatmapsets; 2,766 verified (62.3%).</desc>
+  <desc id="desc">4,438 total tracked beatmapsets; 2,776 verified (62.6%).</desc>
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#2a1018"/>
@@ -47,9 +47,9 @@
   <line x1="452" y1="36" x2="452" y2="90" stroke="#6a303b" opacity="0.55"/>
 
   <text x="488" y="47" class="label">VERIFIED</text>
-  <text x="488" y="83" class="value">2,766</text>
+  <text x="488" y="83" class="value">2,776</text>
   <rect x="616" y="58" width="72" height="25" rx="12.5" fill="#fff3ed"/>
-  <text x="652" y="75" class="percent" text-anchor="middle">62.3%</text>
+  <text x="652" y="75" class="percent" text-anchor="middle">62.6%</text>
 
   <rect x="0" y="0" width="760" height="3" rx="1.5" fill="#d63f52"/>
 </svg>
