@@ -97,6 +97,30 @@
       "osu_last_updated": "2020-10-28T04:59:26Z"
     },
     {
+      "beatmapset_id": 1205704,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Without the end",
+      "creator": "_Vex",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:UNDEAD CORPORATION",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2020-09-11T20:06:39Z"
+    },
+    {
       "beatmapset_id": 1206509,
       "artist": "RichaadEB",
       "title": "Night of Nights (Metal Cover)",
@@ -1102,6 +1126,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2020-09-05T10:50:48Z"
+    },
+    {
+      "beatmapset_id": 1241563,
+      "artist": "senya",
+      "title": "Tsuki ni Murakumo Hana ni Kaze (PV ver.)",
+      "creator": "BlackBq",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2021-01-11T09:38:21Z"
     },
     {
       "beatmapset_id": 1242775,
@@ -2240,6 +2288,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1267528,
+      "artist": "ShinRa-Bansho",
+      "title": "Tsuki ni Murakumo Hana ni Kaze ShinRa-Bansho Ver",
+      "creator": "Spectator",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2021-04-07T05:43:22Z"
+    },
+    {
       "beatmapset_id": 1267975,
       "artist": "Rin",
       "title": "Lunatic set 15 ~ The Moon as Seen from the Shrine",
@@ -2530,6 +2602,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2021-02-08T16:38:13Z"
+    },
+    {
+      "beatmapset_id": 1275058,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Under the scarlet sky pt. 3",
+      "creator": "Hivie",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:UNDEAD CORPORATION",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2020-12-28T14:10:06Z"
     },
     {
       "beatmapset_id": 1275896,
@@ -2867,6 +2963,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-10-23T17:53:44Z"
+    },
+    {
+      "beatmapset_id": 1284535,
+      "artist": "ShinRa-Bansho",
+      "title": "Aqua Terrarium",
+      "creator": "Yukari_Sama",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinra-Bansho",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-01-27T13:11:10Z"
     },
     {
       "beatmapset_id": 1285290,

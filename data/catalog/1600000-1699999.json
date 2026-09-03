@@ -1175,6 +1175,30 @@
       "osu_last_updated": "2025-06-15T18:33:24Z"
     },
     {
+      "beatmapset_id": 1648038,
+      "artist": "Halozy",
+      "title": "K.O.K.O.R.O & S.A.T.O.R.A.R.E",
+      "creator": "ler1211",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Halozy",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2021-12-20T14:54:23Z"
+    },
+    {
       "beatmapset_id": 1648145,
       "artist": "Shiiki Reku",
       "title": "Rhythmy (-Deepdive-) [Till I'm laid]",

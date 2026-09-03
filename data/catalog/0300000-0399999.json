@@ -1386,6 +1386,30 @@
       "osu_last_updated": "2016-03-31T09:41:12Z"
     },
     {
+      "beatmapset_id": 328117,
+      "artist": "Kurokotei",
+      "title": "Galaxy Collapse",
+      "creator": "Sayaka-",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:Touhou",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2015-10-11T21:09:07Z"
+    },
+    {
       "beatmapset_id": 328600,
       "artist": "BeatMARIO (COOL&CREATE)",
       "title": "Night of Knights (Flowering Night Remix)",

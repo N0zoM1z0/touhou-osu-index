@@ -1236,6 +1236,30 @@
       "osu_last_updated": "2021-08-22T04:56:03Z"
     },
     {
+      "beatmapset_id": 1556887,
+      "artist": "Halozy",
+      "title": "Kikoku Doukoku Jigokuraku",
+      "creator": "Schopfer",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Halozy",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-03-12T18:06:13Z"
+    },
+    {
       "beatmapset_id": 1556967,
       "artist": "tsukiyama sae/matsu",
       "title": "Night of Knights (Amateras Records Remix)",
@@ -1448,6 +1472,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1565933,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "self-claim existence",
+      "creator": "Surou",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Diao ye zong",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-06-22T18:17:13Z"
     },
     {
       "beatmapset_id": 1569597,

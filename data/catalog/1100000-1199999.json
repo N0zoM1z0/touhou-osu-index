@@ -1692,6 +1692,30 @@
       "osu_last_updated": "2024-06-04T00:24:44Z"
     },
     {
+      "beatmapset_id": 1151507,
+      "artist": "senya",
+      "title": "Hitorishizuka",
+      "creator": "PaRaDogi",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2024-07-25T16:42:49Z"
+    },
+    {
       "beatmapset_id": 1151630,
       "artist": "Rin",
       "title": "Muenzuka set 09 ~ Hana wa Gensou no Mama ni",

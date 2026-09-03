@@ -1378,6 +1378,31 @@
       "osu_last_updated": "2023-02-09T19:51:16Z"
     },
     {
+      "beatmapset_id": 1348852,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Without the end",
+      "creator": "Maxim-Miau",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-04-12T19:37:24Z"
+    },
+    {
       "beatmapset_id": 1349559,
       "artist": "C.H.S",
       "title": "C.H.S- Luv\\*Lab\\*Poison 22ate! (Cut Ver.) (Hytex) [Insane]",
@@ -1549,6 +1574,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1360248,
+      "artist": "LeaF",
+      "title": "Wizdomiot (extended ver.)",
+      "creator": "FAMoss",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-03-21T16:11:18Z"
     },
     {
       "beatmapset_id": 1361691,
@@ -1981,6 +2030,31 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-10-02T12:38:21Z"
+    },
+    {
+      "beatmapset_id": 1382136,
+      "artist": "senya",
+      "title": "Tsukiwa ni Megurasareta Kioku",
+      "creator": "Satellite",
+      "source": "東方Project",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "audit:coverage-200plus-2026-09",
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方Project",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2023-07-28T16:44:57Z"
     },
     {
       "beatmapset_id": 1383882,
