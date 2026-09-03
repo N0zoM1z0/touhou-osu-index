@@ -94,7 +94,7 @@
       "artist": "Ayakura Mei",
       "title": "Romantic Fall",
       "creator": "Reiji-RJ",
-      "source": "",
+      "source": "Touhou",
       "status": "approved",
       "modes": [
         "osu"
@@ -103,12 +103,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Alstroemeria Records",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-08-08T18:00:35Z"
     },
     {
@@ -140,22 +144,25 @@
       "artist": "Halozy",
       "title": "Staggering Spirit, Keine's Staggering Song",
       "creator": "Card N'FoRcE",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-03-17T23:17:28Z"
     },
     {
@@ -298,7 +305,7 @@
       "artist": "Halozy",
       "title": "Secret Sister Complex",
       "creator": "S i R i R u",
-      "source": "",
+      "source": "Touhou",
       "status": "approved",
       "modes": [
         "osu"
@@ -307,12 +314,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Halozy",
         "known_touhou_artist",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-02-02T21:00:39Z"
     },
     {
@@ -459,6 +470,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "discovery_query:Touhou",
         "discovery_query:ZUN",
         "known_touhou_artist",
@@ -468,7 +480,7 @@
         "tournament:google_sheet:tmf-2025:audited"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-02-18T21:01:03Z"
     },
     {
@@ -705,6 +717,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "discovery_query:Touhou",
         "known_touhou_artist",
         "osu_source",
@@ -713,7 +726,7 @@
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-04-19T00:21:23Z"
     },
     {
@@ -721,7 +734,7 @@
       "artist": "IOSYS",
       "title": "Power of Dream (Night Fever Refix)",
       "creator": "Kite",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -731,14 +744,18 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-04-17T11:35:21Z"
     },
     {
@@ -950,7 +967,7 @@
       "artist": "ALiCE'S EMOTiON",
       "title": "Ghostly Parapara Ship (Hardcore Edit)",
       "creator": "Thite",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -959,12 +976,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Touhou",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-09-23T15:43:18Z"
     },
     {
@@ -1006,13 +1027,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou Project",
+        "discovery_query:東方Project",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "tournament_candidate:731"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-07-27T03:38:20Z"
     },
     {
@@ -1196,7 +1219,7 @@
       "artist": "Tsubaki",
       "title": "Kyun Kyun Tamaran Inaba-tan!",
       "creator": "qinche",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -1206,12 +1229,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Halozy",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-12-29T08:39:56Z"
     },
     {
@@ -1337,7 +1364,7 @@
       "artist": "Atoguru",
       "title": "Itoshi Kimi wo Mitsuke ni",
       "creator": "bakabaka",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -1347,13 +1374,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:C-CLAYS",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-05-27T16:54:01Z"
     },
     {
@@ -1394,6 +1423,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -1401,7 +1431,7 @@
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-07-31T22:45:16Z"
     },
     {
@@ -1453,7 +1483,7 @@
       "artist": "IOSYS",
       "title": "Chanteikku Sanyousei no Itazura Daisensou",
       "creator": "Kurosanyan",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -1463,14 +1493,18 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-01-28T15:56:27Z"
     },
     {
@@ -1568,7 +1602,7 @@
       "artist": "Innocent Key",
       "title": "Touhou School",
       "creator": "Mafiamaster",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1577,11 +1611,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Touhou",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2020-12-03T06:26:44Z"
     },
     {
@@ -1726,6 +1764,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -1733,7 +1772,7 @@
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-08-11T15:02:33Z"
     },
     {
@@ -1741,22 +1780,25 @@
       "artist": "IOSYS",
       "title": "RE:Usatei",
       "creator": "OzzyOzrock",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-11-14T23:48:16Z"
     },
     {
@@ -1905,6 +1947,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
@@ -1912,7 +1956,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-09-04T11:09:45Z"
     },
     {
@@ -1988,12 +2032,14 @@
       "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "manual:verified",
         "osu_source",
         "osucollector:1402",
@@ -2001,7 +2047,7 @@
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-01-26T17:37:42Z"
     },
     {
@@ -2019,6 +2065,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "manual:verified",
         "osu_source",
         "osucollector:1402",
@@ -2027,7 +2074,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2012-06-27T00:19:32Z"
     },
     {
@@ -2035,7 +2082,7 @@
       "artist": "Atoguru",
       "title": "Mr.Liar",
       "creator": "sirjuyt",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu",
@@ -2045,11 +2092,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:C-CLAYS",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-12-23T11:45:35Z"
     },
     {
@@ -2100,7 +2151,7 @@
       "artist": "Senpi",
       "title": "Touhou EX Boss Rush!! +a Zenpen",
       "creator": "Strawberry",
-      "source": "",
+      "source": "東方Project",
       "status": "loved",
       "modes": [
         "osu",
@@ -2110,11 +2161,18 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "audit:pr31-generic-source-review-2026-09",
+        "discovery_query:Diao ye zong",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "manual:candidate",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2022-12-12T11:50:21Z"
     },
     {
@@ -2122,7 +2180,7 @@
       "artist": "IOSYS",
       "title": "Alice Dere",
       "creator": "Darcsol",
-      "source": "",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2131,12 +2189,17 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "discovery_query:上海アリス幻樂団",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2018-08-19T01:17:31Z"
     },
     {
@@ -2198,6 +2261,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -2205,7 +2269,7 @@
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-12-16T00:21:11Z"
     },
     {
@@ -2213,21 +2277,24 @@
       "artist": "Halozy",
       "title": "eliminate anthem",
       "creator": "Elly-chan",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
-        "osu"
+        "osu",
+        "taiko"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
       "osu_last_updated": "2011-12-17T16:34:10Z"
     },
     {
@@ -2254,11 +2321,11 @@
     },
     {
       "beatmapset_id": 34459,
-      "artist": "Kishida Kyoudan & The Akeboshi Rockets",
-      "title": "Akeboshi Rocket",
+      "artist": "KISIDA KYODAN & THE AKEBOSI ROCKETS",
+      "title": "Akebosi Rocket",
       "creator": "C R E A M",
-      "source": "",
-      "status": "pending",
+      "source": "東方文花帖　～ Shoot the Bullet.",
+      "status": "ranked",
       "modes": [
         "osu"
       ],
@@ -2266,11 +2333,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Shoot the Bullet",
+        "discovery_query:source=東方文花帖",
+        "osu_source",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": "2021-09-11T14:42:59Z"
+      "confidence": "verified",
+      "last_checked": "2026-09-03",
+      "osu_last_updated": "2022-05-03T17:08:00Z"
     },
     {
       "beatmapset_id": 34465,
