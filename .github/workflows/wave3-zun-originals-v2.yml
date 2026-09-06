@@ -1,0 +1,153 @@
+name: Wave 3 ZUN-original coverage diagnostic v2
+
+on:
+  push:
+    branches:
+      - feat/touhou-coverage-wave3-2026-09
+    paths:
+      - .github/workflows/wave3-zun-originals-v2.yml
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/touhou-coverage-wave3-2026-09
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Deep status-scoped ZUN original sweep
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import collections, json, time, unicodedata
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.http import get_text
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.sources import parse_beatmapset_page
+
+          STATUSES = ("graveyard", "ranked", "loved", "qualified", "pending", "wip")
+          MAX_PAGES = 12
+          THEMES = [
+              ("U.N.オーエンは彼女なのか？", "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+               ["U.N.オーエンは彼女なのか", "U.N. Owen Was Her", "U.N. Owen"],
+               ["U.N.オーエンは彼女なのか？", "U.N.オーエンは彼女なのか", "U.N. Owen Was Her?", "U.N. Owen Was Her"]),
+              ("亡き王女の為のセプテット", "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+               ["亡き王女の為のセプテット", "Septette for the Dead Princess"],
+               ["亡き王女の為のセプテット", "Septette for the Dead Princess"]),
+              ("恋色マスタースパーク", "東方永夜抄 ～ Imperishable Night.",
+               ["恋色マスタースパーク", "Love-colored Master Spark", "Love Coloured Master Spark"],
+               ["恋色マスタースパーク", "Love-colored Master Spark", "Love Colored Master Spark", "Love-Coloured Master Spark", "Love Coloured Master Spark"]),
+              ("ネクロファンタジア", "東方妖々夢 ～ Perfect Cherry Blossom.",
+               ["ネクロファンタジア", "Necrofantasia"], ["ネクロファンタジア", "Necrofantasia"]),
+              ("おてんば恋娘", "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+               ["おてんば恋娘", "Beloved Tomboyish Girl"], ["おてんば恋娘", "Beloved Tomboyish Girl"]),
+              ("ハルトマンの妖怪少女", "東方地霊殿 ～ Subterranean Animism.",
+               ["ハルトマンの妖怪少女", "Hartmann's Youkai Girl", "Hartmann Youkai Girl"],
+               ["ハルトマンの妖怪少女", "Hartmann's Youkai Girl", "Hartmann Youkai Girl"]),
+              ("月まで届け、不死の煙", "東方永夜抄 ～ Imperishable Night.",
+               ["月まで届け、不死の煙", "Reach for the Moon Immortal Smoke", "Reach for the Moon, Immortal Smoke"],
+               ["月まで届け、不死の煙", "Reach for the Moon, Immortal Smoke", "Reach for the Moon Immortal Smoke"]),
+          ]
+
+          def compact(value: str) -> str:
+              value = unicodedata.normalize("NFKC", str(value)).casefold()
+              return "".join(ch for ch in value if ch.isalnum())
+
+          stats_key = compact(get_text("https://touhou.arrangement-chronicle.com/statistics/original_songs"))
+          for canonical, *_ in THEMES:
+              if compact(canonical) not in stats_key:
+                  raise RuntimeError(f"Arrangement Chronicle statistics missing normalized theme {canonical}")
+
+          base = Catalog.load(Path("data/catalog"))
+          api = OsuApi.from_env(); api.token()
+          discovered = {}
+          evidence = collections.defaultdict(set)
+          theme_hits = collections.defaultdict(set)
+          raw_status_hits = collections.Counter()
+          pairs = 0
+          by_canonical = {theme[0]: theme for theme in THEMES}
+          for canonical, game, queries, aliases in THEMES:
+              for query in queries:
+                  for status in STATUSES:
+                      pairs += 1
+                      cursor = None
+                      for _ in range(MAX_PAGES):
+                          params = {"q": query, "s": status}
+                          if cursor: params["cursor_string"] = cursor
+                          payload = api.get("/beatmapsets/search", params)
+                          for raw in payload.get("beatmapsets", []):
+                              bid = int(raw["id"])
+                              discovered[bid] = raw
+                              evidence[bid].add(f"theme_zun_original:{canonical}:{status}:{query}")
+                              theme_hits[bid].add(canonical)
+                              raw_status_hits[status] += 1
+                          cursor = payload.get("cursor_string")
+                          if not cursor: break
+
+          candidates = []
+          rejects = collections.Counter()
+          for bid, raw in discovered.items():
+              if bid in base.entries:
+                  rejects["already_catalogued"] += 1; continue
+              entry = entry_from_osu(raw, evidence=sorted(evidence[bid]), confidence="candidate")
+              if compact(entry.artist) != "zun":
+                  rejects["artist_not_zun"] += 1; continue
+              matched = []
+              for canonical in theme_hits[bid]:
+                  theme = by_canonical[canonical]
+                  if compact(entry.title) in {compact(alias) for alias in theme[3]}:
+                      matched.append(theme)
+              if len({theme[0] for theme in matched}) != 1:
+                  rejects["title_not_unambiguous_exact_alias"] += 1; continue
+              candidates.append((entry, matched[0], len(evidence[bid])))
+
+          candidates.sort(key=lambda item: (-item[2], item[1][0], item[0].beatmapset_id))
+          verified, failures = [], []
+          for candidate, theme, hits in candidates:
+              if len(verified) >= 500: break
+              bid = candidate.beatmapset_id
+              try:
+                  raw = api.beatmapset(bid)
+                  fresh = entry_from_osu(raw, evidence=candidate.evidence, confidence="candidate")
+                  if int(raw.get("id", -1)) != bid: raise RuntimeError("API ID mismatch")
+                  if compact(fresh.artist) != "zun": raise RuntimeError("artist drift")
+                  if compact(fresh.title) not in {compact(alias) for alias in theme[3]}: raise RuntimeError("title drift")
+                  page = entry_from_osu(parse_beatmapset_page(get_text(f"https://osu.ppy.sh/beatmapsets/{bid}")), evidence=candidate.evidence, confidence="candidate")
+                  fields = ("beatmapset_id", "artist", "title", "creator", "source", "status")
+                  mismatch = [field for field in fields if getattr(fresh, field) != getattr(page, field)]
+                  if sorted(fresh.modes) != sorted(page.modes): mismatch.append("modes")
+                  if mismatch: raise RuntimeError("API/page mismatch: " + ", ".join(mismatch))
+                  verified.append((fresh, theme, hits))
+              except Exception as exc:
+                  failures.append((bid, str(exc)))
+              time.sleep(0.12)
+
+          print("ZUN ORIGINAL DEEP SWEEP V2 SUMMARY")
+          print(f"base_catalog={len(base.entries)}")
+          print(f"themes={len(THEMES)}")
+          print(f"query_status_pairs={pairs}")
+          print(f"unique_search_results={len(discovered)}")
+          print(f"exact_zun_absent_before_direct={len(candidates)}")
+          print(f"fresh_api_page_verified={len(verified)}")
+          print(f"fresh_verify_failures={len(failures)}")
+          print(f"rejects={dict(sorted(rejects.items()))}")
+          print(f"theme_counts={dict(sorted(collections.Counter(theme[0] for _, theme, _ in verified).items()))}")
+          print(f"status_counts={dict(sorted(collections.Counter(entry.status for entry, _, _ in verified).items()))}")
+          print(f"raw_status_hits={dict(sorted(raw_status_hits.items()))}")
+          print("\nVERIFIED ZUN ORIGINAL POOL")
+          for fresh, theme, hits in verified:
+              print(json.dumps({"id":fresh.beatmapset_id,"artist":fresh.artist,"title":fresh.title,"source":fresh.source,"status":fresh.status,"modes":fresh.modes,"theme":theme[0],"game":theme[1],"query_hits":hits}, ensure_ascii=False))
+          if failures:
+              print("\nDIRECT FAILURES")
+              for item in failures[:100]: print(item)
+          PY
