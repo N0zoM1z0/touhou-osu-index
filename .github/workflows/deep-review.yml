@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/deep-review.yml"
       - "Makefile"
+      - "config/provenance-review-exceptions.json"
       - "data/catalog/**"
       - "docs/source-audit-*.md"
       - "tests/**"
@@ -150,6 +151,7 @@ jobs:
               lines.append(
                   f"- provenance: checked={provenance['checked']}, "
                   f"supported={provenance['supported']}, review_flags={len(provenance['review_flags'])}, "
+                  f"acknowledged={len(provenance['acknowledged_review_flags'])}, "
                   f"provider_errors={provenance['provider_errors']}"
               )
           live = report.get("live_osu")

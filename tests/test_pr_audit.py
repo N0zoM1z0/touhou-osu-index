@@ -9,11 +9,16 @@ from touhou_osu.http import HttpError
 from touhou_osu.models import Entry
 from touhou_osu.pr_audit import (
     AuditError,
+    ProvenanceReviewException,
     accepted_ids_from_audit_document,
     catalog_diff,
     live_osu_audit,
+    load_provenance_review_exceptions,
+    provenance_audit,
+    resolve_provenance_review_exceptions,
     structural_audit,
 )
+from touhou_osu.provenance import ProvenanceAudit, ProvenanceHit
 
 
 def entry(beatmapset_id, **changes):
@@ -62,6 +67,41 @@ def raw(item):
     }
 
 
+def review_exception(**changes):
+    values = {
+        "beatmapset_id": 2,
+        "artist": "Akiyama Uni",
+        "title": "Kaoru Juyouka",
+        "provider": "touhoudb",
+        "provider_id": "636",
+        "relation": "non_zun_original",
+        "reason": "Reviewed official Touhou original.",
+        "evidence_urls": ("https://example.test/evidence",),
+    }
+    values.update(changes)
+    return ProvenanceReviewException(**values)
+
+
+def contradiction_audit(*hits):
+    return ProvenanceAudit(
+        beatmapset_id=2,
+        artist="Akiyama Uni",
+        title="Kaoru Juyouka",
+        source="Touhou Project",
+        confidence="verified",
+        hits=list(hits),
+    )
+
+
+def contradiction(provider="touhoudb", provider_id="636", relation="non_zun_original"):
+    return ProvenanceHit(
+        provider=provider,
+        verdict="contradicts",
+        relation=relation,
+        provider_id=provider_id,
+    )
+
+
 class PrAuditTests(unittest.TestCase):
     def test_catalog_diff_reports_added_removed_and_changed_fields(self):
         base = Catalog([entry(1), entry(2)])
@@ -98,6 +138,124 @@ class PrAuditTests(unittest.TestCase):
             path.write_text(document, encoding="utf-8")
             with self.assertRaisesRegex(AuditError, "duplicate"):
                 accepted_ids_from_audit_document(path)
+
+    def test_repository_provenance_exception_is_valid_and_exact(self):
+        path = Path(__file__).resolve().parents[1] / "config/provenance-review-exceptions.json"
+        exceptions = load_provenance_review_exceptions(path)
+        self.assertEqual(len(exceptions), 1)
+        self.assertEqual(
+            exceptions[0].key,
+            (397764, "touhoudb", "636", "non_zun_original"),
+        )
+        self.assertEqual(exceptions[0].artist, "Akiyama Uni")
+        self.assertEqual(exceptions[0].title, "Kaoru Juyouka")
+
+    def test_provenance_exception_acknowledges_only_exact_contradiction(self):
+        item = entry(2, artist="Akiyama Uni", title="Kaoru Juyouka")
+        base, current = Catalog(), Catalog([item])
+        diff = catalog_diff(base, current)
+        audit = contradiction_audit(contradiction())
+        with patch("touhou_osu.pr_audit.audit_entries", return_value=[audit]):
+            report = provenance_audit(
+                base,
+                current,
+                diff,
+                scope="added",
+                workers=1,
+                exceptions=(review_exception(),),
+            )
+        self.assertEqual(report["review_flags"], [])
+        self.assertEqual(report["errors"], [])
+        self.assertEqual(report["red_flags"], 1)
+        self.assertEqual(report["acknowledged_review_flags"], [review_exception().to_dict()])
+
+    def test_provenance_exception_mismatch_remains_fail_closed(self):
+        item = entry(2, artist="Akiyama Uni", title="Kaoru Juyouka")
+        base, current = Catalog(), Catalog([item])
+        diff = catalog_diff(base, current)
+        mismatches = (
+            review_exception(beatmapset_id=3),
+            review_exception(artist="Other Artist"),
+            review_exception(title="Other Title"),
+            review_exception(provider="thbwiki"),
+            review_exception(provider_id="999"),
+            review_exception(relation="other_relation"),
+        )
+        for exception in mismatches:
+            with self.subTest(exception=exception), patch(
+                "touhou_osu.pr_audit.audit_entries",
+                return_value=[contradiction_audit(contradiction())],
+            ):
+                report = provenance_audit(
+                    base,
+                    current,
+                    diff,
+                    scope="added",
+                    workers=1,
+                    exceptions=(exception,),
+                )
+                self.assertEqual(report["review_flags"], [2])
+                self.assertEqual(report["acknowledged_review_flags"], [])
+                self.assertIn("external provenance needs review", report["errors"][0])
+
+    def test_new_contradiction_still_fails_beside_acknowledged_one(self):
+        item = entry(2, artist="Akiyama Uni", title="Kaoru Juyouka")
+        base, current = Catalog(), Catalog([item])
+        diff = catalog_diff(base, current)
+        audit = contradiction_audit(
+            contradiction(),
+            contradiction(provider="other-provider", provider_id="new", relation="new_relation"),
+        )
+        with patch("touhou_osu.pr_audit.audit_entries", return_value=[audit]):
+            report = provenance_audit(
+                base,
+                current,
+                diff,
+                scope="added",
+                workers=1,
+                exceptions=(review_exception(),),
+            )
+        self.assertEqual(report["review_flags"], [2])
+        self.assertEqual(report["acknowledged_review_flags"], [review_exception().to_dict()])
+        self.assertIn("external provenance needs review", report["errors"][0])
+
+    def test_provenance_exception_file_rejects_unsafe_records(self):
+        valid = review_exception().to_dict()
+        invalid_records = (
+            {**valid, "reason": ""},
+            {**valid, "evidence_urls": []},
+            {**valid, "evidence_urls": ["not-a-url"]},
+            {**valid, "provider": "TouhouDB"},
+            {**valid, "unexpected": "field"},
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "exceptions.json"
+            for record in invalid_records:
+                with self.subTest(record=record):
+                    path.write_text(
+                        json.dumps({"schema_version": 1, "exceptions": [record]}),
+                        encoding="utf-8",
+                    )
+                    with self.assertRaises(AuditError):
+                        load_provenance_review_exceptions(path)
+
+    def test_provenance_exception_file_rejects_duplicate_keys(self):
+        record = review_exception().to_dict()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "exceptions.json"
+            path.write_text(
+                json.dumps({"schema_version": 1, "exceptions": [record, record]}),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(AuditError, "duplicate provenance exception"):
+                load_provenance_review_exceptions(path)
+
+    def test_missing_default_exception_registry_means_no_exceptions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            repository = Path(directory)
+            self.assertEqual(resolve_provenance_review_exceptions(repository, None), ())
+            with self.assertRaisesRegex(AuditError, "cannot load provenance exceptions"):
+                resolve_provenance_review_exceptions(repository, Path("missing.json"))
 
     def test_live_osu_requires_catalog_api_and_public_page_to_match(self):
         item = entry(2)

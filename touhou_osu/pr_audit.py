@@ -13,11 +13,18 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import urlparse
 
 from .catalog import Catalog
 from .http import HttpError, get_text
 from .osu_api import OsuApi, entry_from_osu
-from .provenance import _report_payload, audit_entries, new_generic_verification_violations
+from .provenance import (
+    ProvenanceAudit,
+    ProvenanceHit,
+    _report_payload,
+    audit_entries,
+    new_generic_verification_violations,
+)
 from .sources import parse_beatmapset_page
 
 IDENTITY_FIELDS = (
@@ -30,10 +37,136 @@ IDENTITY_FIELDS = (
     "osu_last_updated",
 )
 AUDIT_ROW_RE = re.compile(r"^\|\s*(\d+)\s*\|")
+PROVENANCE_EXCEPTION_SCHEMA_VERSION = 1
+DEFAULT_PROVENANCE_EXCEPTIONS = Path("config/provenance-review-exceptions.json")
 
 
 class AuditError(RuntimeError):
     pass
+
+
+@dataclass(frozen=True)
+class ProvenanceReviewException:
+    beatmapset_id: int
+    artist: str
+    title: str
+    provider: str
+    provider_id: str
+    relation: str
+    reason: str
+    evidence_urls: tuple[str, ...]
+
+    @property
+    def key(self) -> tuple[int, str, str, str]:
+        return (self.beatmapset_id, self.provider, self.provider_id, self.relation)
+
+    def matches(self, audit: ProvenanceAudit, hit: ProvenanceHit) -> bool:
+        return (
+            hit.verdict == "contradicts"
+            and audit.beatmapset_id == self.beatmapset_id
+            and audit.artist == self.artist
+            and audit.title == self.title
+            and hit.provider == self.provider
+            and hit.provider_id == self.provider_id
+            and hit.relation == self.relation
+        )
+
+    def to_dict(self) -> dict:
+        return {
+            "beatmapset_id": self.beatmapset_id,
+            "artist": self.artist,
+            "title": self.title,
+            "provider": self.provider,
+            "provider_id": self.provider_id,
+            "relation": self.relation,
+            "reason": self.reason,
+            "evidence_urls": list(self.evidence_urls),
+        }
+
+
+def _exception_string(item: dict, field: str, index: int) -> str:
+    value = item.get(field)
+    if not isinstance(value, str) or not value or value != value.strip():
+        raise AuditError(f"provenance exception {index} has invalid {field}")
+    return value
+
+
+def load_provenance_review_exceptions(path: Path) -> tuple[ProvenanceReviewException, ...]:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise AuditError(f"cannot load provenance exceptions from {path}: {exc}") from exc
+
+    if not isinstance(payload, dict) or set(payload) != {"schema_version", "exceptions"}:
+        raise AuditError("provenance exceptions must contain only schema_version and exceptions")
+    if payload["schema_version"] != PROVENANCE_EXCEPTION_SCHEMA_VERSION:
+        raise AuditError(
+            f"unsupported provenance exception schema_version: {payload['schema_version']!r}"
+        )
+    if not isinstance(payload["exceptions"], list):
+        raise AuditError("provenance exceptions must be a list")
+
+    required = {
+        "beatmapset_id",
+        "artist",
+        "title",
+        "provider",
+        "provider_id",
+        "relation",
+        "reason",
+        "evidence_urls",
+    }
+    exceptions: list[ProvenanceReviewException] = []
+    seen: set[tuple[int, str, str, str]] = set()
+    for index, item in enumerate(payload["exceptions"]):
+        if not isinstance(item, dict) or set(item) != required:
+            raise AuditError(f"provenance exception {index} must contain exactly {sorted(required)}")
+        beatmapset_id = item["beatmapset_id"]
+        if type(beatmapset_id) is not int or beatmapset_id <= 0:
+            raise AuditError(f"provenance exception {index} has invalid beatmapset_id")
+        urls = item["evidence_urls"]
+        if not isinstance(urls, list) or not urls or not all(isinstance(url, str) for url in urls):
+            raise AuditError(f"provenance exception {index} has invalid evidence_urls")
+        if len(urls) != len(set(urls)):
+            raise AuditError(f"provenance exception {index} has duplicate evidence_urls")
+        for url in urls:
+            parsed = urlparse(url)
+            if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+                raise AuditError(f"provenance exception {index} has invalid evidence URL")
+
+        exception = ProvenanceReviewException(
+            beatmapset_id=beatmapset_id,
+            artist=_exception_string(item, "artist", index),
+            title=_exception_string(item, "title", index),
+            provider=_exception_string(item, "provider", index),
+            provider_id=_exception_string(item, "provider_id", index),
+            relation=_exception_string(item, "relation", index),
+            reason=_exception_string(item, "reason", index),
+            evidence_urls=tuple(urls),
+        )
+        if exception.provider != exception.provider.casefold():
+            raise AuditError(f"provenance exception {index} provider must be lowercase")
+        if exception.relation != exception.relation.casefold():
+            raise AuditError(f"provenance exception {index} relation must be lowercase")
+        if exception.key in seen:
+            raise AuditError(f"duplicate provenance exception: {exception.key}")
+        seen.add(exception.key)
+        exceptions.append(exception)
+    return tuple(exceptions)
+
+
+def resolve_provenance_review_exceptions(
+    repository: Path,
+    path: Path | None,
+) -> tuple[ProvenanceReviewException, ...]:
+    if path is None:
+        default_path = repository / DEFAULT_PROVENANCE_EXCEPTIONS
+        if not default_path.exists():
+            return ()
+        return load_provenance_review_exceptions(default_path)
+    if not path.is_absolute():
+        path = repository / path
+    return load_provenance_review_exceptions(path)
 
 
 class RequestPacer:
@@ -213,20 +346,52 @@ def _target_ids(diff: dict, scope: str) -> list[int]:
     return sorted(set(diff["added"]) | set(diff["modified"]))
 
 
-def provenance_audit(base: Catalog, current: Catalog, diff: dict, *, scope: str, workers: int) -> dict:
+def _resolve_review_flags(
+    audits: list[ProvenanceAudit],
+    exceptions: tuple[ProvenanceReviewException, ...],
+) -> tuple[list[int], list[dict]]:
+    review_flags: list[int] = []
+    acknowledged: list[dict] = []
+    acknowledged_keys: set[tuple[int, str, str, str]] = set()
+    for audit in audits:
+        unacknowledged = False
+        for hit in audit.contradictions:
+            exception = next(
+                (candidate for candidate in exceptions if candidate.matches(audit, hit)),
+                None,
+            )
+            if exception is None:
+                unacknowledged = True
+                continue
+            if exception.key not in acknowledged_keys:
+                acknowledged.append(exception.to_dict())
+                acknowledged_keys.add(exception.key)
+        if unacknowledged:
+            review_flags.append(audit.beatmapset_id)
+    return review_flags, acknowledged
+
+
+def provenance_audit(
+    base: Catalog,
+    current: Catalog,
+    diff: dict,
+    *,
+    scope: str,
+    workers: int,
+    exceptions: tuple[ProvenanceReviewException, ...] = (),
+) -> dict:
     targets = [current.entries[item] for item in _target_ids(diff, scope)]
     audits = audit_entries(targets, workers=workers)
     violations = new_generic_verification_violations(current, base)
     payload = _report_payload(audits, violations)
-    review_flags = [
-        audit.beatmapset_id for audit in audits if audit.verdict in {"red_flag", "ambiguous"}
-    ]
+    review_flags, acknowledged = _resolve_review_flags(audits, exceptions)
     errors: list[str] = []
     if violations:
         errors.append(f"unsafe generic-source verification: {violations[:20]}")
     if review_flags:
         errors.append(f"external provenance needs review: {review_flags[:20]}")
     payload["review_flags"] = review_flags
+    payload["acknowledged_review_flags"] = acknowledged
     payload["errors"] = errors
     return payload
 
@@ -335,6 +500,7 @@ def _print_summary(report: dict) -> None:
             "Provenance: "
             f"checked={provenance['checked']} supported={provenance['supported']} "
             f"review_flags={len(provenance['review_flags'])} "
+            f"acknowledged={len(provenance['acknowledged_review_flags'])} "
             f"provider_errors={provenance['provider_errors']}"
         )
     live = report.get("live_osu")
@@ -357,6 +523,14 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--allow-removals", action="store_true")
     result.add_argument("--forbid-existing-changes", action="store_true")
     result.add_argument("--require-base-ancestor", action="store_true")
+    result.add_argument(
+        "--provenance-exceptions",
+        type=Path,
+        help=(
+            "exact reviewed exceptions for provider contradictions; defaults to the "
+            "repository registry when present"
+        ),
+    )
     result.add_argument("--output", type=Path)
     result.add_argument("--json", action="store_true", help="print the complete report to stdout")
     return result
@@ -399,9 +573,18 @@ def main(argv: list[str] | None = None) -> int:
             report["errors"].extend(report["structural"]["errors"])
 
         if not report["errors"] and args.mode in {"provenance", "all"}:
+            exceptions = resolve_provenance_review_exceptions(
+                repository,
+                args.provenance_exceptions,
+            )
             print(f"Running provenance review for {len(_target_ids(diff, args.scope))} rows...", flush=True)
             report["provenance"] = provenance_audit(
-                base, current, diff, scope=args.scope, workers=args.workers
+                base,
+                current,
+                diff,
+                scope=args.scope,
+                workers=args.workers,
+                exceptions=exceptions,
             )
             report["errors"].extend(report["provenance"]["errors"])
 
