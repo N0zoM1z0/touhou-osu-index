@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from touhou_osu.catalog import Catalog
+from touhou_osu.http import HttpError
 from touhou_osu.models import Entry
 from touhou_osu.pr_audit import (
     AuditError,
@@ -131,6 +132,25 @@ class PrAuditTests(unittest.TestCase):
         ):
             report = live_osu_audit(Catalog([item]), diff, scope="added", workers=1)
         self.assertIn("API/public-page drift: creator", report["failures"][0]["error"])
+
+    def test_live_osu_retries_public_page_rate_limit(self):
+        item = entry(2)
+        FakeApi.raw = {2: raw(item)}
+        page = '<script id="json-beatmapset" type="application/json">' + json.dumps(raw(item)) + "</script>"
+        diff = catalog_diff(Catalog(), Catalog([item]))
+        with patch("touhou_osu.pr_audit.OsuApi", FakeApi), patch(
+            "touhou_osu.pr_audit.get_text",
+            side_effect=[HttpError("HTTP 429 from public page"), page],
+        ):
+            report = live_osu_audit(
+                Catalog([item]),
+                diff,
+                scope="added",
+                workers=1,
+                public_interval=0,
+                rate_limit_backoff=0,
+            )
+        self.assertEqual(report, {"checked": 1, "failures": [], "errors": []})
 
 
 if __name__ == "__main__":

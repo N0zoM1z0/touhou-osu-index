@@ -8,12 +8,14 @@ import re
 import subprocess
 import sys
 import tempfile
+import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
 
 from .catalog import Catalog
-from .http import get_text
+from .http import HttpError, get_text
 from .osu_api import OsuApi, entry_from_osu
 from .provenance import _report_payload, audit_entries, new_generic_verification_violations
 from .sources import parse_beatmapset_page
@@ -32,6 +34,27 @@ AUDIT_ROW_RE = re.compile(r"^\|\s*(\d+)\s*\|")
 
 class AuditError(RuntimeError):
     pass
+
+
+class RequestPacer:
+    """Reserve globally spaced request slots across worker threads."""
+
+    def __init__(self, interval: float) -> None:
+        self.interval = interval
+        self.next_request = 0.0
+        self.lock = threading.Lock()
+
+    def wait(self) -> None:
+        with self.lock:
+            now = time.monotonic()
+            delay = max(0.0, self.next_request - now)
+            self.next_request = max(now, self.next_request) + self.interval
+        if delay:
+            time.sleep(delay)
+
+    def defer(self, delay: float) -> None:
+        with self.lock:
+            self.next_request = max(self.next_request, time.monotonic() + delay)
 
 
 @dataclass(frozen=True)
@@ -219,13 +242,40 @@ def _identity_mismatches(left, right) -> list[str]:
     return [field for field in left_identity if left_identity[field] != right_identity[field]]
 
 
-def live_osu_audit(current: Catalog, diff: dict, *, scope: str, workers: int) -> dict:
+def live_osu_audit(
+    current: Catalog,
+    diff: dict,
+    *,
+    scope: str,
+    workers: int,
+    public_interval: float = 0.5,
+    rate_limit_backoff: float = 30.0,
+) -> dict:
     ids = _target_ids(diff, scope)
     if not ids:
         return {"checked": 0, "failures": [], "errors": []}
 
     api = OsuApi.from_env()
     api.token()
+    public_pacer = RequestPacer(public_interval)
+
+    def public_entry(beatmapset_id: int, stored):
+        for attempt in range(2):
+            public_pacer.wait()
+            try:
+                page_raw = parse_beatmapset_page(
+                    get_text(f"https://osu.ppy.sh/beatmapsets/{beatmapset_id}")
+                )
+                return entry_from_osu(
+                    page_raw,
+                    evidence=stored.evidence,
+                    confidence=stored.confidence,
+                )
+            except HttpError as exc:
+                if "HTTP 429" not in str(exc) or attempt == 1:
+                    raise
+                public_pacer.defer(rate_limit_backoff)
+        raise AssertionError("unreachable")
 
     def verify(beatmapset_id: int) -> dict:
         stored = current.entries[beatmapset_id]
@@ -238,18 +288,14 @@ def live_osu_audit(current: Catalog, diff: dict, *, scope: str, workers: int) ->
         if stored_mismatches:
             raise AuditError("catalog/API drift: " + ", ".join(stored_mismatches))
 
-        page_raw = parse_beatmapset_page(get_text(f"https://osu.ppy.sh/beatmapsets/{beatmapset_id}"))
-        page_entry = entry_from_osu(
-            page_raw,
-            evidence=stored.evidence,
-            confidence=stored.confidence,
-        )
+        page_entry = public_entry(beatmapset_id, stored)
         page_mismatches = _identity_mismatches(api_entry, page_entry)
         if page_mismatches:
             raise AuditError("API/public-page drift: " + ", ".join(page_mismatches))
         return {"beatmapset_id": beatmapset_id, "status": "exact"}
 
     failures: list[dict] = []
+    completed = 0
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {executor.submit(verify, item): item for item in ids}
         for future in as_completed(futures):
@@ -258,6 +304,9 @@ def live_osu_audit(current: Catalog, diff: dict, *, scope: str, workers: int) ->
                 future.result()
             except Exception as exc:
                 failures.append({"beatmapset_id": beatmapset_id, "error": str(exc)})
+            completed += 1
+            if completed % 50 == 0 or completed == len(ids):
+                print(f"Live osu!: checked={completed}/{len(ids)} failures={len(failures)}", flush=True)
     failures.sort(key=lambda item: item["beatmapset_id"])
     errors = [f"live osu! identity failures: {[item['beatmapset_id'] for item in failures[:20]]}"] if failures else []
     return {"checked": len(ids), "failures": failures, "errors": errors}
@@ -336,6 +385,7 @@ def main(argv: list[str] | None = None) -> int:
         diff = catalog_diff(base, current)
 
         if args.mode in {"structural", "all"}:
+            print("Running structural catalog review...", flush=True)
             audit_document = args.audit_doc
             if audit_document is not None and not audit_document.is_absolute():
                 audit_document = repository / audit_document
@@ -349,12 +399,14 @@ def main(argv: list[str] | None = None) -> int:
             report["errors"].extend(report["structural"]["errors"])
 
         if not report["errors"] and args.mode in {"provenance", "all"}:
+            print(f"Running provenance review for {len(_target_ids(diff, args.scope))} rows...", flush=True)
             report["provenance"] = provenance_audit(
                 base, current, diff, scope=args.scope, workers=args.workers
             )
             report["errors"].extend(report["provenance"]["errors"])
 
         if not report["errors"] and args.mode in {"live-osu", "all"}:
+            print(f"Running live osu! review for {len(_target_ids(diff, args.scope))} rows...", flush=True)
             report["live_osu"] = live_osu_audit(
                 current, diff, scope=args.scope, workers=args.workers
             )
