@@ -1,0 +1,241 @@
+name: Wave 3 ZUN-original coverage diagnostic
+
+on:
+  push:
+    branches:
+      - feat/touhou-coverage-wave3-2026-09
+    paths:
+      - .github/workflows/wave3-zun-originals.yml
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/touhou-coverage-wave3-2026-09
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Deep status-scoped ZUN original sweep
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import collections
+          import json
+          import time
+          import unicodedata
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.http import get_text
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.sources import parse_beatmapset_page
+
+          STATUSES = ("graveyard", "ranked", "loved", "qualified", "pending", "wip")
+          MAX_PAGES = 12
+          VERIFY_BUFFER = 500
+
+          THEMES = [
+              {
+                  "canonical": "U.N.オーエンは彼女なのか？",
+                  "game": "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+                  "queries": ["U.N.オーエンは彼女なのか", "U.N. Owen Was Her", "U.N. Owen"],
+                  "aliases": ["U.N.オーエンは彼女なのか？", "U.N.オーエンは彼女なのか", "U.N. Owen Was Her?", "U.N. Owen Was Her"],
+              },
+              {
+                  "canonical": "亡き王女の為のセプテット",
+                  "game": "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+                  "queries": ["亡き王女の為のセプテット", "Septette for the Dead Princess"],
+                  "aliases": ["亡き王女の為のセプテット", "Septette for the Dead Princess"],
+              },
+              {
+                  "canonical": "恋色マスタースパーク",
+                  "game": "東方永夜抄 ～ Imperishable Night.",
+                  "queries": ["恋色マスタースパーク", "Love-colored Master Spark", "Love Coloured Master Spark"],
+                  "aliases": ["恋色マスタースパーク", "Love-colored Master Spark", "Love Coloured Master Spark", "Love-Coloured Master Spark", "Love Colored Master Spark"],
+              },
+              {
+                  "canonical": "ネクロファンタジア",
+                  "game": "東方妖々夢 ～ Perfect Cherry Blossom.",
+                  "queries": ["ネクロファンタジア", "Necrofantasia"],
+                  "aliases": ["ネクロファンタジア", "Necrofantasia"],
+              },
+              {
+                  "canonical": "おてんば恋娘",
+                  "game": "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+                  "queries": ["おてんば恋娘", "Beloved Tomboyish Girl"],
+                  "aliases": ["おてんば恋娘", "Beloved Tomboyish Girl"],
+              },
+              {
+                  "canonical": "ハルトマンの妖怪少女",
+                  "game": "東方地霊殿 ～ Subterranean Animism.",
+                  "queries": ["ハルトマンの妖怪少女", "Hartmann's Youkai Girl", "Hartmann Youkai Girl"],
+                  "aliases": ["ハルトマンの妖怪少女", "Hartmann's Youkai Girl", "Hartmann Youkai Girl"],
+              },
+              {
+                  "canonical": "月まで届け、不死の煙",
+                  "game": "東方永夜抄 ～ Imperishable Night.",
+                  "queries": ["月まで届け、不死の煙", "Reach for the Moon Immortal Smoke", "Reach for the Moon, Immortal Smoke"],
+                  "aliases": ["月まで届け、不死の煙", "Reach for the Moon, Immortal Smoke", "Reach for the Moon Immortal Smoke"],
+              },
+              {
+                  "canonical": "少女綺想曲 ～ Dream Battle",
+                  "game": "東方永夜抄 ～ Imperishable Night.",
+                  "queries": ["少女綺想曲 Dream Battle", "Maiden's Capriccio Dream Battle", "Maiden Capriccio Dream Battle"],
+                  "aliases": ["少女綺想曲 ～ Dream Battle", "少女綺想曲 ~ Dream Battle", "Maiden's Capriccio ~ Dream Battle", "Maiden's Capriccio ～ Dream Battle", "Maiden Capriccio Dream Battle"],
+              },
+              {
+                  "canonical": "竹取飛翔 ～ Lunatic Princess",
+                  "game": "東方永夜抄 ～ Imperishable Night.",
+                  "queries": ["竹取飛翔 Lunatic Princess", "Flight of the Bamboo Cutter Lunatic Princess", "Lunatic Princess"],
+                  "aliases": ["竹取飛翔 ～ Lunatic Princess", "竹取飛翔 ~ Lunatic Princess", "Flight of the Bamboo Cutter ~ Lunatic Princess", "Flight of the Bamboo Cutter ～ Lunatic Princess", "Lunatic Princess"],
+              },
+              {
+                  "canonical": "幽雅に咲かせ、墨染の桜 ～ Border of Life",
+                  "game": "東方妖々夢 ～ Perfect Cherry Blossom.",
+                  "queries": ["幽雅に咲かせ 墨染の桜 Border of Life", "Bloom Nobly Ink-Black Cherry Blossom Border of Life"],
+                  "aliases": ["幽雅に咲かせ、墨染の桜 ～ Border of Life", "幽雅に咲かせ、墨染の桜 ~ Border of Life", "Bloom Nobly, Ink-Black Cherry Blossom ~ Border of Life", "Bloom Nobly Ink-Black Cherry Blossom Border of Life"],
+              },
+          ]
+
+          def compact(value: str) -> str:
+              value = unicodedata.normalize("NFKC", str(value)).casefold()
+              return "".join(ch for ch in value if ch.isalnum())
+
+          # The Arrangement Chronicle statistics page is an independent live
+          # composition registry; require every canonical theme name to still be
+          # present before using this audit class.
+          stats = get_text("https://touhou.arrangement-chronicle.com/statistics/original_songs")
+          for theme in THEMES:
+              if theme["canonical"] not in stats:
+                  raise RuntimeError(f"Arrangement Chronicle statistics missing {theme['canonical']}")
+
+          base = Catalog.load(Path("data/catalog"))
+          api = OsuApi.from_env()
+          api.token()
+
+          discovered: dict[int, dict] = {}
+          evidence: dict[int, set[str]] = collections.defaultdict(set)
+          theme_hits: dict[int, set[str]] = collections.defaultdict(set)
+          raw_status_hits = collections.Counter()
+          query_pairs = 0
+          for theme in THEMES:
+              for query in theme["queries"]:
+                  for status in STATUSES:
+                      query_pairs += 1
+                      cursor = None
+                      for _ in range(MAX_PAGES):
+                          params = {"q": query, "s": status}
+                          if cursor:
+                              params["cursor_string"] = cursor
+                          payload = api.get("/beatmapsets/search", params)
+                          for raw in payload.get("beatmapsets", []):
+                              beatmapset_id = int(raw["id"])
+                              discovered[beatmapset_id] = raw
+                              evidence[beatmapset_id].add(f"theme_zun_original:{theme['canonical']}:{status}:{query}")
+                              theme_hits[beatmapset_id].add(theme["canonical"])
+                              raw_status_hits[status] += 1
+                          cursor = payload.get("cursor_string")
+                          if not cursor:
+                              break
+
+          by_canonical = {theme["canonical"]: theme for theme in THEMES}
+          candidates = []
+          rejects = collections.Counter()
+          for beatmapset_id, raw in discovered.items():
+              if beatmapset_id in base.entries:
+                  rejects["already_catalogued"] += 1
+                  continue
+              entry = entry_from_osu(raw, evidence=sorted(evidence[beatmapset_id]), confidence="candidate")
+              if compact(entry.artist) != "zun":
+                  rejects["artist_not_zun"] += 1
+                  continue
+              matched = []
+              for canonical in theme_hits[beatmapset_id]:
+                  theme = by_canonical[canonical]
+                  aliases = {compact(value) for value in theme["aliases"]}
+                  if compact(entry.title) in aliases:
+                      matched.append(theme)
+              if not matched:
+                  rejects["title_not_exact_alias"] += 1
+                  continue
+              # If a permissive query happens to match multiple theme families,
+              # only retain an unambiguous exact title identity.
+              canonicals = {theme["canonical"] for theme in matched}
+              if len(canonicals) != 1:
+                  rejects["ambiguous_theme"] += 1
+                  continue
+              candidates.append((entry, matched[0], len(evidence[beatmapset_id])))
+
+          candidates.sort(key=lambda item: (-item[2], item[1]["canonical"], item[0].beatmapset_id))
+          verified = []
+          failures = []
+          for candidate, theme, hits in candidates:
+              if len(verified) >= VERIFY_BUFFER:
+                  break
+              beatmapset_id = candidate.beatmapset_id
+              try:
+                  raw = api.beatmapset(beatmapset_id)
+                  fresh = entry_from_osu(raw, evidence=candidate.evidence, confidence="candidate")
+                  if int(raw.get("id", -1)) != beatmapset_id:
+                      raise RuntimeError("API ID mismatch")
+                  if compact(fresh.artist) != "zun":
+                      raise RuntimeError("artist drifted away from ZUN")
+                  if compact(fresh.title) not in {compact(value) for value in theme["aliases"]}:
+                      raise RuntimeError("title drifted outside exact theme aliases")
+                  page_raw = parse_beatmapset_page(get_text(f"https://osu.ppy.sh/beatmapsets/{beatmapset_id}"))
+                  page = entry_from_osu(page_raw, evidence=candidate.evidence, confidence="candidate")
+                  fields = ("beatmapset_id", "artist", "title", "creator", "source", "status")
+                  mismatches = [field for field in fields if getattr(fresh, field) != getattr(page, field)]
+                  if sorted(fresh.modes) != sorted(page.modes):
+                      mismatches.append("modes")
+                  if mismatches:
+                      raise RuntimeError("API/page mismatch: " + ", ".join(mismatches))
+                  verified.append((fresh, theme, hits))
+              except Exception as exc:
+                  failures.append((beatmapset_id, str(exc)))
+              time.sleep(0.12)
+
+          theme_counts = collections.Counter(theme["canonical"] for _, theme, _ in verified)
+          status_counts = collections.Counter(entry.status for entry, _, _ in verified)
+          print("ZUN ORIGINAL DEEP SWEEP SUMMARY")
+          print(f"base_catalog={len(base.entries)}")
+          print(f"themes={len(THEMES)}")
+          print(f"query_status_pairs={query_pairs}")
+          print(f"unique_search_results={len(discovered)}")
+          print(f"exact_zun_absent_before_direct={len(candidates)}")
+          print(f"fresh_api_page_verified={len(verified)}")
+          print(f"fresh_verify_failures={len(failures)}")
+          print(f"rejects={dict(sorted(rejects.items()))}")
+          print(f"theme_counts={dict(sorted(theme_counts.items()))}")
+          print(f"status_counts={dict(sorted(status_counts.items()))}")
+          print(f"raw_status_hits={dict(sorted(raw_status_hits.items()))}")
+
+          print("\nVERIFIED ZUN ORIGINAL POOL")
+          for fresh, theme, hits in verified:
+              print(json.dumps({
+                  "id": fresh.beatmapset_id,
+                  "artist": fresh.artist,
+                  "title": fresh.title,
+                  "source": fresh.source,
+                  "status": fresh.status,
+                  "modes": fresh.modes,
+                  "theme": theme["canonical"],
+                  "game": theme["game"],
+                  "query_hits": hits,
+              }, ensure_ascii=False))
+
+          if failures:
+              print("\nDIRECT FAILURES")
+              for item in failures[:100]:
+                  print(item)
+          PY
