@@ -121,7 +121,7 @@
       "artist": "Demetori",
       "title": "Genshi no Yoru ~ Ghostly Eyes",
       "creator": "Ambient",
-      "source": "",
+      "source": "東方永夜抄　～ Imperishable Night.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -130,11 +130,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2017-03-06T11:58:54Z"
     },
     {
@@ -151,13 +153,17 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:Syrufit",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "tournament_candidate:829"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2017-04-25T10:46:39Z"
     },
     {
@@ -165,7 +171,7 @@
       "artist": "Demetori",
       "title": "Desire Drive ~ Desire Dream",
       "creator": "Leader",
-      "source": "",
+      "source": "東方神霊廟　～ Ten Desires.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -174,11 +180,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2018-11-18T22:55:07Z"
     },
     {

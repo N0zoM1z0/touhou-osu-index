@@ -1687,6 +1687,7 @@
       "original_themes": [],
       "evidence": [
         "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
         "discovery_query:東方",
         "osu_source",
         "osucollector:1407"
@@ -3863,6 +3864,7 @@
       "evidence": [
         "discovery_query:Halozy",
         "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
         "known_touhou_artist",
         "osu_source",
         "osucollector:1407",
@@ -4073,6 +4075,7 @@
       "evidence": [
         "discovery_query:source=Phantasmagoria of Dim.Dream",
         "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
         "discovery_query:Team Shanghai Alice",
         "discovery_query:UNDEAD CORPORATION",
         "discovery_query:上海アリス幻樂団",
