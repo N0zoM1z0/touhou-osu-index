@@ -933,6 +933,35 @@
       "osu_last_updated": "2022-03-26T23:07:14Z"
     },
     {
+      "beatmapset_id": 1729425,
+      "artist": "Masayoshi Minoshima ft. nomico & Rodri's Trash Can",
+      "title": "Bad Apple!!",
+      "creator": "yocex",
+      "source": "Lovelight",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "mapper_tags",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple",
+        "provenance:thbwiki"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-03-28T02:31:58Z"
+    },
+    {
       "beatmapset_id": 1729689,
       "artist": "IT LIVES & Dr. Ushuu",
       "title": "Never Alone (ReeK's \"Hitorijanai\" Remix)",
@@ -1264,6 +1293,33 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1744498,
+      "artist": "Masayaoshi Minoshima feat. nomico",
+      "title": "Bad Apple",
+      "creator": "Chai the Tea",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-04-17T10:59:24Z"
     },
     {
       "beatmapset_id": 1745188,
@@ -1876,6 +1932,35 @@
       "osu_last_updated": "2023-04-17T01:22:47Z"
     },
     {
+      "beatmapset_id": 1774663,
+      "artist": "ZUN",
+      "title": "Septette for the Dead Princess",
+      "creator": "xdays",
+      "source": "touhou koumakixyo",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "亡き王女の為のセプテット"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "mapper_tags",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-05-30T06:28:00Z"
+    },
+    {
       "beatmapset_id": 1774999,
       "artist": "SOUND HOLIC",
       "title": "EXISTENCE",
@@ -2199,6 +2284,34 @@
       "osu_last_updated": "2022-09-05T05:07:21Z"
     },
     {
+      "beatmapset_id": 1787398,
+      "artist": "ZUN",
+      "title": "Reach for the Moon, Immortal Smoke",
+      "creator": "RLRNStarlord",
+      "source": "Touhou Eiyashou ~ Imperishable Night",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "月まで届け、不死の煙"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-06-17T23:02:57Z"
+    },
+    {
       "beatmapset_id": 1787722,
       "artist": "AU",
       "title": "Kerokero (Original Extended Mix)",
@@ -2244,6 +2357,33 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-06-27T12:02:42Z"
+    },
+    {
+      "beatmapset_id": 1788507,
+      "artist": "Masayoshi Minoshima",
+      "title": "Bad apple",
+      "creator": "Chanon",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-06-18T18:07:07Z"
     },
     {
       "beatmapset_id": 1790022,
@@ -2327,6 +2467,35 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-06-03T04:16:10Z"
+    },
+    {
+      "beatmapset_id": 1792878,
+      "artist": "ZUN",
+      "title": "Beloved Tomboyish Girl",
+      "creator": "ALC 311",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "おてんば恋娘"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "mapper_tags",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-07-23T03:01:53Z"
     },
     {
       "beatmapset_id": 1793680,

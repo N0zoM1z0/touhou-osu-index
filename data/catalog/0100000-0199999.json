@@ -168,6 +168,34 @@
       "osu_last_updated": "2013-08-23T23:50:04Z"
     },
     {
+      "beatmapset_id": 103830,
+      "artist": "Masayoshi Minoshima feat. nomico",
+      "title": "bad apple!",
+      "creator": "salodtg",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple",
+        "provenance:thbwiki"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2013-07-09T13:35:40Z"
+    },
+    {
       "beatmapset_id": 104641,
       "artist": "Various Artists",
       "title": "osu! Demetori Compilation",
@@ -278,6 +306,33 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2014-01-14T11:49:40Z"
+    },
+    {
+      "beatmapset_id": 105516,
+      "artist": "Masayoshi Minoshima ft. nomico",
+      "title": "Bad Apple!!",
+      "creator": "salodtg",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2013-07-19T01:44:41Z"
     },
     {
       "beatmapset_id": 106212,
@@ -460,6 +515,34 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2013-09-21T02:20:07Z"
+    },
+    {
+      "beatmapset_id": 110651,
+      "artist": "Masayoshi Minoshima ft. nomico",
+      "title": "Bad Apple!!",
+      "creator": "salodtg",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania",
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2013-08-12T02:48:55Z"
     },
     {
       "beatmapset_id": 110869,
@@ -735,6 +818,34 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2016-06-02T15:32:44Z"
+    },
+    {
+      "beatmapset_id": 114386,
+      "artist": "ZUN",
+      "title": "U.N Owen Was Her",
+      "creator": "1234abcd5",
+      "source": "Touhou 6 ~ Embodiment Of Scarlet Devil",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "U.N.オーエンは彼女なのか？"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2013-09-08T00:28:44Z"
     },
     {
       "beatmapset_id": 114598,
@@ -1973,6 +2084,35 @@
       "osu_last_updated": "2014-09-18T15:48:11Z"
     },
     {
+      "beatmapset_id": 138871,
+      "artist": "ZUN",
+      "title": "Necrofantasia",
+      "creator": "Chexi",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方妖々夢 ～ Perfect Cherry Blossom."
+      ],
+      "original_themes": [
+        "ネクロファンタジア"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "mapper_tags",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2015-02-12T05:28:02Z"
+    },
+    {
       "beatmapset_id": 138886,
       "artist": "Golden City Factory",
       "title": "Stirring an Autumn Moon ~ Mooned Insect",
@@ -2189,6 +2329,34 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2014-01-09T15:39:19Z"
+    },
+    {
+      "beatmapset_id": 141839,
+      "artist": "ZUN",
+      "title": "U.N Owen was Her?",
+      "creator": "Peanut12",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "U.N.オーエンは彼女なのか？"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-03-15T17:08:17Z"
     },
     {
       "beatmapset_id": 141879,
@@ -2523,6 +2691,64 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-03-05T04:38:30Z"
+    },
+    {
+      "beatmapset_id": 152096,
+      "artist": "Masayoshi Minoshima ft nomico",
+      "title": "Bad Apple!!",
+      "creator": "[- Nightmare -]",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "osu_source",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple",
+        "provenance:thbwiki"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-02-23T09:44:24Z"
+    },
+    {
+      "beatmapset_id": 152286,
+      "artist": "Masayoshi Minoshima ft nomico",
+      "title": "Bad Apple!!",
+      "creator": "[- Nightmare -]",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "osu_source",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple",
+        "provenance:thbwiki"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-02-22T10:24:14Z"
     },
     {
       "beatmapset_id": 152365,
@@ -2937,6 +3163,36 @@
       "osu_last_updated": "2014-04-04T20:25:45Z"
     },
     {
+      "beatmapset_id": 164091,
+      "artist": "ZUN",
+      "title": "Reach for the Moon, Immortal Smoke",
+      "creator": "Winek",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方永夜抄 ～ Imperishable Night."
+      ],
+      "original_themes": [
+        "月まで届け、不死の煙"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-05-07T10:27:14Z"
+    },
+    {
       "beatmapset_id": 165018,
       "artist": "Demetori",
       "title": "Songs Compilation",
@@ -3112,6 +3368,35 @@
       "osu_last_updated": "2016-02-07T08:26:47Z"
     },
     {
+      "beatmapset_id": 170160,
+      "artist": "ZUN",
+      "title": "Necrofantasia",
+      "creator": "Kirin",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方妖々夢 ～ Perfect Cherry Blossom."
+      ],
+      "original_themes": [
+        "ネクロファンタジア"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-05-04T17:38:20Z"
+    },
+    {
       "beatmapset_id": 170913,
       "artist": "Dark PHOENiX",
       "title": "Green-Eyed Jealousy",
@@ -3199,6 +3484,35 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2014-09-05T16:16:39Z"
+    },
+    {
+      "beatmapset_id": 172422,
+      "artist": "ZUN",
+      "title": "U.N. Owen Was Her",
+      "creator": "Revoyz",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "U.N.オーエンは彼女なのか？"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-05-06T02:07:19Z"
     },
     {
       "beatmapset_id": 172627,
@@ -3588,6 +3902,34 @@
       "osu_last_updated": "2014-08-11T21:28:00Z"
     },
     {
+      "beatmapset_id": 179934,
+      "artist": "zun",
+      "title": "Necro Fantasia",
+      "creator": "Fate_Yakumo",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方妖々夢 ～ Perfect Cherry Blossom."
+      ],
+      "original_themes": [
+        "ネクロファンタジア"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-05-31T03:18:40Z"
+    },
+    {
       "beatmapset_id": 180138,
       "artist": "Halozy",
       "title": "Genryuu Kaiko",
@@ -3899,6 +4241,35 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-05-02T18:37:47Z"
+    },
+    {
+      "beatmapset_id": 190512,
+      "artist": "ZUN",
+      "title": "U.N Owen Was Her",
+      "creator": "Neiji Razuiya",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "U.N.オーエンは彼女なのか？"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-07-08T07:07:40Z"
     },
     {
       "beatmapset_id": 190847,
