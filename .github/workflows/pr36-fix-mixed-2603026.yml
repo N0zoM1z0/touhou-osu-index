@@ -48,7 +48,10 @@ jobs:
 
           entry.touhou_kind = "mixed"
           entry.original_themes = EXPECTED_THEMES
-          entry.evidence = sorted(set(entry.evidence) | {"provenance:arrangement-chronicle-multi-original"}, key=str.casefold)
+          entry.evidence = sorted(
+              set(entry.evidence) | {"provenance:arrangement-chronicle-multi-original"},
+              key=str.casefold,
+          )
           entry.normalize()
           entry.validate()
           catalog.save(CATALOG)
@@ -61,23 +64,29 @@ jobs:
 
           text = AUDIT.read_text(encoding="utf-8")
           marker = "- `恋色マスタースパーク`: **6**\n"
-          replacement = marker + "- `装飾戦 ～ Decoration Battle`: **1**\n- `霊戦 ～ Perdition crisis`: **1**\n"
+          replacement = (
+              marker
+              + "- `装飾戦 ～ Decoration Battle`: **1**\n"
+              + "- `霊戦 ～ Perdition crisis`: **1**\n"
+          )
           assert marker in text
           assert "`装飾戦 ～ Decoration Battle`: **1**" not in text
           text = text.replace(marker, replacement, 1)
 
           anchor = "\n## Accepted beatmapsets\n"
-          section = """
-
-### Mixed structured provenance correction
-
-The pre-merge review found one accepted Bad Apple recording whose structured provenance was incomplete even though the beatmapset itself was correctly in scope. Beatmapset `2603026` — **IOSYS — Bad Apple & Good Orange** — is documented by the live Arrangement Chronicle corpus as using three Touhou originals: `Bad Apple!!`, `装飾戦 ～ Decoration Battle`, and `霊戦 ～ Perdition crisis`. All three originate from `東方幻想郷 ～ Lotus Land Story`, so `origin_games` remains one game while `touhou_kind` is corrected from `arrangement` to `mixed` and all three supported originals are retained.
-
-A full reverse scan of all 230 accepted Bad Apple rows against the same live corpus found no other accepted row with more than one supported original, so this is the only structured-provenance correction required by the pre-merge review.
-"""
+          section_lines = [
+              "",
+              "### Mixed structured provenance correction",
+              "",
+              "The pre-merge review found one accepted Bad Apple recording whose structured provenance was incomplete even though the beatmapset itself was correctly in scope. Beatmapset `2603026` — **IOSYS — Bad Apple & Good Orange** — is documented by the live Arrangement Chronicle corpus as using three Touhou originals: `Bad Apple!!`, `装飾戦 ～ Decoration Battle`, and `霊戦 ～ Perdition crisis`. All three originate from `東方幻想郷 ～ Lotus Land Story`, so `origin_games` remains one game while `touhou_kind` is corrected from `arrangement` to `mixed` and all three supported originals are retained.",
+              "",
+              "A full reverse scan of all 230 accepted Bad Apple rows against the same live corpus found no other accepted row with more than one supported original, so this is the only structured-provenance correction required by the pre-merge review.",
+              "",
+          ]
+          section = "\n".join(section_lines)
           assert anchor in text
           assert "### Mixed structured provenance correction" not in text
-          text = text.replace(anchor, section + anchor, 1)
+          text = text.replace(anchor, "\n" + section + anchor, 1)
           AUDIT.write_text(text, encoding="utf-8")
           print("FIX PASS: 2603026 -> mixed with 3 supported Touhou originals")
           PY
@@ -91,6 +100,9 @@ A full reverse scan of all 230 accepted Bad Apple rows against the same live cor
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/catalog docs/source-audit-2026-09-wave3-deep-coverage.md
-          git diff --cached --quiet && { echo "No data correction staged"; exit 1; }
+          if git diff --cached --quiet; then
+            echo "No data correction staged"
+            exit 1
+          fi
           git commit -m "data: fix mixed Bad Apple structured provenance"
           git push origin HEAD:feat/touhou-coverage-wave3-2026-09
