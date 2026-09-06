@@ -1,0 +1,349 @@
+name: Wave 3 coverage audit
+
+on:
+  push:
+    branches:
+      - feat/touhou-coverage-wave3-2026-09
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/touhou-coverage-wave3-2026-09
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Discover, triple-check, and write reviewed batch
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import collections
+          import json
+          import time
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_touhou_game_source, normalize
+          from touhou_osu.http import get_text
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.provenance import audit_entries
+          from touhou_osu.sources import parse_beatmapset_page
+
+          CATALOG_PATH = Path("data/catalog")
+          CONFIG_PATH = Path("config/seeds.json")
+          AUDIT_PATH = Path("docs/source-audit-2026-09-wave3-specific-game-source.md")
+          MAX_PAGES = 12
+          DIRECT_TARGET = 280
+          FINAL_TARGET = 220
+          ALLOWED_STATUS = {"ranked", "loved"}
+
+          base = Catalog.load(CATALOG_PATH)
+          base_count = len(base.entries)
+          base_snapshot = {key: value.to_dict() for key, value in base.entries.items()}
+          config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+          api = OsuApi.from_env()
+          api.token()
+
+          discovered: dict[int, dict] = {}
+          evidence: dict[int, set[str]] = collections.defaultdict(set)
+          query_hits = collections.Counter()
+          for query in config.get("discovery_queries", []):
+              seen_this_query: set[int] = set()
+              for raw in api.search(query, max_pages=MAX_PAGES):
+                  beatmapset_id = int(raw["id"])
+                  discovered[beatmapset_id] = raw
+                  evidence[beatmapset_id].add(f"discovery_query:{query}")
+                  seen_this_query.add(beatmapset_id)
+              query_hits[query] = len(seen_this_query)
+
+          absent_ids = [item for item in discovered if item not in base.entries]
+          pool = []
+          for beatmapset_id in absent_ids:
+              raw = discovered[beatmapset_id]
+              entry = entry_from_osu(
+                  raw,
+                  evidence=sorted(evidence[beatmapset_id]),
+                  confidence="candidate",
+              )
+              if entry.confidence != "verified":
+                  continue
+              if not is_touhou_game_source(entry.source):
+                  continue
+              if entry.status not in ALLOWED_STATUS:
+                  continue
+              pool.append((entry, raw, len(evidence[beatmapset_id])))
+
+          # Round-robin by normalized source so a single game/source cannot dominate
+          # the batch merely because of osu!'s result ordering.
+          groups: dict[str, list[tuple]] = collections.defaultdict(list)
+          for item in pool:
+              entry, raw, corroboration = item
+              groups[normalize(entry.source)].append(item)
+          for items in groups.values():
+              items.sort(key=lambda item: (-item[2], item[0].beatmapset_id))
+          ordered = []
+          keys = sorted(groups)
+          while keys:
+              next_keys = []
+              for key in keys:
+                  items = groups[key]
+                  if items:
+                      ordered.append(items.pop(0))
+                  if items:
+                      next_keys.append(key)
+              keys = next_keys
+
+          direct_ok = []
+          direct_failures = []
+          for search_entry, search_raw, corroboration in ordered:
+              if len(direct_ok) >= DIRECT_TARGET:
+                  break
+              beatmapset_id = search_entry.beatmapset_id
+              try:
+                  fresh_raw = api.beatmapset(beatmapset_id)
+                  if int(fresh_raw.get("id", -1)) != beatmapset_id:
+                      raise RuntimeError("API ID mismatch")
+                  fresh = entry_from_osu(
+                      fresh_raw,
+                      evidence=sorted(evidence[beatmapset_id]),
+                      confidence="candidate",
+                  )
+                  if fresh.confidence != "verified" or not is_touhou_game_source(fresh.source):
+                      raise RuntimeError("fresh source no longer a concrete Touhou game")
+                  if fresh.status not in ALLOWED_STATUS:
+                      raise RuntimeError(f"fresh status {fresh.status!r} not ranked/loved")
+
+                  page_raw = parse_beatmapset_page(
+                      get_text(f"https://osu.ppy.sh/beatmapsets/{beatmapset_id}")
+                  )
+                  page = entry_from_osu(
+                      page_raw,
+                      evidence=sorted(evidence[beatmapset_id]),
+                      confidence="candidate",
+                  )
+                  fields = ("beatmapset_id", "artist", "title", "creator", "source", "status")
+                  mismatches = [
+                      field for field in fields
+                      if getattr(fresh, field) != getattr(page, field)
+                  ]
+                  if sorted(fresh.modes) != sorted(page.modes):
+                      mismatches.append("modes")
+                  if mismatches:
+                      raise RuntimeError("API/page mismatch: " + ", ".join(mismatches))
+
+                  # Search identity is a discovery signal, but fresh API + public page
+                  # are the authoritative identity used for insertion.
+                  if (
+                      int(search_raw.get("id", -1)) != beatmapset_id
+                      or search_raw.get("artist", "") != fresh.artist
+                      or search_raw.get("title", "") != fresh.title
+                  ):
+                      raise RuntimeError("search/direct identity drift")
+
+                  direct_ok.append((fresh, corroboration))
+              except Exception as exc:
+                  direct_failures.append((beatmapset_id, str(exc)))
+              time.sleep(0.22)
+
+          if len(direct_ok) < 200:
+              raise RuntimeError(
+                  f"only {len(direct_ok)} candidates survived direct API/page verification; need >=200"
+              )
+
+          audits = audit_entries([entry for entry, _ in direct_ok], workers=5)
+          audit_by_id = {item.beatmapset_id: item for item in audits}
+          red_flags = []
+          ambiguous = []
+          clean = []
+          for entry, corroboration in direct_ok:
+              audit = audit_by_id[entry.beatmapset_id]
+              if audit.verdict == "red_flag":
+                  red_flags.append(audit)
+                  continue
+              if audit.verdict == "ambiguous":
+                  ambiguous.append(audit)
+                  continue
+              clean.append((entry, corroboration, audit))
+
+          if len(clean) < 200:
+              raise RuntimeError(
+                  f"only {len(clean)} candidates remain after external contradiction scan; need >=200"
+              )
+
+          selected = clean[:FINAL_TARGET] if len(clean) >= FINAL_TARGET else clean
+          if len(selected) < 200:
+              raise RuntimeError(f"selected only {len(selected)} rows")
+
+          catalog = Catalog.load(CATALOG_PATH)
+          selected_ids = []
+          for entry, corroboration, audit in selected:
+              if entry.beatmapset_id in catalog.entries:
+                  raise RuntimeError(f"candidate {entry.beatmapset_id} unexpectedly already exists")
+              merged, changed = catalog.merge(entry)
+              if not changed:
+                  raise RuntimeError(f"candidate {entry.beatmapset_id} did not change catalog")
+              selected_ids.append(entry.beatmapset_id)
+          catalog.save(CATALOG_PATH)
+
+          # Semantic integrity: exactly the selected IDs are new and all old rows
+          # remain field-for-field unchanged.
+          reloaded = Catalog.load(CATALOG_PATH)
+          actual_new = sorted(set(reloaded.entries) - set(base.entries))
+          if actual_new != sorted(selected_ids):
+              raise RuntimeError("written new-ID set differs from selected set")
+          for beatmapset_id, before in base_snapshot.items():
+              after = reloaded.entries[beatmapset_id].to_dict()
+              if after != before:
+                  raise RuntimeError(f"pre-existing row changed: {beatmapset_id}")
+
+          source_counts = collections.Counter(entry.source for entry, _, _ in selected)
+          status_counts = collections.Counter(entry.status for entry, _, _ in selected)
+          mode_counts = collections.Counter()
+          corroboration_counts = collections.Counter()
+          supported = 0
+          unknown = 0
+          provider_errors = 0
+          for entry, corroboration, audit in selected:
+              corroboration_counts[corroboration] += 1
+              for mode in entry.modes:
+                  mode_counts[mode] += 1
+              if audit.verdict == "supported":
+                  supported += 1
+              else:
+                  unknown += 1
+              provider_errors += len(audit.errors)
+
+          lines = [
+              "# Source audit — 2026-09 wave 3: specific-game-source coverage",
+              "",
+              "This pass continues after merged PRs #33 and #35. It deliberately avoids generic `Touhou` / `東方Project` source labels and accepts only currently ranked/loved beatmapsets whose current osu! `source` names a concrete recognized Touhou game.",
+              "",
+              "## Acceptance boundary",
+              "",
+              "Every accepted ID had to pass all of the following:",
+              "",
+              "1. absent from the current canonical catalog by numeric beatmapset ID;",
+              f"2. rediscovered through the repository's configured osu! search corpus (up to {MAX_PAGES} cursor pages per query);",
+              "3. current direct osu! API v2 `/beatmapsets/{id}` metadata still classifies as verified from a concrete Touhou game source;",
+              "4. current public `https://osu.ppy.sh/beatmapsets/{id}` embedded canonical metadata matches the direct API for ID, artist, title, creator, source, status and modes;",
+              "5. status is currently `ranked` or `loved`;",
+              "6. TouhouDB + THBWiki advisory provenance scan does not return a contradictory non-ZUN-original relation or an ambiguous support/contradiction collision.",
+              "",
+              "External databases are advisory rather than authorities: lack of database coverage does not override a concrete official Touhou game source, while an explicit contradiction is fail-closed and withheld.",
+              "",
+              "## Discovery and verification counts",
+              "",
+              f"- base catalog: **{base_count}** beatmapsets",
+              f"- configured discovery queries: **{len(config.get('discovery_queries', []))}**",
+              f"- unique search results: **{len(discovered)}**",
+              f"- search results absent from base: **{len(absent_ids)}**",
+              f"- absent ranked/loved concrete-game-source pool: **{len(pool)}**",
+              f"- direct API + public-page exact checks attempted until: **{len(direct_ok)}** passed",
+              f"- direct identity/metadata failures while filling the verification buffer: **{len(direct_failures)}**",
+              f"- external red flags withheld: **{len(red_flags)}**",
+              f"- external ambiguous rows withheld: **{len(ambiguous)}**",
+              f"- final accepted: **{len(selected)}**",
+              f"- catalog after write: **{len(reloaded.entries)}**",
+              "",
+              "## Final batch summary",
+              "",
+              f"- statuses: {', '.join(f'{key}={value}' for key, value in sorted(status_counts.items()))}",
+              f"- modes: {', '.join(f'{key}={value}' for key, value in sorted(mode_counts.items()))}",
+              f"- positive external composition relations: **{supported}/{len(selected)}**",
+              f"- no contradictory external relation (database unknown is allowed): **{len(selected)}/{len(selected)}**",
+              f"- external provider request errors recorded on accepted rows: **{provider_errors}**",
+              "- all accepted rows use current concrete-game `osu_source` verification; no `manual:verified` override is introduced.",
+              "",
+              "### Discovery-query corroboration",
+              "",
+          ]
+          for count, amount in sorted(corroboration_counts.items()):
+              lines.append(f"- matched {count} configured query/queries: **{amount}**")
+
+          lines += ["", "### Source distribution", ""]
+          for source, amount in sorted(source_counts.items(), key=lambda item: (-item[1], item[0].casefold())):
+              lines.append(f"- `{source}`: **{amount}**")
+
+          lines += [
+              "",
+              "## Accepted beatmapsets",
+              "",
+              "| ID | Artist | Title | Source | Query hits | External |",
+              "| ---: | --- | --- | --- | ---: | --- |",
+          ]
+          for entry, corroboration, audit in selected:
+              artist = entry.artist.replace("|", "\\|")
+              title = entry.title.replace("|", "\\|")
+              source = entry.source.replace("|", "\\|")
+              lines.append(
+                  f"| {entry.beatmapset_id} | {artist} | {title} | {source} | {corroboration} | {audit.verdict} |"
+              )
+
+          lines += ["", "## Withheld negative / unresolved boundary", ""]
+          if red_flags:
+              lines.append("### External red flags")
+              lines.append("")
+              for audit in red_flags:
+                  details = []
+                  for hit in audit.contradictions:
+                      details.append(f"{hit.provider}:{hit.relation}:{hit.detail or hit.provider_id}")
+                  lines.append(
+                      f"- `{audit.beatmapset_id}` — {audit.artist} - {audit.title}: " + "; ".join(details)
+                  )
+              lines.append("")
+          if ambiguous:
+              lines.append("### Ambiguous external relations")
+              lines.append("")
+              for audit in ambiguous:
+                  lines.append(f"- `{audit.beatmapset_id}` — {audit.artist} - {audit.title}")
+              lines.append("")
+          if direct_failures:
+              lines.append("### Direct re-fetch failures")
+              lines.append("")
+              for beatmapset_id, reason in direct_failures[:80]:
+                  lines.append(f"- `{beatmapset_id}` — {reason}")
+              if len(direct_failures) > 80:
+                  lines.append(f"- ... {len(direct_failures) - 80} additional failures omitted from this concise boundary log")
+              lines.append("")
+
+          lines += [
+              "## Reproducibility / integrity",
+              "",
+              f"- actual new-ID set equals the **{len(selected_ids)}** IDs in the accepted table;",
+              f"- all **{base_count}** pre-existing rows are field-for-field unchanged;",
+              "- canonical shard placement and ordering are delegated to `Catalog.save()`;",
+              "- the workflow runs `make check`, `make build`, and `git diff --check` after this audit writer.",
+              "",
+              "Primary identity source: osu! API v2 and the public osu! beatmapset page. Advisory composition cross-checks: TouhouDB and THBWiki.",
+              "",
+          ]
+          AUDIT_PATH.write_text("\n".join(lines), encoding="utf-8")
+          print(f"Selected {len(selected)} additions from {len(pool)} concrete-game-source misses")
+          print(f"External supported={supported}; red_flags={len(red_flags)}; ambiguous={len(ambiguous)}")
+          PY
+      - name: Validate repository
+        run: |
+          make check
+          make build
+          git diff --check
+      - name: Commit audited data
+        run: |
+          if [[ -z "$(git status --porcelain -- data/catalog docs/source-audit-2026-09-wave3-specific-game-source.md)" ]]; then
+            echo "No audited data changes produced"
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog docs/source-audit-2026-09-wave3-specific-game-source.md
+          git commit -m "data: add reviewed Touhou game-source coverage"
+          git push origin HEAD:feat/touhou-coverage-wave3-2026-09
