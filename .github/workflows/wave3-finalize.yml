@@ -1,0 +1,662 @@
+name: Wave 3 final data writer
+
+on:
+  push:
+    branches:
+      - feat/touhou-coverage-wave3-2026-09
+    paths:
+      - .github/workflows/wave3-finalize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/touhou-coverage-wave3-2026-09
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Recompute, cross-check, and write final batch
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import collections
+          import json
+          import time
+          import unicodedata
+          from datetime import date
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_touhou_game_source
+          from touhou_osu.http import get_text
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.provenance import artist_matches, audit_entries
+          from touhou_osu.sources import parse_beatmapset_page
+
+          BRANCH = "feat/touhou-coverage-wave3-2026-09"
+          CATALOG_PATH = Path("data/catalog")
+          AUDIT_PATH = Path("docs/source-audit-2026-09-wave3-deep-coverage.md")
+          TODAY = date.today().isoformat()
+          STATUSES = ("graveyard", "ranked", "loved", "qualified", "pending", "wip")
+          BAD_QUERIES = (
+              "Bad Apple",
+              "Bad Apple!!",
+              "Bad Apple feat nomico",
+              "Bad Apple nomico",
+              "BadApple",
+              "Bad Apple Alstroemeria",
+              "Bad Apple Remix",
+          )
+          BAD_MAX_PAGES = 10
+          ZUN_MAX_PAGES = 12
+
+          PRIMARY_URLS = (
+              "https://alst.net/arcd0056/",
+              "https://alst.net/arcd0060/",
+              "https://alst.net/arcd0065/",
+          )
+          CHRONICLE_BAD_APPLE = "https://touhou.arrangement-chronicle.com/original_song/%E6%9D%B1%E6%96%B9%E5%B9%BB%E6%83%B3%E9%83%B7/Bad%20Apple!!"
+          CHRONICLE_STATS = "https://touhou.arrangement-chronicle.com/statistics/original_songs"
+          BAD_APPLE_GAME = "東方幻想郷 ～ Lotus Land Story"
+
+          OFFICIAL_TITLES = (
+              "Bad Apple!! feat.nomico",
+              "Bad Apple!! feat.nomico (Animelo Summer Live 2010 Edit)",
+              "Bad Apple!! feat.nomico (2014 REFIX)",
+              "Bad Apple!! feat.nomico (博麗神社うた祭 2016 Edit)",
+              "Bad Apple!! feat.nomico (Instrumental)",
+              "Bad Apple!! feat.nomico (Graphtech Remix)",
+              "Bad Apple!! feat.nomico (SIMIAN NOISE REMIX)",
+              "Bad Apple!! feat.nomico (REDALiCE Remix)",
+              "Bad Apple!! feat.nomico (Nardis Remix)",
+              "Bad Apple!! feat.nomico (Tracy vs. Astronomical Remix)",
+              "Bad Apple!! feat.nomico (Nhato Remix)",
+              "Bad Apple!! feat.nomico (Camellia's Bad Psy!! Remix)",
+              "Bad Apple!! feat.nomico (MK Remix)",
+              "Bad Apple!! feat.nomico (ZYTOKINE Remix)",
+              "Bad Apple!! feat.nomico (HYPER RAVE Remix)",
+              "Bad Apple!! feat.nomico (ELEMENTAS Remix)",
+              "Bad Apple!! feat.nomico (COOL&CREATE Ver.)",
+              "Bad Apple!! feat.nomico (豚乙女 Ver.)",
+              "Bad Apple!! feat.nomico (Marasy Ver.)",
+              "Bad Apple!! feat.nomico (ARM×狐夢想 Remix)",
+              "Bad Apple!! feat.nomico (Marasy + Masayoshi Minoshima)",
+              "Bad Apple!! feat.nomico (TOS Remix)",
+          )
+          OFFICIAL_PARTICIPANTS = (
+              "Alstroemeria Records", "nomico", "Masayoshi Minoshima", "Camellia",
+              "MK", "ZYTOKINE", "隣人", "DiGiTAL WiNG", "katsu", "Tsukasa",
+              "ELEMENTAS", "A-One", "COOL&CREATE", "beatMARIO", "ビートまりお",
+              "あまね", "豚乙女", "ランコ", "Marasy", "まらしぃ", "ARM", "IOSYS",
+              "REDALiCE", "Nardis", "Nhato", "Tracy", "Astronomical", "魂音泉",
+          )
+          PRIMARY_PARENT_ARTISTS = (
+              "Alstroemeria Records", "nomico", "Masayoshi Minoshima"
+          )
+
+          ZUN_THEMES = [
+              {
+                  "canonical": "U.N.オーエンは彼女なのか？",
+                  "game": "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+                  "queries": ["U.N.オーエンは彼女なのか", "U.N. Owen Was Her", "U.N. Owen"],
+                  "aliases": ["U.N.オーエンは彼女なのか？", "U.N.オーエンは彼女なのか", "U.N. Owen Was Her?", "U.N. Owen Was Her"],
+              },
+              {
+                  "canonical": "亡き王女の為のセプテット",
+                  "game": "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+                  "queries": ["亡き王女の為のセプテット", "Septette for the Dead Princess"],
+                  "aliases": ["亡き王女の為のセプテット", "Septette for the Dead Princess"],
+              },
+              {
+                  "canonical": "恋色マスタースパーク",
+                  "game": "東方永夜抄 ～ Imperishable Night.",
+                  "queries": ["恋色マスタースパーク", "Love-colored Master Spark", "Love Coloured Master Spark"],
+                  "aliases": ["恋色マスタースパーク", "Love-colored Master Spark", "Love Colored Master Spark", "Love-Coloured Master Spark", "Love Coloured Master Spark"],
+              },
+              {
+                  "canonical": "ネクロファンタジア",
+                  "game": "東方妖々夢 ～ Perfect Cherry Blossom.",
+                  "queries": ["ネクロファンタジア", "Necrofantasia"],
+                  "aliases": ["ネクロファンタジア", "Necrofantasia"],
+              },
+              {
+                  "canonical": "おてんば恋娘",
+                  "game": "東方紅魔郷 ～ the Embodiment of Scarlet Devil.",
+                  "queries": ["おてんば恋娘", "Beloved Tomboyish Girl"],
+                  "aliases": ["おてんば恋娘", "Beloved Tomboyish Girl"],
+              },
+              {
+                  "canonical": "ハルトマンの妖怪少女",
+                  "game": "東方地霊殿 ～ Subterranean Animism.",
+                  "queries": ["ハルトマンの妖怪少女", "Hartmann's Youkai Girl", "Hartmann Youkai Girl"],
+                  "aliases": ["ハルトマンの妖怪少女", "Hartmann's Youkai Girl", "Hartmann Youkai Girl"],
+              },
+              {
+                  "canonical": "月まで届け、不死の煙",
+                  "game": "東方永夜抄 ～ Imperishable Night.",
+                  "queries": ["月まで届け、不死の煙", "Reach for the Moon Immortal Smoke", "Reach for the Moon, Immortal Smoke"],
+                  "aliases": ["月まで届け、不死の煙", "Reach for the Moon, Immortal Smoke", "Reach for the Moon Immortal Smoke"],
+              },
+          ]
+
+          def compact(value: str) -> str:
+              value = unicodedata.normalize("NFKC", str(value)).casefold()
+              return "".join(ch for ch in value if ch.isalnum())
+
+          class TableParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.in_tr = False
+                  self.in_td = False
+                  self.cell = []
+                  self.row = []
+                  self.rows = []
+
+              def handle_starttag(self, tag, attrs):
+                  if tag == "tr":
+                      self.in_tr = True
+                      self.row = []
+                  elif tag == "td" and self.in_tr:
+                      self.in_td = True
+                      self.cell = []
+
+              def handle_data(self, data):
+                  if self.in_td:
+                      self.cell.append(data)
+
+              def handle_endtag(self, tag):
+                  if tag == "td" and self.in_td:
+                      self.row.append(" ".join(" ".join(self.cell).split()))
+                      self.in_td = False
+                  elif tag == "tr" and self.in_tr:
+                      if self.row:
+                          self.rows.append(self.row)
+                      self.in_tr = False
+
+          def fetch_page_entry(api_entry, evidence):
+              beatmapset_id = api_entry.beatmapset_id
+              last_exc = None
+              for attempt in range(5):
+                  try:
+                      page_raw = parse_beatmapset_page(
+                          get_text(f"https://osu.ppy.sh/beatmapsets/{beatmapset_id}")
+                      )
+                      return entry_from_osu(page_raw, evidence=evidence, confidence="candidate")
+                  except Exception as exc:
+                      last_exc = exc
+                      if attempt < 4:
+                          time.sleep(6 * (attempt + 1))
+              raise RuntimeError(f"public-page fetch failed after retries: {last_exc}")
+
+          def assert_api_page_match(api_entry, page_entry):
+              fields = ("beatmapset_id", "artist", "title", "creator", "source", "status")
+              mismatches = [
+                  field for field in fields
+                  if getattr(api_entry, field) != getattr(page_entry, field)
+              ]
+              if sorted(api_entry.modes) != sorted(page_entry.modes):
+                  mismatches.append("modes")
+              if mismatches:
+                  raise RuntimeError("API/page mismatch: " + ", ".join(mismatches))
+
+          # ---- Source corpus gates -------------------------------------------------
+          primary_text = "\n".join(get_text(url) for url in PRIMARY_URLS)
+          for required in ("Bad Apple!! feat.nomico", "Camellia", "REDALiCE", "Nhato", "Marasy"):
+              if required.casefold() not in primary_text.casefold():
+                  raise RuntimeError(f"primary Alstroemeria corpus missing marker: {required}")
+
+          chronicle = collections.defaultdict(list)
+          chronicle_rows = 0
+          for page_num in range(1, 11):
+              parser = TableParser()
+              parser.feed(get_text(CHRONICLE_BAD_APPLE + f"?page={page_num}&per=50"))
+              for row in parser.rows:
+                  if len(row) < 8:
+                      continue
+                  circle = row[1].strip()
+                  title = row[2].strip()
+                  vocalist = row[4].strip() if len(row) > 4 else ""
+                  arranger = row[5].strip() if len(row) > 5 else ""
+                  originals = row[7].strip() if len(row) > 7 else ""
+                  if not title or "badapple" not in compact(originals):
+                      continue
+                  identities = [value for value in (circle, vocalist, arranger) if value]
+                  chronicle[compact(title)].append((title, identities, originals))
+                  chronicle_rows += 1
+          if chronicle_rows < 450:
+              raise RuntimeError(f"Arrangement Chronicle Bad Apple corpus unexpectedly small: {chronicle_rows}")
+
+          stats_key = compact(get_text(CHRONICLE_STATS))
+          for theme in ZUN_THEMES:
+              if compact(theme["canonical"]) not in stats_key:
+                  raise RuntimeError(
+                      f"Arrangement Chronicle statistics missing normalized theme: {theme['canonical']}"
+                  )
+
+          base = Catalog.load(CATALOG_PATH)
+          base_count = len(base.entries)
+          base_snapshot = {key: value.to_dict() for key, value in base.entries.items()}
+          api = OsuApi.from_env()
+          api.token()
+
+          # ---- Bad Apple status-scoped discovery ---------------------------------
+          bad_discovered = {}
+          bad_evidence = collections.defaultdict(set)
+          bad_status_raw_hits = collections.Counter()
+          for status in STATUSES:
+              for query in BAD_QUERIES:
+                  cursor = None
+                  for _ in range(BAD_MAX_PAGES):
+                      params = {"q": query, "s": status}
+                      if cursor:
+                          params["cursor_string"] = cursor
+                      payload = api.get("/beatmapsets/search", params)
+                      for raw in payload.get("beatmapsets", []):
+                          beatmapset_id = int(raw["id"])
+                          bad_discovered[beatmapset_id] = raw
+                          bad_evidence[beatmapset_id].add(
+                              f"theme_bad_apple:{status}:{query}"
+                          )
+                          bad_status_raw_hits[status] += 1
+                      cursor = payload.get("cursor_string")
+                      if not cursor:
+                          break
+
+          official_title_keys = {compact(value) for value in OFFICIAL_TITLES}
+          participant_keys = tuple(compact(value) for value in OFFICIAL_PARTICIPANTS)
+          parent_keys = tuple(compact(value) for value in PRIMARY_PARENT_ARTISTS)
+          bad_candidates = []
+          bad_rule_counts = collections.Counter()
+          for beatmapset_id, raw in bad_discovered.items():
+              if beatmapset_id in base.entries:
+                  continue
+              entry = entry_from_osu(
+                  raw,
+                  evidence=sorted(bad_evidence[beatmapset_id]),
+                  confidence="candidate",
+              )
+              title_key = compact(entry.title)
+              if "badapple" not in title_key:
+                  continue
+              matches = []
+              for canonical_title, identities, originals in chronicle.get(title_key, []):
+                  if any(artist_matches(entry.artist, identity) for identity in identities):
+                      matches.append((canonical_title, identities, originals))
+              if not matches:
+                  continue
+
+              rules = {"chronicle_exact_identity"}
+              if is_touhou_game_source(entry.source):
+                  rules.add("explicit_game_source")
+              artist_key = compact(entry.artist)
+              if any(key and key in artist_key for key in parent_keys):
+                  rules.add("primary_parent_artist")
+              if title_key in official_title_keys and any(
+                  key and (key in artist_key or artist_key in key)
+                  for key in participant_keys
+                  if artist_key
+              ):
+                  rules.add("primary_official_derivative")
+              for rule in rules:
+                  bad_rule_counts[rule] += 1
+              bad_candidates.append((entry, rules, matches))
+
+          # Advisory contradiction scan. Strong exact Chronicle rows are not
+          # required to be present in every external database, but an explicit
+          # contradictory/ambiguous relation is withheld.
+          bad_audits = audit_entries([item[0] for item in bad_candidates], workers=10)
+          bad_audit_by_id = {item.beatmapset_id: item for item in bad_audits}
+          bad_preverified = []
+          bad_withheld = []
+          for candidate, rules, matches in bad_candidates:
+              audit = bad_audit_by_id[candidate.beatmapset_id]
+              providers = {hit.provider for hit in audit.supports}
+              if audit.verdict in {"red_flag", "ambiguous"}:
+                  bad_withheld.append((candidate, rules, audit.verdict))
+                  continue
+              has_thbwiki = audit.verdict == "supported" and "thbwiki" in providers
+              strong_secondary = bool(
+                  rules & {
+                      "explicit_game_source",
+                      "primary_official_derivative",
+                      "primary_parent_artist",
+                  }
+              ) or has_thbwiki
+              if not strong_secondary:
+                  bad_withheld.append((candidate, rules, "no_secondary_corroboration"))
+                  continue
+              if has_thbwiki:
+                  rules = set(rules)
+                  rules.add("thbwiki_supported")
+              bad_preverified.append((candidate, rules, audit))
+
+          # ---- Exact ZUN-original discovery --------------------------------------
+          zun_discovered = {}
+          zun_evidence = collections.defaultdict(set)
+          zun_theme_hits = collections.defaultdict(set)
+          zun_status_raw_hits = collections.Counter()
+          by_canonical = {theme["canonical"]: theme for theme in ZUN_THEMES}
+          zun_query_status_pairs = 0
+          for theme in ZUN_THEMES:
+              for query in theme["queries"]:
+                  for status in STATUSES:
+                      zun_query_status_pairs += 1
+                      cursor = None
+                      for _ in range(ZUN_MAX_PAGES):
+                          params = {"q": query, "s": status}
+                          if cursor:
+                              params["cursor_string"] = cursor
+                          payload = api.get("/beatmapsets/search", params)
+                          for raw in payload.get("beatmapsets", []):
+                              beatmapset_id = int(raw["id"])
+                              zun_discovered[beatmapset_id] = raw
+                              zun_evidence[beatmapset_id].add(
+                                  f"theme_zun_original:{theme['canonical']}:{status}:{query}"
+                              )
+                              zun_theme_hits[beatmapset_id].add(theme["canonical"])
+                              zun_status_raw_hits[status] += 1
+                          cursor = payload.get("cursor_string")
+                          if not cursor:
+                              break
+
+          zun_preverified = []
+          zun_rejects = collections.Counter()
+          for beatmapset_id, raw in zun_discovered.items():
+              if beatmapset_id in base.entries:
+                  zun_rejects["already_catalogued"] += 1
+                  continue
+              entry = entry_from_osu(
+                  raw,
+                  evidence=sorted(zun_evidence[beatmapset_id]),
+                  confidence="candidate",
+              )
+              if compact(entry.artist) != "zun":
+                  zun_rejects["artist_not_zun"] += 1
+                  continue
+              matched = []
+              for canonical in zun_theme_hits[beatmapset_id]:
+                  theme = by_canonical[canonical]
+                  aliases = {compact(alias) for alias in theme["aliases"]}
+                  if compact(entry.title) in aliases:
+                      matched.append(theme)
+              if len({theme["canonical"] for theme in matched}) != 1:
+                  zun_rejects["title_not_unambiguous_exact_alias"] += 1
+                  continue
+              zun_preverified.append((entry, matched[0]))
+
+          # ---- Fresh direct API + public page verification -----------------------
+          verified = []
+          direct_failures = []
+
+          def verify_and_prepare(candidate, *, kind, game, theme, evidence, rules):
+              beatmapset_id = candidate.beatmapset_id
+              raw = api.beatmapset(beatmapset_id)
+              fresh = entry_from_osu(raw, evidence=evidence, confidence="candidate")
+              if int(raw.get("id", -1)) != beatmapset_id:
+                  raise RuntimeError("API ID mismatch")
+              if fresh.artist != candidate.artist or fresh.title != candidate.title:
+                  raise RuntimeError("search/direct identity drift")
+              page = fetch_page_entry(fresh, evidence)
+              assert_api_page_match(fresh, page)
+              fresh.touhou_kind = kind
+              fresh.origin_games = [game]
+              fresh.original_themes = [theme]
+              fresh.evidence = sorted(set(fresh.evidence) | {"manual:verified"})
+              fresh.confidence = "verified"
+              fresh.last_checked = TODAY
+              fresh.normalize()
+              fresh.validate()
+              return fresh, rules
+
+          # Higher-information Bad Apple rows first, but keep every row that
+          # survives the exact composition and contradiction gates.
+          bad_preverified.sort(
+              key=lambda item: (
+                  -int("explicit_game_source" in item[1]),
+                  -int("primary_official_derivative" in item[1]),
+                  -int("thbwiki_supported" in item[1]),
+                  -int("primary_parent_artist" in item[1]),
+                  item[0].beatmapset_id,
+              )
+          )
+          for candidate, rules, audit in bad_preverified:
+              evidence = {
+                  "audit:wave3-deep-coverage-2026-09",
+                  "provenance:arrangement-chronicle-bad-apple",
+              }
+              if "primary_official_derivative" in rules:
+                  evidence.add("primary:alstroemeria-records")
+              if "primary_parent_artist" in rules:
+                  evidence.add("primary:bad-apple-parent-identity")
+              if "thbwiki_supported" in rules:
+                  evidence.add("provenance:thbwiki")
+              try:
+                  prepared = verify_and_prepare(
+                      candidate,
+                      kind="arrangement",
+                      game=BAD_APPLE_GAME,
+                      theme="Bad Apple!!",
+                      evidence=sorted(evidence),
+                      rules=sorted(rules),
+                  )
+                  verified.append((prepared[0], "bad_apple", prepared[1]))
+              except Exception as exc:
+                  direct_failures.append((candidate.beatmapset_id, "bad_apple", str(exc)))
+              time.sleep(0.32)
+
+          zun_preverified.sort(key=lambda item: (item[1]["canonical"], item[0].beatmapset_id))
+          for candidate, theme in zun_preverified:
+              evidence = [
+                  "audit:wave3-deep-coverage-2026-09",
+                  "provenance:arrangement-chronicle-original-theme",
+                  "identity:zun-exact-original-title",
+              ]
+              try:
+                  prepared = verify_and_prepare(
+                      candidate,
+                      kind="original",
+                      game=theme["game"],
+                      theme=theme["canonical"],
+                      evidence=evidence,
+                      rules=["zun_exact_original"],
+                  )
+                  # Re-check the direct response against the controlled title class.
+                  if compact(prepared[0].artist) != "zun":
+                      raise RuntimeError("fresh artist is no longer ZUN")
+                  if compact(prepared[0].title) not in {
+                      compact(alias) for alias in theme["aliases"]
+                  }:
+                      raise RuntimeError("fresh title left the controlled exact alias set")
+                  verified.append((prepared[0], "zun_original", prepared[1]))
+              except Exception as exc:
+                  direct_failures.append((candidate.beatmapset_id, "zun_original", str(exc)))
+              time.sleep(0.32)
+
+          # Deduplicate defensively across the two independent audit classes.
+          deduped = {}
+          for entry, audit_class, rules in verified:
+              if entry.beatmapset_id in deduped:
+                  raise RuntimeError(f"cross-class duplicate: {entry.beatmapset_id}")
+              deduped[entry.beatmapset_id] = (entry, audit_class, rules)
+          selected = [deduped[key] for key in sorted(deduped)]
+          if len(selected) < 200:
+              raise RuntimeError(f"only {len(selected)} final rows survived; need at least 200")
+
+          # ---- Canonical write + semantic integrity ------------------------------
+          catalog = Catalog.load(CATALOG_PATH)
+          selected_ids = []
+          for entry, audit_class, rules in selected:
+              if entry.beatmapset_id in catalog.entries:
+                  raise RuntimeError(f"selected ID unexpectedly already exists: {entry.beatmapset_id}")
+              _, changed = catalog.merge(entry)
+              if not changed:
+                  raise RuntimeError(f"selected ID did not change catalog: {entry.beatmapset_id}")
+              selected_ids.append(entry.beatmapset_id)
+          catalog.save(CATALOG_PATH)
+
+          reloaded = Catalog.load(CATALOG_PATH)
+          actual_new = sorted(set(reloaded.entries) - set(base.entries))
+          if actual_new != sorted(selected_ids):
+              raise RuntimeError("written new-ID set differs from selected set")
+          for beatmapset_id, before in base_snapshot.items():
+              after = reloaded.entries[beatmapset_id].to_dict()
+              if after != before:
+                  raise RuntimeError(f"pre-existing row changed: {beatmapset_id}")
+
+          # ---- Permanent audit report --------------------------------------------
+          class_counts = collections.Counter(audit_class for _, audit_class, _ in selected)
+          status_counts = collections.Counter(entry.status for entry, _, _ in selected)
+          mode_counts = collections.Counter()
+          rule_counts = collections.Counter()
+          theme_counts = collections.Counter()
+          game_counts = collections.Counter()
+          for entry, audit_class, rules in selected:
+              for mode in entry.modes:
+                  mode_counts[mode] += 1
+              for rule in rules:
+                  rule_counts[rule] += 1
+              for theme in entry.original_themes:
+                  theme_counts[theme] += 1
+              for game in entry.origin_games:
+                  game_counts[game] += 1
+
+          lines = [
+              "# Source audit — 2026-09 wave 3 deep coverage",
+              "",
+              "This pass follows the merged 200+ coverage waves and intentionally targets the long tail those ranked/loved-oriented sweeps miss: status-scoped Bad Apple derivatives plus exact ZUN-original graveyard identities.",
+              "",
+              "## Acceptance policy",
+              "",
+              "No row is accepted from a search keyword alone. Every accepted beatmapset is absent from the pre-write catalog and is freshly re-fetched from both osu! API v2 and the public beatmapset page; ID, artist, title, creator, source, status, and modes must agree.",
+              "",
+              "### Bad Apple class",
+              "",
+              "A row must match the Arrangement Chronicle Bad Apple corpus by normalized exact title and by circle/vocalist/arranger identity. It is then required to have at least one additional corroborating class: a recognized Touhou game source, a first-party Alstroemeria derivative/title relationship, a first-party parent-work identity, or THBWiki support. Explicit external contradictions or ambiguous provenance are withheld.",
+              "",
+              "### ZUN-original class",
+              "",
+              "A row must have current artist exactly `ZUN` after normalization and an exact normalized alias for one of seven controlled ZUN original themes. The theme must also still exist in Arrangement Chronicle's live original-song statistics. Search-result metadata is revalidated against both current osu! surfaces before insertion.",
+              "",
+              "## Source corpus",
+              "",
+              "- osu! API v2 `/beatmapsets/search` and `/beatmapsets/{id}`",
+              "- public `https://osu.ppy.sh/beatmapsets/{id}` canonical embedded metadata",
+              "- Alstroemeria Records first-party release pages: `https://alst.net/arcd0056/`, `https://alst.net/arcd0060/`, `https://alst.net/arcd0065/`",
+              "- Touhou Arrangement Chronicle Bad Apple corpus and original-song statistics",
+              "- THBWiki + TouhouDB as advisory contradiction/support providers for the Bad Apple composition class",
+              "",
+              "## Search breadth",
+              "",
+              f"- base catalog before this pass: **{base_count}** beatmapsets",
+              f"- Bad Apple status/query buckets: **{len(STATUSES) * len(BAD_QUERIES)}**",
+              f"- unique Bad Apple search results: **{len(bad_discovered)}**",
+              f"- live Arrangement Chronicle Bad Apple rows parsed: **{chronicle_rows}**",
+              f"- absent exact-title + exact-identity Bad Apple candidates: **{len(bad_candidates)}**",
+              f"- Bad Apple candidates after secondary corroboration/contradiction gate: **{len(bad_preverified)}**",
+              f"- ZUN-original status/query buckets: **{zun_query_status_pairs}**",
+              f"- unique ZUN-theme search results: **{len(zun_discovered)}**",
+              f"- absent exact ZUN-original candidates before direct re-fetch: **{len(zun_preverified)}**",
+              f"- final accepted after current API + public-page verification: **{len(selected)}**",
+              f"- catalog after write: **{len(reloaded.entries)}**",
+              f"- direct verification failures withheld: **{len(direct_failures)}**",
+              "",
+              "## Final batch summary",
+              "",
+              f"- audit classes: {', '.join(f'{key}={value}' for key, value in sorted(class_counts.items()))}",
+              f"- statuses: {', '.join(f'{key}={value}' for key, value in sorted(status_counts.items()))}",
+              f"- modes: {', '.join(f'{key}={value}' for key, value in sorted(mode_counts.items()))}",
+              "",
+              "### Evidence-rule counts",
+              "",
+          ]
+          for rule, amount in sorted(rule_counts.items(), key=lambda item: (-item[1], item[0])):
+              lines.append(f"- `{rule}`: **{amount}**")
+
+          lines += ["", "### Theme counts", ""]
+          for theme, amount in sorted(theme_counts.items(), key=lambda item: (-item[1], item[0].casefold())):
+              lines.append(f"- `{theme}`: **{amount}**")
+
+          lines += ["", "## Accepted beatmapsets", ""]
+          lines += [
+              "| ID | Class | Artist | Title | Status | Modes | Rules |",
+              "| ---: | --- | --- | --- | --- | --- | --- |",
+          ]
+          for entry, audit_class, rules in selected:
+              artist = entry.artist.replace("|", "\\|")
+              title = entry.title.replace("|", "\\|")
+              modes = ",".join(entry.modes)
+              rule_text = ", ".join(rules).replace("|", "\\|")
+              lines.append(
+                  f"| {entry.beatmapset_id} | {audit_class} | {artist} | {title} | {entry.status} | {modes} | {rule_text} |"
+              )
+
+          lines += ["", "## Withheld boundary", ""]
+          lines.append(
+              f"- Bad Apple exact-composition candidates withheld by contradiction/secondary-evidence gate: **{len(bad_withheld)}**"
+          )
+          if bad_withheld:
+              for entry, rules, reason in bad_withheld[:40]:
+                  lines.append(
+                      f"  - `{entry.beatmapset_id}` — {entry.artist} - {entry.title}: `{reason}`"
+                  )
+          lines.append(
+              f"- direct API/public-page failures withheld: **{len(direct_failures)}**"
+          )
+          if direct_failures:
+              for beatmapset_id, audit_class, reason in direct_failures[:60]:
+                  lines.append(f"  - `{beatmapset_id}` ({audit_class}) — {reason}")
+          lines += [
+              "",
+              "Parent-artist-only Bad Apple search hits without an exact Arrangement Chronicle identity are intentionally excluded even when the artist is strongly associated with the work. This avoids admitting memes, unrelated edits, or loosely named mashups from artist identity alone.",
+              "",
+              "## Integrity checks",
+              "",
+              f"- exact written new-ID set equals the **{len(selected_ids)}** accepted IDs above;",
+              f"- all **{base_count}** pre-existing rows are field-for-field unchanged;",
+              "- every inserted row has `manual:verified`, a current `last_checked`, and source-backed Touhou kind/theme/game metadata;",
+              "- shard placement/order is delegated to `Catalog.save()`;",
+              "- the workflow runs `make check`, `make build`, and `git diff --check` before committing.",
+              "",
+          ]
+          AUDIT_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+          print("FINAL WAVE3 SUMMARY")
+          print(f"base={base_count}")
+          print(f"bad_discovered={len(bad_discovered)}")
+          print(f"bad_chronicle_rows={chronicle_rows}")
+          print(f"bad_exact_candidates={len(bad_candidates)}")
+          print(f"bad_preverified={len(bad_preverified)}")
+          print(f"zun_discovered={len(zun_discovered)}")
+          print(f"zun_preverified={len(zun_preverified)}")
+          print(f"selected={len(selected)}")
+          print(f"classes={dict(sorted(class_counts.items()))}")
+          print(f"statuses={dict(sorted(status_counts.items()))}")
+          print(f"direct_failures={len(direct_failures)}")
+          PY
+      - name: Validate repository
+        run: |
+          make check
+          make build
+          git diff --check
+      - name: Commit reviewed data
+        run: |
+          if [[ -z "$(git status --porcelain -- data/catalog docs/source-audit-2026-09-wave3-deep-coverage.md)" ]]; then
+            echo "No reviewed data changes produced"
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog docs/source-audit-2026-09-wave3-deep-coverage.md
+          git commit -m "data: add deep cross-verified Touhou coverage"
+          git push origin HEAD:feat/touhou-coverage-wave3-2026-09
