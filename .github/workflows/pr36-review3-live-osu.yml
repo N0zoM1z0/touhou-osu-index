@@ -1,0 +1,111 @@
+name: PR36 review 3 - live osu identity audit
+
+on:
+  push:
+    branches:
+      - feat/touhou-coverage-wave3-2026-09
+    paths:
+      - .github/workflows/pr36-review3-live-osu.yml
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: feat/touhou-coverage-wave3-2026-09
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Confirm branch is based on current main
+        run: |
+          git fetch origin main
+          test "$(git merge-base HEAD origin/main)" = "$(git rev-parse origin/main)"
+          echo "current_main=$(git rev-parse origin/main)"
+          echo "head=$(git rev-parse HEAD)"
+      - name: Re-fetch all 356 beatmapsets from both osu surfaces
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          rm -rf /tmp/pr36-base
+          mkdir -p /tmp/pr36-base
+          git archive --format=tar origin/main data/catalog | tar -xf - -C /tmp/pr36-base
+          python - <<'PY'
+          from __future__ import annotations
+
+          import time
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.http import get_text
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.sources import parse_beatmapset_page
+
+          EXPECTED = 356
+
+          base = Catalog.load(Path("/tmp/pr36-base/data/catalog"))
+          cur = Catalog.load(Path("data/catalog"))
+          new_ids = sorted(set(cur.entries) - set(base.entries))
+          assert len(new_ids) == EXPECTED, len(new_ids)
+
+          api = OsuApi.from_env()
+          api.token()
+          failures = []
+
+          def page_entry(bid: int, evidence: list[str]):
+              last = None
+              for attempt in range(5):
+                  try:
+                      raw = parse_beatmapset_page(get_text(f"https://osu.ppy.sh/beatmapsets/{bid}"))
+                      return entry_from_osu(raw, evidence=evidence, confidence="candidate")
+                  except Exception as exc:
+                      last = exc
+                      if attempt < 4:
+                          time.sleep(5 * (attempt + 1))
+              raise RuntimeError(f"public page failed after retries: {last}")
+
+          fields = ("beatmapset_id", "artist", "title", "creator", "source", "status", "osu_last_updated")
+          for index, bid in enumerate(new_ids, 1):
+              stored = cur.entries[bid]
+              try:
+                  raw = api.beatmapset(bid)
+                  api_entry = entry_from_osu(raw, evidence=stored.evidence, confidence="candidate")
+                  if int(raw.get("id", -1)) != bid:
+                      raise RuntimeError("API ID mismatch")
+
+                  stored_mismatch = [f for f in fields if getattr(stored, f) != getattr(api_entry, f)]
+                  if sorted(stored.modes) != sorted(api_entry.modes):
+                      stored_mismatch.append("modes")
+                  if stored_mismatch:
+                      raise RuntimeError("catalog/API drift: " + ", ".join(stored_mismatch))
+
+                  page = page_entry(bid, stored.evidence)
+                  page_mismatch = [f for f in fields if getattr(api_entry, f) != getattr(page, f)]
+                  if sorted(api_entry.modes) != sorted(page.modes):
+                      page_mismatch.append("modes")
+                  if page_mismatch:
+                      raise RuntimeError("API/public-page mismatch: " + ", ".join(page_mismatch))
+              except Exception as exc:
+                  failures.append((bid, str(exc)))
+
+              # Deliberately pace public osu! requests; fail closed rather than
+              # turning 429s into skipped verification.
+              time.sleep(0.35)
+              if index % 50 == 0:
+                  print(f"checked={index}/{EXPECTED} failures={len(failures)}")
+
+          assert not failures, f"live identity failures: {failures[:30]}"
+          print("REVIEW 3 PASS")
+          print(f"live_api_and_public_page_exact={EXPECTED}/{EXPECTED}")
+          PY
+      - name: Final repository validation on reviewed head
+        run: |
+          make check
+          make build
+          git diff --check origin/main...HEAD
