@@ -129,7 +129,7 @@
       "artist": "Kanpyohgo",
       "title": "Mannen Okigasa ni Gochui o -Festive extended",
       "creator": "wring",
-      "source": "",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -138,11 +138,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2021-10-12T13:29:27Z"
     },
     {
@@ -538,11 +541,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
         "forum_queue:sd_touhou",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2024-06-24T02:13:49Z"
     },
     {
@@ -751,7 +757,7 @@
       "artist": "TAMUSIC",
       "title": "Kyuu Jigoku Kaidou wo Yuku",
       "creator": "Xanandra",
-      "source": "",
+      "source": "東方地霊殿　～ Subterranean Animism.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -760,13 +766,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2017-11-13T07:19:05Z"
     },
     {
@@ -817,7 +825,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "The Empress scream off ver",
       "creator": "TheZiemniax",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "mania"
@@ -826,6 +834,9 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
         "known_touhou_artist",
         "osucollector:1402",
         "osucollector:1405",
@@ -833,7 +844,7 @@
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-08-31T19:48:30Z"
     },
     {
@@ -863,7 +874,7 @@
       "artist": "Halozy",
       "title": "PLAZMA",
       "creator": "Hakurei Yoru",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -872,13 +883,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
         "known_touhou_artist",
         "osucollector:1407",
         "osucollector:6907",
         "tournament:828"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-07-25T04:55:07Z"
     },
     {
@@ -1149,7 +1161,7 @@
       "artist": "LIQU@.",
       "title": "Yotogibanashi no Kamikakushi",
       "creator": "Ekoro",
-      "source": "",
+      "source": "東方萃夢想　～ Immaterial and Missing Power.",
       "status": "loved",
       "modes": [
         "osu"
@@ -1158,10 +1170,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2022-12-10T00:56:12Z"
     },
     {
@@ -1340,7 +1355,7 @@
       "artist": "FELT",
       "title": "Puppet in the Dark",
       "creator": "Mackenzie",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1349,12 +1364,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:東方",
         "osucollector:1407",
         "osucollector:6907",
         "tournament:828"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-07-11T02:03:25Z"
     },
     {
@@ -1661,7 +1677,7 @@
       "artist": "Sawawa",
       "title": "Cosmic Drive (Cut Ver.)",
       "creator": "ChristieBell",
-      "source": "",
+      "source": "東方神霊廟　～ Ten Desires.",
       "status": "loved",
       "modes": [
         "osu"
@@ -1670,10 +1686,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:東方",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2024-03-22T23:21:16Z"
     },
     {
@@ -1803,6 +1822,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "discovery_query:UNDEAD CORPORATION",
         "known_touhou_artist",
         "osucollector:1402",
         "osucollector:1405",
@@ -1812,7 +1833,7 @@
         "tournament_candidate:731"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-08-01T09:52:41Z"
     },
     {
@@ -1865,11 +1886,11 @@
     },
     {
       "beatmapset_id": 337281,
-      "artist": "Buta-Otome",
+      "artist": "BUTAOTOME",
       "title": "Hakanakimono Ningen",
       "creator": "caren_sk",
-      "source": "",
-      "status": "graveyard",
+      "source": "東方輝針城　～ Double Dealing Character.",
+      "status": "ranked",
       "modes": [
         "osu"
       ],
@@ -1877,13 +1898,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:source=東方輝針城",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": "2015-08-19T08:31:29Z"
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2025-07-10T02:09:36Z"
     },
     {
       "beatmapset_id": 337295,
@@ -2079,7 +2103,7 @@
       "artist": "FELT",
       "title": "Little Nova",
       "creator": "Hakurei Yoru",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2088,11 +2112,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:上海アリス幻樂団",
         "osucollector:6907",
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-11-20T13:11:47Z"
     },
     {
@@ -2100,7 +2125,7 @@
       "artist": "Syrufit feat. Ayakura Mei",
       "title": "Tsukikage Shoujo",
       "creator": "Jenny",
-      "source": "",
+      "source": "東方永夜抄　～ Imperishable Night.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2109,11 +2134,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:Syrufit",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2019-10-27T18:12:15Z"
     },
     {
@@ -2186,7 +2215,7 @@
       "artist": "Demetori",
       "title": "Kagayaku Hari no Kobito-zoku ~ Counter-Attack of the Weak",
       "creator": "GoldenWolf",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2195,12 +2224,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Team Shanghai Alice",
         "osucollector:1407",
         "osucollector:6907",
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-01-16T20:24:22Z"
     },
     {
@@ -2229,7 +2259,7 @@
       "artist": "Demetori",
       "title": "Kuuchuu ni Shizumu Kishinjou ~ Counter-Clock World",
       "creator": "jonathanlfj",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2238,13 +2268,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:東方",
         "osucollector:1407",
         "osucollector:6907",
         "tournament:1432",
         "tournament:1865"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-01-16T08:55:34Z"
     },
     {
@@ -2305,6 +2336,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
+        "discovery_query:東方",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -2312,7 +2345,7 @@
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-09-11T11:09:41Z"
     },
     {
@@ -2382,7 +2415,7 @@
       "artist": "Demetori",
       "title": "Mukau no Sato ~ Grief of Ressentiment",
       "creator": "GoldenWolf",
-      "source": "",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2391,11 +2424,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2017-07-13T03:49:56Z"
     },
     {
@@ -2486,7 +2522,7 @@
       "artist": "beatMARIO",
       "title": "Night of Knights",
       "creator": "alacat",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2495,6 +2531,10 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -2503,7 +2543,7 @@
         "tournament:1865"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-11-22T16:13:25Z"
     },
     {
@@ -2554,7 +2594,7 @@
       "artist": "Demetori",
       "title": "Kuuchuu ni Shizumu Kishinjou ~ Counter-Clock World",
       "creator": "GoldenWolf",
-      "source": "",
+      "source": "東方輝針城　～ Double Dealing Character.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2563,11 +2603,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:source=東方輝針城",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2017-06-20T18:25:22Z"
     },
     {
@@ -2653,7 +2696,7 @@
       "artist": "BUTAOTOME",
       "title": "Towa no Maigo",
       "creator": "BarkingMadDog",
-      "source": "",
+      "source": "東方永夜抄　～ Imperishable Night.",
       "status": "loved",
       "modes": [
         "osu"
@@ -2662,12 +2705,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2018-10-21T14:01:53Z"
     },
     {
@@ -2886,7 +2932,7 @@
       "artist": "Liz Triangle",
       "title": "Who Killed U.N.Owen",
       "creator": "rui",
-      "source": "",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2895,11 +2941,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source",
         "osucollector:1405",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-09-17T02:46:43Z"
     },
     {
@@ -2907,7 +2955,7 @@
       "artist": "EastNewSound",
       "title": "Hiiro Gekka, Kyoushou no Zetsu -1st Anniversary Remix-",
       "creator": "Stefan",
-      "source": "",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2916,10 +2964,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source",
         "osucollector:1402"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-09-12T16:17:33Z"
     },
     {
@@ -3019,7 +3069,7 @@
       "artist": "senya",
       "title": "Nihil Kagura",
       "creator": "Raediaufar",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "mania"
@@ -3028,13 +3078,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
         "osucollector:1402",
         "osucollector:1405",
         "tmc:1st",
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-04-27T12:20:59Z"
     },
     {
@@ -3109,8 +3160,8 @@
       "artist": "Natsu",
       "title": "Regression",
       "creator": "AdveNt",
-      "source": "",
-      "status": "qualified",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "ranked",
       "modes": [
         "osu"
       ],
@@ -3118,10 +3169,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:東方",
+        "osu_source",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2022-05-14T22:18:39Z"
     },
     {
@@ -3149,7 +3204,7 @@
       "artist": "ZUN",
       "title": "Tsukidokei ~ Luna Dial",
       "creator": "Mage",
-      "source": "",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
       "status": "ranked",
       "modes": [
         "mania"
@@ -3158,12 +3213,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:ZUN",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2017-04-10T18:38:49Z"
     },
     {
@@ -3397,9 +3455,9 @@
     {
       "beatmapset_id": 376703,
       "artist": "Akiyama Uni",
-      "title": "Odoru Mizushibuki (Shoegazer) [Macabre]",
+      "title": "Odoru Mizushibuki",
       "creator": "Shoegazer",
-      "source": "",
+      "source": "東方緋想天　～ Scarlet Weather Rhapsody",
       "status": "loved",
       "modes": [
         "mania"
@@ -3408,12 +3466,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
         "tmc:2nd",
         "tournament:467"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-08-16T12:25:03Z"
     },
     {
       "beatmapset_id": 376837,
@@ -3790,7 +3852,7 @@
       "artist": "Halozy",
       "title": "Masshiro na Yuki",
       "creator": "MrSergio",
-      "source": "",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3799,12 +3861,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Phantasmagoria of Flower View",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-09-30T20:32:04Z"
     },
     {
@@ -3909,6 +3974,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
         "known_touhou_artist",
         "osucollector:1402",
         "osucollector:1405",
@@ -3918,7 +3988,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-05-25T13:57:04Z"
     },
     {
@@ -4001,6 +4071,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:上海アリス幻樂団",
         "known_touhou_artist",
         "osucollector:1402",
         "osucollector:1405",
@@ -4010,7 +4085,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2019-06-08T19:24:05Z"
     },
     {
@@ -4070,6 +4145,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:C-CLAYS",
+        "discovery_query:source=Subterranean Animism",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
@@ -4078,7 +4155,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-09-22T19:43:16Z"
     },
     {
@@ -4171,7 +4248,7 @@
       "artist": "Akiyama Uni",
       "title": "Kaoru Juyouka",
       "creator": "Hollow Wings",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -4180,6 +4257,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:東方",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -4187,7 +4265,7 @@
         "tournament:1865"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2018-10-26T23:15:35Z"
     },
     {
