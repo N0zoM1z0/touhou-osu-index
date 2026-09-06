@@ -1,0 +1,315 @@
+name: Wave 3 Bad Apple coverage diagnostic
+
+on:
+  push:
+    branches:
+      - feat/touhou-coverage-wave3-2026-09
+    paths:
+      - .github/workflows/wave3-bad-apple.yml
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/touhou-coverage-wave3-2026-09
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exhaustive Bad Apple title-family audit
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import collections
+          import json
+          import re
+          import time
+          import unicodedata
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.classifier import is_touhou_game_source
+          from touhou_osu.http import get_text
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.provenance import artist_matches, audit_entries
+          from touhou_osu.sources import parse_beatmapset_page
+
+          STATUSES = ("graveyard", "ranked", "loved", "qualified", "pending", "wip")
+          QUERIES = (
+              "Bad Apple",
+              "Bad Apple!!",
+              "Bad Apple feat nomico",
+              "Bad Apple nomico",
+              "BadApple",
+              "Bad Apple Alstroemeria",
+              "Bad Apple Remix",
+          )
+          MAX_PAGES = 10
+          VERIFY_BUFFER = 380
+
+          PRIMARY_URLS = (
+              "https://alst.net/arcd0056/",
+              "https://alst.net/arcd0060/",
+              "https://alst.net/arcd0065/",
+          )
+          CHRONICLE_BASE = "https://touhou.arrangement-chronicle.com/original_song/%E6%9D%B1%E6%96%B9%E5%B9%BB%E6%83%B3%E9%83%B7/Bad%20Apple!!"
+
+          OFFICIAL_TITLES = (
+              "Bad Apple!! feat.nomico",
+              "Bad Apple!! feat.nomico (Animelo Summer Live 2010 Edit)",
+              "Bad Apple!! feat.nomico (2014 REFIX)",
+              "Bad Apple!! feat.nomico (博麗神社うた祭 2016 Edit)",
+              "Bad Apple!! feat.nomico (Instrumental)",
+              "Bad Apple!! feat.nomico (Graphtech Remix)",
+              "Bad Apple!! feat.nomico (SIMIAN NOISE REMIX)",
+              "Bad Apple!! feat.nomico (REDALiCE Remix)",
+              "Bad Apple!! feat.nomico (Nardis Remix)",
+              "Bad Apple!! feat.nomico (Tracy vs. Astronomical Remix)",
+              "Bad Apple!! feat.nomico (Nhato Remix)",
+              "Bad Apple!! feat.nomico (Camellia's Bad Psy!! Remix)",
+              "Bad Apple!! feat.nomico (MK Remix)",
+              "Bad Apple!! feat.nomico (ZYTOKINE Remix)",
+              "Bad Apple!! feat.nomico (HYPER RAVE Remix)",
+              "Bad Apple!! feat.nomico (ELEMENTAS Remix)",
+              "Bad Apple!! feat.nomico (COOL&CREATE Ver.)",
+              "Bad Apple!! feat.nomico (豚乙女 Ver.)",
+              "Bad Apple!! feat.nomico (Marasy Ver.)",
+              "Bad Apple!! feat.nomico (ARM×狐夢想 Remix)",
+              "Bad Apple!! feat.nomico (Marasy + Masayoshi Minoshima)",
+              "Bad Apple!! feat.nomico (TOS Remix)",
+          )
+          OFFICIAL_PARTICIPANTS = (
+              "Alstroemeria Records", "nomico", "Masayoshi Minoshima", "Camellia",
+              "MK", "ZYTOKINE", "隣人", "DiGiTAL WiNG", "katsu", "Tsukasa",
+              "ELEMENTAS", "A-One", "COOL&CREATE", "beatMARIO", "ビートまりお",
+              "あまね", "豚乙女", "ランコ", "Marasy", "まらしぃ", "ARM", "IOSYS",
+              "REDALiCE", "Nardis", "Nhato", "Tracy", "Astronomical", "魂音泉",
+          )
+
+          def compact(value: str) -> str:
+              value = unicodedata.normalize("NFKC", str(value)).casefold()
+              return "".join(ch for ch in value if ch.isalnum())
+
+          official_title_keys = {compact(value) for value in OFFICIAL_TITLES}
+          parent_artist_keys = tuple(compact(value) for value in ("Alstroemeria Records", "nomico", "Masayoshi Minoshima"))
+          participant_keys = tuple(compact(value) for value in OFFICIAL_PARTICIPANTS)
+
+          # Fail closed if the first-party derivative corpus disappears or changes
+          # so radically that our source-backed title list can no longer be checked.
+          primary_text = "\n".join(get_text(url) for url in PRIMARY_URLS)
+          for required in ("Bad Apple!! feat.nomico", "Camellia", "REDALiCE", "Nhato", "Marasy"):
+              if required.casefold() not in primary_text.casefold():
+                  raise RuntimeError(f"primary Alstroemeria corpus missing required marker: {required}")
+
+          class TableParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.in_tr = False
+                  self.in_td = False
+                  self.cell = []
+                  self.row = []
+                  self.rows = []
+
+              def handle_starttag(self, tag, attrs):
+                  if tag == "tr":
+                      self.in_tr = True
+                      self.row = []
+                  elif tag == "td" and self.in_tr:
+                      self.in_td = True
+                      self.cell = []
+
+              def handle_data(self, data):
+                  if self.in_td:
+                      self.cell.append(data)
+
+              def handle_endtag(self, tag):
+                  if tag == "td" and self.in_td:
+                      self.row.append(" ".join(" ".join(self.cell).split()))
+                      self.in_td = False
+                  elif tag == "tr" and self.in_tr:
+                      if self.row:
+                          self.rows.append(self.row)
+                      self.in_tr = False
+
+          chronicle = collections.defaultdict(list)
+          chronicle_rows = 0
+          for page in range(1, 11):
+              url = CHRONICLE_BASE + f"?page={page}&per=50"
+              parser = TableParser()
+              parser.feed(get_text(url))
+              for row in parser.rows:
+                  if len(row) < 8:
+                      continue
+                  circle, title = row[1].strip(), row[2].strip()
+                  vocalist = row[4].strip() if len(row) > 4 else ""
+                  arranger = row[5].strip() if len(row) > 5 else ""
+                  originals = row[7].strip() if len(row) > 7 else ""
+                  if not title or "badapple" not in compact(originals):
+                      continue
+                  identities = [value for value in (circle, vocalist, arranger) if value]
+                  chronicle[compact(title)].append((title, identities, originals))
+                  chronicle_rows += 1
+          if chronicle_rows < 450:
+              raise RuntimeError(f"Arrangement Chronicle corpus unexpectedly small: {chronicle_rows}")
+
+          base = Catalog.load(Path("data/catalog"))
+          api = OsuApi.from_env()
+          api.token()
+
+          discovered: dict[int, dict] = {}
+          search_evidence: dict[int, set[str]] = collections.defaultdict(set)
+          status_hits = collections.Counter()
+          for status in STATUSES:
+              for query in QUERIES:
+                  cursor = None
+                  for _ in range(MAX_PAGES):
+                      params = {"q": query, "s": status}
+                      if cursor:
+                          params["cursor_string"] = cursor
+                      payload = api.get("/beatmapsets/search", params)
+                      batch = payload.get("beatmapsets", [])
+                      for raw in batch:
+                          beatmapset_id = int(raw["id"])
+                          discovered[beatmapset_id] = raw
+                          search_evidence[beatmapset_id].add(f"theme_bad_apple:{status}:{query}")
+                          status_hits[status] += 1
+                      cursor = payload.get("cursor_string")
+                      if not cursor:
+                          break
+
+          candidates = []
+          rule_counts = collections.Counter()
+          for beatmapset_id, raw in discovered.items():
+              if beatmapset_id in base.entries:
+                  continue
+              entry = entry_from_osu(raw, evidence=sorted(search_evidence[beatmapset_id]), confidence="candidate")
+              title_key = compact(entry.title)
+              if "badapple" not in title_key:
+                  continue
+              artist_key = compact(entry.artist)
+              rules = set()
+              if is_touhou_game_source(entry.source):
+                  rules.add("explicit_game_source")
+              if title_key == "badapple" and artist_key == "zun":
+                  rules.add("zun_original")
+              if any(key and key in artist_key for key in parent_artist_keys):
+                  rules.add("primary_parent_artist")
+              if title_key in official_title_keys and any(key and (key in artist_key or artist_key in key) for key in participant_keys if artist_key):
+                  rules.add("primary_official_derivative")
+
+              chronicle_matches = []
+              for canonical_title, identities, originals in chronicle.get(title_key, []):
+                  if any(artist_matches(entry.artist, identity) for identity in identities):
+                      chronicle_matches.append((canonical_title, identities, originals))
+              if chronicle_matches:
+                  rules.add("chronicle_exact_identity")
+
+              if not rules:
+                  continue
+              for rule in rules:
+                  rule_counts[rule] += 1
+              candidates.append((entry, rules, chronicle_matches, len(search_evidence[beatmapset_id])))
+
+          # THBWiki/TouhouDB are additional checks for the secondary-source class.
+          # Primary Alstroemeria / explicit-game-source rows do not depend on them.
+          chronicle_only_entries = [
+              entry for entry, rules, matches, hits in candidates
+              if "chronicle_exact_identity" in rules and not (
+                  "explicit_game_source" in rules or "primary_parent_artist" in rules or
+                  "primary_official_derivative" in rules or "zun_original" in rules
+              )
+          ]
+          external_audits = audit_entries(chronicle_only_entries, workers=10) if chronicle_only_entries else []
+          audit_by_id = {audit.beatmapset_id: audit for audit in external_audits}
+
+          strong = []
+          withheld = []
+          for entry, rules, matches, hits in candidates:
+              primary = bool(rules & {"explicit_game_source", "primary_parent_artist", "primary_official_derivative", "zun_original"})
+              if primary:
+                  strong.append((entry, rules, matches, hits, None))
+                  continue
+              audit = audit_by_id.get(entry.beatmapset_id)
+              if audit and audit.verdict == "supported" and any(hit.provider == "thbwiki" for hit in audit.supports):
+                  strong.append((entry, rules, matches, hits, audit))
+              else:
+                  withheld.append((entry, rules, audit.verdict if audit else "no_audit"))
+
+          # Prefer explicit / first-party rows, then secondary rows corroborated by THBWiki,
+          # and within each group prefer more independent search hits.
+          def priority(item):
+              entry, rules, matches, hits, audit = item
+              primary_score = 3 if "explicit_game_source" in rules else 2 if rules & {"primary_parent_artist", "primary_official_derivative", "zun_original"} else 1
+              dual = int(bool(audit and {hit.provider for hit in audit.supports} >= {"thbwiki", "touhoudb"}))
+              return (-primary_score, -dual, -hits, entry.beatmapset_id)
+          strong.sort(key=priority)
+
+          verified = []
+          failures = []
+          for candidate, rules, matches, hits, audit in strong:
+              if len(verified) >= VERIFY_BUFFER:
+                  break
+              beatmapset_id = candidate.beatmapset_id
+              try:
+                  raw = api.beatmapset(beatmapset_id)
+                  fresh = entry_from_osu(raw, evidence=candidate.evidence, confidence="candidate")
+                  if int(raw.get("id", -1)) != beatmapset_id:
+                      raise RuntimeError("API ID mismatch")
+                  if compact(fresh.title) != compact(candidate.title) or fresh.artist != candidate.artist:
+                      raise RuntimeError("search/direct identity drift")
+                  page_raw = parse_beatmapset_page(get_text(f"https://osu.ppy.sh/beatmapsets/{beatmapset_id}"))
+                  page = entry_from_osu(page_raw, evidence=candidate.evidence, confidence="candidate")
+                  fields = ("beatmapset_id", "artist", "title", "creator", "source", "status")
+                  mismatches = [field for field in fields if getattr(fresh, field) != getattr(page, field)]
+                  if sorted(fresh.modes) != sorted(page.modes):
+                      mismatches.append("modes")
+                  if mismatches:
+                      raise RuntimeError("API/page mismatch: " + ", ".join(mismatches))
+                  verified.append((fresh, rules, matches, hits, audit))
+              except Exception as exc:
+                  failures.append((beatmapset_id, str(exc)))
+              time.sleep(0.12)
+
+          print("BAD APPLE AUDIT SUMMARY")
+          print(f"base_catalog={len(base.entries)}")
+          print(f"chronicle_rows={chronicle_rows}")
+          print(f"status_query_pairs={len(STATUSES) * len(QUERIES)}")
+          print(f"unique_search_results={len(discovered)}")
+          print(f"source_matched_absent={len(candidates)}")
+          print(f"rule_counts={dict(sorted(rule_counts.items()))}")
+          print(f"strong_before_direct_check={len(strong)}")
+          print(f"secondary_withheld={len(withheld)}")
+          print(f"fresh_api_page_verified={len(verified)}")
+          print(f"fresh_verify_failures={len(failures)}")
+          print(f"status_raw_hits={dict(sorted(status_hits.items()))}")
+
+          print("\nVERIFIED BAD APPLE POOL")
+          for fresh, rules, matches, hits, audit in verified:
+              print(json.dumps({
+                  "id": fresh.beatmapset_id,
+                  "artist": fresh.artist,
+                  "title": fresh.title,
+                  "source": fresh.source,
+                  "status": fresh.status,
+                  "modes": fresh.modes,
+                  "rules": sorted(rules),
+                  "query_hits": hits,
+                  "external": audit.verdict if audit else "primary_or_explicit",
+                  "providers": sorted({hit.provider for hit in audit.supports}) if audit else [],
+              }, ensure_ascii=False))
+
+          if failures:
+              print("\nDIRECT FAILURES")
+              for item in failures[:100]:
+                  print(item)
+          PY
