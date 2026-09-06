@@ -1,0 +1,169 @@
+name: Deep review
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/deep-review.yml"
+      - "Makefile"
+      - "data/catalog/**"
+      - "docs/source-audit-*.md"
+      - "tests/**"
+      - "touhou_osu/**"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Review layer to run
+        required: true
+        default: all
+        type: choice
+        options:
+          - structural
+          - provenance
+          - live-osu
+          - all
+      ref:
+        description: Repository branch or ref to review
+        required: true
+        default: main
+        type: string
+      base_ref:
+        description: Base branch or ref; manual deep reviews require it to be an ancestor
+        required: true
+        default: main
+        type: string
+      scope:
+        description: Rows used by live review layers
+        required: true
+        default: changed
+        type: choice
+        options:
+          - changed
+          - added
+      audit_doc:
+        description: Optional source-audit Markdown file whose accepted IDs must equal additions
+        required: false
+        type: string
+      expected_additions:
+        description: Optional exact number of added beatmapsets
+        required: false
+        type: string
+      forbid_existing_changes:
+        description: Fail if any pre-existing catalog row changed
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deep-review-${{ github.event.pull_request.number || inputs.ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Resolve review parameters
+        id: config
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          INPUT_BASE_REF: ${{ inputs.base_ref }}
+          INPUT_MODE: ${{ inputs.mode }}
+          INPUT_SCOPE: ${{ inputs.scope }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            echo "base_ref=$PR_BASE_SHA" >> "$GITHUB_OUTPUT"
+            echo "mode=structural" >> "$GITHUB_OUTPUT"
+            echo "scope=changed" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git fetch --no-tags origin "$INPUT_BASE_REF"
+          echo "base_ref=$(git rev-parse FETCH_HEAD)" >> "$GITHUB_OUTPUT"
+          echo "mode=$INPUT_MODE" >> "$GITHUB_OUTPUT"
+          echo "scope=$INPUT_SCOPE" >> "$GITHUB_OUTPUT"
+      - name: Run catalog review
+        env:
+          AUDIT_DOC: ${{ inputs.audit_doc }}
+          BASE_REF: ${{ steps.config.outputs.base_ref }}
+          EVENT_NAME: ${{ github.event_name }}
+          EXPECTED_ADDITIONS: ${{ inputs.expected_additions }}
+          FORBID_EXISTING_CHANGES: ${{ inputs.forbid_existing_changes }}
+          MODE: ${{ steps.config.outputs.mode }}
+          OSU_CLIENT_ID: ${{ github.event_name == 'workflow_dispatch' && (inputs.mode == 'live-osu' || inputs.mode == 'all') && secrets.OSU_CLIENT_ID || '' }}
+          OSU_CLIENT_SECRET: ${{ github.event_name == 'workflow_dispatch' && (inputs.mode == 'live-osu' || inputs.mode == 'all') && secrets.OSU_CLIENT_SECRET || '' }}
+          SCOPE: ${{ steps.config.outputs.scope }}
+        run: |
+          set -euo pipefail
+          args=(
+            --base-ref "$BASE_REF"
+            --mode "$MODE"
+            --scope "$SCOPE"
+            --output deep-review-report.json
+          )
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            args+=(--require-base-ancestor)
+          fi
+          if [[ -n "$AUDIT_DOC" ]]; then
+            args+=(--audit-doc "$AUDIT_DOC")
+          fi
+          if [[ -n "$EXPECTED_ADDITIONS" ]]; then
+            args+=(--expected-additions "$EXPECTED_ADDITIONS")
+          fi
+          if [[ "$FORBID_EXISTING_CHANGES" == "true" ]]; then
+            args+=(--forbid-existing-changes)
+          fi
+          python -m touhou_osu.pr_audit "${args[@]}"
+      - name: Write job summary
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          report_path = Path("deep-review-report.json")
+          summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
+          if not report_path.exists():
+              summary.write_text("## Deep review\n\nNo report was produced; inspect the failed step.\n", encoding="utf-8")
+              raise SystemExit()
+          report = json.loads(report_path.read_text(encoding="utf-8"))
+          lines = ["## Deep review", "", f"- status: **{report['status']}**", f"- mode: `{report['mode']}`"]
+          structural = report.get("structural")
+          if structural:
+              lines.append(
+                  f"- catalog diff: +{len(structural['added'])} / "
+                  f"~{len(structural['modified'])} / -{len(structural['removed'])}"
+              )
+          provenance = report.get("provenance")
+          if provenance:
+              lines.append(
+                  f"- provenance: checked={provenance['checked']}, "
+                  f"supported={provenance['supported']}, review_flags={len(provenance['review_flags'])}, "
+                  f"provider_errors={provenance['provider_errors']}"
+              )
+          live = report.get("live_osu")
+          if live:
+              lines.append(f"- live osu!: checked={live['checked']}, failures={len(live['failures'])}")
+          if report["errors"]:
+              lines += ["", "### Errors", ""] + [f"- {item}" for item in report["errors"]]
+          summary.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+      - name: Upload review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deep-review-report-${{ github.run_id }}
+          path: deep-review-report.json
+          if-no-files-found: warn
+          retention-days: 30

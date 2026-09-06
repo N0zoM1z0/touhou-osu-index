@@ -92,6 +92,7 @@ Requires Python 3.11+ and otherwise uses only the standard library.
 make check          # schema validation and tests
 make build          # generate site, JSON, and CSV
 make assemble       # combine all shards into dist/catalog-full.json
+make audit-pr        # compare this catalog with a Git base (BASE=main by default)
 make audit-sources  # query every configured source without changing the catalog
 make import-seeds   # merge every configured source into the catalog
 make hydrate        # resolve incomplete public beatmapset metadata (no OAuth)
@@ -112,6 +113,10 @@ Source definitions, canonical URLs, safety floors, and trust policy live in
 floor so an upstream format change or truncated response fails closed instead
 of silently deleting coverage. See [SOURCES.md](SOURCES.md) for the complete
 inventory and current source audit.
+
+For large catalog changes, [`docs/deep-review.md`](docs/deep-review.md) documents
+base-aware structural checks, audit-document matching, and optional live
+provenance/osu! review.
 
 ## Automated discovery
 
