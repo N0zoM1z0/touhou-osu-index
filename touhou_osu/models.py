@@ -106,6 +106,19 @@ class Entry:
             raise CatalogError(f"beatmapset {self.beatmapset_id}: unknown confidence {self.confidence!r}")
         if not self.evidence:
             raise CatalogError(f"beatmapset {self.beatmapset_id}: evidence is required")
+        multi_original = [
+            item
+            for item in self.evidence
+            if item.startswith("provenance:") and item.endswith("-multi-original")
+        ]
+        if multi_original and self.touhou_kind != "mixed":
+            raise CatalogError(
+                f"beatmapset {self.beatmapset_id}: explicit multi-original provenance requires mixed kind"
+            )
+        if multi_original and len(self.original_themes) < 2:
+            raise CatalogError(
+                f"beatmapset {self.beatmapset_id}: explicit multi-original provenance requires multiple themes"
+            )
         _validate_date(self.last_checked, "last_checked")
         _validate_date(self.osu_last_updated, "osu_last_updated", timestamp=True)
 

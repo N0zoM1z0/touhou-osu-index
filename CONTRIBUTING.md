@@ -15,6 +15,11 @@ provenance. Please keep changes small and evidence-backed.
    by evidence. Do not guess from a character background.
 6. Run `make check` and `make build`.
 
+For a catalog pull request, also run `make audit-pr BASE=main`. Large
+addition-only passes should supply their audit document, expected addition
+count, and `FORBID_EXISTING_CHANGES=1`; see
+[`docs/deep-review.md`](docs/deep-review.md).
+
 For composition-centered completeness passes, follow
 [`docs/systematic-theme-audit-workflow.md`](docs/systematic-theme-audit-workflow.md).
 Theme/title search results are discovery evidence only: lock the composition

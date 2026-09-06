@@ -1,4 +1,9 @@
-.PHONY: build assemble check test validate import-seeds audit-sources hydrate clean
+.PHONY: build assemble check test validate audit-pr import-seeds audit-sources hydrate clean
+
+BASE ?= main
+MODE ?= structural
+SCOPE ?= changed
+WORKERS ?= 4
 
 build:
 	python3 -m touhou_osu build
@@ -13,6 +18,15 @@ test:
 
 validate:
 	python3 -m touhou_osu validate
+
+audit-pr:
+	python3 -m touhou_osu.pr_audit --base-ref "$(BASE)" --mode "$(MODE)" --scope "$(SCOPE)" --workers "$(WORKERS)" \
+		$(if $(AUDIT_DOC),--audit-doc "$(AUDIT_DOC)") \
+		$(if $(EXPECTED_ADDITIONS),--expected-additions "$(EXPECTED_ADDITIONS)") \
+		$(if $(filter 1 true yes,$(FORBID_EXISTING_CHANGES)),--forbid-existing-changes) \
+		$(if $(filter 1 true yes,$(ALLOW_REMOVALS)),--allow-removals) \
+		$(if $(filter 1 true yes,$(REQUIRE_BASE_ANCESTOR)),--require-base-ancestor) \
+		$(if $(AUDIT_OUTPUT),--output "$(AUDIT_OUTPUT)")
 
 import-seeds:
 	python3 -m touhou_osu import-seeds --write

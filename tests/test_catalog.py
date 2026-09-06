@@ -151,6 +151,28 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(CatalogError, "evidence"):
             entry(evidence=[]).validate()
 
+    def test_explicit_multi_original_provenance_requires_mixed_kind(self):
+        with self.assertRaisesRegex(CatalogError, "requires mixed kind"):
+            entry(
+                evidence=["provenance:arrangement-chronicle-multi-original"],
+                touhou_kind="arrangement",
+                original_themes=["Theme A", "Theme B"],
+            ).validate()
+
+    def test_explicit_multi_original_provenance_requires_multiple_themes(self):
+        with self.assertRaisesRegex(CatalogError, "requires multiple themes"):
+            entry(
+                evidence=["provenance:arrangement-chronicle-multi-original"],
+                touhou_kind="mixed",
+                original_themes=["Theme A"],
+            ).validate()
+
+    def test_multiple_themes_do_not_imply_mixed_without_explicit_component_evidence(self):
+        entry(
+            touhou_kind="arrangement",
+            original_themes=["Flowering Night", "Lunar Clock"],
+        ).validate()
+
 
 if __name__ == "__main__":
     unittest.main()
