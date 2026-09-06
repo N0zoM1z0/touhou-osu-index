@@ -62,6 +62,15 @@ A row must have current artist exactly `ZUN` after normalization and an exact no
 - `亡き王女の為のセプテット`: **14**
 - `おてんば恋娘`: **6**
 - `恋色マスタースパーク`: **6**
+- `装飾戦 ～ Decoration Battle`: **1**
+- `霊戦 ～ Perdition crisis`: **1**
+
+
+### Mixed structured provenance correction
+
+The pre-merge review found one accepted Bad Apple recording whose structured provenance was incomplete even though the beatmapset itself was correctly in scope. Beatmapset `2603026` — **IOSYS — Bad Apple & Good Orange** — is documented by the live Arrangement Chronicle corpus as using three Touhou originals: `Bad Apple!!`, `装飾戦 ～ Decoration Battle`, and `霊戦 ～ Perdition crisis`. All three originate from `東方幻想郷 ～ Lotus Land Story`, so `origin_games` remains one game while `touhou_kind` is corrected from `arrangement` to `mixed` and all three supported originals are retained.
+
+A full reverse scan of all 230 accepted Bad Apple rows against the same live corpus found no other accepted row with more than one supported original, so this is the only structured-provenance correction required by the pre-merge review.
 
 ## Accepted beatmapsets
 

@@ -38,18 +38,21 @@
       "modes": [
         "osu"
       ],
-      "touhou_kind": "arrangement",
+      "touhou_kind": "mixed",
       "origin_games": [
         "東方幻想郷 ～ Lotus Land Story"
       ],
       "original_themes": [
-        "Bad Apple!!"
+        "Bad Apple!!",
+        "装飾戦 ～ Decoration Battle",
+        "霊戦 ～ Perdition crisis"
       ],
       "evidence": [
         "audit:wave3-deep-coverage-2026-09",
         "manual:verified",
         "osu_source",
-        "provenance:arrangement-chronicle-bad-apple"
+        "provenance:arrangement-chronicle-bad-apple",
+        "provenance:arrangement-chronicle-multi-original"
       ],
       "confidence": "verified",
       "last_checked": "2026-09-06",
