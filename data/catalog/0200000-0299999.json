@@ -809,6 +809,34 @@
       "osu_last_updated": "2015-02-15T16:41:17Z"
     },
     {
+      "beatmapset_id": 227666,
+      "artist": "ZUN",
+      "title": "Hartmann's Youkai Girl",
+      "creator": "sakurayan",
+      "source": "Touhou 13.5 Touhou 11 Hopeless Masquerade Danmakufu",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方地霊殿 ～ Subterranean Animism."
+      ],
+      "original_themes": [
+        "ハルトマンの妖怪少女"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-11-05T20:03:47Z"
+    },
+    {
       "beatmapset_id": 227847,
       "artist": "Hanatan",
       "title": "Savior of Cross",
@@ -850,6 +878,34 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-01-23T05:45:53Z"
+    },
+    {
+      "beatmapset_id": 229020,
+      "artist": "ZUN",
+      "title": "U.N. Owen Was Her?",
+      "creator": "finap",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "U.N.オーエンは彼女なのか？"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-11-04T21:23:26Z"
     },
     {
       "beatmapset_id": 229388,
@@ -1068,6 +1124,34 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-04-10T15:23:51Z"
+    },
+    {
+      "beatmapset_id": 237626,
+      "artist": "Masayoshi Minoshima feat nomico",
+      "title": "Bad Apple!!",
+      "creator": "Pep2547",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple",
+        "provenance:thbwiki"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2014-11-28T13:18:30Z"
     },
     {
       "beatmapset_id": 238767,
@@ -1510,6 +1594,35 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2016-12-07T15:37:01Z"
+    },
+    {
+      "beatmapset_id": 254743,
+      "artist": "ZUN",
+      "title": "U.N. Owen Was Her?",
+      "creator": "MeGl",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "U.N.オーエンは彼女なのか？"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "mapper_tags",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2015-01-04T11:03:00Z"
     },
     {
       "beatmapset_id": 257165,
@@ -2116,6 +2229,34 @@
       "osu_last_updated": "2015-03-27T02:34:43Z"
     },
     {
+      "beatmapset_id": 289924,
+      "artist": "ZUN",
+      "title": "Septette for the Dead Princess",
+      "creator": "OrtiraemDrvezs",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "亡き王女の為のセプテット"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2015-03-01T17:06:19Z"
+    },
+    {
       "beatmapset_id": 290111,
       "artist": "Tsukasa Yatoki",
       "title": "Heaven's Race Guitar Style",
@@ -2556,6 +2697,35 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-05-01T16:40:13Z"
+    },
+    {
+      "beatmapset_id": 299542,
+      "artist": "ZUN",
+      "title": "U.N. Owen was her?",
+      "creator": "Flandredevil9",
+      "source": "Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "original",
+      "origin_games": [
+        "東方紅魔郷 ～ the Embodiment of Scarlet Devil."
+      ],
+      "original_themes": [
+        "U.N.オーエンは彼女なのか？"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "identity:zun-exact-original-title",
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-original-theme"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2015-04-12T03:19:54Z"
     },
     {
       "beatmapset_id": 299856,

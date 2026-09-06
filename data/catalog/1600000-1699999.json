@@ -1438,6 +1438,35 @@
       "osu_last_updated": "2021-12-22T15:07:30Z"
     },
     {
+      "beatmapset_id": 1653200,
+      "artist": "Masayoshi Minoshima",
+      "title": "Bad Apple!! feat.nomico (Camellias Bad Psy!! Remix)",
+      "creator": "Meire",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "osu_source",
+        "primary:alstroemeria-records",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2021-12-18T06:40:23Z"
+    },
+    {
       "beatmapset_id": 1653364,
       "artist": "beatMARIO",
       "title": "Night of Knights",
@@ -2061,6 +2090,34 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1672812,
+      "artist": "masayoshi minoshima ft.nomico",
+      "title": "bad apple!!",
+      "creator": "Siwerix",
+      "source": "bad apple!!",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple",
+        "provenance:thbwiki"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-01-12T16:42:45Z"
+    },
+    {
       "beatmapset_id": 1674037,
       "artist": "IOSYS feat. Asana",
       "title": "star river",
@@ -2650,6 +2707,33 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-07-11T10:10:35Z"
+    },
+    {
+      "beatmapset_id": 1691133,
+      "artist": "Alstroemeria Records // nomico",
+      "title": "Bad Apple!!",
+      "creator": "AlvinCodin",
+      "source": "",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2022-02-04T16:22:37Z"
     },
     {
       "beatmapset_id": 1693521,

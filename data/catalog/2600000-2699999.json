@@ -2,6 +2,60 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 2600289,
+      "artist": "Masayoshi Minoshima feat. nomico",
+      "title": "Bad Apple!!",
+      "creator": "Awmgaming0000",
+      "source": "Touhou - LLS",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2026-08-23T05:40:51Z"
+    },
+    {
+      "beatmapset_id": 2603026,
+      "artist": "IOSYS",
+      "title": "Bad Apple & Good Orange",
+      "creator": "Parsee",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "manual:verified",
+        "osu_source",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2026-08-14T11:04:22Z"
+    },
+    {
       "beatmapset_id": 2608197,
       "artist": "t+pazolite",
       "title": "Luv*Lab*Poison 22ate!",
@@ -23,6 +77,35 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2026-08-24T14:14:26Z"
+    },
+    {
+      "beatmapset_id": 2610365,
+      "artist": "Alstroemeria Records",
+      "title": "Bad Apple!!",
+      "creator": "justin2",
+      "source": "東方Project",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "arrangement",
+      "origin_games": [
+        "東方幻想郷 ～ Lotus Land Story"
+      ],
+      "original_themes": [
+        "Bad Apple!!"
+      ],
+      "evidence": [
+        "audit:wave3-deep-coverage-2026-09",
+        "known_touhou_artist",
+        "manual:verified",
+        "osu_source",
+        "primary:bad-apple-parent-identity",
+        "provenance:arrangement-chronicle-bad-apple"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2026-08-27T01:47:32Z"
     }
   ]
 }
