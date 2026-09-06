@@ -1,0 +1,161 @@
+name: PR36 final review 2 v3 - provenance
+
+on:
+  push:
+    branches:
+      - feat/touhou-coverage-wave3-2026-09
+    paths:
+      - .github/workflows/pr36-final-review2-provenance-v3.yml
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: feat/touhou-coverage-wave3-2026-09
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reconstruct every composition relation from live primary corpus
+        run: |
+          rm -rf /tmp/pr36-base
+          mkdir -p /tmp/pr36-base
+          git archive --format=tar origin/main data/catalog | tar -xf - -C /tmp/pr36-base
+          python - <<'PY'
+          from __future__ import annotations
+          import collections, unicodedata
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.http import get_text
+          from touhou_osu.provenance import artist_matches, audit_entries
+
+          BAD_URL='https://touhou.arrangement-chronicle.com/original_song/%E6%9D%B1%E6%96%B9%E5%B9%BB%E6%83%B3%E9%83%B7/Bad%20Apple!!'
+          STATS_URL='https://touhou.arrangement-chronicle.com/statistics/original_songs'
+          ZUN={
+              'U.N.オーエンは彼女なのか？':('東方紅魔郷 ～ the Embodiment of Scarlet Devil.', ['U.N.オーエンは彼女なのか？','U.N.オーエンは彼女なのか','U.N. Owen Was Her?','U.N. Owen Was Her']),
+              '亡き王女の為のセプテット':('東方紅魔郷 ～ the Embodiment of Scarlet Devil.', ['亡き王女の為のセプテット','Septette for the Dead Princess']),
+              '恋色マスタースパーク':('東方永夜抄 ～ Imperishable Night.', ['恋色マスタースパーク','Love-colored Master Spark','Love Colored Master Spark','Love-Coloured Master Spark','Love Coloured Master Spark']),
+              'ネクロファンタジア':('東方妖々夢 ～ Perfect Cherry Blossom.', ['ネクロファンタジア','Necrofantasia','Necro Fantasia']),
+              'おてんば恋娘':('東方紅魔郷 ～ the Embodiment of Scarlet Devil.', ['おてんば恋娘','Beloved Tomboyish Girl']),
+              'ハルトマンの妖怪少女':('東方地霊殿 ～ Subterranean Animism.', ['ハルトマンの妖怪少女',"Hartmann's Youkai Girl",'Hartmann Youkai Girl','Hartmanns Youkai Girl']),
+              '月まで届け、不死の煙':('東方永夜抄 ～ Imperishable Night.', ['月まで届け、不死の煙','Reach for the Moon, Immortal Smoke','Reach for the Moon Immortal Smoke','Reach for the Moon ~ Immortal Smoke']),
+          }
+          OFFICIAL_TITLES={
+              'Bad Apple!! feat.nomico','Bad Apple!! feat.nomico (Animelo Summer Live 2010 Edit)','Bad Apple!! feat.nomico (2014 REFIX)','Bad Apple!! feat.nomico (博麗神社うた祭 2016 Edit)','Bad Apple!! feat.nomico (Instrumental)','Bad Apple!! feat.nomico (Graphtech Remix)','Bad Apple!! feat.nomico (SIMIAN NOISE REMIX)','Bad Apple!! feat.nomico (REDALiCE Remix)','Bad Apple!! feat.nomico (Nardis Remix)','Bad Apple!! feat.nomico (Tracy vs. Astronomical Remix)','Bad Apple!! feat.nomico (Nhato Remix)',"Bad Apple!! feat.nomico (Camellia's Bad Psy!! Remix)",'Bad Apple!! feat.nomico (MK Remix)','Bad Apple!! feat.nomico (ZYTOKINE Remix)','Bad Apple!! feat.nomico (HYPER RAVE Remix)','Bad Apple!! feat.nomico (ELEMENTAS Remix)','Bad Apple!! feat.nomico (COOL&CREATE Ver.)','Bad Apple!! feat.nomico (豚乙女 Ver.)','Bad Apple!! feat.nomico (Marasy Ver.)','Bad Apple!! feat.nomico (ARM×狐夢想 Remix)','Bad Apple!! feat.nomico (Marasy + Masayoshi Minoshima)','Bad Apple!! feat.nomico (TOS Remix)'
+          }
+          PARENTS=('Alstroemeria Records','nomico','Masayoshi Minoshima')
+          def compact(v):
+              v=unicodedata.normalize('NFKC',str(v)).casefold()
+              return ''.join(ch for ch in v if ch.isalnum())
+          class P(HTMLParser):
+              def __init__(self): super().__init__(); self.tr=False; self.td=False; self.cell=[]; self.row=[]; self.rows=[]
+              def handle_starttag(self,t,a):
+                  if t=='tr': self.tr=True; self.row=[]
+                  elif t=='td' and self.tr: self.td=True; self.cell=[]
+              def handle_data(self,d):
+                  if self.td: self.cell.append(d)
+              def handle_endtag(self,t):
+                  if t=='td' and self.td: self.row.append(' '.join(' '.join(self.cell).split())); self.td=False
+                  elif t=='tr' and self.tr:
+                      if self.row: self.rows.append(self.row)
+                      self.tr=False
+
+          base=Catalog.load(Path('/tmp/pr36-base/data/catalog')); cur=Catalog.load(Path('data/catalog'))
+          new=[cur.entries[i] for i in sorted(set(cur.entries)-set(base.entries))]
+          bad=[e for e in new if 'provenance:arrangement-chronicle-bad-apple' in set(e.evidence)]
+          zun=[e for e in new if 'identity:zun-exact-original-title' in set(e.evidence)]
+          assert (len(bad),len(zun))==(230,126)
+
+          # Full live original-song registry, used to derive both original names
+          # and their games rather than trusting values written in this PR.
+          theme_game={}; stats_compact=''
+          for page in range(1,14):
+              html=get_text(STATS_URL+f'?page={page}&per=50'); stats_compact+=compact(html)
+              p=P(); p.feed(html)
+              for row in p.rows:
+                  if len(row)>=3 and row[0].strip().isdigit():
+                      theme=row[1].strip(); game=row[2].strip()
+                      if theme and game: theme_game[compact(theme)]=(theme,game)
+          assert len(theme_game)>=600, len(theme_game)
+
+          corpus=collections.defaultdict(list); parsed=0
+          for page in range(1,11):
+              p=P(); p.feed(get_text(BAD_URL+f'?page={page}&per=50'))
+              for row in p.rows:
+                  if len(row)<8: continue
+                  circle,title=row[1].strip(),row[2].strip()
+                  vocal=row[4].strip() if len(row)>4 else ''
+                  arranger=row[5].strip() if len(row)>5 else ''
+                  cell=row[7].strip() if len(row)>7 else ''
+                  if not title or 'badapple' not in compact(cell): continue
+                  identities=[x for x in (circle,vocal,arranger) if x]
+                  supported=[]
+                  for _,(theme,game) in theme_game.items():
+                      if theme in cell: supported.append((theme,game))
+                  if identities and supported:
+                      corpus[compact(title)].append((identities,supported,cell)); parsed+=1
+          assert parsed>=450, parsed
+
+          mismatches=[]; mixed=[]
+          for e in bad:
+              rows=[r for r in corpus.get(compact(e.title),[]) if any(artist_matches(e.artist,x) for x in r[0])]
+              if not rows:
+                  mismatches.append((e.beatmapset_id,'missing exact title+identity')); continue
+              themes=sorted({t for _,pairs,_ in rows for t,_ in pairs},key=str.casefold)
+              games={compact(g) for _,pairs,_ in rows for _,g in pairs}
+              if themes!=e.original_themes: mismatches.append((e.beatmapset_id,'themes',e.original_themes,themes))
+              if games!={compact(g) for g in e.origin_games}: mismatches.append((e.beatmapset_id,'games',e.origin_games,sorted(games)))
+              expected='mixed' if len(themes)>1 else 'arrangement'
+              if e.touhou_kind!=expected: mismatches.append((e.beatmapset_id,'kind',e.touhou_kind,expected))
+              if expected=='mixed': mixed.append(e.beatmapset_id)
+          assert not mismatches, mismatches[:20]
+          assert mixed==[2603026], mixed
+
+          # Secondary providers are contradiction detectors, not primary proof.
+          # Transport/anti-bot errors are printed; actual red/ambiguous verdicts fail.
+          audits=audit_entries(bad,workers=8)
+          contradictions=[(a.beatmapset_id,a.verdict,[h.to_dict() for h in a.hits]) for a in audits if a.verdict in {'red_flag','ambiguous'}]
+          provider_errors=[(a.beatmapset_id,a.errors) for a in audits if a.errors]
+          assert not contradictions, contradictions[:10]
+
+          # Evidence-label consistency for first-party reviewed derivatives.
+          official={compact(x) for x in OFFICIAL_TITLES}; parents=tuple(compact(x) for x in PARENTS)
+          fp=parent=0
+          for e in bad:
+              ev=set(e.evidence); ak=compact(e.artist)
+              if 'primary:alstroemeria-records' in ev:
+                  fp+=1; assert compact(e.title) in official, (e.beatmapset_id,e.title)
+              if 'primary:bad-apple-parent-identity' in ev:
+                  parent+=1; assert any(k and k in ak for k in parents), (e.beatmapset_id,e.artist)
+          assert (fp,parent)==(96,207), (fp,parent)
+
+          # All 126 ZUN rows must independently agree with the live Chronicle
+          # theme registry and the controlled exact title aliases. The seven
+          # families are also cross-checked against game soundtrack pages in the
+          # manual review; this code intentionally does not require a third-party
+          # DB to use a particular `songType` enum.
+          family=collections.Counter()
+          for e in zun:
+              assert compact(e.artist)=='zun', (e.beatmapset_id,e.artist)
+              assert len(e.original_themes)==1 and e.original_themes[0] in ZUN
+              canonical=e.original_themes[0]; game,aliases=ZUN[canonical]
+              assert compact(canonical) in stats_compact, canonical
+              assert compact(e.title) in {compact(x) for x in aliases}, (e.beatmapset_id,canonical,e.title)
+              assert len(e.origin_games)==1 and compact(e.origin_games[0])==compact(game), (e.beatmapset_id,e.origin_games,game)
+              family[canonical]+=1
+          assert sum(family.values())==126 and len(family)==7, family
+
+          print('FINAL REVIEW 2 V3 PASS')
+          print(f'bad_structured_exact=230/230 chronicle_rows={parsed} mixed={mixed}')
+          print(f'secondary_audits={len(audits)} contradictions={len(contradictions)} provider_errors={len(provider_errors)}')
+          print(f'first_party_claims={fp} parent_claims={parent}')
+          print(f'zun_exact_live_registry=126/126 families={dict(family)}')
+          if provider_errors: print('ADVISORY_PROVIDER_ERRORS',provider_errors[:30])
+          PY
