@@ -29,6 +29,17 @@ Optional live modes are selected with `MODE=provenance`, `MODE=live-osu`, or `MO
 - `live-osu` requires every selected catalog row to exactly match both osu! API v2 and the public beatmapset page for ID, artist, title, creator, source, status, modes, and osu! last-updated timestamp.
 - `all` runs the layers in that order and skips expensive network checks when an earlier hard gate fails.
 
+Exact, manually resolved provider contradictions can be recorded in
+`config/provenance-review-exceptions.json`. Each reviewed exception is bound to
+the beatmapset ID and expected artist/title plus the provider, provider record
+ID, and relation. A match remains visible under `acknowledged_review_flags` but
+does not block the next review layer. Any identity change, new provider signal,
+or unmatched contradiction still fails closed. Exceptions require a review
+reason and supporting HTTP(S) evidence URLs; do not add unresolved or transient
+provider results. The registry is an optional overlay, not a complete source of
+truth: if it is absent, Deep Review runs with zero acknowledgements, and any
+unlisted provider contradiction continues to fail closed.
+
 An evidence item matching `provenance:*-multi-original` is an explicit component-level claim. Such a row must be `mixed` and retain at least two original themes. Multiple themes without that explicit claim remain valid for arrangement lineages such as Night of Knights.
 
 ## GitHub Actions

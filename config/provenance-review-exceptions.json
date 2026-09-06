@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "exceptions": [
+    {
+      "beatmapset_id": 397764,
+      "artist": "Akiyama Uni",
+      "title": "Kaoru Juyouka",
+      "provider": "touhoudb",
+      "provider_id": "636",
+      "relation": "non_zun_original",
+      "reason": "Official Touhou 10.5 / Scarlet Weather Rhapsody original composed by Akiyama Uni; non-ZUN authorship is expected here, not evidence of a non-Touhou composition.",
+      "evidence_urls": [
+        "https://thwiki.cc/%E6%95%A3%E5%8F%91%E7%9D%80%E9%A6%99%E6%B0%94%E7%9A%84%E6%A0%91%E5%8F%B6%E8%8A%B1",
+        "https://shop.akbh.jp/products/2100000000203"
+      ]
+    }
+  ]
+}

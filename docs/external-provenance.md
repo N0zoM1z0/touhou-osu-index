@@ -18,6 +18,12 @@ Useful signals:
 
 A TouhouDB hit alone never promotes or excludes a catalog entry.
 
+Deep Review may acknowledge a stable false-positive provider relation through
+the version-controlled `config/provenance-review-exceptions.json` registry. The
+raw provider verdict remains in the report. A reviewed exception suppresses
+only its exact beatmapset identity, provider record, and relation; it is not a
+general provider allowlist or a complete catalog of legitimate edge cases.
+
 ### THBWiki music data API
 
 The audit uses the public `album.php` track-search (`st`) and track-detail (`gt`) endpoints. It first requires an exact normalized track title. The detail request retrieves `circle`, `artist`, `arrange`, `ogmusic`, and `ogwork`.
