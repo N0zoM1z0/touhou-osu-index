@@ -927,6 +927,7 @@
       ],
       "evidence": [
         "audit:wave3-deep-coverage-2026-09",
+        "discovery_query:Touhou",
         "manual:verified",
         "mapper_tags",
         "primary:bad-apple-parent-identity",

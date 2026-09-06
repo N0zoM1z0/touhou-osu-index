@@ -3883,7 +3883,7 @@
       "artist": "Halozy",
       "title": "Kanshou no Matenrou",
       "creator": "captin1",
-      "source": "",
+      "source": "Touhou",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3892,13 +3892,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Touhou",
+        "discovery_query:Touhou",
         "known_touhou_artist",
         "osucollector:1407",
         "osucollector:6907",
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2014-08-11T21:28:00Z"
     },
     {
@@ -4139,7 +4142,7 @@
       "artist": "ALiCE'S EMOTiON",
       "title": "Dark Flight Dreamer",
       "creator": "Sakaue Nachi",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -4148,6 +4151,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
+        "discovery_query:東方Project",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -4156,7 +4161,7 @@
         "tournament:2163"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-10-12T13:26:38Z"
     },
     {
@@ -4447,7 +4452,7 @@
       "artist": "Floating Cloud",
       "title": "Makuai ~Amefuru Mori~",
       "creator": "Ekoro",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -4456,11 +4461,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:東方",
         "official_pack:T65",
         "osucollector:1402"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-02-05T21:32:22Z"
     },
     {
@@ -4518,6 +4524,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -4526,7 +4533,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2014-09-21T19:12:45Z"
     },
     {

@@ -1379,6 +1379,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:6907",
@@ -1386,7 +1387,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2011-06-13T10:14:23Z"
     },
     {

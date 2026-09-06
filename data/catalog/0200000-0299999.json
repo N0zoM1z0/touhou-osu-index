@@ -488,12 +488,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Subterranean Animism",
         "forum_queue:sd_touhou",
         "osu_source",
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2024-06-01T01:01:22Z"
     },
     {
@@ -549,7 +550,7 @@
       "artist": "tsunamix_underground",
       "title": "Period. ~ Seishin no Kousoku to Jiyuu o Tsukamu Jouka",
       "creator": "TicClick",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -558,6 +559,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:C-CLAYS",
+        "discovery_query:Team Shanghai Alice",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -565,7 +568,7 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-01-21T17:40:03Z"
     },
     {
@@ -617,7 +620,7 @@
       "artist": "xi",
       "title": "Q.E.D. -Ripples of 495 years-",
       "creator": "moonlightleaf",
-      "source": "",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -626,14 +629,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2021-09-23T08:23:56Z"
     },
     {
       "beatmapset_id": 224810,
@@ -1042,7 +1047,7 @@
       "artist": "Matsumoto Sara",
       "title": "Suika",
       "creator": "Kihhou",
-      "source": "",
+      "source": "東方萃夢想　～ Immaterial and Missing Power.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1051,11 +1056,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-07-26T04:52:48Z"
     },
     {
@@ -1540,6 +1548,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "known_touhou_artist",
         "manual:verified",
         "osu_source",
@@ -1549,7 +1558,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2018-07-22T15:02:03Z"
     },
     {
@@ -1638,6 +1647,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Shoot the Bullet",
+        "discovery_query:source=東方文花帖",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
@@ -1647,7 +1658,7 @@
         "tournament_candidate:731"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-09-10T13:23:14Z"
     },
     {
@@ -2057,7 +2068,7 @@
       "artist": "Camellia",
       "title": "Lunatic Rough Party!! (Long Ver.)",
       "creator": "Ichigaki",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "mania"
@@ -2066,13 +2077,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
         "osucollector:1402",
         "osucollector:1405",
         "tmc:1st",
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-12-20T04:20:06Z"
     },
     {
@@ -2080,7 +2094,7 @@
       "artist": "IOSYS",
       "title": "Third Eye Ya!",
       "creator": "koreapenguin",
-      "source": "",
+      "source": "東方地霊殿　～ Subterranean Animism.",
       "status": "loved",
       "modes": [
         "osu"
@@ -2089,11 +2103,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:source=Subterranean Animism",
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2019-02-10T13:30:42Z"
     },
     {
@@ -2261,7 +2278,7 @@
       "artist": "Tsukasa Yatoki",
       "title": "Heaven's Race Guitar Style",
       "creator": "Echoy",
-      "source": "",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2270,10 +2287,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2023-09-29T03:34:36Z"
     },
     {
@@ -2372,7 +2392,7 @@
       "artist": "Demetori",
       "title": "Furuki Yuanxian ~ Death Echo",
       "creator": "jonathanlfj",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2381,6 +2401,8 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:東方",
+        "discovery_query:東方Project",
         "official_pack:T65",
         "osucollector:1402",
         "osucollector:1405",
@@ -2388,7 +2410,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-07-09T03:31:26Z"
     },
     {
@@ -2396,7 +2418,7 @@
       "artist": "Halozy",
       "title": "Deconstruction Star",
       "creator": "Hollow Wings",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2405,12 +2427,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
         "known_touhou_artist",
         "osucollector:1407",
         "tournament:828"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2015-11-07T12:57:33Z"
     },
     {
@@ -2485,7 +2510,7 @@
       "artist": "Hanatan",
       "title": "Koi no Mushi (Cut Ver.)",
       "creator": "kakifly",
-      "source": "",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2494,13 +2519,16 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
+      "osu_last_updated": "2021-04-06T18:43:23Z"
     },
     {
       "beatmapset_id": 295458,
@@ -2570,7 +2598,7 @@
       "artist": "Meramipop",
       "title": "Star Breaker",
       "creator": "Rizia",
-      "source": "",
+      "source": "東方永夜抄　～ Imperishable Night.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2579,11 +2607,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-10-16T07:15:04Z"
     },
     {
@@ -2600,6 +2631,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:東方",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
@@ -2608,7 +2640,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-06",
       "osu_last_updated": "2016-10-28T15:55:41Z"
     },
     {
