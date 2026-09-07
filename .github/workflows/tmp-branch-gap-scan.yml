@@ -1,0 +1,81 @@
+name: Temporary historical branch gap scan
+
+on:
+  push:
+    branches:
+      - work/completeness-pass-2026-09-07
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Scan every remote catalog semantically against main
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from collections import Counter, defaultdict
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.pr_audit import load_catalog_at
+
+          repo = Path('.')
+          base = Catalog.load(Path('data/catalog'))
+          base_ids = set(base.entries)
+          refs = subprocess.check_output(
+              ['git', 'for-each-ref', '--format=%(refname:short)', 'refs/remotes/origin'],
+              text=True,
+          ).splitlines()
+          refs = [
+              ref for ref in refs
+              if ref not in {'origin/HEAD', 'origin/main', 'origin/work/completeness-pass-2026-09-07'}
+          ]
+
+          union = {}
+          seen_on = defaultdict(list)
+          branch_counts = Counter()
+          errors = {}
+          for ref in refs:
+              try:
+                  catalog = load_catalog_at(repo, ref, Path('data/catalog'))
+              except Exception as exc:
+                  errors[ref] = str(exc)
+                  continue
+              missing = [
+                  entry for beatmapset_id, entry in catalog.entries.items()
+                  if beatmapset_id not in base_ids and entry.confidence in {'verified', 'probable'}
+              ]
+              branch_counts[ref] = len(missing)
+              for entry in missing:
+                  seen_on[entry.beatmapset_id].append(ref)
+                  current = union.get(entry.beatmapset_id)
+                  if current is None or (current.confidence != 'verified' and entry.confidence == 'verified'):
+                      union[entry.beatmapset_id] = entry
+
+          print('MAIN_ENTRIES', len(base.entries))
+          print('REMOTE_REFS_SCANNED', len(refs))
+          print('UNION_ACCEPTED_MISSING', len(union))
+          print('TOP_BRANCHES')
+          for ref, count in branch_counts.most_common():
+              if count:
+                  print(f'  {count:4d}  {ref}')
+          print('MISSING_IDS_SAMPLE')
+          for beatmapset_id in sorted(union)[:200]:
+              entry = union[beatmapset_id]
+              print(
+                  f'  {beatmapset_id} | {entry.confidence} | {entry.artist} - {entry.title} | '
+                  f'{",".join(seen_on[beatmapset_id])}'
+              )
+          if errors:
+              print('BRANCH_ERRORS', json.dumps(errors, ensure_ascii=False))
+          PY
