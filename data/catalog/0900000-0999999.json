@@ -746,6 +746,29 @@
       "osu_last_updated": "2019-03-17T18:06:23Z"
     },
     {
+      "beatmapset_id": 916554,
+      "artist": "ZUN",
+      "title": "Angel's Legend",
+      "creator": "Tenyako",
+      "source": "Touhou - Highly Responsive to Prayers",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Highly Responsive to Prayers",
+        "discovery_query:source=Touhou Project",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-01-26T01:47:52Z"
+    },
+    {
       "beatmapset_id": 917915,
       "artist": "Silentroom",
       "title": "Nhelv",
@@ -1104,6 +1127,52 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-06-14T17:35:35Z"
+    },
+    {
+      "beatmapset_id": 924126,
+      "artist": "RD-Sounds feat. Meramipop/nayuta",
+      "title": "Shiten",
+      "creator": "TheShadowOfDark",
+      "source": "東方天空璋　～ Hidden Star in Four Seasons.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "discovery_query:source=東方天空璋",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-11-13T02:33:31Z"
+    },
+    {
+      "beatmapset_id": 924440,
+      "artist": "Ryu-5150",
+      "title": "Louder than steel",
+      "creator": "SnowNiNo_",
+      "source": "東方夢時空　～ Phantasmagoria of Dim.Dream",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=東方夢時空",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-02-10T19:46:32Z"
     },
     {
       "beatmapset_id": 924849,
@@ -1773,6 +1842,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-03-28T17:49:14Z"
+    },
+    {
+      "beatmapset_id": 937562,
+      "artist": "Ranko",
+      "title": "In the Black",
+      "creator": "Mirash",
+      "source": "東方憑依華　～ Antinomy of Common Flowers.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Antinomy of Common Flowers",
+        "discovery_query:source=東方憑依華",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-03-09T17:46:25Z"
     },
     {
       "beatmapset_id": 937624,
@@ -2963,6 +3056,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 970291,
+      "artist": "Demetori",
+      "title": "Bad Apple!! ~ Death of A Bad Apple",
+      "creator": "GoldenWolf",
+      "source": "東方幻想郷　～ Lotus Land Story.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-05-11T23:31:12Z"
+    },
+    {
       "beatmapset_id": 970653,
       "artist": "Camellia",
       "title": "werewolf howls. [\"Growling\" Long ver.]",
@@ -3050,6 +3166,30 @@
       "osu_last_updated": "2021-06-15T18:25:35Z"
     },
     {
+      "beatmapset_id": 972171,
+      "artist": "ZUN",
+      "title": "Jelly Stone",
+      "creator": "depzdai",
+      "source": "東方鬼形獣　～ Wily Beast and Weakest Creature.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-05-20T13:11:09Z"
+    },
+    {
       "beatmapset_id": 972327,
       "artist": "Masayoshi Minoshima",
       "title": "Bad Apple!! feat.nomico (Nhato Remix)",
@@ -3102,6 +3242,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2019-07-27T14:46:23Z"
+    },
+    {
+      "beatmapset_id": 973256,
+      "artist": "DJ Technetium ft Ayumi Nomiya",
+      "title": "Just the Death of Us",
+      "creator": "zeddiecutie",
+      "source": "東方花映塚～Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-05-19T14:10:14Z"
     },
     {
       "beatmapset_id": 974435,
@@ -3907,6 +4070,29 @@
       "osu_last_updated": "2020-05-02T23:38:23Z"
     },
     {
+      "beatmapset_id": 986613,
+      "artist": "Diao Ye Zong feat. nayuta",
+      "title": "Closed Rain",
+      "creator": "Hey lululu",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-08-31T02:54:17Z"
+    },
+    {
       "beatmapset_id": 987566,
       "artist": "Hatsunetsumiko's",
       "title": "Libertus",
@@ -4135,6 +4321,29 @@
       "osu_last_updated": "2019-08-09T21:36:17Z"
     },
     {
+      "beatmapset_id": 993487,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Flowering Night Fever",
+      "creator": "ForsakenShadows",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-06-26T21:20:20Z"
+    },
+    {
       "beatmapset_id": 993507,
       "artist": "Rin",
       "title": "Eientewi set 06 ~ Plain Asia",
@@ -4224,6 +4433,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-03-03T14:00:18Z"
+    },
+    {
+      "beatmapset_id": 995301,
+      "artist": "ZUN",
+      "title": "Eien No Shunmu",
+      "creator": "SDpeople",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-07-19T10:45:14Z"
     },
     {
       "beatmapset_id": 996256,
@@ -4329,6 +4562,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2020-05-07T09:13:30Z"
+    },
+    {
+      "beatmapset_id": 997574,
+      "artist": "ZUN",
+      "title": "Nemureru Kyoufu ~ Sleeping Terror",
+      "creator": "Yumemi Okazaki",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-07-29T23:17:54Z"
     },
     {
       "beatmapset_id": 997699,

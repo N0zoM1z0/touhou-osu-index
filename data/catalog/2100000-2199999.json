@@ -583,6 +583,31 @@
       "osu_last_updated": "2024-05-30T23:08:42Z"
     },
     {
+      "beatmapset_id": 2115591,
+      "artist": "Sakaue Nachi",
+      "title": "Crazy Hot",
+      "creator": "rbby",
+      "source": "妖精大戦争　～ 東方三月精",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=妖精大戦争",
+        "discovery_query:source=東方",
+        "discovery_query:Touhou",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-02T10:01:48Z"
+    },
+    {
       "beatmapset_id": 2115856,
       "artist": "senya",
       "title": "Iro wa Nioedo Chirinuru o",
@@ -1982,6 +2007,33 @@
       "osu_last_updated": "2024-03-24T14:40:39Z"
     },
     {
+      "beatmapset_id": 2145686,
+      "artist": "Foreground Eclipse",
+      "title": "Vermillion Halo",
+      "creator": "OnosakiHito",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "pending",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-03T21:36:45Z"
+    },
+    {
       "beatmapset_id": 2146723,
       "artist": "senya",
       "title": "Koakuma Ringo (EUROBEAT Remix)",
@@ -2370,6 +2422,33 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2153191,
+      "artist": "Unlucky Morpheus x UNDEAD CORPORATION",
+      "title": "You're Better Off Alive",
+      "creator": "M4xWasHere",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "pending",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-06T07:40:09Z"
+    },
+    {
       "beatmapset_id": 2153229,
       "artist": "ShinRa-Bansho",
       "title": "YOSUZU Melody Heart",
@@ -2543,6 +2622,35 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2024-10-27T12:01:01Z"
+    },
+    {
+      "beatmapset_id": 2158351,
+      "artist": "Kurokotei",
+      "title": "Galaxy Collapse",
+      "creator": "el_matero",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "pending",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-12T17:48:53Z"
     },
     {
       "beatmapset_id": 2159203,
@@ -3715,6 +3823,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-05-19T13:49:18Z"
+    },
+    {
+      "beatmapset_id": 2193609,
+      "artist": "beatMARIO",
+      "title": "Help me, ERINNNNNN!!",
+      "creator": "Aikyuu-Chan",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2024-09-12T08:27:08Z"
     },
     {
       "beatmapset_id": 2193728,

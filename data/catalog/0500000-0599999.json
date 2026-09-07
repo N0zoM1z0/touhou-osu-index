@@ -2,6 +2,30 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 500380,
+      "artist": "Tama",
+      "title": "Saigetsu (Midnight Moon Walker Remix)",
+      "creator": "Cilvery",
+      "source": "東方萃夢想 ～ Immaterial and Missing Power.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2024-04-22T22:13:27Z"
+    },
+    {
       "beatmapset_id": 501057,
       "artist": "Nanahira",
       "title": "Monosugoi Space Shuttle de Koishi ga Monosugoi Uta",
@@ -476,6 +500,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2026-01-19T22:41:45Z"
+    },
+    {
+      "beatmapset_id": 510620,
+      "artist": "FELT",
+      "title": "New World",
+      "creator": "Yumeko",
+      "source": "東方Project　～ Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2016-09-20T02:45:19Z"
     },
     {
       "beatmapset_id": 511489,
@@ -1467,6 +1514,29 @@
       "osu_last_updated": "2019-03-16T23:41:43Z"
     },
     {
+      "beatmapset_id": 544875,
+      "artist": "senya",
+      "title": "Yoru no Hana ~Nagi~",
+      "creator": "Okoratu",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-11-22T15:15:04Z"
+    },
+    {
       "beatmapset_id": 545150,
       "artist": "FELT",
       "title": "Runway Drive",
@@ -2105,6 +2175,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2017-07-23T01:17:09Z"
+    },
+    {
+      "beatmapset_id": 563508,
+      "artist": "Sakaue Nachi",
+      "title": "Think of You",
+      "creator": "Surono",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2017-01-27T22:13:06Z"
     },
     {
       "beatmapset_id": 564014,

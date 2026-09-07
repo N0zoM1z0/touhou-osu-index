@@ -651,6 +651,35 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2008844,
+      "artist": "Demetori",
+      "title": "Yuuga ni Sakase, Sumizome no Sakura ~ Re:The Harm of Coming into Existence",
+      "creator": "TV Size Player",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方妖々夢",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-06T08:52:53Z"
+    },
+    {
       "beatmapset_id": 2009755,
       "artist": "ZUN",
       "title": "Necrofantasia",
@@ -744,6 +773,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-11-01T05:24:36Z"
+    },
+    {
+      "beatmapset_id": 2010758,
+      "artist": "ayaponzu* feat. beatMARIO",
+      "title": "INTERNET SURVIVOR",
+      "creator": "NeonMarijuana",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2023-10-21T10:57:01Z"
     },
     {
       "beatmapset_id": 2010963,
@@ -1956,6 +2010,31 @@
       "osu_last_updated": "2023-08-09T23:00:28Z"
     },
     {
+      "beatmapset_id": 2035376,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Flowering Night Fever",
+      "creator": "puxtu",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2023-07-29T16:13:25Z"
+    },
+    {
       "beatmapset_id": 2035737,
       "artist": "ShinRa-Bansho",
       "title": "Itazura Sensation",
@@ -2387,6 +2466,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2044793,
+      "artist": "ZUN",
+      "title": "Kyuuketsukaijuu Chupacabra",
+      "creator": "Nyanaro",
+      "source": "東方獣王園　〜 Unfinished Dream of All Living Ghost.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unfinished Dream of All Living Ghost",
+        "discovery_query:source=東方獣王園",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2025-04-12T23:11:48Z"
     },
     {
       "beatmapset_id": 2045578,
@@ -2916,6 +3020,35 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-08-27T15:21:54Z"
+    },
+    {
+      "beatmapset_id": 2051668,
+      "artist": "IOSYS",
+      "title": "Osaisen <3 Choudai - Nonstop NEW RICH shrine mix -",
+      "creator": "Bloxi",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "pending",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方幻想郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-31T20:59:16Z"
     },
     {
       "beatmapset_id": 2051706,
@@ -3663,6 +3796,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2069033,
+      "artist": "ZUN",
+      "title": "Otogi no Kuni no Onigashima ~ Missing Power",
+      "creator": "Luscent",
+      "source": "東方萃夢想　～ Immaterial and Missing Power.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2023-10-10T00:21:07Z"
     },
     {
       "beatmapset_id": 2069184,
@@ -4698,6 +4855,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-12-13T14:09:03Z"
+    },
+    {
+      "beatmapset_id": 2091805,
+      "artist": "Mayumi Morinaga",
+      "title": "Boutokuteki Sentaku no Alegria",
+      "creator": "Satellite",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2023-11-19T20:48:08Z"
     },
     {
       "beatmapset_id": 2092851,

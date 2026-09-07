@@ -51,6 +51,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1700628,
+      "artist": "t=NODE",
+      "title": "Four Seasons",
+      "creator": "by-ad",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-02-16T19:07:26Z"
+    },
+    {
       "beatmapset_id": 1700816,
       "artist": "Rolling Contact",
       "title": "Jerking Zipper ([OSC]Amagai) [Extra Stage]",
@@ -302,6 +326,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1708803,
+      "artist": "ZUN",
+      "title": "Hoshi no Utsuwa ~ Casket of Star",
+      "creator": "Kurashina Asuka",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方幻想郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-02-27T17:13:36Z"
     },
     {
       "beatmapset_id": 1709481,
@@ -2064,6 +2113,30 @@
       "osu_last_updated": "2022-09-24T05:52:55Z"
     },
     {
+      "beatmapset_id": 1779853,
+      "artist": "Alstroemeria Records feat. nomico",
+      "title": "The Last Judgement",
+      "creator": "bojii",
+      "source": "東方怪綺談　～ Mystic Square",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "discovery_query:source=東方怪綺談",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-06-10T11:23:59Z"
+    },
+    {
       "beatmapset_id": 1780082,
       "artist": "Halozy",
       "title": "Heart of Night",
@@ -2588,6 +2661,34 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1797402,
+      "artist": "Vaguedge Dies For Dies Irae",
+      "title": "Flowering Afterlife",
+      "creator": "Vuradekku",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-27T12:34:27Z"
     },
     {
       "beatmapset_id": 1799071,

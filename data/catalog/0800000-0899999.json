@@ -1250,6 +1250,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 830233,
+      "artist": "Nanahira",
+      "title": "Monosugoi Satori Gear de Reimu ga Monosugoi Uta",
+      "creator": "Agent_James",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-10-06T13:49:33Z"
+    },
+    {
       "beatmapset_id": 830511,
       "artist": "BeatMARIO",
       "title": "Night of Knights (Famitracker/16 bit Remake)",
@@ -1730,6 +1753,29 @@
       "osu_last_updated": "2019-08-17T16:28:59Z"
     },
     {
+      "beatmapset_id": 842126,
+      "artist": "Diao ye zong feat. Meramipop",
+      "title": "Alice no Wasuremono",
+      "creator": "Angane",
+      "source": "東方怪綺談　～ Mystic Square.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "discovery_query:source=東方怪綺談",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-09-15T13:31:16Z"
+    },
+    {
       "beatmapset_id": 842395,
       "artist": "3L",
       "title": "Getsurei 11.3 no Candle Magic",
@@ -1998,6 +2044,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2019-01-07T04:50:14Z"
+    },
+    {
+      "beatmapset_id": 850585,
+      "artist": "Nanahira",
+      "title": "Monosugoi Satori Gear de Reimu ga Monosugoi Uta",
+      "creator": "Mak Kau Hijau",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-11-08T04:49:45Z"
     },
     {
       "beatmapset_id": 852093,
@@ -2296,6 +2365,29 @@
       "osu_last_updated": "2025-11-14T19:31:44Z"
     },
     {
+      "beatmapset_id": 857758,
+      "artist": "FELT",
+      "title": "crescent moon",
+      "creator": "GodKei",
+      "source": "東方心綺楼",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方心綺楼",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-06-01T10:55:08Z"
+    },
+    {
       "beatmapset_id": 857816,
       "artist": "Chata",
       "title": "len",
@@ -2414,6 +2506,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2020-05-01T20:34:00Z"
+    },
+    {
+      "beatmapset_id": 859203,
+      "artist": "IOSYS",
+      "title": "DANZAI YAMAXANADU!",
+      "creator": "sakebi",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-10-06T01:29:56Z"
     },
     {
       "beatmapset_id": 859462,
@@ -2869,6 +2984,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-06-05T05:14:18Z"
+    },
+    {
+      "beatmapset_id": 869580,
+      "artist": "ZUN",
+      "title": "Yuumu ~ Inanimate Dream",
+      "creator": "pw384",
+      "source": "東方幻想郷　～ Lotus Land Story.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-03-15T14:26:28Z"
     },
     {
       "beatmapset_id": 869801,
@@ -3568,6 +3706,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-06-05T16:59:24Z"
+    },
+    {
+      "beatmapset_id": 892168,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Downfalling Ideology",
+      "creator": "anunymous",
+      "source": "東方輝針城　～ Double Dealing Character.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-01-11T10:08:52Z"
     },
     {
       "beatmapset_id": 893195,

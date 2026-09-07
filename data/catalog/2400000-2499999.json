@@ -604,6 +604,33 @@
       "osu_last_updated": "2025-10-10T11:15:36Z"
     },
     {
+      "beatmapset_id": 2416603,
+      "artist": "Akatsuki Records",
+      "title": "KAPPAYAPPA",
+      "creator": "ddssddsd",
+      "source": "東方虹龍洞 ～ Unconnected Marketeers.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unconnected Marketeers",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方虹龍洞",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-03T00:01:04Z"
+    },
+    {
       "beatmapset_id": 2416620,
       "artist": "beatMARIO x MARON",
       "title": "Chou Night of Knights",
@@ -976,6 +1003,33 @@
       "osu_last_updated": "2025-11-02T13:27:52Z"
     },
     {
+      "beatmapset_id": 2425274,
+      "artist": "FELT",
+      "title": "Lost in the Abyss",
+      "creator": "nahieu2005",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "pending",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-27T05:37:04Z"
+    },
+    {
       "beatmapset_id": 2425501,
       "artist": "UNDEAD CORPORATION",
       "title": "Under the scarlet sky pt,2 inst",
@@ -1160,6 +1214,30 @@
       "osu_last_updated": "2026-03-24T19:14:10Z"
     },
     {
+      "beatmapset_id": 2433674,
+      "artist": "Akiyama Uni",
+      "title": "Touhou Hisouten",
+      "creator": "Dagoth Ur",
+      "source": "東方緋想天　～ Scarlet Weather Rhapsody.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-02-21T16:59:33Z"
+    },
+    {
       "beatmapset_id": 2434263,
       "artist": "Demetori",
       "title": "Furuki Yuanxian",
@@ -1330,6 +1408,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-10-09T02:41:59Z"
+    },
+    {
+      "beatmapset_id": 2440791,
+      "artist": "ShinRa-Bansho",
+      "title": "Wish a Shooting Star",
+      "creator": "ameponzu",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-05T07:29:35Z"
     },
     {
       "beatmapset_id": 2441474,
@@ -1546,6 +1648,32 @@
       "osu_last_updated": "2026-03-08T20:32:51Z"
     },
     {
+      "beatmapset_id": 2449102,
+      "artist": "Diao Ye Zong",
+      "title": "Sabotage ni Tamashii o Kakete",
+      "creator": "Riverism",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-30T18:03:00Z"
+    },
+    {
       "beatmapset_id": 2449780,
       "artist": "BUTAOTOME",
       "title": "Rasen Zetsubou",
@@ -1566,6 +1694,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-10-18T07:11:23Z"
+    },
+    {
+      "beatmapset_id": 2449939,
+      "artist": "katikatiyama",
+      "title": "Yokubou no Uta",
+      "creator": "NoriScarlet",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-02T22:00:05Z"
     },
     {
       "beatmapset_id": 2451006,
@@ -1908,6 +2060,30 @@
       "osu_last_updated": "2025-12-04T02:48:55Z"
     },
     {
+      "beatmapset_id": 2458733,
+      "artist": "ZUN",
+      "title": "Hokkai no Hi",
+      "creator": "gygy",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-07-19T21:39:12Z"
+    },
+    {
       "beatmapset_id": 2459936,
       "artist": "AoiXia",
       "title": "Night of Knights (AoiXia remix)",
@@ -2056,6 +2232,33 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2026-03-06T09:06:53Z"
+    },
+    {
+      "beatmapset_id": 2464420,
+      "artist": "Sawawa",
+      "title": "Jet Fenrir",
+      "creator": "Skey",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "pending",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方風神録",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-25T20:54:19Z"
     },
     {
       "beatmapset_id": 2465439,
@@ -2432,6 +2635,34 @@
       "osu_last_updated": "2026-03-26T05:52:09Z"
     },
     {
+      "beatmapset_id": 2478023,
+      "artist": "Halozy",
+      "title": "Paranoid Lost",
+      "creator": "Asteroian",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方風神録",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-24T07:47:22Z"
+    },
+    {
       "beatmapset_id": 2478777,
       "artist": "Akatsuki Records",
       "title": "ENDLESS FANTASY (Short Ver.)",
@@ -2559,6 +2790,31 @@
       "osu_last_updated": "2025-12-24T04:02:51Z"
     },
     {
+      "beatmapset_id": 2483067,
+      "artist": "Kurokotei",
+      "title": "Galaxy Collapse",
+      "creator": "Doomsday is Bad",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "mania",
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-02-10T16:49:18Z"
+    },
+    {
       "beatmapset_id": 2483592,
       "artist": "RUON feat. Meramipop",
       "title": "Secret Desire - Dyes Remix -",
@@ -2639,6 +2895,33 @@
       "osu_last_updated": "2026-02-09T14:51:23Z"
     },
     {
+      "beatmapset_id": 2483808,
+      "artist": "FELT",
+      "title": "Sky Gate",
+      "creator": "Kaly",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-23T03:41:48Z"
+    },
+    {
       "beatmapset_id": 2484594,
       "artist": "beatMARIO",
       "title": "Night of Knights (Cranky Remix)",
@@ -2695,6 +2978,30 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2026-01-02T00:47:33Z"
+    },
+    {
+      "beatmapset_id": 2487222,
+      "artist": "ZUN",
+      "title": "Civilization of Magic",
+      "creator": "pw384",
+      "source": "東方靈異伝　～ Highly Responsive to Prayers.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Highly Responsive to Prayers",
+        "discovery_query:source=東方靈異伝",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-01-02T09:59:19Z"
     },
     {
       "beatmapset_id": 2489023,
@@ -2782,6 +3089,34 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2026-02-01T02:22:40Z"
+    },
+    {
+      "beatmapset_id": 2489978,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Embraced by the Flame",
+      "creator": "Lyz-",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "pending",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方地霊殿",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-21T13:09:06Z"
     },
     {
       "beatmapset_id": 2490353,
@@ -2877,6 +3212,31 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2493682,
+      "artist": "sumijun feat. Minase Mashiro",
+      "title": "runaway(Halozy Mix)",
+      "creator": "Feerum",
+      "source": "東方星蓮船　～ Undefined Fantastic Object",
+      "status": "pending",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-02T23:57:35Z"
     },
     {
       "beatmapset_id": 2494037,

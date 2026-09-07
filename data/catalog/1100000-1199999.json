@@ -98,6 +98,29 @@
       "osu_last_updated": "2020-05-15T21:09:09Z"
     },
     {
+      "beatmapset_id": 1100988,
+      "artist": "REDALiCE & aran",
+      "title": "Sweet Requiem",
+      "creator": "Espaas",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-05-26T21:37:10Z"
+    },
+    {
       "beatmapset_id": 1101836,
       "artist": "Diao Ye Zong feat. Kushi",
       "title": "Gensou Hoshigami Shinkou",
@@ -255,6 +278,29 @@
       "osu_last_updated": "2024-05-13T22:46:20Z"
     },
     {
+      "beatmapset_id": 1104667,
+      "artist": "Akatsuki Records",
+      "title": "HANIPAGANDA",
+      "creator": "Axer",
+      "source": "東方鬼形獣　～ Wily Beast and Weakest Creature.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-03-16T10:32:31Z"
+    },
+    {
       "beatmapset_id": 1105327,
       "artist": "Demetori",
       "title": "Hartmann no Youkai Shoujo ~ Todestrieb und Lebenstrieb",
@@ -322,6 +368,31 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2020-02-28T17:24:01Z"
+    },
+    {
+      "beatmapset_id": 1106327,
+      "artist": "KISIDA KYODAN & THE AKEBOSI ROCKETS",
+      "title": "YU-MU",
+      "creator": "qnx",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方幻想郷",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-11T04:14:26Z"
     },
     {
       "beatmapset_id": 1106521,
@@ -584,6 +655,29 @@
       "osu_last_updated": "2022-05-28T16:21:41Z"
     },
     {
+      "beatmapset_id": 1112441,
+      "artist": "Diao ye zong feat. Meramipop",
+      "title": "Shinkirou",
+      "creator": "Duck Wings",
+      "source": "東方心綺楼 ～ Hopeless Masquerade.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "discovery_query:source=東方心綺楼",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-02-20T08:14:28Z"
+    },
+    {
       "beatmapset_id": 1112914,
       "artist": "Jerico",
       "title": "Do you believe a Dullahan?",
@@ -698,6 +792,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1116436,
+      "artist": "FELT",
+      "title": "Lost My Way",
+      "creator": "rawrneru",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2023-04-05T00:40:00Z"
     },
     {
       "beatmapset_id": 1116611,
@@ -843,6 +960,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-02-26T16:46:15Z"
+    },
+    {
+      "beatmapset_id": 1119057,
+      "artist": "Morimori Atsushi",
+      "title": "Tits or get the fuck out!!",
+      "creator": "Raytoly",
+      "source": "東方神霊廟 〜 Ten Desires.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-03-05T12:49:14Z"
     },
     {
       "beatmapset_id": 1120635,
@@ -3072,6 +3212,33 @@
       "osu_last_updated": "2020-05-27T19:38:14Z"
     },
     {
+      "beatmapset_id": 1179555,
+      "artist": "FELT",
+      "title": "COLORS",
+      "creator": "YTYuyu",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-28T00:58:52Z"
+    },
+    {
       "beatmapset_id": 1179980,
       "artist": "FELT",
       "title": "crescent moon",
@@ -3242,6 +3409,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1182749,
+      "artist": "Ayaponzu*",
+      "title": "Justice Monster",
+      "creator": "Meylie",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-03-19T10:56:25Z"
     },
     {
       "beatmapset_id": 1183572,

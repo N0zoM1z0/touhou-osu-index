@@ -366,6 +366,54 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 612157,
+      "artist": "Minase Mashiro",
+      "title": "runaway(Halozy Mix)",
+      "creator": "Zxozmo",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "mania",
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-12-10T10:01:29Z"
+    },
+    {
+      "beatmapset_id": 612299,
+      "artist": "CROW'SCLAW",
+      "title": "Legend Of The Great Gods",
+      "creator": "lazyboy007",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2017-06-06T22:00:16Z"
+    },
+    {
       "beatmapset_id": 613152,
       "artist": "Alstroemeria Records",
       "title": "Bad Apple!!",
@@ -1409,6 +1457,29 @@
       "osu_last_updated": "2017-11-10T21:37:24Z"
     },
     {
+      "beatmapset_id": 637959,
+      "artist": "Chata",
+      "title": "Regression Memory",
+      "creator": "LostCool",
+      "source": "東方星蓮船 ～ Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2017-07-17T00:15:19Z"
+    },
+    {
       "beatmapset_id": 638476,
       "artist": "ARM",
       "title": "Primula",
@@ -2209,6 +2280,29 @@
       "osu_last_updated": "2017-09-23T16:12:13Z"
     },
     {
+      "beatmapset_id": 658921,
+      "artist": "Kurokotei",
+      "title": "Galaxy Collapse",
+      "creator": "tatatat",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2017-10-29T05:42:04Z"
+    },
+    {
       "beatmapset_id": 659263,
       "artist": "UNDEAD CORPORATION",
       "title": "The Empress",
@@ -2726,6 +2820,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-03-09T20:58:16Z"
+    },
+    {
+      "beatmapset_id": 673287,
+      "artist": "Nhato",
+      "title": "Great Vengeance",
+      "creator": "Alheak",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-08-09T20:59:37Z"
     },
     {
       "beatmapset_id": 674738,

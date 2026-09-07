@@ -547,6 +547,30 @@
       "osu_last_updated": "2020-12-04T10:27:51Z"
     },
     {
+      "beatmapset_id": 1314617,
+      "artist": "FELT",
+      "title": "crescent moon",
+      "creator": "Anastaxia",
+      "source": "東方心綺楼　～ Hopeless Masquerade",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "discovery_query:source=東方心綺楼",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-12-06T11:49:27Z"
+    },
+    {
       "beatmapset_id": 1316202,
       "artist": "marasy8",
       "title": "night of knights",
@@ -890,6 +914,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-09-27T13:51:12Z"
+    },
+    {
+      "beatmapset_id": 1324886,
+      "artist": "ZUN",
+      "title": "Fall of Fall ~ Akimeku Taki",
+      "creator": "TinyTigr",
+      "source": "東方風神録 ~ Mountain of Faith.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-05-04T13:17:50Z"
     },
     {
       "beatmapset_id": 1324962,
@@ -2605,6 +2653,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-09-28T17:04:08Z"
+    },
+    {
+      "beatmapset_id": 1390960,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Sono Tadashiki Kotoba no Moto ni",
+      "creator": "Jelljel",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2023-09-04T17:46:43Z"
     },
     {
       "beatmapset_id": 1391331,

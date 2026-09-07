@@ -732,6 +732,29 @@
       "osu_last_updated": "2019-08-31T18:44:07Z"
     },
     {
+      "beatmapset_id": 1016604,
+      "artist": "Rin",
+      "title": "Eientewi set 17 ~ Eastern Youkai Beauty",
+      "creator": "allein",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-10-12T13:13:07Z"
+    },
+    {
       "beatmapset_id": 1017039,
       "artist": "Sakaue Nachi",
       "title": "Crazy Hot",
@@ -845,6 +868,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-08-23T20:39:05Z"
+    },
+    {
+      "beatmapset_id": 1019750,
+      "artist": "ZUN",
+      "title": "Jelly stone",
+      "creator": "None1637",
+      "source": "東方鬼形獣　～ Wily Beast and Weakest Creature.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-08-13T12:54:37Z"
     },
     {
       "beatmapset_id": 1019966,
@@ -1722,6 +1769,29 @@
       "osu_last_updated": "2022-08-15T05:38:25Z"
     },
     {
+      "beatmapset_id": 1038745,
+      "artist": "ZUN",
+      "title": "Kamigami ga Koishita Gensoukyou",
+      "creator": "FailureAtOsu",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-04-22T18:16:37Z"
+    },
+    {
       "beatmapset_id": 1039388,
       "artist": "Diao Ye Zong feat. nayuta",
       "title": "Akumu no Hate ni Miru Yume",
@@ -1803,6 +1873,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-11-12T15:05:46Z"
+    },
+    {
+      "beatmapset_id": 1041793,
+      "artist": "Akatsuki Records x Liz Triangle",
+      "title": "who killed U.N.Owen",
+      "creator": "idke",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-11-03T20:29:33Z"
     },
     {
       "beatmapset_id": 1042429,
@@ -2209,6 +2303,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1056083,
+      "artist": "ZUN",
+      "title": "Electric Heritage",
+      "creator": "FAMoss",
+      "source": "東方鬼形獣　～ Wily Beast and Weakest Creature.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-10-24T05:25:42Z"
+    },
+    {
       "beatmapset_id": 1056140,
       "artist": "Akatsuki Records",
       "title": "Trance Dance Anarchy",
@@ -2231,6 +2349,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-04-02T18:10:03Z"
+    },
+    {
+      "beatmapset_id": 1056654,
+      "artist": "RichaadEB",
+      "title": "Pierrot of the Star-Spangled Banner",
+      "creator": "MintyBusiness",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-12-30T17:13:04Z"
     },
     {
       "beatmapset_id": 1057540,
@@ -2343,6 +2485,29 @@
       "osu_last_updated": "2020-10-23T03:59:01Z"
     },
     {
+      "beatmapset_id": 1059154,
+      "artist": "Ryu5150",
+      "title": "Beyond the Shine",
+      "creator": "-odium",
+      "source": "東方夢時空　～ Imperishable Night",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方夢時空",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-08-27T01:48:28Z"
+    },
+    {
       "beatmapset_id": 1060639,
       "artist": "YooSanHyakurei",
       "title": "Last Train",
@@ -2406,6 +2571,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-02-19T11:06:09Z"
+    },
+    {
+      "beatmapset_id": 1061413,
+      "artist": "ZUN",
+      "title": "Haru no Minato ni",
+      "creator": "Seija",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-11-05T02:48:08Z"
     },
     {
       "beatmapset_id": 1062030,
@@ -3174,6 +3363,29 @@
       "osu_last_updated": "2024-05-01T07:16:58Z"
     },
     {
+      "beatmapset_id": 1081118,
+      "artist": "Shinra-Bansho /kaztora",
+      "title": "Happiness Egoist",
+      "creator": "PregnantFish",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-02-12T10:38:06Z"
+    },
+    {
       "beatmapset_id": 1082123,
       "artist": "RD-Sounds feat. nayuta",
       "title": "Kinpu 'Forbidden Game'",
@@ -3194,6 +3406,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-05-05T02:00:28Z"
+    },
+    {
+      "beatmapset_id": 1082167,
+      "artist": "Halozy",
+      "title": "Heart of Night",
+      "creator": "Nwolf",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-06-08T19:49:55Z"
     },
     {
       "beatmapset_id": 1083844,
@@ -3674,6 +3909,31 @@
       "osu_last_updated": "2022-03-23T06:06:53Z"
     },
     {
+      "beatmapset_id": 1092965,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Flowering Night Fever",
+      "creator": "blixys",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-01-24T02:43:05Z"
+    },
+    {
       "beatmapset_id": 1093282,
       "artist": "BeatMARIO",
       "title": "Night of Knights (USAO Remix)",
@@ -3835,6 +4095,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2020-03-10T22:03:00Z"
+    },
+    {
+      "beatmapset_id": 1097827,
+      "artist": "ZUN",
+      "title": "Kamigami ga koishita gensoukyou",
+      "creator": "fuyoriko",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-01-21T23:17:58Z"
     },
     {
       "beatmapset_id": 1097858,

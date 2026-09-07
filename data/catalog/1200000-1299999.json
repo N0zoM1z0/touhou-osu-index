@@ -623,6 +623,35 @@
       "osu_last_updated": "2023-03-04T13:37:34Z"
     },
     {
+      "beatmapset_id": 1226245,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Ghost in Starlight",
+      "creator": "351",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "wip",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-20T00:06:18Z"
+    },
+    {
       "beatmapset_id": 1227876,
       "artist": "Cranky",
       "title": "[TOUHOU Electro] Feline Groove - Night of Nights (Cranky Remix)",
@@ -2449,6 +2478,30 @@
       "osu_last_updated": "2020-09-23T22:14:11Z"
     },
     {
+      "beatmapset_id": 1264551,
+      "artist": "Akiyama Uni",
+      "title": "Touhou Hisouten",
+      "creator": "Xiila",
+      "source": "東方緋想天　～ Scarlet Weather Rhapsody",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-08-10T20:39:30Z"
+    },
+    {
       "beatmapset_id": 1264931,
       "artist": "ShinRa-Bansho",
       "title": "Zenryoku Happy Life",
@@ -2678,6 +2731,30 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2021-04-07T05:43:22Z"
+    },
+    {
+      "beatmapset_id": 1267723,
+      "artist": "RD-Sounds feat. Meramipop",
+      "title": "Sono Tadashiki Kotoba no Moto ni",
+      "creator": "Nepoch",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-11-30T13:35:09Z"
     },
     {
       "beatmapset_id": 1267975,
@@ -3410,6 +3487,30 @@
       "osu_last_updated": "2022-01-27T13:11:10Z"
     },
     {
+      "beatmapset_id": 1285175,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Necromanticism",
+      "creator": "Mequru",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-03-07T16:25:15Z"
+    },
+    {
       "beatmapset_id": 1285290,
       "artist": "KISIDA KYODAN & THE AKEBOSI ROCKETS",
       "title": "secret philosophy (Cut Ver.)",
@@ -3708,6 +3809,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1292138,
+      "artist": "FELT",
+      "title": "Dream in the Night",
+      "creator": "Uni-Desu",
+      "source": "東方星蓮船　～ Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-11-03T03:25:26Z"
+    },
+    {
       "beatmapset_id": 1292214,
       "artist": "IOSYS",
       "title": "Bassline Doll",
@@ -3792,6 +3917,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1296248,
+      "artist": "Thousand Leaves",
+      "title": "Temptation",
+      "creator": "Zelq",
+      "source": "東方怪綺談　～ Mystic Square",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "discovery_query:source=東方怪綺談",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-11-08T17:24:44Z"
     },
     {
       "beatmapset_id": 1296856,
