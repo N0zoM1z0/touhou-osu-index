@@ -207,7 +207,12 @@ jobs:
           meta = json.loads((temp / 'status-meta.json').read_text(encoding='utf-8'))
           provenance = json.loads((temp / 'status-provenance.json').read_text(encoding='utf-8'))
 
-          bad = {int(item) for item in provenance.get('policy_violations', [])}
+          # 2473015 passed search + direct API refetch but failed the first full
+          # live review's independent public-page identity check. Keep that
+          # unstable identity out of the accepted boundary and take the next
+          # clean candidate instead.
+          bad = {2473015}
+          bad.update(int(item) for item in provenance.get('policy_violations', []))
           supported = set()
           verdict_by_id = {}
           for row in provenance.get('results', []):
@@ -277,6 +282,7 @@ jobs:
               f"- provisional rows sent to THBWiki/TouhouDB provenance: **{len(meta['provisional_ids'])}**",
               f"- final rows after red/ambiguous/policy filtering: **{len(chosen)}**",
               f"- positive external composition relations among final rows: **{positive}**",
+              '- prior live-review identity mismatch explicitly withheld: **2473015**',
               f"- status distribution: **{json.dumps(status_counts, ensure_ascii=False, sort_keys=True)}**",
               f"- mode coverage: **{json.dumps(mode_counts, ensure_ascii=False, sort_keys=True)}**",
               '',
@@ -295,7 +301,7 @@ jobs:
               '',
               '## Negative boundary',
               '',
-              'Candidate/probable-only hits, generic Touhou source labels, mapper-tag-only signals, direct-refetch failures, external contradictions, ambiguous provenance, and policy violations are all withheld. Existing catalog rows are restored exactly and are not refreshed or reclassified in this PR.',
+              'Candidate/probable-only hits, generic Touhou source labels, mapper-tag-only signals, direct-refetch failures, external contradictions, ambiguous provenance, policy violations, and the prior live-review identity mismatch `2473015` are all withheld. Existing catalog rows are restored exactly and are not refreshed or reclassified in this PR.',
               '',
               '## Final verification',
               '',
@@ -328,7 +334,7 @@ jobs:
             --workers 4 \
             --output "$RUNNER_TEMP/status-deep-review.json"
 
-      - name: Append review result and commit
+      - name: Append review result, remove temporary workflow, and commit
         env:
           RUNNER_TEMP: ${{ runner.temp }}
         run: |
@@ -353,5 +359,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/catalog docs/source-audit-2026-09-status-depth.md
+          git rm .github/workflows/tmp-status-depth-audit.yml
           git commit -m "data: add status-scoped Touhou discovery batch"
           git push origin HEAD:work/completeness-pass-2026-09-07
