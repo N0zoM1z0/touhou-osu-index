@@ -1,0 +1,427 @@
+name: Temporary Touhou completeness pass
+
+on:
+  push:
+    branches:
+      - work/completeness-pass-2026-09-07
+
+permissions:
+  contents: write
+
+jobs:
+  completeness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Build broad candidate pool and direct-refetch osu metadata
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+          RUNNER_TEMP: ${{ runner.temp }}
+        run: |
+          set -euo pipefail
+          test -n "$OSU_CLIENT_ID"
+          test -n "$OSU_CLIENT_SECRET"
+          git fetch --no-tags origin main
+          rm -rf "$RUNNER_TEMP/completeness-base"
+          mkdir -p "$RUNNER_TEMP/completeness-base"
+          git archive origin/main data/catalog | tar -x -C "$RUNNER_TEMP/completeness-base"
+
+          python - <<'PY'
+          from __future__ import annotations
+
+          import json
+          import os
+          import time
+          from collections import defaultdict
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.cli import load_config
+          from touhou_osu.osu_api import OsuApi, entry_from_osu
+          from touhou_osu.sources import import_collector_collection
+
+          temp = Path(os.environ["RUNNER_TEMP"])
+          base = Catalog.load(temp / "completeness-base" / "data" / "catalog")
+          base_ids = set(base.entries)
+          api = OsuApi.from_env()
+          api.token()
+
+          # Independent, currently unconfigured Touhou-focused osu!Collector snapshots
+          # found during the September 2026 completeness search.
+          source_defs = [
+              {"id": 2520, "name": "touhou (i suck at osuu)", "confidence": "candidate"},
+              {"id": 3570, "name": "Touhou 3* (VoidGod)", "confidence": "candidate"},
+              {"id": 541, "name": "Touhou Osu Mania", "confidence": "candidate"},
+              {"id": 4499, "name": "touhou dt", "confidence": "candidate"},
+          ]
+
+          memberships: dict[int, set[str]] = defaultdict(set)
+          source_counts: dict[int, int] = {}
+          source_errors: list[str] = []
+          for source in source_defs:
+              entries = None
+              for attempt in range(3):
+                  try:
+                      entries = import_collector_collection(source)
+                      break
+                  except Exception as exc:
+                      if attempt == 2:
+                          source_errors.append(f"{source['id']}: {exc}")
+                      else:
+                          time.sleep(2 ** attempt)
+              if entries is None:
+                  continue
+              source_counts[source["id"]] = len(entries)
+              for entry in entries:
+                  memberships[entry.beatmapset_id].add(f"osucollector:{source['id']}")
+
+          if len(source_counts) < 3:
+              raise RuntimeError(f"too many collector source failures: {source_errors}")
+
+          # Search well past the weekly four-page frontier. Fail individual queries
+          # open rather than turning one transient search error into fabricated data.
+          config = load_config(Path("config/seeds.json"))
+          search_raw: dict[int, dict] = {}
+          search_evidence: dict[int, set[str]] = defaultdict(set)
+          search_errors: list[str] = []
+          for query in config.get("discovery_queries", []):
+              try:
+                  for raw in api.search(query, max_pages=6):
+                      beatmapset_id = int(raw["id"])
+                      if beatmapset_id in base_ids:
+                          continue
+                      provisional = entry_from_osu(
+                          raw,
+                          evidence=[f"discovery_query:{query}"],
+                          confidence="candidate",
+                      )
+                      # Search-only candidate rows must already satisfy the deterministic
+                      # accepted boundary before we spend a direct refetch on them.
+                      if provisional.confidence not in {"verified", "probable"}:
+                          continue
+                      search_raw[beatmapset_id] = raw
+                      search_evidence[beatmapset_id].add(f"discovery_query:{query}")
+              except Exception as exc:
+                  search_errors.append(f"{query}: {exc}")
+                  time.sleep(0.4)
+
+          potential_ids = sorted((set(memberships) - base_ids) | set(search_raw))
+
+          def direct_fetch(beatmapset_id: int):
+              evidence = sorted(memberships.get(beatmapset_id, set()) | search_evidence.get(beatmapset_id, set()))
+              last_error = None
+              for attempt in range(3):
+                  try:
+                      raw = api.beatmapset(beatmapset_id)
+                      entry = entry_from_osu(raw, evidence=evidence, confidence="candidate")
+                      return beatmapset_id, entry, None
+                  except Exception as exc:
+                      last_error = str(exc)
+                      time.sleep(1 + attempt * 2)
+              return beatmapset_id, None, last_error
+
+          accepted = {}
+          fetch_errors = {}
+          with ThreadPoolExecutor(max_workers=5) as executor:
+              futures = {executor.submit(direct_fetch, item): item for item in potential_ids}
+              for future in as_completed(futures):
+                  beatmapset_id, entry, error = future.result()
+                  if error:
+                      fetch_errors[beatmapset_id] = error
+                      continue
+                  if entry.confidence in {"verified", "probable"}:
+                      accepted[beatmapset_id] = entry
+
+          # Rank precision-first: verified before probable, then independent collector
+          # membership before search-only hits, then number of evidence signals.
+          def rank(entry):
+              collector_count = sum(item.startswith("osucollector:") for item in entry.evidence)
+              return (
+                  0 if entry.confidence == "verified" else 1,
+                  0 if collector_count else 1,
+                  -collector_count,
+                  -len(entry.evidence),
+                  entry.beatmapset_id,
+              )
+
+          ranked = sorted(accepted.values(), key=rank)
+          provisional = ranked[:400]
+          if len(provisional) < 220:
+              raise RuntimeError(
+                  f"accepted candidate pool too small: {len(provisional)}; "
+                  f"collector counts={source_counts}, direct-fetch failures={len(fetch_errors)}"
+              )
+
+          working = Catalog(base.entries.values())
+          for entry in provisional:
+              working.merge(entry)
+          working.save(Path("data/catalog"))
+
+          meta = {
+              "source_counts": source_counts,
+              "source_errors": source_errors,
+              "search_queries": len(config.get("discovery_queries", [])),
+              "search_errors": search_errors,
+              "collector_unique_ids": len(memberships),
+              "potential_absent_ids": len(potential_ids),
+              "direct_fetch_failures": {str(k): v for k, v in sorted(fetch_errors.items())},
+              "accepted_before_provenance": len(accepted),
+              "provisional_ids": [entry.beatmapset_id for entry in provisional],
+          }
+          (temp / "completeness-meta.json").write_text(
+              json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          print(json.dumps({k: v for k, v in meta.items() if k != "direct_fetch_failures"}, indent=2))
+          PY
+
+      - name: Cross-check composition provenance
+        env:
+          RUNNER_TEMP: ${{ runner.temp }}
+        run: |
+          set -euo pipefail
+          python -m touhou_osu.provenance \
+            --catalog data/catalog \
+            --base-catalog "$RUNNER_TEMP/completeness-base/data/catalog" \
+            --scope changed \
+            --workers 4 \
+            --output "$RUNNER_TEMP/completeness-provenance.json"
+
+      - name: Remove review flags and lock final addition set
+        env:
+          RUNNER_TEMP: ${{ runner.temp }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from __future__ import annotations
+
+          import json
+          import os
+          from pathlib import Path
+
+          from touhou_osu.catalog import Catalog
+
+          temp = Path(os.environ["RUNNER_TEMP"])
+          base = Catalog.load(temp / "completeness-base" / "data" / "catalog")
+          current = Catalog.load(Path("data/catalog"))
+          meta = json.loads((temp / "completeness-meta.json").read_text(encoding="utf-8"))
+          provenance = json.loads((temp / "completeness-provenance.json").read_text(encoding="utf-8"))
+
+          bad = set(provenance.get("policy_violations", []))
+          verdicts = {}
+          supported = set()
+          for row in provenance.get("results", []):
+              beatmapset_id = int(row["beatmapset_id"])
+              verdicts[beatmapset_id] = row.get("verdict", "unknown")
+              if row.get("verdict") in {"red_flag", "ambiguous"}:
+                  bad.add(beatmapset_id)
+              if row.get("verdict") == "supported":
+                  supported.add(beatmapset_id)
+
+          candidates = [
+              current.entries[item]
+              for item in meta["provisional_ids"]
+              if item in current.entries and item not in bad
+          ]
+
+          def rank(entry):
+              collector_count = sum(item.startswith("osucollector:") for item in entry.evidence)
+              return (
+                  0 if entry.beatmapset_id in supported else 1,
+                  0 if entry.confidence == "verified" else 1,
+                  0 if collector_count else 1,
+                  -collector_count,
+                  -len(entry.evidence),
+                  entry.beatmapset_id,
+              )
+
+          candidates.sort(key=rank)
+          chosen = candidates[:250]
+          if len(chosen) < 200:
+              raise RuntimeError(
+                  f"only {len(chosen)} candidates remain after provenance review; "
+                  f"provisional={len(meta['provisional_ids'])}, flagged={len(bad)}"
+              )
+
+          final = Catalog(base.entries.values())
+          for entry in chosen:
+              final.merge(entry)
+          final.save(Path("data/catalog"))
+
+          # Add the new reproducible discovery sources as candidate-first seeds.
+          config_path = Path("config/seeds.json")
+          config = json.loads(config_path.read_text(encoding="utf-8"))
+          known_ids = {int(item["id"]) for item in config.get("osu_collector_collections", [])}
+          names = {
+              2520: "touhou (i suck at osuu)",
+              3570: "Touhou 3* (VoidGod)",
+              541: "Touhou Osu Mania",
+              4499: "touhou dt",
+          }
+          for source_id_text, count in sorted(meta["source_counts"].items(), key=lambda item: int(item[0])):
+              source_id = int(source_id_text)
+              if source_id in known_ids:
+                  continue
+              floor = max(10, int(count * 0.90))
+              config.setdefault("osu_collector_collections", []).append(
+                  {
+                      "id": source_id,
+                      "name": names[source_id],
+                      "confidence": "candidate",
+                      "minimum_entries": floor,
+                  }
+              )
+          config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+          source_counts = {int(k): int(v) for k, v in meta["source_counts"].items()}
+          collector_added = sum(any(ev.startswith("osucollector:") for ev in entry.evidence) for entry in chosen)
+          search_added = sum(any(ev.startswith("discovery_query:") for ev in entry.evidence) for entry in chosen)
+          verified = sum(entry.confidence == "verified" for entry in chosen)
+          probable = sum(entry.confidence == "probable" for entry in chosen)
+          supported_count = sum(entry.beatmapset_id in supported for entry in chosen)
+
+          audit = [
+              "# Broad Touhou completeness pass — 2026-09-07",
+              "",
+              "## Decision",
+              "",
+              f"Accept **{len(chosen)}** previously absent beatmapsets after a broad candidate search, direct osu! refetch, deterministic classification, and external provenance screening. Existing catalog rows are intentionally preserved byte-for-semantic-field: this is an addition-only pass.",
+              "",
+              "## Discovery sources",
+              "",
+              "Four previously unconfigured Touhou-focused osu!Collector snapshots were used as discovery evidence only; collection membership by itself was never promoted to verified.",
+              "",
+              "| osu!Collector ID | Name | Live unique beatmapsets | Policy |",
+              "| ---: | --- | ---: | --- |",
+          ]
+          for source_id in sorted(source_counts):
+              audit.append(
+                  f"| {source_id} | {names[source_id]} | {source_counts[source_id]} | candidate-first discovery |"
+              )
+          audit += [
+              "",
+              f"The same pass also searched all **{meta['search_queries']}** repository-configured osu! discovery queries to six cursor pages, extending beyond the weekly four-page frontier. Search-only hits were retained only when the current osu! API object already crossed the repository's deterministic verified/probable boundary.",
+              "",
+              "## Review funnel",
+              "",
+              f"- unique beatmapsets seen in the four collector snapshots: **{meta['collector_unique_ids']}**",
+              f"- absent IDs sent to direct osu! review (collector + accepted search hits): **{meta['potential_absent_ids']}**",
+              f"- accepted by deterministic classification before external provenance: **{meta['accepted_before_provenance']}**",
+              f"- provisional precision-ranked rows sent to THBWiki/TouhouDB provenance review: **{len(meta['provisional_ids'])}**",
+              f"- final additions after removing provenance red/ambiguous/policy flags: **{len(chosen)}**",
+              f"- final confidence: **{verified} verified**, **{probable} probable**",
+              f"- additions with collector provenance: **{collector_added}**",
+              f"- additions with deep osu! search provenance: **{search_added}**",
+              f"- additions with a positive external composition relation in the advisory provenance pass: **{supported_count}**",
+              "",
+              "Direct-refetch failures and provider transport errors were not converted into positive evidence. Candidate-only rows were withheld. Same-title hits never received acceptance solely from title matching.",
+              "",
+              "## Accepted beatmapsets",
+              "",
+              "| Beatmapset ID | Artist | Title | Confidence | Evidence |",
+              "| ---: | --- | --- | --- | --- |",
+          ]
+          def esc(value: str) -> str:
+              return value.replace("|", "\\|").replace("\n", " ")
+          for entry in sorted(chosen, key=lambda item: item.beatmapset_id):
+              audit.append(
+                  f"| {entry.beatmapset_id} | {esc(entry.artist)} | {esc(entry.title)} | {entry.confidence} | {esc(', '.join(entry.evidence))} |"
+              )
+          audit += [
+              "",
+              "## Negative boundary",
+              "",
+              "The pass deliberately withholds all candidate-only rows, all direct-refetch failures, every provenance red/ambiguous result, and every generic-source verification policy violation. The audit does not infer a beatmapset ID from a title, mapper, screenshot, tournament label, or collection position.",
+              "",
+              "## Final verification",
+              "",
+              "The temporary audit workflow runs the repository's structural + provenance + live-osu Deep Review after this document is generated. Its exact results are appended below before the review commit is pushed.",
+          ]
+          Path("docs/source-audit-2026-09-completeness.md").write_text("\n".join(audit) + "\n", encoding="utf-8")
+
+          # Document the supported source additions without pretending they are trusted wholesale.
+          sources_path = Path("SOURCES.md")
+          text = sources_path.read_text(encoding="utf-8")
+          marker = "## September 2026 completeness-pass discovery sources"
+          if marker not in text:
+              lines = [
+                  "",
+                  marker,
+                  "",
+                  "The 2026-09-07 completeness pass adds four osu!Collector collections as **candidate-first discovery sources**. Their membership is not verification; accepted new rows still had to satisfy the normal item-level classifier and the pass's direct osu!/provenance checks.",
+                  "",
+                  "| Collection | ID | Live unique sets at audit | Initial trust |",
+                  "| --- | ---: | ---: | --- |",
+              ]
+              for source_id in sorted(source_counts):
+                  lines.append(f"| {names[source_id]} | {source_id} | {source_counts[source_id]} | candidate |")
+              lines += ["", "See [`docs/source-audit-2026-09-completeness.md`](docs/source-audit-2026-09-completeness.md) for the exact accepted-ID boundary and cross-check funnel.", ""]
+              sources_path.write_text(text.rstrip() + "\n" + "\n".join(lines), encoding="utf-8")
+
+          (temp / "final-count.txt").write_text(str(len(chosen)), encoding="utf-8")
+          (temp / "final-ids.json").write_text(json.dumps([e.beatmapset_id for e in chosen]) + "\n", encoding="utf-8")
+          print(f"Locked {len(chosen)} additions; verified={verified}, probable={probable}, external-supported={supported_count}")
+          PY
+
+      - name: Validate, build, and run exact deep review
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+          RUNNER_TEMP: ${{ runner.temp }}
+        run: |
+          set -euo pipefail
+          count=$(cat "$RUNNER_TEMP/final-count.txt")
+          make check
+          make build
+          git diff --check
+          python -m touhou_osu.pr_audit \
+            --base-ref origin/main \
+            --mode all \
+            --scope added \
+            --audit-doc docs/source-audit-2026-09-completeness.md \
+            --expected-additions "$count" \
+            --forbid-existing-changes \
+            --workers 4 \
+            --output "$RUNNER_TEMP/deep-review-report.json"
+
+      - name: Append exact review results and commit audited changes
+        env:
+          RUNNER_TEMP: ${{ runner.temp }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          temp = Path(os.environ["RUNNER_TEMP"])
+          report = json.loads((temp / "deep-review-report.json").read_text(encoding="utf-8"))
+          structural = report["structural"]
+          provenance = report.get("provenance") or {}
+          live = report.get("live_osu") or {}
+          path = Path("docs/source-audit-2026-09-completeness.md")
+          text = path.read_text(encoding="utf-8")
+          text += (
+              "\n### Deep Review result\n\n"
+              f"- status: **{report['status']}**\n"
+              f"- structural diff: **+{len(structural['added'])} / ~{len(structural['modified'])} / -{len(structural['removed'])}**\n"
+              f"- provenance checked: **{provenance.get('checked', 0)}**; positive relations: **{provenance.get('supported', 0)}**; unacknowledged review flags: **{len(provenance.get('review_flags', []))}**; provider errors: **{provenance.get('provider_errors', 0)}**\n"
+              f"- live osu! identity checks: **{live.get('checked', 0)}**; failures: **{len(live.get('failures', []))}**\n"
+              "- structural audit required zero modified pre-existing rows and an exact match between the accepted table and added-ID set.\n"
+          )
+          path.write_text(text, encoding="utf-8")
+          PY
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog config/seeds.json SOURCES.md docs/source-audit-2026-09-completeness.md
+          git commit -m "data: add audited Touhou completeness batch"
+          git push origin HEAD:work/completeness-pass-2026-09-07
