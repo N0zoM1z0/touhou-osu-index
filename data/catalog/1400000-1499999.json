@@ -2,6 +2,30 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 1404046,
+      "artist": "sun3",
+      "title": "Meikai Kikou",
+      "creator": "Luscent",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-08-10T18:23:09Z"
+    },
+    {
       "beatmapset_id": 1404277,
       "artist": "Morimori Atsushi",
       "title": "Toono Gensou Monogatari (MRM REMIX)",
@@ -327,6 +351,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1420908,
+      "artist": "Akatsuki Records",
+      "title": "HANIPAGANDA",
+      "creator": "[OSC]Amagai",
+      "source": "東方鬼形獣　〜 Wily Beast and Weakest Creature.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-04-03T07:48:33Z"
     },
     {
       "beatmapset_id": 1422967,
@@ -1127,6 +1175,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1455638,
+      "artist": "ZUN",
+      "title": "Sado no Futatsuiwa",
+      "creator": "Prominent",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-05-21T06:29:56Z"
     },
     {
       "beatmapset_id": 1456013,

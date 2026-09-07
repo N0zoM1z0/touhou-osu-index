@@ -2740,6 +2740,35 @@
       "osu_last_updated": "2015-11-16T09:11:21Z"
     },
     {
+      "beatmapset_id": 358195,
+      "artist": "COOL&CREATE",
+      "title": "Saishuu Kichiku Imouto Flandre-S",
+      "creator": "Lost The Lights",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "pending",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-05T20:52:28Z"
+    },
+    {
       "beatmapset_id": 358342,
       "artist": "UNDEAD CORPORATION",
       "title": "The Empress",
@@ -4132,6 +4161,30 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2016-03-05T22:14:50Z"
+    },
+    {
+      "beatmapset_id": 394576,
+      "artist": "Akatsuki Records",
+      "title": "WARNINGxWARNINGxWARNING",
+      "creator": "AdveNt",
+      "source": "東方紺珠伝 ～ Legacy of Lunatic Kingdom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2017-12-12T08:53:03Z"
     },
     {
       "beatmapset_id": 395046,

@@ -56,6 +56,30 @@
       "osu_last_updated": "2013-08-10T08:22:00Z"
     },
     {
+      "beatmapset_id": 100704,
+      "artist": "ZUN",
+      "title": "Boushitsu no Emotion",
+      "creator": "Rei Hakurei",
+      "source": "東方心綺楼　～ Hopeless Masquerade.",
+      "status": "graveyard",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "discovery_query:source=東方心綺楼",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-04-21T04:59:42Z"
+    },
+    {
       "beatmapset_id": 100870,
       "artist": "sumijun",
       "title": "monosugoi live de chirno ga sokohakatonaku monosugoi uta (instrumental) x1.18",
@@ -166,6 +190,33 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2013-08-23T23:50:04Z"
+    },
+    {
+      "beatmapset_id": 103003,
+      "artist": "Shibayan feat. yana",
+      "title": "Fall in the Dark",
+      "creator": "OnosakiHito",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "pending",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方紅魔郷",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-28T06:11:46Z"
     },
     {
       "beatmapset_id": 103830,
@@ -449,6 +500,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2013-08-01T07:55:47Z"
+    },
+    {
+      "beatmapset_id": 108749,
+      "artist": "ShibayanRecords feat. yana",
+      "title": "Fall in the Dark",
+      "creator": "Keroze",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-05-10T12:30:59Z"
     },
     {
       "beatmapset_id": 108820,
@@ -1590,6 +1664,29 @@
       "osu_last_updated": "2014-02-08T10:12:29Z"
     },
     {
+      "beatmapset_id": 126743,
+      "artist": "senya",
+      "title": "Kachou Fuugetsu",
+      "creator": "Alarido",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-01-07T23:47:52Z"
+    },
+    {
       "beatmapset_id": 127712,
       "artist": "Primastella",
       "title": "Koigokoro",
@@ -2018,6 +2115,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2014-05-01T12:15:57Z"
+    },
+    {
+      "beatmapset_id": 135378,
+      "artist": "ZUN",
+      "title": "Peaceful",
+      "creator": "MMd-",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-10-07T06:49:33Z"
     },
     {
       "beatmapset_id": 135778,
@@ -3658,6 +3778,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-10-05T08:52:23Z"
+    },
+    {
+      "beatmapset_id": 176348,
+      "artist": "ZUN",
+      "title": "Eien no Mikkatenka",
+      "creator": "Rei Hakurei",
+      "source": "弾幕アマノジャク　～ Impossible Spell Card.",
+      "status": "graveyard",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Impossible Spell Card",
+        "discovery_query:source=弾幕アマノジャク",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-10-19T02:17:14Z"
     },
     {
       "beatmapset_id": 176972,

@@ -170,6 +170,30 @@
       "osu_last_updated": "2021-07-19T18:55:57Z"
     },
     {
+      "beatmapset_id": 1504220,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Flowering Night Fever",
+      "creator": "H4chyk0",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:Team Shanghai Alice",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-06-28T21:22:51Z"
+    },
+    {
       "beatmapset_id": 1504348,
       "artist": "A-One feat. Rute & Aki",
       "title": "Scream out!",
@@ -535,6 +559,30 @@
       "osu_last_updated": "2021-08-10T20:16:17Z"
     },
     {
+      "beatmapset_id": 1521624,
+      "artist": "AkatsukiRecords",
+      "title": "Necromantic",
+      "creator": "unegiu",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-07-16T12:45:59Z"
+    },
+    {
       "beatmapset_id": 1522278,
       "artist": "Masayoshi Minoshima",
       "title": "Bad Apple!! feat. nomico",
@@ -762,6 +810,30 @@
       "osu_last_updated": "2021-08-02T18:33:40Z"
     },
     {
+      "beatmapset_id": 1529751,
+      "artist": "xi",
+      "title": "Shoujo Kisoukyoku ~ Speed Battle",
+      "creator": "JhadLeon",
+      "source": "東方Project (東方永夜抄 ～ Imperishable Night.)",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-05-13T15:30:47Z"
+    },
+    {
       "beatmapset_id": 1530517,
       "artist": "BUTAOTOME",
       "title": "Mesen",
@@ -826,6 +898,32 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1531274,
+      "artist": "Akatsuki Records",
+      "title": "HELLOHELL",
+      "creator": "AnjoK",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-05-31T16:28:29Z"
     },
     {
       "beatmapset_id": 1531490,

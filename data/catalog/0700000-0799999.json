@@ -278,6 +278,29 @@
       "osu_last_updated": "2018-09-04T18:12:58Z"
     },
     {
+      "beatmapset_id": 707602,
+      "artist": "Pizuya's Cell",
+      "title": "Nano Probe",
+      "creator": "Painketsu",
+      "source": "東方紺珠伝 〜 Legacy of Lunatic Kingdom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2017-12-22T15:31:03Z"
+    },
+    {
       "beatmapset_id": 707670,
       "artist": "konekodakkaiya",
       "title": "Kagome-Kagome",
@@ -319,6 +342,31 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-05-22T22:47:37Z"
+    },
+    {
+      "beatmapset_id": 708760,
+      "artist": "ZUN",
+      "title": "Hishin Matara ~ Hidden Star in All Seasons.",
+      "creator": "pw384",
+      "source": "東方天空璋　～ Hidden Star in Four Seasons.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "discovery_query:source=東方天空璋",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-03-05T06:56:09Z"
     },
     {
       "beatmapset_id": 709145,
@@ -739,6 +787,35 @@
       "osu_last_updated": "2024-08-19T12:00:18Z"
     },
     {
+      "beatmapset_id": 716452,
+      "artist": "Golden City Factory",
+      "title": "Sleepless Night of the Eastern Country",
+      "creator": "awesomebox",
+      "source": "東方文花帖　～ Shoot the Bullet.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Shoot the Bullet",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方文花帖",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-11T03:44:56Z"
+    },
+    {
       "beatmapset_id": 719447,
       "artist": "Diao Ye Zong feat. Meramipop",
       "title": "Gensou Roman Kikou (is the limit.)",
@@ -1014,6 +1091,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-03-08T07:58:33Z"
+    },
+    {
+      "beatmapset_id": 725962,
+      "artist": "Akiyama Uni",
+      "title": "Touhou Hisouten",
+      "creator": "Pachiru",
+      "source": "東方緋想天　～ Scarlet Weather Rhapsody.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-03-19T00:46:06Z"
     },
     {
       "beatmapset_id": 726596,
@@ -2879,6 +2979,32 @@
       "osu_last_updated": "2019-02-08T14:35:03Z"
     },
     {
+      "beatmapset_id": 765951,
+      "artist": "ZUN",
+      "title": "Eternal Spring Dream",
+      "creator": "FAMoss",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-08-31T15:37:41Z"
+    },
+    {
       "beatmapset_id": 767154,
       "artist": "Diao Ye Zong feat. Meramipop",
       "title": "Saifu 'Kamiasobi no Uta'",
@@ -2940,6 +3066,30 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-05-31T12:24:07Z"
+    },
+    {
+      "beatmapset_id": 769670,
+      "artist": "wonder",
+      "title": "bad strawberry",
+      "creator": "Ekoro",
+      "source": "東方幻想郷　～ Lotus Land Story, 東方夢時空　～ Phantasmagoria of Dim.Dream",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=東方夢時空",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-04-23T09:43:54Z"
     },
     {
       "beatmapset_id": 770568,
@@ -3301,6 +3451,29 @@
       "osu_last_updated": "2019-04-21T19:42:22Z"
     },
     {
+      "beatmapset_id": 781514,
+      "artist": "MISTY RAIN",
+      "title": "Gouon Catharsis",
+      "creator": "Greenshell",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-04-15T13:27:21Z"
+    },
+    {
       "beatmapset_id": 782018,
       "artist": "Senpi",
       "title": "Touhou Last Boss Rush!! (Cut Ver.)",
@@ -3457,6 +3630,29 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-10-19T12:57:46Z"
+    },
+    {
+      "beatmapset_id": 784350,
+      "artist": "Nanahira",
+      "title": "Monosugoi Space Shuttle de Koishi ga Monosugoi Uta",
+      "creator": "Anri17",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2020-09-16T17:46:26Z"
     },
     {
       "beatmapset_id": 784476,
@@ -3862,6 +4058,29 @@
       "osu_last_updated": "2018-08-03T11:22:17Z"
     },
     {
+      "beatmapset_id": 797830,
+      "artist": "ZUN",
+      "title": "Swordsman of a Distant Star",
+      "creator": "BlackDrake",
+      "source": "東方靈異伝　～ Highly Responsive to Prayers",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Highly Responsive to Prayers",
+        "discovery_query:source=東方靈異伝",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2018-06-14T01:01:21Z"
+    },
+    {
       "beatmapset_id": 798509,
       "artist": "Ciel",
       "title": "If you're my destiny, end this fated determination.",
@@ -3907,6 +4126,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-11-09T00:13:41Z"
+    },
+    {
+      "beatmapset_id": 799002,
+      "artist": "REDALiCE vs. aran",
+      "title": "Sweet Requiem",
+      "creator": "Helicosaurus",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:上海アリス幻樂団",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2019-06-03T18:14:02Z"
     },
     {
       "beatmapset_id": 799135,

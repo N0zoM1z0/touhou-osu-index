@@ -526,6 +526,30 @@
       "osu_last_updated": "2025-01-07T02:17:02Z"
     },
     {
+      "beatmapset_id": 1621910,
+      "artist": "ZUN",
+      "title": "Nemureru Kyoufu ~ Sleeping Terror",
+      "creator": "Kurashina Asuka",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2021-12-16T07:16:52Z"
+    },
+    {
       "beatmapset_id": 1622104,
       "artist": "Rin",
       "title": "Lunatic set 15 ~ The Moon as Seen from the Shrine",
@@ -643,6 +667,34 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1627491,
+      "artist": "A-One feat. Hanatan",
+      "title": "Break The Hierarchie",
+      "creator": "DeviousPanda",
+      "source": "東方輝針城　～ Double Dealing Character.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:source=東方",
+        "discovery_query:source=東方輝針城",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-08-31T13:47:06Z"
     },
     {
       "beatmapset_id": 1628191,

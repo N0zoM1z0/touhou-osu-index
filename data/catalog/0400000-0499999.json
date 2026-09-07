@@ -2070,6 +2070,29 @@
       "osu_last_updated": "2016-10-02T03:19:37Z"
     },
     {
+      "beatmapset_id": 450895,
+      "artist": "ZUN",
+      "title": "The Rabbit Has Landed",
+      "creator": "Copter-kun",
+      "source": "Touhou 15 - Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2016-05-02T07:23:49Z"
+    },
+    {
       "beatmapset_id": 451857,
       "artist": "Nanahira",
       "title": "Shinchoku Doudesu ka?(Halozy Mix)",

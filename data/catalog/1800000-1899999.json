@@ -939,6 +939,30 @@
       "osu_last_updated": "2024-05-24T23:29:11Z"
     },
     {
+      "beatmapset_id": 1834528,
+      "artist": "Hanatan",
+      "title": "KIRISAME MAGIC",
+      "creator": "Reuju-",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2023-02-26T10:02:56Z"
+    },
+    {
       "beatmapset_id": 1835512,
       "artist": "Unlucky Morpheus x Undead Corporation",
       "title": "Allyheart",
@@ -1816,6 +1840,30 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1861318,
+      "artist": "ZUN",
+      "title": "Mystic Oriental Dream ~ Ancient Temple",
+      "creator": "Murasss",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "discovery_query:ZUN",
+        "discovery_query:東方",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2022-10-06T13:34:14Z"
+    },
+    {
       "beatmapset_id": 1861782,
       "artist": "Chata",
       "title": "Gusha",
@@ -2132,6 +2180,34 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1870597,
+      "artist": "BUTAOTOME",
+      "title": "Tanoshii Sensou no Uta",
+      "creator": "kowari",
+      "source": "妖精大戦争　～ 東方三月精.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=妖精大戦争",
+        "discovery_query:source=東方",
+        "discovery_query:Team Shanghai Alice",
+        "discovery_query:Touhou",
+        "discovery_query:ZUN",
+        "discovery_query:上海アリス幻樂団",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-07",
+      "osu_last_updated": "2026-09-01T08:40:24Z"
     },
     {
       "beatmapset_id": 1871071,
