@@ -776,6 +776,27 @@
       "osu_last_updated": "2021-05-05T15:23:54Z"
     },
     {
+      "beatmapset_id": 1018979,
+      "artist": "Akatsuki Records",
+      "title": "Trance Dance Anarchy",
+      "creator": "MartiTube",
+      "source": "Hidden Star in Four Seasons",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-08-12T09:22:09Z"
+    },
+    {
       "beatmapset_id": 1019043,
       "artist": "ZUN",
       "title": "Guuzou ni Sekai wo Yudanete ~ Idoratrize World",
@@ -868,6 +889,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-08-23T20:39:05Z"
+    },
+    {
+      "beatmapset_id": 1019536,
+      "artist": "ZUN",
+      "title": "Guuzou ni Sekai wo Yudanete ~ Idoratrize World",
+      "creator": "Captain Teemo",
+      "source": "東方鬼形獣　～ Wily Beast and Weakest Creature",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-08-15T08:47:52Z"
     },
     {
       "beatmapset_id": 1019750,
@@ -983,6 +1026,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2020-11-08T21:16:13Z"
+    },
+    {
+      "beatmapset_id": 1021448,
+      "artist": "ill.bell",
+      "title": "PARFECT FREEEEEEEEEZE!!",
+      "creator": "811613755",
+      "source": "妖精大戦争　～ Fairy Wars",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=妖精大戦争",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-08-16T03:52:56Z"
     },
     {
       "beatmapset_id": 1022069,
@@ -1126,6 +1190,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2019-08-19T22:35:52Z"
+    },
+    {
+      "beatmapset_id": 1024007,
+      "artist": "Aki",
+      "title": "Cosmic Rainbow",
+      "creator": "Narunya",
+      "source": "EUROBEAT VOL 9 UNDEFINED FANTASTIC OBJECT",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-11-08T18:03:43Z"
     },
     {
       "beatmapset_id": 1024028,
@@ -1652,6 +1737,27 @@
       "osu_last_updated": "2020-03-29T21:05:42Z"
     },
     {
+      "beatmapset_id": 1034751,
+      "artist": "Foreground Eclipse",
+      "title": "Destruction",
+      "creator": "ClickingMouse",
+      "source": "東方風神録　～ Mountain of Faith, Sanae Kochiya's Theme",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-09-19T15:46:18Z"
+    },
+    {
       "beatmapset_id": 1035145,
       "artist": "Diao Ye Zong feat. nayuta",
       "title": "Tori yo",
@@ -1767,6 +1873,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-08-15T05:38:25Z"
+    },
+    {
+      "beatmapset_id": 1038095,
+      "artist": "ALiCE'S EMOTiON",
+      "title": "Ghostly Parapara Ship (Hardcore Edit)",
+      "creator": "P46",
+      "source": "東方Project ～ Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-10-02T03:24:14Z"
     },
     {
       "beatmapset_id": 1038745,
@@ -2303,6 +2430,29 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1055729,
+      "artist": "Diao ye zong",
+      "title": "tamesugame",
+      "creator": "Rudalek",
+      "source": "ダブルスポイラー　～ 東方文花帖, 東方文花帖　～ Shoot the Bullet",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Shoot the Bullet",
+        "discovery_query:source=ダブルスポイラー",
+        "discovery_query:source=東方文花帖",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-10-24T13:38:45Z"
+    },
+    {
       "beatmapset_id": 1056083,
       "artist": "ZUN",
       "title": "Electric Heritage",
@@ -2508,6 +2658,27 @@
       "osu_last_updated": "2021-08-27T01:48:28Z"
     },
     {
+      "beatmapset_id": 1059428,
+      "artist": "DiGiTAL WiNG",
+      "title": "DON'T STOP",
+      "creator": "arcwinolivirus",
+      "source": "東方妖々夢 〜 Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-11-01T13:41:48Z"
+    },
+    {
       "beatmapset_id": 1060639,
       "artist": "YooSanHyakurei",
       "title": "Last Train",
@@ -2664,6 +2835,27 @@
       "osu_last_updated": "2024-02-14T13:08:21Z"
     },
     {
+      "beatmapset_id": 1062334,
+      "artist": "Rin",
+      "title": "Lunatic set 15 ~ The Moon as Seen from the Shrine",
+      "creator": "Sion331",
+      "source": "Touhou Kanjuden Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-12-13T12:05:04Z"
+    },
+    {
       "beatmapset_id": 1063655,
       "artist": "ShinRa-Bansho",
       "title": "Junjou Armeria",
@@ -2739,6 +2931,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-12-05T06:21:23Z"
+    },
+    {
+      "beatmapset_id": 1064817,
+      "artist": "Diao Ye Zong feat. nayuta",
+      "title": "Tori yo",
+      "creator": "Elayue",
+      "source": "æ±æ–¹æ–‡èŠ±å¸–ã€€ï½ž Shoot the Bullet.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Shoot the Bullet",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-06-29T18:16:48Z"
     },
     {
       "beatmapset_id": 1065419,
@@ -2861,6 +3074,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-03-10T17:11:53Z"
+    },
+    {
+      "beatmapset_id": 1068162,
+      "artist": "Akatsuki Records",
+      "title": "Trans Dance Anarchy",
+      "creator": "-Tynamo",
+      "source": "出典：東方天空璋 ～ Hidden Star in Four Seasons",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "discovery_query:source=東方天空璋",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-11-20T22:17:57Z"
     },
     {
       "beatmapset_id": 1068754,
@@ -3227,6 +3462,27 @@
       "osu_last_updated": "2019-12-15T06:07:03Z"
     },
     {
+      "beatmapset_id": 1076253,
+      "artist": "A-One",
+      "title": "flower tartan",
+      "creator": "Fun F4ct",
+      "source": "東方 ~Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-01-01T22:44:45Z"
+    },
+    {
       "beatmapset_id": 1076644,
       "artist": "Demetori",
       "title": "Yuuga ni Sakase, Sumizome no Sakura ~ The Harm of Coming into Existence",
@@ -3288,6 +3544,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2020-01-18T21:39:20Z"
+    },
+    {
+      "beatmapset_id": 1077448,
+      "artist": "A-One",
+      "title": "Dreamy Purple",
+      "creator": "Fun F4ct",
+      "source": "東方 Project ~Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-01-01T22:49:47Z"
     },
     {
       "beatmapset_id": 1078388,
@@ -3384,6 +3661,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2020-02-12T10:38:06Z"
+    },
+    {
+      "beatmapset_id": 1081568,
+      "artist": "ELEMENTAS (A-One)",
+      "title": "Night Falls ~ Evening Star",
+      "creator": "Edius42",
+      "source": "Touhou 15.5 ~ Antinomy of Common Flowers",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Antinomy of Common Flowers",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-01-26T17:48:34Z"
     },
     {
       "beatmapset_id": 1082123,
@@ -3866,6 +4164,29 @@
       "osu_last_updated": "2020-02-23T03:35:59Z"
     },
     {
+      "beatmapset_id": 1091456,
+      "artist": "Stack",
+      "title": "HANIPAGANDA",
+      "creator": "Capu",
+      "source": "東方鬼形獣　〜 Wily Beast and Weakest Creature",
+      "status": "graveyard",
+      "modes": [
+        "mania",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-01-09T17:36:02Z"
+    },
+    {
       "beatmapset_id": 1092488,
       "artist": "FELT",
       "title": "Last Wind",
@@ -4055,6 +4376,27 @@
       "osu_last_updated": "2026-01-26T11:50:43Z"
     },
     {
+      "beatmapset_id": 1096890,
+      "artist": "Matsumoto Sara",
+      "title": "Ito Hakanaki Hikari no Gotoku",
+      "creator": "Seija",
+      "source": "妖精大戦争 ～ Eastern Three Fairies.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=妖精大戦争",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-01-19T21:59:09Z"
+    },
+    {
       "beatmapset_id": 1097376,
       "artist": "Hamburgaga",
       "title": "Mooned Fubuki",
@@ -4073,6 +4415,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-02-09T18:28:25Z"
+    },
+    {
+      "beatmapset_id": 1097634,
+      "artist": "maritumix",
+      "title": "Blackout",
+      "creator": "Ssandi NImo",
+      "source": "東方地霊殿 ～Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-12-31T15:51:09Z"
     },
     {
       "beatmapset_id": 1097688,
@@ -4141,6 +4504,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1098754,
+      "artist": "AUTUMN+GHOST feat. Akira Complex",
+      "title": "PURE FURY",
+      "creator": "Gatyaa420",
+      "source": "Touhou 15: Kanjuden ~ Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-01-25T04:38:12Z"
     },
     {
       "beatmapset_id": 1099114,

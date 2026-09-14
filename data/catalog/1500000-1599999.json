@@ -51,6 +51,27 @@
       "osu_last_updated": "2021-06-24T02:07:01Z"
     },
     {
+      "beatmapset_id": 1501131,
+      "artist": "Foreground Eclipse",
+      "title": "Dear, Are You Getting Sober",
+      "creator": "Hitomi_Konoe",
+      "source": "東方Project ～ Mountain of Faith",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-08-02T18:42:11Z"
+    },
+    {
       "beatmapset_id": 1501476,
       "artist": "Jun.A",
       "title": "Bucuresti no Ningyoushi",
@@ -440,6 +461,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2021-07-11T20:18:42Z"
+    },
+    {
+      "beatmapset_id": 1517522,
+      "artist": "MISATO",
+      "title": "Necro Fantasia",
+      "creator": "khrisaun",
+      "source": "東方Project 東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-07-12T01:34:02Z"
     },
     {
       "beatmapset_id": 1517924,
@@ -969,6 +1011,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1531685,
+      "artist": "GET IN THE RING",
+      "title": "Face To Face",
+      "creator": "Dreaming Ghost",
+      "source": "東方文花帖",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方文花帖",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-07-27T09:34:02Z"
+    },
+    {
       "beatmapset_id": 1532787,
       "artist": "FELT",
       "title": "FELT LN Collection (-[Ulazis]-) [Uta kata no to zenu]",
@@ -1127,6 +1190,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-11-27T14:33:27Z"
+    },
+    {
+      "beatmapset_id": 1542580,
+      "artist": "SiIvaGunner",
+      "title": "Bad Apple!! (Promotional Version)",
+      "creator": "M A N O L O",
+      "source": "Touhou 4: Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-09-10T14:31:10Z"
     },
     {
       "beatmapset_id": 1542974,
@@ -1424,6 +1508,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-03-26T13:04:25Z"
+    },
+    {
+      "beatmapset_id": 1553983,
+      "artist": "Komiya mao",
+      "title": "(can you)understand me?",
+      "creator": "- Stella -",
+      "source": "東方輝針城　〜 Double Dealing Character.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:source=東方輝針城",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-11-17T08:03:38Z"
     },
     {
       "beatmapset_id": 1556672,
@@ -2295,6 +2401,28 @@
       "osu_last_updated": "2021-09-25T20:39:04Z"
     },
     {
+      "beatmapset_id": 1580781,
+      "artist": "Akatsuki Records",
+      "title": "Senritsu no COLORS",
+      "creator": "TVRemote",
+      "source": "東方輝針城　～ Double Dealing Character.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:source=東方輝針城",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-09-19T20:08:11Z"
+    },
+    {
       "beatmapset_id": 1581381,
       "artist": "Jerico's Law",
       "title": "Resurrection (Extended mix)",
@@ -2367,6 +2495,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-03-17T19:04:06Z"
+    },
+    {
+      "beatmapset_id": 1584251,
+      "artist": "Unlucky Morpheus and Undead Corporation",
+      "title": "You're better off alive",
+      "creator": "SYISHI",
+      "source": "東方 Project ～ Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-09-23T07:04:16Z"
     },
     {
       "beatmapset_id": 1585029,

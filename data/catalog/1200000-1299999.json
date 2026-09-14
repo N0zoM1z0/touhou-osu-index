@@ -192,6 +192,27 @@
       "osu_last_updated": "2020-11-29T14:46:22Z"
     },
     {
+      "beatmapset_id": 1209716,
+      "artist": "SOUND HOLIC",
+      "title": "POLYHEDRA",
+      "creator": "akasaka0330",
+      "source": "touhou hopeless masquerade",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-10-17T02:26:53Z"
+    },
+    {
       "beatmapset_id": 1211476,
       "artist": "",
       "title": "Night of Knights",
@@ -408,6 +429,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-08-07T20:14:21Z"
+    },
+    {
+      "beatmapset_id": 1216027,
+      "artist": "Foreground Eclipse",
+      "title": "You May Not Want To Hear This But",
+      "creator": "Hitomi_Konoe",
+      "source": "東方Project ～ Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-10-27T13:09:31Z"
     },
     {
       "beatmapset_id": 1217525,
@@ -1498,6 +1540,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1244065,
+      "artist": "Chata",
+      "title": "Remind",
+      "creator": "whipdash",
+      "source": "東方Project 東方神霊廟",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-08-26T18:19:11Z"
+    },
+    {
       "beatmapset_id": 1244298,
       "artist": "Sorane",
       "title": "Love song with heart",
@@ -1641,6 +1704,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2021-05-28T14:58:14Z"
+    },
+    {
+      "beatmapset_id": 1247967,
+      "artist": "Twilight Frontier",
+      "title": "The Ground's Color is Yellow",
+      "creator": "AstroKitty",
+      "source": "東方Project 10.5: 東方緋想天 ～ Scarlet Weather Rhapsody",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-08-30T22:45:28Z"
     },
     {
       "beatmapset_id": 1248503,
@@ -3582,6 +3667,27 @@
       "osu_last_updated": "2021-01-18T22:42:50Z"
     },
     {
+      "beatmapset_id": 1286563,
+      "artist": "SOUND HOLIC feat. Nana Takahashi",
+      "title": "DIMENSION FREEZE",
+      "creator": "J a c k y",
+      "source": "東方夢時空 ～ Phantasmagoria of Dimensional Dream, Kana Anaberal's theme",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-10-26T12:38:51Z"
+    },
+    {
       "beatmapset_id": 1286813,
       "artist": "t+pazolite",
       "title": "Night of Nights (tpz Overheat Remix)",
@@ -3608,6 +3714,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2020-10-26T23:17:52Z"
+    },
+    {
+      "beatmapset_id": 1287866,
+      "artist": "ShinRa-Bansho feat. Ayo",
+      "title": "Real or Fake",
+      "creator": "My Angel Koishi",
+      "source": "東方文花帖 〜 Shoot the Bullet.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Shoot the Bullet",
+        "discovery_query:source=東方文花帖",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-10-28T08:16:11Z"
     },
     {
       "beatmapset_id": 1287937,

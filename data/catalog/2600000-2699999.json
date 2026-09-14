@@ -806,6 +806,28 @@
       "osu_last_updated": "2026-08-27T10:20:33Z"
     },
     {
+      "beatmapset_id": 2605173,
+      "artist": "BUTAOTOME",
+      "title": "In the Black",
+      "creator": "Seraphina",
+      "source": "東方憑依華　～ Antinomy of Common Flowers.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Antinomy of Common Flowers",
+        "discovery_query:source=東方憑依華",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-18T13:48:12Z"
+    },
+    {
       "beatmapset_id": 2605203,
       "artist": "Demetori",
       "title": "Youkai no Yama ~ Mysterious Mountain",
@@ -1029,6 +1051,28 @@
       "osu_last_updated": "2026-08-30T13:52:56Z"
     },
     {
+      "beatmapset_id": 2606790,
+      "artist": "Everyone from the Red Cucumber thread",
+      "title": "Kappa-sama no Iu Toori ~ One-way Accelerator",
+      "creator": "Doomsdaddy",
+      "source": "東方地霊殿　～ Subterranean Hatred",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-20T19:55:21Z"
+    },
+    {
       "beatmapset_id": 2607031,
       "artist": "COOL&CREATE feat. BeatMARIO & MARON",
       "title": "Matsuyoi Nightbug",
@@ -1105,6 +1149,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2026-08-21T10:39:15Z"
+    },
+    {
+      "beatmapset_id": 2607094,
+      "artist": "Akatsuki Records",
+      "title": "KUNG-FU MASTER No.9",
+      "creator": "Malgranda",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-22T13:32:22Z"
     },
     {
       "beatmapset_id": 2607191,
@@ -1520,6 +1586,28 @@
       "osu_last_updated": "2026-08-25T07:43:16Z"
     },
     {
+      "beatmapset_id": 2609950,
+      "artist": "Alstroemeria Records",
+      "title": "Ingress",
+      "creator": "ARCTTO",
+      "source": "バレットフィリア達の闇市場 ばれっとふぃりあたちのやみしじょう ～ 100th Black Market.",
+      "status": "pending",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=100th Black Market",
+        "discovery_query:source=バレットフィリア達の闇市場",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-26T06:48:15Z"
+    },
+    {
       "beatmapset_id": 2610365,
       "artist": "Alstroemeria Records",
       "title": "Bad Apple!!",
@@ -1599,6 +1687,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2026-08-28T20:33:44Z"
+    },
+    {
+      "beatmapset_id": 2611339,
+      "artist": "Sally",
+      "title": "Remind",
+      "creator": "Plasma",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-28T19:00:56Z"
     },
     {
       "beatmapset_id": 2611736,
@@ -1790,6 +1900,50 @@
       "osu_last_updated": "2026-08-30T15:23:02Z"
     },
     {
+      "beatmapset_id": 2612629,
+      "artist": "O-LIFE.JP",
+      "title": "Yakujinsama no Couple Dance",
+      "creator": "Malai",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "wip",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-30T19:02:30Z"
+    },
+    {
+      "beatmapset_id": 2612960,
+      "artist": "7_7",
+      "title": "Bitch Gun",
+      "creator": "nyaaapurrrrr",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-31T07:30:18Z"
+    },
+    {
       "beatmapset_id": 2613195,
       "artist": "Demetori",
       "title": "Flower Reflecting Mound ~ Higan Retour",
@@ -1816,6 +1970,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2026-08-31T17:17:01Z"
+    },
+    {
+      "beatmapset_id": 2613222,
+      "artist": "HotAnimeBoyz",
+      "title": "Paha Omena (Bad Apple!! Finnish Cover)",
+      "creator": "Asairan",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-31T17:58:18Z"
     },
     {
       "beatmapset_id": 2613359,
@@ -2094,6 +2270,92 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2026-09-06T12:47:57Z"
+    },
+    {
+      "beatmapset_id": 2616224,
+      "artist": "ShinRa-Bansho",
+      "title": "Time Paradox",
+      "creator": "soup3r",
+      "source": "東方輝針城　～ Double Dealing Character",
+      "status": "pending",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "discovery_query:source=東方輝針城",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-06T13:01:40Z"
+    },
+    {
+      "beatmapset_id": 2617851,
+      "artist": "A-One",
+      "title": "Magic Girl !!",
+      "creator": "INSideMylife_",
+      "source": "TOHO EUROBEAT VOL.3 (THE EMBODIMENT OF SCARLET DEVIL)",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-10T16:09:04Z"
+    },
+    {
+      "beatmapset_id": 2618424,
+      "artist": "Eru",
+      "title": "Pure Furies ~ Whereabouts of the Heart",
+      "creator": "Neeze",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-10T15:39:50Z"
+    },
+    {
+      "beatmapset_id": 2620320,
+      "artist": "Rolling Contact",
+      "title": "Snow, White, Echo",
+      "creator": "StalowyRycerz",
+      "source": "東方夢時空　～ Pantasmagria of Dim.Dream",
+      "status": "wip",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-13T21:16:59Z"
     }
   ]
 }

@@ -66,6 +66,28 @@
       "osu_last_updated": "2017-12-02T23:25:01Z"
     },
     {
+      "beatmapset_id": 701891,
+      "artist": "U2 Akiyama",
+      "title": "Naki Oujo no Tame no Septette",
+      "creator": "Nelka714",
+      "source": "東方緋想天 ～ Scarlet Weather Rhapsody",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-03-07T15:55:35Z"
+    },
+    {
       "beatmapset_id": 702584,
       "artist": "Kiryu",
       "title": "Hollowness",
@@ -236,6 +258,28 @@
       "osu_last_updated": "2019-01-13T16:46:49Z"
     },
     {
+      "beatmapset_id": 705831,
+      "artist": "ZUN",
+      "title": "Secret God Matara ~ Hidden Star in All Seasons",
+      "creator": "n00bUltima",
+      "source": "東方天空璋　～ Hidden Star in Four Seasons",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "discovery_query:source=東方天空璋",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2017-12-14T19:15:55Z"
+    },
+    {
       "beatmapset_id": 706201,
       "artist": "Demetori",
       "title": "Natsukashiki Touhou no Chi ~ Sic World",
@@ -342,6 +386,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-05-22T22:47:37Z"
+    },
+    {
+      "beatmapset_id": 708318,
+      "artist": "Jun.A",
+      "title": "The Refrain of the Lovely Great War",
+      "creator": "Genki1000",
+      "source": "妖精大戦争　～ 東方三月精",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=妖精大戦争",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-01-01T09:58:37Z"
     },
     {
       "beatmapset_id": 708760,
@@ -552,6 +617,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-10-27T20:53:53Z"
+    },
+    {
+      "beatmapset_id": 711594,
+      "artist": "\"Syrup Comfiture\" x ALADDIN",
+      "title": "Say my name",
+      "creator": "Painketsu",
+      "source": "東方夢時空　～ Phantasmagoria of Dim.Dream",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-03-10T22:42:15Z"
     },
     {
       "beatmapset_id": 711839,
@@ -963,6 +1050,28 @@
       "osu_last_updated": "2018-08-11T16:21:55Z"
     },
     {
+      "beatmapset_id": 724307,
+      "artist": "A-ONE",
+      "title": "Time Will Tell",
+      "creator": "Antares-",
+      "source": "東方靈異伝 ～ Highly Responsive to Prayers.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Highly Responsive to Prayers",
+        "discovery_query:source=東方靈異伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-01-23T01:40:36Z"
+    },
+    {
       "beatmapset_id": 724673,
       "artist": "RD-Sounds feat. Meramipop",
       "title": "Tatarigami",
@@ -1316,6 +1425,28 @@
       "osu_last_updated": "2018-01-30T20:31:34Z"
     },
     {
+      "beatmapset_id": 728273,
+      "artist": "SOUND HOLIC",
+      "title": "The other-side",
+      "creator": "Akinari",
+      "source": "東方封魔録 ～ Story of Eastern Wonderland",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方封魔録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-01-11T11:48:38Z"
+    },
+    {
       "beatmapset_id": 728496,
       "artist": "Shoegazer",
       "title": "Everything Will Freeze (Shoegazer) [Calamity]",
@@ -1657,6 +1788,27 @@
       "osu_last_updated": "2022-07-17T02:55:01Z"
     },
     {
+      "beatmapset_id": 734008,
+      "artist": "Masayoshi Minoshima feat.nomico",
+      "title": "Lost Emotion",
+      "creator": "Shawdooow",
+      "source": "東方心綺楼",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方心綺楼",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-04-06T19:14:25Z"
+    },
+    {
       "beatmapset_id": 734241,
       "artist": "Yuuhei Satellite",
       "title": "Tsuki ni Murakumo Hana ni Kaze",
@@ -1972,6 +2124,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-06-08T15:09:27Z"
+    },
+    {
+      "beatmapset_id": 740855,
+      "artist": "ELEMENTAS(A-One)",
+      "title": "Night Falls ~ Evening Star",
+      "creator": "Danilo",
+      "source": "東方憑依華 ～ Antinomy of Common Flowers.",
+      "status": "graveyard",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Antinomy of Common Flowers",
+        "discovery_query:source=東方憑依華",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-07-23T21:54:00Z"
     },
     {
       "beatmapset_id": 741146,
@@ -2348,6 +2522,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2018-03-24T22:30:22Z"
+    },
+    {
+      "beatmapset_id": 749399,
+      "artist": "U2",
+      "title": "Ningyou Saiban",
+      "creator": "Dain",
+      "source": "東方萃夢想 ～ Immaterial and Missing Power.",
+      "status": "graveyard",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-03-15T23:01:10Z"
     },
     {
       "beatmapset_id": 749552,
@@ -3266,6 +3463,28 @@
       "osu_last_updated": "2018-06-01T02:13:20Z"
     },
     {
+      "beatmapset_id": 775235,
+      "artist": "Akiyama Uni",
+      "title": "Odoru Mizushibuki",
+      "creator": "-Luminate",
+      "source": "東方緋想天 〜 Scarlet Weather Rhapsody",
+      "status": "graveyard",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-11-19T03:46:51Z"
+    },
+    {
       "beatmapset_id": 776165,
       "artist": "Demetori",
       "title": "Kourou ~ Eastern Dream",
@@ -3285,6 +3504,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2018-09-29T06:28:31Z"
+    },
+    {
+      "beatmapset_id": 776471,
+      "artist": "CielArc",
+      "title": "Stargazer",
+      "creator": "ponpokorin",
+      "source": "東方天空璋 〜 Hidden Star in Four Seasons",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "discovery_query:source=東方天空璋",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-09-21T04:26:54Z"
     },
     {
       "beatmapset_id": 777139,
@@ -3403,6 +3644,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-02-26T10:04:50Z"
+    },
+    {
+      "beatmapset_id": 779513,
+      "artist": "FELT",
+      "title": "crescent moon",
+      "creator": "Ireiisu",
+      "source": "東方心綺樓 ～ Hopeless Masquerade.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-05-11T15:26:30Z"
     },
     {
       "beatmapset_id": 780588,
@@ -3834,6 +4096,27 @@
       "osu_last_updated": "2018-11-03T04:41:03Z"
     },
     {
+      "beatmapset_id": 788507,
+      "artist": "EastNewSound",
+      "title": "You're the Love of My Life",
+      "creator": "RioAl",
+      "source": "Touhou Kishinjou Shining Needle Castle~ Double Dealing Character (東方輝針城)～ Double Dealing Character",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-02-04T15:40:17Z"
+    },
+    {
       "beatmapset_id": 790310,
       "artist": "Ayakura Mei",
       "title": "Close to you (and me)",
@@ -3992,6 +4275,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-03-21T02:30:00Z"
+    },
+    {
+      "beatmapset_id": 795239,
+      "artist": "motoko",
+      "title": "Tears in dreams",
+      "creator": "gunnjou",
+      "source": "東方神霊廟",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-06-11T12:32:16Z"
     },
     {
       "beatmapset_id": 795396,

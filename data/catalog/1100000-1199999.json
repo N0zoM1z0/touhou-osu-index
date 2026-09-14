@@ -98,6 +98,27 @@
       "osu_last_updated": "2020-05-15T21:09:09Z"
     },
     {
+      "beatmapset_id": 1100519,
+      "artist": "Ayaponzu *",
+      "title": "Watashi Kenshi",
+      "creator": "Ireiisu",
+      "source": "東方妖々夢　～ Ancient Temple",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-02-02T19:37:40Z"
+    },
+    {
       "beatmapset_id": 1100988,
       "artist": "REDALiCE & aran",
       "title": "Sweet Requiem",
@@ -773,6 +794,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1114271,
+      "artist": "Risutaru",
+      "title": "Broken Moon",
+      "creator": "chocolette",
+      "source": "东方萃梦想　～ Immaterial and Missing Power.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-02-23T13:49:44Z"
+    },
+    {
       "beatmapset_id": 1116132,
       "artist": "ARForest",
       "title": "It's alright (riunosk) [8.]",
@@ -960,6 +1002,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-02-26T16:46:15Z"
+    },
+    {
+      "beatmapset_id": 1118935,
+      "artist": "ZUN",
+      "title": "Tonight Stars an Easygoing Egoist(Live ver.) ~ Egoistic Flower",
+      "creator": "amddma",
+      "source": "東方憑依華(とうほうひょういばな) ~ Antinomy of Common Flowers.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Antinomy of Common Flowers",
+        "discovery_query:source=東方憑依華",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-04-25T11:22:22Z"
     },
     {
       "beatmapset_id": 1119057,
@@ -2085,6 +2149,27 @@
       "osu_last_updated": "2024-06-04T00:24:44Z"
     },
     {
+      "beatmapset_id": 1151043,
+      "artist": "ZUN",
+      "title": "Kobito of the Shining Needle ~ Little Princess",
+      "creator": "-Tynamo",
+      "source": "东方辉针城 ～ Double Dealing Character",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-04-18T04:40:12Z"
+    },
+    {
       "beatmapset_id": 1151507,
       "artist": "senya",
       "title": "Hitorishizuka",
@@ -2278,6 +2363,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-05-28T15:18:20Z"
+    },
+    {
+      "beatmapset_id": 1155214,
+      "artist": "Alstroemeria Records",
+      "title": "WORLD THOERY",
+      "creator": "-Ran Yakumo-",
+      "source": "東方夢時空 ~ the Phantasmagoria of Dim.Dream.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-04-23T19:09:18Z"
     },
     {
       "beatmapset_id": 1155827,
@@ -2838,6 +2945,27 @@
       "osu_last_updated": "2020-11-16T23:42:08Z"
     },
     {
+      "beatmapset_id": 1166349,
+      "artist": "Misato",
+      "title": "Paranoid Lost",
+      "creator": "Jakis Ciul",
+      "source": "Touhou, 東方風神録　～ Mountain of Faith.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-05-10T17:34:07Z"
+    },
+    {
       "beatmapset_id": 1166609,
       "artist": "UNDEAD CORPORATION",
       "title": "Sunny Miracle no Benigiri Ihen",
@@ -3212,6 +3340,27 @@
       "osu_last_updated": "2020-05-27T19:38:14Z"
     },
     {
+      "beatmapset_id": 1179553,
+      "artist": "Diao ye zong feat. Meramipop",
+      "title": "Karakurenai no Kage",
+      "creator": "ChaosGamer10",
+      "source": "東方非想天則　～ 超弩級ギニョルの謎を追え.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方非想天則",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-05-26T23:54:42Z"
+    },
+    {
       "beatmapset_id": 1179555,
       "artist": "FELT",
       "title": "COLORS",
@@ -3529,6 +3678,28 @@
       "osu_last_updated": "2020-06-08T23:14:14Z"
     },
     {
+      "beatmapset_id": 1185615,
+      "artist": "Kurenainagi Tabibito",
+      "title": "Beloved Tomboyish Girl",
+      "creator": "Icicle Tokamak",
+      "source": "東方紅魔郷　～ Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-12-24T15:46:31Z"
+    },
+    {
       "beatmapset_id": 1186860,
       "artist": "COOL&CREATE",
       "title": "Knight of Nights",
@@ -3738,6 +3909,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2021-06-09T10:25:50Z"
+    },
+    {
+      "beatmapset_id": 1190942,
+      "artist": "FELT",
+      "title": "Vagueness & JOURNEY",
+      "creator": "FelixNy",
+      "source": "東方緋想天〜Scarlet Weather Rhapsody",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-11-16T06:49:53Z"
     },
     {
       "beatmapset_id": 1193295,

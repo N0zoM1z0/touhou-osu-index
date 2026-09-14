@@ -158,6 +158,27 @@
       "osu_last_updated": "2026-03-03T03:47:56Z"
     },
     {
+      "beatmapset_id": 2504831,
+      "artist": "Toby Fox x ZUN",
+      "title": "Necrolovania",
+      "creator": "Syalis",
+      "source": "UNDERTALE x 東方妖々夢　～ Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-02-08T04:11:21Z"
+    },
+    {
       "beatmapset_id": 2505119,
       "artist": "ZUN",
       "title": "Youyou Bakko ~ Who done it!",
@@ -1544,6 +1565,28 @@
       "osu_last_updated": "2026-04-28T00:27:01Z"
     },
     {
+      "beatmapset_id": 2536084,
+      "artist": "Amateras Records",
+      "title": "Reverside Relief",
+      "creator": "huu",
+      "source": "東方鬼形獣　～ Wily Beast and Weakest Creature.",
+      "status": "pending",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-13T10:39:28Z"
+    },
+    {
       "beatmapset_id": 2536200,
       "artist": "Demetori",
       "title": "Crazy Backup Dancers ~ Orgy of the Dead",
@@ -1994,6 +2037,49 @@
       "osu_last_updated": "2026-08-04T08:17:55Z"
     },
     {
+      "beatmapset_id": 2547719,
+      "artist": "A-ONE",
+      "title": "Rain Dance",
+      "creator": "Raven Bailiff",
+      "source": "TOHO EUROBEAT VOL.7 MOUNTAIN OF FAITH",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-03T04:19:01Z"
+    },
+    {
+      "beatmapset_id": 2548689,
+      "artist": "GLS",
+      "title": "Flawless Wings of Yatagarasu",
+      "creator": "Gato-Miau",
+      "source": "東方地霊殿 〜 Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-05-04T03:08:19Z"
+    },
+    {
       "beatmapset_id": 2549679,
       "artist": "Halozy",
       "title": "143",
@@ -2414,6 +2500,49 @@
       "osu_last_updated": "2026-06-29T11:56:43Z"
     },
     {
+      "beatmapset_id": 2559424,
+      "artist": "Steiner",
+      "title": "cosmicalism",
+      "creator": "SoSickSoSad",
+      "source": "東方星蓮船 〜 Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-05-26T11:04:04Z"
+    },
+    {
+      "beatmapset_id": 2560545,
+      "artist": "LeaF",
+      "title": "Armageddon",
+      "creator": "Hakos-Baelz",
+      "source": "東方非想天則~ 超弩級ギニョルの謎を追え",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方非想天則",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-05-27T21:55:07Z"
+    },
+    {
       "beatmapset_id": 2561367,
       "artist": "A-One feat. Shihori",
       "title": "Bamboo Dance",
@@ -2721,6 +2850,28 @@
       "osu_last_updated": "2026-08-14T10:32:44Z"
     },
     {
+      "beatmapset_id": 2570941,
+      "artist": "Xi",
+      "title": "Rokujuu-nen Me no Shinsoku Saiban ~ Rapidity is a justice",
+      "creator": "rlsc1109",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-31T16:41:52Z"
+    },
+    {
       "beatmapset_id": 2571607,
       "artist": "ShinRa-Bansho",
       "title": "Dynamite",
@@ -2800,6 +2951,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2026-06-28T06:33:16Z"
+    },
+    {
+      "beatmapset_id": 2574305,
+      "artist": "FELT",
+      "title": "Puppet in the Dark(Part2:Buried Away)",
+      "creator": "ARCTTO",
+      "source": "東方神霊廟  ～ Ten Desires.",
+      "status": "wip",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-22T00:54:13Z"
     },
     {
       "beatmapset_id": 2575641,
@@ -3255,6 +3428,28 @@
       "osu_last_updated": "2026-08-17T20:17:01Z"
     },
     {
+      "beatmapset_id": 2590124,
+      "artist": "IOSYS",
+      "title": "Endless Tewi-me-park",
+      "creator": "SeptmersVent",
+      "source": "東方花映塚(东方花映冢) ~ Phantasmagoria of Flower View",
+      "status": "pending",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-23T05:47:09Z"
+    },
+    {
       "beatmapset_id": 2591405,
       "artist": "Demetori",
       "title": "Koyoi wa Hyouitsu na Egoist ~ Ego, Schizoid, Beat.",
@@ -3282,6 +3477,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2026-08-30T14:55:34Z"
+    },
+    {
+      "beatmapset_id": 2591962,
+      "artist": "ryu5150",
+      "title": "Louder than steel",
+      "creator": "Gsuncraft",
+      "source": "東方夢時空　～ Phantasmagoria of Dim.Dream",
+      "status": "pending",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-08T06:07:51Z"
     },
     {
       "beatmapset_id": 2593229,
@@ -3591,6 +3808,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2026-08-14T14:34:56Z"
+    },
+    {
+      "beatmapset_id": 2598918,
+      "artist": "Shibayan feat. 3L",
+      "title": "MyonMyonMyonMyonMyonMyon! (Cut Ver.)",
+      "creator": "SadEgg",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "pending",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-13T16:13:28Z"
     },
     {
       "beatmapset_id": 2599607,

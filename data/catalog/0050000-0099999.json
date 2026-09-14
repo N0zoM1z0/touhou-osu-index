@@ -371,6 +371,27 @@
       "osu_last_updated": "2012-09-04T14:42:16Z"
     },
     {
+      "beatmapset_id": 52683,
+      "artist": "Zun",
+      "title": "Lunar Clock  Luna Dial",
+      "creator": "Miky200",
+      "source": "Touhou 7.5 Immaterial and Missing Power",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2012-06-14T20:15:57Z"
+    },
+    {
       "beatmapset_id": 52878,
       "artist": "NH22",
       "title": "Corrosion",
@@ -967,6 +988,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2012-10-07T01:51:28Z"
+    },
+    {
+      "beatmapset_id": 57005,
+      "artist": "Dobu Usagi",
+      "title": "Shikai Henai Kyoku",
+      "creator": "koishiji",
+      "source": "[Touhou 13] Ten Desires",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2012-08-27T04:00:01Z"
     },
     {
       "beatmapset_id": 57126,
@@ -3046,6 +3088,27 @@
       "osu_last_updated": "2014-11-04T16:56:31Z"
     },
     {
+      "beatmapset_id": 85106,
+      "artist": "Merami",
+      "title": "~ Lost Place",
+      "creator": "Maya-sama",
+      "source": "東方地霊殿 ~ Touhou Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2013-05-18T12:16:37Z"
+    },
+    {
       "beatmapset_id": 85328,
       "artist": "_yoc. feat. Matsumoto Sara",
       "title": "Crescendo",
@@ -3173,6 +3236,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2013-05-16T12:38:25Z"
+    },
+    {
+      "beatmapset_id": 87020,
+      "artist": "ZUN",
+      "title": "Magus Night",
+      "creator": "DJNightmare",
+      "source": "Touhou 12.8 Great Fairy Wars",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Great Fairy Wars",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2013-04-07T13:50:34Z"
     },
     {
       "beatmapset_id": 87170,

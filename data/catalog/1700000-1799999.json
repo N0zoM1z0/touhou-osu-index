@@ -1217,6 +1217,50 @@
       "osu_last_updated": "2022-07-03T23:51:16Z"
     },
     {
+      "beatmapset_id": 1735382,
+      "artist": "ZUN",
+      "title": "Eternal Paradise",
+      "creator": "guest-0393",
+      "source": "東方怪綺談 〜 Mystic Square",
+      "status": "graveyard",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "discovery_query:source=東方怪綺談",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-08-25T10:02:20Z"
+    },
+    {
+      "beatmapset_id": 1735515,
+      "artist": "ZUN",
+      "title": "The Princess Who Slays Dragon Kings",
+      "creator": "Phobek",
+      "source": "東方紅龍洞　～ Unconnected Marketeers.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unconnected Marketeers",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-06-14T02:36:41Z"
+    },
+    {
       "beatmapset_id": 1736124,
       "artist": "ZUN",
       "title": "Maho no kasajizo ([Crz]hinako1804) [Namoamituofo]",
@@ -2689,6 +2733,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2026-08-27T12:34:27Z"
+    },
+    {
+      "beatmapset_id": 1797734,
+      "artist": "Eternal Melody",
+      "title": "Scarlet Serenade",
+      "creator": "JakobDerNoob",
+      "source": "東方Project ~ Embodiment of Scarlet Devil",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-07-01T22:03:57Z"
     },
     {
       "beatmapset_id": 1799071,

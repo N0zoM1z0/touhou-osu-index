@@ -2,6 +2,28 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 2201245,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Adore Your Pain",
+      "creator": "Koyomii",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-13T22:50:54Z"
+    },
+    {
       "beatmapset_id": 2201834,
       "artist": "COOL&CREATE ft. beatMARIO",
       "title": "Rapid Ensemble",
@@ -925,6 +947,27 @@
       "osu_last_updated": "2024-09-10T10:58:38Z"
     },
     {
+      "beatmapset_id": 2229234,
+      "artist": "MONO",
+      "title": "Fantasmagoria",
+      "creator": "Jhown",
+      "source": "BMS / 東方妖々夢　～ Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2024-08-10T04:12:54Z"
+    },
+    {
       "beatmapset_id": 2229728,
       "artist": "RD-Sounds feat. Meramipop / nayuta",
       "title": "Shiten",
@@ -1471,6 +1514,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2024-10-17T11:40:06Z"
+    },
+    {
+      "beatmapset_id": 2247858,
+      "artist": "LA KIA",
+      "title": "Ruten no Michi",
+      "creator": "Ryogi",
+      "source": "东方神灵庙　～ Ten Desires.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2024-09-11T17:55:35Z"
     },
     {
       "beatmapset_id": 2248177,
@@ -2070,6 +2134,27 @@
       "osu_last_updated": "2024-10-04T20:11:00Z"
     },
     {
+      "beatmapset_id": 2260643,
+      "artist": "Adust Rain",
+      "title": "Last Blast",
+      "creator": "NirtroR",
+      "source": "東方風神録 神さびた古戦場～Suwa Foughten Field",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2024-10-06T14:34:17Z"
+    },
+    {
       "beatmapset_id": 2260896,
       "artist": "8686m",
       "title": "Akogare",
@@ -2184,6 +2269,28 @@
       "osu_last_updated": "2024-10-13T09:29:44Z"
     },
     {
+      "beatmapset_id": 2264583,
+      "artist": "ShinRa-Bansho",
+      "title": "The Maid's Heart is a Puppet",
+      "creator": "mirac1e_xf",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "pending",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-11T00:24:12Z"
+    },
+    {
       "beatmapset_id": 2264599,
       "artist": "Para Dot.",
       "title": "Night of Knights (Para Dot. Remix)",
@@ -2209,6 +2316,50 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-01-07T04:51:52Z"
+    },
+    {
+      "beatmapset_id": 2265550,
+      "artist": "ZUN",
+      "title": "Taketori Hishou ~ Lunatic Princess",
+      "creator": "Jhown",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2024-10-16T03:49:02Z"
+    },
+    {
+      "beatmapset_id": 2266172,
+      "artist": "ZUN",
+      "title": "The Primal Scene of Japan the Girl Saw",
+      "creator": "knibblet",
+      "source": "Touhou 19 - Unfinished Dream of All Living Ghost (東方獣王園　〜 Unfinished Dream of All Living Ghost)",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unfinished Dream of All Living Ghost",
+        "discovery_query:source=東方獣王園",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-10-05T17:36:58Z"
     },
     {
       "beatmapset_id": 2266294,
@@ -2309,6 +2460,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-07",
       "osu_last_updated": "2026-05-04T19:31:31Z"
+    },
+    {
+      "beatmapset_id": 2267230,
+      "artist": "TaNaBaTa",
+      "title": "Ougon Kouro",
+      "creator": "Silent1737",
+      "source": "Touhou Seirensen ~ Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-12-25T20:20:45Z"
     },
     {
       "beatmapset_id": 2267353,
@@ -2832,6 +3004,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-11-09T09:13:04Z"
+    },
+    {
+      "beatmapset_id": 2276262,
+      "artist": "Xyris",
+      "title": "Dystopian Exodus of the Magical Girls",
+      "creator": "KomoIndo",
+      "source": "东方红魔乡　～ the Embodiment of Scarlet Devil",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-01-01T05:02:11Z"
     },
     {
       "beatmapset_id": 2276618,
@@ -3581,6 +3774,28 @@
       "osu_last_updated": "2025-04-14T17:50:31Z"
     },
     {
+      "beatmapset_id": 2289072,
+      "artist": "Paradot.",
+      "title": "ARTIFACTS",
+      "creator": "llby",
+      "source": "東方鬼形獣 ～Wily Beast and Weakest Creature.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "discovery_query:source=東方鬼形獣",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-01-15T13:43:45Z"
+    },
+    {
       "beatmapset_id": 2289073,
       "artist": "RichaadEB & AHmusic",
       "title": "Reach for the Moon, Immortal Smoke",
@@ -3828,6 +4043,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2024-12-15T14:32:16Z"
+    },
+    {
+      "beatmapset_id": 2293760,
+      "artist": "ZUN",
+      "title": "Love-coloured Magic",
+      "creator": "Seabird",
+      "source": "Touhou 02: The Story of Eastern Wonderland",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Story of Eastern Wonderland",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-04-10T16:43:24Z"
     },
     {
       "beatmapset_id": 2294584,

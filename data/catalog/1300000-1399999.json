@@ -468,6 +468,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1310130,
+      "artist": "ZUN",
+      "title": "Jelly stone",
+      "creator": "1971489657",
+      "source": "東方鬼形獣",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方鬼形獣",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2020-11-27T11:41:43Z"
+    },
+    {
       "beatmapset_id": 1311414,
       "artist": "Xe",
       "title": "Satori Maiden ~ 3rd Eye (Zestiri9) [Satire Deity 0.95x]",
@@ -962,6 +983,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2024-01-21T12:55:58Z"
+    },
+    {
+      "beatmapset_id": 1326259,
+      "artist": "sun3",
+      "title": "Perfect Cherry Storm",
+      "creator": "Blue_Potion",
+      "source": "東方妖々梦 ～ Perfect Cherry Blossom.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-01-15T15:29:08Z"
     },
     {
       "beatmapset_id": 1326567,
@@ -1899,6 +1941,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2023-03-21T16:11:18Z"
+    },
+    {
+      "beatmapset_id": 1361096,
+      "artist": "ZUN",
+      "title": "Yume Shoushitsu ~ Lost Dream",
+      "creator": "YukiMoriya",
+      "source": "Touhou Yumekijuu ~ the Phantasmagoria of Dim.Dream",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-01-30T04:04:36Z"
     },
     {
       "beatmapset_id": 1361362,

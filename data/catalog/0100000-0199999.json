@@ -192,6 +192,27 @@
       "osu_last_updated": "2013-08-23T23:50:04Z"
     },
     {
+      "beatmapset_id": 102897,
+      "artist": "Twilight Frontier",
+      "title": "Shoutoku Legend ~ True Administrator",
+      "creator": "Pulongong",
+      "source": "Hopeless Masquerade",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2013-07-05T06:47:56Z"
+    },
+    {
       "beatmapset_id": 103003,
       "artist": "Shibayan feat. yana",
       "title": "Fall in the Dark",
@@ -502,6 +523,27 @@
       "osu_last_updated": "2013-08-01T07:55:47Z"
     },
     {
+      "beatmapset_id": 108631,
+      "artist": "ZUN",
+      "title": "The Capital City of Flowers in the Sky",
+      "creator": "PROGUY",
+      "source": "東方妖々夢",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2013-08-03T01:44:47Z"
+    },
+    {
       "beatmapset_id": 108749,
       "artist": "ShibayanRecords feat. yana",
       "title": "Fall in the Dark",
@@ -683,6 +725,27 @@
       "osu_last_updated": "2013-12-08T09:38:05Z"
     },
     {
+      "beatmapset_id": 111534,
+      "artist": "ZUN",
+      "title": "Hiroari Shoots a Strange Bird ~ Till When?",
+      "creator": "T4KPhantom",
+      "source": "Touhou Scarlet Weather Rhapsody",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2013-08-17T06:48:46Z"
+    },
+    {
       "beatmapset_id": 111611,
       "artist": "ZUN",
       "title": "Kobito of the Shining Needle ~ Little Princess",
@@ -802,6 +865,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2014-08-09T05:29:25Z"
+    },
+    {
+      "beatmapset_id": 113291,
+      "artist": "Tasogare furontia",
+      "title": "Touhou hisouten",
+      "creator": "Elinia",
+      "source": "全人類ノ天楽録 ～東方緋想天 OR",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方緋想天",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2016-01-20T11:41:03Z"
     },
     {
       "beatmapset_id": 113458,
@@ -1571,6 +1655,27 @@
       "osu_last_updated": "2013-12-13T03:49:51Z"
     },
     {
+      "beatmapset_id": 124069,
+      "artist": "ZUN",
+      "title": "Loss Emotion",
+      "creator": "SelisiPhoenix",
+      "source": "Touhou Shinkirou ～ Hopeless Masquerade",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2013-11-28T16:07:50Z"
+    },
+    {
       "beatmapset_id": 124556,
       "artist": "Runole",
       "title": "The OTOMAD Remix",
@@ -1589,6 +1694,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2022-10-18T15:56:31Z"
+    },
+    {
+      "beatmapset_id": 125216,
+      "artist": "ZUN",
+      "title": "Mysterious Exorcism Rod",
+      "creator": "Pulongong",
+      "source": "Double Dealing Character",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2013-10-29T15:22:06Z"
     },
     {
       "beatmapset_id": 125758,
@@ -1968,6 +2094,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 131502,
+      "artist": "ZUN",
+      "title": "Voyage 1970",
+      "creator": "duswl1599",
+      "source": "東方永夜秒 ~ Imperishable Night",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2014-11-09T00:41:06Z"
+    },
+    {
       "beatmapset_id": 131628,
       "artist": "LeaF",
       "title": "Arianrhod",
@@ -2161,6 +2308,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2014-05-21T17:20:15Z"
+    },
+    {
+      "beatmapset_id": 136085,
+      "artist": "Masayoshi Minoshima ft. Nico Nico Chorus",
+      "title": "Bad Apple!! feat. nomico (Short ver.)",
+      "creator": "AcidSnow1",
+      "source": "TH4 Touhou Gensoukyou ~ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2013-12-23T04:38:23Z"
     },
     {
       "beatmapset_id": 138420,
@@ -2637,6 +2805,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2014-01-29T10:53:09Z"
+    },
+    {
+      "beatmapset_id": 144691,
+      "artist": "maritumix",
+      "title": "Defiance",
+      "creator": "index22",
+      "source": "東方輝針城",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方輝針城",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2014-01-23T12:02:12Z"
     },
     {
       "beatmapset_id": 145885,
@@ -3193,6 +3382,27 @@
       "osu_last_updated": "2021-07-18T01:06:23Z"
     },
     {
+      "beatmapset_id": 160133,
+      "artist": "SOUND HOLIC/Nana Takahashi",
+      "title": "Dancing like Nirvana",
+      "creator": "lukia3486",
+      "source": "東方星蓮船",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方星蓮船",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2014-03-25T11:52:13Z"
+    },
+    {
       "beatmapset_id": 160916,
       "artist": "Demetori",
       "title": "Higan Retour ~ View of The River Styx",
@@ -3281,6 +3491,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2014-04-04T20:25:45Z"
+    },
+    {
+      "beatmapset_id": 163801,
+      "artist": "ZUN",
+      "title": "Flight of the Bamboo Cutter ~ Lunatic Princess",
+      "creator": "Kaguya Hourain",
+      "source": "Touhou 8: Imperishable Night",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2014-04-14T11:00:56Z"
     },
     {
       "beatmapset_id": 164091,
@@ -4281,6 +4512,27 @@
       "osu_last_updated": "2014-08-26T19:16:14Z"
     },
     {
+      "beatmapset_id": 184638,
+      "artist": "ZUN",
+      "title": "Cheat Against Impossible Danmaku",
+      "creator": "BoxOfPuppets",
+      "source": "Danmaku Amanojaku ~ Impossible Spell Card",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Impossible Spell Card",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2014-06-17T23:26:42Z"
+    },
+    {
       "beatmapset_id": 185250,
       "artist": "ALiCE'S EMOTiON",
       "title": "Dark Flight Dreamer",
@@ -4502,6 +4754,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-03-06T21:38:12Z"
+    },
+    {
+      "beatmapset_id": 192689,
+      "artist": "CROW'SCLAW",
+      "title": "Strawberry Crisis",
+      "creator": "smoogipooo",
+      "source": "東方夢時空",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2014-07-14T16:20:06Z"
     },
     {
       "beatmapset_id": 192896,

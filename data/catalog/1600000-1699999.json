@@ -156,6 +156,28 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1608373,
+      "artist": "Hosen",
+      "title": "UM Chimata's Theme - Where is That Bustling Marketplace Now",
+      "creator": "Espurresso",
+      "source": "東方虹龍洞　〜 Unconnected Marketeers.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unconnected Marketeers",
+        "discovery_query:source=東方虹龍洞",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-10-24T02:29:39Z"
+    },
+    {
       "beatmapset_id": 1609956,
       "artist": "senya",
       "title": "Kasoku Suru Koi wa Dare mo Tomerarenai",
@@ -433,6 +455,27 @@
       "osu_last_updated": "2021-11-08T23:28:40Z"
     },
     {
+      "beatmapset_id": 1619078,
+      "artist": "Nachi",
+      "title": "Against, Perfect Cherry Blossom",
+      "creator": "DarkCrypt",
+      "source": "Alstroemeria Records, 東方妖々夢",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-12-12T23:02:45Z"
+    },
+    {
       "beatmapset_id": 1619719,
       "artist": "Naukorin",
       "title": "Luv of Magical Synth (-Deepdive-) [Adoration]",
@@ -479,6 +522,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-03-29T00:57:52Z"
+    },
+    {
+      "beatmapset_id": 1620298,
+      "artist": "Marcia",
+      "title": "Amaku Surudoi Toge",
+      "creator": "Sanmai",
+      "source": "東方虹龍洞",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方虹龍洞",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-01-25T06:46:51Z"
     },
     {
       "beatmapset_id": 1621093,
@@ -597,6 +661,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-11-26T19:44:16Z"
+    },
+    {
+      "beatmapset_id": 1625096,
+      "artist": "Akatsuki Records",
+      "title": "Reverse Trigger",
+      "creator": "Rematyar",
+      "source": "弾幕アマノジャク　～ Impossible Spell Card.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Impossible Spell Card",
+        "discovery_query:source=弾幕アマノジャク",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-12-23T12:58:51Z"
     },
     {
       "beatmapset_id": 1626057,
@@ -811,6 +897,28 @@
       "osu_last_updated": "2022-06-16T05:00:48Z"
     },
     {
+      "beatmapset_id": 1631297,
+      "artist": "ZUN",
+      "title": "Magus Night",
+      "creator": "ayel",
+      "source": "妖精大戦争 ～ Great Fairy Wars",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Great Fairy Wars",
+        "discovery_query:source=妖精大戦争",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-12-08T02:53:34Z"
+    },
+    {
       "beatmapset_id": 1631702,
       "artist": "Morimori Atsushi",
       "title": "Mangetsu no Chikurin (MRM REMIX)",
@@ -896,6 +1004,49 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1635161,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Wheel of Doom",
+      "creator": "Yooyooko",
+      "source": "東方紺珠伝 〜 Legacy of Lunatic Kingdom.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-11-24T09:10:07Z"
+    },
+    {
+      "beatmapset_id": 1635287,
+      "artist": "katikatiyama",
+      "title": "Yuureisen No Uta",
+      "creator": "Hitomi_Konoe",
+      "source": "東方Project 〜 Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-12-02T09:54:05Z"
     },
     {
       "beatmapset_id": 1635625,
@@ -1685,6 +1836,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1659346,
+      "artist": "mokemoke",
+      "title": "Forbidden Ideal",
+      "creator": "Gamania",
+      "source": "東方怪綺談 Mystic Square",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-12-26T06:22:20Z"
+    },
+    {
       "beatmapset_id": 1660916,
       "artist": "Marcia",
       "title": "Ashita Chiru Unmei Nara (IA daisuki) [LuNatic]",
@@ -2168,6 +2340,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2022-01-12T16:42:45Z"
+    },
+    {
+      "beatmapset_id": 1673409,
+      "artist": "nayuta",
+      "title": "Stray Star",
+      "creator": "YuEast 2018",
+      "source": "東方怪綺談　～ Mystic Square.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "discovery_query:source=東方怪綺談",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-01-13T10:04:34Z"
     },
     {
       "beatmapset_id": 1674037,
@@ -2786,6 +2980,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2022-02-04T16:22:37Z"
+    },
+    {
+      "beatmapset_id": 1691302,
+      "artist": "BUTAOTOME",
+      "title": "Voice of the Distant Sky",
+      "creator": "Dark Mitatsh",
+      "source": "ダブルスポイラー　～ 東方文花帖",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=ダブルスポイラー",
+        "discovery_query:source=東方文花帖",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-02-08T00:58:48Z"
     },
     {
       "beatmapset_id": 1693521,

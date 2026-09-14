@@ -2,6 +2,27 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 2100719,
+      "artist": "Vivienne",
+      "title": "Different Kind of Love",
+      "creator": "nnEMz",
+      "source": "東方風神録より \"明日ハレの日、ケの昨日\"",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-12-09T04:38:49Z"
+    },
+    {
       "beatmapset_id": 2101141,
       "artist": ".new label",
       "title": "run dev -- -u",
@@ -162,6 +183,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-12-18T00:09:52Z"
+    },
+    {
+      "beatmapset_id": 2105888,
+      "artist": "Akiyama Uni",
+      "title": "Drunk as i like",
+      "creator": "nnEMz",
+      "source": "东方绯想天 ～ Scarlet Weather Rhapsody.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-12-22T11:24:10Z"
     },
     {
       "beatmapset_id": 2106026,
@@ -2162,6 +2204,27 @@
       "osu_last_updated": "2025-06-03T11:24:37Z"
     },
     {
+      "beatmapset_id": 2148417,
+      "artist": "Hanatan",
+      "title": "Eternal Party",
+      "creator": "Elaina Chan",
+      "source": "TOHO EUROBEAT VOL 11 HIGHLY RESPONSIVE TO PRAYERS",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Highly Responsive to Prayers",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2024-03-10T12:23:33Z"
+    },
+    {
       "beatmapset_id": 2148434,
       "artist": "Halozy",
       "title": "Tanjoubi no Kodomotachi",
@@ -2594,6 +2657,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-03-28T19:52:16Z"
+    },
+    {
+      "beatmapset_id": 2156334,
+      "artist": "Para Dot",
+      "title": "Myriad texture",
+      "creator": "H4chyk0",
+      "source": "东方星莲船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2024-07-14T03:41:23Z"
     },
     {
       "beatmapset_id": 2156450,

@@ -363,6 +363,27 @@
       "osu_last_updated": "2016-04-27T15:06:06Z"
     },
     {
+      "beatmapset_id": 408710,
+      "artist": "3L",
+      "title": "The Rise and Fall",
+      "creator": "as22554971as",
+      "source": "Touhou 12 - Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2016-01-25T11:05:02Z"
+    },
+    {
       "beatmapset_id": 408861,
       "artist": "Demetori",
       "title": "Kagayaku Hari no Kobito-zoku ~ Counter-Attack of the Weak",
@@ -483,6 +504,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2016-06-01T18:08:15Z"
+    },
+    {
+      "beatmapset_id": 412299,
+      "artist": "FELT",
+      "title": "inside",
+      "creator": "- Milhofo -",
+      "source": "東方文花帖　～ Shoot the Bullet",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Shoot the Bullet",
+        "discovery_query:source=東方文花帖",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-06-12T15:15:39Z"
     },
     {
       "beatmapset_id": 412460,
@@ -2135,6 +2178,27 @@
       "osu_last_updated": "2020-08-03T15:47:47Z"
     },
     {
+      "beatmapset_id": 454213,
+      "artist": "ZUN",
+      "title": "Demystify Feast",
+      "creator": "2vg",
+      "source": "東方萃夢想",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方萃夢想",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2016-05-12T05:27:24Z"
+    },
+    {
       "beatmapset_id": 454219,
       "artist": "Demetori",
       "title": "U.N. Owen wa kanojo nano ka? (puxtu) [Lunatic]",
@@ -3553,6 +3617,28 @@
       "osu_last_updated": "2016-08-01T13:48:05Z"
     },
     {
+      "beatmapset_id": 479282,
+      "artist": "Maika",
+      "title": "crescent moon",
+      "creator": "I am graduated",
+      "source": "東方心綺楼 ～ Hopeless Masquerade",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "discovery_query:source=東方心綺楼",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2017-11-02T09:59:56Z"
+    },
+    {
       "beatmapset_id": 479849,
       "artist": "FELT",
       "title": "crescent moon",
@@ -3741,6 +3827,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2016-07-26T00:49:25Z"
+    },
+    {
+      "beatmapset_id": 485971,
+      "artist": "Unlucky Morpheus",
+      "title": "Now, Until the Moment You Die",
+      "creator": "Lama Poluna",
+      "source": "東方靈異伝　〜 Highly Responsive to Prayers",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Highly Responsive to Prayers",
+        "discovery_query:source=東方靈異伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2016-07-23T16:50:22Z"
     },
     {
       "beatmapset_id": 485987,

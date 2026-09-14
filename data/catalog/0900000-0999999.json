@@ -724,6 +724,28 @@
       "osu_last_updated": "2019-03-21T10:22:55Z"
     },
     {
+      "beatmapset_id": 915960,
+      "artist": "IOSYS",
+      "title": "Club Ibuki in Break All",
+      "creator": "-Rmdy",
+      "source": "東方萃夢想～ Immaterial and Missing Power",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-01-24T17:41:50Z"
+    },
+    {
       "beatmapset_id": 916206,
       "artist": "NJK Record feat. 3L",
       "title": "Madoi no Tsuki / RAYTO MIX",
@@ -838,6 +860,28 @@
       "osu_last_updated": "2019-01-31T04:04:31Z"
     },
     {
+      "beatmapset_id": 918724,
+      "artist": "Rokugen Alice",
+      "title": "Kao no Nai Tsuki",
+      "creator": "AdveNt",
+      "source": "東方心綺楼 ～Hopeless Masquerade.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hopeless Masquerade",
+        "discovery_query:source=東方心綺楼",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-05-24T06:49:11Z"
+    },
+    {
       "beatmapset_id": 918900,
       "artist": "MisteryCircle",
       "title": "So What?",
@@ -903,6 +947,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-03-02T11:40:20Z"
+    },
+    {
+      "beatmapset_id": 919853,
+      "artist": "EUGEN/Scarlet",
+      "title": "Abaddon's 5th Chord",
+      "creator": "S T R",
+      "source": "東方紅魔郷～the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-03-03T16:11:05Z"
     },
     {
       "beatmapset_id": 920017,
@@ -1152,6 +1217,27 @@
       "osu_last_updated": "2019-11-13T02:33:31Z"
     },
     {
+      "beatmapset_id": 924396,
+      "artist": "Komiya Mao",
+      "title": "(can you) understand me?",
+      "creator": "Taeyang",
+      "source": "東方輝針城　? Double Dealing Character.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Dealing Character",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-02-10T14:09:21Z"
+    },
+    {
       "beatmapset_id": 924440,
       "artist": "Ryu-5150",
       "title": "Louder than steel",
@@ -1237,6 +1323,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 925849,
+      "artist": "ZUN",
+      "title": "Onbashira no Hakaba ~ Grave of Being",
+      "creator": "jashintonki",
+      "source": "東方風神録",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-02-16T10:19:15Z"
     },
     {
       "beatmapset_id": 926185,
@@ -1505,6 +1612,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 930662,
+      "artist": "Ryu-5150",
+      "title": "Louder Than Steel",
+      "creator": "trav",
+      "source": "東方夢時空　～ Pantasmagria of Dim.Dream",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-03-09T21:58:19Z"
     },
     {
       "beatmapset_id": 930754,
@@ -2263,6 +2391,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 945730,
+      "artist": "Ichiko",
+      "title": "Limmit",
+      "creator": "Kiseki no Sekai",
+      "source": "東方Project ～ Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-03-25T14:23:31Z"
+    },
+    {
       "beatmapset_id": 945848,
       "artist": "Masayoshi Minoshima",
       "title": "Bad Apple!! feat. nomico (Camellia's \"Bad Psy\" Remix)",
@@ -2432,6 +2581,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-04-19T13:22:16Z"
+    },
+    {
+      "beatmapset_id": 949326,
+      "artist": "Foreground Eclipse",
+      "title": "Vermillion Halo",
+      "creator": "Seni",
+      "source": "Touhou Kaeidzuka ~ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-04-12T01:47:14Z"
     },
     {
       "beatmapset_id": 950459,
@@ -2628,6 +2798,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-04-22T18:19:31Z"
+    },
+    {
+      "beatmapset_id": 955971,
+      "artist": "Unlucky Morpheus",
+      "title": "Fuujin Shoujo ~ God Of Guitar",
+      "creator": "Villdjack",
+      "source": "東方花映塚 〜 Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-04-15T01:07:17Z"
     },
     {
       "beatmapset_id": 956136,
@@ -3120,6 +3312,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-05-18T17:22:23Z"
+    },
+    {
+      "beatmapset_id": 970939,
+      "artist": "FELT",
+      "title": "Star Velocity",
+      "creator": "-AkamatsuKaede-",
+      "source": "東方幻想郷 〜 Lotus Land Story.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-04-10T01:33:02Z"
     },
     {
       "beatmapset_id": 971207,
@@ -4387,6 +4601,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-06-25T21:34:20Z"
+    },
+    {
+      "beatmapset_id": 993802,
+      "artist": "Hachimitsu-Lemon",
+      "title": "Disappearing Queen",
+      "creator": "pw384",
+      "source": "東方封魔録　～ the Story of Eastern Wonderland.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方封魔録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-08-29T06:34:34Z"
     },
     {
       "beatmapset_id": 994604,
