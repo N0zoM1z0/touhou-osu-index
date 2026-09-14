@@ -1203,13 +1203,14 @@
       "evidence": [
         "discovery_query:Halozy",
         "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
         "known_touhou_artist",
         "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-09-14",
       "osu_last_updated": "2016-08-28T12:37:17Z"
     },
     {
@@ -1902,13 +1903,14 @@
       "original_themes": [],
       "evidence": [
         "discovery_query:source=Imperishable Night",
+        "discovery_query:source=Touhou",
         "discovery_query:ZUN",
         "known_touhou_artist",
         "osu_source",
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-09-14",
       "osu_last_updated": "2016-10-27T02:23:23Z"
     },
     {
@@ -2847,13 +2849,14 @@
       "evidence": [
         "discovery_query:IOSYS",
         "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
         "discovery_query:東方",
         "known_touhou_artist",
         "osu_source",
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-09-14",
       "osu_last_updated": "2017-05-01T00:07:33Z"
     },
     {

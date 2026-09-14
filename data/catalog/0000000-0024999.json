@@ -1910,6 +1910,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
         "discovery_query:Touhou",
         "osucollector:1402",
         "osucollector:1405",
@@ -1917,7 +1918,7 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-17",
+      "last_checked": "2026-09-14",
       "osu_last_updated": "2009-09-08T14:53:23Z"
     },
     {
