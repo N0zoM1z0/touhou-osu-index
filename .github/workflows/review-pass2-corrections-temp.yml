@@ -69,22 +69,63 @@ jobs:
           git diff --check
           make check
           make build
-      - name: Deep Review corrected 250-row boundary
-        env:
-          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
-          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+      - name: Structural review corrected 250-row boundary
         run: |
           git fetch origin main
           BASE=origin/main \
-          MODE=all \
+          MODE=structural \
           SCOPE=added \
-          WORKERS=4 \
+          WORKERS=1 \
           AUDIT_DOC=docs/source-audit-2026-09-status-depth-wave2.md \
           EXPECTED_ADDITIONS=250 \
           FORBID_EXISTING_CHANGES=1 \
           REQUIRE_BASE_ANCESTOR=1 \
-          AUDIT_OUTPUT=/tmp/review-pass2-deep-review.json \
+          AUDIT_OUTPUT=/tmp/review-pass2-structural.json \
           make audit-pr
+      - name: Provenance review corrected 250-row boundary
+        run: |
+          python -m touhou_osu.pr_audit \
+            --base-ref origin/main \
+            --mode provenance \
+            --scope added \
+            --workers 4 \
+            --require-base-ancestor \
+            --output /tmp/review-pass2-provenance.json
+      - name: Slow live osu identity review for all 250 additions
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from touhou_osu.catalog import Catalog
+          from touhou_osu.pr_audit import catalog_diff, live_osu_audit, load_catalog_at, revision_context
+
+          repository = Path('.').resolve()
+          context = revision_context(repository, 'origin/main')
+          if not context.base_is_ancestor:
+              raise SystemExit('origin/main is not an ancestor of HEAD')
+          current = Catalog.load(repository / 'data/catalog')
+          base = load_catalog_at(repository, context.merge_base, Path('data/catalog'))
+          diff = catalog_diff(base, current)
+          if len(diff['added']) != 250 or diff['modified'] or diff['removed']:
+              raise SystemExit(f"unexpected semantic diff: {diff}")
+          report = live_osu_audit(
+              current,
+              diff,
+              scope='added',
+              workers=2,
+              public_interval=2.0,
+              rate_limit_backoff=60.0,
+          )
+          Path('/tmp/review-pass2-live.json').write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          if report['errors'] or report['failures'] or report['checked'] != 250:
+              raise SystemExit(1)
+          PY
       - name: Commit permanent corrections only
         env:
           BRANCH: work/status-depth-wave2-2026-09-14
