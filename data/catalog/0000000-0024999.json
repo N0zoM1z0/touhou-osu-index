@@ -1214,6 +1214,27 @@
       "osu_last_updated": "2009-07-01T21:29:54Z"
     },
     {
+      "beatmapset_id": 7066,
+      "artist": "ZUN",
+      "title": "Flandres scarlets theme",
+      "creator": "zwlda",
+      "source": "The embodiment of scarlet devil extra stage",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2009-05-20T23:25:42Z"
+    },
+    {
       "beatmapset_id": 7084,
       "artist": "Demetori",
       "title": "The Youkai Mountain ~ Mysterious Mountain",
@@ -1282,6 +1303,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2009-05-28T00:51:26Z"
+    },
+    {
+      "beatmapset_id": 7152,
+      "artist": "ZUN",
+      "title": "The Young Descendants of Tepes",
+      "creator": "HailBlazR",
+      "source": "Embodiment of Scarlet Devil",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2009-06-06T00:43:41Z"
     },
     {
       "beatmapset_id": 7158,
@@ -1663,6 +1705,27 @@
       "osu_last_updated": "2009-07-18T20:39:20Z"
     },
     {
+      "beatmapset_id": 7913,
+      "artist": "ZUN",
+      "title": "Faith is for the Transient People",
+      "creator": "Diokatsu",
+      "source": "Touhou 10: Mountain of Faith",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2009-07-12T04:48:43Z"
+    },
+    {
       "beatmapset_id": 7932,
       "artist": "IOSYS",
       "title": "Border of Extacy",
@@ -1969,6 +2032,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-17",
       "osu_last_updated": "2009-12-05T04:08:29Z"
+    },
+    {
+      "beatmapset_id": 8732,
+      "artist": "ZUN",
+      "title": "Heian Alien",
+      "creator": "Daiyousei",
+      "source": "Touhou Project 12 - Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-04-26T13:03:20Z"
     },
     {
       "beatmapset_id": 8754,
@@ -2813,6 +2897,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2009-11-30T20:06:26Z"
+    },
+    {
+      "beatmapset_id": 10508,
+      "artist": "ZUN, Tasogare Frontier",
+      "title": "Faith is for the Transient People",
+      "creator": "haki_chan",
+      "source": "Touhou Hisoutensoku",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Touhou Hisoutensoku",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2009-11-10T13:52:39Z"
     },
     {
       "beatmapset_id": 10572,
@@ -3706,6 +3811,48 @@
       "osu_last_updated": "2010-02-07T09:14:26Z"
     },
     {
+      "beatmapset_id": 11996,
+      "artist": "SOUND HOLIC feat. 709sec.",
+      "title": "Draw the Line",
+      "creator": "SonicHog91",
+      "source": "Touhou Youyoumu ~ Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-04-18T23:42:04Z"
+    },
+    {
+      "beatmapset_id": 11998,
+      "artist": "Demetori",
+      "title": "Nuclear Fusion",
+      "creator": "Chompey",
+      "source": "Touhou 11 - Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-01-06T23:02:40Z"
+    },
+    {
       "beatmapset_id": 12011,
       "artist": "ZUN",
       "title": "Sleepless Night of the Eastern Country",
@@ -3775,6 +3922,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-10-09T01:37:32Z"
+    },
+    {
+      "beatmapset_id": 12125,
+      "artist": "ZUN",
+      "title": "Ball of the Witches",
+      "creator": "kiddly",
+      "source": "Immaterial and Missing Power",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-02-18T07:01:31Z"
     },
     {
       "beatmapset_id": 12150,
@@ -4188,6 +4356,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-02-13T16:24:32Z"
+    },
+    {
+      "beatmapset_id": 12584,
+      "artist": "Akiyama Uni (U2)",
+      "title": "The Doll Maker of Bucuresti",
+      "creator": "An64fan",
+      "source": "Scarlet Weather Rhapsody",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-04-02T23:26:26Z"
     },
     {
       "beatmapset_id": 12684,
@@ -4744,6 +4933,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-06-30T03:21:41Z"
+    },
+    {
+      "beatmapset_id": 13554,
+      "artist": "ZUN",
+      "title": "Mystic Oriental Dream ~ Ancient Temple",
+      "creator": "HailBlazR",
+      "source": "Perfect Cherry Blossom OST",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-03-02T03:59:03Z"
     },
     {
       "beatmapset_id": 13569,
@@ -7130,6 +7340,27 @@
       "osu_last_updated": "2011-01-28T02:37:33Z"
     },
     {
+      "beatmapset_id": 17242,
+      "artist": "ZUN",
+      "title": "Phantom Ensemble",
+      "creator": "synchroblst",
+      "source": "Touhou Youyoumu: Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-06-24T04:41:41Z"
+    },
+    {
       "beatmapset_id": 17274,
       "artist": "Amane",
       "title": "Eternal Fullmoon",
@@ -7708,6 +7939,27 @@
       "osu_last_updated": "2010-09-21T04:09:48Z"
     },
     {
+      "beatmapset_id": 18296,
+      "artist": "ZUN",
+      "title": "Shoujo Kisoukyoku ~ Dream Battle",
+      "creator": "Aakiha",
+      "source": "Touhou Eiyashou - Imperishable Night",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-09-28T09:05:57Z"
+    },
+    {
       "beatmapset_id": 18382,
       "artist": "IOSYS",
       "title": "Poinsettia",
@@ -7846,6 +8098,27 @@
       "osu_last_updated": "2010-08-22T22:10:22Z"
     },
     {
+      "beatmapset_id": 18913,
+      "artist": "ZUN McRolld'd",
+      "title": "Heian Alien ~ ShAdOwPoZo version",
+      "creator": "Macsos",
+      "source": "Touhou 12: Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-08-08T14:15:36Z"
+    },
+    {
       "beatmapset_id": 18958,
       "artist": "Mai Kotoge",
       "title": "Halo Glare",
@@ -7915,6 +8188,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-11-25T07:30:57Z"
+    },
+    {
+      "beatmapset_id": 19252,
+      "artist": "ZUN",
+      "title": "Grave of Being",
+      "creator": "Death2OO",
+      "source": "Mountain of Faith",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-08-14T15:51:24Z"
     },
     {
       "beatmapset_id": 19320,
@@ -8134,6 +8428,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-12-10T17:47:42Z"
+    },
+    {
+      "beatmapset_id": 19797,
+      "artist": "ZUN",
+      "title": "The Traditional Old Man and The Stylish Girl",
+      "creator": "EirinYagokoro",
+      "source": "Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-10-22T20:25:43Z"
     },
     {
       "beatmapset_id": 19826,
@@ -8619,6 +8934,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-03-13T11:57:31Z"
+    },
+    {
+      "beatmapset_id": 20835,
+      "artist": "ZUN / nazz-can",
+      "title": "Solar sect of mystic wisdom",
+      "creator": "Numerobide",
+      "source": "Touhou 11 : Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-10-01T15:16:18Z"
     },
     {
       "beatmapset_id": 20892,
@@ -9449,6 +9785,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2010-11-14T15:10:21Z"
+    },
+    {
+      "beatmapset_id": 22270,
+      "artist": "ZUN",
+      "title": "Satori Maiden ~ third eye",
+      "creator": "po1319",
+      "source": "th11 Chireiden ~ Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2010-11-14T05:43:53Z"
     },
     {
       "beatmapset_id": 22276,

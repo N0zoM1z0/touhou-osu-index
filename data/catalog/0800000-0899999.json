@@ -563,6 +563,28 @@
       "osu_last_updated": "2019-12-05T08:04:35Z"
     },
     {
+      "beatmapset_id": 813310,
+      "artist": "Unlucky Morpheus",
+      "title": "Makyou Daten Roku Sariel",
+      "creator": "Alchyr",
+      "source": "東方靈異伝　～ The Highly Responsive to Prayers",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Highly Responsive to Prayers",
+        "discovery_query:source=東方靈異伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-07-19T05:58:57Z"
+    },
+    {
       "beatmapset_id": 813890,
       "artist": "Diao Ye Zong feat. Meramipop",
       "title": "Saifu 'Kamiasobi no Uta'",
@@ -608,6 +630,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-10-04T22:30:04Z"
+    },
+    {
+      "beatmapset_id": 814460,
+      "artist": "Liz Triangle",
+      "title": "Immortal Philosophy",
+      "creator": "iloveyou4ever",
+      "source": "東方深秘録 ～ Urban Legend in Limbo, Ibaraki Kasen's Theme",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Urban Legend in Limbo",
+        "discovery_query:source=東方深秘録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-07-15T06:40:27Z"
     },
     {
       "beatmapset_id": 815683,
@@ -1208,6 +1252,27 @@
       "osu_last_updated": "2018-11-23T14:52:34Z"
     },
     {
+      "beatmapset_id": 829617,
+      "artist": "ZUN",
+      "title": "Secret God Matara ~ Hidden Star in All Seasons.",
+      "creator": "Chqrish",
+      "source": "Touhou 16: Hidden Star in Four Seasons",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-08-10T07:44:01Z"
+    },
+    {
       "beatmapset_id": 829940,
       "artist": "Demetori",
       "title": "Koyoi wa Hyouitsu na Egoist ~ Ego, Schizoid, Beat.",
@@ -1298,6 +1363,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-02-20T12:48:18Z"
+    },
+    {
+      "beatmapset_id": 831065,
+      "artist": "MISATO",
+      "title": "Necro Fantasia",
+      "creator": "RIPmyFingers",
+      "source": "東方妖々夢 Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-08-22T14:09:38Z"
     },
     {
       "beatmapset_id": 831385,
@@ -1453,6 +1539,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2018-10-18T10:04:06Z"
+    },
+    {
+      "beatmapset_id": 834973,
+      "artist": "ZUN",
+      "title": "Game Over",
+      "creator": "houraizin",
+      "source": "東方夢時空 〜 Phantasmagoria of Dim.Dream.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-08-19T13:36:33Z"
     },
     {
       "beatmapset_id": 836072,
@@ -1751,6 +1859,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2019-08-17T16:28:59Z"
+    },
+    {
+      "beatmapset_id": 841127,
+      "artist": "Demetori",
+      "title": "retrospective kyoto ~ Japanese Beautiful Barrage",
+      "creator": "phalanx",
+      "source": "東方文花帖～ Shoot the Bullet.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Shoot the Bullet",
+        "discovery_query:source=東方文花帖",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-01-08T16:57:02Z"
     },
     {
       "beatmapset_id": 842126,
@@ -2091,6 +2221,27 @@
       "osu_last_updated": "2019-05-28T09:55:36Z"
     },
     {
+      "beatmapset_id": 852508,
+      "artist": "ZUN",
+      "title": "Nightmare Diary",
+      "creator": "Microstar",
+      "source": "Touhou 16.5 Violet Detector",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Violet Detector",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-09-23T00:49:39Z"
+    },
+    {
       "beatmapset_id": 852901,
       "artist": "RD-Sounds feat. Meramipop/nayuta",
       "title": "Shiten",
@@ -2180,6 +2331,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-10-17T05:21:36Z"
+    },
+    {
+      "beatmapset_id": 855622,
+      "artist": "SOUND HOLIC",
+      "title": "Hell Rose",
+      "creator": "AlexTroIIPsy",
+      "source": "東方紺珠伝",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方紺珠伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-03-11T00:37:52Z"
     },
     {
       "beatmapset_id": 855669,
@@ -2938,6 +3110,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2018-10-26T00:00:53Z"
+    },
+    {
+      "beatmapset_id": 868324,
+      "artist": "SOUND HOLIC",
+      "title": "IMAGiNATE",
+      "creator": "Athanasia-",
+      "source": "东方天空璋　～ Hidden Star in Four Seasons",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-09-11T12:09:39Z"
     },
     {
       "beatmapset_id": 868552,

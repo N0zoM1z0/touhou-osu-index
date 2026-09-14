@@ -692,6 +692,27 @@
       "osu_last_updated": "2015-05-14T10:20:44Z"
     },
     {
+      "beatmapset_id": 312390,
+      "artist": "Halozy",
+      "title": "8 Ganme no Roji",
+      "creator": "Liiraye",
+      "source": "Touhou Gensoukyou ~ Lotus Land Story",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-05-14T18:22:28Z"
+    },
+    {
       "beatmapset_id": 312480,
       "artist": "Demetori",
       "title": "Youyou Bakko ~ Who done it ! ! !",
@@ -1095,6 +1116,27 @@
       "osu_last_updated": "2015-07-22T12:38:45Z"
     },
     {
+      "beatmapset_id": 320100,
+      "artist": "IOSYS",
+      "title": "Third Eyer!",
+      "creator": "- NicoTheNeko -",
+      "source": "東方地霊殿",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-07-07T06:03:50Z"
+    },
+    {
       "beatmapset_id": 320299,
       "artist": "Demetori",
       "title": "Heartfelt Fancy",
@@ -1240,6 +1282,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-09-08T11:25:47Z"
+    },
+    {
+      "beatmapset_id": 324147,
+      "artist": "",
+      "title": "Hartmann's Youkai Girl",
+      "creator": "[-Seiryuu-]",
+      "source": "Touhou 14.5 Urban Legend In Limbo OST",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Urban Legend in Limbo",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-06-16T17:25:47Z"
     },
     {
       "beatmapset_id": 325048,
@@ -2478,6 +2541,48 @@
       "osu_last_updated": "2017-03-10T23:19:34Z"
     },
     {
+      "beatmapset_id": 349956,
+      "artist": "ZUN",
+      "title": "The Clown of the Star-Spangled Banner",
+      "creator": "Parachute",
+      "source": "Touhou Kanjuden ~ Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2018-06-04T22:15:03Z"
+    },
+    {
+      "beatmapset_id": 350334,
+      "artist": "ZUN",
+      "title": "Pierrot of the Star Spangled Banner (Clownpiece's theme)",
+      "creator": "gaboflandre",
+      "source": "Touhou 15: Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-08-29T02:23:55Z"
+    },
+    {
       "beatmapset_id": 350528,
       "artist": "Halozy",
       "title": "Kanshou no Matenrou",
@@ -2635,6 +2740,50 @@
       "osu_last_updated": "2015-09-22T12:54:42Z"
     },
     {
+      "beatmapset_id": 354140,
+      "artist": "Foreground Eclipse",
+      "title": "Last Liar Standing",
+      "creator": "GentelGitar",
+      "source": "Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2016-10-17T10:09:01Z"
+    },
+    {
+      "beatmapset_id": 354210,
+      "artist": "Demetori",
+      "title": "Alice Maestra ~ Flow My Tears, the Said",
+      "creator": "Keada",
+      "source": "東方幻想郷　～ Lotus Land Story.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2019-02-03T15:27:48Z"
+    },
+    {
       "beatmapset_id": 355643,
       "artist": "Nomico",
       "title": "Bad Apple!! REDALiCE Remix",
@@ -2738,6 +2887,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-11-16T09:11:21Z"
+    },
+    {
+      "beatmapset_id": 357617,
+      "artist": "Starsand",
+      "title": "Eternal Paradise",
+      "creator": "Eternalie",
+      "source": "Touhou 5 - Mystic Square",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-09-20T10:20:23Z"
     },
     {
       "beatmapset_id": 358195,
@@ -3050,6 +3220,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2015-12-11T15:25:41Z"
+    },
+    {
+      "beatmapset_id": 364396,
+      "artist": "ZUN",
+      "title": "Pierrot of the Star-Spangled Banner",
+      "creator": "gaboflandre",
+      "source": "Touhoy 15: Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-10-10T21:05:13Z"
     },
     {
       "beatmapset_id": 364445,
@@ -4298,6 +4489,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2016-10-17T12:24:47Z"
+    },
+    {
+      "beatmapset_id": 397180,
+      "artist": "Kishida",
+      "title": "Hartmann's Youkai Girl",
+      "creator": "Vladcat95",
+      "source": "東方深秘録　～ Urban Legend in Limbo",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Urban Legend in Limbo",
+        "discovery_query:source=東方深秘録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-04-02T10:32:37Z"
     },
     {
       "beatmapset_id": 397764,

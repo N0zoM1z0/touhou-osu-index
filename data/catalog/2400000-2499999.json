@@ -2,6 +2,27 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 2400857,
+      "artist": "ZUN",
+      "title": "Sailor of Time",
+      "creator": "OsuJoa",
+      "source": "The Phantasmagoria of Dim.Dream",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-07-10T15:21:04Z"
+    },
+    {
       "beatmapset_id": 2401950,
       "artist": "dBu music",
       "title": "Bamboo Forest Under the Fullmoon",
@@ -22,6 +43,49 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-08-28T08:34:44Z"
+    },
+    {
+      "beatmapset_id": 2402465,
+      "artist": "Yuuyu / Yuuna sasara",
+      "title": "Imperishable Night 2006 (2016 Refine)",
+      "creator": "Telzzxs",
+      "source": "東方永夜抄 ～Imperishable Night.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-07-13T12:57:43Z"
+    },
+    {
+      "beatmapset_id": 2403482,
+      "artist": "ziki_7",
+      "title": "Submerged Hell of Sunken Sorrow (Arrange Version)",
+      "creator": "orangeskittlez",
+      "source": "Touhou 17.5 Gouyoku Ibun ~ Sunken Fossil World",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Sunken Fossil World",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-07-15T03:27:35Z"
     },
     {
       "beatmapset_id": 2404130,
@@ -45,6 +109,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2026-01-25T10:46:06Z"
+    },
+    {
+      "beatmapset_id": 2404559,
+      "artist": "ZUN",
+      "title": "Jelly Stone",
+      "creator": "b9s1l",
+      "source": "Touhou Kikeijuu ~ Wily Beast and Weakest Creature",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-08-18T18:46:44Z"
     },
     {
       "beatmapset_id": 2406327,
@@ -323,6 +408,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-11-15T20:26:05Z"
+    },
+    {
+      "beatmapset_id": 2411431,
+      "artist": "BilliumMoto",
+      "title": "Four Veiled Stars",
+      "creator": "Meow Mix",
+      "source": "東方永夜抄 ～ Hidden Star in Four Seasons",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Hidden Star in Four Seasons",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-07-29T20:51:13Z"
     },
     {
       "beatmapset_id": 2411873,
@@ -1102,6 +1208,28 @@
       "osu_last_updated": "2025-08-27T03:46:04Z"
     },
     {
+      "beatmapset_id": 2426219,
+      "artist": "ZUN",
+      "title": "Onbashira no Hakaba ~ Grave of Being",
+      "creator": "Vallejo",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-10-08T23:26:25Z"
+    },
+    {
       "beatmapset_id": 2426796,
       "artist": "SYNC.ART'S feat. Sakaue Nachi",
       "title": "Light travel distance",
@@ -1188,6 +1316,49 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2026-07-10T16:56:21Z"
+    },
+    {
+      "beatmapset_id": 2431141,
+      "artist": "Poplica*",
+      "title": "Zillion Lights",
+      "creator": "Firefly519",
+      "source": "東方星蓮船～Undefined Fantastic Object",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方星蓮船",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-09-06T09:06:14Z"
+    },
+    {
+      "beatmapset_id": 2432202,
+      "artist": "ZUN",
+      "title": "Itooshiki Chiri no Sumika",
+      "creator": "Vallejo",
+      "source": "東方錦上京　～ Fossilized Wonders.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Fossilized Wonders",
+        "discovery_query:source=東方錦上京",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-09-08T09:26:35Z"
     },
     {
       "beatmapset_id": 2433072,
@@ -1892,6 +2063,28 @@
       "osu_last_updated": "2026-01-26T13:46:39Z"
     },
     {
+      "beatmapset_id": 2453994,
+      "artist": "Rien",
+      "title": "Gen ~ In her dreams",
+      "creator": "351",
+      "source": "東方封魔録.　～ the Story of Eastern Wonderland.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方封魔録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-10-24T16:25:14Z"
+    },
+    {
       "beatmapset_id": 2454428,
       "artist": "ZUN",
       "title": "Sacred Forest",
@@ -2156,6 +2349,27 @@
       "osu_last_updated": "2026-03-21T15:47:10Z"
     },
     {
+      "beatmapset_id": 2461880,
+      "artist": "Adust Rain",
+      "title": "Joker's Cranberrybox",
+      "creator": "Rokad Ee",
+      "source": "東方花映塚　～ U.N. Owen was her?",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-05-18T12:13:21Z"
+    },
+    {
       "beatmapset_id": 2462140,
       "artist": "senya",
       "title": "Tokuiten no Kaibutsuteki Kanjou",
@@ -2207,6 +2421,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2025-11-10T11:42:22Z"
+    },
+    {
+      "beatmapset_id": 2463139,
+      "artist": "Spacelectro ft. Shiiki Reku",
+      "title": "Rhythmy",
+      "creator": "351",
+      "source": "東方花映塚.　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-11-11T22:47:38Z"
     },
     {
       "beatmapset_id": 2463988,
@@ -2404,6 +2639,27 @@
       "osu_last_updated": "2026-02-16T04:41:13Z"
     },
     {
+      "beatmapset_id": 2472017,
+      "artist": "senya",
+      "title": "Kanousei no Keshin",
+      "creator": "FastBoy",
+      "source": "東方非想天則　～ 超弩級ギニョルの謎を追え",
+      "status": "wip",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方非想天則",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-13T09:12:16Z"
+    },
+    {
       "beatmapset_id": 2472186,
       "artist": "ryu5150",
       "title": "Battle Warrior!!",
@@ -2454,6 +2710,30 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2025-12-06T19:18:02Z"
+    },
+    {
+      "beatmapset_id": 2473015,
+      "artist": "Matsubame Frame",
+      "title": "The Waltz of the Night",
+      "creator": "psithur",
+      "source": "東方永夜抄　～　Imperishable Night",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "manual:candidate",
+        "osu_source",
+        "review:source-pass2-2026-09-14"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-11T11:16:02Z"
     },
     {
       "beatmapset_id": 2473158,
@@ -2555,6 +2835,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2025-12-08T13:17:14Z"
+    },
+    {
+      "beatmapset_id": 2476061,
+      "artist": "Rin",
+      "title": "Eientewi set 12 Another ~ Voyage 1970",
+      "creator": "Times_up",
+      "source": "東方永夜抄~ Imperishable Night",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-12-09T06:51:37Z"
     },
     {
       "beatmapset_id": 2476206,
@@ -2735,6 +3036,28 @@
       "osu_last_updated": "2025-12-21T16:30:28Z"
     },
     {
+      "beatmapset_id": 2482178,
+      "artist": "ShinRa-Bansho",
+      "title": "Nonfic Inbouron",
+      "creator": "ameponzu",
+      "source": "東方錦上京　～ Fossilized Wonders.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Fossilized Wonders",
+        "discovery_query:source=東方錦上京",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-14T05:26:22Z"
+    },
+    {
       "beatmapset_id": 2482656,
       "artist": "Beat Mario/USAO",
       "title": "Night of Knights(USAO Remix)",
@@ -2760,6 +3083,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2026-01-17T18:10:40Z"
+    },
+    {
+      "beatmapset_id": 2482750,
+      "artist": "SOUND HOLIC",
+      "title": "Earthquake Super Shock",
+      "creator": "maikayuii",
+      "source": "東方緋想天 ～ Scarlet Weather Rhapsody",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "discovery_query:source=東方緋想天",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-11T00:18:33Z"
     },
     {
       "beatmapset_id": 2482867,
@@ -3194,6 +3539,28 @@
       "osu_last_updated": "2026-04-29T20:11:56Z"
     },
     {
+      "beatmapset_id": 2493017,
+      "artist": "Para Dot.",
+      "title": "Alone Goddess",
+      "creator": "Doomsdaddy",
+      "source": "東方錦上京 〜 Fossilized Wonders.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Fossilized Wonders",
+        "discovery_query:source=東方錦上京",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-01-14T09:24:06Z"
+    },
+    {
       "beatmapset_id": 2493591,
       "artist": "",
       "title": "beatmapsets/2493591#osu/5479622",
@@ -3267,6 +3634,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2026-02-06T04:32:57Z"
+    },
+    {
+      "beatmapset_id": 2496988,
+      "artist": "ZUN",
+      "title": "Complete Darkness (Cut Ver.)",
+      "creator": "Tiamtum",
+      "source": "東方封魔録 〜 Story of Eastern Wonderland",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Story of Eastern Wonderland",
+        "discovery_query:source=東方封魔録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-04-16T21:15:51Z"
     },
     {
       "beatmapset_id": 2497259,

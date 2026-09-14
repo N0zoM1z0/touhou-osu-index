@@ -864,6 +864,27 @@
       "osu_last_updated": "2014-12-04T02:16:33Z"
     },
     {
+      "beatmapset_id": 228331,
+      "artist": "dBu",
+      "title": "Hartmann's Youkai Girl",
+      "creator": "Lapis",
+      "source": "Touhou Chireiden ~ Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2014-10-31T16:47:51Z"
+    },
+    {
       "beatmapset_id": 228955,
       "artist": "Hatsuki Yura",
       "title": "Drivi'n greedy - Nhato Remix -",
@@ -1378,6 +1399,27 @@
       "osu_last_updated": "2022-04-13T15:15:26Z"
     },
     {
+      "beatmapset_id": 247479,
+      "artist": "Alstroemeria Records",
+      "title": "Starbow Dream",
+      "creator": "stupidsalad",
+      "source": "Phantasmagoria of dim.dream unused track",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2014-12-24T13:08:35Z"
+    },
+    {
       "beatmapset_id": 248162,
       "artist": "Demetori",
       "title": "Heartfelt Fancy ~ Prie a Dieu",
@@ -1790,6 +1832,27 @@
       "osu_last_updated": "2022-04-26T17:31:34Z"
     },
     {
+      "beatmapset_id": 268259,
+      "artist": "Akiyamauni",
+      "title": "Dancing Water Spray",
+      "creator": "redtails",
+      "source": "東方緋想天",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方緋想天",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-01-23T02:11:18Z"
+    },
+    {
       "beatmapset_id": 269497,
       "artist": "NH22",
       "title": "Corrosion",
@@ -1853,6 +1916,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2015-06-05T16:44:29Z"
+    },
+    {
+      "beatmapset_id": 271451,
+      "artist": "ZUN",
+      "title": "Raise the Flag of Cheating",
+      "creator": "Lazly-kun",
+      "source": "Touhou 14.3: Impossible spell card",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Impossible Spell Card",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-01-27T01:37:19Z"
     },
     {
       "beatmapset_id": 274223,
@@ -2202,6 +2286,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2016-01-19T22:35:14Z"
+    },
+    {
+      "beatmapset_id": 288926,
+      "artist": "Demetori",
+      "title": "Old Yuanxian",
+      "creator": "[ Amnesia ]",
+      "source": "東方神霊廟　～ Ten Desires Touhou",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2015-03-23T14:30:36Z"
     },
     {
       "beatmapset_id": 289225,

@@ -428,6 +428,28 @@
       "osu_last_updated": "2022-10-23T10:18:50Z"
     },
     {
+      "beatmapset_id": 1814521,
+      "artist": "katagiri",
+      "title": "WallHakkr",
+      "creator": "-Deepdive-",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-08-12T01:20:39Z"
+    },
+    {
       "beatmapset_id": 1815728,
       "artist": "Adust Rain",
       "title": "Joker's Cranberrybox",
@@ -1145,6 +1167,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2022-10-25T11:48:29Z"
+    },
+    {
+      "beatmapset_id": 1838990,
+      "artist": "A-One feat. Shihori",
+      "title": "Bloody Night",
+      "creator": "-Muke-",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
+      "status": "wip",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-14T01:15:00Z"
     },
     {
       "beatmapset_id": 1840481,
@@ -2002,6 +2046,28 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 1864956,
+      "artist": "Alstroemeria Records",
+      "title": "PUNISHMENT feat. Sakaue Nachi",
+      "creator": "Robinia",
+      "source": "東方夢時空　～ Phantasmagoria of Dim. Dream.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-11-10T13:53:13Z"
+    },
+    {
       "beatmapset_id": 1866625,
       "artist": "furulan",
       "title": "dona",
@@ -2718,6 +2784,28 @@
       "osu_last_updated": "2023-07-08T05:59:10Z"
     },
     {
+      "beatmapset_id": 1888457,
+      "artist": "Pizuya's Cell feat. Futoumeido",
+      "title": "NOiSE",
+      "creator": "F D Flourite",
+      "source": "秘封ナイトメアダイアリー　〜 Violet Detector.",
+      "status": "graveyard",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Violet Detector",
+        "discovery_query:source=秘封ナイトメアダイアリー",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-08-19T13:48:44Z"
+    },
+    {
       "beatmapset_id": 1888527,
       "artist": "Demetori",
       "title": "The Grimoire of Alice ~ Fushigi no Kuni no Alice",
@@ -3139,6 +3227,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2023-02-12T05:28:08Z"
+    },
+    {
+      "beatmapset_id": 1899153,
+      "artist": "Odyssey Eurobeat",
+      "title": "Rain Dance",
+      "creator": "ThePurpleOther",
+      "source": "東方風神録 〜 Mountain of Faith. サウンドトラック",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-12-07T20:04:46Z"
     }
   ]
 }

@@ -549,6 +549,27 @@
       "osu_last_updated": "2011-02-18T22:29:40Z"
     },
     {
+      "beatmapset_id": 26224,
+      "artist": "ZUN",
+      "title": "The Great Fairy Wars",
+      "creator": "Zlew",
+      "source": "Touhou 12.8 ~ Great Fairy Wars",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Great Fairy Wars",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2011-05-07T12:34:52Z"
+    },
+    {
       "beatmapset_id": 26292,
       "artist": "UI-70",
       "title": "Lunatic Princess",
@@ -1291,6 +1312,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-05-03T17:25:23Z"
+    },
+    {
+      "beatmapset_id": 28548,
+      "artist": "ZUN",
+      "title": "Illusionary Night ~ Ghostly Eyes",
+      "creator": "Ain053",
+      "source": "Imperishable Night - Touhou 8",
+      "status": "graveyard",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2011-06-12T13:42:35Z"
     },
     {
       "beatmapset_id": 28609,
@@ -2975,6 +3018,27 @@
       "osu_last_updated": "2011-12-20T21:30:45Z"
     },
     {
+      "beatmapset_id": 38306,
+      "artist": "Akiyamauni, ZUN",
+      "title": "Septette for the Dead Princess",
+      "creator": "HongLee",
+      "source": "Touhou Hisouten ~Scarlet Weather Rhapsody",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Scarlet Weather Rhapsody",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2011-10-18T11:36:57Z"
+    },
+    {
       "beatmapset_id": 38693,
       "artist": "ZUN",
       "title": "Haigoku Lullaby",
@@ -3015,6 +3079,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2011-11-19T20:05:34Z"
+    },
+    {
+      "beatmapset_id": 39006,
+      "artist": "ZUN",
+      "title": "Toono Gensou Monogatari",
+      "creator": "Yui",
+      "source": "Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2011-11-16T13:34:30Z"
     },
     {
       "beatmapset_id": 39056,
@@ -4241,6 +4326,27 @@
       "osu_last_updated": "2012-09-07T06:41:04Z"
     },
     {
+      "beatmapset_id": 47020,
+      "artist": "ZUN",
+      "title": "Old Yuanxian",
+      "creator": "Tinyduck",
+      "source": "Touhou 13- Ten Desires",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2012-03-18T20:40:42Z"
+    },
+    {
       "beatmapset_id": 47060,
       "artist": "Silver Forest",
       "title": "eternal",
@@ -4602,6 +4708,27 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2012-12-19T20:47:23Z"
+    },
+    {
+      "beatmapset_id": 48953,
+      "artist": "ZUN",
+      "title": "Green-Eyed Jealousy",
+      "creator": "Tinyduck",
+      "source": "Touhou 11- Subterranean Animism",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2012-04-17T11:29:13Z"
     },
     {
       "beatmapset_id": 49721,

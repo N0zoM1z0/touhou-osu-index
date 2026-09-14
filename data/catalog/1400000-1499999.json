@@ -2,6 +2,28 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 1402707,
+      "artist": "Rin",
+      "title": "Lunatic set 16 ~ The Space Shrine Maiden Returns Home",
+      "creator": "Doomsdaddy",
+      "source": "東方紺珠伝　～ Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-03-21T16:17:49Z"
+    },
+    {
       "beatmapset_id": 1404046,
       "artist": "sun3",
       "title": "Meikai Kikou",
@@ -163,6 +185,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-03-25T15:32:07Z"
+    },
+    {
+      "beatmapset_id": 1413239,
+      "artist": "Zun",
+      "title": "Fortunate Kitten",
+      "creator": "Kois",
+      "source": "东方虹龙洞　～ Unconnected Marketeers.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unconnected Marketeers",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-03-26T11:45:21Z"
     },
     {
       "beatmapset_id": 1414107,
@@ -406,6 +449,27 @@
       "osu_last_updated": "2021-04-05T02:15:53Z"
     },
     {
+      "beatmapset_id": 1423403,
+      "artist": "ZUN",
+      "title": "Smoking Dragon",
+      "creator": "SkipTheWave",
+      "source": "Touhou 18 Unconnected Marketeers OST",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unconnected Marketeers",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-04-06T16:15:33Z"
+    },
+    {
       "beatmapset_id": 1423567,
       "artist": "Masayoshi Minoshima ft. nomico",
       "title": "Bad Apple!!",
@@ -574,6 +638,28 @@
       "osu_last_updated": "2021-04-15T16:53:20Z"
     },
     {
+      "beatmapset_id": 1433488,
+      "artist": "S.S.H.",
+      "title": "Touhou Judgment in the Sixtieth Year ~ Fate of Sixty Years",
+      "creator": "Konomin",
+      "source": "Touhou Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-06-13T16:53:39Z"
+    },
+    {
       "beatmapset_id": 1434008,
       "artist": "beatMARIO",
       "title": "Night of Nights (Flowering nights remix)  By COOL&CREATE/BeatMARIO",
@@ -652,6 +738,49 @@
       "confidence": "verified",
       "last_checked": "2026-09-06",
       "osu_last_updated": "2021-04-16T23:17:12Z"
+    },
+    {
+      "beatmapset_id": 1434961,
+      "artist": "ZUN",
+      "title": "Fortunate Kitten (BegissoR's Remix)",
+      "creator": "CrayZeei",
+      "source": "東方虹龍洞　～ Unconnected Marketeers",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unconnected Marketeers",
+        "discovery_query:source=東方虹龍洞",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-07-06T05:14:16Z"
+    },
+    {
+      "beatmapset_id": 1435632,
+      "artist": "ELEMENTAS",
+      "title": "Night Falls ~ Evening Star",
+      "creator": "yais",
+      "source": "Touhou 15.5 Antinomy of Common Flowers",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Antinomy of Common Flowers",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-06-04T19:10:10Z"
     },
     {
       "beatmapset_id": 1435835,
@@ -1135,6 +1264,27 @@
       "osu_last_updated": "2025-06-08T12:56:07Z"
     },
     {
+      "beatmapset_id": 1446911,
+      "artist": "3L",
+      "title": "Endless night",
+      "creator": "[-Tech-] Judge",
+      "source": "Touhou Yume Jikan ~ Phantasmagoria of Dim.Dream",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-04-29T10:18:16Z"
+    },
+    {
       "beatmapset_id": 1449940,
       "artist": "Camellia",
       "title": "Ultimate Ascension",
@@ -1175,6 +1325,28 @@
       "confidence": "candidate",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1453479,
+      "artist": "SOUND HOLIC",
+      "title": "THE EVENING STAR (feat. YURiCa/hanatan)",
+      "creator": "Kanosy",
+      "source": "東方萃夢想 〜 Immaterial and Missing Power.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-05-15T13:49:38Z"
     },
     {
       "beatmapset_id": 1455638,
@@ -1883,6 +2055,29 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2021-08-10T18:35:42Z"
+    },
+    {
+      "beatmapset_id": 1483091,
+      "artist": "T. Stebbins",
+      "title": "On The Moon",
+      "creator": "Vysion",
+      "source": "東方紺珠伝 - Legacy of Lunatic Kingdom",
+      "status": "graveyard",
+      "modes": [
+        "mania",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Legacy of Lunatic Kingdom",
+        "discovery_query:source=東方紺珠伝",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2021-06-12T02:13:38Z"
     },
     {
       "beatmapset_id": 1483117,

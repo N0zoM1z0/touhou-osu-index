@@ -1309,6 +1309,28 @@
       "osu_last_updated": "2025-05-10T19:43:39Z"
     },
     {
+      "beatmapset_id": 2321848,
+      "artist": "Yuuhei Satellite",
+      "title": "Hitomi o Tojite, Utsusu Mugen",
+      "creator": "Scarlet3562",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-13T08:46:06Z"
+    },
+    {
       "beatmapset_id": 2321881,
       "artist": "senya",
       "title": "Senka Ryouran",
@@ -2370,6 +2392,49 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2335619,
+      "artist": "co7ty",
+      "title": "Gate of Year-Round",
+      "creator": "Nevenuga",
+      "source": "Touhou Tenkuushou (東方天空璋)",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方天空璋",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-03-18T20:08:16Z"
+    },
+    {
+      "beatmapset_id": 2335650,
+      "artist": "ShinRa-Bansho",
+      "title": "Zenryoku Happy Life",
+      "creator": "dairycreamer",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "wip",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-08-28T05:50:38Z"
+    },
+    {
       "beatmapset_id": 2336636,
       "artist": "COOL&CREATE",
       "title": "Night of Nights (Flowering nights remix)  By COOL&CREATE/beatMARIO",
@@ -3352,6 +3417,27 @@
       "osu_last_updated": "2025-04-23T18:09:32Z"
     },
     {
+      "beatmapset_id": 2345920,
+      "artist": "Akatsuki Records",
+      "title": "Midnight Parade",
+      "creator": "-Macoy-",
+      "source": "Touhou 6 - Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-03-30T22:32:44Z"
+    },
+    {
       "beatmapset_id": 2345936,
       "artist": "Rolling Contact",
       "title": "Snow, White, Echo",
@@ -4240,6 +4326,27 @@
       "osu_last_updated": "2026-01-13T23:00:54Z"
     },
     {
+      "beatmapset_id": 2358042,
+      "artist": "Mamemi",
+      "title": "Love The BEAT",
+      "creator": "siboi",
+      "source": "TOHO EUROBEAT VOL.10 HIGHLY RESPONSIVE TO PRAYERS",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Highly Responsive to Prayers",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-08-11T13:39:19Z"
+    },
+    {
       "beatmapset_id": 2358120,
       "artist": "Hexacube",
       "title": "LOVE EYE",
@@ -4752,6 +4859,27 @@
       "osu_last_updated": "2026-08-23T11:42:27Z"
     },
     {
+      "beatmapset_id": 2369697,
+      "artist": "Paradot",
+      "title": "Nazokake",
+      "creator": "-Macoy-",
+      "source": "Touhou 20: Fossilized Wonders",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Fossilized Wonders",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-06-16T14:18:00Z"
+    },
+    {
       "beatmapset_id": 2371846,
       "artist": "Yuuhei Satellite feat. Marcia",
       "title": "Hitomi o Tojite, Utsusu Mugen",
@@ -5119,6 +5247,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2379634,
+      "artist": "EastNewSound",
+      "title": "poisonous rain",
+      "creator": "_HellStaff_",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View, Medicine Melancholy's theme",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-05-30T21:11:23Z"
+    },
+    {
       "beatmapset_id": 2379827,
       "artist": "Para Dot.",
       "title": "Night of Knights (Para Dot. Remix)",
@@ -5165,6 +5314,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-10-03T04:13:04Z"
+    },
+    {
+      "beatmapset_id": 2380793,
+      "artist": "ShinRa-Bansho",
+      "title": "Administrator's Logic",
+      "creator": "Kurashina Asuka",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Perfect Cherry Blossom",
+        "discovery_query:source=東方妖々夢",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-06-05T16:08:45Z"
     },
     {
       "beatmapset_id": 2381906,
@@ -5256,6 +5427,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-11-01T03:34:37Z"
+    },
+    {
+      "beatmapset_id": 2383593,
+      "artist": "Shinra-Bansho",
+      "title": "Muishiki Requiem (cosmobsp rmx)",
+      "creator": "KawaiiBass",
+      "source": "東方地霊殿　～ Subterranean Animism.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Subterranean Animism",
+        "discovery_query:source=東方地霊殿",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-06-07T05:23:25Z"
     },
     {
       "beatmapset_id": 2384222,
@@ -5557,6 +5750,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2025-06-25T11:19:03Z"
+    },
+    {
+      "beatmapset_id": 2390231,
+      "artist": "izna",
+      "title": "A null set (izna remix)",
+      "creator": "Surono",
+      "source": "東方文花帖　～ Double Spoiler.",
+      "status": "graveyard",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Double Spoiler",
+        "discovery_query:source=東方文花帖",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-06-20T03:24:01Z"
     },
     {
       "beatmapset_id": 2390344,
@@ -5871,6 +6086,28 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2025-09-22T15:48:53Z"
+    },
+    {
+      "beatmapset_id": 2399199,
+      "artist": "Syrufit feat. Mei Ayakura & Ichimatsu Tsubaki",
+      "title": "ESCAPE",
+      "creator": "milr_",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2025-07-09T16:27:37Z"
     },
     {
       "beatmapset_id": 2399201,

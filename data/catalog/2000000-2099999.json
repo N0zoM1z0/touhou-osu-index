@@ -193,6 +193,27 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2002636,
+      "artist": "HAGISOPH",
+      "title": "Lamento",
+      "creator": "map maker",
+      "source": "東方剛欲異聞　～ 水没した沈愁地獄 (Touhou Gouyoku Ibun ~ Submerged Hell of Sunken Sorrow) Memento of All Organisms ~ Memory of Fossil Energy (有機体全てのメメント　～ Memory of Fossil Energy)",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方剛欲異聞",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-06-02T13:02:46Z"
+    },
+    {
       "beatmapset_id": 2002645,
       "artist": "EastNewSound",
       "title": "Hana wa gensou no Hate ni (PORTTAYER) [Phantasmagoria x1.15]",
@@ -2405,6 +2426,28 @@
       "osu_last_updated": null
     },
     {
+      "beatmapset_id": 2044388,
+      "artist": "Demetori",
+      "title": "The Primal Scene of Japan the Girl Saw ~ Dance of puNDarika",
+      "creator": "-Neipezi",
+      "source": "東方風神録 ～ Mountain of Faith.",
+      "status": "pending",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2026-09-13T08:19:04Z"
+    },
+    {
       "beatmapset_id": 2044453,
       "artist": "ZUN",
       "title": "Beware the Umbrella Left There Forever",
@@ -2797,6 +2840,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 2049059,
+      "artist": "Ryu5150",
+      "title": "Louder than steel",
+      "creator": "KaiserWeebs",
+      "source": "東方夢時空　～ Phantasmagria of Dim.Dream",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-08-23T12:47:57Z"
     },
     {
       "beatmapset_id": 2049284,
@@ -4219,6 +4283,28 @@
       "osu_last_updated": "2025-01-07T17:02:34Z"
     },
     {
+      "beatmapset_id": 2077356,
+      "artist": "Demetori",
+      "title": "Yumeshoushitsu ~ Lost Dream",
+      "creator": "Raibolt",
+      "source": "東方夢時空　～ The Phantasmagoria of Dim. Dream",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=東方夢時空",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-10-20T12:36:11Z"
+    },
+    {
       "beatmapset_id": 2078250,
       "artist": "Akatsuki Records",
       "title": "Gotcha Gotcha",
@@ -4406,6 +4492,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2024-02-26T20:28:27Z"
+    },
+    {
+      "beatmapset_id": 2081821,
+      "artist": "dBuMusic",
+      "title": "Plastic Mind",
+      "creator": "SHE IS SUMMER",
+      "source": "touhou 5 mystic square stage 3 boss theme remix by dbu",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-11-03T02:57:07Z"
     },
     {
       "beatmapset_id": 2082657,
@@ -4766,6 +4873,27 @@
       "osu_last_updated": "2023-11-13T08:13:54Z"
     },
     {
+      "beatmapset_id": 2088862,
+      "artist": "Xenoglossy",
+      "title": "Alice in Electron Land",
+      "creator": "Telzzxs",
+      "source": "东方怪绮谈 ～ Mystic Square",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mystic Square",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-11-14T12:21:32Z"
+    },
+    {
       "beatmapset_id": 2088927,
       "artist": "last little while",
       "title": "again",
@@ -4970,6 +5098,29 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2024-12-19T14:23:06Z"
+    },
+    {
+      "beatmapset_id": 2097656,
+      "artist": "Xi",
+      "title": "Rokujuu-nen Me no Shinsoku Saiban ~ Rapidity is a justice",
+      "creator": "palmEuEi",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Dim.Dream",
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-12-07T11:51:52Z"
     },
     {
       "beatmapset_id": 2097827,

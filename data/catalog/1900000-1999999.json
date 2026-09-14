@@ -2,6 +2,28 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 1900085,
+      "artist": "Kisida",
+      "title": "Hartman's Youkai Girl",
+      "creator": "WinDx",
+      "source": "東方深秘録 〜 Urban Legend in Limbo.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Urban Legend in Limbo",
+        "discovery_query:source=東方深秘録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-12-09T13:43:07Z"
+    },
+    {
       "beatmapset_id": 1900379,
       "artist": "Hanatan",
       "title": "Savior of Cross",
@@ -414,6 +436,28 @@
       "osu_last_updated": "2024-10-24T07:38:13Z"
     },
     {
+      "beatmapset_id": 1912985,
+      "artist": "katikatiyama",
+      "title": "Alien no uta",
+      "creator": "osu Yozora",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Undefined Fantastic Object",
+        "discovery_query:source=東方星蓮船",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2022-12-30T06:38:54Z"
+    },
+    {
       "beatmapset_id": 1913078,
       "artist": "SYNC.ART'S feat. Rill Practica",
       "title": "tod und feuer",
@@ -436,6 +480,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2023-02-19T02:08:40Z"
+    },
+    {
+      "beatmapset_id": 1913275,
+      "artist": "katikatiyama",
+      "title": "Yosuzume no Uta",
+      "creator": "ddssddsd",
+      "source": "東方Project ～ Imperishable Night",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-01-04T20:38:52Z"
     },
     {
       "beatmapset_id": 1913530,
@@ -707,6 +772,28 @@
       "osu_last_updated": "2023-01-30T22:12:52Z"
     },
     {
+      "beatmapset_id": 1916669,
+      "artist": "Paradot / Parako Tsuruga",
+      "title": "Ultimate Taste",
+      "creator": "Sutjo",
+      "source": "Touhou 6 Koumakyou ~ the Embodiment of Scarlet Devil",
+      "status": "graveyard",
+      "modes": [
+        "mania",
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Embodiment of Scarlet Devil",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-04-22T12:11:54Z"
+    },
+    {
       "beatmapset_id": 1917023,
       "artist": "UNDEAD CORPORATION",
       "title": "Tengai (Cut Ver.)",
@@ -747,6 +834,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2023-07-24T19:06:13Z"
+    },
+    {
+      "beatmapset_id": 1917553,
+      "artist": "SYNC.ART'S feat. Kaori Aihara",
+      "title": "Absolute Demolition",
+      "creator": "wysie",
+      "source": "東方紅魔郷　～ the Embodiment",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-11-29T05:36:31Z"
     },
     {
       "beatmapset_id": 1918615,
@@ -1031,6 +1139,27 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": "2024-05-02T20:19:01Z"
+    },
+    {
+      "beatmapset_id": 1923987,
+      "artist": "ZUN",
+      "title": "Complete Darkness",
+      "creator": "- h -",
+      "source": "Touhou 2: Story of Eastern Wonderland",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Story of Eastern Wonderland",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-01-25T01:28:08Z"
     },
     {
       "beatmapset_id": 1924253,
@@ -1460,6 +1589,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-21",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1932692,
+      "artist": "Akatsuki Records",
+      "title": "Gotcha Gotcha",
+      "creator": "na0__jp",
+      "source": "バレットフィリア達の闇市場　〜 100th Black Market.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=100th Black Market",
+        "discovery_query:source=バレットフィリア達の闇市場",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-03-18T02:36:59Z"
     },
     {
       "beatmapset_id": 1934308,
@@ -2221,6 +2372,27 @@
       "osu_last_updated": "2025-11-15T10:54:38Z"
     },
     {
+      "beatmapset_id": 1954238,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Flowering Night Fever",
+      "creator": "HyperCentauri",
+      "source": "TouHou ~ Phantasmagoria of Flower View",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-09-17T19:42:54Z"
+    },
+    {
       "beatmapset_id": 1954411,
       "artist": "BUTAOTOME",
       "title": "Wai ~Y~",
@@ -2311,6 +2483,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": "2024-05-23T08:17:11Z"
+    },
+    {
+      "beatmapset_id": 1959001,
+      "artist": "Saitama Saisyu Heiki & Aether",
+      "title": "Desire Drive",
+      "creator": "_komari",
+      "source": "東方神霊廟 〜 Ten Desires.",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-03-20T13:31:09Z"
     },
     {
       "beatmapset_id": 1959309,
@@ -2630,6 +2824,27 @@
       "confidence": "verified",
       "last_checked": "2026-09-03",
       "osu_last_updated": "2023-08-19T16:30:14Z"
+    },
+    {
+      "beatmapset_id": 1965948,
+      "artist": "Zun",
+      "title": "Jelly Stone",
+      "creator": "_Keiner_",
+      "source": "Touhou 17: Wily Beast and Weakest Creature",
+      "status": "graveyard",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Wily Beast and Weakest Creature",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-03-30T22:42:34Z"
     },
     {
       "beatmapset_id": 1969221,
@@ -4179,6 +4394,28 @@
       "osu_last_updated": "2023-12-17T00:03:58Z"
     },
     {
+      "beatmapset_id": 1998287,
+      "artist": "ZUN",
+      "title": "The World Is Made in an Adorable Way",
+      "creator": "AFKL1919",
+      "source": "東方獣王園　～ Unfinished Dream of All Living Ghost.",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unfinished Dream of All Living Ghost",
+        "discovery_query:source=東方獣王園",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-08-13T15:06:48Z"
+    },
+    {
       "beatmapset_id": 1998346,
       "artist": "Noah",
       "title": "Black Night (N3k0ha_5h12uku) [Debug in Late at Night]",
@@ -4198,6 +4435,28 @@
       "confidence": "verified",
       "last_checked": "2026-08-15",
       "osu_last_updated": null
+    },
+    {
+      "beatmapset_id": 1998558,
+      "artist": "ZUN",
+      "title": "Sekai wa kawaiku dekiteiru",
+      "creator": "Makos",
+      "source": "東方獣王園　〜 Unfinished Dream of All Living Ghost",
+      "status": "graveyard",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Unfinished Dream of All Living Ghost",
+        "discovery_query:source=東方獣王園",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-09-14",
+      "osu_last_updated": "2023-05-27T22:52:35Z"
     },
     {
       "beatmapset_id": 1998900,
