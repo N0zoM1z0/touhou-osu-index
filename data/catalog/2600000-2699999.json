@@ -1066,9 +1066,11 @@
       "evidence": [
         "discovery_query:source=Subterranean Animism",
         "discovery_query:source=東方地霊殿",
-        "osu_source"
+        "manual:excluded",
+        "osu_source",
+        "review:source-pass2-2026-09-14"
       ],
-      "confidence": "verified",
+      "confidence": "excluded",
       "last_checked": "2026-09-14",
       "osu_last_updated": "2026-08-20T19:55:21Z"
     },
@@ -1937,9 +1939,11 @@
       "evidence": [
         "discovery_query:source=Embodiment of Scarlet Devil",
         "discovery_query:source=東方紅魔郷",
-        "osu_source"
+        "manual:candidate",
+        "osu_source",
+        "review:source-pass2-2026-09-14"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-09-14",
       "osu_last_updated": "2026-08-31T07:30:18Z"
     },

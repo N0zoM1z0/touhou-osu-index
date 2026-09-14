@@ -2727,9 +2727,11 @@
       "evidence": [
         "discovery_query:source=Imperishable Night",
         "discovery_query:source=東方永夜抄",
-        "osu_source"
+        "manual:candidate",
+        "osu_source",
+        "review:source-pass2-2026-09-14"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-09-14",
       "osu_last_updated": "2026-09-11T11:16:02Z"
     },

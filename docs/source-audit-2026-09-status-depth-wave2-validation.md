@@ -28,7 +28,7 @@ The generated tree passed:
 - `git diff --check`
 - `make check`: **96 tests passed**
 - `make build`: **3,719 accepted beatmapsets built**
-- catalog validation: **5,294 total** (`3,690 verified`, `29 probable`, `1,573 candidate`, `2 excluded`)
+- catalog validation before manual pass-2 corrections: **5,294 total** (`3,690 verified`, `29 probable`, `1,573 candidate`, `2 excluded`)
 
 ## Deep Review
 
@@ -42,3 +42,8 @@ Result: **passed**.
 - live identity requirement: stored catalog row = fresh osu! API v2 object = public beatmapset-page object
 
 The temporary generation workflow and helper script were deleted before the final data commit; they are not part of the pull-request diff.
+
+
+## Manual source review correction run
+
+The independent source-focused pass found one fan-game original false positive and two rows without enough corroboration for sticky verification. The catalog was corrected to `247 verified / 2 candidate / 1 excluded` among this PR's 250 new rows, using `manual:excluded` / `manual:candidate` so automated refreshes cannot undo the reviewed boundary. The corrected tree was then subjected to the same full validation and Deep Review contract again.

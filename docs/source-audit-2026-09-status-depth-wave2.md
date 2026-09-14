@@ -19,7 +19,7 @@ Open weekly PR #42 touches only `0500000-0599999` and `0600000-0699999`; this pa
 - direct-refetch failures/drift withheld: **0**
 - THBWiki/TouhouDB rows audited before selection: **380**
 - red/ambiguous provenance rows withheld: **2**
-- final accepted rows: **250**
+- final tracked additions before manual post-review: **250**
 - final provenance verdicts: **{"supported": 155, "unknown": 95}**
 - final rows with advisory provider transport/errors: **0**
 - status distribution: **{"graveyard": 221, "pending": 15, "wip": 14}**
@@ -306,3 +306,14 @@ The final branch is required to pass:
 - `git diff --check`;
 - Deep Review in `mode=all`, `scope=added`, with exactly 250 additions and `--forbid-existing-changes`;
 - Deep Review live osu! identity: catalog row = fresh API object = public beatmapset-page object for every added ID.
+
+
+## Manual source review — pass 2
+
+A second, independent source-focused review treated every external-provenance `unknown` row as a manual review target, with priority on non-obvious artists/titles, fan-game-looking source strings, covers/memes, and prior review-history rows. Three sticky boundary corrections were required:
+
+- `2606790` — **Everyone from the Red Cucumber thread — Kappa-sama no Iu Toori ~ One-way Accelerator**: changed `verified → excluded` with `manual:excluded`. `Subterranean Hatred` is an unofficial fan-made Phantasm stage for Subterranean Animism, and this theme belongs to the fan-made Mitori project rather than a ZUN/Touhou official composition chain. Review references: https://moriyashrine.org/resources/subterranean-hatred.389/ and https://w.atwiki.jp/toho/pages/6454.html
+- `2473015` — **Matsubame Frame — The Waltz of the Night**: changed `verified → candidate` with `manual:candidate`. This ID was already withheld by the preceding status-depth audit after an unstable live identity; the current identity is now stable, but repeated exact artist/title searches still did not establish an independent Touhou composition relation. The current osu! game-source string is retained as discovery evidence, not treated as sufficient for a sticky manual verification.
+- `2612960` — **7_7 — Bitch Gun**: changed `verified → candidate` with `manual:candidate`. Exact artist/title searches reproduce the track and osu! mappings but did not establish a credible Touhou composition relation; the source field is retained as a discovery signal only.
+
+Post-review confidence for the 250 newly tracked rows is therefore **247 verified / 2 candidate / 1 excluded**. This remains well above the requested 200 high-confidence additions while preserving the questionable boundaries for future evidence instead of silently dropping them.
