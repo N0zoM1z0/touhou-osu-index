@@ -22,7 +22,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-07",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2024-04-22T22:13:27Z"
     },
     {
@@ -42,10 +42,11 @@
         "discovery_query:Halozy",
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
+        "mapper_tags",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-31T15:25:53Z"
     },
     {
@@ -74,7 +75,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-08-27T03:23:09Z"
     },
     {
@@ -95,7 +96,7 @@
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-04-08T20:38:41Z"
     },
     {
@@ -103,7 +104,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "In the Night Where the Kasha Screamed",
       "creator": "Stormdro",
-      "source": "",
+      "source": "Touhou Chireiden Subterranean Animism",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -113,11 +114,12 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-09-03T12:53:51Z"
     },
     {
@@ -125,7 +127,7 @@
       "artist": "Foreground Eclipse",
       "title": "You Can't Explain Anything Without The Word 'Destruction'",
       "creator": "Yusomi",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -134,10 +136,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-08-31T22:21:33Z"
     },
     {
@@ -160,7 +163,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-06T11:58:54Z"
     },
     {
@@ -187,7 +190,7 @@
         "tournament_candidate:829"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-25T10:46:39Z"
     },
     {
@@ -211,7 +214,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-11-18T22:55:07Z"
     },
     {
@@ -219,27 +222,29 @@
       "artist": "Imperial Circus",
       "title": "Komejirushi",
       "creator": "-Ran Yakumo-",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
+        "mania",
         "osu"
       ],
       "touhou_kind": "unknown",
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-03-11T12:23:31Z"
     },
     {
       "beatmapset_id": 505330,
       "artist": "Pizuya's Cell",
-      "title": "Particle Observer (AutotelicBrown) [Ayumu's Answer]",
+      "title": "Particle Observer",
       "creator": "AutotelicBrown",
-      "source": "",
+      "source": "東方project",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -252,15 +257,15 @@
         "tournament:467"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2016-09-09T00:03:55Z"
     },
     {
       "beatmapset_id": 505490,
       "artist": "unatra",
       "title": "Fabula Nova",
       "creator": "rui",
-      "source": "",
+      "source": "SOUND VOLTEX III GRAVITY WARS",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -269,20 +274,21 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": "2017-10-14T01:50:43Z"
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2024-03-25T11:48:00Z"
     },
     {
       "beatmapset_id": 505681,
       "artist": "Meramipop",
       "title": "Matsuri fu ~ Kamiasobi no Uta",
       "creator": "Deramok",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -291,10 +297,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-12-04T05:22:45Z"
     },
     {
@@ -302,7 +310,7 @@
       "artist": "Sally",
       "title": "Remind",
       "creator": "Reya",
-      "source": "",
+      "source": "東方神霊廟　～ Ten Desires.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -311,11 +319,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-10-23T07:14:25Z"
     },
     {
@@ -337,7 +346,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2026-07-29T15:06:05Z"
     },
     {
@@ -345,7 +354,7 @@
       "artist": "FELT",
       "title": "Lost My Way",
       "creator": "Lama Poluna",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -358,7 +367,7 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-11-03T14:51:23Z"
     },
     {
@@ -386,7 +395,7 @@
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-09-10T17:56:44Z"
     },
     {
@@ -394,7 +403,7 @@
       "artist": "Demetori",
       "title": "Yumeshoushitsu ~ Lost Dream",
       "creator": "lazyboy007",
-      "source": "",
+      "source": "東方夢時空　～ The Phantasmagoria of Dim. Dream",
       "status": "ranked",
       "modes": [
         "osu"
@@ -403,11 +412,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-10-03T21:15:26Z"
     },
     {
@@ -432,7 +442,7 @@
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2023-01-12T01:10:50Z"
     },
     {
@@ -454,7 +464,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-12-15T04:58:21Z"
     },
     {
@@ -476,7 +486,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-03-09T12:31:02Z"
     },
     {
@@ -498,7 +508,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2026-01-19T22:41:45Z"
     },
     {
@@ -521,7 +531,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-07",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-09-20T02:45:19Z"
     },
     {
@@ -529,7 +539,7 @@
       "artist": "Thousand Leaves",
       "title": "Immortal Vengeance",
       "creator": "Stormdro",
-      "source": "",
+      "source": "Touhou Eiushou Imperishable Night",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -538,10 +548,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-10-11T16:26:01Z"
     },
     {
@@ -549,7 +560,7 @@
       "artist": "Buta-Otome",
       "title": "Futatsu no Cinema",
       "creator": "BarkingMadDog",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -558,10 +569,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-09-23T22:24:45Z"
     },
     {
@@ -569,7 +581,7 @@
       "artist": "Kanpyohgo",
       "title": "Ummei no Dark Side -Rolling Gothic mix",
       "creator": "FreeSongs",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -578,10 +590,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-09-30T03:42:32Z"
     },
     {
@@ -589,7 +602,7 @@
       "artist": "iKz",
       "title": "Huan Xiang Xiang Di Yi Tao Guang Bo Ti Cao",
       "creator": "moonlightleaf",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -598,11 +611,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-08-11T15:35:28Z"
     },
     {
@@ -630,7 +645,7 @@
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-09-25T23:06:35Z"
     },
     {
@@ -638,7 +653,7 @@
       "artist": "LIQU@.",
       "title": "Yotogibanashi no Kamikakushi",
       "creator": "Spkz",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -647,10 +662,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-11-21T20:33:44Z"
     },
     {
@@ -679,7 +696,7 @@
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-10-03T04:13:15Z"
     },
     {
@@ -700,7 +717,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-08-05T19:14:10Z"
     },
     {
@@ -726,7 +743,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-16T08:21:21Z"
     },
     {
@@ -734,7 +751,7 @@
       "artist": "DJ TOTTO feat.3L",
       "title": "Youkakushi -Ayakashi Kakushi-",
       "creator": "jonathanlfj",
-      "source": "",
+      "source": "東方妖々夢 〜 Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -747,10 +764,11 @@
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907",
-        "tournament:828"
+        "tournament:828",
+        "tournament:google_sheet:ogc-2025-jp"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-12-31T13:55:50Z"
     },
     {
@@ -758,7 +776,7 @@
       "artist": "MISATO",
       "title": "Necro Fantasia",
       "creator": "Chromoxx",
-      "source": "",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "catch",
@@ -769,11 +787,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-24T17:50:12Z"
     },
     {
@@ -790,10 +809,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-10-08T20:13:19Z"
     },
     {
@@ -801,7 +821,7 @@
       "artist": "BLANKFIELD",
       "title": "Last Remote",
       "creator": "-Ran Yakumo-",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -810,10 +830,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-10-23T10:03:29Z"
     },
     {
@@ -836,7 +857,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2022-07-03T10:34:35Z"
     },
     {
@@ -844,7 +865,7 @@
       "artist": "t+pazolite",
       "title": "CENSORED!!",
       "creator": "Murasaki Nova",
-      "source": "",
+      "source": "SOUND VOLTEX III GRAVITY WARS",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -853,11 +874,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:1405",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-25T11:52:53Z"
     },
     {
@@ -877,7 +899,7 @@
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-12T14:39:15Z"
     },
     {
@@ -905,7 +927,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-10-17T23:14:20Z"
     },
     {
@@ -924,10 +946,11 @@
       "evidence": [
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
+        "mapper_tags",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-12-29T08:29:02Z"
     },
     {
@@ -944,10 +967,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-12-08T09:29:02Z"
     },
     {
@@ -955,7 +979,7 @@
       "artist": "Kurokotei",
       "title": "Scattered Faith",
       "creator": "4hri",
-      "source": "",
+      "source": "東方Project",
       "status": "loved",
       "modes": [
         "mania"
@@ -964,10 +988,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-17T02:07:27Z"
     },
     {
@@ -989,7 +1015,7 @@
         "tournament_candidate:829"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-04-24T00:37:07Z"
     },
     {
@@ -1012,7 +1038,7 @@
         "tournament_candidate:731"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-10-28T21:45:31Z"
     },
     {
@@ -1036,10 +1062,11 @@
       ],
       "evidence": [
         "audit:night-of-knights-2026-08",
+        "mapper_tags",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-10-30T05:01:18Z"
     },
     {
@@ -1047,7 +1074,7 @@
       "artist": "Akiyama Uni",
       "title": "Sky of Scarlet Perception",
       "creator": "Naoka",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1056,10 +1083,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-11-03T22:48:26Z"
     },
     {
@@ -1076,10 +1105,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2020-08-22T09:05:52Z"
     },
     {
@@ -1101,7 +1131,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2019-11-10T23:04:59Z"
     },
     {
@@ -1109,7 +1139,7 @@
       "artist": "Spacelectro feat.Setsunan",
       "title": "Little Little wish",
       "creator": "Starfy",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1123,7 +1153,7 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-18T16:02:19Z"
     },
     {
@@ -1152,7 +1182,7 @@
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-11-05T17:40:05Z"
     },
     {
@@ -1160,7 +1190,7 @@
       "artist": "Milkychan",
       "title": "Conversation",
       "creator": "Cosmolade",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1175,7 +1205,7 @@
         "tournament:google_sheet:tmf-2025:audited"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-11-23T21:54:37Z"
     },
     {
@@ -1197,7 +1227,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2026-04-15T20:06:31Z"
     },
     {
@@ -1221,18 +1251,19 @@
       ],
       "evidence": [
         "audit:night-of-knights-2026-08",
+        "mapper_tags",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-11-08T17:13:40Z"
     },
     {
       "beatmapset_id": 531514,
       "artist": "ZUN remix by 44teru-k",
-      "title": "Harutoman no Youkai Shoujo~VirusV (Wh1teh) [k]",
+      "title": "Harutoman no Youkai Shoujo~VirusV",
       "creator": "Wh1teh",
-      "source": "",
+      "source": "BMS",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -1245,8 +1276,8 @@
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2016-11-09T23:43:42Z"
     },
     {
       "beatmapset_id": 532064,
@@ -1273,7 +1304,7 @@
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-11-11T13:50:56Z"
     },
     {
@@ -1294,7 +1325,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-09-08T14:58:30Z"
     },
     {
@@ -1302,7 +1333,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "Seven Colors",
       "creator": "Realazy",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1314,15 +1345,15 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2017-02-17T23:43:48Z"
     },
     {
       "beatmapset_id": 538136,
       "artist": "Meramipop",
       "title": "Saifu 'Kamiasobi no Uta'",
       "creator": "Mirash",
-      "source": "",
+      "source": "東方風神録　～ Mountain of Faith.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1331,10 +1362,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-13T12:26:48Z"
     },
     {
@@ -1357,7 +1389,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-12T20:50:20Z"
     },
     {
@@ -1376,10 +1408,11 @@
       "evidence": [
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
+        "mapper_tags",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-05-10T09:41:15Z"
     },
     {
@@ -1406,15 +1439,15 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-02-18T01:30:39Z"
     },
     {
       "beatmapset_id": 541278,
       "artist": "A4paper",
-      "title": "Hypernova (Spy) [Mashiro's 4K Hyper]",
+      "title": "Hypernova",
       "creator": "Spy",
-      "source": "",
+      "source": "BMS",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -1427,15 +1460,15 @@
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2017-04-24T11:35:41Z"
     },
     {
       "beatmapset_id": 541289,
       "artist": "YooSanHyakurei",
       "title": "Sen no Yukari",
       "creator": "kwk",
-      "source": "",
+      "source": "東方妖々夢　～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1444,11 +1477,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-09-23T02:34:01Z"
     },
     {
@@ -1456,7 +1490,7 @@
       "artist": "Meramipop",
       "title": "Itoushiki Mono ni, Utsukushiki Mono Ni",
       "creator": "Halfslashed",
-      "source": "",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1465,10 +1499,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2023-01-23T07:40:24Z"
     },
     {
@@ -1476,7 +1511,7 @@
       "artist": "Diao ye zong feat. Meramipop",
       "title": "The Anonymous",
       "creator": "Asaiga",
-      "source": "",
+      "source": "東方紅魔郷　～ Embodiment of Scarlet Devil.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1486,10 +1521,11 @@
       "original_themes": [],
       "evidence": [
         "osucollector:1407",
-        "osucollector:6907"
+        "osucollector:6907",
+        "tournament:google_sheet:gensokyo-cup-2"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-12-12T19:34:41Z"
     },
     {
@@ -1506,11 +1542,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osu_source",
         "tournament_candidate:829"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2019-03-16T23:41:43Z"
     },
     {
@@ -1533,7 +1570,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-07",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2019-11-22T15:15:04Z"
     },
     {
@@ -1541,7 +1578,7 @@
       "artist": "FELT",
       "title": "Runway Drive",
       "creator": "bor",
-      "source": "",
+      "source": "東方永夜抄　～ Imperishable Night.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1550,11 +1587,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-04-10T18:09:13Z"
     },
     {
@@ -1562,7 +1600,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "Frozen",
       "creator": "Mazzerin",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1572,10 +1610,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "known_touhou_metadata",
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "probable",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-12-14T11:38:45Z"
     },
     {
@@ -1583,7 +1624,7 @@
       "artist": "Akiyama Uni",
       "title": "Niiru Renka Chou ~ Ancients",
       "creator": "My Angel Azusa",
-      "source": "",
+      "source": "西方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1592,13 +1633,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-12T10:20:44Z"
     },
     {
@@ -1619,7 +1661,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-06-20T06:47:15Z"
     },
     {
@@ -1627,7 +1669,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "Under The Scarlet Sky Pt.3",
       "creator": "-Ran Yakumo-",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1637,10 +1679,11 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-12-19T20:49:47Z"
     },
     {
@@ -1668,7 +1711,7 @@
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-12-24T16:05:01Z"
     },
     {
@@ -1676,7 +1719,7 @@
       "artist": "Shibayan feat. yana",
       "title": "Oznei Haman wa Mou Iranai",
       "creator": "Deramok",
-      "source": "",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
       "status": "loved",
       "modes": [
         "osu"
@@ -1685,10 +1728,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2022-02-06T18:04:29Z"
     },
     {
@@ -1696,7 +1740,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "The Empress",
       "creator": "zaverk",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1706,10 +1750,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "known_touhou_metadata",
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "probable",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-12-28T19:18:44Z"
     },
     {
@@ -1731,7 +1778,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-11-25T15:46:14Z"
     },
     {
@@ -1739,7 +1786,7 @@
       "artist": "senya",
       "title": "Opposite World",
       "creator": "Mimilie",
-      "source": "",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1748,10 +1795,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "official_pack_item:A87",
+        "osucollector:12493",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2020-03-27T15:04:45Z"
     },
     {
@@ -1778,7 +1827,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-03T11:25:06Z"
     },
     {
@@ -1786,7 +1835,7 @@
       "artist": "Floating Cloud",
       "title": "Kyoukai-sen o meguru fesuta",
       "creator": "Ekoro",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1795,10 +1844,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2016-12-30T23:25:21Z"
     },
     {
@@ -1806,7 +1856,7 @@
       "artist": "Demetori",
       "title": "Hartmann no Youkai Shoujo ~ Todestrieb und Lebenstrieb",
       "creator": "GoldenWolf",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1815,10 +1865,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-11-07T02:19:28Z"
     },
     {
@@ -1826,7 +1877,7 @@
       "artist": "Shihori",
       "title": "Bloody Night",
       "creator": "StarForYou",
-      "source": "",
+      "source": "東方妖々夢 〜 Perfect Cherry Blossom.",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1835,10 +1886,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-10T02:54:35Z"
     },
     {
@@ -1846,7 +1898,7 @@
       "artist": "Camellia",
       "title": "Lunatic Rough Party!! (Long Ver.)",
       "creator": "AtHeoN",
-      "source": "",
+      "source": "東方Project",
       "status": "loved",
       "modes": [
         "osu"
@@ -1861,7 +1913,7 @@
         "tournament:1865"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-15T16:19:32Z"
     },
     {
@@ -1891,7 +1943,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-19T02:03:25Z"
     },
     {
@@ -1899,7 +1951,7 @@
       "artist": "FELT",
       "title": "Lost My Way",
       "creator": "Scarsnic",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -1908,11 +1960,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-15T19:52:49Z"
     },
     {
@@ -1941,7 +1995,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-06T17:26:03Z"
     },
     {
@@ -1949,7 +2003,7 @@
       "artist": "Demetori",
       "title": "Fall of Fall ~ The Door Into Summer",
       "creator": "jonathanlfj",
-      "source": "",
+      "source": "東方風神録 ～ Mountain of Faith.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -1958,11 +2012,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-02-04T06:26:57Z"
     },
     {
@@ -1985,7 +2040,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-03",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-22T13:11:13Z"
     },
     {
@@ -2009,10 +2064,11 @@
       ],
       "evidence": [
         "audit:night-of-knights-2026-08",
+        "mapper_tags",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-21T16:40:02Z"
     },
     {
@@ -2020,7 +2076,7 @@
       "artist": "Tsukasa Yatoki",
       "title": "Heaven's Race Guitar Style",
       "creator": "moph",
-      "source": "",
+      "source": "東方妖々夢 ～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2029,11 +2085,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-01T06:49:36Z"
     },
     {
@@ -2061,7 +2118,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-16T18:08:40Z"
     },
     {
@@ -2069,7 +2126,7 @@
       "artist": "Demetori",
       "title": "Bad Apple!! ~ Death of A Bad Apple",
       "creator": "GoldenWolf",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2078,10 +2135,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-31T08:54:54Z"
     },
     {
@@ -2089,7 +2147,7 @@
       "artist": "Liz Triangle",
       "title": "Myoujin Henka",
       "creator": "Mirash",
-      "source": "",
+      "source": "東方神霊廟 ～ Ten Desires.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2098,11 +2156,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1405",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-21T13:39:29Z"
     },
     {
@@ -2125,7 +2184,7 @@
         "forum_queue:sd_touhou"
       ],
       "confidence": "probable",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2024-03-09T10:01:10Z"
     },
     {
@@ -2153,7 +2212,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-02-02T23:16:15Z"
     },
     {
@@ -2161,7 +2220,7 @@
       "artist": "IRON-CHINO",
       "title": "Killing Under A Scarlet Moon",
       "creator": "Karoo13",
-      "source": "",
+      "source": "Touhou",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2170,10 +2229,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-07-23T01:17:09Z"
     },
     {
@@ -2196,7 +2256,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-07",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-27T22:13:06Z"
     },
     {
@@ -2204,7 +2264,7 @@
       "artist": "Halozy",
       "title": "Three Magic (DiGiTAL WiNG TRANCE Remix)",
       "creator": "Virtue-",
-      "source": "",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
       "status": "ranked",
       "modes": [
         "mania"
@@ -2214,10 +2274,11 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-28T23:09:22Z"
     },
     {
@@ -2225,7 +2286,7 @@
       "artist": "IOSYS",
       "title": "Marisa stole the precious thing",
       "creator": "Luna Flina",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2235,10 +2296,13 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "known_touhou_metadata",
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "probable",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-02T11:29:04Z"
     },
     {
@@ -2258,10 +2322,11 @@
         "discovery_query:source=Ten Desires",
         "discovery_query:source=東方神霊廟",
         "discovery_query:上海アリス幻樂団",
-        "osu_source"
+        "osu_source",
+        "tournament:google_sheet:gensokyo-cup-2"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2024-09-04T09:41:51Z"
     },
     {
@@ -2269,7 +2334,7 @@
       "artist": "SakiZ",
       "title": "Bad osu!",
       "creator": "Nyanaro",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2278,10 +2343,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-02-14T17:48:22Z"
     },
     {
@@ -2309,7 +2376,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-01-30T14:40:33Z"
     },
     {
@@ -2330,7 +2397,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2021-09-06T08:12:08Z"
     },
     {
@@ -2350,7 +2417,7 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": null
     },
     {
@@ -2358,7 +2425,7 @@
       "artist": "Camellia",
       "title": "Lunatic Rough Party!!",
       "creator": "Kami-senpai",
-      "source": "",
+      "source": "SOUND VOLTEX II",
       "status": "loved",
       "modes": [
         "osu"
@@ -2367,11 +2434,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-11T00:25:55Z"
     },
     {
@@ -2379,7 +2447,7 @@
       "artist": "Uni Akiyama",
       "title": "Occult a la Carte",
       "creator": "LefafeI",
-      "source": "",
+      "source": "Touhou 14.5 - [Urban Legend in Limbo]",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2388,10 +2456,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-21T18:43:34Z"
     },
     {
@@ -2415,7 +2484,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-10-21T11:50:01Z"
     },
     {
@@ -2423,7 +2492,7 @@
       "artist": "Thousand Leaves",
       "title": "Kissing the Tears",
       "creator": "TheKingHenry",
-      "source": "",
+      "source": "東方地霊殿　～ Subterranean Animism.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2437,7 +2506,7 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-05-28T06:29:21Z"
     },
     {
@@ -2445,7 +2514,7 @@
       "artist": "FELT",
       "title": "Lies in Reality",
       "creator": "Frostings",
-      "source": "",
+      "source": "東方神霊廟　～ Ten Desires.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2454,11 +2523,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-03-19T23:41:44Z"
     },
     {
@@ -2466,7 +2536,7 @@
       "artist": "SYNC.ART'S",
       "title": "MIND READER",
       "creator": "Lasse",
-      "source": "",
+      "source": "東方地霊殿　～ Subterranean Animism.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2475,13 +2545,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-08T16:11:44Z"
     },
     {
@@ -2509,7 +2580,7 @@
         "provenance:thbwiki"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-05-08T17:00:19Z"
     },
     {
@@ -2531,10 +2602,11 @@
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907",
+        "tournament:google_sheet:gensokyo-cup-2",
         "tournament_candidate:829"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-05T16:48:02Z"
     },
     {
@@ -2554,7 +2626,7 @@
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-08T13:10:18Z"
     },
     {
@@ -2562,7 +2634,7 @@
       "artist": "Nekomata Master",
       "title": "Sennen no Kotowari",
       "creator": "Critical_Star",
-      "source": "",
+      "source": "SOUND VOLTEX III GRAVITY WARS",
       "status": "ranked",
       "modes": [
         "mania"
@@ -2571,11 +2643,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-18T10:51:00Z"
     },
     {
@@ -2595,10 +2668,11 @@
         "discovery_query:source=Subterranean Animism",
         "discovery_query:source=東方地霊殿",
         "discovery_query:上海アリス幻樂団",
+        "official_pack_item:R326",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2022-10-15T07:42:04Z"
     },
     {
@@ -2606,7 +2680,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "Ready To Take Off",
       "creator": "-Ran Yakumo-",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2616,10 +2690,11 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-01T17:53:39Z"
     },
     {
@@ -2627,7 +2702,7 @@
       "artist": "AIR WINDOW",
       "title": "Lover of Owen",
       "creator": "LuminaCreator",
-      "source": "",
+      "source": "Touhou",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2636,10 +2711,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-02-20T11:01:14Z"
     },
     {
@@ -2662,7 +2738,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-05-22T17:34:50Z"
     },
     {
@@ -2670,7 +2746,7 @@
       "artist": "Demetori",
       "title": "Fall of Fall ~ The Door Into Summer",
       "creator": "GoldenWolf",
-      "source": "",
+      "source": "東方風神録　～ Mountain of Faith.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2679,11 +2755,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-06T22:58:10Z"
     },
     {
@@ -2691,7 +2768,7 @@
       "artist": "BITPLANE",
       "title": "- Prelude of IX (Variation V)",
       "creator": "Hareimu",
-      "source": "",
+      "source": "東方妖々夢 ～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "catch"
@@ -2700,10 +2777,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1402"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-01T18:33:59Z"
     },
     {
@@ -2711,7 +2789,7 @@
       "artist": "SOUND HOLIC",
       "title": "Fantasia Dream",
       "creator": "aidanbh123",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2723,8 +2801,8 @@
         "tournament:1865"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2017-02-22T07:45:15Z"
     },
     {
       "beatmapset_id": 578857,
@@ -2743,7 +2821,7 @@
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-02-27T02:26:51Z"
     },
     {
@@ -2766,7 +2844,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-03",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-25T03:50:56Z"
     },
     {
@@ -2786,10 +2864,11 @@
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
         "discovery_query:東方",
+        "mapper_tags",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-10-09T01:55:36Z"
     },
     {
@@ -2797,7 +2876,7 @@
       "artist": "Nhato",
       "title": "Delay Order",
       "creator": "Shizuku-",
-      "source": "",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2806,11 +2885,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-10-06T02:11:12Z"
     },
     {
@@ -2818,7 +2898,7 @@
       "artist": "Demetori",
       "title": "Shinkou wa Hakanaki Ningen no Tame ni ~ Jehovah's YaHVeH",
       "creator": "[Crz]Makii",
-      "source": "",
+      "source": "東方風神録　～ Mountain of Faith.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2827,19 +2907,20 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2021-10-16T18:19:12Z"
     },
     {
       "beatmapset_id": 582016,
       "artist": "UNDEAD CORPORATION",
-      "title": "Magus night fever inst. (puxtu) [pxt]",
+      "title": "Magus night fever inst.",
       "creator": "puxtu",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -2852,15 +2933,15 @@
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2017-03-07T04:01:09Z"
     },
     {
       "beatmapset_id": 582215,
       "artist": "Unlucky Morpheus  UNDEAD CORPORATION",
       "title": "The Beast",
       "creator": "kjlfaklf",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2869,10 +2950,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-08T13:15:36Z"
     },
     {
@@ -2880,7 +2962,7 @@
       "artist": "Xe vs. cYsmix",
       "title": "Youkai Festival Shrine Road",
       "creator": "Mirash",
-      "source": "",
+      "source": "東方神霊廟 ～ Ten Desires.",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2892,15 +2974,15 @@
         "tournament:828"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2017-03-06T22:00:35Z"
     },
     {
       "beatmapset_id": 582625,
       "artist": "Meramipop",
       "title": "Cruel CRuEL",
       "creator": "Asaiga",
-      "source": "",
+      "source": "東方永夜抄 ～ Imperishable Night.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2909,11 +2991,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-21T15:01:59Z"
     },
     {
@@ -2936,7 +3019,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-03",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2023-04-08T01:49:35Z"
     },
     {
@@ -2944,7 +3027,7 @@
       "artist": "FELT",
       "title": "Day and Night",
       "creator": "UndeadCapulet",
-      "source": "",
+      "source": "東方Project",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2953,11 +3036,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-06-01T03:45:44Z"
     },
     {
@@ -2965,7 +3050,7 @@
       "artist": "FELT",
       "title": "Flower Flag",
       "creator": "Bearizm",
-      "source": "",
+      "source": "東方妖々夢 ～ Perfect Cherry Blossom.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -2974,13 +3059,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-20T04:21:00Z"
     },
     {
@@ -2988,7 +3074,7 @@
       "artist": "Camellia",
       "title": "werewolf howls.",
       "creator": "Necroluttah",
-      "source": "",
+      "source": "SOUND VOLTEX II -infinite infection-",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -2997,10 +3083,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-15T12:48:37Z"
     },
     {
@@ -3008,7 +3095,7 @@
       "artist": "UNDEAD CORPORATION",
       "title": "Monster",
       "creator": "-Ran Yakumo-",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -3018,10 +3105,11 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-21T21:20:11Z"
     },
     {
@@ -3043,7 +3131,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2019-02-11T11:06:51Z"
     },
     {
@@ -3071,7 +3159,7 @@
         "provenance:arrangement-chronicle-bad-apple"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-18T03:29:24Z"
     },
     {
@@ -3079,7 +3167,7 @@
       "artist": "Silver Forest feat. Aki",
       "title": "Sakura Uta",
       "creator": "RVMathew",
-      "source": "",
+      "source": "東方神霊廟　～ Ten Desires.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3088,12 +3176,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-10-05T02:16:35Z"
     },
     {
@@ -3101,7 +3190,7 @@
       "artist": "t+pazolite",
       "title": "CENSORED!!",
       "creator": "PandaHero",
-      "source": "",
+      "source": "SOUND VOLTEX III GRAVITY WARS",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -3113,8 +3202,8 @@
         "tournament:1432"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-15",
-      "osu_last_updated": null
+      "last_checked": "2026-10-01",
+      "osu_last_updated": "2018-02-19T17:28:49Z"
     },
     {
       "beatmapset_id": 590214,
@@ -3141,7 +3230,7 @@
         "provenance:arrangement-chronicle-original-theme"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-03-25T11:59:10Z"
     },
     {
@@ -3161,10 +3250,11 @@
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
         "discovery_query:上海アリス幻樂団",
+        "mapper_tags",
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-08T15:38:33Z"
     },
     {
@@ -3189,7 +3279,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2019-08-14T11:31:49Z"
     },
     {
@@ -3206,10 +3296,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "mapper_tags",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-07T12:33:24Z"
     },
     {
@@ -3217,7 +3308,7 @@
       "artist": "keekihime * Yuumi & JUMA",
       "title": "Eiya no Parade",
       "creator": "assassincread",
-      "source": "",
+      "source": "東方永夜抄 ～ Imperishable Night.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3226,11 +3317,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-12-07T05:29:15Z"
     },
     {
@@ -3238,7 +3330,7 @@
       "artist": "Halozy",
       "title": "S.A.T.O.R.A.R.E",
       "creator": "PandaHero",
-      "source": "",
+      "source": "東方地霊殿　～ Subterranean Animism.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3248,11 +3340,12 @@
       "original_themes": [],
       "evidence": [
         "known_touhou_artist",
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-07-18T22:33:27Z"
     },
     {
@@ -3260,7 +3353,7 @@
       "artist": "siromaru",
       "title": "Shoot ten Dozy",
       "creator": "Mijn Aim Zuigt",
-      "source": "",
+      "source": "Touhou",
       "status": "graveyard",
       "modes": [
         "osu"
@@ -3269,10 +3362,11 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407"
       ],
       "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-20T08:14:32Z"
     },
     {
@@ -3300,7 +3394,7 @@
         "provenance:arrangement-chronicle-original-theme"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-06",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-04-07T16:40:31Z"
     },
     {
@@ -3322,7 +3416,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-01-07T18:35:49Z"
     },
     {
@@ -3330,7 +3424,7 @@
       "artist": "Demetori",
       "title": "Youkai no Yama ~ Mysterious Mountain",
       "creator": "GoldenWolf",
-      "source": "",
+      "source": "東方風神録　～ Mountain of Faith.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3339,11 +3433,12 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-06-10T15:36:31Z"
     },
     {
@@ -3367,7 +3462,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2018-02-05T14:27:17Z"
     },
     {
@@ -3375,7 +3470,7 @@
       "artist": "Camellia",
       "title": "Ultimate Ascension",
       "creator": "Aeril",
-      "source": "",
+      "source": "SOUND VOLTEX III GRAVITY WARS",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3393,7 +3488,7 @@
         "tournament:google_sheet:tmf-2025:audited"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2022-02-09T02:11:31Z"
     },
     {
@@ -3401,7 +3496,7 @@
       "artist": "Akiyama Uni",
       "title": "Chikurin in Flames",
       "creator": "My Angel Azusa",
-      "source": "",
+      "source": "東方深秘録 ～ Urban Legend in Limbo.",
       "status": "ranked",
       "modes": [
         "osu"
@@ -3410,13 +3505,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "osu_source",
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
-      "confidence": "candidate",
-      "last_checked": "2026-08-15",
+      "confidence": "verified",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-07-24T04:33:30Z"
     },
     {
@@ -3445,7 +3541,7 @@
         "manual:verified"
       ],
       "confidence": "verified",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-10-01",
       "osu_last_updated": "2017-07-02T12:24:16Z"
     }
   ]
