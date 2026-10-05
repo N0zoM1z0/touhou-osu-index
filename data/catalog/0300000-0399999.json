@@ -2915,7 +2915,7 @@
       "title": "Saishuu Kichiku Imouto Flandre-S",
       "creator": "Lost The Lights",
       "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
-      "status": "pending",
+      "status": "ranked",
       "modes": [
         "taiko"
       ],
@@ -2923,6 +2923,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:COOL&CREATE",
         "discovery_query:source=Embodiment of Scarlet Devil",
         "discovery_query:source=東方",
         "discovery_query:source=東方紅魔郷",
@@ -2935,7 +2936,7 @@
         "osu_source"
       ],
       "confidence": "verified",
-      "last_checked": "2026-09-07",
+      "last_checked": "2026-10-05",
       "osu_last_updated": "2026-09-05T20:52:28Z"
     },
     {
