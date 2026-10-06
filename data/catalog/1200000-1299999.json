@@ -672,9 +672,10 @@
         "discovery_query:東方",
         "discovery_query:東方Project",
         "mapper_tags",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2023-03-04T13:37:34Z"
     },
@@ -2106,9 +2107,10 @@
         "discovery_query:上海アリス幻樂団",
         "discovery_query:東方Project",
         "mapper_tags",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-07-22T05:25:54Z"
     },
@@ -2130,9 +2132,10 @@
         "osu_source",
         "osucollector:1407",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:731"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2020-12-12T14:51:54Z"
     },

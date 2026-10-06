@@ -39,6 +39,13 @@ example a ZUN-composed Seihou track).
 - Longer unrecognized source names containing `Touhou` or `東方` stay
   candidates until reviewed. These words also occur in unrelated works, and
   fan album/game names need provenance before publication.
+- Generic aliases such as `Touhou` / `東方Project` are not grandfathered
+  verification. A `verified` generic-source row must also carry independent
+  reviewed evidence (manual verification, a verified systematic-audit marker,
+  provenance evidence, an official pack, or a trusted tournament/TMC source).
+  Candidate-review audit markers do not count. The repository test suite
+  enforces zero debt on every
+  `make check`, and provenance-mode deep review scans the whole current catalog.
 - Membership in an official Touhou pack or a Touhou-only tournament is
   verified.
 - A Touhou mapper tag plus a known Touhou artist and independent historical

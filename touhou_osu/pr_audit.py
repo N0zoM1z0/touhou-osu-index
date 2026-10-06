@@ -23,7 +23,7 @@ from .provenance import (
     ProvenanceHit,
     _report_payload,
     audit_entries,
-    new_generic_verification_violations,
+    generic_verification_violations,
 )
 from .sources import parse_beatmapset_page
 
@@ -382,7 +382,7 @@ def provenance_audit(
 ) -> dict:
     targets = [current.entries[item] for item in _target_ids(diff, scope)]
     audits = audit_entries(targets, workers=workers)
-    violations = new_generic_verification_violations(current, base)
+    violations = generic_verification_violations(current)
     payload = _report_payload(audits, violations)
     review_flags, acknowledged = _resolve_review_flags(audits, exceptions)
     errors: list[str] = []

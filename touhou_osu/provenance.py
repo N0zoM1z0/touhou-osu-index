@@ -23,9 +23,20 @@ from .models import Entry
 
 TOUHOUDb_API = "https://touhoudb.com/api/songs"
 THBWIKI_API = "https://thwiki.cc/album.php"
+VERIFIED_AUDIT_MARKERS = frozenset(
+    {
+        "audit:border-of-life-2026-08",
+        "audit:coverage-200plus-2026-09",
+        "audit:lunatic-princess-2026-08",
+        "audit:night-of-knights-2026-08",
+        "audit:wave2-reviewed-2026-09",
+        "audit:wave3-deep-coverage-2026-09",
+    }
+)
 TRUSTED_VERIFICATION_PREFIXES = (
     "official_pack:",
     "official_pack_item:",
+    "provenance:",
     "tournament:",
     "tmc:",
 )
@@ -338,18 +349,17 @@ def has_independent_verification(entry: Entry) -> bool:
     evidence = set(entry.evidence)
     if "manual:verified" in evidence:
         return True
+    if evidence & VERIFIED_AUDIT_MARKERS:
+        return True
     return any(item.startswith(TRUSTED_VERIFICATION_PREFIXES) for item in evidence)
 
 
-def new_generic_verification_violations(current: Catalog, base: Catalog) -> list[int]:
-    """Return newly verified generic-source rows without independent evidence."""
+def generic_verification_violations(current: Catalog) -> list[int]:
+    """Return every generic-source verified row lacking independent evidence."""
 
     violations: list[int] = []
     for beatmapset_id, entry in current.entries.items():
         if not is_generic_touhou_source(entry.source) or entry.confidence != "verified":
-            continue
-        previous = base.entries.get(beatmapset_id)
-        if previous is not None and previous.confidence == "verified":
             continue
         if has_independent_verification(entry):
             continue
@@ -417,7 +427,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.limit:
         targets = targets[: args.limit]
 
-    violations = new_generic_verification_violations(current, base) if base is not None else []
+    violations = generic_verification_violations(current)
     audits = audit_entries(targets, workers=args.workers)
     payload = _report_payload(audits, violations)
     text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"

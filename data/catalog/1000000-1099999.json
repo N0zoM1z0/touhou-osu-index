@@ -1805,9 +1805,10 @@
         "osu_source",
         "osucollector:1407",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2020-02-18T00:32:56Z"
     },
@@ -2948,9 +2949,10 @@
         "discovery_query:東方",
         "known_touhou_artist",
         "mapper_tags",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-02-14T13:08:21Z"
     },
@@ -3585,9 +3587,10 @@
       "original_themes": [],
       "evidence": [
         "osu_source",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2019-12-15T06:07:03Z"
     },
@@ -3766,9 +3769,10 @@
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
         "mapper_tags",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-05-01T07:16:58Z"
     },
@@ -4516,9 +4520,10 @@
         "discovery_query:source=東方Project",
         "discovery_query:東方Project",
         "mapper_tags",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2026-01-26T11:50:43Z"
     },
