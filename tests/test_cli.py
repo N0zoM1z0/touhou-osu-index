@@ -314,8 +314,7 @@ class ReconciliationTests(unittest.TestCase):
         reconciled = self._run_reconcile(current, raw)
 
         self.assertEqual(reconciled.confidence, "candidate")
-        self.assertIn("reconcile:identity-mismatch", reconciled.evidence)
-        self.assertIn("known_touhou_artist", reconciled.evidence)
+        self.assertEqual(reconciled.evidence, ["reconcile:identity-mismatch"])
         self.assertNotIn("manual:verified", reconciled.evidence)
 
     def test_reconcile_replaces_stale_metadata_after_identity_quarantine(self):
