@@ -263,13 +263,40 @@ class ReconciliationTests(unittest.TestCase):
         self.assertEqual(reconciled.origin_games, [])
         self.assertEqual(reconciled.original_themes, [])
 
+    def test_reconcile_quarantines_sticky_manual_verification_on_replaced_identity(self):
+        current = Entry(
+            42,
+            artist="LeaF",
+            title="Arianrhod",
+            creator="_Kobii",
+            evidence=["manual:verified"],
+            confidence="verified",
+        )
+        raw = {
+            "id": 42,
+            "artist": "cosMo@bousouP",
+            "title": "Oceanus",
+            "creator": "_Kobii",
+            "source": "Deemo",
+            "status": "graveyard",
+            "tags": "",
+            "last_updated": "2022-01-16T22:10:41Z",
+            "beatmaps": [{"mode": "mania"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.confidence, "candidate")
+        self.assertEqual(reconciled.evidence, ["reconcile:identity-mismatch"])
+        self.assertNotIn("manual:verified", reconciled.evidence)
+
     def test_reconcile_keeps_trusted_evidence_for_canonical_title_cleanup(self):
         current = Entry(
             42,
             artist="Shoegazer",
             title="Everything Will Freeze (Shoegazer) [Calamity]",
             creator="mapper",
-            evidence=["tmc:2nd", "tournament:467"],
+            evidence=["manual:verified", "tmc:2nd", "tournament:467"],
             confidence="verified",
         )
         raw = {
@@ -289,6 +316,7 @@ class ReconciliationTests(unittest.TestCase):
         self.assertEqual(reconciled.artist, "UNDEAD CORPORATION")
         self.assertEqual(reconciled.title, "Everything Will Freeze")
         self.assertEqual(reconciled.confidence, "verified")
+        self.assertIn("manual:verified", reconciled.evidence)
         self.assertIn("tmc:2nd", reconciled.evidence)
         self.assertIn("tournament:467", reconciled.evidence)
         self.assertNotIn("reconcile:identity-mismatch", reconciled.evidence)

@@ -23,14 +23,18 @@ DEFAULT_CONFIG = ROOT / "config" / "seeds.json"
 DEFAULT_OUTPUT = ROOT / "dist"
 DISCOVERY_CONFIDENCE_ORDER = {"verified": 0, "probable": 1, "candidate": 2, "excluded": 3}
 RECONCILE_STRONG_IDENTITY_PREFIXES = (
+    "audit:",
+    "manual:",
     "official_pack:",
     "official_pack_item:",
+    "provenance:",
     "tmc:",
     "tournament:",
 )
 RECONCILE_STALE_IDENTITY_PREFIXES = (
     "audit:",
     "forum_queue:",
+    "manual:",
     "official_pack:",
     "official_pack_item:",
     "provenance:",
