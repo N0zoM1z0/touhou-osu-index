@@ -1536,9 +1536,10 @@
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
         "mapper_tags",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2017-07-11T15:20:48Z"
     },
@@ -3691,9 +3692,10 @@
       "evidence": [
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-03-21T12:04:11Z"
     },
@@ -3960,9 +3962,10 @@
         "discovery_query:source=東方Project",
         "known_touhou_artist",
         "mapper_tags",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-09-19T13:32:17Z"
     },
