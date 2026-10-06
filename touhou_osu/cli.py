@@ -22,12 +22,15 @@ DEFAULT_CATALOG = ROOT / "data" / "catalog"
 DEFAULT_CONFIG = ROOT / "config" / "seeds.json"
 DEFAULT_OUTPUT = ROOT / "dist"
 DISCOVERY_CONFIDENCE_ORDER = {"verified": 0, "probable": 1, "candidate": 2, "excluded": 3}
-RECONCILE_STRONG_IDENTITY_PREFIXES = (
+RECONCILE_REVIEWED_IDENTITY_PREFIXES = (
     "audit:",
     "manual:",
+    "provenance:",
+)
+RECONCILE_STRONG_IDENTITY_PREFIXES = (
+    *RECONCILE_REVIEWED_IDENTITY_PREFIXES,
     "official_pack:",
     "official_pack_item:",
-    "provenance:",
     "tmc:",
     "tournament:",
 )
@@ -277,9 +280,12 @@ def _quarantine_replaced_identity(current, raw: dict) -> list[str]:
     incoming_title = str(raw.get("title", "")).strip()
     if not current.artist or not current.title or not incoming_artist or not incoming_title:
         return []
-    if normalize_text(current.artist) == normalize_text(incoming_artist):
-        return []
+    artist_matches = normalize_text(current.artist) == normalize_text(incoming_artist)
     if _same_reconciled_title(current.title, incoming_title):
+        return []
+    if artist_matches and not any(
+        item.startswith(RECONCILE_REVIEWED_IDENTITY_PREFIXES) for item in current.evidence
+    ):
         return []
     if not any(
         item.startswith(RECONCILE_STRONG_IDENTITY_PREFIXES) for item in current.evidence

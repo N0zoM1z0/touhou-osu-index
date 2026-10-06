@@ -290,6 +290,32 @@ class ReconciliationTests(unittest.TestCase):
         self.assertEqual(reconciled.evidence, ["reconcile:identity-mismatch"])
         self.assertNotIn("manual:verified", reconciled.evidence)
 
+    def test_reconcile_quarantines_reviewed_same_artist_title_replacement(self):
+        current = Entry(
+            42,
+            artist="IOSYS",
+            title="Verified Touhou Song",
+            creator="mapper",
+            evidence=["manual:verified"],
+            confidence="verified",
+        )
+        raw = {
+            "id": 42,
+            "artist": "IOSYS",
+            "title": "Different Song",
+            "creator": "mapper",
+            "source": "Non-Touhou Album",
+            "status": "graveyard",
+            "tags": "",
+            "last_updated": "2022-01-16T22:10:41Z",
+            "beatmaps": [{"mode": "osu"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.confidence, "candidate")
+        self.assertEqual(reconciled.evidence, ["reconcile:identity-mismatch"])
+
     def test_reconcile_keeps_trusted_evidence_for_canonical_title_cleanup(self):
         current = Entry(
             42,
