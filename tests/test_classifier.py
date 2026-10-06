@@ -147,6 +147,19 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item, tags="touhou zun team shanghai alice")
         self.assertEqual(item.confidence, "candidate")
 
+    def test_identity_mismatch_blocks_automatic_reverification(self):
+        item = Entry(
+            1,
+            artist="ZUN",
+            title="Different Touhou Song",
+            source="東方永夜抄 ～ Imperishable Night.",
+            evidence=["reconcile:identity-mismatch"],
+            confidence="candidate",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+        self.assertEqual(item.evidence, ["reconcile:identity-mismatch"])
+
     def test_known_artist_alone_stays_candidate(self):
         item = Entry(1, artist="IOSYS", evidence=["discovery_query:IOSYS"], confidence="candidate")
         apply_classification(item)

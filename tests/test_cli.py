@@ -357,6 +357,33 @@ class ReconciliationTests(unittest.TestCase):
         self.assertNotIn("manual:verified", reconciled.evidence)
         self.assertNotIn("osu_source", reconciled.evidence)
 
+    def test_reconcile_mismatch_stays_candidate_even_with_new_touhou_source(self):
+        current = Entry(
+            42,
+            artist="Old Artist",
+            title="Old Song",
+            evidence=["manual:verified"],
+            confidence="verified",
+        )
+        raw = {
+            "id": 42,
+            "artist": "New Artist",
+            "title": "Different Touhou Song",
+            "creator": "mapper",
+            "source": "東方永夜抄 ～ Imperishable Night.",
+            "status": "ranked",
+            "tags": "",
+            "last_updated": "2026-01-02T00:00:00Z",
+            "beatmaps": [{"mode": "osu"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.confidence, "candidate")
+        self.assertIn("reconcile:identity-mismatch", reconciled.evidence)
+        self.assertNotIn("manual:verified", reconciled.evidence)
+        self.assertNotIn("osu_source", reconciled.evidence)
+
     def test_reconcile_keeps_trusted_evidence_for_canonical_title_cleanup(self):
         current = Entry(
             42,
