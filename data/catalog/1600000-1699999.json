@@ -2513,10 +2513,9 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
-        "tmc:2nd",
-        "tournament:467"
+        "reconcile:identity-mismatch"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2022-01-16T22:10:41Z"
     },

@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from .catalog import Catalog
+from .classifier import normalize as normalize_text
 from .http import get_text
 from .models import CatalogError
 from .osu_api import MissingCredentials, OsuApi, entry_from_osu
@@ -21,6 +22,28 @@ DEFAULT_CATALOG = ROOT / "data" / "catalog"
 DEFAULT_CONFIG = ROOT / "config" / "seeds.json"
 DEFAULT_OUTPUT = ROOT / "dist"
 DISCOVERY_CONFIDENCE_ORDER = {"verified": 0, "probable": 1, "candidate": 2, "excluded": 3}
+RECONCILE_STRONG_IDENTITY_PREFIXES = (
+    "official_pack:",
+    "official_pack_item:",
+    "tmc:",
+    "tournament:",
+)
+RECONCILE_STALE_IDENTITY_PREFIXES = (
+    "audit:",
+    "forum_queue:",
+    "official_pack:",
+    "official_pack_item:",
+    "provenance:",
+    "tmc:",
+    "tournament:",
+    "tournament_candidate:",
+)
+RECONCILE_STALE_IDENTITY_EVIDENCE = {
+    "known_touhou_artist",
+    "known_touhou_metadata",
+    "mapper_tags",
+    "osu_source",
+}
 
 
 def load_catalog(path: Path) -> Catalog:
@@ -231,12 +254,59 @@ def command_discover(args: argparse.Namespace) -> int:
     return 0
 
 
+def _same_reconciled_title(left: str, right: str) -> bool:
+    left_normalized = normalize_text(left)
+    right_normalized = normalize_text(right)
+    return bool(
+        left_normalized
+        and right_normalized
+        and (
+            left_normalized == right_normalized
+            or left_normalized in right_normalized
+            or right_normalized in left_normalized
+        )
+    )
+
+
+def _quarantine_replaced_identity(current, raw: dict) -> list[str]:
+    incoming_artist = str(raw.get("artist", "")).strip()
+    incoming_title = str(raw.get("title", "")).strip()
+    if not current.artist or not current.title or not incoming_artist or not incoming_title:
+        return []
+    if normalize_text(current.artist) == normalize_text(incoming_artist):
+        return []
+    if _same_reconciled_title(current.title, incoming_title):
+        return []
+    if not any(
+        item.startswith(RECONCILE_STRONG_IDENTITY_PREFIXES) for item in current.evidence
+    ):
+        return []
+
+    stale = [
+        item
+        for item in current.evidence
+        if item in RECONCILE_STALE_IDENTITY_EVIDENCE
+        or item.startswith(RECONCILE_STALE_IDENTITY_PREFIXES)
+    ]
+    if not stale:
+        return []
+
+    current.evidence = [item for item in current.evidence if item not in stale]
+    current.evidence.append("reconcile:identity-mismatch")
+    current.confidence = "candidate"
+    current.touhou_kind = "unknown"
+    current.origin_games = []
+    current.original_themes = []
+    return stale
+
+
 def command_reconcile(args: argparse.Namespace) -> int:
     catalog = Catalog.load(args.catalog)
     api = OsuApi.from_env()
     api.token()
     changed = 0
     failures: list[int] = []
+    identity_quarantines: list[tuple[int, str, str, list[str]]] = []
 
     def fetch(beatmapset_id: int):
         return beatmapset_id, api.beatmapset(beatmapset_id)
@@ -251,6 +321,13 @@ def command_reconcile(args: argparse.Namespace) -> int:
                 failures.append(beatmapset_id)
                 continue
             current = catalog.entries[beatmapset_id]
+            previous_identity = f"{current.artist} - {current.title}"
+            stale_evidence = _quarantine_replaced_identity(current, raw)
+            if stale_evidence:
+                incoming_identity = f"{raw.get('artist', '')} - {raw.get('title', '')}"
+                identity_quarantines.append(
+                    (beatmapset_id, previous_identity, incoming_identity, stale_evidence)
+                )
             incoming = entry_from_osu(raw, evidence=current.evidence, confidence=current.confidence)
             incoming.touhou_kind = current.touhou_kind
             incoming.origin_games = current.origin_games
@@ -258,6 +335,12 @@ def command_reconcile(args: argparse.Namespace) -> int:
             _, did_change = catalog.merge(incoming)
             changed += did_change
 
+    for beatmapset_id, previous, incoming, stale in sorted(identity_quarantines):
+        print(
+            f"warning: beatmapset {beatmapset_id} identity changed "
+            f"{previous!r} -> {incoming!r}; quarantined evidence: {', '.join(stale)}",
+            file=sys.stderr,
+        )
     print(f"Reconciled {len(catalog.entries) - len(failures)} beatmapsets; {changed} changed; {len(failures)} failed")
     if failures:
         print("Failed IDs: " + ", ".join(map(str, sorted(failures)[:50])), file=sys.stderr)

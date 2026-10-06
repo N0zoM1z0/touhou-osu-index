@@ -97,6 +97,26 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item)
         self.assertEqual(item.confidence, "verified")
 
+    def test_unresolved_trusted_tournament_stays_candidate(self):
+        item = Entry(
+            1,
+            evidence=["tournament:google_sheet:fixture"],
+            confidence="verified",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+
+    def test_resolved_trusted_tournament_is_verified(self):
+        item = Entry(
+            1,
+            artist="ZUN",
+            title="A Sacred Lot",
+            evidence=["tournament:google_sheet:fixture"],
+            confidence="candidate",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "verified")
+
     def test_manual_exclusion_beats_audited_official_pack_item(self):
         item = Entry(
             1,

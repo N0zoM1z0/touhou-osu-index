@@ -162,8 +162,15 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
         return Classification("candidate", tuple(sorted(evidence)))
 
     if any(
-        item.startswith(("official_pack:", "official_pack_item:", "tournament:", "tmc:"))
+        item.startswith(("official_pack:", "official_pack_item:"))
+        or (item.startswith("tournament:google_sheet:") and item.endswith(":audited"))
         for item in evidence
+    ):
+        return Classification("verified", tuple(sorted(evidence)))
+
+    resolved_identity = bool(entry.artist and entry.title)
+    if resolved_identity and any(
+        item.startswith(("tournament:", "tmc:")) for item in evidence
     ):
         return Classification("verified", tuple(sorted(evidence)))
 
