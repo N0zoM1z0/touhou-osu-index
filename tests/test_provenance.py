@@ -167,14 +167,37 @@ class ProvenanceTests(unittest.TestCase):
         current = Catalog([Entry(1, source="Touhou", confidence="verified", evidence=["osu_source"])])
         self.assertEqual(generic_verification_violations(current), [1])
 
-    def test_reviewed_audit_and_provenance_are_independent_verification(self):
+    def test_verified_audit_and_provenance_are_independent_verification(self):
         current = Catalog(
             [
-                Entry(1, source="Touhou", confidence="verified", evidence=["audit:reviewed"]),
-                Entry(2, source="東方Project", confidence="verified", evidence=["provenance:reviewed"]),
+                Entry(
+                    1,
+                    source="Touhou",
+                    confidence="verified",
+                    evidence=["audit:night-of-knights-2026-08"],
+                ),
+                Entry(
+                    2,
+                    source="東方Project",
+                    confidence="verified",
+                    evidence=["provenance:thbwiki"],
+                ),
             ]
         )
         self.assertEqual(generic_verification_violations(current), [])
+
+    def test_candidate_review_audit_does_not_exempt_generic_verification(self):
+        current = Catalog(
+            [
+                Entry(
+                    1,
+                    source="Touhou",
+                    confidence="verified",
+                    evidence=["audit:pr31-generic-source-review-2026-09"],
+                )
+            ]
+        )
+        self.assertEqual(generic_verification_violations(current), [1])
 
     def test_repository_has_no_generic_verified_debt(self):
         catalog_path = Path(__file__).resolve().parents[1] / "data" / "catalog"

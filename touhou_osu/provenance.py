@@ -23,8 +23,17 @@ from .models import Entry
 
 TOUHOUDb_API = "https://touhoudb.com/api/songs"
 THBWIKI_API = "https://thwiki.cc/album.php"
+VERIFIED_AUDIT_MARKERS = frozenset(
+    {
+        "audit:border-of-life-2026-08",
+        "audit:coverage-200plus-2026-09",
+        "audit:lunatic-princess-2026-08",
+        "audit:night-of-knights-2026-08",
+        "audit:wave2-reviewed-2026-09",
+        "audit:wave3-deep-coverage-2026-09",
+    }
+)
 TRUSTED_VERIFICATION_PREFIXES = (
-    "audit:",
     "official_pack:",
     "official_pack_item:",
     "provenance:",
@@ -339,6 +348,8 @@ def audit_entries(entries: list[Entry], *, workers: int = 4) -> list[ProvenanceA
 def has_independent_verification(entry: Entry) -> bool:
     evidence = set(entry.evidence)
     if "manual:verified" in evidence:
+        return True
+    if evidence & VERIFIED_AUDIT_MARKERS:
         return True
     return any(item.startswith(TRUSTED_VERIFICATION_PREFIXES) for item in evidence)
 

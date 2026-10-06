@@ -18,7 +18,7 @@ A row is in scope when all of the following are true:
 Independent reviewed verification means at least one of:
 
 - `manual:verified`;
-- an `audit:` or `provenance:` review marker;
+- a verified systematic-audit marker, or a `provenance:` review marker;
 - `official_pack:` or `official_pack_item:`;
 - a trusted `tournament:` or `tmc:` source.
 
@@ -69,9 +69,11 @@ newly verified rows, for generic-source `verified` entries lacking independent
 reviewed evidence. In addition, the repository unit suite loads the canonical
 catalog and asserts this debt set stays empty on every `make check`.
 
-The provenance policy also treats `audit:` and `provenance:` markers as
-independent reviewed verification alongside manual verification, official packs
-and trusted tournament sources.
+The provenance policy treats the repository's known verified systematic-audit
+markers and `provenance:` markers as independent reviewed verification alongside
+manual verification, official packs and trusted tournament sources. Candidate
+review markers such as `audit:pr31-generic-source-review-2026-09` do not exempt
+a row from the debt guard.
 
 ## Review checklist
 
