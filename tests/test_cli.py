@@ -209,7 +209,7 @@ class DiscoveryTests(unittest.TestCase):
             entry = Catalog.load(catalog_path).entries[42]
             self.assertEqual(entry.artist, "ZUN")
             self.assertEqual(entry.title, "Theme")
-            self.assertEqual(entry.confidence, "probable")
+            self.assertEqual(entry.confidence, "candidate")
             self.assertIn("osu_source", entry.evidence)
 
 
