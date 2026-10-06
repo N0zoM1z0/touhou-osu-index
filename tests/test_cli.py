@@ -6,19 +6,26 @@ from pathlib import Path
 from unittest.mock import patch
 
 from touhou_osu.catalog import Catalog
-from touhou_osu.cli import command_discover, command_hydrate
+from touhou_osu.cli import command_discover, command_hydrate, command_reconcile
 from touhou_osu.models import Entry
 
 
 class FakeOsuApi:
     responses = {}
+    beatmapsets = {}
 
     @classmethod
     def from_env(cls):
         return cls()
 
+    def token(self):
+        return "fake-token"
+
     def search(self, query, *, max_pages):
         return iter(self.responses[query])
+
+    def beatmapset(self, beatmapset_id):
+        return self.beatmapsets[beatmapset_id]
 
 
 class DiscoveryTests(unittest.TestCase):
@@ -202,8 +209,210 @@ class DiscoveryTests(unittest.TestCase):
             entry = Catalog.load(catalog_path).entries[42]
             self.assertEqual(entry.artist, "ZUN")
             self.assertEqual(entry.title, "Theme")
-            self.assertEqual(entry.confidence, "probable")
+            self.assertEqual(entry.confidence, "candidate")
             self.assertIn("osu_source", entry.evidence)
+
+
+class ReconciliationTests(unittest.TestCase):
+    def _run_reconcile(self, current: Entry, raw: dict) -> Entry:
+        with tempfile.TemporaryDirectory() as directory:
+            catalog_path = Path(directory) / "catalog.json"
+            Catalog([current]).save(catalog_path)
+            FakeOsuApi.beatmapsets = {current.beatmapset_id: raw}
+            args = argparse.Namespace(
+                catalog=catalog_path,
+                workers=1,
+                write=True,
+                strict=True,
+            )
+            with patch("touhou_osu.cli.OsuApi", FakeOsuApi):
+                self.assertEqual(command_reconcile(args), 0)
+            return Catalog.load(catalog_path).entries[current.beatmapset_id]
+
+    def test_reconcile_quarantines_trusted_evidence_on_replaced_identity(self):
+        current = Entry(
+            42,
+            artist="LeaF",
+            title="Arianrhod (hi19hi19) [Mabinogi 1.1x (176bpm)]",
+            creator="_Kobii",
+            touhou_kind="arrangement",
+            origin_games=["Touhou Project"],
+            original_themes=["Lunar Clock ~ Luna Dial"],
+            evidence=["tmc:2nd", "tournament:467"],
+            confidence="verified",
+        )
+        raw = {
+            "id": 42,
+            "artist": "cosMo@bousouP",
+            "title": "Oceanus",
+            "creator": "_Kobii",
+            "source": "Deemo",
+            "status": "graveyard",
+            "tags": "",
+            "last_updated": "2022-01-16T22:10:41Z",
+            "beatmaps": [{"mode": "mania"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.artist, "cosMo@bousouP")
+        self.assertEqual(reconciled.title, "Oceanus")
+        self.assertEqual(reconciled.confidence, "candidate")
+        self.assertEqual(reconciled.evidence, ["reconcile:identity-mismatch"])
+        self.assertEqual(reconciled.touhou_kind, "unknown")
+        self.assertEqual(reconciled.origin_games, [])
+        self.assertEqual(reconciled.original_themes, [])
+
+    def test_reconcile_quarantines_sticky_manual_verification_on_replaced_identity(self):
+        current = Entry(
+            42,
+            artist="LeaF",
+            title="Arianrhod",
+            creator="_Kobii",
+            evidence=["manual:verified"],
+            confidence="verified",
+        )
+        raw = {
+            "id": 42,
+            "artist": "cosMo@bousouP",
+            "title": "Oceanus",
+            "creator": "_Kobii",
+            "source": "Deemo",
+            "status": "graveyard",
+            "tags": "",
+            "last_updated": "2022-01-16T22:10:41Z",
+            "beatmaps": [{"mode": "mania"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.confidence, "candidate")
+        self.assertEqual(reconciled.evidence, ["reconcile:identity-mismatch"])
+        self.assertNotIn("manual:verified", reconciled.evidence)
+
+    def test_reconcile_quarantines_reviewed_same_artist_title_replacement(self):
+        current = Entry(
+            42,
+            artist="IOSYS",
+            title="Verified Touhou Song",
+            creator="mapper",
+            evidence=["manual:verified"],
+            confidence="verified",
+        )
+        raw = {
+            "id": 42,
+            "artist": "IOSYS",
+            "title": "Different Song",
+            "creator": "mapper",
+            "source": "Non-Touhou Album",
+            "status": "graveyard",
+            "tags": "",
+            "last_updated": "2022-01-16T22:10:41Z",
+            "beatmaps": [{"mode": "osu"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.confidence, "candidate")
+        self.assertEqual(reconciled.evidence, ["reconcile:identity-mismatch"])
+        self.assertNotIn("manual:verified", reconciled.evidence)
+
+    def test_reconcile_replaces_stale_metadata_after_identity_quarantine(self):
+        current = Entry(
+            42,
+            artist="Old Artist",
+            title="Old Touhou Song",
+            creator="Old Mapper",
+            source="東方永夜抄 ～ Imperishable Night.",
+            status="ranked",
+            modes=["osu"],
+            evidence=["manual:verified", "osu_source"],
+            confidence="verified",
+            osu_last_updated="2020-01-01T00:00:00Z",
+        )
+        raw = {
+            "id": 42,
+            "artist": "New Artist",
+            "title": "Different Song",
+            "creator": "",
+            "source": "",
+            "status": "graveyard",
+            "tags": "",
+            "last_updated": "2026-01-02T00:00:00Z",
+            "beatmaps": [{"mode": "mania"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.artist, "New Artist")
+        self.assertEqual(reconciled.title, "Different Song")
+        self.assertEqual(reconciled.creator, "")
+        self.assertEqual(reconciled.source, "")
+        self.assertEqual(reconciled.status, "graveyard")
+        self.assertEqual(reconciled.modes, ["mania"])
+        self.assertEqual(reconciled.osu_last_updated, "2026-01-02T00:00:00Z")
+        self.assertEqual(reconciled.confidence, "candidate")
+        self.assertIn("reconcile:identity-mismatch", reconciled.evidence)
+        self.assertNotIn("manual:verified", reconciled.evidence)
+        self.assertNotIn("osu_source", reconciled.evidence)
+
+    def test_reconcile_mismatch_stays_candidate_even_with_new_touhou_source(self):
+        current = Entry(
+            42,
+            artist="Old Artist",
+            title="Old Song",
+            evidence=["manual:verified"],
+            confidence="verified",
+        )
+        raw = {
+            "id": 42,
+            "artist": "New Artist",
+            "title": "Different Touhou Song",
+            "creator": "mapper",
+            "source": "東方永夜抄 ～ Imperishable Night.",
+            "status": "ranked",
+            "tags": "",
+            "last_updated": "2026-01-02T00:00:00Z",
+            "beatmaps": [{"mode": "osu"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.confidence, "candidate")
+        self.assertIn("reconcile:identity-mismatch", reconciled.evidence)
+        self.assertNotIn("manual:verified", reconciled.evidence)
+        self.assertNotIn("osu_source", reconciled.evidence)
+
+    def test_reconcile_keeps_trusted_evidence_for_canonical_title_cleanup(self):
+        current = Entry(
+            42,
+            artist="Shoegazer",
+            title="Everything Will Freeze (Shoegazer) [Calamity]",
+            creator="mapper",
+            evidence=["manual:verified", "tmc:2nd", "tournament:467"],
+            confidence="verified",
+        )
+        raw = {
+            "id": 42,
+            "artist": "UNDEAD CORPORATION",
+            "title": "Everything Will Freeze",
+            "creator": "mapper",
+            "source": "東方Project",
+            "status": "ranked",
+            "tags": "",
+            "last_updated": "2022-01-16T22:10:41Z",
+            "beatmaps": [{"mode": "mania"}],
+        }
+
+        reconciled = self._run_reconcile(current, raw)
+
+        self.assertEqual(reconciled.artist, "UNDEAD CORPORATION")
+        self.assertEqual(reconciled.title, "Everything Will Freeze")
+        self.assertEqual(reconciled.confidence, "verified")
+        self.assertIn("manual:verified", reconciled.evidence)
+        self.assertIn("tmc:2nd", reconciled.evidence)
+        self.assertIn("tournament:467", reconciled.evidence)
+        self.assertNotIn("reconcile:identity-mismatch", reconciled.evidence)
 
 
 if __name__ == "__main__":

@@ -109,7 +109,7 @@ class GoogleSheetsTests(unittest.TestCase):
             parse_google_sheet_beatmapset_ids(b"not a zip")
 
     @patch("touhou_osu.sources.fetch_google_sheet_beatmapset_ids", return_value=[123, 456])
-    def test_trusted_tournament_is_verified(self, fetch_ids) -> None:
+    def test_trusted_tournament_waits_for_resolved_identity(self, fetch_ids) -> None:
         entries = import_google_sheet_tournament(
             {
                 "id": "fixture",
@@ -122,7 +122,7 @@ class GoogleSheetsTests(unittest.TestCase):
             "sheet-id", sheet_names=["Mappools"], sheet_prefixes=()
         )
         self.assertEqual([entry.beatmapset_id for entry in entries], [123, 456])
-        self.assertTrue(all(entry.confidence == "verified" for entry in entries))
+        self.assertTrue(all(entry.confidence == "candidate" for entry in entries))
         self.assertTrue(
             all("tournament:google_sheet:fixture" in entry.evidence for entry in entries)
         )

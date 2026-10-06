@@ -144,10 +144,15 @@ Sheet source.
 
 The [`sd_touhou` BN queue](https://osu.ppy.sh/community/forums/topics/1881813)
 is followed across every public forum page using the last post ID as the next
-cursor. The 2026-08-16 audit found 194 unique beatmapsets. A queue link is kept
-as a candidate until `make hydrate` or the monthly API reconciliation resolves
-its artist/title metadata; unresolved and deleted links never enter the public
-index.
+cursor. The 2026-08-16 audit found 194 unique beatmapsets. The thread is a
+submission queue and can contain entries later rejected or blacklisted as
+non-Touhou, so membership is discovery evidence rather than blanket curation.
+Hydration or monthly reconciliation resolves public metadata, but a resolved
+queue entry remains a candidate unless independent evidence satisfies another
+classification rule. Queue membership does not upgrade a generic Touhou source
+to probable. Recognized official game sources are handled by the stronger source
+rule. Unresolved, deleted, blank-source, unrelated-source, generic-only, and
+unreviewed fan-source entries stay out of the public index.
 
 Weekly osu! API discovery searches generic Touhou terms plus every English and
 Japanese Touhou game-title alias already recognized by the deterministic

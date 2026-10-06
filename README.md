@@ -34,7 +34,7 @@ files, songs, backgrounds, or other copyrighted assets.
 | State | Meaning |
 | --- | --- |
 | `verified` | Recognized Touhou Project/game source, official Touhou pack, Touhou-only tournament, or manual verification. |
-| `probable` | Multiple independent signals agree, or a Touhou-only curated queue entry has resolved osu! metadata. |
+| `probable` | Multiple independent signals agree; discovery/submission queues do not raise confidence by themselves. |
 | `candidate` | Historical collection membership or one weaker signal; needs review. |
 | `excluded` | Manually confirmed false positive, retained to prevent rediscovery. |
 

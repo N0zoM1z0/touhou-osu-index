@@ -43,9 +43,11 @@ example a ZUN-composed Seihou track).
   verified.
 - A Touhou mapper tag plus a known Touhou artist and independent historical
   Touhou collection membership is probable.
-- A link from a curated Touhou-only queue becomes probable after its public
-  osu! artist/title metadata resolves. Deleted or unresolved links stay
-  candidates.
+- Community Touhou queue links are discovery evidence, not approval evidence.
+  Queue membership never raises confidence by itself, including when the current
+  osu! source is only a generic Touhou alias. Recognized official game sources
+  are verified by the stronger source rule above; otherwise the entry needs
+  independent signals or manual composition review.
 - A known Touhou circle alone is only a candidate because circles also release
   original and non-Touhou music.
 - Historical collection membership is evidence for discovery, not automatic

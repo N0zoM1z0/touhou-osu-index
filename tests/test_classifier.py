@@ -97,6 +97,26 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item)
         self.assertEqual(item.confidence, "verified")
 
+    def test_unresolved_trusted_tournament_stays_candidate(self):
+        item = Entry(
+            1,
+            evidence=["tournament:google_sheet:fixture"],
+            confidence="verified",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+
+    def test_resolved_trusted_tournament_is_verified(self):
+        item = Entry(
+            1,
+            artist="ZUN",
+            title="A Sacred Lot",
+            evidence=["tournament:google_sheet:fixture"],
+            confidence="candidate",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "verified")
+
     def test_manual_exclusion_beats_audited_official_pack_item(self):
         item = Entry(
             1,
@@ -127,6 +147,19 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item, tags="touhou zun team shanghai alice")
         self.assertEqual(item.confidence, "candidate")
 
+    def test_identity_mismatch_blocks_automatic_reverification(self):
+        item = Entry(
+            1,
+            artist="ZUN",
+            title="Different Touhou Song",
+            source="東方永夜抄 ～ Imperishable Night.",
+            evidence=["reconcile:identity-mismatch"],
+            confidence="candidate",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+        self.assertEqual(item.evidence, ["reconcile:identity-mismatch"])
+
     def test_known_artist_alone_stays_candidate(self):
         item = Entry(1, artist="IOSYS", evidence=["discovery_query:IOSYS"], confidence="candidate")
         apply_classification(item)
@@ -143,16 +176,42 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item, tags="touhou zun arrangement")
         self.assertEqual(item.confidence, "probable")
 
-    def test_resolved_curated_queue_entry_is_probable(self):
+    def test_resolved_curated_queue_with_generic_touhou_source_stays_candidate(self):
         item = Entry(
             1,
             artist="Unknown circle",
             title="Unknown arrangement",
+            source="Touhou",
             evidence=["forum_queue:sd_touhou"],
             confidence="candidate",
         )
         apply_classification(item)
-        self.assertEqual(item.confidence, "probable")
+        self.assertEqual(item.confidence, "candidate")
+        self.assertIn("osu_source", item.evidence)
+
+    def test_resolved_curated_queue_with_unrelated_source_stays_candidate(self):
+        item = Entry(
+            1,
+            artist="Sasaki Rico",
+            title="Majestic Catastrophe (TV Size)",
+            source="異世界黙示録マイノグーラ",
+            evidence=["forum_queue:sd_touhou"],
+            confidence="candidate",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+
+    def test_stale_queue_only_probable_is_demoted(self):
+        item = Entry(
+            1,
+            artist="Vaundy",
+            title="CHAINSAW BLOOD",
+            source="チェンソーマン",
+            evidence=["forum_queue:sd_touhou"],
+            confidence="probable",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
 
     def test_unresolved_curated_queue_entry_stays_candidate(self):
         item = Entry(

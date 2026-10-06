@@ -160,10 +160,19 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
         return Classification("verified", tuple(sorted(evidence)))
     if "manual:candidate" in evidence:
         return Classification("candidate", tuple(sorted(evidence)))
+    if "reconcile:identity-mismatch" in evidence:
+        return Classification("candidate", tuple(sorted(evidence)))
 
     if any(
-        item.startswith(("official_pack:", "official_pack_item:", "tournament:", "tmc:"))
+        item.startswith(("official_pack:", "official_pack_item:"))
+        or (item.startswith("tournament:google_sheet:") and item.endswith(":audited"))
         for item in evidence
+    ):
+        return Classification("verified", tuple(sorted(evidence)))
+
+    resolved_identity = bool(entry.artist and entry.title)
+    if resolved_identity and any(
+        item.startswith(("tournament:", "tmc:")) for item in evidence
     ):
         return Classification("verified", tuple(sorted(evidence)))
 
@@ -179,9 +188,6 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
         evidence.add("osu_source")
 
     curated_queue_match = any(item.startswith("forum_queue:") for item in evidence)
-    resolved_metadata = bool(entry.artist and entry.title and not entry.title.startswith("beatmapsets/"))
-    if curated_queue_match and resolved_metadata:
-        return Classification("probable", tuple(sorted(evidence)))
 
     tags_match = contains_any(tags, TOUHOU_TAG_TOKENS)
     artist_match = normalize(entry.artist) in {normalize(item) for item in KNOWN_ARTISTS}
@@ -194,6 +200,11 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
         evidence.add("mapper_tags")
     if artist_match:
         evidence.add("known_touhou_artist")
+    # Before forum queues were treated as discovery-only, any resolved queue
+    # submission could become probable. Do not preserve that stale confidence
+    # when the current metadata fails every present-day probable/verified rule.
+    if curated_queue_match and entry.confidence == "probable":
+        return Classification("candidate", tuple(sorted(evidence)))
     confidence = entry.confidence if entry.confidence in ("probable", "candidate") else "candidate"
     return Classification(confidence, tuple(sorted(evidence)))
 
