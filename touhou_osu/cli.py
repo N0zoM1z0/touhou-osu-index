@@ -307,6 +307,15 @@ def _quarantine_replaced_identity(current, raw: dict) -> list[str]:
     current.touhou_kind = "unknown"
     current.origin_games = []
     current.original_themes = []
+    # Catalog.merge is intentionally conservative for partial seed records.
+    # A confirmed identity replacement is different: old osu! metadata belongs
+    # to the stale identity and must not survive when the new API value is blank
+    # or has a different mode set.
+    current.creator = ""
+    current.source = ""
+    current.status = "unknown"
+    current.modes = []
+    current.osu_last_updated = None
     return stale
 
 
@@ -343,7 +352,7 @@ def command_reconcile(args: argparse.Namespace) -> int:
             incoming.origin_games = current.origin_games
             incoming.original_themes = current.original_themes
             _, did_change = catalog.merge(incoming)
-            changed += did_change
+            changed += int(did_change or bool(stale_evidence))
 
     for beatmapset_id, previous, incoming, stale in sorted(identity_quarantines):
         print(
