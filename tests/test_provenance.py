@@ -6,7 +6,7 @@ from touhou_osu.http import HttpError
 from touhou_osu.models import Entry
 from touhou_osu.provenance import (
     audit_entry,
-    new_generic_verification_violations,
+    generic_verification_violations,
     query_thbwiki,
     query_touhoudb,
 )
@@ -152,22 +152,28 @@ class ProvenanceTests(unittest.TestCase):
         self.assertEqual(len(result.errors), 1)
         self.assertIn("touhoudb", result.errors[0])
 
-    def test_new_generic_verified_without_independent_evidence_is_violation(self):
-        base = Catalog([Entry(1, source="Touhou", confidence="candidate", evidence=["discovery_query:Touhou"])])
+    def test_generic_verified_without_independent_evidence_is_violation(self):
         current = Catalog([Entry(1, source="Touhou", confidence="verified", evidence=["osu_source"])])
-        self.assertEqual(new_generic_verification_violations(current, base), [1])
+        self.assertEqual(generic_verification_violations(current), [1])
 
     def test_generic_verified_with_official_pack_is_not_violation(self):
-        base = Catalog([Entry(1, source="Touhou", confidence="candidate")])
         current = Catalog(
             [Entry(1, source="Touhou", confidence="verified", evidence=["official_pack_item:A16"])]
         )
-        self.assertEqual(new_generic_verification_violations(current, base), [])
+        self.assertEqual(generic_verification_violations(current), [])
 
-    def test_preexisting_generic_verified_is_not_retroactively_blocked(self):
-        base = Catalog([Entry(1, source="Touhou", confidence="verified")])
+    def test_preexisting_generic_verified_is_retroactively_blocked(self):
         current = Catalog([Entry(1, source="Touhou", confidence="verified", evidence=["osu_source"])])
-        self.assertEqual(new_generic_verification_violations(current, base), [])
+        self.assertEqual(generic_verification_violations(current), [1])
+
+    def test_reviewed_audit_and_provenance_are_independent_verification(self):
+        current = Catalog(
+            [
+                Entry(1, source="Touhou", confidence="verified", evidence=["audit:reviewed"]),
+                Entry(2, source="東方Project", confidence="verified", evidence=["provenance:reviewed"]),
+            ]
+        )
+        self.assertEqual(generic_verification_violations(current), [])
 
 
 if __name__ == "__main__":

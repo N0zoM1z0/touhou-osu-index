@@ -139,6 +139,16 @@ class PrAuditTests(unittest.TestCase):
             with self.assertRaisesRegex(AuditError, "duplicate"):
                 accepted_ids_from_audit_document(path)
 
+    def test_provenance_audit_blocks_preexisting_generic_verified_debt(self):
+        item = entry(2, evidence=["osu_source"], confidence="verified")
+        base = Catalog([entry(2, evidence=["osu_source"], confidence="verified")])
+        current = Catalog([item])
+        diff = catalog_diff(base, current)
+        with patch("touhou_osu.pr_audit.audit_entries", return_value=[]):
+            report = provenance_audit(base, current, diff, scope="changed", workers=1)
+        self.assertEqual(report["policy_violations"], [2])
+        self.assertIn("unsafe generic-source verification", report["errors"][0])
+
     def test_repository_provenance_exception_is_valid_and_exact(self):
         path = Path(__file__).resolve().parents[1] / "config/provenance-review-exceptions.json"
         exceptions = load_provenance_review_exceptions(path)
