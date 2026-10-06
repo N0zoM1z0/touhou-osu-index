@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 from touhou_osu.catalog import Catalog
@@ -174,6 +175,10 @@ class ProvenanceTests(unittest.TestCase):
             ]
         )
         self.assertEqual(generic_verification_violations(current), [])
+
+    def test_repository_has_no_generic_verified_debt(self):
+        catalog_path = Path(__file__).resolve().parents[1] / "data" / "catalog"
+        self.assertEqual(generic_verification_violations(Catalog.load(catalog_path)), [])
 
 
 if __name__ == "__main__":
