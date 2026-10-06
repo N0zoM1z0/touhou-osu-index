@@ -314,7 +314,9 @@ class ReconciliationTests(unittest.TestCase):
         reconciled = self._run_reconcile(current, raw)
 
         self.assertEqual(reconciled.confidence, "candidate")
-        self.assertEqual(reconciled.evidence, ["reconcile:identity-mismatch"])
+        self.assertIn("reconcile:identity-mismatch", reconciled.evidence)
+        self.assertIn("known_touhou_artist", reconciled.evidence)
+        self.assertNotIn("manual:verified", reconciled.evidence)
 
     def test_reconcile_keeps_trusted_evidence_for_canonical_title_cleanup(self):
         current = Entry(
