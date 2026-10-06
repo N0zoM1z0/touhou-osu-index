@@ -1734,7 +1734,7 @@
       "evidence": [
         "forum_queue:sd_touhou"
       ],
-      "confidence": "probable",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-09-13T23:57:21Z"
     },
@@ -3184,7 +3184,7 @@
         "forum_queue:sd_touhou",
         "mapper_tags"
       ],
-      "confidence": "probable",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-06-11T14:03:03Z"
     },
@@ -4400,7 +4400,7 @@
         "known_touhou_artist",
         "mapper_tags"
       ],
-      "confidence": "probable",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-07-10T14:49:59Z"
     },

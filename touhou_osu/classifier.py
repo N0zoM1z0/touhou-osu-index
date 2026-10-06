@@ -206,6 +206,11 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
         evidence.add("mapper_tags")
     if artist_match:
         evidence.add("known_touhou_artist")
+    # Before forum queues were treated as discovery-only, any resolved queue
+    # submission could become probable. Do not preserve that stale confidence
+    # when the current metadata fails every present-day probable/verified rule.
+    if curated_queue_match and entry.confidence == "probable":
+        return Classification("candidate", tuple(sorted(evidence)))
     confidence = entry.confidence if entry.confidence in ("probable", "candidate") else "candidate"
     return Classification(confidence, tuple(sorted(evidence)))
 

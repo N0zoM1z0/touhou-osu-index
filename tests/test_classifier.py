@@ -200,6 +200,18 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item)
         self.assertEqual(item.confidence, "candidate")
 
+    def test_stale_queue_only_probable_is_demoted(self):
+        item = Entry(
+            1,
+            artist="Vaundy",
+            title="CHAINSAW BLOOD",
+            source="チェンソーマン",
+            evidence=["forum_queue:sd_touhou"],
+            confidence="probable",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
+
     def test_unresolved_curated_queue_entry_stays_candidate(self):
         item = Entry(
             1,

@@ -437,7 +437,7 @@
       "evidence": [
         "forum_queue:sd_touhou"
       ],
-      "confidence": "probable",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-10-24T07:38:13Z"
     },
@@ -3204,7 +3204,7 @@
       "evidence": [
         "forum_queue:sd_touhou"
       ],
-      "confidence": "probable",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-01-17T10:05:00Z"
     },
