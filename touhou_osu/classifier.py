@@ -189,7 +189,10 @@ def classify(entry: Entry, *, tags: str = "") -> Classification:
 
     curated_queue_match = any(item.startswith("forum_queue:") for item in evidence)
     resolved_metadata = bool(entry.artist and entry.title and not entry.title.startswith("beatmapsets/"))
-    if curated_queue_match and resolved_metadata:
+    # Forum queues are submission/discovery sources, not approval lists. A
+    # resolved queue entry only becomes probable when the current osu! source
+    # itself explicitly says Touhou; concrete game sources are handled above.
+    if curated_queue_match and resolved_metadata and is_generic_touhou_source(entry.source):
         return Classification("probable", tuple(sorted(evidence)))
 
     tags_match = contains_any(tags, TOUHOU_TAG_TOKENS)

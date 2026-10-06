@@ -176,16 +176,29 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item, tags="touhou zun arrangement")
         self.assertEqual(item.confidence, "probable")
 
-    def test_resolved_curated_queue_entry_is_probable(self):
+    def test_resolved_curated_queue_entry_is_probable_with_generic_touhou_source(self):
         item = Entry(
             1,
             artist="Unknown circle",
             title="Unknown arrangement",
+            source="Touhou",
             evidence=["forum_queue:sd_touhou"],
             confidence="candidate",
         )
         apply_classification(item)
         self.assertEqual(item.confidence, "probable")
+
+    def test_resolved_curated_queue_with_unrelated_source_stays_candidate(self):
+        item = Entry(
+            1,
+            artist="Sasaki Rico",
+            title="Majestic Catastrophe (TV Size)",
+            source="異世界黙示録マイノグーラ",
+            evidence=["forum_queue:sd_touhou"],
+            confidence="candidate",
+        )
+        apply_classification(item)
+        self.assertEqual(item.confidence, "candidate")
 
     def test_unresolved_curated_queue_entry_stays_candidate(self):
         item = Entry(
