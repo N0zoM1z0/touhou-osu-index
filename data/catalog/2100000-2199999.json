@@ -2415,9 +2415,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
-        "known_touhou_artist"
+        "known_touhou_artist",
+        "manual:verified"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-03-19T14:45:54Z"
     },

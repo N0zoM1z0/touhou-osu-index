@@ -3182,9 +3182,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
+        "manual:verified",
         "mapper_tags"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-06-11T14:03:03Z"
     },
@@ -4398,9 +4399,10 @@
       "evidence": [
         "forum_queue:sd_touhou",
         "known_touhou_artist",
+        "manual:verified",
         "mapper_tags"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-07-10T14:49:59Z"
     },

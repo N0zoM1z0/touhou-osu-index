@@ -3262,9 +3262,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
+        "manual:verified",
         "mapper_tags"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-03-23T22:20:38Z"
     },
@@ -5385,6 +5386,7 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
+        "manual:candidate",
         "mapper_tags"
       ],
       "confidence": "candidate",

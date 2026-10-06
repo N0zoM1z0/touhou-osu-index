@@ -2717,9 +2717,10 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
-        "forum_queue:sd_touhou"
+        "forum_queue:sd_touhou",
+        "manual:verified"
       ],
-      "confidence": "candidate",
+      "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-11-27T01:05:56Z"
     },
