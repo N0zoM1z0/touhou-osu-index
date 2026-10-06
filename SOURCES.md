@@ -148,11 +148,11 @@ cursor. The 2026-08-16 audit found 194 unique beatmapsets. The thread is a
 submission queue and can contain entries later rejected or blacklisted as
 non-Touhou, so membership is discovery evidence rather than blanket curation.
 Hydration or monthly reconciliation resolves public metadata, but a resolved
-queue entry remains a candidate unless current metadata supplies an independent
-classification signal. An exact generic Touhou source plus queue membership can
-be probable; recognized official game sources are handled by the stronger
-source rule. Unresolved, deleted, blank-source, unrelated-source, and unreviewed
-fan-source entries stay out of the public index.
+queue entry remains a candidate unless independent evidence satisfies another
+classification rule. Queue membership does not upgrade a generic Touhou source
+to probable. Recognized official game sources are handled by the stronger source
+rule. Unresolved, deleted, blank-source, unrelated-source, generic-only, and
+unreviewed fan-source entries stay out of the public index.
 
 Weekly osu! API discovery searches generic Touhou terms plus every English and
 Japanese Touhou game-title alias already recognized by the deterministic

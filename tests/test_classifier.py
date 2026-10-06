@@ -176,7 +176,7 @@ class ClassifierTests(unittest.TestCase):
         apply_classification(item, tags="touhou zun arrangement")
         self.assertEqual(item.confidence, "probable")
 
-    def test_resolved_curated_queue_entry_is_probable_with_generic_touhou_source(self):
+    def test_resolved_curated_queue_with_generic_touhou_source_stays_candidate(self):
         item = Entry(
             1,
             artist="Unknown circle",
@@ -186,7 +186,8 @@ class ClassifierTests(unittest.TestCase):
             confidence="candidate",
         )
         apply_classification(item)
-        self.assertEqual(item.confidence, "probable")
+        self.assertEqual(item.confidence, "candidate")
+        self.assertIn("osu_source", item.evidence)
 
     def test_resolved_curated_queue_with_unrelated_source_stays_candidate(self):
         item = Entry(
