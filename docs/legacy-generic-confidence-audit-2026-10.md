@@ -64,10 +64,10 @@ source verification.
 
 ## Guardrail
 
-Deep provenance review now checks **the full current catalog**, not only newly
-verified rows, for generic-source `verified` entries lacking independent
-reviewed evidence. This prevents the same debt from being silently
-grandfathered again.
+Provenance-mode deep review now checks **the full current catalog**, not only
+newly verified rows, for generic-source `verified` entries lacking independent
+reviewed evidence. In addition, the repository unit suite loads the canonical
+catalog and asserts this debt set stays empty on every `make check`.
 
 The provenance policy also treats `audit:` and `provenance:` markers as
 independent reviewed verification alongside manual verification, official packs

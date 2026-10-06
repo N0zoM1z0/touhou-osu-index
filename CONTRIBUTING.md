@@ -42,7 +42,8 @@ example a ZUN-composed Seihou track).
 - Generic aliases such as `Touhou` / `東方Project` are not grandfathered
   verification. A `verified` generic-source row must also carry independent
   reviewed evidence (manual/audit/provenance, an official pack, or a trusted
-  tournament/TMC source); deep review checks this across the whole catalog.
+  tournament/TMC source). The repository test suite enforces zero debt on every
+  `make check`, and provenance-mode deep review scans the whole current catalog.
 - Membership in an official Touhou pack or a Touhou-only tournament is
   verified.
 - A Touhou mapper tag plus a known Touhou artist and independent historical
