@@ -2986,12 +2986,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Touhou",
         "official_pack_item:R291",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2012-05-13T12:56:38Z"
     },
     {
@@ -3082,13 +3083,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
         "official_pack:T54",
         "official_pack_item:A16",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2012-03-22T16:50:54Z"
     },
     {
@@ -3259,6 +3261,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
         "known_touhou_artist",
         "official_pack_item:A32",
         "osucollector:1402",
@@ -3266,7 +3269,7 @@
         "osucollector:1407"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2012-03-30T14:22:41Z"
     },
     {
@@ -3471,12 +3474,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:Touhou",
         "official_pack_item:A16",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2011-12-13T12:11:21Z"
     },
     {
@@ -3713,13 +3718,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:ZUN",
         "official_pack_item:A18",
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2012-09-19T21:38:32Z"
     },
     {
@@ -3736,12 +3742,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
         "official_pack_item:A16",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2012-03-04T01:24:13Z"
     },
     {
@@ -4154,13 +4161,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
         "official_pack:T54",
         "official_pack_item:A16",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2012-04-26T13:13:30Z"
     },
     {
@@ -4253,12 +4261,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
         "official_pack_item:A16",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2012-04-20T07:18:56Z"
     },
     {
@@ -4553,12 +4562,13 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
         "official_pack_item:A16",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2013-05-10T21:24:14Z"
     },
     {
@@ -4888,13 +4898,14 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:IOSYS",
         "known_touhou_artist",
         "official_pack_item:R293",
         "osucollector:1402",
         "osucollector:1405"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2012-12-19T20:47:23Z"
     },
     {

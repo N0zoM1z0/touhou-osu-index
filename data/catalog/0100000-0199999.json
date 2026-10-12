@@ -117,6 +117,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:東方",
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
@@ -125,7 +126,7 @@
         "tournament_candidate:526"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2015-04-01T11:53:15Z"
     },
     {
@@ -336,6 +337,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
         "official_pack_item:A33",
         "osucollector:1402",
         "osucollector:1405",
@@ -343,7 +345,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2014-05-21T07:03:23Z"
     },
     {
@@ -499,13 +501,15 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:source=Touhou",
+        "discovery_query:Touhou",
         "official_pack:T96",
         "official_pack_item:A18",
         "osucollector:1407",
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2013-09-04T03:18:48Z"
     },
     {
@@ -714,6 +718,9 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Shinigiwa Satellite",
+        "discovery_query:source=Touhou",
+        "discovery_query:Touhou",
         "official_pack_item:A16",
         "osucollector:1402",
         "osucollector:1405",
@@ -721,7 +728,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2013-09-22T02:17:51Z"
     },
     {
@@ -994,6 +1001,7 @@
       "origin_games": [],
       "original_themes": [],
       "evidence": [
+        "discovery_query:Halozy",
         "known_touhou_artist",
         "official_pack_item:A32",
         "osucollector:1402",
@@ -1002,7 +1010,7 @@
         "osucollector:6907"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-10-12",
       "osu_last_updated": "2016-06-02T15:32:44Z"
     },
     {
