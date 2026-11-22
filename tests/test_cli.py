@@ -579,6 +579,18 @@ class ReconcileSchedulingTests(unittest.TestCase):
         self.assertEqual(catalog.entries[1].title, "Stale title")
         self.assertEqual(catalog.entries[1].last_checked, "2026-01-01")
 
+    def test_invalid_payload_fails_one_row_not_the_run(self):
+        entries = [catalogued(1, title="Stale 1"), catalogued(2, title="Stale 2")]
+        FakeOsuApi.beatmapsets = {1: osu_raw(1, status="not-a-status"), 2: osu_raw(2)}
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        catalog_path = Path(directory.name) / "catalog.json"
+        Catalog(entries).save(catalog_path)
+        with patch("touhou_osu.cli.OsuApi", FakeOsuApi):
+            self.assertEqual(command_reconcile(reconcile_args(catalog_path, strict=False)), 0)
+        catalog = Catalog.load(catalog_path)
+        self.assertEqual(catalog.entries[2].title, "Theme 2")
+
     def test_missing_beatmapset_is_reported_without_strict_failure(self):
         class MissingApi(FakeOsuApi):
             def beatmapset(self, beatmapset_id):

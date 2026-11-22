@@ -477,12 +477,15 @@ def command_reconcile(args: argparse.Namespace) -> int:
                 processed += 1
                 try:
                     raw = future.result()
+                    did_change, quarantine = _reconcile_entry(catalog, beatmapset_id, raw)
                 except Exception as exc:
+                    # One bad payload must not discard everything fetched so far.
                     failures.append(beatmapset_id)
                     if isinstance(exc, HttpError) and exc.status == 404:
                         missing.append(beatmapset_id)
+                    elif not isinstance(exc, HttpError):
+                        print(f"warning: beatmapset {beatmapset_id}: {exc}", file=sys.stderr)
                 else:
-                    did_change, quarantine = _reconcile_entry(catalog, beatmapset_id, raw)
                     changed += did_change
                     if quarantine:
                         identity_quarantines.append(quarantine)
