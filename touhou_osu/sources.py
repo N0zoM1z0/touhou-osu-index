@@ -126,6 +126,49 @@ def parse_beatmap_links(text: str) -> list[dict]:
     return list(by_id.values())
 
 
+MARKDOWN_ESCAPE_RE = re.compile(r"\\([\\`*_{}\[\]()#+\-.!~|<>])")
+
+
+def _strip_trailing_group(text: str, opening: str, closing: str) -> tuple[str, str] | None:
+    """Split ``text`` into (prefix, inner) if it ends with a balanced group."""
+
+    text = text.rstrip()
+    if not text.endswith(closing):
+        return None
+    depth = 0
+    for index in range(len(text) - 1, -1, -1):
+        if text[index] == closing:
+            depth += 1
+        elif text[index] == opening:
+            depth -= 1
+            if depth == 0:
+                return text[:index].rstrip(), text[index + 1 : -1]
+    return None
+
+
+def split_wiki_label(label: str) -> dict:
+    """Split an osu! wiki mappool label ``Artist - Title (Mapper) [Difficulty]``.
+
+    The mapper and difficulty suffix is removed only when both are present, so
+    titles such as ``Song (TV Size)`` or ``Life [Eris's mix]`` stay intact.
+    Difficulty names may nest brackets (``[Last Word [_underjoy]]``) and the
+    title may itself end in parentheses (``Ship (Horror struck Edit) (mapper)``);
+    only the final group of each kind is treated as the suffix.
+    """
+
+    label = MARKDOWN_ESCAPE_RE.sub(r"\1", label).strip()
+    mapper = difficulty = ""
+    body = label
+    bracket = _strip_trailing_group(label, "[", "]")
+    if bracket:
+        paren = _strip_trailing_group(bracket[0], "(", ")")
+        if paren and paren[0]:
+            body, mapper, difficulty = paren[0], paren[1].strip(), bracket[1].strip()
+    parts = re.split(r"\s+(?:-|–|—)\s+", body, maxsplit=1)
+    artist, title = (parts[0], parts[1]) if len(parts) == 2 else ("", body)
+    return {"artist": artist.strip(), "title": title.strip(), "mapper": mapper, "difficulty": difficulty}
+
+
 def parse_wiki_links(text: str) -> list[dict]:
     """Parse either osu! wiki JSON/Markdown or rendered HTML."""
     try:
@@ -135,14 +178,13 @@ def parse_wiki_links(text: str) -> list[dict]:
     markdown = payload.get("markdown", "")
     links: dict[int, dict] = {}
     for label, beatmapset_id, mode in MARKDOWN_BEATMAPSET_RE.findall(markdown):
-        label = label.replace("\\[", "[").replace("\\]", "]").strip()
-        parts = re.split(r"\s+(?:-|–|—)\s+", label, maxsplit=1)
-        artist, title = (parts[0], parts[1]) if len(parts) == 2 else ("", label)
+        split = split_wiki_label(label)
         item = {
             "id": int(beatmapset_id),
             "mode": normalize_mode(mode) if mode else "",
-            "artist": artist,
-            "title": title,
+            "artist": split["artist"],
+            "title": split["title"],
+            "creator": split["mapper"],
             "text": label,
         }
         links.setdefault(item["id"], item)
@@ -324,6 +366,7 @@ def import_wiki_tournament(source: dict) -> list[Entry]:
             beatmapset_id=item["id"],
             artist=item["artist"],
             title=item["title"],
+            creator=item.get("creator", ""),
             modes=[item["mode"]] if item["mode"] else ["mania"],
             evidence=[evidence],
             confidence="verified",

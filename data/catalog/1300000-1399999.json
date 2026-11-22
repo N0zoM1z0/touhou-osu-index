@@ -123,10 +123,10 @@
     {
       "beatmapset_id": 1304805,
       "artist": "Kobaryo",
-      "title": "CU73-D3V1L (Tamaki Iroha) [wyyyyw's LUN47IC]",
+      "title": "CU73-D3V1L",
       "creator": "Tamaki Iroha",
       "source": "",
-      "status": "graveyard",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -138,7 +138,7 @@
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {
@@ -261,10 +261,10 @@
     {
       "beatmapset_id": 1306423,
       "artist": "Demetori",
-      "title": "The Grimoire of Alice ～ 不思議の国のアリス (Antori) [The Grimoire of Aryu 1.1]",
-      "creator": "",
+      "title": "The Grimoire of Alice ～ 不思議の国のアリス",
+      "creator": "Antori",
       "source": "",
-      "status": "unknown",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -275,16 +275,16 @@
         "tmc:1st"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {
       "beatmapset_id": 1306448,
       "artist": "SOUND HOLIC",
-      "title": "Touhou Hakureisou (Tamaki Iroha) [Amagai's Extra Stage(Edit)]",
+      "title": "Touhou Hakureisou",
       "creator": "Tamaki Iroha",
       "source": "",
-      "status": "graveyard",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -296,7 +296,7 @@
         "tournament:466"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {

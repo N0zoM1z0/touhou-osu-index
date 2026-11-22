@@ -227,10 +227,10 @@
     {
       "beatmapset_id": 1705564,
       "artist": "SOUND HOLIC",
-      "title": "Apollo 13 (-Deepdive-) [Last Word [\\_underjoy]]",
-      "creator": "",
+      "title": "Apollo 13",
+      "creator": "-Deepdive-",
       "source": "",
-      "status": "unknown",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -241,7 +241,7 @@
         "tmc:2nd"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {
