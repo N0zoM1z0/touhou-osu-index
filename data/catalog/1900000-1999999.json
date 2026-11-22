@@ -3892,6 +3892,28 @@
       "osu_last_updated": "2024-02-05T19:34:41Z"
     },
     {
+      "beatmapset_id": 1992539,
+      "artist": "BUTAOTOME",
+      "title": "In the Black",
+      "creator": "ndrrr",
+      "source": "東方憑依華　～ Antinomy of Common Flowers.",
+      "status": "loved",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Antinomy of Common Flowers",
+        "discovery_query:source=東方憑依華",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-09-13T17:38:31Z"
+    },
+    {
       "beatmapset_id": 1992542,
       "artist": "beatMARIO",
       "title": "Night of Knights",

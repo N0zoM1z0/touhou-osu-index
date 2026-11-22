@@ -503,6 +503,26 @@
       "osu_last_updated": "2011-02-18T21:01:03Z"
     },
     {
+      "beatmapset_id": 25776,
+      "artist": "nao",
+      "title": "entrance to you (Stage Ver.)",
+      "creator": "ykcarrot",
+      "source": "CUSTOM MAID 3D",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2011-03-04T15:33:13Z"
+    },
+    {
       "beatmapset_id": 25935,
       "artist": "SYNC.ART'S feat.Kaori",
       "title": "Absolute Demolition",
@@ -2029,6 +2049,28 @@
       "osu_last_updated": "2012-01-13T15:07:43Z"
     },
     {
+      "beatmapset_id": 31471,
+      "artist": "Carlito",
+      "title": "Who's That Boy",
+      "creator": "Charles445",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Touhou",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2011-07-15T15:52:44Z"
+    },
+    {
       "beatmapset_id": 31480,
       "artist": "Yuma Mizonokuchi",
       "title": "akasha-simulater",
@@ -2863,6 +2905,28 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-04-03T21:28:19Z"
+    },
+    {
+      "beatmapset_id": 35878,
+      "artist": "IOSYS",
+      "title": "Chizome no Love Letter",
+      "creator": "Hellzero",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2011-12-26T18:18:15Z"
     },
     {
       "beatmapset_id": 36138,
@@ -4771,6 +4835,28 @@
       "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-05-24T19:23:46Z"
+    },
+    {
+      "beatmapset_id": 48189,
+      "artist": "IOSYS",
+      "title": "Princess Party ~Seishun Kinshi Rei~",
+      "creator": "-Chata-",
+      "source": "Princess Party",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2012-08-07T09:45:27Z"
     },
     {
       "beatmapset_id": 48487,
