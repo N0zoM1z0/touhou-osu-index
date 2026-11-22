@@ -4,10 +4,11 @@
 #
 # usage: scripts/automation_pr.sh BRANCH TITLE COMMIT_MESSAGE BODY_FILE
 #
-# Pushes made with GITHUB_TOKEN do not start pull_request workflows (they end
-# in "action_required"), so this script dispatches Validate and a structural
-# Deep review on the branch explicitly. workflow_dispatch is exempt from that
-# restriction and its checks attach to the PR head commit.
+# Pushes made with GITHUB_TOKEN leave the PR's pull_request workflows at
+# "action_required", so this script dispatches Validate and a structural Deep
+# review on the branch explicitly (workflow_dispatch is exempt). Their check
+# runs land on the PR head commit, but GitHub's PR checks box keeps showing the
+# pending pull_request runs until a maintainer clicks "Approve and run".
 set -euo pipefail
 
 if [[ $# -ne 4 ]]; then

@@ -191,6 +191,10 @@ make build
   pages without OAuth. Its intentionally low concurrency avoids rate limits.
 - `discover` and `reconcile` use osu! API v2 OAuth credentials; CI supplies
   those only through GitHub Actions secrets.
+- `discover` ignores osu! search hits whose artist/title/source/tags/creator do
+  not contain the query as a whole-word phrase (substring for CJK queries;
+  `field=value` queries check that field only). The search's loose tokenization
+  otherwise returns e.g. ALI PROJECT for `東方Project` and Zuntata for `ZUN`.
 - `discover` spends its change cap on new beatmapsets first, then confidence
   transitions, then other metadata. An existing row that would only gain
   another `discovery_query:` tag is skipped, not counted.
