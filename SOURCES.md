@@ -184,10 +184,23 @@ make build
 - `audit-sources` performs a read-only live query and enforces every configured
   `minimum_entries` floor.
 - `import-seeds` deduplicates by numeric beatmapset ID and unions provenance.
+  Seed snapshots (for example osu!Collector's cached artist/title) only fill
+  blank metadata; they never overwrite values refreshed from osu!, and they do
+  not bump `last_checked` on rows they leave unchanged.
 - `hydrate` resolves partial forum/tournament records from public beatmapset
   pages without OAuth. Its intentionally low concurrency avoids rate limits.
 - `discover` and `reconcile` use osu! API v2 OAuth credentials; CI supplies
   those only through GitHub Actions secrets.
+- `discover` spends its change cap on new beatmapsets first, then confidence
+  transitions, then other metadata. An existing row that would only gain
+  another `discovery_query:` tag is skipped, not counted.
+- `reconcile` refreshes the stalest `last_checked` rows first. `--time-budget`
+  (seconds), `--limit`, and `--min-age-days` bound a run; rows not reached are
+  first in line next time.
+- Every catalog-writing command demotes generic-source `verified` rows that
+  lack independent evidence (tagged `review:generic-source-unverified`), and a
+  `reconcile:identity-mismatch` quarantine stays `candidate` through later seed
+  imports until a reviewer removes the marker.
 - The repository test suite and provenance-mode deep review scan the full
   catalog for generic-source `verified` rows lacking independent reviewed
   evidence; pre-existing rows are not grandfathered.

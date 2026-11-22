@@ -132,9 +132,14 @@ python -m touhou_osu discover --write
 On GitHub, add the same values as Actions secrets named `OSU_CLIENT_ID` and
 `OSU_CLIENT_SECRET`. The weekly workflow searches the configured Touhou aliases
 with cursor pagination and opens a review PR when the catalog changes. Each run
-is capped at 50 meaningful catalog changes, ordered by confidence; remaining
-matches roll into later weeks. The monthly workflow reconciles osu! metadata
-and statuses. Neither workflow merges its own PR.
+is capped at 50 meaningful catalog changes: new beatmapsets first, then
+confidence transitions, then other metadata, each ordered by confidence.
+Merely tagging an existing row with another discovery query does not count.
+Remaining matches roll into later weeks. The monthly workflow reconciles osu!
+metadata and statuses, stalest rows first within a time budget, so an
+interrupted run resumes where it stopped. Both workflows validate the catalog
+before pushing and dispatch CI on their branch (bot pushes do not trigger
+`pull_request` checks). Neither workflow merges its own PR.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for manual review and correction rules.
 
