@@ -147,6 +147,30 @@ class CatalogTests(unittest.TestCase):
         self.assertIn("manual:candidate", merged.evidence)
         self.assertIn("tournament:google_sheet:fixture", merged.evidence)
 
+    def test_identity_mismatch_quarantine_survives_seed_reimport(self):
+        # Regression: the tournament seed that originally listed a replaced
+        # beatmapset used to re-verify it on the next import.
+        catalog = Catalog(
+            [entry(artist="cosMo@bousouP", title="Oceanus", evidence=["reconcile:identity-mismatch"], confidence="candidate")]
+        )
+        merged, _ = catalog.merge(
+            entry(artist="LeaF", title="Arianrhod", evidence=["tmc:2nd", "tournament:467"], confidence="verified")
+        )
+        self.assertEqual(merged.confidence, "candidate")
+        self.assertIn("reconcile:identity-mismatch", merged.evidence)
+
+    def test_fill_metadata_only_keeps_existing_osu_metadata(self):
+        catalog = Catalog([entry(title="Current Title", source="", status="unknown")])
+        merged, changed = catalog.merge(
+            entry(title="Cached Title", source="Touhou", status="graveyard", evidence=["osucollector:1"]),
+            fill_metadata_only=True,
+        )
+        self.assertTrue(changed)
+        self.assertEqual(merged.title, "Current Title")
+        self.assertEqual(merged.source, "Touhou")
+        self.assertEqual(merged.status, "graveyard")
+        self.assertIn("osucollector:1", merged.evidence)
+
     def test_evidence_is_required(self):
         with self.assertRaisesRegex(CatalogError, "evidence"):
             entry(evidence=[]).validate()

@@ -12,7 +12,9 @@ USER_AGENT = "touhou-osu-index/0.1 (+https://github.com/N0zoM1z0/touhou-osu-inde
 
 
 class HttpError(RuntimeError):
-    pass
+    def __init__(self, message: str, *, status: int | None = None) -> None:
+        super().__init__(message)
+        self.status = status
 
 
 def request(
@@ -33,7 +35,7 @@ def request(
         except urllib.error.HTTPError as exc:
             retryable = exc.code == 429 or 500 <= exc.code < 600
             if not retryable or attempt + 1 == attempts:
-                raise HttpError(f"HTTP {exc.code} from {url}") from exc
+                raise HttpError(f"HTTP {exc.code} from {url}", status=exc.code) from exc
             retry_after = exc.headers.get("Retry-After", "")
             delay = int(retry_after) if retry_after.isdigit() else 3 * (2**attempt)
             time.sleep(min(delay, 30))

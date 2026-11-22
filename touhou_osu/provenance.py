@@ -367,6 +367,37 @@ def generic_verification_violations(current: Catalog) -> list[int]:
     return sorted(violations)
 
 
+GENERIC_SOURCE_DEMOTION_MARKER = "review:generic-source-unverified"
+
+
+def demote_generic_verification_debt(catalog: Catalog) -> list[int]:
+    """Fail closed when automation leaves a generic-source row ``verified``.
+
+    ``Catalog.merge`` never lowers confidence, so a mapper changing a concrete
+    game source to a generic ``Touhou`` alias would otherwise leave a
+    ``verified`` row that the repository policy (and ``make check``) rejects.
+    Demote such rows the same way the 2026-10 legacy migration did: keep
+    ``probable`` only for the existing multi-signal combination, otherwise fall
+    back to ``candidate``. The marker keeps the change auditable without making
+    it sticky; a reviewer can still add ``manual:verified``.
+    """
+
+    demoted = generic_verification_violations(catalog)
+    for beatmapset_id in demoted:
+        entry = catalog.entries[beatmapset_id]
+        evidence = set(entry.evidence)
+        multi_signal = (
+            "mapper_tags" in evidence
+            and bool(evidence & {"known_touhou_artist", "known_touhou_metadata"})
+            and any(item.startswith("osucollector:") for item in evidence)
+        )
+        entry.confidence = "probable" if multi_signal else "candidate"
+        entry.evidence = sorted(evidence | {GENERIC_SOURCE_DEMOTION_MARKER}, key=str.casefold)
+        entry.normalize()
+        entry.validate()
+    return demoted
+
+
 def _changed_entries(current: Catalog, base: Catalog) -> list[Entry]:
     return [
         current.entries[beatmapset_id]
