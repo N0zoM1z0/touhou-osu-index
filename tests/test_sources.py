@@ -11,6 +11,7 @@ from touhou_osu.sources import (
     parse_beatmap_links,
     parse_beatmapset_page,
     parse_wiki_links,
+    split_wiki_label,
 )
 
 
@@ -38,6 +39,33 @@ class SourceParserTests(unittest.TestCase):
         self.assertEqual(item["id"], 1188944)
         self.assertEqual(item["mode"], "mania")
         self.assertEqual(item["artist"], "FELT")
+
+    def test_wiki_markdown_label_drops_mapper_and_difficulty(self):
+        text = (
+            r'{"markdown":"1. [Demetori - Higan no dorei \\~ One Conclusion (Tidek) \\[Old Rain\\]]'
+            r'(https://osu.ppy.sh/beatmapsets/1434343#mania/1)"}'
+        )
+        item = parse_wiki_links(text)[0]
+        self.assertEqual(item["artist"], "Demetori")
+        self.assertEqual(item["title"], "Higan no dorei ~ One Conclusion")
+        self.assertEqual(item["creator"], "Tidek")
+
+    def test_split_wiki_label_edge_cases(self):
+        cases = {
+            r"SOUND HOLIC - Apollo 13 (-Deepdive-) [Last Word [\_underjoy]]": ("Apollo 13", "-Deepdive-"),
+            "mocchie - Nyan Nyan Drive (D: (Penguinosity) [mrow >:3 ~ 1.25]": ("Nyan Nyan Drive (D:", "Penguinosity"),
+            "X - Ghostly Parapara Ship (Horror struck Edit) (-Deepdive-) [Night (242bpm)]": (
+                "Ghostly Parapara Ship (Horror struck Edit)",
+                "-Deepdive-",
+            ),
+            # Without a mapper group the bracket is part of the real title.
+            "FELT - Life [Eris's mix]": ("Life [Eris's mix]", ""),
+            "ZUN - Theme (TV Size)": ("Theme (TV Size)", ""),
+        }
+        for label, (title, mapper) in cases.items():
+            with self.subTest(label=label):
+                split = split_wiki_label(label)
+                self.assertEqual((split["title"], split["mapper"]), (title, mapper))
 
     def test_parses_embedded_beatmapset_json(self):
         text = '<script id="json-beatmapset" type="application/json">{"id":42,"artist":"ZUN"}</script>'

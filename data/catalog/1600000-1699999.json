@@ -202,9 +202,9 @@
     {
       "beatmapset_id": 1610573,
       "artist": "Rerun",
-      "title": "icicle,icicle (YuEast 2018) [noodle,noodle x1.05]",
+      "title": "icicle,icicle",
       "creator": "YuEast 2018",
-      "source": "",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -217,8 +217,8 @@
         "tournament:467"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
-      "osu_last_updated": null
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2022-02-25T15:12:23Z"
     },
     {
       "beatmapset_id": 1611863,
@@ -811,9 +811,9 @@
     {
       "beatmapset_id": 1628528,
       "artist": "Foreground Eclipse",
-      "title": "Last Liar Standing (eZmmR) [Exteeeending Aaaaarm]",
+      "title": "Last Liar Standing",
       "creator": "eZmmR",
-      "source": "",
+      "source": "東方地霊殿　～ Subterranean Animism",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -826,8 +826,8 @@
         "tournament:467"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
-      "osu_last_updated": null
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2021-11-16T04:29:46Z"
     },
     {
       "beatmapset_id": 1629560,
@@ -1542,10 +1542,10 @@
     },
     {
       "beatmapset_id": 1648145,
-      "artist": "Shiiki Reku",
-      "title": "Rhythmy (-Deepdive-) [Till I'm laid]",
+      "artist": "Spacelectro feat. Shiiki Reku",
+      "title": "Rhythmy",
       "creator": "-Deepdive-",
-      "source": "",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -1558,8 +1558,8 @@
         "tournament:467"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
-      "osu_last_updated": null
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2023-04-14T21:16:42Z"
     },
     {
       "beatmapset_id": 1648342,
@@ -1715,9 +1715,9 @@
     {
       "beatmapset_id": 1655733,
       "artist": "FELT",
-      "title": "Crescent Moon ([Crz]hinako1804]) [Bereft Emotion]",
+      "title": "Crescent Moon",
       "creator": "[Crz]hinako1804",
-      "source": "",
+      "source": "東方Project",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -1730,8 +1730,8 @@
         "tournament:467"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
-      "osu_last_updated": null
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2021-12-21T13:06:08Z"
     },
     {
       "beatmapset_id": 1656076,
@@ -2079,9 +2079,9 @@
     {
       "beatmapset_id": 1665834,
       "artist": "t+pazolite feat. Rizna",
-      "title": "Ghostly Parapara Ship (Horror struck Edit) (-Deepdive-) [Parapara Night 1.1x (242bpm) OD8]",
+      "title": "Ghostly Parapara Ship (Horror struck Edit)",
       "creator": "-Deepdive-",
-      "source": "",
+      "source": "東方星蓮船　～ Undefined Fantastic Object.",
       "status": "graveyard",
       "modes": [
         "mania"
@@ -2094,8 +2094,8 @@
         "tournament:467"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
-      "osu_last_updated": null
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2022-01-04T16:35:13Z"
     },
     {
       "beatmapset_id": 1665935,
@@ -2609,10 +2609,10 @@
     {
       "beatmapset_id": 1680643,
       "artist": "Halozy",
-      "title": "Starry Presto (arccat) [LN]",
+      "title": "Starry Presto",
       "creator": "Arccat",
       "source": "",
-      "status": "graveyard",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -2624,7 +2624,7 @@
         "tournament:748"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {
@@ -3073,10 +3073,10 @@
     {
       "beatmapset_id": 1694322,
       "artist": "Rin",
-      "title": "Eientewi set 15 \\~ Evening Primrose (-Deepdive-) [Dark Sleep...[Rio1-]]",
-      "creator": "",
+      "title": "Eientewi set 15 ~ Evening Primrose",
+      "creator": "-Deepdive-",
       "source": "",
-      "status": "unknown",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -3087,7 +3087,7 @@
         "tmc:2nd"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {

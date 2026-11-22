@@ -3719,10 +3719,10 @@
     {
       "beatmapset_id": 1991141,
       "artist": "FELT",
-      "title": "Katsukusa ya sarishi Nichinichi no Kageboushi (-[Ulazis]-) [Koi]",
+      "title": "Katsukusa ya sarishi Nichinichi no Kageboushi",
       "creator": "-[Ulazis]-",
       "source": "",
-      "status": "graveyard",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -3734,7 +3734,7 @@
         "tournament:748"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {
@@ -4117,10 +4117,10 @@
     {
       "beatmapset_id": 1994340,
       "artist": "YURiCa",
-      "title": "VANISHING DREAM ([GB]Sanae) [CS' 4K MEMORIES OF PHANTASM(Cut.Edit) 1.05x]",
-      "creator": "",
+      "title": "VANISHING DREAM",
+      "creator": "[GB]Sanae",
       "source": "",
-      "status": "unknown",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -4131,7 +4131,7 @@
         "tmc:3rd"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {

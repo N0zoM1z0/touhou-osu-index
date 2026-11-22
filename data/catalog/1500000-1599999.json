@@ -2648,10 +2648,10 @@
     {
       "beatmapset_id": 1589946,
       "artist": "Camellia",
-      "title": "Ultimate Ascension (Penguinosity) [Vitality 1.1]",
+      "title": "Ultimate Ascension",
       "creator": "Penguinosity",
       "source": "",
-      "status": "graveyard",
+      "status": "deleted",
       "modes": [
         "mania"
       ],
@@ -2663,7 +2663,7 @@
         "tournament:467"
       ],
       "confidence": "verified",
-      "last_checked": "2026-10-01",
+      "last_checked": "2026-11-22",
       "osu_last_updated": null
     },
     {
