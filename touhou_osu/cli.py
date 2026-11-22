@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import shutil
 import sys
 import time
@@ -252,8 +253,12 @@ def command_discover(args: argparse.Namespace) -> int:
     api = OsuApi.from_env()
     discovered: dict[int, dict] = {}
     discovery_evidence: dict[int, set[str]] = {}
+    fuzzy_hits = 0
     for query in config.get("discovery_queries", []):
         for raw in api.search(query, max_pages=args.max_pages):
+            if not _hit_matches_query(raw, query):
+                fuzzy_hits += 1
+                continue
             beatmapset_id = int(raw["id"])
             discovered[beatmapset_id] = raw
             discovery_evidence.setdefault(beatmapset_id, set()).add(f"discovery_query:{query}")
@@ -311,12 +316,57 @@ def command_discover(args: argparse.Namespace) -> int:
         notes.append(f"{provenance_only} query-provenance-only updates skipped")
     if deferred:
         notes.append(f"change limit {args.max_changes} reached, {deferred} deferred")
-    print(f"Discovery examined {len(discovered)} unique beatmapsets; " + "; ".join(notes))
+    print(
+        f"Discovery examined {len(discovered)} unique beatmapsets "
+        f"({fuzzy_hits} fuzzy search hits without the query text rejected); " + "; ".join(notes)
+    )
     if args.write:
         catalog.save(args.catalog)
         print(f"Wrote {args.catalog}")
     print_stats(catalog)
     return 0
+
+
+DISCOVERY_FIELD_QUERY_RE = re.compile(r"^(artist|title|source|creator|tags?)\s*=\s*(.+)$", re.IGNORECASE)
+DISCOVERY_MATCH_FIELDS = ("artist", "artist_unicode", "title", "title_unicode", "source", "tags", "creator")
+
+
+def _phrase_tokens(value: str) -> list[str]:
+    return [token for token in re.split(r"[\W_]+", normalize_text(value)) if token]
+
+
+def _compact(value: str) -> str:
+    return re.sub(r"[\s_]+", "", normalize_text(value))
+
+
+def _contains_phrase(haystack: str, needle: str) -> bool:
+    """Whole-token phrase match for Latin text, substring match for CJK text."""
+
+    if not needle.isascii():
+        return bool(_compact(needle)) and _compact(needle) in _compact(haystack)
+    tokens = _phrase_tokens(needle)
+    words = _phrase_tokens(haystack)
+    width = len(tokens)
+    return bool(tokens) and any(words[index : index + width] == tokens for index in range(len(words) - width + 1))
+
+
+def _hit_matches_query(raw: dict, query: str) -> bool:
+    """Return whether an osu! search hit literally contains its query.
+
+    osu! search tokenizes queries loosely: ``A-One`` returns "Another One Bites
+    the Dust", ``東方Project`` returns ALI PROJECT, ``ZUN`` returns Zuntata. Such
+    hits are not discovery evidence, so they are dropped before classification.
+    ``field=value`` queries are checked against that field only.
+    """
+
+    field_query = DISCOVERY_FIELD_QUERY_RE.match(query.strip())
+    if field_query:
+        field_name = field_query.group(1).casefold()
+        field_name = "tags" if field_name.startswith("tag") else field_name
+        value = field_query.group(2).strip().strip('"')
+        fields = [field_name, f"{field_name}_unicode"]
+        return _contains_phrase(" ".join(str(raw.get(name) or "") for name in fields), value)
+    return _contains_phrase(" ".join(str(raw.get(name) or "") for name in DISCOVERY_MATCH_FIELDS), query)
 
 
 def _discovery_change_kind(current: Entry | None, incoming: Entry) -> str | None:

@@ -100,7 +100,7 @@ class DiscoveryTests(unittest.TestCase):
             "creator": "mapper",
             "source": "",
             "status": "ranked",
-            "tags": "touhou arrangement",
+            "tags": "touhou 東方project arrangement",
             "beatmaps": [{"mode": "osu"}],
         }
         FakeOsuApi.responses = {"Touhou": [raw], "東方Project": [raw]}
@@ -529,6 +529,25 @@ class DiscoveryPriorityTests(unittest.TestCase):
         catalog = Catalog.load(catalog_path)
         self.assertEqual(catalog.entries[5].confidence, "verified")
         self.assertEqual(catalog.entries[6].status, "ranked")
+
+    def test_fuzzy_search_hits_without_query_text_are_rejected(self):
+        # Real false positives from the first run after #46.
+        responses = {
+            "A-One": [
+                osu_raw(692, artist="Queen", title="Another One Bites The Dust", source="", tags="rock"),
+                osu_raw(900, artist="A-One", title="Sacred Factor", source="", tags=""),
+            ],
+            "東方Project": [osu_raw(765, artist="Ali Project", title="Kinjirareta Asobi", source="", tags="anime")],
+            "source=Shoot the Bullet": [
+                osu_raw(5010, source="Bakuten Shoot Beyblade 20", tags=""),
+                osu_raw(901, source="東方文花帖 ～ Shoot the Bullet.", tags=""),
+            ],
+        }
+        _, catalog_path = self._discover([catalogued(1)], responses)
+        catalog = Catalog.load(catalog_path)
+        self.assertEqual(set(catalog.entries), {1, 900, 901})
+        self.assertIn("discovery_query:A-One", catalog.entries[900].evidence)
+        self.assertEqual(catalog.entries[901].confidence, "verified")
 
     def test_discovery_demotes_generic_source_drift(self):
         existing = [catalogued(7)]
