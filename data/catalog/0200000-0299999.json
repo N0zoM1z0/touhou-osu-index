@@ -1827,6 +1827,27 @@
       "osu_last_updated": "2015-09-13T05:46:02Z"
     },
     {
+      "beatmapset_id": 260805,
+      "artist": "Yooh",
+      "title": "Shanghai Kouchakan ~ Chinese Tea Orchid Remix",
+      "creator": "17VA",
+      "source": "SOUND VOLTEX II -infinite infection-",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:上海アリス幻樂団",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2022-04-04T13:42:47Z"
+    },
+    {
       "beatmapset_id": 263191,
       "artist": "JerryTerry",
       "title": "U.N. Owen Was Yee?",
@@ -2049,6 +2070,26 @@
       "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-10-26T01:34:04Z"
+    },
+    {
+      "beatmapset_id": 274333,
+      "artist": "Watanuki Tsuyuri (CV:Kanau)",
+      "title": "Sweet Star Syrups",
+      "creator": "Little",
+      "source": "あま恋シロップス～恥じらう恋心でシたくなる甘神様の恋祭り～",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2016-02-05T23:36:37Z"
     },
     {
       "beatmapset_id": 275151,
@@ -2303,6 +2344,29 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2019-02-10T13:30:42Z"
+    },
+    {
+      "beatmapset_id": 286386,
+      "artist": "Senpi-",
+      "title": "Touhou Last Boss Rush!!",
+      "creator": "Kyuare",
+      "source": "東方Project",
+      "status": "loved",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Touhou",
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "osu_source"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2016-11-30T22:30:42Z"
     },
     {
       "beatmapset_id": 286460,
@@ -2827,6 +2891,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2016-03-26T15:02:26Z"
+    },
+    {
+      "beatmapset_id": 295581,
+      "artist": "ARM feat. Nanahira",
+      "title": "Bakunana*Testroyer",
+      "creator": "intoon",
+      "source": "BeatStream",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2015-07-19T13:54:32Z"
     },
     {
       "beatmapset_id": 295983,

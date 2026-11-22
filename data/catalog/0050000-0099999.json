@@ -1452,6 +1452,27 @@
       "osu_last_updated": "2012-10-01T03:50:38Z"
     },
     {
+      "beatmapset_id": 59515,
+      "artist": "ARM feat. miko",
+      "title": "Hysteric Soda",
+      "creator": "Silynn",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2020-01-07T07:51:13Z"
+    },
+    {
       "beatmapset_id": 59592,
       "artist": "Misty Rain",
       "title": "Sakura no Sakanu wa Eiketsu no",
@@ -1989,6 +2010,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2013-01-30T15:54:58Z"
+    },
+    {
+      "beatmapset_id": 66372,
+      "artist": "IOSYS",
+      "title": "Shining Grace",
+      "creator": "Smoothie",
+      "source": "Project U-Ta-Hi-Me",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2013-02-03T12:23:25Z"
     },
     {
       "beatmapset_id": 67133,
@@ -4006,6 +4048,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2013-06-08T16:32:04Z"
+    },
+    {
+      "beatmapset_id": 97925,
+      "artist": "Akaza Akari (CV: Mikami Shiori)",
+      "title": "Watashi, Shuyaku no Akaza Akari Desu (Happy Euri Mix)",
+      "creator": "Mythol",
+      "source": "ゆるゆり",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2025-03-14T20:57:01Z"
     },
     {
       "beatmapset_id": 98020,

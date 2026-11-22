@@ -2,6 +2,73 @@
   "schema_version": 1,
   "entries": [
     {
+      "beatmapset_id": 109,
+      "artist": "IOSYS",
+      "title": "FOE to no Souguu",
+      "creator": "Kharl",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2007-10-22T12:54:46Z"
+    },
+    {
+      "beatmapset_id": 243,
+      "artist": "IOSYS",
+      "title": "Marisa wa Taihen na Mono wo Nusunde Ikimashita",
+      "creator": "DJPop",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:Touhou",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2007-11-20T13:27:50Z"
+    },
+    {
+      "beatmapset_id": 1391,
+      "artist": "IOSYS",
+      "title": "Kanbu de Todomatte Sugu Tokeru ~ Kyouki no Udongein",
+      "creator": "DJPop",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:Touhou",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2008-06-25T15:01:41Z"
+    },
+    {
       "beatmapset_id": 1559,
       "artist": "Silver Forest",
       "title": "Tsurupettan",
@@ -24,6 +91,28 @@
       "osu_last_updated": "2008-08-22T00:50:57Z"
     },
     {
+      "beatmapset_id": 1735,
+      "artist": "IOSYS",
+      "title": "Utage Ha Eien Ni",
+      "creator": "qwertyuiop",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2008-07-26T13:42:00Z"
+    },
+    {
       "beatmapset_id": 1785,
       "artist": "Nico Nico Douga",
       "title": "U.N. Owen Was Her?",
@@ -42,6 +131,73 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2008-10-20T05:23:41Z"
+    },
+    {
+      "beatmapset_id": 2152,
+      "artist": "IOSYS",
+      "title": "Kyuurimi no Biiru wo Nomeba Iiyo!",
+      "creator": "Hitoshirenu Shourai",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2008-08-07T00:28:46Z"
+    },
+    {
+      "beatmapset_id": 2518,
+      "artist": "IOSYS",
+      "title": "Oyome Ni Shinasai",
+      "creator": "Mafiamaster",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:Touhou",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2008-09-17T11:57:43Z"
+    },
+    {
+      "beatmapset_id": 2533,
+      "artist": "IOSYS",
+      "title": "Border of Death",
+      "creator": "buraimaster1234",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2008-09-02T20:46:48Z"
     },
     {
       "beatmapset_id": 2626,
@@ -68,6 +224,29 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2008-08-26T00:10:51Z"
+    },
+    {
+      "beatmapset_id": 2976,
+      "artist": "IOSYS",
+      "title": "Tsukiyo wo Kakusanai Teido no Nouryoku",
+      "creator": "Card N'FoRcE",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:Touhou",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2008-09-24T12:59:54Z"
     },
     {
       "beatmapset_id": 3367,
@@ -249,6 +428,29 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2008-12-19T07:56:37Z"
+    },
+    {
+      "beatmapset_id": 3959,
+      "artist": "IOSYS",
+      "title": "Usatei",
+      "creator": "Card N'FoRcE",
+      "source": "",
+      "status": "approved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:Touhou",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2009-02-25T13:37:39Z"
     },
     {
       "beatmapset_id": 4059,
@@ -1719,6 +1921,26 @@
       "osu_last_updated": "2009-06-22T23:58:04Z"
     },
     {
+      "beatmapset_id": 7613,
+      "artist": "Megumi Nakajima (Ranka Mei)",
+      "title": "Nyan Nyan Song (Touhou Rock Remix)",
+      "creator": "KIA",
+      "source": "Nico Nico Douga",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Touhou"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2009-06-30T09:53:02Z"
+    },
+    {
       "beatmapset_id": 7683,
       "artist": "Liverne",
       "title": "Beloved Tomboyish Girl",
@@ -1907,6 +2129,28 @@
       "osu_last_updated": "2009-08-07T00:25:51Z"
     },
     {
+      "beatmapset_id": 8063,
+      "artist": "IOSYS",
+      "title": "Hakurei Jinja",
+      "creator": "tieff",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2009-07-27T16:10:58Z"
+    },
+    {
       "beatmapset_id": 8268,
       "artist": "IOSYS",
       "title": "Power of Dream",
@@ -1930,6 +2174,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-08-02T01:17:03Z"
+    },
+    {
+      "beatmapset_id": 8273,
+      "artist": "COOL&CREATE(BeatMario)",
+      "title": "Destined Marionette",
+      "creator": "avira0922",
+      "source": "BMS",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:COOL&CREATE"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2010-01-24T15:37:49Z"
     },
     {
       "beatmapset_id": 8295,
@@ -2850,6 +3114,29 @@
       "osu_last_updated": "2009-12-24T13:03:47Z"
     },
     {
+      "beatmapset_id": 10143,
+      "artist": "IOSYS",
+      "title": "Marisa wa Taihen na Kanbu de Tomatte Ikimashita",
+      "creator": "DJPop",
+      "source": "Nico Nico Douga",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "discovery_query:Touhou",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2009-11-02T11:31:40Z"
+    },
+    {
       "beatmapset_id": 10186,
       "artist": "ZUN",
       "title": "Akutagawa Ryuunosuke's Kappa ~ Candid Friend",
@@ -2999,6 +3286,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-12-29T12:37:47Z"
+    },
+    {
+      "beatmapset_id": 10409,
+      "artist": "IOSYS",
+      "title": "Fascination Marisa",
+      "creator": "Leorda",
+      "source": "Omega Letty X185",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2009-12-26T03:21:09Z"
     },
     {
       "beatmapset_id": 10435,
@@ -3358,6 +3666,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-12-05T06:52:03Z"
+    },
+    {
+      "beatmapset_id": 11076,
+      "artist": "IOSYS",
+      "title": "Alice wa Taihen na Kashi Wo Urooboe Deshita",
+      "creator": "Zekira",
+      "source": "nicovideo",
+      "status": "approved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2010-01-23T17:46:48Z"
     },
     {
       "beatmapset_id": 11103,
@@ -5679,6 +6008,27 @@
       "osu_last_updated": "2010-03-26T13:10:16Z"
     },
     {
+      "beatmapset_id": 14294,
+      "artist": "IOSYS",
+      "title": "Princess Party ~Seishun Kinshi Rei~",
+      "creator": "DJPop",
+      "source": "Princess Party",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2010-03-29T15:07:27Z"
+    },
+    {
       "beatmapset_id": 14298,
       "artist": "Drop no Koya",
       "title": "Rouzensatorin",
@@ -7970,6 +8320,29 @@
       "osu_last_updated": "2010-08-28T17:43:33Z"
     },
     {
+      "beatmapset_id": 17819,
+      "artist": "IOSYS",
+      "title": "Taihen na Mono no Shoushitsu",
+      "creator": "DJPop",
+      "source": "Nico Nico Douga",
+      "status": "ranked",
+      "modes": [
+        "catch",
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2022-08-29T10:04:05Z"
+    },
+    {
       "beatmapset_id": 17824,
       "artist": "Haru",
       "title": "Flowering Night x Outkast (B.O.B.)",
@@ -8325,6 +8698,27 @@
       "osu_last_updated": "2010-11-26T07:18:15Z"
     },
     {
+      "beatmapset_id": 18565,
+      "artist": "Lia",
+      "title": "Toki wo Kizamu Uta (Trance Arrange)",
+      "creator": "Natteke",
+      "source": "Clannad ~After Story~",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2010-10-10T15:31:31Z"
+    },
+    {
       "beatmapset_id": 18654,
       "artist": "Xi-on",
       "title": "The Sun Belief of Soul ~ Nuclear Fusion",
@@ -8416,6 +8810,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-08-22T22:10:22Z"
+    },
+    {
+      "beatmapset_id": 18879,
+      "artist": "IOSYS",
+      "title": "CAMELLIA! ~Dangerous Camellia Vacation~",
+      "creator": "DJPop",
+      "source": "Princess Party Camellia",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2010-08-10T12:50:04Z"
     },
     {
       "beatmapset_id": 18913,
@@ -10570,6 +10985,26 @@
       "osu_last_updated": "2011-01-02T15:42:38Z"
     },
     {
+      "beatmapset_id": 23312,
+      "artist": "DJ~MoExx",
+      "title": "Listen, Miku; Don't Say \"Bad Marisa Ass Apple Irony\"",
+      "creator": "Mashley",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2011-01-01T23:38:03Z"
+    },
+    {
       "beatmapset_id": 23363,
       "artist": "ZUN",
       "title": "Extend Ash ~ Hourai Victim",
@@ -11002,6 +11437,26 @@
       "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-03-15T14:37:18Z"
+    },
+    {
+      "beatmapset_id": 24595,
+      "artist": "Fujiwara Marina",
+      "title": "Daydream Syndrome (TV Size)",
+      "creator": "saymun",
+      "source": "Yumekui Merry",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2011-01-20T03:50:32Z"
     },
     {
       "beatmapset_id": 24701,

@@ -1964,6 +1964,28 @@
       "osu_last_updated": "2023-10-21T20:17:52Z"
     },
     {
+      "beatmapset_id": 2032374,
+      "artist": "Unlucky Morpheus",
+      "title": "Kamigami ga Koishita Gensoukyou",
+      "creator": "kowari",
+      "source": "東方風神録　～ Mountain of Faith.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Mountain of Faith",
+        "discovery_query:source=東方風神録",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-09-01T03:39:17Z"
+    },
+    {
       "beatmapset_id": 2033193,
       "artist": "Down",
       "title": "nanoya",

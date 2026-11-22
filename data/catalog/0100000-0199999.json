@@ -1133,6 +1133,28 @@
       "osu_last_updated": "2015-07-04T15:22:28Z"
     },
     {
+      "beatmapset_id": 115246,
+      "artist": "IOSYS",
+      "title": "shining grace",
+      "creator": "smallboat",
+      "source": "Project U-Ta-Hi-Me",
+      "status": "ranked",
+      "modes": [
+        "osu",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2013-12-15T16:40:51Z"
+    },
+    {
       "beatmapset_id": 115745,
       "artist": "beatMARIO",
       "title": "Night of Knights",
@@ -2923,6 +2945,26 @@
       "osu_last_updated": "2014-01-23T12:02:12Z"
     },
     {
+      "beatmapset_id": 145032,
+      "artist": "ARM (IOSYS)",
+      "title": "Koisuru*Uchuu Sensou!! Abababa Mix",
+      "creator": "FlandreScarlet-",
+      "source": "SOUND VOLTEX BOOTH",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2015-09-03T13:12:36Z"
+    },
+    {
       "beatmapset_id": 145885,
       "artist": "senya",
       "title": "Yozakura ni Kimi o Kakushite",
@@ -2985,6 +3027,27 @@
       "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2014-12-16T09:55:54Z"
+    },
+    {
+      "beatmapset_id": 146623,
+      "artist": "t+pazolite feat. Rizna",
+      "title": "Unlimited Spark! (remake)",
+      "creator": "Entozer",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:東方",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2014-02-02T09:30:21Z"
     },
     {
       "beatmapset_id": 146626,
@@ -3841,6 +3904,26 @@
       "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2016-02-07T08:26:47Z"
+    },
+    {
+      "beatmapset_id": 169848,
+      "artist": "Atoguru",
+      "title": "Hana no Sadame",
+      "creator": "CSAQ",
+      "source": "艦隊これくしょん～艦これ～",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:C-CLAYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2015-02-28T07:21:38Z"
     },
     {
       "beatmapset_id": 170160,

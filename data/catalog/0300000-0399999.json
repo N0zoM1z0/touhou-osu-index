@@ -1359,6 +1359,26 @@
       "osu_last_updated": "2015-06-16T17:25:47Z"
     },
     {
+      "beatmapset_id": 324992,
+      "artist": "ARM feat. Nanahira",
+      "title": "Bakunana*Testroyer",
+      "creator": "Rinzler",
+      "source": "BeatStream",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2015-07-29T08:22:22Z"
+    },
+    {
       "beatmapset_id": 325048,
       "artist": "forestpireo",
       "title": "Shinon Planetarium",
@@ -1814,6 +1834,26 @@
       "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2015-07-26T13:35:18Z"
+    },
+    {
+      "beatmapset_id": 332201,
+      "artist": "nomico / DOWNFORCE",
+      "title": "BRAVE OUT",
+      "creator": "yf_bmp",
+      "source": "beatmania IIDX 21 SPADA",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Alstroemeria Records"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2024-11-16T13:36:38Z"
     },
     {
       "beatmapset_id": 332313,
@@ -2614,6 +2654,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2017-07-13T03:49:56Z"
+    },
+    {
+      "beatmapset_id": 349561,
+      "artist": "L.E.D.-G + Qrispy Joybox + ARM feat. Nanahira",
+      "title": "Dokkin Summer Adventure",
+      "creator": "Rinzler",
+      "source": "beatmania IIDX 22 PENDUAL",
+      "status": "ranked",
+      "modes": [
+        "mania",
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2016-02-24T09:20:37Z"
     },
     {
       "beatmapset_id": 349685,

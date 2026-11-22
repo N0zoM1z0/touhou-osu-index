@@ -2468,6 +2468,28 @@
       "osu_last_updated": "2026-09-13T21:16:59Z"
     },
     {
+      "beatmapset_id": 2622974,
+      "artist": "senya",
+      "title": "Utakata, Ai no Mahoroba",
+      "creator": "yakisode",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-09-26T10:57:35Z"
+    },
+    {
       "beatmapset_id": 2628343,
       "artist": "ryu5150",
       "title": "Mighty Red",
@@ -2487,6 +2509,139 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2026-09-30T21:31:30Z"
+    },
+    {
+      "beatmapset_id": 2628564,
+      "artist": "Down",
+      "title": "ddm",
+      "creator": "yakisode",
+      "source": "東方萃夢想　～ Immaterial and Missing Power.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Immaterial and Missing Power",
+        "discovery_query:source=東方萃夢想",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-11-04T06:31:40Z"
+    },
+    {
+      "beatmapset_id": 2629416,
+      "artist": "senya",
+      "title": "Koakuma Ringo (EUROBEAT Remix)",
+      "creator": "yakisode",
+      "source": "東方幻想郷　～ Lotus Land Story",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Lotus Land Story",
+        "discovery_query:source=東方幻想郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-10-29T18:18:07Z"
+    },
+    {
+      "beatmapset_id": 2630064,
+      "artist": "cYsmix",
+      "title": "Tear Rain feat. Emmy",
+      "creator": "hz404",
+      "source": "東方紅魔郷　～ the Embodiment of Scarlet Devil.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=東方紅魔郷",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-10-11T00:57:30Z"
+    },
+    {
+      "beatmapset_id": 2631780,
+      "artist": "Halozy feat. Tsubaki",
+      "title": "Kyun Kyun Tamaran Inaba-tan.",
+      "creator": "yakisode",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-10-25T15:22:56Z"
+    },
+    {
+      "beatmapset_id": 2631790,
+      "artist": "Xi",
+      "title": "Rokujuu-nen Me no Shinsoku Saiban ~ Rapidity is a justice",
+      "creator": "yakisode",
+      "source": "東方花映塚　～ Phantasmagoria of Flower View.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Phantasmagoria of Flower View",
+        "discovery_query:source=東方花映塚",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-10-13T18:56:57Z"
+    },
+    {
+      "beatmapset_id": 2638947,
+      "artist": "Halozy",
+      "title": "Kiss & Crazy (extended mix)",
+      "creator": "Eriha",
+      "source": "東方永夜抄　～ Imperishable Night.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:source=Imperishable Night",
+        "discovery_query:source=東方永夜抄",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-10-29T17:51:11Z"
     }
   ]
 }

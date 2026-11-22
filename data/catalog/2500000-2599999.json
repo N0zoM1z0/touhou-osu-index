@@ -2756,6 +2756,28 @@
       "osu_last_updated": "2026-06-05T16:06:15Z"
     },
     {
+      "beatmapset_id": 2567181,
+      "artist": "MN-logic24 feat. mineko",
+      "title": "Fujimi no Girlfriend",
+      "creator": "milosz",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-09-11T23:37:55Z"
+    },
+    {
       "beatmapset_id": 2567202,
       "artist": "beatMARIO",
       "title": "Night of Nights (Hachioji P Remix)",
@@ -3191,6 +3213,28 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2026-07-08T19:48:50Z"
+    },
+    {
+      "beatmapset_id": 2584229,
+      "artist": "ryu5150",
+      "title": "Fighting For Freedom Again",
+      "creator": "reisen91937",
+      "source": "東方神霊廟　～ Ten Desires.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:source=Ten Desires",
+        "discovery_query:source=東方神霊廟",
+        "osu_source"
+      ],
+      "confidence": "verified",
+      "last_checked": "2026-11-22",
+      "osu_last_updated": "2026-11-09T16:56:42Z"
     },
     {
       "beatmapset_id": 2585229,
