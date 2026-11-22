@@ -2909,9 +2909,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-03-13T23:04:40Z"
     },
@@ -3074,9 +3075,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-11-07T23:58:43Z"
     },
@@ -4157,9 +4159,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-12-22T12:18:43Z"
     },

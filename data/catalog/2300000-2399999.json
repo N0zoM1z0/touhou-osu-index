@@ -4202,9 +4202,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-11-06T10:37:00Z"
     },
@@ -5795,9 +5796,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-11-23T19:15:56Z"
     },

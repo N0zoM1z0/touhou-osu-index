@@ -188,5 +188,8 @@ make build
   pages without OAuth. Its intentionally low concurrency avoids rate limits.
 - `discover` and `reconcile` use osu! API v2 OAuth credentials; CI supplies
   those only through GitHub Actions secrets.
+- The repository test suite and provenance-mode deep review scan the full
+  catalog for generic-source `verified` rows lacking independent reviewed
+  evidence; pre-existing rows are not grandfathered.
 - No command downloads or stores `.osz`, audio, backgrounds, or other map
   assets.

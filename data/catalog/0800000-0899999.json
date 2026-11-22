@@ -142,9 +142,10 @@
       "evidence": [
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-10-17T05:49:47Z"
     },
@@ -1903,9 +1904,10 @@
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2019-08-17T16:28:59Z"
     },
@@ -2570,9 +2572,10 @@
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-11-23T17:28:16Z"
     },
@@ -2591,9 +2594,10 @@
       "original_themes": [],
       "evidence": [
         "forum_queue:sd_touhou",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2025-11-14T19:31:44Z"
     },
@@ -3220,9 +3224,10 @@
         "discovery_query:source=東方",
         "discovery_query:source=東方Project",
         "mapper_tags",
-        "osu_source"
+        "osu_source",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2019-02-18T08:19:09Z"
     },

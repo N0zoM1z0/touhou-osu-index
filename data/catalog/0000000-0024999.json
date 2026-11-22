@@ -144,9 +144,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-02-03T05:59:31Z"
     },
@@ -670,9 +671,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-03-03T20:24:07Z"
     },
@@ -699,9 +701,10 @@
         "osucollector:1402",
         "osucollector:1407",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-09-10T21:08:54Z"
     },
@@ -792,9 +795,10 @@
         "discovery_query:Touhou",
         "mapper_tags",
         "osu_source",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-04-07T07:57:22Z"
     },
@@ -913,9 +917,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
-        "osucollector:14845"
+        "osucollector:14845",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-05-02T22:59:05Z"
     },
@@ -1566,9 +1571,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-08-22T04:40:58Z"
     },
@@ -1865,9 +1871,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-10-24T00:18:01Z"
     },
@@ -2108,9 +2115,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:6907"
+        "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-12-05T04:08:29Z"
     },
@@ -2154,9 +2162,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-10-24T16:29:07Z"
     },
@@ -2434,9 +2443,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-11-13T05:03:24Z"
     },
@@ -2502,9 +2512,10 @@
         "known_touhou_metadata",
         "mapper_tags",
         "osu_source",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-11-08T20:11:47Z"
     },
@@ -2576,9 +2587,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-12-04T12:31:12Z"
     },
@@ -2880,9 +2892,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-12-16T17:59:08Z"
     },
@@ -2905,9 +2918,10 @@
         "discovery_query:Team Shanghai Alice",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-02-05T18:04:17Z"
     },
@@ -3464,9 +3478,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2009-12-26T03:40:37Z"
     },
@@ -3829,9 +3844,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-01-20T11:32:16Z"
     },
@@ -3898,9 +3914,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-01-20T06:03:39Z"
     },
@@ -4058,9 +4075,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-10-09T01:37:32Z"
     },
@@ -4245,9 +4263,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-11-19T14:23:18Z"
     },
@@ -4293,9 +4312,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-08-14T15:27:31Z"
     },
@@ -4589,9 +4609,10 @@
         "discovery_query:Adust Rain",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-02-16T14:16:30Z"
     },
@@ -4612,9 +4633,10 @@
         "discovery_query:ZUN",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-10-26T07:23:26Z"
     },
@@ -4800,9 +4822,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1407",
-        "osucollector:14845"
+        "osucollector:14845",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-03-17T20:36:49Z"
     },
@@ -4899,9 +4922,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-07-11T18:08:42Z"
     },
@@ -5048,9 +5072,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:731"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-03-01T20:23:59Z"
     },
@@ -5282,9 +5307,10 @@
         "discovery_query:Diao ye zong",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-03-10T21:23:32Z"
     },
@@ -5333,9 +5359,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:14845"
+        "osucollector:14845",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-03-30T17:22:52Z"
     },
@@ -5380,9 +5407,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-03-14T21:49:57Z"
     },
@@ -5481,9 +5509,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-06-20T15:08:11Z"
     },
@@ -5595,9 +5624,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-06-04T14:05:02Z"
     },
@@ -5619,9 +5649,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-04-29T14:40:21Z"
     },
@@ -5713,9 +5744,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-06-14T18:27:32Z"
     },
@@ -5736,9 +5768,10 @@
         "discovery_query:ZUN",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-05-24T13:58:30Z"
     },
@@ -5830,9 +5863,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-04-14T04:33:23Z"
     },
@@ -5946,9 +5980,10 @@
         "discovery_query:Alstroemeria Records",
         "known_touhou_artist",
         "osu_source",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-07-06T19:51:43Z"
     },
@@ -6036,9 +6071,10 @@
         "osu_source",
         "osucollector:1405",
         "osucollector:1407",
-        "osucollector:6907"
+        "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-05-30T13:28:35Z"
     },
@@ -6081,9 +6117,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-04-24T16:32:41Z"
     },
@@ -6236,9 +6273,10 @@
         "discovery_query:C-CLAYS",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-04-21T19:24:13Z"
     },
@@ -6372,9 +6410,10 @@
         "discovery_query:IOSYS",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-11-16T08:54:56Z"
     },
@@ -6395,9 +6434,10 @@
         "discovery_query:Alstroemeria Records",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-08-07T16:53:55Z"
     },
@@ -6491,9 +6531,10 @@
         "discovery_query:IOSYS",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-06-03T16:23:17Z"
     },
@@ -6539,9 +6580,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-07-01T05:08:07Z"
     },
@@ -6586,9 +6628,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-06-25T15:12:33Z"
     },
@@ -6632,9 +6675,10 @@
         "discovery_query:Alstroemeria Records",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-08-29T03:13:02Z"
     },
@@ -6657,9 +6701,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-09-30T16:11:16Z"
     },
@@ -6805,9 +6850,10 @@
         "discovery_query:東方Project",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-08-04T20:53:47Z"
     },
@@ -6830,9 +6876,10 @@
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-06-04T05:40:17Z"
     },
@@ -6880,9 +6927,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-05-27T01:22:40Z"
     },
@@ -7160,9 +7208,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-07-04T06:18:33Z"
     },
@@ -7297,9 +7346,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-06-11T21:59:06Z"
     },
@@ -7504,9 +7554,10 @@
       "original_themes": [],
       "evidence": [
         "osu_source",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:731"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-06-18T04:37:29Z"
     },
@@ -7738,9 +7789,10 @@
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-11-17T17:50:32Z"
     },
@@ -7764,9 +7816,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-08-10T18:03:18Z"
     },
@@ -8072,9 +8125,10 @@
         "mapper_tags",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-10-08T10:02:02Z"
     },
@@ -8098,9 +8152,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
-        "osucollector:6907"
+        "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-08-31T22:19:24Z"
     },
@@ -8144,9 +8199,10 @@
         "discovery_query:ZUN",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-03-13T09:06:00Z"
     },
@@ -8307,9 +8363,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-08-12T01:22:45Z"
     },
@@ -8331,9 +8388,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-09-18T20:32:53Z"
     },
@@ -8424,9 +8482,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-05-16T22:52:36Z"
     },
@@ -8493,9 +8552,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
-        "osucollector:6907"
+        "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-06-27T10:37:48Z"
     },
@@ -8591,9 +8651,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:731"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-10-23T01:38:08Z"
     },
@@ -8852,9 +8913,10 @@
         "discovery_query:ZUN",
         "osu_source",
         "osucollector:1407",
-        "osucollector:6907"
+        "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-12-21T20:36:29Z"
     },
@@ -8951,9 +9013,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-10-25T14:32:50Z"
     },
@@ -9002,9 +9065,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-02-21T12:02:37Z"
     },
@@ -9026,9 +9090,10 @@
         "discovery_query:Touhou",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-12-07T06:38:30Z"
     },
@@ -9169,9 +9234,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-12-05T05:55:00Z"
     },
@@ -9546,9 +9612,10 @@
         "known_touhou_artist",
         "mapper_tags",
         "osu_source",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-03-21T16:33:58Z"
     },
@@ -9879,9 +9946,10 @@
         "discovery_query:ZUN",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-01-13T21:13:45Z"
     },
@@ -9929,9 +9997,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-04-24T10:29:12Z"
     },
@@ -9954,9 +10023,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-05-02T22:27:32Z"
     },
@@ -10072,9 +10142,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-01-15T01:15:26Z"
     },
@@ -10192,9 +10263,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-01-03T09:19:12Z"
     },
@@ -10283,9 +10355,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-11-06T16:47:19Z"
     },
@@ -10395,9 +10468,10 @@
         "discovery_query:東方Project",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-05-04T10:47:05Z"
     },
@@ -10418,9 +10492,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-08-12T06:08:33Z"
     },
@@ -10513,9 +10588,10 @@
         "known_touhou_artist",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-02-20T18:08:50Z"
     },
@@ -10697,9 +10773,10 @@
         "discovery_query:東方Project",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2010-12-31T04:13:52Z"
     },
@@ -10726,9 +10803,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-01-22T17:40:23Z"
     },
@@ -10818,9 +10896,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-12-26T04:27:18Z"
     },
@@ -10889,9 +10968,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-02-19T16:02:22Z"
     },
@@ -11035,9 +11115,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
-        "osucollector:6907"
+        "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-12-13T17:44:43Z"
     },

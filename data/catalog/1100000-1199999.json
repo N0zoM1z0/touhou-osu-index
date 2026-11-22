@@ -1588,9 +1588,10 @@
         "osucollector:1405",
         "osucollector:1407",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2020-12-10T03:10:28Z"
     },
@@ -2079,9 +2080,10 @@
         "known_touhou_artist",
         "mapper_tags",
         "osu_source",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:731"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2023-03-19T18:03:36Z"
     },

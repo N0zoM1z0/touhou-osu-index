@@ -138,9 +138,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-09-06T14:15:14Z"
     },
@@ -259,9 +260,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:14845",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-12-10T14:11:38Z"
     },
@@ -400,9 +402,10 @@
         "discovery_query:ZUN",
         "osu_source",
         "osucollector:1402",
-        "osucollector:1405"
+        "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-02-13T12:44:17Z"
     },
@@ -517,9 +520,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:6907"
+        "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-03-04T23:49:28Z"
     },
@@ -801,9 +805,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-04-19T00:21:23Z"
     },
@@ -966,9 +971,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
-        "osucollector:1407"
+        "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2013-01-14T05:47:26Z"
     },
@@ -992,9 +998,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:1407",
-        "osucollector:6907"
+        "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-03-27T12:53:28Z"
     },
@@ -1040,9 +1047,10 @@
         "osucollector:1402",
         "osucollector:1405",
         "osucollector:6907",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-07-29T11:02:29Z"
     },
@@ -1090,10 +1098,11 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-05-05T10:24:09Z"
     },
@@ -1116,9 +1125,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:731"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-07-27T03:38:20Z"
     },
@@ -1695,9 +1705,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-01-12T18:58:46Z"
     },
@@ -2032,9 +2043,10 @@
       "original_themes": [],
       "evidence": [
         "osu_source",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-07-24T08:56:26Z"
     },
@@ -2175,9 +2187,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-09-04T11:09:45Z"
     },
@@ -2665,9 +2678,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1407",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:829"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-11-02T06:01:22Z"
     },
@@ -2865,9 +2879,10 @@
       "original_themes": [],
       "evidence": [
         "osu_source",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-08-11T01:55:06Z"
     },
@@ -3036,9 +3051,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2011-11-06T01:10:22Z"
     },
@@ -3173,9 +3189,10 @@
       "evidence": [
         "known_touhou_artist",
         "osu_source",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-09-08T15:50:45Z"
     },
@@ -4134,9 +4151,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-05-26T00:43:30Z"
     },
@@ -4328,9 +4346,10 @@
         "osu_source",
         "osucollector:1402",
         "osucollector:1405",
+        "review:legacy-generic-confidence-2026-10",
         "tournament_candidate:526"
       ],
-      "confidence": "verified",
+      "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2012-04-28T06:17:22Z"
     },
