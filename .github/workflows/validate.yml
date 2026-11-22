@@ -4,17 +4,31 @@ on:
   pull_request:
   push:
     branches: [main]
+  # Automation PRs are pushed with GITHUB_TOKEN, so their pull_request runs
+  # stop at "action_required". The discovery/reconciliation workflows dispatch
+  # this workflow on their branch instead; the result appears on the PR head.
+  workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: validate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        # Oldest supported (README: Python 3.11+) and current.
+        python-version: ["3.11", "3.13"]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
       - run: make check
       - run: make build

@@ -6,14 +6,17 @@ import argparse
 import json
 import shutil
 import sys
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, as_completed, wait
+from datetime import date, timedelta
 from pathlib import Path
 
-from .catalog import Catalog
+from .catalog import IDENTITY_MISMATCH_MARKER, Catalog
 from .classifier import normalize as normalize_text
-from .http import get_text
-from .models import CatalogError
+from .http import HttpError, get_text
+from .models import CatalogError, Entry
 from .osu_api import MissingCredentials, OsuApi, entry_from_osu
+from .provenance import demote_generic_verification_debt
 from .site import build, statistics
 from .sources import import_all, parse_beatmapset_page
 
@@ -22,6 +25,10 @@ DEFAULT_CATALOG = ROOT / "data" / "catalog"
 DEFAULT_CONFIG = ROOT / "config" / "seeds.json"
 DEFAULT_OUTPUT = ROOT / "dist"
 DISCOVERY_CONFIDENCE_ORDER = {"verified": 0, "probable": 1, "candidate": 2, "excluded": 3}
+# Spend the weekly change budget on what reviewers care about first: unseen
+# beatmapsets, then confidence transitions, then other metadata/evidence.
+DISCOVERY_CHANGE_PRIORITY = {"new": 0, "confidence": 1, "metadata": 2}
+RECONCILE_PROGRESS_INTERVAL = 500
 RECONCILE_REVIEWED_IDENTITY_PREFIXES = (
     "audit:",
     "manual:",
@@ -67,6 +74,19 @@ def print_stats(catalog: Catalog) -> None:
     print(f"Catalog: {stats['total']} beatmapsets ({details}); accepted={stats['accepted']}")
 
 
+def enforce_generic_source_policy(catalog: Catalog) -> int:
+    """Demote automation-introduced generic-source verification debt and report it."""
+
+    demoted = demote_generic_verification_debt(catalog)
+    if demoted:
+        print(
+            f"warning: demoted {len(demoted)} generic-source verified rows without independent "
+            "verification: " + ", ".join(map(str, demoted[:50])),
+            file=sys.stderr,
+        )
+    return len(demoted)
+
+
 def command_validate(args: argparse.Namespace) -> int:
     catalog = Catalog.load(args.catalog)
     catalog.validate()
@@ -102,8 +122,19 @@ def command_import_seeds(args: argparse.Namespace) -> int:
     imported, reports = import_all(load_config(args.config), workers=args.workers)
     changed = 0
     for entry in imported:
-        _, did_change = catalog.merge(entry)
+        current = catalog.entries.get(entry.beatmapset_id)
+        checked_on = entry.last_checked
+        if current is not None:
+            # Like discovery, seed import must not bump last_checked on rows it
+            # does not otherwise change: reconciliation owns freshness and
+            # refreshes the stalest rows first, so a date-only bump here would
+            # push seed rows to the back of its queue without an osu! refresh.
+            entry.last_checked = current.last_checked
+        merged, did_change = catalog.merge(entry, fill_metadata_only=True)
+        if did_change and current is not None:
+            merged.last_checked = max(filter(None, (merged.last_checked, checked_on)))
         changed += did_change
+    changed += enforce_generic_source_policy(catalog)
     for report in reports:
         print(report.message())
     print(f"Merged {len(imported)} source records; {changed} catalog entries changed")
@@ -199,6 +230,7 @@ def command_hydrate(args: argparse.Namespace) -> int:
                 continue
             _, did_change = catalog.merge(incoming)
             changed += did_change
+    changed += enforce_generic_source_policy(catalog)
 
     for failure in sorted(failures):
         print(f"warning: {failure}", file=sys.stderr)
@@ -227,6 +259,7 @@ def command_discover(args: argparse.Namespace) -> int:
             discovery_evidence.setdefault(beatmapset_id, set()).add(f"discovery_query:{query}")
 
     prepared = []
+    provenance_only = 0
     for beatmapset_id in sorted(discovered):
         current = catalog.entries.get(beatmapset_id)
         evidence = set(discovery_evidence[beatmapset_id])
@@ -238,27 +271,80 @@ def command_discover(args: argparse.Namespace) -> int:
             # Reconciliation owns routine freshness updates. Weekly discovery
             # should not create a diff solely because today's date changed.
             entry.last_checked = current.last_checked
-        prepared.append((DISCOVERY_CONFIDENCE_ORDER[entry.confidence], beatmapset_id, entry, checked_on))
+        kind = _discovery_change_kind(current, entry)
+        if kind is None:
+            continue
+        if kind == "provenance":
+            provenance_only += 1
+            continue
+        prepared.append(
+            (
+                DISCOVERY_CHANGE_PRIORITY[kind],
+                DISCOVERY_CONFIDENCE_ORDER[entry.confidence],
+                beatmapset_id,
+                kind,
+                entry,
+                checked_on,
+            )
+        )
 
+    applied = {kind: 0 for kind in DISCOVERY_CHANGE_PRIORITY}
     changed = 0
     processed = 0
-    for _, _, entry, checked_on in sorted(prepared):
+    for _, _, _, kind, entry, checked_on in sorted(prepared, key=lambda item: item[:3]):
         if args.max_changes and changed >= args.max_changes:
             break
-        merged, did_change = catalog.merge(entry)
         processed += 1
+        merged, did_change = catalog.merge(entry)
         if did_change:
             merged.last_checked = checked_on
+            applied[kind] += 1
         changed += did_change
-    limit_note = ""
-    if args.max_changes and changed >= args.max_changes and processed < len(prepared):
-        limit_note = f"; change limit {args.max_changes} reached, remainder deferred"
-    print(f"Discovery examined {len(discovered)} unique beatmapsets; {changed} entries changed{limit_note}")
+    deferred = len(prepared) - processed
+    demoted = enforce_generic_source_policy(catalog)
+    changed += demoted
+    breakdown = ", ".join(f"{kind}={count}" for kind, count in applied.items())
+    notes = [f"{changed} entries changed ({breakdown})"]
+    if demoted:
+        notes.append(f"{demoted} generic-source verifications demoted")
+    if provenance_only:
+        notes.append(f"{provenance_only} query-provenance-only updates skipped")
+    if deferred:
+        notes.append(f"change limit {args.max_changes} reached, {deferred} deferred")
+    print(f"Discovery examined {len(discovered)} unique beatmapsets; " + "; ".join(notes))
     if args.write:
         catalog.save(args.catalog)
         print(f"Wrote {args.catalog}")
     print_stats(catalog)
     return 0
+
+
+def _discovery_change_kind(current: Entry | None, incoming: Entry) -> str | None:
+    """Classify what merging a discovery hit would change, without mutating the catalog.
+
+    Returns ``None`` when nothing would change and ``"provenance"`` when the
+    merge would only add ``discovery_query:`` evidence to an already catalogued
+    row. That provenance never affects classification, and letting it count
+    toward the weekly change cap starved discovery of genuinely new beatmapsets,
+    so callers skip both.
+    """
+
+    if current is None:
+        return "new"
+    before = current.to_dict()
+    merged, did_change = Catalog([Entry.from_dict(before)]).merge(Entry.from_dict(incoming.to_dict()))
+    if not did_change:
+        return None
+    after = merged.to_dict()
+    if after["confidence"] != before["confidence"]:
+        return "confidence"
+    if any(after[key] != before[key] for key in after if key not in {"evidence", "last_checked"}):
+        return "metadata"
+    added = set(after["evidence"]) - set(before["evidence"])
+    removed = set(before["evidence"]) - set(after["evidence"])
+    if removed or any(not item.startswith("discovery_query:") for item in added):
+        return "metadata"
+    return "provenance"
 
 
 def _same_reconciled_title(left: str, right: str) -> bool:
@@ -302,7 +388,7 @@ def _quarantine_replaced_identity(current, raw: dict) -> list[str]:
         return []
 
     current.evidence = [item for item in current.evidence if item not in stale]
-    current.evidence.append("reconcile:identity-mismatch")
+    current.evidence.append(IDENTITY_MISMATCH_MARKER)
     current.confidence = "candidate"
     current.touhou_kind = "unknown"
     current.origin_games = []
@@ -319,53 +405,121 @@ def _quarantine_replaced_identity(current, raw: dict) -> list[str]:
     return stale
 
 
+def _reconcile_order(catalog: Catalog, *, limit: int = 0, min_age_days: int = 0) -> list[int]:
+    """Return IDs to refresh, stalest ``last_checked`` first.
+
+    Successful refreshes bump ``last_checked``, so a run that stops early (time
+    budget, timeout, ``--limit``) resumes with the rows it skipped next time
+    instead of starting over from the lowest beatmapset ID.
+    """
+
+    cutoff = (date.today() - timedelta(days=min_age_days)).isoformat() if min_age_days > 0 else None
+    order = sorted(
+        (
+            beatmapset_id
+            for beatmapset_id, entry in catalog.entries.items()
+            if cutoff is None or not entry.last_checked or entry.last_checked <= cutoff
+        ),
+        key=lambda beatmapset_id: (catalog.entries[beatmapset_id].last_checked or "", beatmapset_id),
+    )
+    return order[:limit] if limit > 0 else order
+
+
+def _reconcile_entry(catalog: Catalog, beatmapset_id: int, raw: dict) -> tuple[bool, tuple | None]:
+    current = catalog.entries[beatmapset_id]
+    previous_identity = f"{current.artist} - {current.title}"
+    stale_evidence = _quarantine_replaced_identity(current, raw)
+    quarantine = None
+    if stale_evidence:
+        incoming_identity = f"{raw.get('artist', '')} - {raw.get('title', '')}"
+        quarantine = (beatmapset_id, previous_identity, incoming_identity, stale_evidence)
+    incoming = entry_from_osu(raw, evidence=current.evidence, confidence=current.confidence)
+    incoming.touhou_kind = current.touhou_kind
+    incoming.origin_games = current.origin_games
+    incoming.original_themes = current.original_themes
+    _, did_change = catalog.merge(incoming)
+    return did_change or bool(stale_evidence), quarantine
+
+
 def command_reconcile(args: argparse.Namespace) -> int:
     catalog = Catalog.load(args.catalog)
     api = OsuApi.from_env()
     api.token()
+    order = _reconcile_order(catalog, limit=args.limit, min_age_days=args.min_age_days)
+    started = time.monotonic()
+    deadline = started + args.time_budget if args.time_budget > 0 else None
     changed = 0
+    processed = 0
     failures: list[int] = []
+    missing: list[int] = []
     identity_quarantines: list[tuple[int, str, str, list[str]]] = []
-
-    def fetch(beatmapset_id: int):
-        return beatmapset_id, api.beatmapset(beatmapset_id)
+    print(f"Reconciling {len(order)} of {len(catalog.entries)} beatmapsets (stalest first)", flush=True)
 
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
-        futures = {executor.submit(fetch, item): item for item in catalog.entries}
-        for future in as_completed(futures):
-            beatmapset_id = futures[future]
-            try:
-                _, raw = future.result()
-            except Exception:
-                failures.append(beatmapset_id)
-                continue
-            current = catalog.entries[beatmapset_id]
-            previous_identity = f"{current.artist} - {current.title}"
-            stale_evidence = _quarantine_replaced_identity(current, raw)
-            if stale_evidence:
-                incoming_identity = f"{raw.get('artist', '')} - {raw.get('title', '')}"
-                identity_quarantines.append(
-                    (beatmapset_id, previous_identity, incoming_identity, stale_evidence)
-                )
-            incoming = entry_from_osu(raw, evidence=current.evidence, confidence=current.confidence)
-            incoming.touhou_kind = current.touhou_kind
-            incoming.origin_games = current.origin_games
-            incoming.original_themes = current.original_themes
-            _, did_change = catalog.merge(incoming)
-            changed += int(did_change or bool(stale_evidence))
+        queue = iter(order)
+        in_flight: dict[Future, int] = {}
 
+        def submit_next() -> None:
+            if deadline is not None and time.monotonic() >= deadline:
+                return
+            beatmapset_id = next(queue, None)
+            if beatmapset_id is not None:
+                in_flight[executor.submit(api.beatmapset, beatmapset_id)] = beatmapset_id
+
+        # Keep a bounded window in flight so the time budget can stop new work
+        # without abandoning results that have already been fetched.
+        for _ in range(max(1, args.workers) * 2):
+            submit_next()
+        while in_flight:
+            done, _ = wait(in_flight, return_when=FIRST_COMPLETED)
+            for future in done:
+                beatmapset_id = in_flight.pop(future)
+                processed += 1
+                try:
+                    raw = future.result()
+                    did_change, quarantine = _reconcile_entry(catalog, beatmapset_id, raw)
+                except Exception as exc:
+                    # One bad payload must not discard everything fetched so far.
+                    failures.append(beatmapset_id)
+                    if isinstance(exc, HttpError) and exc.status == 404:
+                        missing.append(beatmapset_id)
+                    elif not isinstance(exc, HttpError):
+                        print(f"warning: beatmapset {beatmapset_id}: {exc}", file=sys.stderr)
+                else:
+                    changed += did_change
+                    if quarantine:
+                        identity_quarantines.append(quarantine)
+                if processed % RECONCILE_PROGRESS_INTERVAL == 0:
+                    elapsed = time.monotonic() - started
+                    print(
+                        f"progress: {processed}/{len(order)} fetched in {elapsed:.0f}s "
+                        f"({processed / max(elapsed, 1e-9):.1f}/s); {len(failures)} failed",
+                        flush=True,
+                    )
+                submit_next()
+
+    demoted = enforce_generic_source_policy(catalog)
+    changed += demoted
     for beatmapset_id, previous, incoming, stale in sorted(identity_quarantines):
         print(
             f"warning: beatmapset {beatmapset_id} identity changed "
             f"{previous!r} -> {incoming!r}; quarantined evidence: {', '.join(stale)}",
             file=sys.stderr,
         )
-    print(f"Reconciled {len(catalog.entries) - len(failures)} beatmapsets; {changed} changed; {len(failures)} failed")
+    deferred = len(order) - processed
+    summary = (
+        f"Reconciled {processed - len(failures)} beatmapsets; {changed} changed; "
+        f"{len(failures)} failed ({len(missing)} not found)"
+    )
+    if deferred:
+        summary += f"; time budget reached, {deferred} stalest-first rows deferred to the next run"
+    print(summary)
     if failures:
         print("Failed IDs: " + ", ".join(map(str, sorted(failures)[:50])), file=sys.stderr)
     if args.write:
         catalog.save(args.catalog)
         print(f"Wrote {args.catalog}")
+    print_stats(catalog)
     return 1 if failures and args.strict else 0
 
 
@@ -421,10 +575,23 @@ def parser() -> argparse.ArgumentParser:
             )
         item.set_defaults(func=function)
 
-    reconcile = subparsers.add_parser("reconcile", help="refresh every catalog entry from osu! API")
+    reconcile = subparsers.add_parser("reconcile", help="refresh catalog entries from osu! API, stalest first")
     reconcile.add_argument("--write", action="store_true")
     reconcile.add_argument("--workers", type=int, default=4)
     reconcile.add_argument("--strict", action="store_true")
+    reconcile.add_argument("--limit", type=int, default=0, help="maximum records; use 0 for unlimited")
+    reconcile.add_argument(
+        "--time-budget",
+        type=float,
+        default=0,
+        help="stop starting new requests after this many seconds and write partial results; 0 disables",
+    )
+    reconcile.add_argument(
+        "--min-age-days",
+        type=int,
+        default=0,
+        help="only refresh rows last checked at least this many days ago; 0 refreshes every row",
+    )
     reconcile.set_defaults(func=command_reconcile)
     return result
 

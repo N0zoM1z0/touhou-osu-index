@@ -1,13 +1,76 @@
 import argparse
+import io
 import json
 import tempfile
 import unittest
+from contextlib import redirect_stdout
+from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
 from touhou_osu.catalog import Catalog
-from touhou_osu.cli import command_discover, command_hydrate, command_reconcile
+from touhou_osu.cli import command_discover, command_hydrate, command_import_seeds, command_reconcile
+from touhou_osu.http import HttpError
 from touhou_osu.models import Entry
+
+
+def reconcile_args(catalog_path, **overrides):
+    values = {
+        "catalog": catalog_path,
+        "workers": 1,
+        "write": True,
+        "strict": True,
+        "limit": 0,
+        "time_budget": 0,
+        "min_age_days": 0,
+    }
+    values.update(overrides)
+    return argparse.Namespace(**values)
+
+
+def discover_args(catalog_path, config_path, **overrides):
+    values = {
+        "catalog": catalog_path,
+        "config": config_path,
+        "max_pages": 4,
+        "max_changes": 50,
+        "write": True,
+    }
+    values.update(overrides)
+    return argparse.Namespace(**values)
+
+
+def osu_raw(beatmapset_id, **overrides):
+    raw = {
+        "id": beatmapset_id,
+        "artist": "ZUN",
+        "title": f"Theme {beatmapset_id}",
+        "creator": "mapper",
+        "source": "東方永夜抄 ～ Imperishable Night.",
+        "status": "ranked",
+        "tags": "touhou",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "beatmaps": [{"mode": "osu"}],
+    }
+    raw.update(overrides)
+    return raw
+
+
+def catalogued(beatmapset_id, **overrides):
+    values = {
+        "artist": "ZUN",
+        "title": f"Theme {beatmapset_id}",
+        "creator": "mapper",
+        "source": "東方永夜抄 ～ Imperishable Night.",
+        "status": "ranked",
+        "modes": ["osu"],
+        "evidence": ["osu_source"],
+        "confidence": "verified",
+        "last_checked": "2026-01-01",
+        "osu_last_updated": "2026-01-01T00:00:00Z",
+    }
+    values.update(overrides)
+    return Entry(beatmapset_id, **values)
 
 
 class FakeOsuApi:
@@ -100,7 +163,15 @@ class DiscoveryTests(unittest.TestCase):
                 source="Touhou",
                 status="ranked",
                 modes=["osu"],
-                evidence=["discovery_query:Touhou", "known_touhou_artist", "mapper_tags", "osu_source"],
+                # Generic-source rows need independent verification since the
+                # 2026-10 legacy migration; an official pack provides it here.
+                evidence=[
+                    "discovery_query:Touhou",
+                    "known_touhou_artist",
+                    "mapper_tags",
+                    "official_pack_item:A16",
+                    "osu_source",
+                ],
                 confidence="verified",
                 last_checked="2026-01-01",
                 osu_last_updated="2026-01-01T00:00:00Z",
@@ -219,14 +290,8 @@ class ReconciliationTests(unittest.TestCase):
             catalog_path = Path(directory) / "catalog.json"
             Catalog([current]).save(catalog_path)
             FakeOsuApi.beatmapsets = {current.beatmapset_id: raw}
-            args = argparse.Namespace(
-                catalog=catalog_path,
-                workers=1,
-                write=True,
-                strict=True,
-            )
             with patch("touhou_osu.cli.OsuApi", FakeOsuApi):
-                self.assertEqual(command_reconcile(args), 0)
+                self.assertEqual(command_reconcile(reconcile_args(catalog_path)), 0)
             return Catalog.load(catalog_path).entries[current.beatmapset_id]
 
     def test_reconcile_quarantines_trusted_evidence_on_replaced_identity(self):
@@ -413,6 +478,165 @@ class ReconciliationTests(unittest.TestCase):
         self.assertIn("tmc:2nd", reconciled.evidence)
         self.assertIn("tournament:467", reconciled.evidence)
         self.assertNotIn("reconcile:identity-mismatch", reconciled.evidence)
+
+
+
+
+class DiscoveryPriorityTests(unittest.TestCase):
+    def _discover(self, entries, responses, **overrides):
+        FakeOsuApi.responses = responses
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        root = Path(directory.name)
+        catalog_path = root / "catalog.json"
+        config_path = root / "seeds.json"
+        Catalog(entries).save(catalog_path)
+        config_path.write_text(json.dumps({"discovery_queries": sorted(responses)}), encoding="utf-8")
+        before = catalog_path.read_text(encoding="utf-8")
+        with patch("touhou_osu.cli.OsuApi", FakeOsuApi):
+            self.assertEqual(command_discover(discover_args(catalog_path, config_path, **overrides)), 0)
+        return before, catalog_path
+
+    def test_query_provenance_only_update_is_not_a_change(self):
+        before, catalog_path = self._discover(
+            [catalogued(10, evidence=["discovery_query:Touhou", "osu_source"])],
+            {"ZUN": [osu_raw(10)]},
+        )
+        self.assertEqual(catalog_path.read_text(encoding="utf-8"), before)
+
+    def test_new_beatmapsets_are_not_starved_by_existing_rows(self):
+        # Regression: 50 low-ID verified rows that only gained another
+        # discovery_query tag used to consume the whole weekly cap.
+        existing = [catalogued(beatmapset_id) for beatmapset_id in (1, 2, 3)]
+        responses = {
+            "ZUN": [osu_raw(1), osu_raw(2), osu_raw(3, title="Theme 3 (renamed)"), osu_raw(900), osu_raw(901)]
+        }
+        _, catalog_path = self._discover(existing, responses, max_changes=2)
+        catalog = Catalog.load(catalog_path)
+        self.assertEqual(set(catalog.entries), {1, 2, 3, 900, 901})
+        self.assertNotIn("discovery_query:ZUN", catalog.entries[1].evidence)
+        self.assertNotIn("discovery_query:ZUN", catalog.entries[2].evidence)
+        # The metadata change ranks after new beatmapsets and is deferred.
+        self.assertEqual(catalog.entries[3].title, "Theme 3")
+
+    def test_confidence_transitions_rank_before_metadata_updates(self):
+        existing = [
+            catalogued(5, source="", evidence=["osucollector:1"], confidence="candidate"),
+            catalogued(6),
+        ]
+        responses = {"ZUN": [osu_raw(5), osu_raw(6, status="loved")]}
+        _, catalog_path = self._discover(existing, responses, max_changes=1)
+        catalog = Catalog.load(catalog_path)
+        self.assertEqual(catalog.entries[5].confidence, "verified")
+        self.assertEqual(catalog.entries[6].status, "ranked")
+
+    def test_discovery_demotes_generic_source_drift(self):
+        existing = [catalogued(7)]
+        responses = {"ZUN": [osu_raw(7, source="Touhou")]}
+        _, catalog_path = self._discover(existing, responses)
+        entry = Catalog.load(catalog_path).entries[7]
+        self.assertEqual(entry.source, "Touhou")
+        self.assertEqual(entry.confidence, "candidate")
+        self.assertIn("review:generic-source-unverified", entry.evidence)
+
+
+class ReconcileSchedulingTests(unittest.TestCase):
+    def _reconcile(self, entries, **overrides):
+        FakeOsuApi.beatmapsets = {entry.beatmapset_id: osu_raw(entry.beatmapset_id) for entry in entries}
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        catalog_path = Path(directory.name) / "catalog.json"
+        Catalog(entries).save(catalog_path)
+        with patch("touhou_osu.cli.OsuApi", FakeOsuApi):
+            self.assertEqual(command_reconcile(reconcile_args(catalog_path, **overrides)), 0)
+        return Catalog.load(catalog_path)
+
+    def test_limit_refreshes_stalest_rows_first(self):
+        catalog = self._reconcile(
+            [
+                catalogued(1, last_checked="2026-03-01"),
+                catalogued(2, last_checked="2025-01-01"),
+                catalogued(3, last_checked=None),
+            ],
+            limit=2,
+        )
+        today = date.today().isoformat()
+        self.assertEqual(catalog.entries[3].last_checked, today)
+        self.assertEqual(catalog.entries[2].last_checked, today)
+        self.assertEqual(catalog.entries[1].last_checked, "2026-03-01")
+
+    def test_min_age_skips_recently_checked_rows(self):
+        recent = date.today().isoformat()
+        catalog = self._reconcile(
+            [catalogued(1, last_checked=recent, title="Stale title"), catalogued(2, last_checked="2020-01-01")],
+            min_age_days=7,
+        )
+        self.assertEqual(catalog.entries[1].title, "Stale title")
+        self.assertEqual(catalog.entries[2].last_checked, recent)
+
+    def test_exhausted_time_budget_writes_without_new_requests(self):
+        catalog = self._reconcile([catalogued(1, title="Stale title")], time_budget=1e-9)
+        self.assertEqual(catalog.entries[1].title, "Stale title")
+        self.assertEqual(catalog.entries[1].last_checked, "2026-01-01")
+
+    def test_invalid_payload_fails_one_row_not_the_run(self):
+        entries = [catalogued(1, title="Stale 1"), catalogued(2, title="Stale 2")]
+        FakeOsuApi.beatmapsets = {1: osu_raw(1, status="not-a-status"), 2: osu_raw(2)}
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        catalog_path = Path(directory.name) / "catalog.json"
+        Catalog(entries).save(catalog_path)
+        with patch("touhou_osu.cli.OsuApi", FakeOsuApi):
+            self.assertEqual(command_reconcile(reconcile_args(catalog_path, strict=False)), 0)
+        catalog = Catalog.load(catalog_path)
+        self.assertEqual(catalog.entries[2].title, "Theme 2")
+
+    def test_missing_beatmapset_is_reported_without_strict_failure(self):
+        class MissingApi(FakeOsuApi):
+            def beatmapset(self, beatmapset_id):
+                raise HttpError("HTTP 404 from test", status=404)
+
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        catalog_path = Path(directory.name) / "catalog.json"
+        Catalog([catalogued(1)]).save(catalog_path)
+        output = io.StringIO()
+        with patch("touhou_osu.cli.OsuApi", MissingApi), redirect_stdout(output):
+            self.assertEqual(command_reconcile(reconcile_args(catalog_path, strict=False)), 0)
+        self.assertIn("1 failed (1 not found)", output.getvalue())
+
+
+
+class SeedImportTests(unittest.TestCase):
+    def _import(self, existing, seeds):
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        catalog_path = Path(directory.name) / "catalog.json"
+        Catalog(existing).save(catalog_path)
+        before = catalog_path.read_text(encoding="utf-8")
+        args = argparse.Namespace(catalog=catalog_path, config=Path(directory.name) / "unused.json", workers=1, write=True)
+        with patch("touhou_osu.cli.load_config", return_value={}), patch(
+            "touhou_osu.cli.import_all", return_value=(seeds, [])
+        ):
+            self.assertEqual(command_import_seeds(args), 0)
+        return before, catalog_path
+
+    def test_unchanged_seed_rows_keep_last_checked(self):
+        today = date.today().isoformat()
+        row = catalogued(1, evidence=["osu_source", "osucollector:1402"])
+        seed = catalogued(1, title="Cached title", evidence=["osucollector:1402"], confidence="candidate", last_checked=today)
+        before, catalog_path = self._import([row], [seed])
+        self.assertEqual(catalog_path.read_text(encoding="utf-8"), before)
+
+    def test_new_seed_evidence_marks_row_checked(self):
+        today = date.today().isoformat()
+        row = catalogued(1)
+        seed = catalogued(1, title="Cached title", evidence=["official_pack:T65"], last_checked=today)
+        _, catalog_path = self._import([row], [seed])
+        entry = Catalog.load(catalog_path).entries[1]
+        self.assertEqual(entry.title, "Theme 1")
+        self.assertIn("official_pack:T65", entry.evidence)
+        self.assertEqual(entry.last_checked, today)
 
 
 if __name__ == "__main__":

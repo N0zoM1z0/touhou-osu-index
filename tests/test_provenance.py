@@ -7,6 +7,7 @@ from touhou_osu.http import HttpError
 from touhou_osu.models import Entry
 from touhou_osu.provenance import (
     audit_entry,
+    demote_generic_verification_debt,
     generic_verification_violations,
     query_thbwiki,
     query_touhoudb,
@@ -198,6 +199,28 @@ class ProvenanceTests(unittest.TestCase):
             ]
         )
         self.assertEqual(generic_verification_violations(current), [1])
+
+    def test_demotion_keeps_multi_signal_probable_and_spares_independent_rows(self):
+        catalog = Catalog(
+            [
+                Entry(1, source="Touhou", confidence="verified", evidence=["osu_source"]),
+                Entry(
+                    2,
+                    source="東方Project",
+                    confidence="verified",
+                    evidence=["known_touhou_metadata", "mapper_tags", "osu_source", "osucollector:1402"],
+                ),
+                Entry(3, source="Touhou", confidence="verified", evidence=["official_pack_item:A16"]),
+                Entry(4, source="東方紅魔郷", confidence="verified", evidence=["osu_source"]),
+            ]
+        )
+        self.assertEqual(demote_generic_verification_debt(catalog), [1, 2])
+        self.assertEqual(catalog.entries[1].confidence, "candidate")
+        self.assertEqual(catalog.entries[2].confidence, "probable")
+        self.assertIn("review:generic-source-unverified", catalog.entries[1].evidence)
+        self.assertEqual(catalog.entries[3].confidence, "verified")
+        self.assertEqual(catalog.entries[4].confidence, "verified")
+        self.assertEqual(generic_verification_violations(catalog), [])
 
     def test_repository_has_no_generic_verified_debt(self):
         catalog_path = Path(__file__).resolve().parents[1] / "data" / "catalog"

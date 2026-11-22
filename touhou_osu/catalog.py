@@ -14,6 +14,7 @@ CONFIDENCE_RANK = {"excluded": -1, "candidate": 0, "probable": 1, "verified": 2}
 BASE_SHARD_ID_SPAN = 100_000
 SHARD_ENTRY_LIMIT = 500
 SHARD_NAME_RE = re.compile(r"^(\d{7})-(\d{7})\.json$")
+IDENTITY_MISMATCH_MARKER = "reconcile:identity-mismatch"
 
 
 class Catalog:
@@ -88,7 +89,14 @@ class Catalog:
             records.extend(shard_records)
         return cls(Entry.from_dict(record) for record in records)
 
-    def merge(self, incoming: Entry) -> tuple[Entry, bool]:
+    def merge(self, incoming: Entry, *, fill_metadata_only: bool = False) -> tuple[Entry, bool]:
+        """Merge ``incoming`` into the catalog and report whether anything changed.
+
+        ``fill_metadata_only`` is for secondary snapshots such as seed
+        collections: they may fill blank osu! metadata but never overwrite
+        values that the osu! API (discovery/reconciliation/hydration) owns.
+        """
+
         incoming.normalize()
         incoming.validate()
         current = self.entries.get(incoming.beatmapset_id)
@@ -99,6 +107,9 @@ class Catalog:
         before = current.to_dict()
         for field_name in ("artist", "title", "creator", "source", "status", "osu_last_updated"):
             value = getattr(incoming, field_name)
+            existing = getattr(current, field_name)
+            if fill_metadata_only and existing and existing != "unknown":
+                continue
             if value and value != "unknown":
                 setattr(current, field_name, value)
 
@@ -117,6 +128,12 @@ class Catalog:
         elif "manual:verified" in manual:
             current.confidence = "verified"
         elif "manual:candidate" in manual:
+            current.confidence = "candidate"
+        elif IDENTITY_MISMATCH_MARKER in current.evidence:
+            # A reconciliation quarantine stays put until a reviewer removes the
+            # marker. Otherwise the next seed import (e.g. the tournament pool
+            # that originally listed this ID) would silently re-verify a
+            # beatmapset whose song has since been replaced.
             current.confidence = "candidate"
         elif CONFIDENCE_RANK[incoming.confidence] > CONFIDENCE_RANK[current.confidence]:
             current.confidence = incoming.confidence

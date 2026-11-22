@@ -4,18 +4,32 @@ on:
   schedule:
     - cron: "41 4 1 * *"
   workflow_dispatch:
+    inputs:
+      time_budget_minutes:
+        description: Stop starting osu! API requests after this many minutes (stalest rows go first)
+        required: true
+        default: "40"
+        type: string
 
 permissions:
+  actions: write # dispatch CI for the automation branch
   contents: write
   pull-requests: write
+
+concurrency:
+  group: automation-osu-reconciliation
+  cancel-in-progress: false
 
 jobs:
   reconcile:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # A full sweep takes ~40 minutes at the current request rate. The budget
+    # below stops new requests early enough to always validate and push; rows
+    # not reached are the stalest next month and are refreshed first.
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Refresh seed sources and osu! metadata
@@ -23,32 +37,66 @@ jobs:
         env:
           OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
           OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+          PYTHONUNBUFFERED: "1"
+          TIME_BUDGET_MINUTES: ${{ inputs.time_budget_minutes || '40' }}
         run: |
-          python -m touhou_osu import-seeds --write
+          set -euo pipefail
+          log="$RUNNER_TEMP/reconcile.log"
+          python -m touhou_osu import-seeds --write | tee "$log"
           if [[ -n "$OSU_CLIENT_ID" && -n "$OSU_CLIENT_SECRET" ]]; then
-            python -m touhou_osu reconcile --write
+            python -m touhou_osu reconcile --write --time-budget "$((TIME_BUDGET_MINUTES * 60))" | tee -a "$log"
           else
             echo "::notice::osu! API reconciliation skipped because OAuth secrets are not configured."
           fi
           if [[ -n "$(git status --porcelain --untracked-files=all -- data/catalog)" ]]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+      - name: Validate generated catalog
+        if: steps.reconcile.outputs.changed == 'true'
+        run: |
+          make check
+          make build
+      - name: Write PR body
+        if: steps.reconcile.outputs.changed == 'true'
+        env:
+          LOG: ${{ runner.temp }}/reconcile.log
+          PR_BODY: ${{ runner.temp }}/pr-body.md
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          prefixes = ("Merged ", "Reconciling ", "Reconciled ", "Catalog:")
+          summary = [
+              f"- {line.strip()}"
+              for line in Path(os.environ["LOG"]).read_text(encoding="utf-8").splitlines()
+              if line.startswith(prefixes)
+          ]
+          body = [
+              "Automated monthly seed and osu! metadata reconciliation. No media files are downloaded.",
+              "",
+              "Seed sources only add evidence and fill blank metadata; osu! API metadata is refreshed "
+              "stalest-first within a time budget. Generic-source rows that lose independent "
+              "verification are demoted and tagged `review:generic-source-unverified`.",
+              "",
+              "## This run",
+              "",
+              *summary,
+              "",
+              f"Identity-change warnings and failed IDs: [generating run]({os.environ['RUN_URL']}). "
+              "Validate and a structural Deep review are dispatched on this branch by that run.",
+          ]
+          Path(os.environ["PR_BODY"]).write_text("\n".join(body) + "\n", encoding="utf-8")
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text("\n".join(["## Reconciliation", "", *summary]) + "\n", encoding="utf-8")
+          PY
       - name: Open or update reconciliation PR
         if: steps.reconcile.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          branch="automation/osu-reconciliation"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$branch"
-          git add -A data/catalog
-          git commit -m "data: reconcile Touhou beatmap catalog"
-          git push --force origin "$branch"
-          pr_number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          body="Automated monthly seed and osu! metadata reconciliation. No media files are downloaded."
-          if [[ -n "$pr_number" ]]; then
-            gh pr edit "$pr_number" --title "data: monthly catalog reconciliation" --body "$body"
-          else
-            gh pr create --base main --head "$branch" --title "data: monthly catalog reconciliation" --body "$body"
-          fi
+        run: >-
+          bash scripts/automation_pr.sh
+          automation/osu-reconciliation
+          "data: monthly catalog reconciliation"
+          "data: reconcile Touhou beatmap catalog"
+          "$RUNNER_TEMP/pr-body.md"

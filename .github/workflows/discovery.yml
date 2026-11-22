@@ -6,15 +6,21 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write # dispatch CI for the automation branch
   contents: write
   pull-requests: write
+
+concurrency:
+  group: automation-osu-discovery
+  cancel-in-progress: false
 
 jobs:
   discover:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Discover candidates
@@ -22,7 +28,9 @@ jobs:
         env:
           OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
           OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+          PYTHONUNBUFFERED: "1"
         run: |
+          set -euo pipefail
           if [[ -z "$OSU_CLIENT_ID" || -z "$OSU_CLIENT_SECRET" ]]; then
             echo "::notice::Set OSU_CLIENT_ID and OSU_CLIENT_SECRET repository secrets to enable discovery."
             exit 0
@@ -30,7 +38,7 @@ jobs:
           rm -rf "$RUNNER_TEMP/discovery-base"
           mkdir -p "$RUNNER_TEMP/discovery-base"
           git archive HEAD data/catalog | tar -x -C "$RUNNER_TEMP/discovery-base"
-          python -m touhou_osu discover --write --max-changes 50
+          python -m touhou_osu discover --write --max-changes 50 | tee "$RUNNER_TEMP/discover.log"
           if [[ -n "$(git status --porcelain --untracked-files=all -- data/catalog)" ]]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
             python -m touhou_osu.provenance \
@@ -43,25 +51,35 @@ jobs:
       - name: Summarize external provenance
         if: steps.discover.outputs.changed == 'true'
         env:
+          DISCOVER_LOG: ${{ runner.temp }}/discover.log
+          PR_BODY: ${{ runner.temp }}/pr-body.md
           REPORT: ${{ runner.temp }}/provenance.json
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python - <<'PY'
           import json, os
           from pathlib import Path
 
           payload = json.loads(Path(os.environ["REPORT"]).read_text(encoding="utf-8"))
-          summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
-          lines = [
-              "## External composition provenance",
-              "",
-              "Advisory cross-check only: THBWiki/TouhouDB hits do not automatically promote or exclude catalog rows.",
-              "",
+          run_log = [
+              line.strip()
+              for line in Path(os.environ["DISCOVER_LOG"]).read_text(encoding="utf-8").splitlines()
+              if line.startswith(("Discovery examined", "Catalog:"))
+          ]
+          provenance = [
               f"- checked changed rows: **{payload['checked']}**",
               f"- positive external relations: **{payload['supported']}**",
               f"- red flags: **{payload['red_flags']}**",
               f"- ambiguous: **{payload['ambiguous']}**",
               f"- provider errors: **{payload['provider_errors']}**",
               f"- unsafe generic-source auto-promotions: **{len(payload['policy_violations'])}**",
+          ]
+          lines = [
+              "## External composition provenance",
+              "",
+              "Advisory cross-check only: THBWiki/TouhouDB hits do not automatically promote or exclude catalog rows.",
+              "",
+              *provenance,
           ]
           interesting = [
               row for row in payload["results"]
@@ -80,7 +98,26 @@ jobs:
                       lines.append(f"  - {hit['provider']}: {hit['relation']} — {detail}")
                   for error in row["errors"]:
                       lines.append(f"  - provider warning: {error}")
-          summary.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+          body = [
+              "Automated weekly osu! API discovery, capped at 50 meaningful catalog changes "
+              "(new beatmapsets first, then confidence transitions, then other metadata). "
+              "Adding only another `discovery_query:` tag to an existing row is not counted or written. "
+              "Generic Touhou source labels are not sufficient for automatic verification.",
+              "",
+              "## This run",
+              "",
+              *[f"- {line}" for line in run_log],
+              "",
+              "## External composition provenance (advisory)",
+              "",
+              *provenance,
+              "",
+              f"Review hints and the JSON report: [generating run]({os.environ['RUN_URL']}). "
+              "Validate and a structural Deep review are dispatched on this branch by that run.",
+          ]
+          Path(os.environ["PR_BODY"]).write_text("\n".join(body) + "\n", encoding="utf-8")
           for row in payload["results"]:
               if row["verdict"] in {"red_flag", "ambiguous"}:
                   print(
@@ -92,7 +129,7 @@ jobs:
           PY
       - name: Upload provenance report
         if: steps.discover.outputs.changed == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: weekly-provenance-report
           path: ${{ runner.temp }}/provenance.json
@@ -115,22 +152,18 @@ jobs:
               )
               sys.exit(1)
           PY
+      - name: Validate generated catalog
+        if: steps.discover.outputs.changed == 'true'
+        run: |
+          make check
+          make build
       - name: Open or update review PR
         if: steps.discover.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          branch="automation/osu-discovery"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$branch"
-          git add -A data/catalog
-          git commit -m "data: discover Touhou beatmap candidates"
-          git push --force origin "$branch"
-          pr_number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          body="Automated weekly osu! API discovery, capped at 50 meaningful catalog changes. Generic Touhou source labels are not sufficient for automatic verification. The generating workflow also runs advisory THBWiki/TouhouDB composition-provenance checks and uploads a JSON report; review red flags and positive hints before merging."
-          if [[ -n "$pr_number" ]]; then
-            gh pr edit "$pr_number" --title "data: weekly Touhou discovery" --body "$body"
-          else
-            gh pr create --base main --head "$branch" --title "data: weekly Touhou discovery" --body "$body"
-          fi
+        run: >-
+          bash scripts/automation_pr.sh
+          automation/osu-discovery
+          "data: weekly Touhou discovery"
+          "data: discover Touhou beatmap candidates"
+          "$RUNNER_TEMP/pr-body.md"
