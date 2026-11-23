@@ -966,6 +966,27 @@
       "osu_last_updated": "2019-08-15T08:47:52Z"
     },
     {
+      "beatmapset_id": 1019640,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Blow",
+      "creator": "hehe",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2021-12-06T03:30:31Z"
+    },
+    {
       "beatmapset_id": 1019750,
       "artist": "ZUN",
       "title": "Jelly stone",
@@ -988,6 +1009,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2019-08-13T12:54:37Z"
+    },
+    {
+      "beatmapset_id": 1019827,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Sad Dream",
+      "creator": "Hinsvar",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-09-19T12:51:41Z"
     },
     {
       "beatmapset_id": 1019966,
@@ -1032,6 +1074,27 @@
       "confidence": "probable",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2019-08-15T19:07:21Z"
+    },
+    {
+      "beatmapset_id": 1020613,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Datura",
+      "creator": "Seto Kousuke",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-10-31T17:18:08Z"
     },
     {
       "beatmapset_id": 1021100,
@@ -1104,6 +1167,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2019-08-16T03:52:56Z"
+    },
+    {
+      "beatmapset_id": 1021829,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Xing Noises",
+      "creator": "Niva",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-10-30T18:28:49Z"
     },
     {
       "beatmapset_id": 1021905,
@@ -1216,6 +1300,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-02-24T14:07:48Z"
+    },
+    {
+      "beatmapset_id": 1023469,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Gleaming",
+      "creator": "Trynna",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-11-03T18:26:04Z"
     },
     {
       "beatmapset_id": 1023485,
@@ -2725,6 +2830,27 @@
       "osu_last_updated": "2023-05-09T17:36:25Z"
     },
     {
+      "beatmapset_id": 1058763,
+      "artist": "UNDEAD CORPORATION",
+      "title": "No Filter",
+      "creator": "eiri-",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-11-03T17:14:49Z"
+    },
+    {
       "beatmapset_id": 1059019,
       "artist": "IOSYS",
       "title": "Scary Halloween Show",
@@ -3319,6 +3445,27 @@
       "osu_last_updated": "2020-09-04T03:50:43Z"
     },
     {
+      "beatmapset_id": 1069607,
+      "artist": "Diao Ye Zong feat. Meramipop",
+      "title": "Take no Hana",
+      "creator": "[ TNTlealu ]",
+      "source": "東方求聞史紀　～ Perfect Memento in Strict Sense.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Diao ye zong",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2020-01-13T09:57:01Z"
+    },
+    {
       "beatmapset_id": 1069719,
       "artist": "RichaadEB",
       "title": "Night of Nights (Metal)",
@@ -3374,6 +3521,28 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2020-06-01T17:49:48Z"
+    },
+    {
+      "beatmapset_id": 1070108,
+      "artist": "Alstroemeria Records",
+      "title": "SACRIFICE feat. ayame",
+      "creator": "Faputa",
+      "source": "SOUND VOLTEX IV HEAVENLY HAVEN",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Alstroemeria Records",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2021-09-04T15:34:31Z"
     },
     {
       "beatmapset_id": 1070288,
@@ -3775,6 +3944,26 @@
       "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-05-01T07:16:58Z"
+    },
+    {
+      "beatmapset_id": 1080416,
+      "artist": "uno feat. Chiyoko (IOSYS)",
+      "title": "Twin Rocket",
+      "creator": "Genjuro",
+      "source": "SOUND VOLTEX III GRAVITY WARS",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-12-24T12:58:51Z"
     },
     {
       "beatmapset_id": 1081118,
@@ -4287,6 +4476,51 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2020-01-08T20:54:29Z"
+    },
+    {
+      "beatmapset_id": 1091149,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Yume",
+      "creator": "Daletto",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2020-02-02T12:34:46Z"
+    },
+    {
+      "beatmapset_id": 1091179,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Sunny Miracle no Benigiri Ihen",
+      "creator": "tatatat",
+      "source": "東方三月精　～ Strange and Bright Nature Deity.",
+      "status": "ranked",
+      "modes": [
+        "mania",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2020-01-26T21:13:53Z"
     },
     {
       "beatmapset_id": 1091216,

@@ -218,6 +218,30 @@
       "osu_last_updated": "2018-09-25T18:48:41Z"
     },
     {
+      "beatmapset_id": 803902,
+      "artist": "UNDEAD CORPORATION",
+      "title": "Setsugetsu Ouka no Kuni",
+      "creator": "tatatat",
+      "source": "東方三月精　～ Strange and Bright Nature Deity.",
+      "status": "ranked",
+      "modes": [
+        "mania",
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "discovery_query:上海アリス幻樂団",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2018-07-26T16:20:43Z"
+    },
+    {
       "beatmapset_id": 804518,
       "artist": "SOUND HOLIC",
       "title": "The Party We Have Never Seen",
@@ -1201,6 +1225,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2024-06-07T21:23:59Z"
+    },
+    {
+      "beatmapset_id": 828297,
+      "artist": "Kobayashi Yuuya (IOSYS) feat. Yamamoto Momiji (monotone)",
+      "title": "Hinaru Medjed no Hinaru Yuuutsu",
+      "creator": "ARGENTINE DREAM",
+      "source": "太鼓の達人 ブルーVer.",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2018-11-03T15:06:50Z"
     },
     {
       "beatmapset_id": 828302,
@@ -2367,6 +2411,26 @@
       "osu_last_updated": "2018-09-24T01:02:07Z"
     },
     {
+      "beatmapset_id": 853796,
+      "artist": "shoujo byou",
+      "title": "Kokushi no Ombre",
+      "creator": "ailv",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Diao ye zong"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2018-11-21T23:52:39Z"
+    },
+    {
       "beatmapset_id": 855344,
       "artist": "Akatsuki Records",
       "title": "Futari no Kesshou -INNOCENCE-",
@@ -2578,6 +2642,27 @@
       "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-11-23T17:28:16Z"
+    },
+    {
+      "beatmapset_id": 857533,
+      "artist": "Adust Rain",
+      "title": "Seven Style",
+      "creator": "soloist",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Adust Rain",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2021-10-16T12:24:22Z"
     },
     {
       "beatmapset_id": 857734,
@@ -3703,6 +3788,26 @@
       "osu_last_updated": "2020-04-05T12:15:11Z"
     },
     {
+      "beatmapset_id": 884597,
+      "artist": "Various Artists",
+      "title": "Dan ~ CTB ~ 3rd Pack",
+      "creator": "Emiru",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2022-04-04T04:34:16Z"
+    },
+    {
       "beatmapset_id": 885552,
       "artist": "RD-Sounds feat. Meramipop",
       "title": "Alice the Enigmatic Doll",
@@ -4180,6 +4285,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-12-20T23:04:24Z"
+    },
+    {
+      "beatmapset_id": 897547,
+      "artist": "ZUN remixed by LeaF",
+      "title": "Resurrection Spell",
+      "creator": "FAMoss",
+      "source": "BMS",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:ZUN",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-07-01T13:42:05Z"
     },
     {
       "beatmapset_id": 897861,

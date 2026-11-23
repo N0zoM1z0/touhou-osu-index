@@ -2812,6 +2812,27 @@
       "osu_last_updated": "2015-09-03T20:12:42Z"
     },
     {
+      "beatmapset_id": 352351,
+      "artist": "Halozy",
+      "title": "Snow Changes to a Beat Again",
+      "creator": "Lasse",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2015-11-20T12:24:59Z"
+    },
+    {
       "beatmapset_id": 352570,
       "artist": "beatMARIO",
       "title": "Night of Knights",
@@ -3848,6 +3869,26 @@
       "osu_last_updated": "2016-05-03T19:49:38Z"
     },
     {
+      "beatmapset_id": 373543,
+      "artist": "Masayoshi Minoshima feat. Sakaue Nachi",
+      "title": "ILIAS",
+      "creator": "-kevincela-",
+      "source": "beatmania IIDX 20 tricoro",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Alstroemeria Records"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2016-10-21T21:32:41Z"
+    },
+    {
       "beatmapset_id": 374858,
       "artist": "IOSYS",
       "title": "Tanoshii Yoru no Ochakai - Ringo's Tea Party",
@@ -4275,6 +4316,27 @@
       "osu_last_updated": "2015-12-06T11:59:14Z"
     },
     {
+      "beatmapset_id": 387335,
+      "artist": "Halozy",
+      "title": "Snow Changes to a Beat Again",
+      "creator": "BoberOfDarkness",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2018-03-13T20:08:57Z"
+    },
+    {
       "beatmapset_id": 388036,
       "artist": "Akiyama Uni",
       "title": "Kanpan Tasogare Shinbun",
@@ -4671,6 +4733,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2016-09-22T19:43:16Z"
+    },
+    {
+      "beatmapset_id": 395358,
+      "artist": "Various Artist",
+      "title": "The Strength Dojo",
+      "creator": "TimmyAkmed",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2015-12-26T12:49:54Z"
     },
     {
       "beatmapset_id": 395379,
