@@ -1430,6 +1430,27 @@
       "osu_last_updated": "2016-08-01T04:19:58Z"
     },
     {
+      "beatmapset_id": 435387,
+      "artist": "Various Artists",
+      "title": "Wh1teh Pack #1",
+      "creator": "Wh1teh",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:C-CLAYS",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2023-09-11T20:17:20Z"
+    },
+    {
       "beatmapset_id": 435450,
       "artist": "LeaF",
       "title": "Calamity Fortune",
@@ -1449,6 +1470,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2016-06-20T14:32:54Z"
+    },
+    {
+      "beatmapset_id": 436344,
+      "artist": "Chiyoko",
+      "title": "Come Home! Princess",
+      "creator": "VINXIS",
+      "source": "パニカル・コンフュージョン",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2016-04-25T12:32:27Z"
     },
     {
       "beatmapset_id": 436628,
@@ -3142,6 +3183,26 @@
       "osu_last_updated": "2024-07-30T17:55:42Z"
     },
     {
+      "beatmapset_id": 469487,
+      "artist": "nomico / DOWNFORCE",
+      "title": "BRAVE OUT",
+      "creator": "SYAHME",
+      "source": "beatmania IIDX 21 SPADA",
+      "status": "ranked",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Alstroemeria Records"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2016-12-11T22:56:17Z"
+    },
+    {
       "beatmapset_id": 469558,
       "artist": "Masayoshi Minoshima ft. nomico",
       "title": "Bad Apple !!",
@@ -3197,6 +3258,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2016-06-17T02:02:28Z"
+    },
+    {
+      "beatmapset_id": 470634,
+      "artist": "IOSYS feat. Takatsuki Sakura",
+      "title": "Seiya no Special Shooting Star",
+      "creator": "Ntiger",
+      "source": "しろくまベルスターズ♪",
+      "status": "loved",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2016-11-12T19:09:58Z"
     },
     {
       "beatmapset_id": 470825,
@@ -3752,6 +3833,26 @@
       "osu_last_updated": "2016-07-05T16:57:09Z"
     },
     {
+      "beatmapset_id": 478558,
+      "artist": "Abe Nana(CV : Miyake Marie)",
+      "title": "Marchen Debut!",
+      "creator": "-Chata-",
+      "source": "アイドルマスター シンデレラガールズ",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2016-12-06T15:12:12Z"
+    },
+    {
       "beatmapset_id": 478636,
       "artist": "Masayoshi Minoshima ft. nomico",
       "title": "Bad Apple!!!!",
@@ -3915,6 +4016,29 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-11-18T23:40:10Z"
+    },
+    {
+      "beatmapset_id": 483389,
+      "artist": "LeaF",
+      "title": "Wizdomiot",
+      "creator": "pporse",
+      "source": "BMS",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:東方",
+        "discovery_query:東方Project",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2017-01-14T15:09:12Z"
     },
     {
       "beatmapset_id": 483527,
@@ -4290,6 +4414,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2016-08-07T19:51:15Z"
+    },
+    {
+      "beatmapset_id": 492407,
+      "artist": "Meramipop",
+      "title": "Sanae-san",
+      "creator": "EvilElvis",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Diao ye zong"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2016-09-13T09:53:20Z"
     },
     {
       "beatmapset_id": 494122,

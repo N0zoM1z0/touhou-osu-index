@@ -119,6 +119,26 @@
       "osu_last_updated": "2017-09-25T14:26:12Z"
     },
     {
+      "beatmapset_id": 603738,
+      "artist": "SakiZ",
+      "title": "osu!favourites",
+      "creator": "KappaPraise",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-04-23T10:45:46Z"
+    },
+    {
       "beatmapset_id": 604321,
       "artist": "Alstroemeria Records",
       "title": "Bad Apple!! feat. nomico",
@@ -1632,6 +1652,26 @@
       "osu_last_updated": "2019-01-27T22:42:02Z"
     },
     {
+      "beatmapset_id": 639353,
+      "artist": "Kobayakawa Sae (CV: Tachibana Rika)",
+      "title": "HANAKANZASHI",
+      "creator": "domSaur",
+      "source": "アイドルマスター シンデレラガールズ",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2017-08-11T17:51:54Z"
+    },
+    {
       "beatmapset_id": 639417,
       "artist": "Halozy",
       "title": "Genryuu Kaiko",
@@ -1809,6 +1849,26 @@
       "osu_last_updated": "2018-05-04T03:45:56Z"
     },
     {
+      "beatmapset_id": 642762,
+      "artist": "ARM (IOSYS) feat. Nicole Curry",
+      "title": "Come to Life",
+      "creator": "Nofool",
+      "source": "DanceDanceRevolution A",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2017-09-10T16:49:06Z"
+    },
+    {
       "beatmapset_id": 643114,
       "artist": "DJ Abner",
       "title": "Nokia Theme (Zun/TouhouVersion)",
@@ -1874,6 +1934,27 @@
       "confidence": "candidate",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2018-01-09T13:50:51Z"
+    },
+    {
+      "beatmapset_id": 643492,
+      "artist": "ZUN remixed by LeaF",
+      "title": "Resurrection Spell",
+      "creator": "TKS",
+      "source": "東方音弾遊戯4",
+      "status": "ranked",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:ZUN",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2022-03-19T14:19:36Z"
     },
     {
       "beatmapset_id": 645283,
@@ -2125,6 +2206,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2021-11-23T11:52:05Z"
+    },
+    {
+      "beatmapset_id": 651723,
+      "artist": "Umi no Soko kara Mermaid Prim by ARM x Komso",
+      "title": "Gyogyotto Ningyo Bakkon Bridal",
+      "creator": "fanzhen0019",
+      "source": "beatmania IIDX 23 copula",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2017-12-29T16:29:54Z"
     },
     {
       "beatmapset_id": 652093,
@@ -2559,6 +2660,26 @@
       "osu_last_updated": "2018-06-19T09:58:45Z"
     },
     {
+      "beatmapset_id": 662173,
+      "artist": "Zedd",
+      "title": "Clarity feat. Foxes (IOSYS uno DENPA Remix)",
+      "creator": "Cera-",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "catch"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2022-09-05T07:23:14Z"
+    },
+    {
       "beatmapset_id": 662578,
       "artist": "senya",
       "title": "Wasurerareta Kiseki -Sciencefiction-",
@@ -2917,6 +3038,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2022-11-17T11:01:41Z"
+    },
+    {
+      "beatmapset_id": 672440,
+      "artist": "Yooh",
+      "title": "Shanghai Kouchakan (Orchid Remix 2017 Update ver.)",
+      "creator": "AncuL",
+      "source": "SOUND VOLTEX II -infinite infection-",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Team Shanghai Alice",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-05-25T06:55:41Z"
     },
     {
       "beatmapset_id": 673138,
@@ -3996,6 +4138,27 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2017-11-30T15:11:57Z"
+    },
+    {
+      "beatmapset_id": 699875,
+      "artist": "Various Artists",
+      "title": "7K Endurance and Technical Training Pack",
+      "creator": "Arise",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:UNDEAD CORPORATION",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2021-10-13T19:38:24Z"
     }
   ]
 }

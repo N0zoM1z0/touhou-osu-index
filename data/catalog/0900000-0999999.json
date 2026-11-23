@@ -1681,6 +1681,27 @@
       "osu_last_updated": "2019-03-09T21:58:19Z"
     },
     {
+      "beatmapset_id": 930707,
+      "artist": "Adust Rain",
+      "title": "Seven Style",
+      "creator": "tatemae",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Adust Rain",
+        "known_touhou_artist"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2022-11-06T10:42:30Z"
+    },
+    {
       "beatmapset_id": 930754,
       "artist": "ZUN",
       "title": "Necrofantasia",
@@ -2378,6 +2399,26 @@
       "osu_last_updated": "2019-03-18T23:26:31Z"
     },
     {
+      "beatmapset_id": 942642,
+      "artist": "Nanahira",
+      "title": "Chikatto Chika Chika",
+      "creator": "Agatsu",
+      "source": "Kaguya-sama: Love Is War",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-05-07T01:39:29Z"
+    },
+    {
       "beatmapset_id": 943649,
       "artist": "ZUN",
       "title": "U.N. Owen was Her ?",
@@ -2470,6 +2511,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2021-04-23T10:56:30Z"
+    },
+    {
+      "beatmapset_id": 945049,
+      "artist": "Nanahira",
+      "title": "Chikatto Chika Chika",
+      "creator": "Kaguya_Sama",
+      "source": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-06-21T15:12:14Z"
     },
     {
       "beatmapset_id": 945730,

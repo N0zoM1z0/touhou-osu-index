@@ -1310,6 +1310,48 @@
       "osu_last_updated": "2016-11-11T13:50:56Z"
     },
     {
+      "beatmapset_id": 532522,
+      "artist": "SakiZ",
+      "title": "osu!memories",
+      "creator": "DeRandom Otaku",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:UNDEAD CORPORATION"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2017-07-04T11:21:17Z"
+    },
+    {
+      "beatmapset_id": 532841,
+      "artist": "SakiZ",
+      "title": "osu!memories",
+      "creator": "asuasu_yura",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "taiko"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:Halozy",
+        "discovery_query:UNDEAD CORPORATION"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2023-10-01T14:01:31Z"
+    },
+    {
       "beatmapset_id": 533302,
       "artist": "dBu music",
       "title": "Kyoumu Shuusou Kyoku ~ Pandemonic Planet",
@@ -1329,6 +1371,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2017-09-08T14:58:30Z"
+    },
+    {
+      "beatmapset_id": 537308,
+      "artist": "Himawari",
+      "title": "Slow Step -First Love Comes Again-",
+      "creator": "CelsiusLK",
+      "source": "",
+      "status": "ranked",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2016-12-28T14:58:35Z"
     },
     {
       "beatmapset_id": 537952,
@@ -1487,6 +1549,26 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2017-09-23T02:34:01Z"
+    },
+    {
+      "beatmapset_id": 541540,
+      "artist": "MOSAIC.WAV",
+      "title": "Gokusotu Angel Ennmachan",
+      "creator": "Nattu",
+      "source": "",
+      "status": "loved",
+      "modes": [
+        "osu"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:IOSYS"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2017-06-25T08:12:42Z"
     },
     {
       "beatmapset_id": 541555,
@@ -3287,6 +3369,28 @@
       "confidence": "verified",
       "last_checked": "2026-10-01",
       "osu_last_updated": "2019-08-14T11:31:49Z"
+    },
+    {
+      "beatmapset_id": 592272,
+      "artist": "LeaF",
+      "title": "Wizdomiot",
+      "creator": "Tofu1222",
+      "source": "BMS",
+      "status": "ranked",
+      "modes": [
+        "mania"
+      ],
+      "touhou_kind": "unknown",
+      "origin_games": [],
+      "original_themes": [],
+      "evidence": [
+        "discovery_query:上海アリス幻樂団",
+        "known_touhou_artist",
+        "mapper_tags"
+      ],
+      "confidence": "candidate",
+      "last_checked": "2026-11-23",
+      "osu_last_updated": "2019-04-21T07:48:20Z"
     },
     {
       "beatmapset_id": 593107,
